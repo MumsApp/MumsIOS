@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8D81FE143C500B19E6E /* AppDelegate.swift */; };
+		4D05A8DB1FE143C500B19E6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8DA1FE143C500B19E6E /* ViewController.swift */; };
+		4D05A8DE1FE143C500B19E6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D05A8DC1FE143C500B19E6E /* Main.storyboard */; };
+		4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8DF1FE143C500B19E6E /* MumsApp.xcdatamodeld */; };
+		4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D05A8E21FE143C500B19E6E /* Assets.xcassets */; };
+		4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D05A8E41FE143C500B19E6E /* LaunchScreen.storyboard */; };
+		4D05A8F11FE143C500B19E6E /* MumsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8F01FE143C500B19E6E /* MumsAppTests.swift */; };
+		4D05A8FC1FE143C500B19E6E /* MumsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8FB1FE143C500B19E6E /* MumsAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D05A8ED1FE143C500B19E6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D05A8CD1FE143C500B19E6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D05A8D41FE143C500B19E6E;
+			remoteInfo = MumsApp;
+		};
+		4D05A8F81FE143C500B19E6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D05A8CD1FE143C500B19E6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D05A8D41FE143C500B19E6E;
+			remoteInfo = MumsApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D05A8D51FE143C500B19E6E /* MumsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MumsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D05A8D81FE143C500B19E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D05A8DA1FE143C500B19E6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D05A8DD1FE143C500B19E6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D05A8E01FE143C500B19E6E /* MumsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MumsApp.xcdatamodel; sourceTree = "<group>"; };
+		4D05A8E21FE143C500B19E6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D05A8E51FE143C500B19E6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D05A8E71FE143C500B19E6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D05A8EC1FE143C500B19E6E /* MumsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MumsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D05A8F01FE143C500B19E6E /* MumsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MumsAppTests.swift; sourceTree = "<group>"; };
+		4D05A8F21FE143C500B19E6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D05A8F71FE143C500B19E6E /* MumsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MumsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D05A8FB1FE143C500B19E6E /* MumsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MumsAppUITests.swift; sourceTree = "<group>"; };
+		4D05A8FD1FE143C500B19E6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D05A8D21FE143C500B19E6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D05A8E91FE143C500B19E6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D05A8F41FE143C500B19E6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D05A8CC1FE143C500B19E6E = {
+			isa = PBXGroup;
+			children = (
+				4D05A8D71FE143C500B19E6E /* MumsApp */,
+				4D05A8EF1FE143C500B19E6E /* MumsAppTests */,
+				4D05A8FA1FE143C500B19E6E /* MumsAppUITests */,
+				4D05A8D61FE143C500B19E6E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D05A8D61FE143C500B19E6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D05A8D51FE143C500B19E6E /* MumsApp.app */,
+				4D05A8EC1FE143C500B19E6E /* MumsAppTests.xctest */,
+				4D05A8F71FE143C500B19E6E /* MumsAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D05A8D71FE143C500B19E6E /* MumsApp */ = {
+			isa = PBXGroup;
+			children = (
+				4D05A8D81FE143C500B19E6E /* AppDelegate.swift */,
+				4D05A8DA1FE143C500B19E6E /* ViewController.swift */,
+				4D05A8DC1FE143C500B19E6E /* Main.storyboard */,
+				4D05A8E21FE143C500B19E6E /* Assets.xcassets */,
+				4D05A8E41FE143C500B19E6E /* LaunchScreen.storyboard */,
+				4D05A8E71FE143C500B19E6E /* Info.plist */,
+				4D05A8DF1FE143C500B19E6E /* MumsApp.xcdatamodeld */,
+			);
+			path = MumsApp;
+			sourceTree = "<group>";
+		};
+		4D05A8EF1FE143C500B19E6E /* MumsAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D05A8F01FE143C500B19E6E /* MumsAppTests.swift */,
+				4D05A8F21FE143C500B19E6E /* Info.plist */,
+			);
+			path = MumsAppTests;
+			sourceTree = "<group>";
+		};
+		4D05A8FA1FE143C500B19E6E /* MumsAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4D05A8FB1FE143C500B19E6E /* MumsAppUITests.swift */,
+				4D05A8FD1FE143C500B19E6E /* Info.plist */,
+			);
+			path = MumsAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D05A8D41FE143C500B19E6E /* MumsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D05A9001FE143C500B19E6E /* Build configuration list for PBXNativeTarget "MumsApp" */;
+			buildPhases = (
+				4D05A8D11FE143C500B19E6E /* Sources */,
+				4D05A8D21FE143C500B19E6E /* Frameworks */,
+				4D05A8D31FE143C500B19E6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MumsApp;
+			productName = MumsApp;
+			productReference = 4D05A8D51FE143C500B19E6E /* MumsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4D05A8EB1FE143C500B19E6E /* MumsAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D05A9031FE143C500B19E6E /* Build configuration list for PBXNativeTarget "MumsAppTests" */;
+			buildPhases = (
+				4D05A8E81FE143C500B19E6E /* Sources */,
+				4D05A8E91FE143C500B19E6E /* Frameworks */,
+				4D05A8EA1FE143C500B19E6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D05A8EE1FE143C500B19E6E /* PBXTargetDependency */,
+			);
+			name = MumsAppTests;
+			productName = MumsAppTests;
+			productReference = 4D05A8EC1FE143C500B19E6E /* MumsAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4D05A8F61FE143C500B19E6E /* MumsAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D05A9061FE143C500B19E6E /* Build configuration list for PBXNativeTarget "MumsAppUITests" */;
+			buildPhases = (
+				4D05A8F31FE143C500B19E6E /* Sources */,
+				4D05A8F41FE143C500B19E6E /* Frameworks */,
+				4D05A8F51FE143C500B19E6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D05A8F91FE143C500B19E6E /* PBXTargetDependency */,
+			);
+			name = MumsAppUITests;
+			productName = MumsAppUITests;
+			productReference = 4D05A8F71FE143C500B19E6E /* MumsAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D05A8CD1FE143C500B19E6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Mateusz Fraczek";
+				TargetAttributes = {
+					4D05A8D41FE143C500B19E6E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					4D05A8EB1FE143C500B19E6E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4D05A8D41FE143C500B19E6E;
+					};
+					4D05A8F61FE143C500B19E6E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4D05A8D41FE143C500B19E6E;
+					};
+				};
+			};
+			buildConfigurationList = 4D05A8D01FE143C500B19E6E /* Build configuration list for PBXProject "MumsApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D05A8CC1FE143C500B19E6E;
+			productRefGroup = 4D05A8D61FE143C500B19E6E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D05A8D41FE143C500B19E6E /* MumsApp */,
+				4D05A8EB1FE143C500B19E6E /* MumsAppTests */,
+				4D05A8F61FE143C500B19E6E /* MumsAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D05A8D31FE143C500B19E6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */,
+				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
+				4D05A8DE1FE143C500B19E6E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D05A8EA1FE143C500B19E6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D05A8F51FE143C500B19E6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D05A8D11FE143C500B19E6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D05A8DB1FE143C500B19E6E /* ViewController.swift in Sources */,
+				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
+				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D05A8E81FE143C500B19E6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D05A8F11FE143C500B19E6E /* MumsAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D05A8F31FE143C500B19E6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D05A8FC1FE143C500B19E6E /* MumsAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D05A8EE1FE143C500B19E6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D05A8D41FE143C500B19E6E /* MumsApp */;
+			targetProxy = 4D05A8ED1FE143C500B19E6E /* PBXContainerItemProxy */;
+		};
+		4D05A8F91FE143C500B19E6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D05A8D41FE143C500B19E6E /* MumsApp */;
+			targetProxy = 4D05A8F81FE143C500B19E6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4D05A8DC1FE143C500B19E6E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D05A8DD1FE143C500B19E6E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D05A8E41FE143C500B19E6E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D05A8E51FE143C500B19E6E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D05A8FE1FE143C500B19E6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4D05A8FF1FE143C500B19E6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D05A9011FE143C500B19E6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JSNJN952C;
+				INFOPLIST_FILE = MumsApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4D05A9021FE143C500B19E6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JSNJN952C;
+				INFOPLIST_FILE = MumsApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4D05A9041FE143C500B19E6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JSNJN952C;
+				INFOPLIST_FILE = MumsAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MumsApp.app/MumsApp";
+			};
+			name = Debug;
+		};
+		4D05A9051FE143C500B19E6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JSNJN952C;
+				INFOPLIST_FILE = MumsAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MumsApp.app/MumsApp";
+			};
+			name = Release;
+		};
+		4D05A9071FE143C500B19E6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JSNJN952C;
+				INFOPLIST_FILE = MumsAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MumsApp;
+			};
+			name = Debug;
+		};
+		4D05A9081FE143C500B19E6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JSNJN952C;
+				INFOPLIST_FILE = MumsAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MumsApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D05A8D01FE143C500B19E6E /* Build configuration list for PBXProject "MumsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D05A8FE1FE143C500B19E6E /* Debug */,
+				4D05A8FF1FE143C500B19E6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D05A9001FE143C500B19E6E /* Build configuration list for PBXNativeTarget "MumsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D05A9011FE143C500B19E6E /* Debug */,
+				4D05A9021FE143C500B19E6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D05A9031FE143C500B19E6E /* Build configuration list for PBXNativeTarget "MumsAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D05A9041FE143C500B19E6E /* Debug */,
+				4D05A9051FE143C500B19E6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D05A9061FE143C500B19E6E /* Build configuration list for PBXNativeTarget "MumsAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D05A9071FE143C500B19E6E /* Debug */,
+				4D05A9081FE143C500B19E6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4D05A8DF1FE143C500B19E6E /* MumsApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4D05A8E01FE143C500B19E6E /* MumsApp.xcdatamodel */,
+			);
+			currentVersion = 4D05A8E01FE143C500B19E6E /* MumsApp.xcdatamodel */;
+			path = MumsApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4D05A8CD1FE143C500B19E6E /* Project object */;
+}
