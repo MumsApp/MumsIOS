@@ -1,0 +1,49 @@
+PODS:
+  - Alamofire (4.5.1)
+  - Arcane (0.5.0)
+  - Crashlytics (3.8.6):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.13)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - ReachabilitySwift (3)
+  - SDWebImage (4.1.2):
+    - SDWebImage/Core (= 4.1.2)
+  - SDWebImage/Core (4.1.2)
+  - XCGLogger (5.0.5):
+    - XCGLogger/Core (= 5.0.5)
+  - XCGLogger/Core (5.0.5):
+    - ObjcExceptionBridging
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5.1)
+  - Arcane (from `https://github.com/onmyway133/Arcane`, tag `0.5.0`)
+  - Crashlytics (~> 3.8.6)
+  - ReachabilitySwift (~> 3)
+  - SDWebImage (~> 4.1.0)
+  - XCGLogger (~> 5.0.1)
+
+EXTERNAL SOURCES:
+  Arcane:
+    :git: https://github.com/onmyway133/Arcane
+    :tag: 0.5.0
+
+CHECKOUT OPTIONS:
+  Arcane:
+    :git: https://github.com/onmyway133/Arcane
+    :tag: 0.5.0
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Arcane: 5f01dd42b0aa25c9f6b188cf7af758094a184d54
+  Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
+  Fabric: 2fb5676bc811af011a04513451f463dac6803206
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
+  XCGLogger: 49bceee6dc0c738eae5d6454fdbf800d62256b74
+
+PODFILE CHECKSUM: 83d3d5874acc1edf075b8de435d1a78834777cea
+
+COCOAPODS: 1.3.1
