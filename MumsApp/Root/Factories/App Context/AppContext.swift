@@ -58,7 +58,6 @@ extension UIViewController {
     
 }
 
-/// Used to hold AppContext methods
 struct DefaultAppContext: AppContext {
     
     let dataStore: DataStore
@@ -73,7 +72,6 @@ struct DefaultAppContext: AppContext {
         
     }
     
-    /// Used to check if user exist in our DataStore
     func isUserLoggedIn() -> Bool {
         
         let user = self.dataStore.fetchAllEntities(User.self).first as? User

@@ -4,7 +4,9 @@ enum PrimaryViewController: String {
     
     // MARK: - Intro
     
-    case RegisterViewController
-
+    case WelcomeViewController
+    case SignUpViewController
+    case SignInViewController
+    case CreateOfficialPageViewController
     
 }

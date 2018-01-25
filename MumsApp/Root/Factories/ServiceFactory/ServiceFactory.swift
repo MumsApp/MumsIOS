@@ -1,15 +1,11 @@
 import Foundation
 
-/// Used to create a factory of services
 class ServiceFactory {
     
-    /// Used to call requrests to backend
     private var networkService: NetworkService
     
-    /// Used as a storage helper
     private var dataStore: DataStore
     
-    /// Used to save data to UserDefaults
     private var userDefaults: MOUserDefaults
     
     static func serviceFactory() -> ServiceFactory {
@@ -34,16 +30,6 @@ class ServiceFactory {
     
     // MARK: - Service Implementation
     
-    func sessionService() -> SessionService {
-        
-        let parser = SessionServiceParser(userDefaults: self.userDefaults)
-        
-        let service = SessionService(networkService: self.networkService, serviceParser: parser)
-        
-        return service
-        
-    }
-    
     func registerService() -> RegisterService {
         
         let parser = RegisterServiceParser()
@@ -63,23 +49,6 @@ class ServiceFactory {
         return service
         
     }
-    
-//    func notificationCoordinatorService() -> NotificationCoordinator {
-//
-//        let parser = NotificationServiceParser()
-//
-//        let service = NotificationService(networkService: self.networkService, serviceParser: parser)
-//
-//        let userEmailServiceParser = UserEmailServiceParser(dataStore: self.dataStore)
-//
-//        let userEmailService = UserEmailService(networkService: self.networkService, serviceParser: userEmailServiceParser)
-//
-//        let coordinator = NotificationCoordinator(notificationService: service, userEmailService: userEmailService, userDefaults: self.userDefaults)
-//
-//        return coordinator
-//
-//    }
-
     
 }
 

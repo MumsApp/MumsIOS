@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8D81FE143C500B19E6E /* AppDelegate.swift */; };
-		4D05A8DB1FE143C500B19E6E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8DA1FE143C500B19E6E /* RegisterViewController.swift */; };
+		4D05A8DB1FE143C500B19E6E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8DA1FE143C500B19E6E /* SignUpViewController.swift */; };
 		4D05A8DE1FE143C500B19E6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D05A8DC1FE143C500B19E6E /* Main.storyboard */; };
 		4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8DF1FE143C500B19E6E /* MumsApp.xcdatamodeld */; };
 		4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D05A8E21FE143C500B19E6E /* Assets.xcassets */; };
@@ -53,6 +53,15 @@
 		4D05A9811FE14E5600B19E6E /* PrimaryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A9801FE14E5600B19E6E /* PrimaryViewControllerFactory.swift */; };
 		4D05A9831FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A9821FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift */; };
 		4D05A9891FE14F3F00B19E6E /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A9881FE14F3F00B19E6E /* Storyboards.swift */; };
+		4DC6774420177F1900F34184 /* MainRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6774320177F1900F34184 /* MainRootViewController.swift */; };
+		4DC677472017800E00F34184 /* SecondaryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */; };
+		4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */; };
+		4DC6774C2017817B00F34184 /* Reachability+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6774B2017817B00F34184 /* Reachability+UIView.swift */; };
+		4DC6774F201781AD00F34184 /* MOReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6774E201781AD00F34184 /* MOReachability.swift */; };
+		4DC67752201781E000F34184 /* Timeout+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC67751201781E000F34184 /* Timeout+UIView.swift */; };
+		4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677532017825500F34184 /* WelcomeViewController.swift */; };
+		4DC677562017870000F34184 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677552017870000F34184 /* SignInViewController.swift */; };
+		4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */; };
 		4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC270C1FE92C32006020FF /* RegisterService.swift */; };
 		4DFC270F1FE92C3E006020FF /* RegisterServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC270E1FE92C3E006020FF /* RegisterServiceParser.swift */; };
 		4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC27111FE92CA9006020FF /* LoginService.swift */; };
@@ -85,7 +94,7 @@
 		4B6971E37F9E74D8BD714B2A /* Pods-MumsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MumsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MumsApp/Pods-MumsApp.release.xcconfig"; sourceTree = "<group>"; };
 		4D05A8D51FE143C500B19E6E /* MumsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MumsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D05A8D81FE143C500B19E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D05A8DA1FE143C500B19E6E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4D05A8DA1FE143C500B19E6E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4D05A8DD1FE143C500B19E6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D05A8E01FE143C500B19E6E /* MumsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MumsApp.xcdatamodel; sourceTree = "<group>"; };
 		4D05A8E21FE143C500B19E6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,6 +144,15 @@
 		4D05A9801FE14E5600B19E6E /* PrimaryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryViewControllerFactory.swift; sourceTree = "<group>"; };
 		4D05A9821FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrimaryViewController+Identifiers.swift"; sourceTree = "<group>"; };
 		4D05A9881FE14F3F00B19E6E /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		4DC6774320177F1900F34184 /* MainRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootViewController.swift; sourceTree = "<group>"; };
+		4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewControllerFactory.swift; sourceTree = "<group>"; };
+		4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondaryViewController+Identifiers.swift"; sourceTree = "<group>"; };
+		4DC6774B2017817B00F34184 /* Reachability+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability+UIView.swift"; sourceTree = "<group>"; };
+		4DC6774E201781AD00F34184 /* MOReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOReachability.swift; sourceTree = "<group>"; };
+		4DC67751201781E000F34184 /* Timeout+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timeout+UIView.swift"; sourceTree = "<group>"; };
+		4DC677532017825500F34184 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4DC677552017870000F34184 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOfficialPageViewController.swift; sourceTree = "<group>"; };
 		4DFC270C1FE92C32006020FF /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		4DFC270E1FE92C3E006020FF /* RegisterServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceParser.swift; sourceTree = "<group>"; };
 		4DFC27111FE92CA9006020FF /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -205,6 +223,7 @@
 				4D05A9771FE14A0C00B19E6E /* Root */,
 				4D05A9781FE14A1A00B19E6E /* Services */,
 				4D05A9761FE14A0500B19E6E /* Models */,
+				4DC6774D2017818300F34184 /* Custom Views */,
 				4D05A9751FE149FB00B19E6E /* View Controllers */,
 				4D05A9631FE144BE00B19E6E /* Storyboards */,
 				4D05A8E21FE143C500B19E6E /* Assets.xcassets */,
@@ -246,6 +265,7 @@
 				4D05A92F1FE144A800B19E6E /* InAppPurchase */,
 				4D05A9321FE144A800B19E6E /* DataStorage */,
 				4D05A9391FE144A800B19E6E /* UIView+Extensions */,
+				4DC67750201781B300F34184 /* Reachability */,
 			);
 			path = "MOLib Source";
 			sourceTree = "<group>";
@@ -377,6 +397,7 @@
 			children = (
 				4D05A98C1FE14F9700B19E6E /* Root */,
 				4D05A98B1FE14F9000B19E6E /* Onboarding */,
+				4DC6774520177F2400F34184 /* Main */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -393,7 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				4D05A8D81FE143C500B19E6E /* AppDelegate.swift */,
-				4D05A9641FE145B800B19E6E /* AppContext.swift */,
+				4D05A9721FE1487000B19E6E /* RootViewController.swift */,
 				4D05A9851FE14EC300B19E6E /* Factories */,
 			);
 			path = Root;
@@ -421,9 +442,11 @@
 		4D05A9851FE14EC300B19E6E /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				4DC6775920178C8E00F34184 /* App Context */,
 				4D05A9861FE14EE400B19E6E /* FactoryProvider */,
 				4D05A9871FE14EED00B19E6E /* ServiceFactory */,
 				4D05A9841FE14EB100B19E6E /* PrimaryViewControllers+Factory */,
+				4DC6774A2017807400F34184 /* SecondaryViewControllers+Factory */,
 				4D05A98A1FE14F4700B19E6E /* StoryboardFactory */,
 			);
 			path = Factories;
@@ -456,7 +479,10 @@
 		4D05A98B1FE14F9000B19E6E /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				4D05A8DA1FE143C500B19E6E /* RegisterViewController.swift */,
+				4DC677532017825500F34184 /* WelcomeViewController.swift */,
+				4D05A8DA1FE143C500B19E6E /* SignUpViewController.swift */,
+				4DC677552017870000F34184 /* SignInViewController.swift */,
+				4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -464,9 +490,50 @@
 		4D05A98C1FE14F9700B19E6E /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				4D05A9721FE1487000B19E6E /* RootViewController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		4DC6774520177F2400F34184 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4DC6774320177F1900F34184 /* MainRootViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4DC6774A2017807400F34184 /* SecondaryViewControllers+Factory */ = {
+			isa = PBXGroup;
+			children = (
+				4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */,
+				4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */,
+			);
+			path = "SecondaryViewControllers+Factory";
+			sourceTree = "<group>";
+		};
+		4DC6774D2017818300F34184 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DC6774B2017817B00F34184 /* Reachability+UIView.swift */,
+				4DC67751201781E000F34184 /* Timeout+UIView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		4DC67750201781B300F34184 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				4DC6774E201781AD00F34184 /* MOReachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		4DC6775920178C8E00F34184 /* App Context */ = {
+			isa = PBXGroup;
+			children = (
+				4D05A9641FE145B800B19E6E /* AppContext.swift */,
+			);
+			path = "App Context";
 			sourceTree = "<group>";
 		};
 		4DFC27101FE92C63006020FF /* RegisterService */ = {
@@ -813,9 +880,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */,
 				4D05A9611FE144A900B19E6E /* UICollectionView+Extensions.swift in Sources */,
+				4DC6774F201781AD00F34184 /* MOReachability.swift in Sources */,
 				4D05A9481FE144A900B19E6E /* NetwrokService+Extension.swift in Sources */,
-				4D05A8DB1FE143C500B19E6E /* RegisterViewController.swift in Sources */,
+				4D05A8DB1FE143C500B19E6E /* SignUpViewController.swift in Sources */,
 				4D05A93F1FE144A900B19E6E /* DataSourceProvider.swift in Sources */,
 				4D05A9521FE144A900B19E6E /* NotificationCoordinator.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
@@ -828,11 +897,15 @@
 				4D05A95E1FE144A900B19E6E /* UIStoryboard+Helpers.swift in Sources */,
 				4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */,
 				4D05A9581FE144A900B19E6E /* InAppPurchase+Helper.swift in Sources */,
+				4DC67752201781E000F34184 /* Timeout+UIView.swift in Sources */,
 				4D05A9541FE144A900B19E6E /* MOUserDefaults+SecureProtocol.swift in Sources */,
 				4D05A9461FE144A900B19E6E /* CommonClosures.swift in Sources */,
+				4DC6774420177F1900F34184 /* MainRootViewController.swift in Sources */,
 				4D05A9591FE144A900B19E6E /* DataStore.swift in Sources */,
+				4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */,
 				4D05A9441FE144A900B19E6E /* Logger.swift in Sources */,
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
+				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
 				4D05A96F1FE1478400B19E6E /* Config.swift in Sources */,
 				4D05A9651FE145B800B19E6E /* AppContext.swift in Sources */,
@@ -842,7 +915,9 @@
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
 				4D05A9571FE144A900B19E6E /* InAppPurchase+Products.swift in Sources */,
 				4D05A94D1FE144A900B19E6E /* AuthenticatedNetworkService+Request.swift in Sources */,
+				4DC6774C2017817B00F34184 /* Reachability+UIView.swift in Sources */,
 				4D05A9891FE14F3F00B19E6E /* Storyboards.swift in Sources */,
+				4DC677472017800E00F34184 /* SecondaryViewControllerFactory.swift in Sources */,
 				4D05A9501FE144A900B19E6E /* NetworkService+DataRequest.swift in Sources */,
 				4D05A94C1FE144A900B19E6E /* MockNetworkService.swift in Sources */,
 				4D05A95F1FE144A900B19E6E /* UITableView+Extensions.swift in Sources */,
@@ -852,6 +927,7 @@
 				4DFC270F1FE92C3E006020FF /* RegisterServiceParser.swift in Sources */,
 				4D05A9401FE144A900B19E6E /* MOTableViewCoordinator.swift in Sources */,
 				4D05A97A1FE14BE100B19E6E /* ServiceFactory.swift in Sources */,
+				4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */,
 				4D05A94A1FE144A900B19E6E /* NetworkService+UploadRequest.swift in Sources */,
 				4DFC27141FE92CB2006020FF /* LoginServiceParser.swift in Sources */,
 				4D05A9471FE144A900B19E6E /* URLRequest+Methods.swift in Sources */,

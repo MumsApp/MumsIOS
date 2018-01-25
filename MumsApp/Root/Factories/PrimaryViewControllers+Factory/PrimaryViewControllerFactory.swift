@@ -9,22 +9,17 @@ protocol ViewControllerFactory {
     
 }
 
-/// Used to create a factory of View Controllers contained in Main Storyboard
 class PrimaryViewControllerFactory: ViewControllerFactory {
     
     typealias Factory = PrimaryViewControllerFactory
     
-    /// Used to save data to UserDefaults
     private var userDefaults: MOUserDefaults
     
-    /// Used as a storage helper
     private var dataStore: DataStore
     
-    /// Used to create access to ServiceFactory
     private let serviceFactory = ServiceFactory.serviceFactory()
     
-    /// Used to create an access to storyboard name and keep the code clean
-    private let main = Storyboard.Main.rawValue
+    private let storyboard = Storyboard.Main.rawValue
     
     class func viewControllerFactory() -> PrimaryViewControllerFactory {
         
@@ -46,9 +41,17 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
     
     // MARK: - Intro
     
-    func registerViewController() -> RegisterViewController {
+    func welcomeViewController() -> WelcomeViewController {
         
-        let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.RegisterViewController.rawValue, storyboard: main) as! RegisterViewController
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.WelcomeViewController.rawValue, storyboard: storyboard) as! WelcomeViewController
+        
+        return controller
+        
+    }
+    
+    func signUpViewController() -> SignUpViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.SignUpViewController.rawValue, storyboard: storyboard) as! SignUpViewController
         
         controller.configureWith(registerService: self.serviceFactory.registerService(),
                                  loginService: self.serviceFactory.loginService())
@@ -56,6 +59,24 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         return controller
         
     }
-   
+    
+    func signInViewController() -> SignInViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.SignInViewController.rawValue, storyboard: storyboard) as! SignInViewController
+
+        return controller
+        
+    }
+    
+    func createOfficialPageViewController() -> CreateOfficialPageViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.CreateOfficialPageViewController.rawValue, storyboard: storyboard) as! CreateOfficialPageViewController
+        
+        return controller
+        
+    }
+    
+    
+
 }
 

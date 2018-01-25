@@ -1,24 +1,15 @@
 import Foundation
 
-/// Used to create as a factory of all required classes
 class FactoryProvider {
     
-    /// Used to call requrests to backend
     private static var networkService: NetworkService!
     
-    /// Used to save data to UserDefaults
     private static var userDefaults: MOUserDefaults!
     
-    /// Used as a storage helper
     private static var dataStore: DataStore!
     
-    /// Used as a main storage dictionary
     private static var storageDictionary: NSMutableDictionary!
-    
-    /** Access to intro delegate
-     * func didFinishIntro()
-     * func didFinishIntroWithSuccess()
-     */
+
     private static weak var introDelegate: IntroDelegate?
     
     class func setupFactory(networkService: NetworkService, introDelegate: IntroDelegate) {
@@ -65,7 +56,6 @@ class FactoryProvider {
 //
 //    }
     
-    /// Used to save data to UserDefaults
     class func tearDown() {
         
         self.dataStore.synchronize()
@@ -74,11 +64,9 @@ class FactoryProvider {
         
     }
     
-    /// Used to clean all dataSources and searching properties
     class func clearDataSource() {
 
         
     }
     
 }
-
