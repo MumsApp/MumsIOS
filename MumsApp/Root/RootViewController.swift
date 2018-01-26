@@ -55,6 +55,8 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.configureView()
+        
         let isInitialized = self.userDefaults.boolForKey(k_is_app_initialized)
         
         let isUserLoggedIn = self.appContext.isUserLoggedIn()
@@ -70,6 +72,12 @@ class RootViewController: UIViewController {
             self.showWelcomeViewController()
             
         }
+        
+    }
+    
+    func configureView() {
+        
+        self.view.backgroundColor = .backgroundWhite
         
     }
     

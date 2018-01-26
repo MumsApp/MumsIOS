@@ -76,7 +76,13 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func forgotPasswordViewController() -> ForgotPasswordViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.ForgotPasswordViewController.rawValue, storyboard: storyboard) as! ForgotPasswordViewController
+        
+        return controller
+        
+    }
     
-
 }
 

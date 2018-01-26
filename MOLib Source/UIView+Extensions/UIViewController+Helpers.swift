@@ -128,7 +128,7 @@ extension UIViewController {
                                 
                 if vc.isKind(of: viewController) {
                     
-                    self.navigationController!.popToViewController(vc, animated: true)
+                    self.navigationController?.popToViewController(vc, animated: true)
                     
                 }
                 

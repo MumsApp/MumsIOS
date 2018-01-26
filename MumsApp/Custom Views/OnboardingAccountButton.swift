@@ -1,0 +1,96 @@
+import Foundation
+import UIKit
+
+class OnboardingAccountButton: UIButton {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    
+        self.centerTitleLabel()
+    
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    
+        self.centerTitleLabel()
+   
+    }
+
+    override func awakeFromNib() {
+    
+        self.backgroundColor = .white
+
+        self.titleLabel?.font = .regular(size: 20)
+
+        self.updateLayerProperties()
+
+    }
+    
+    func updateLayerProperties() {
+
+        self.layer.cornerRadius = 4
+        
+        self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        
+        self.layer.shadowOpacity = 1.0
+        
+        self.layer.shadowRadius = 10.0
+        
+        self.layer.masksToBounds = false
+    
+    }
+    
+    private func centerTitleLabel() {
+    
+        self.titleLabel?.textAlignment = .center
+   
+    }
+    
+    override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
+  
+        let rect = super.titleRect(forContentRect: contentRect)
+        
+        return CGRect(x: 0, y: contentRect.height - rect.height - 5,
+                      width: contentRect.width, height: rect.height)
+    
+    }
+    
+    override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
+    
+        let rect = super.imageRect(forContentRect: contentRect)
+        
+        let titleRect = self.titleRect(forContentRect: contentRect)
+        
+        return CGRect(x: contentRect.width/2.0 - rect.width/2.0,
+                      y: (contentRect.height - titleRect.height)/2.0 - rect.height/2.0 + 5,
+                      width: rect.width, height: rect.height)
+    
+    }
+    
+    override var intrinsicContentSize: CGSize {
+     
+        let size = super.intrinsicContentSize
+        
+        if let image = imageView?.image {
+        
+            var labelHeight: CGFloat = 0.0
+            
+            if let size = titleLabel?.sizeThatFits(CGSize(width: self.contentRect(forBounds: self.bounds).width, height: CGFloat.greatestFiniteMagnitude)) {
+            
+                labelHeight = size.height
+            
+            }
+            
+            return CGSize(width: size.width, height: image.size.height + labelHeight + 5)
+        
+        }
+        
+        return size
+    
+    }
+    
+ 
+}

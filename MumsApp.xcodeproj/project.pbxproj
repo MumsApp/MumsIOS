@@ -53,6 +53,19 @@
 		4D05A9811FE14E5600B19E6E /* PrimaryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A9801FE14E5600B19E6E /* PrimaryViewControllerFactory.swift */; };
 		4D05A9831FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A9821FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift */; };
 		4D05A9891FE14F3F00B19E6E /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A9881FE14F3F00B19E6E /* Storyboards.swift */; };
+		4D66007B201B5BDC0085CC58 /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007A201B5BDC0085CC58 /* OnboardingTextField.swift */; };
+		4D66007D201B5C640085CC58 /* OnboardingSocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007C201B5C640085CC58 /* OnboardingSocialButton.swift */; };
+		4D66007F201B642E0085CC58 /* OnboardingAccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007E201B642E0085CC58 /* OnboardingAccountButton.swift */; };
+		4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */; };
+		4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F2D35201B4A4200756CCB /* Poppins-Medium.ttf */; };
+		4D8F2D38201B4A4300756CCB /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F2D36201B4A4300756CCB /* Poppins-Regular.ttf */; };
+		4D8F2D3A201B4EB000756CCB /* TransparentGreyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D39201B4EB000756CCB /* TransparentGreyButton.swift */; };
+		4D8F2D3C201B4F3800756CCB /* OnboardingGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3B201B4F3800756CCB /* OnboardingGreenButton.swift */; };
+		4D8F2D3E201B502300756CCB /* OnboardingGreyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3D201B502300756CCB /* OnboardingGreyButton.swift */; };
+		4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */; };
+		4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */; };
+		4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */; };
+		4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */; };
 		4DC6774420177F1900F34184 /* MainRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6774320177F1900F34184 /* MainRootViewController.swift */; };
 		4DC677472017800E00F34184 /* SecondaryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */; };
 		4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */; };
@@ -144,6 +157,19 @@
 		4D05A9801FE14E5600B19E6E /* PrimaryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryViewControllerFactory.swift; sourceTree = "<group>"; };
 		4D05A9821FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrimaryViewController+Identifiers.swift"; sourceTree = "<group>"; };
 		4D05A9881FE14F3F00B19E6E /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		4D66007A201B5BDC0085CC58 /* OnboardingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextField.swift; sourceTree = "<group>"; };
+		4D66007C201B5C640085CC58 /* OnboardingSocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSocialButton.swift; sourceTree = "<group>"; };
+		4D66007E201B642E0085CC58 /* OnboardingAccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAccountButton.swift; sourceTree = "<group>"; };
+		4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GardenGrownCaps-Regular.otf"; sourceTree = "<group>"; };
+		4D8F2D35201B4A4200756CCB /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		4D8F2D36201B4A4300756CCB /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		4D8F2D39201B4EB000756CCB /* TransparentGreyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentGreyButton.swift; sourceTree = "<group>"; };
+		4D8F2D3B201B4F3800756CCB /* OnboardingGreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGreenButton.swift; sourceTree = "<group>"; };
+		4D8F2D3D201B502300756CCB /* OnboardingGreyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGreyButton.swift; sourceTree = "<group>"; };
+		4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
+		4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		4DC6774320177F1900F34184 /* MainRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootViewController.swift; sourceTree = "<group>"; };
 		4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewControllerFactory.swift; sourceTree = "<group>"; };
 		4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondaryViewController+Identifiers.swift"; sourceTree = "<group>"; };
@@ -226,10 +252,8 @@
 				4DC6774D2017818300F34184 /* Custom Views */,
 				4D05A9751FE149FB00B19E6E /* View Controllers */,
 				4D05A9631FE144BE00B19E6E /* Storyboards */,
-				4D05A8E21FE143C500B19E6E /* Assets.xcassets */,
-				4D05A8E41FE143C500B19E6E /* LaunchScreen.storyboard */,
-				4D05A8E71FE143C500B19E6E /* Info.plist */,
-				4D05A8DF1FE143C500B19E6E /* MumsApp.xcdatamodeld */,
+				4D8F2D41201B56E900756CCB /* Extensions */,
+				4D8F2D42201B56F100756CCB /* Support Files */,
 			);
 			path = MumsApp;
 			sourceTree = "<group>";
@@ -482,6 +506,7 @@
 				4DC677532017825500F34184 /* WelcomeViewController.swift */,
 				4D05A8DA1FE143C500B19E6E /* SignUpViewController.swift */,
 				4DC677552017870000F34184 /* SignInViewController.swift */,
+				4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */,
 				4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */,
 			);
 			path = Onboarding;
@@ -492,6 +517,31 @@
 			children = (
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		4D8F2D41201B56E900756CCB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */,
+				4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */,
+				4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4D8F2D42201B56F100756CCB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D05A8E21FE143C500B19E6E /* Assets.xcassets */,
+				4D05A8E41FE143C500B19E6E /* LaunchScreen.storyboard */,
+				4D05A8E71FE143C500B19E6E /* Info.plist */,
+				4D05A8DF1FE143C500B19E6E /* MumsApp.xcdatamodeld */,
+				4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */,
+				4D8F2D35201B4A4200756CCB /* Poppins-Medium.ttf */,
+				4D8F2D36201B4A4300756CCB /* Poppins-Regular.ttf */,
+			);
+			name = "Support Files";
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		4DC6774520177F2400F34184 /* Main */ = {
@@ -516,6 +566,12 @@
 			children = (
 				4DC6774B2017817B00F34184 /* Reachability+UIView.swift */,
 				4DC67751201781E000F34184 /* Timeout+UIView.swift */,
+				4D8F2D3B201B4F3800756CCB /* OnboardingGreenButton.swift */,
+				4D66007C201B5C640085CC58 /* OnboardingSocialButton.swift */,
+				4D8F2D3D201B502300756CCB /* OnboardingGreyButton.swift */,
+				4D66007E201B642E0085CC58 /* OnboardingAccountButton.swift */,
+				4D8F2D39201B4EB000756CCB /* TransparentGreyButton.swift */,
+				4D66007A201B5BDC0085CC58 /* OnboardingTextField.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -695,7 +751,10 @@
 			files = (
 				4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
+				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
+				4D8F2D38201B4A4300756CCB /* Poppins-Regular.ttf in Resources */,
 				4D05A8DE1FE143C500B19E6E /* Main.storyboard in Resources */,
+				4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,13 +943,16 @@
 				4D05A9611FE144A900B19E6E /* UICollectionView+Extensions.swift in Sources */,
 				4DC6774F201781AD00F34184 /* MOReachability.swift in Sources */,
 				4D05A9481FE144A900B19E6E /* NetwrokService+Extension.swift in Sources */,
+				4D66007F201B642E0085CC58 /* OnboardingAccountButton.swift in Sources */,
 				4D05A8DB1FE143C500B19E6E /* SignUpViewController.swift in Sources */,
+				4D8F2D3A201B4EB000756CCB /* TransparentGreyButton.swift in Sources */,
 				4D05A93F1FE144A900B19E6E /* DataSourceProvider.swift in Sources */,
 				4D05A9521FE144A900B19E6E /* NotificationCoordinator.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
 				4D05A9491FE144A900B19E6E /* ConnectionHelper+Extension.swift in Sources */,
 				4D05A9811FE14E5600B19E6E /* PrimaryViewControllerFactory.swift in Sources */,
 				4D05A9411FE144A900B19E6E /* MOCollectionViewCoordinator.swift in Sources */,
+				4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */,
 				4D05A9731FE1487000B19E6E /* RootViewController.swift in Sources */,
 				4D05A94B1FE144A900B19E6E /* NetworkService+DownloadRequest.swift in Sources */,
 				4D05A95D1FE144A900B19E6E /* UIViewController+Helpers.swift in Sources */,
@@ -900,6 +962,7 @@
 				4DC67752201781E000F34184 /* Timeout+UIView.swift in Sources */,
 				4D05A9541FE144A900B19E6E /* MOUserDefaults+SecureProtocol.swift in Sources */,
 				4D05A9461FE144A900B19E6E /* CommonClosures.swift in Sources */,
+				4D8F2D3C201B4F3800756CCB /* OnboardingGreenButton.swift in Sources */,
 				4DC6774420177F1900F34184 /* MainRootViewController.swift in Sources */,
 				4D05A9591FE144A900B19E6E /* DataStore.swift in Sources */,
 				4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */,
@@ -907,25 +970,31 @@
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
+				4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */,
 				4D05A96F1FE1478400B19E6E /* Config.swift in Sources */,
 				4D05A9651FE145B800B19E6E /* AppContext.swift in Sources */,
 				4D05A9711FE1483800B19E6E /* FactoryProvider.swift in Sources */,
 				4D05A9601FE144A900B19E6E /* UIViewController+UIAlertView.swift in Sources */,
 				4D05A9451FE144A900B19E6E /* URLRequest+Task.swift in Sources */,
+				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
+				4D66007B201B5BDC0085CC58 /* OnboardingTextField.swift in Sources */,
 				4D05A9571FE144A900B19E6E /* InAppPurchase+Products.swift in Sources */,
 				4D05A94D1FE144A900B19E6E /* AuthenticatedNetworkService+Request.swift in Sources */,
 				4DC6774C2017817B00F34184 /* Reachability+UIView.swift in Sources */,
 				4D05A9891FE14F3F00B19E6E /* Storyboards.swift in Sources */,
 				4DC677472017800E00F34184 /* SecondaryViewControllerFactory.swift in Sources */,
 				4D05A9501FE144A900B19E6E /* NetworkService+DataRequest.swift in Sources */,
+				4D8F2D3E201B502300756CCB /* OnboardingGreyButton.swift in Sources */,
 				4D05A94C1FE144A900B19E6E /* MockNetworkService.swift in Sources */,
 				4D05A95F1FE144A900B19E6E /* UITableView+Extensions.swift in Sources */,
+				4D66007D201B5C640085CC58 /* OnboardingSocialButton.swift in Sources */,
 				4D05A9831FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift in Sources */,
 				4D05A94F1FE144A900B19E6E /* NetworkService+Init.swift in Sources */,
 				4D05A94E1FE144A900B19E6E /* NetworkService+Factory.swift in Sources */,
 				4DFC270F1FE92C3E006020FF /* RegisterServiceParser.swift in Sources */,
 				4D05A9401FE144A900B19E6E /* MOTableViewCoordinator.swift in Sources */,
+				4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */,
 				4D05A97A1FE14BE100B19E6E /* ServiceFactory.swift in Sources */,
 				4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */,
 				4D05A94A1FE144A900B19E6E /* NetworkService+UploadRequest.swift in Sources */,
@@ -1102,7 +1171,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7JSNJN952C;
-				INFOPLIST_FILE = MumsApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MumsApp/New Group/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsApp;
@@ -1119,7 +1188,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7JSNJN952C;
-				INFOPLIST_FILE = MumsApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MumsApp/New Group/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsApp;

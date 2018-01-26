@@ -2,7 +2,7 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet var titleLabels: [UILabel]!
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.configureView()
         
     }
     
@@ -23,6 +24,22 @@ class WelcomeViewController: UIViewController {
         
         self.configureNavigationBar()
 
+    }
+    
+    func configureView() {
+        
+        self.view.backgroundColor = .backgroundWhite
+        
+        for labels in self.titleLabels {
+            
+            labels.font = .regular(size: 33)
+            
+        }
+        
+        self.descriptionLabel.font = .customRegular(size: 21)
+        
+        self.descriptionLabel.textColor = .mainDarkGrey
+        
     }
     
     private func configureNavigationBar() {
