@@ -54,7 +54,8 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.SignUpViewController.rawValue, storyboard: storyboard) as! SignUpViewController
         
         controller.configureWith(registerService: self.serviceFactory.registerService(),
-                                 loginService: self.serviceFactory.loginService())
+                                 loginService: self.serviceFactory.loginService(),
+                                 delegate: FactoryProvider().provide())
         
         return controller
         
@@ -64,6 +65,9 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.SignInViewController.rawValue, storyboard: storyboard) as! SignInViewController
 
+        controller.configureWith(loginService: self.serviceFactory.loginService(),
+                                 delegate: FactoryProvider().provide())
+        
         return controller
         
     }

@@ -26,15 +26,21 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signInButton: UIButton!
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+   
     private var registerService: RegisterService!
     
     private var loginService: LoginService!
     
-    func configureWith(registerService: RegisterService, loginService: LoginService) {
+    private weak var delegate: IntroDelegate?
+    
+    func configureWith(registerService: RegisterService, loginService: LoginService, delegate: IntroDelegate? = nil) {
         
         self.registerService = registerService
         
         self.loginService = loginService
+        
+        self.delegate = delegate
         
     }
     
@@ -67,6 +73,8 @@ class SignUpViewController: UIViewController {
         
         self.orLabel.textColor = .mainGrey
         
+        self.activityIndicator.isHidden = true
+
     }
     
     private func configureTextFields() {
@@ -158,6 +166,9 @@ class SignUpViewController: UIViewController {
     }
    
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
+   
+        self.validate()
+    
     }
     
     @IBAction func signInButtonPressed(_ sender: UIButton) {
@@ -173,6 +184,136 @@ class SignUpViewController: UIViewController {
         let controller = factory.signInViewController()
         
         self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    private func validate() {
+        
+        if self.firstNameTextField.text!.isEmpty {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter your first name.")
+            
+            return
+            
+        }
+        
+        if self.lastNameTextField.text!.isEmpty {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter your last name.")
+            
+            return
+            
+        }
+        
+        if self.emailTextField.text!.isEmpty || !self.emailTextField.text!.trim().isEmail() {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter a valid email address.")
+            
+            return
+            
+        }
+        
+        if self.passwordTextField.text!.isEmpty {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter your password.")
+            
+            return
+            
+        }
+        
+        if self.passwordTextField.text!.count < 4 {
+            
+            self.showOkAlertWith(title: "Info", message: "The password must contain a minimum of 4 characters.")
+            
+            return
+            
+        }
+        
+        if self.passwordTextField.text! != self.confirmPasswordTextField.text! {
+            
+            self.showOkAlertWith(title: "Info", message: "The entered passwords are different.")
+            
+            return
+            
+        }
+        
+        let email = self.emailTextField.text!.trim()
+        
+        let password = self.passwordTextField.text!
+        
+        self.register(email: email, password: password)
+        
+    }
+    
+    private func register(email: String, password: String) {
+        
+        self.isScreenEnabled(enabled: false)
+        
+        self.registerService.register(email: email, password: password) { errorOptional in
+            
+            if let error = errorOptional {
+            
+                self.isScreenEnabled(enabled: true)
+
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.login(email: email, password: password)
+                
+            }
+            
+        }
+    
+    }
+    
+    private func login(email: String, password: String) {
+        
+        self.loginService.login(email: email, password: password) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.isScreenEnabled(enabled: true)
+
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.delegate?.didFinishIntro()
+
+                self.isScreenEnabled(enabled: true)
+
+            }
+            
+        }
+        
+    }
+    
+    private func isScreenEnabled(enabled: Bool) {
+        
+        self.signUpButton.isEnabled = enabled
+        
+        let title = enabled == false ? "" : "Sign up"
+        
+        self.signUpButton.setTitle(title, for: .normal)
+        
+        self.activityIndicator.isHidden = enabled
+
+        self.signInButton.isEnabled = enabled
+        
+        self.signUpWithGoogleButton.isUserInteractionEnabled = enabled
+        
+        self.signUpWithFacebookButton.isUserInteractionEnabled = enabled
+        
+        self.firstNameTextField.isEnabled = enabled
+        
+        self.lastNameTextField.isEnabled = enabled
+        
+        self.emailTextField.isEnabled = enabled
+        
+        self.passwordTextField.isEnabled = enabled
+        
+        self.confirmPasswordTextField.isEnabled = enabled
         
     }
     

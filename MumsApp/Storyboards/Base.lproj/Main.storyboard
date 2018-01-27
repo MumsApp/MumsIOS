@@ -307,9 +307,13 @@
                                                     <constraint firstAttribute="height" constant="1" id="tko-jf-dlH"/>
                                                 </constraints>
                                             </view>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-N8-eRS">
+                                                <rect key="frame" x="177" y="555" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="fd6-N8-eRS" firstAttribute="centerX" secondItem="IWa-kN-lmE" secondAttribute="centerX" id="2Qh-BJ-gTP"/>
                                             <constraint firstItem="K13-14-zB7" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="91m-yQ-lA2"/>
                                             <constraint firstItem="4HX-Lf-vw4" firstAttribute="top" secondItem="H64-il-F7V" secondAttribute="bottom" constant="16" id="AjH-jW-wVT"/>
                                             <constraint firstItem="H64-il-F7V" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="B5j-0Z-2Ru"/>
@@ -324,6 +328,7 @@
                                             <constraint firstItem="Bnm-uC-h5n" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="X8w-x6-X9U"/>
                                             <constraint firstItem="Cfd-Ic-BW2" firstAttribute="top" secondItem="v4j-pp-DlO" secondAttribute="bottom" constant="8" id="XXf-Qf-25i"/>
                                             <constraint firstItem="4HX-Lf-vw4" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="Xoc-Q8-RLP"/>
+                                            <constraint firstItem="fd6-N8-eRS" firstAttribute="centerY" secondItem="IWa-kN-lmE" secondAttribute="centerY" id="YM7-oc-ixg"/>
                                             <constraint firstItem="IXa-RY-gf8" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="Z6f-eW-pj1"/>
                                             <constraint firstItem="dFv-Ju-mYU" firstAttribute="top" secondItem="K13-14-zB7" secondAttribute="bottom" constant="16" id="dmz-sr-HqK"/>
                                             <constraint firstItem="ajR-kI-Nu5" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="eYU-tE-man"/>
@@ -367,6 +372,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="fd6-N8-eRS" id="thW-v7-YcO"/>
                         <outlet property="confirmPasswordTextField" destination="xml-Aa-ETi" id="Ruy-Z9-N9e"/>
                         <outlet property="contentView" destination="LRr-qQ-BcX" id="Y49-W2-1Uh"/>
                         <outlet property="emailTextField" destination="dFv-Ju-mYU" id="GXN-HQ-AGg"/>
@@ -467,7 +473,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-30-own" customClass="OnboardingTextField" customModule="MumsApp" customModuleProvider="target">
                                                 <rect key="frame" x="47.5" y="212" width="280" height="17"/>
@@ -502,6 +508,9 @@
                                                     <constraint firstAttribute="width" constant="280" id="jS5-Kp-cyc"/>
                                                 </constraints>
                                             </view>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="WCg-pg-BDT">
+                                                <rect key="frame" x="178" y="517" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -513,6 +522,7 @@
                                             <constraint firstItem="UaQ-KW-le9" firstAttribute="centerX" secondItem="H1R-Tc-Dp4" secondAttribute="centerX" id="Bs0-L8-HB4"/>
                                             <constraint firstItem="ujZ-ld-iEW" firstAttribute="centerX" secondItem="H1R-Tc-Dp4" secondAttribute="centerX" id="Gq7-p4-bVL"/>
                                             <constraint firstItem="wF8-30-own" firstAttribute="centerX" secondItem="H1R-Tc-Dp4" secondAttribute="centerX" id="H6r-SN-Bd6"/>
+                                            <constraint firstItem="WCg-pg-BDT" firstAttribute="top" secondItem="hnf-cz-lfL" secondAttribute="bottom" constant="-34" id="KHf-PX-FGg"/>
                                             <constraint firstItem="vIB-V2-LXP" firstAttribute="top" secondItem="x97-id-bv4" secondAttribute="bottom" constant="8" id="Njl-Rc-L8M"/>
                                             <constraint firstItem="x97-id-bv4" firstAttribute="centerX" secondItem="H1R-Tc-Dp4" secondAttribute="centerX" id="Tnt-yq-mt7"/>
                                             <constraint firstItem="bvA-7e-eID" firstAttribute="centerX" secondItem="H1R-Tc-Dp4" secondAttribute="centerX" id="VQG-5q-yo5"/>
@@ -521,6 +531,7 @@
                                             <constraint firstItem="wF8-30-own" firstAttribute="top" secondItem="bvA-7e-eID" secondAttribute="bottom" constant="16" id="dCN-bN-gav"/>
                                             <constraint firstItem="pz1-aY-EcX" firstAttribute="centerX" secondItem="H1R-Tc-Dp4" secondAttribute="centerX" id="dLd-rd-A96"/>
                                             <constraint firstItem="ewe-6z-dvB" firstAttribute="top" secondItem="hzk-do-7by" secondAttribute="bottom" constant="16" id="ghZ-eV-sl3"/>
+                                            <constraint firstItem="WCg-pg-BDT" firstAttribute="leading" secondItem="hnf-cz-lfL" secondAttribute="trailing" constant="-149.5" id="km6-CX-Kk5"/>
                                             <constraint firstItem="YxP-Wm-3zb" firstAttribute="centerX" secondItem="H1R-Tc-Dp4" secondAttribute="centerX" id="ob3-y7-UkA"/>
                                             <constraint firstItem="hzk-do-7by" firstAttribute="centerX" secondItem="H1R-Tc-Dp4" secondAttribute="centerX" id="ph2-uy-Ms7"/>
                                             <constraint firstItem="UaQ-KW-le9" firstAttribute="top" secondItem="ujZ-ld-iEW" secondAttribute="bottom" constant="16" id="qjt-gi-EXJ"/>
@@ -551,6 +562,7 @@
                         <viewLayoutGuide key="safeArea" id="X2i-bn-7BX"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="WCg-pg-BDT" id="jFi-7i-uG2"/>
                         <outlet property="contentView" destination="H1R-Tc-Dp4" id="BWo-j1-kQM"/>
                         <outlet property="emailTextField" destination="ewe-6z-dvB" id="P3h-CO-bFq"/>
                         <outlet property="forgetPasswordButton" destination="vIB-V2-LXP" id="KwW-jb-MzV"/>

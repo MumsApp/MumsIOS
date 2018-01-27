@@ -94,7 +94,9 @@ public struct UserDefaultsImpl: MOUserDefaults {
         } else {
     
             secureItemsDictionary[key] = value
+    
         }
+    
     }
     
     public func setDictionary(_ value: Dictionary<String, AnyObject>, forKey key: String) {
@@ -176,7 +178,9 @@ public struct UserDefaultsImpl: MOUserDefaults {
                     let value = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
                     
                     decryptedDictionary.setValue(value, forKey: key)
+            
                 }
+            
             }
 
         }
@@ -184,10 +188,12 @@ public struct UserDefaultsImpl: MOUserDefaults {
         return decryptedDictionary
     }
 
-    fileprivate func encryptDictionary(_ dictionary:NSDictionary) -> NSDictionary {
+    fileprivate func encryptDictionary(_ dictionary: NSDictionary) -> NSDictionary {
     
         let encryptedDictionary = NSMutableDictionary()
     
+        print(dictionary)
+        
         dictionary.enumerateKeysAndObjects(options: NSEnumerationOptions.concurrent) { (dictionaryKey, obj, stop) in
     
             let key = dictionaryKey as! String
@@ -209,7 +215,9 @@ public struct UserDefaultsImpl: MOUserDefaults {
                 if encryptedData != nil {
             
                     encryptedDictionary.setValue(encryptedData, forKey: key)
+                
                 }
+            
             }
     
         }

@@ -97,7 +97,6 @@ extension AppDelegate: RootViewControllerDelegate {
         //
         //            })
         //
-        //            UIApplication.shared.statusBarStyle = .lightContent
         
     }
     

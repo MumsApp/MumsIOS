@@ -22,6 +22,20 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var forgetPasswordButton: UIButton!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    private var loginService: LoginService!
+    
+    private weak var delegate: IntroDelegate?
+    
+    func configureWith(loginService: LoginService, delegate: IntroDelegate? = nil) {
+        
+        self.loginService = loginService
+        
+        self.delegate = delegate
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +71,8 @@ class SignInViewController: UIViewController {
         
         self.orLabel.textColor = .mainGrey
 
+        self.activityIndicator.isHidden = true
+        
     }
 
     private func configureTextFields() {
@@ -137,8 +153,8 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInButtonPressed(_ sender: UIButton) {
     
-        // Request
-    
+        self.validate()
+        
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
@@ -172,6 +188,79 @@ class SignInViewController: UIViewController {
         self.navigationController?.pushViewController(controller, animated: true)
         
     }
+    
+    private func validate() {
+        
+        if self.emailTextField.text!.isEmpty || !self.emailTextField.text!.trim().isEmail() {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter a valid email address.")
+            
+            return
+            
+        }
+        
+        if self.passwordTextField.text!.isEmpty {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter your password.")
+            
+            return
+            
+        }
+        
+        let email = self.emailTextField.text!.trim()
+        
+        let password = self.passwordTextField.text!
+        
+        self.login(email: email, password: password)
+        
+    }
+
+    private func login(email: String, password: String) {
+        
+        self.isScreenEnabled(enabled: false)
+        
+        self.loginService.login(email: email, password: password) { errorOptional in
+            
+            self.isScreenEnabled(enabled: true)
+
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.delegate?.didFinishIntro()
+                
+            }
+            
+        }
+        
+    }
+    
+    private func isScreenEnabled(enabled: Bool) {
+        
+        self.signInButton.isEnabled = enabled
+
+        let title = enabled == false ? "" : "Sign in"
+        
+        self.signInButton.setTitle(title, for: .normal)
+        
+        self.activityIndicator.isHidden = enabled
+        
+        self.signInWithGoogleButton.isUserInteractionEnabled = enabled
+        
+        self.signInWithFacebookButton.isUserInteractionEnabled = enabled
+        
+        self.signUpButton.isEnabled = enabled
+
+        self.emailTextField.isEnabled = enabled
+        
+        self.passwordTextField.isEnabled = enabled
+        
+        self.forgetPasswordButton.isEnabled = enabled
+        
+    }
+    
 }
 
 extension SignInViewController: UITextFieldDelegate {

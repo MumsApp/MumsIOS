@@ -56,6 +56,8 @@
 		4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */; };
 		4D66007D201B5C640085CC58 /* OnboardingSocial+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */; };
 		4D66007F201B642E0085CC58 /* OnboardingAccount+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */; };
+		4D8C63A1201C830600657FD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C63A0201C830600657FD7 /* String+Extensions.swift */; };
+		4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */; };
 		4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */; };
 		4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F2D35201B4A4200756CCB /* Poppins-Medium.ttf */; };
 		4D8F2D38201B4A4300756CCB /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F2D36201B4A4300756CCB /* Poppins-Regular.ttf */; };
@@ -160,6 +162,8 @@
 		4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding+TextField.swift"; sourceTree = "<group>"; };
 		4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingSocial+UIButton.swift"; sourceTree = "<group>"; };
 		4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingAccount+UIButton.swift"; sourceTree = "<group>"; };
+		4D8C63A0201C830600657FD7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secondary.storyboard; sourceTree = "<group>"; };
 		4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GardenGrownCaps-Regular.otf"; sourceTree = "<group>"; };
 		4D8F2D35201B4A4200756CCB /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		4D8F2D36201B4A4300756CCB /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -412,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				4D05A8DC1FE143C500B19E6E /* Main.storyboard */,
+				4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */,
 				4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */,
 				4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */,
+				4D8C63A0201C830600657FD7 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -752,6 +758,7 @@
 				4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
 				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
+				4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */,
 				4D8F2D38201B4A4300756CCB /* Poppins-Regular.ttf in Resources */,
 				4D05A8DE1FE143C500B19E6E /* Main.storyboard in Resources */,
 				4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */,
@@ -979,6 +986,7 @@
 				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
 				4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */,
+				4D8C63A1201C830600657FD7 /* String+Extensions.swift in Sources */,
 				4D05A9571FE144A900B19E6E /* InAppPurchase+Products.swift in Sources */,
 				4D05A94D1FE144A900B19E6E /* AuthenticatedNetworkService+Request.swift in Sources */,
 				4DC6774C2017817B00F34184 /* Reachability+UIView.swift in Sources */,

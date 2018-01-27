@@ -20,7 +20,7 @@ class FactoryProvider {
         
         self.dataStore = DataStoreImpl(userDefaults: userDefaults)
         
-//        self.introDelegate = introDelegate
+        self.introDelegate = introDelegate
         
         AppContextFactory.setupFactory(userDefaults: self.userDefaults, dataStore: self.dataStore)
         

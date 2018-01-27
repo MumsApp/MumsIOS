@@ -1,6 +1,7 @@
 import Foundation
 
-let k_message = "message"
+let k_ok = "ok"
+let k_status = "status"
 
 struct RegisterServiceParser: ServiceParser {
     
@@ -10,7 +11,7 @@ struct RegisterServiceParser: ServiceParser {
         
         var success: Bool = false
         
-        if let message = dictionary[k_message] as? String {
+        if let status = dictionary[k_status] as? String, status == k_ok {
 
             success = true
             
