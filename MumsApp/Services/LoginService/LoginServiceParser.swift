@@ -1,6 +1,7 @@
 import Foundation
 
 let k_refresh_token = "refresh_token"
+let REFRESH_TOKEN = "refreshToken"
 
 struct LoginServiceParser: ServiceParser {
     
@@ -19,7 +20,7 @@ struct LoginServiceParser: ServiceParser {
             
             self.userDefaults.setSecureString(standard + token, forKey: k_token)
             
-            self.userDefaults.setSecureString(refresh_token, forKey: k_refresh_token)
+            self.userDefaults.setSecureString(refresh_token, forKey: REFRESH_TOKEN)
 
             success = true
 

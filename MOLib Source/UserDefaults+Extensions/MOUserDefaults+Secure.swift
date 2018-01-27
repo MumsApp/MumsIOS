@@ -191,9 +191,7 @@ public struct UserDefaultsImpl: MOUserDefaults {
     fileprivate func encryptDictionary(_ dictionary: NSDictionary) -> NSDictionary {
     
         let encryptedDictionary = NSMutableDictionary()
-    
-        print(dictionary)
-        
+            
         dictionary.enumerateKeysAndObjects(options: NSEnumerationOptions.concurrent) { (dictionaryKey, obj, stop) in
     
             let key = dictionaryKey as! String
@@ -209,7 +207,7 @@ public struct UserDefaultsImpl: MOUserDefaults {
             let data = item.data(using: String.Encoding.utf8)
             
             if let securedData = data {
-
+                
                 let encryptedData = AES.encrypt(securedData, key: keyData)
                 
                 if encryptedData != nil {

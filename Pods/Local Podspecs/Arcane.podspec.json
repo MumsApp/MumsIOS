@@ -1,7 +1,7 @@
 {
   "name": "Arcane",
   "summary": "CommonCrypto in Swift",
-  "version": "0.5.0",
+  "version": "1.2.1",
   "homepage": "https://github.com/onmyway133/Arcane",
   "license": "MIT",
   "authors": {
@@ -9,13 +9,14 @@
   },
   "source": {
     "git": "https://github.com/onmyway133/Arcane.git",
-    "tag": "0.5.0"
+    "tag": "1.2.1"
   },
   "social_media_url": "https://twitter.com/onmyway133",
   "platforms": {
     "ios": "8.0",
     "osx": "10.9",
-    "tvos": "9.2"
+    "tvos": "9.2",
+    "watchos": "3.0"
   },
   "requires_arc": true,
   "source_files": "Sources/**/*.swift",
@@ -27,6 +28,7 @@
     "SWIFT_INCLUDE_PATHS[sdk=appletvos*]": "$(PODS_ROOT)/Arcane/CocoaPods/appletvos",
     "SWIFT_INCLUDE_PATHS[sdk=appletvsimulator*]": "$(PODS_ROOT)/Arcane/CocoaPods/appletvsimulator",
     "SWIFT_INCLUDE_PATHS[sdk=watchos*]": "$(PODS_ROOT)/Arcane/CocoaPods/watchos",
-    "SWIFT_INCLUDE_PATHS[sdk=watchsimulator*]": "$(PODS_ROOT)/Arcane/CocoaPods/watchsimulator"
+    "SWIFT_INCLUDE_PATHS[sdk=watchsimulator*]": "$(PODS_ROOT)/Arcane/CocoaPods/watchsimulator",
+    "SWIFT_VERSION": "4.0"
   }
 }
