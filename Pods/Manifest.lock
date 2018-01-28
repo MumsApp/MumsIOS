@@ -7,9 +7,9 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
-  - Crashlytics (3.8.6):
-    - Fabric (~> 1.6.3)
-  - Fabric (1.6.13)
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Fabric (1.7.2)
   - FBSDKCoreKit (4.29.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.29.0):
@@ -29,8 +29,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5.1)
   - Arcane (from `https://github.com/onmyway133/Arcane`, tag `1.2.1`)
-  - Crashlytics (~> 3.8.6)
-  - FBSDKLoginKit
+  - Crashlytics (~> 3.9.3)
+  - FBSDKLoginKit (~> 4.29.0)
   - ReachabilitySwift (~> 3)
   - SDWebImage (~> 4.1.0)
   - XCGLogger (~> 5.0.1)
@@ -49,8 +49,8 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Arcane: f3b173e1f9f7828132e014d882af81cadabb24ac
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
-  Fabric: 2fb5676bc811af011a04513451f463dac6803206
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
@@ -58,6 +58,6 @@ SPEC CHECKSUMS:
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   XCGLogger: 49bceee6dc0c738eae5d6454fdbf800d62256b74
 
-PODFILE CHECKSUM: 3b2b92816717241258df63a7011906bf40817966
+PODFILE CHECKSUM: 4aa65daca6385e04b923b35d9c040ad42d6a5b48
 
 COCOAPODS: 1.3.1
