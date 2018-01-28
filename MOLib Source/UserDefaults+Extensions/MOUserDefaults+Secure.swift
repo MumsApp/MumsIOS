@@ -191,7 +191,7 @@ public struct UserDefaultsImpl: MOUserDefaults {
     fileprivate func encryptDictionary(_ dictionary: NSDictionary) -> NSDictionary {
     
         let encryptedDictionary = NSMutableDictionary()
-            
+        
         dictionary.enumerateKeysAndObjects(options: NSEnumerationOptions.concurrent) { (dictionaryKey, obj, stop) in
     
             let key = dictionaryKey as! String
