@@ -40,6 +40,14 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         return controller
         
     }
+ 
+    func profileViewController() -> ProfileViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProfileViewController.rawValue, storyboard: storyboard) as! ProfileViewController
+        
+        return controller
+        
+    }
     
 }
 

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileView" customModule="MumsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="changeButton" destination="oXc-QW-mmO" id="K4c-Ns-rvr"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="EOO-oR-psl"/>
+                <outlet property="userDescriptionLabel" destination="O6C-00-bcQ" id="sDl-DJ-e4V"/>
+                <outlet property="userImageView" destination="EmH-lY-PlK" id="ME3-G8-wvC"/>
+                <outlet property="userNameLabel" destination="t6Y-ug-lPi" id="Y05-VZ-lZC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="EmH-lY-PlK">
+                    <rect key="frame" x="8" y="16" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="Lbr-dW-ela"/>
+                        <constraint firstAttribute="width" constant="70" id="tzv-xg-hec"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name and last name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6Y-ug-lPi">
+                    <rect key="frame" x="94" y="16" width="265" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXc-QW-mmO" customClass="MainGreenButton" customModule="MumsApp" customModuleProvider="target">
+                    <rect key="frame" x="94" y="45" width="53" height="30"/>
+                    <state key="normal" title="Change"/>
+                    <connections>
+                        <action selector="changeButtonPressed:" destination="-1" eventType="touchUpInside" id="jEZ-VC-Pci"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Vestibulum commodo dui sed accumsan venenatis. Suspendisse tempor maximus enim ut molestie." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O6C-00-bcQ">
+                    <rect key="frame" x="8" y="102" width="359" height="57"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="t6Y-ug-lPi" firstAttribute="leading" secondItem="EmH-lY-PlK" secondAttribute="trailing" constant="16" id="92w-Q3-6oZ"/>
+                <constraint firstItem="O6C-00-bcQ" firstAttribute="top" secondItem="EmH-lY-PlK" secondAttribute="bottom" constant="16" id="E31-YG-7bK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="O6C-00-bcQ" secondAttribute="trailing" constant="8" id="GI1-AT-ugw"/>
+                <constraint firstItem="EmH-lY-PlK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="HLk-Hr-ac4"/>
+                <constraint firstItem="oXc-QW-mmO" firstAttribute="leading" secondItem="EmH-lY-PlK" secondAttribute="trailing" constant="16" id="Kih-L7-Fje"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="O6C-00-bcQ" secondAttribute="bottom" constant="20" id="M43-kL-lEt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="t6Y-ug-lPi" secondAttribute="trailing" constant="16" id="NAn-xf-BuD"/>
+                <constraint firstItem="oXc-QW-mmO" firstAttribute="top" secondItem="t6Y-ug-lPi" secondAttribute="bottom" constant="8" id="Ofc-EX-q9a"/>
+                <constraint firstItem="t6Y-ug-lPi" firstAttribute="top" secondItem="EmH-lY-PlK" secondAttribute="top" id="Rvk-HH-P78"/>
+                <constraint firstItem="O6C-00-bcQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="mQX-ap-u0q"/>
+                <constraint firstItem="EmH-lY-PlK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="oon-eL-RNO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="34.5" y="-189.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholderImage" width="163" height="152"/>
+    </resources>
+</document>

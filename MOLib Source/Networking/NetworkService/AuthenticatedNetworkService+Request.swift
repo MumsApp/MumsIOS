@@ -200,7 +200,7 @@ public class AuththenticatedNetworkService: NetworkService {
                         
                         self.userDefaults.setSecureString(standard + token, forKey: k_token)
                         
-                        self.userDefaults.setSecureString(refresh_token, forKey: REFRESH_TOKEN)
+                        self.userDefaults.setSecureString(refresh_token, forKey: k_refresh_token)
                         
                         self.delegate?.authenticatedNetworkService(service: self, didReauthenticateWithToken: k_token)
 

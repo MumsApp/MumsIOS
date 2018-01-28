@@ -78,6 +78,12 @@
 		4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677532017825500F34184 /* WelcomeViewController.swift */; };
 		4DC677562017870000F34184 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677552017870000F34184 /* SignInViewController.swift */; };
 		4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */; };
+		4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */; };
+		4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83E7201E13CC001B0AEB /* ProfileView.xib */; };
+		4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E9201E15FB001B0AEB /* ProfileView.swift */; };
+		4DEE83EE201E1AE7001B0AEB /* MainGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83ED201E1AE7001B0AEB /* MainGreen+UIButton.swift */; };
+		4DEE83F0201E1EA2001B0AEB /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83EF201E1EA2001B0AEB /* LocationView.xib */; };
+		4DEE83F2201E1EAD001B0AEB /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83F1201E1EAD001B0AEB /* LocationView.swift */; };
 		4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC270C1FE92C32006020FF /* RegisterService.swift */; };
 		4DFC270F1FE92C3E006020FF /* RegisterServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC270E1FE92C3E006020FF /* RegisterServiceParser.swift */; };
 		4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC27111FE92CA9006020FF /* LoginService.swift */; };
@@ -185,6 +191,12 @@
 		4DC677532017825500F34184 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4DC677552017870000F34184 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOfficialPageViewController.swift; sourceTree = "<group>"; };
+		4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4DEE83E7201E13CC001B0AEB /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		4DEE83E9201E15FB001B0AEB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4DEE83ED201E1AE7001B0AEB /* MainGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainGreen+UIButton.swift"; sourceTree = "<group>"; };
+		4DEE83EF201E1EA2001B0AEB /* LocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
+		4DEE83F1201E1EAD001B0AEB /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		4DFC270C1FE92C32006020FF /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		4DFC270E1FE92C3E006020FF /* RegisterServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceParser.swift; sourceTree = "<group>"; };
 		4DFC27111FE92CA9006020FF /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -565,6 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				4DC6774320177F1900F34184 /* MainRootViewController.swift */,
+				4DEE83EC201E17EA001B0AEB /* Profile */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -589,6 +602,7 @@
 				4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */,
 				4D8F2D39201B4EB000756CCB /* TransparentGrey+UIButton.swift */,
 				4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */,
+				4DEE83ED201E1AE7001B0AEB /* MainGreen+UIButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -607,6 +621,34 @@
 				4D05A9641FE145B800B19E6E /* AppContext.swift */,
 			);
 			path = "App Context";
+			sourceTree = "<group>";
+		};
+		4DEE83EB201E17E1001B0AEB /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				4DEE83E7201E13CC001B0AEB /* ProfileView.xib */,
+				4DEE83E9201E15FB001B0AEB /* ProfileView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		4DEE83EC201E17EA001B0AEB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */,
+				4DEE83F3201E1EB7001B0AEB /* LocationView */,
+				4DEE83EB201E17E1001B0AEB /* ProfileView */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4DEE83F3201E1EB7001B0AEB /* LocationView */ = {
+			isa = PBXGroup;
+			children = (
+				4DEE83EF201E1EA2001B0AEB /* LocationView.xib */,
+				4DEE83F1201E1EAD001B0AEB /* LocationView.swift */,
+			);
+			path = LocationView;
 			sourceTree = "<group>";
 		};
 		4DFC27101FE92C63006020FF /* RegisterService */ = {
@@ -768,11 +810,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */,
+				4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
 				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
 				4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */,
 				4D8F2D38201B4A4300756CCB /* Poppins-Regular.ttf in Resources */,
 				4D05A8DE1FE143C500B19E6E /* Main.storyboard in Resources */,
+				4DEE83F0201E1EA2001B0AEB /* LocationView.xib in Resources */,
 				4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1013,6 +1057,7 @@
 				4D05A96F1FE1478400B19E6E /* Config.swift in Sources */,
 				4D05A9651FE145B800B19E6E /* AppContext.swift in Sources */,
 				4D05A9711FE1483800B19E6E /* FactoryProvider.swift in Sources */,
+				4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */,
 				4D05A9601FE144A900B19E6E /* UIViewController+UIAlertView.swift in Sources */,
 				4D05A9451FE144A900B19E6E /* URLRequest+Task.swift in Sources */,
 				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
@@ -1036,11 +1081,14 @@
 				4D05A9401FE144A900B19E6E /* MOTableViewCoordinator.swift in Sources */,
 				4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */,
 				4D05A97A1FE14BE100B19E6E /* ServiceFactory.swift in Sources */,
+				4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */,
 				4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */,
 				4D05A94A1FE144A900B19E6E /* NetworkService+UploadRequest.swift in Sources */,
+				4DEE83EE201E1AE7001B0AEB /* MainGreen+UIButton.swift in Sources */,
 				4DFC27141FE92CB2006020FF /* LoginServiceParser.swift in Sources */,
 				4D05A9471FE144A900B19E6E /* URLRequest+Methods.swift in Sources */,
 				4D05A9551FE144A900B19E6E /* MOUserDefaults+Secure.swift in Sources */,
+				4DEE83F2201E1EAD001B0AEB /* LocationView.swift in Sources */,
 				4D05A9671FE1464A00B19E6E /* User.swift in Sources */,
 				4D05A9691FE1468100B19E6E /* Resource.swift in Sources */,
 			);

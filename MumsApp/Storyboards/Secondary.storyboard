@@ -26,6 +26,39 @@
             </objects>
             <point key="canvasLocation" x="360.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="oUq-a3-QMD">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZR1-yo-poD" customClass="ProfileViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XUL-zf-ZiI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDA-sV-H2x" customClass="ProfileView" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="36" width="343" height="179"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="Qk7-gZ-FUU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="03U-3W-a6S" firstAttribute="trailing" secondItem="oDA-sV-H2x" secondAttribute="trailing" constant="16" id="T0n-Do-yVZ"/>
+                            <constraint firstItem="oDA-sV-H2x" firstAttribute="leading" secondItem="03U-3W-a6S" secondAttribute="leading" constant="16" id="aYP-HE-jmO"/>
+                            <constraint firstItem="oDA-sV-H2x" firstAttribute="top" secondItem="03U-3W-a6S" secondAttribute="top" constant="16" id="ioe-e9-TbX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="03U-3W-a6S"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="profileView" destination="oDA-sV-H2x" id="kTN-Wg-KhH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJe-dl-Rb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360.80000000000001" y="996.7016491754124"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qUI-Iz-HOe">
             <objects>

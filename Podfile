@@ -11,6 +11,7 @@ pod 'XCGLogger', '~> 5.0.1'
 pod 'Crashlytics', '~> 3.9.3'
 pod 'ReachabilitySwift', '~> 3'
 pod 'FBSDKLoginKit', '~> 4.29.0'
+pod 'GoogleMaps'
 
   target 'MumsAppTests' do
     inherit! :search_paths

@@ -69,26 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         
     }
-
-//    - (BOOL)application:(UIApplication *)application
-//    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//
-//    // Add any custom logic here.
-//    return YES;
-//    }
-//
-//    - (BOOL)application:(UIApplication *)application
-//    openURL:(NSURL *)url
-//    options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-//
-//    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
-//    openURL:url
-//    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
-//    annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
-//    ];
-//    // Add any custom logic here.
-//    return handled;
-//    }
     
 }
 
@@ -100,7 +80,13 @@ extension AppDelegate: RootViewControllerDelegate {
         
         let rootViewController = factory.mainRootViewController()
         
-        self.window!.rootViewController = rootViewController
+        let navController = UINavigationController(rootViewController: rootViewController)
+        
+        navController.navigationBar.backgroundColor = .white
+        
+        navController.navigationBar.isTranslucent = false
+        
+        self.window!.rootViewController = navController
         
     }
     

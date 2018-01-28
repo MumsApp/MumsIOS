@@ -129,6 +129,7 @@ public struct UserDefaultsImpl: MOUserDefaults {
             let encryptedDictionary = encryptDictionary(secureItemsDictionary)
     
             defaultsDictionary[kSecureDefaultsKey] = encryptedDictionary
+        
         }
     
         let defaults = UserDefaults.standard

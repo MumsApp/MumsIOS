@@ -81,9 +81,11 @@ open class DataStoreImpl: DataStore {
         
         self.userDefaults.setDictionary(dict, forKey: kStorageDictionaryKey)
         
+        print(dict)
+        
         _ = self.userDefaults.synchronize()
-    }
     
+    }
     
     open func fetchEntity<T: Storable>(_ type: T.Type, id: String) -> Storable? {
         
