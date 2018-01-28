@@ -56,6 +56,7 @@
 		4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */; };
 		4D66007D201B5C640085CC58 /* OnboardingSocial+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */; };
 		4D66007F201B642E0085CC58 /* OnboardingAccount+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */; };
+		4D681F85201DE09200D404CD /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D681F84201DE09200D404CD /* FacebookService.swift */; };
 		4D8C63A1201C830600657FD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C63A0201C830600657FD7 /* String+Extensions.swift */; };
 		4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */; };
 		4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */; };
@@ -162,6 +163,7 @@
 		4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding+TextField.swift"; sourceTree = "<group>"; };
 		4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingSocial+UIButton.swift"; sourceTree = "<group>"; };
 		4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingAccount+UIButton.swift"; sourceTree = "<group>"; };
+		4D681F84201DE09200D404CD /* FacebookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
 		4D8C63A0201C830600657FD7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secondary.storyboard; sourceTree = "<group>"; };
 		4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GardenGrownCaps-Regular.otf"; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				4D05A9681FE1468100B19E6E /* Resource.swift */,
 				4DFC27101FE92C63006020FF /* RegisterService */,
 				4DFC27151FE92E2E006020FF /* LoginService */,
+				4D681F88201DE32F00D404CD /* FacebookLoginService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -522,6 +525,14 @@
 			children = (
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		4D681F88201DE32F00D404CD /* FacebookLoginService */ = {
+			isa = PBXGroup;
+			children = (
+				4D681F84201DE09200D404CD /* FacebookService.swift */,
+			);
+			path = FacebookLoginService;
 			sourceTree = "<group>";
 		};
 		4D8F2D41201B56E900756CCB /* Extensions */ = {
@@ -791,6 +802,9 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MumsApp/Pods-MumsApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Arcane/Arcane.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -800,6 +814,9 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Arcane.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -975,6 +992,7 @@
 				4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */,
 				4D05A9441FE144A900B19E6E /* Logger.swift in Sources */,
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
+				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
 				4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */,

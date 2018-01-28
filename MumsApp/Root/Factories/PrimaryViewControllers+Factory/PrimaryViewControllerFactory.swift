@@ -55,6 +55,7 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         
         controller.configureWith(registerService: self.serviceFactory.registerService(),
                                  loginService: self.serviceFactory.loginService(),
+                                 facebookService: self.serviceFactory.facebookService(),
                                  delegate: FactoryProvider().provide())
         
         return controller
@@ -66,6 +67,7 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.SignInViewController.rawValue, storyboard: storyboard) as! SignInViewController
 
         controller.configureWith(loginService: self.serviceFactory.loginService(),
+                                 facebookService: self.serviceFactory.facebookService(),
                                  delegate: FactoryProvider().provide())
         
         return controller

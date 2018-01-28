@@ -1,4 +1,5 @@
 import UIKit
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,22 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.configureRootViewController()
         
-        printFonts()
+        self.configureAdditionalLibraries()
         
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
         return true
         
     }
-    
-    func printFonts() {
-        let fontFamilyNames = UIFont.familyNames
-        for familyName in fontFamilyNames {
-            print("------------------------------")
-            print("Font Family Name = [\(familyName)]")
-            let names = UIFont.fontNames(forFamilyName: familyName as! String)
-            print("Font Names = [\(names)]")
-        }
-    }
-    
+
     func applicationDidEnterBackground(_ application: UIApplication) {
         
         self.rootViewController.didEnterBackground()
@@ -49,6 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        return handled
+        
+    }
+    
     private func configureRootViewController() {
         
         let navController = self.window!.rootViewController as! UINavigationController
@@ -60,7 +61,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.rootViewController.delegate = self
         
     }
+    
+    private func configureAdditionalLibraries() {
+        
+        
+    }
 
+//    - (BOOL)application:(UIApplication *)application
+//    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//
+//    // Add any custom logic here.
+//    return YES;
+//    }
+//
+//    - (BOOL)application:(UIApplication *)application
+//    openURL:(NSURL *)url
+//    options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+//
+//    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+//    openURL:url
+//    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+//    annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+//    ];
+//    // Add any custom logic here.
+//    return handled;
+//    }
+    
 }
 
 extension AppDelegate: RootViewControllerDelegate {

@@ -1,4 +1,5 @@
 import UIKit
+import FBSDKLoginKit
 
 class SignInViewController: UIViewController {
 
@@ -26,11 +27,15 @@ class SignInViewController: UIViewController {
     
     private var loginService: LoginService!
     
+    private var facebookService: FacebookService!
+
     private weak var delegate: IntroDelegate?
     
-    func configureWith(loginService: LoginService, delegate: IntroDelegate? = nil) {
+    func configureWith(loginService: LoginService, facebookService: FacebookService, delegate: IntroDelegate? = nil) {
         
         self.loginService = loginService
+        
+        self.facebookService = facebookService
         
         self.delegate = delegate
         
@@ -151,6 +156,15 @@ class SignInViewController: UIViewController {
         
     }
     
+    @IBAction func signInWithGoogleButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func signInWithFacebookButtonPressed(_ sender: UIButton) {
+
+        self.registerWithFacebook()
+    
+    }
+    
     @IBAction func signInButtonPressed(_ sender: UIButton) {
     
         self.validate()
@@ -258,6 +272,74 @@ class SignInViewController: UIViewController {
         self.passwordTextField.isEnabled = enabled
         
         self.forgetPasswordButton.isEnabled = enabled
+        
+    }
+    
+    private func registerWithFacebook() {
+        
+        if FBSDKAccessToken.current() != nil {
+            
+            self.facebookService.logout()
+            
+        }
+        
+        self.facebookService.performFacebookLogin(self) { tokenOptional, errorOptional -> Void in
+            
+            if let _ = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
+                
+            } else {
+                
+                if let token = tokenOptional {
+                    
+                    self.loadFacebookProfile(token: token)
+                    
+                } else {
+                    
+                    self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    private func loadFacebookProfile(token: String) {
+        
+        self.facebookService.getUserProfile(token) { facebookProfile, errorOptional -> Void in
+            
+            if let _ = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
+                
+            } else {
+               
+                self.loginWithFacebook(facebookProfile: facebookProfile, token: token)
+                
+            }
+            
+        }
+        
+    }
+    
+    private func loginWithFacebook(facebookProfile: FacebookProfile, token: String) {
+        
+        self.facebookService.login(facebookProfile: facebookProfile, completion: { errorOptional -> Void in
+            
+            if let _ = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
+                
+            } else {
+                
+                self.delegate?.didFinishIntro()
+                
+            }
+            
+        })
         
     }
     

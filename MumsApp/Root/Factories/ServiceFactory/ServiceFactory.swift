@@ -1,4 +1,5 @@
 import Foundation
+import FBSDKLoginKit
 
 class ServiceFactory {
     
@@ -45,6 +46,20 @@ class ServiceFactory {
         let parser = LoginServiceParser(userDefaults: self.userDefaults)
         
         let service = LoginService(networkService: self.networkService, serviceParser: parser)
+        
+        return service
+        
+    }
+    
+    func facebookService() -> FacebookService {
+        
+        let loginManager = FBSDKLoginManager()
+
+        let registerParser = RegisterServiceParser()
+
+        let loginParser = LoginServiceParser(userDefaults: self.userDefaults)
+        
+        let service = FacebookService(loginManager: loginManager, networkService: self.networkService, serviceParser: registerParser, loginServiceParser: loginParser)
         
         return service
         
