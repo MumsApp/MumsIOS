@@ -2,6 +2,7 @@ import UIKit
 import FBSDKCoreKit
 import Fabric
 import Crashlytics
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -67,6 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         Fabric.with([Crashlytics.self])
+        
+        GMSServices.provideAPIKey(GOOGLE_MAPS_KEY)
         
     }
     

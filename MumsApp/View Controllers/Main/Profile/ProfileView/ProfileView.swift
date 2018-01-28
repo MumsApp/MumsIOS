@@ -45,6 +45,8 @@ class ProfileView: UIView {
         
         self.backgroundColor = .clear
         
+        self.contentView.backgroundColor = .clear
+        
         self.userImageView.layer.cornerRadius = 35
         
         self.userNameLabel.font = .regular(size: 20)

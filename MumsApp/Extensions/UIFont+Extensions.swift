@@ -15,6 +15,12 @@ extension UIFont {
         
     }
     
+    class func semiBold(size: CGFloat) -> UIFont {
+        
+        return UIFont(name: "Poppins-SemiBold", size: size)!
+        
+    }
+    
     class func customRegular(size: CGFloat) -> UIFont {
         
         return UIFont(name: "GardenGrownCaps-Regular", size: size)!

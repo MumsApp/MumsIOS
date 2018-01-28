@@ -36,17 +36,27 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDA-sV-H2x" customClass="ProfileView" customModule="MumsApp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="36" width="343" height="179"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="179" id="Qk7-gZ-FUU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jx-1u-il7" customClass="LocationView" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="223" width="343" height="270"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="sVq-Xk-Zsn"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="03U-3W-a6S" firstAttribute="trailing" secondItem="0jx-1u-il7" secondAttribute="trailing" constant="16" id="8Kr-Lh-G20"/>
+                            <constraint firstItem="0jx-1u-il7" firstAttribute="top" secondItem="oDA-sV-H2x" secondAttribute="bottom" constant="8" id="P4L-0J-pez"/>
                             <constraint firstItem="03U-3W-a6S" firstAttribute="trailing" secondItem="oDA-sV-H2x" secondAttribute="trailing" constant="16" id="T0n-Do-yVZ"/>
                             <constraint firstItem="oDA-sV-H2x" firstAttribute="leading" secondItem="03U-3W-a6S" secondAttribute="leading" constant="16" id="aYP-HE-jmO"/>
                             <constraint firstItem="oDA-sV-H2x" firstAttribute="top" secondItem="03U-3W-a6S" secondAttribute="top" constant="16" id="ioe-e9-TbX"/>
+                            <constraint firstItem="0jx-1u-il7" firstAttribute="leading" secondItem="03U-3W-a6S" secondAttribute="leading" constant="16" id="m5k-K3-06I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="03U-3W-a6S"/>
                     </view>

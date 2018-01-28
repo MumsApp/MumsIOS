@@ -13,7 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationView" customModule="MumsApp" customModuleProvider="target">
             <connections>
                 <outlet property="changeButton" destination="FNK-VX-MYN" id="bJK-27-tve"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="TJb-JS-IHz"/>
                 <outlet property="locationLabel" destination="dZz-Uw-I9W" id="E61-hh-ChE"/>
+                <outlet property="mapView" destination="vSs-1f-bdE" id="Q5Y-B9-Y8q"/>
                 <outlet property="userLocationLabel" destination="Jll-yz-LPR" id="WcB-lF-rpa"/>
             </connections>
         </placeholder>
@@ -22,17 +24,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSs-1f-bdE">
-                    <rect key="frame" x="0.0" y="80" width="375" height="190"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="190" id="cyq-bV-7mr"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAi-5J-OwR">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNK-VX-MYN">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNK-VX-MYN" customClass="MainGreenButton" customModule="MumsApp" customModuleProvider="target">
                             <rect key="frame" x="306" y="25" width="53" height="30"/>
                             <state key="normal" title="Change"/>
                             <connections>
@@ -57,7 +52,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="9zA-9x-L01" firstAttribute="leading" secondItem="IAi-5J-OwR" secondAttribute="leading" constant="16" id="1MN-TK-Vgx"/>
                         <constraint firstItem="FNK-VX-MYN" firstAttribute="centerY" secondItem="IAi-5J-OwR" secondAttribute="centerY" id="9gF-kC-gWc"/>
@@ -65,6 +60,13 @@
                         <constraint firstItem="9zA-9x-L01" firstAttribute="centerY" secondItem="IAi-5J-OwR" secondAttribute="centerY" id="QKB-QB-qnT"/>
                         <constraint firstItem="FNK-VX-MYN" firstAttribute="leading" secondItem="9zA-9x-L01" secondAttribute="trailing" constant="16" id="wOL-jv-IQ0"/>
                         <constraint firstAttribute="trailing" secondItem="FNK-VX-MYN" secondAttribute="trailing" constant="16" id="xvb-eY-Wpm"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSs-1f-bdE" customClass="CustomMapView" customModule="MumsApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="80" width="375" height="190"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="190" id="cyq-bV-7mr"/>
                     </constraints>
                 </view>
             </subviews>

@@ -14,6 +14,11 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.29.0):
     - FBSDKCoreKit
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
@@ -31,6 +36,7 @@ DEPENDENCIES:
   - Arcane (from `https://github.com/onmyway133/Arcane`, tag `1.2.1`)
   - Crashlytics (~> 3.9.3)
   - FBSDKLoginKit (~> 4.29.0)
+  - GoogleMaps
   - ReachabilitySwift (~> 3)
   - SDWebImage (~> 4.1.0)
   - XCGLogger (~> 5.0.1)
@@ -53,11 +59,12 @@ SPEC CHECKSUMS:
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   XCGLogger: 49bceee6dc0c738eae5d6454fdbf800d62256b74
 
-PODFILE CHECKSUM: 4aa65daca6385e04b923b35d9c040ad42d6a5b48
+PODFILE CHECKSUM: e6c63df89e46bb304ce4d5425b300feefdadbc5c
 
 COCOAPODS: 1.3.1

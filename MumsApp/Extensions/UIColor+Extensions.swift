@@ -9,7 +9,8 @@ extension UIColor {
         case MainGreen = 0x1fdcc8
         case MainGrey = 0xc8d6e6
         case MainDarkGrey = 0x9ba4bb
-
+        case ShadowColor = 0x5a6786
+        
     }
     
     convenience init(red: Int, green: Int, blue: Int) {
@@ -55,4 +56,9 @@ extension UIColor {
         
     }
     
+    public class var shadowColor: UIColor {
+        
+        return UIColor(netHex: Colors.ShadowColor.rawValue)
+        
+    }
 }

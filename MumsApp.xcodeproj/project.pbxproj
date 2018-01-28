@@ -53,6 +53,10 @@
 		4D05A9811FE14E5600B19E6E /* PrimaryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A9801FE14E5600B19E6E /* PrimaryViewControllerFactory.swift */; };
 		4D05A9831FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A9821FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift */; };
 		4D05A9891FE14F3F00B19E6E /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A9881FE14F3F00B19E6E /* Storyboards.swift */; };
+		4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */; };
+		4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6F0201E31E1000DC94F /* CustomMapView.swift */; };
+		4D36E6F3201E31EE000DC94F /* GoogleMapsStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */; };
+		4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6F4201E338B000DC94F /* UIView+Extensions.swift */; };
 		4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */; };
 		4D66007D201B5C640085CC58 /* OnboardingSocial+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */; };
 		4D66007F201B642E0085CC58 /* OnboardingAccount+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */; };
@@ -166,6 +170,10 @@
 		4D05A9801FE14E5600B19E6E /* PrimaryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryViewControllerFactory.swift; sourceTree = "<group>"; };
 		4D05A9821FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrimaryViewController+Identifiers.swift"; sourceTree = "<group>"; };
 		4D05A9881FE14F3F00B19E6E /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		4D36E6F0201E31E1000DC94F /* CustomMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
+		4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapsStyle.json; sourceTree = "<group>"; };
+		4D36E6F4201E338B000DC94F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding+TextField.swift"; sourceTree = "<group>"; };
 		4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingSocial+UIButton.swift"; sourceTree = "<group>"; };
 		4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingAccount+UIButton.swift"; sourceTree = "<group>"; };
@@ -438,7 +446,6 @@
 		4D05A9751FE149FB00B19E6E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4D05A98C1FE14F9700B19E6E /* Root */,
 				4D05A98B1FE14F9000B19E6E /* Onboarding */,
 				4DC6774520177F2400F34184 /* Main */,
 			);
@@ -532,13 +539,6 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		4D05A98C1FE14F9700B19E6E /* Root */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
 		4D681F88201DE32F00D404CD /* FacebookLoginService */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,6 +554,7 @@
 				4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */,
 				4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */,
 				4D8C63A0201C830600657FD7 /* String+Extensions.swift */,
+				4D36E6F4201E338B000DC94F /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -568,6 +569,8 @@
 				4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */,
 				4D8F2D35201B4A4200756CCB /* Poppins-Medium.ttf */,
 				4D8F2D36201B4A4300756CCB /* Poppins-Regular.ttf */,
+				4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */,
+				4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */,
 			);
 			name = "Support Files";
 			path = "New Group";
@@ -603,6 +606,7 @@
 				4D8F2D39201B4EB000756CCB /* TransparentGrey+UIButton.swift */,
 				4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */,
 				4DEE83ED201E1AE7001B0AEB /* MainGreen+UIButton.swift */,
+				4D36E6F0201E31E1000DC94F /* CustomMapView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -636,8 +640,8 @@
 			isa = PBXGroup;
 			children = (
 				4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */,
-				4DEE83F3201E1EB7001B0AEB /* LocationView */,
 				4DEE83EB201E17E1001B0AEB /* ProfileView */,
+				4DEE83F3201E1EB7001B0AEB /* LocationView */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -814,7 +818,9 @@
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
 				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
 				4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */,
+				4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */,
 				4D8F2D38201B4A4300756CCB /* Poppins-Regular.ttf in Resources */,
+				4D36E6F3201E31EE000DC94F /* GoogleMapsStyle.json in Resources */,
 				4D05A8DE1FE143C500B19E6E /* Main.storyboard in Resources */,
 				4DEE83F0201E1EA2001B0AEB /* LocationView.xib in Resources */,
 				4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */,
@@ -878,9 +884,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MumsApp/Pods-MumsApp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1051,6 +1060,7 @@
 				4D05A9441FE144A900B19E6E /* Logger.swift in Sources */,
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
 				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,
+				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
 				4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */,
@@ -1063,6 +1073,7 @@
 				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
 				4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */,
+				4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */,
 				4D8C63A1201C830600657FD7 /* String+Extensions.swift in Sources */,
 				4D05A9571FE144A900B19E6E /* InAppPurchase+Products.swift in Sources */,
 				4D05A94D1FE144A900B19E6E /* AuthenticatedNetworkService+Request.swift in Sources */,
