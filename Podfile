@@ -10,7 +10,7 @@ pod 'SDWebImage', '~> 4.1.0'
 pod 'XCGLogger', '~> 5.0.1'
 pod 'Crashlytics', '~> 3.8.6'
 pod 'ReachabilitySwift', '~> 3'
-pod 'FBSDKLoginKit'
+pod 'FBSDKLoginKit', '~> 4.29.0'
 
   target 'MumsAppTests' do
     inherit! :search_paths

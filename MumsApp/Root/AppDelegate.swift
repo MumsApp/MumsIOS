@@ -1,5 +1,7 @@
 import UIKit
 import FBSDKCoreKit
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,10 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.configureRootViewController()
         
-        self.configureAdditionalLibraries()
-        
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
+        self.configureAdditionalLibraries(application: application, launchOptions: launchOptions)
+                
         return true
         
     }
@@ -59,11 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.rootViewController = navController.topViewController as! RootViewController
         
         self.rootViewController.delegate = self
-        
+         
     }
     
-    private func configureAdditionalLibraries() {
+    private func configureAdditionalLibraries(application: UIApplication, launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
         
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        Fabric.with([Crashlytics.self])
         
     }
 
