@@ -17,7 +17,7 @@ struct GoogleService: ResourceService {
     
     func register(googleProfile: GIDGoogleUser, completion: @escaping ErrorCompletion) {
         
-        let bodyParameters = [k_email: googleProfile.profile.email!, k_access_token: googleProfile.authentication.idToken!]
+        let bodyParameters = [k_email: googleProfile.profile.email!, k_access_token: googleProfile.authentication.accessToken!]
                 
         if let request = URLRequest.POSTRequestJSON(urlString: GOOGLE_REGISTER_URL, bodyParameters: bodyParameters) {
             
@@ -33,7 +33,7 @@ struct GoogleService: ResourceService {
     
     func login(googleProfile: GIDGoogleUser, completion: @escaping ErrorCompletion) {
         
-        let bodyParameters = [k_email: googleProfile.profile.email!, k_access_token: googleProfile.authentication.idToken!]
+        let bodyParameters = [k_email: googleProfile.profile.email!, k_access_token: googleProfile.authentication.accessToken!]
 
         if let request = URLRequest.POSTRequestJSON(urlString: GOOGLE_LOGIN_URL, bodyParameters: bodyParameters) {
             

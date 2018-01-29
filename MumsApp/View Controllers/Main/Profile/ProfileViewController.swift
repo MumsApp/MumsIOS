@@ -4,6 +4,10 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileView: ProfileView!
     
+    @IBOutlet weak var schoolView: SchoolView!
+    
+    @IBOutlet weak var schoolViewHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +20,8 @@ class ProfileViewController: UIViewController {
     func configureView() {
         
         self.view.backgroundColor = .backgroundWhite
+        
+        self.schoolView.configureWith(delegate: self)
         
         self.profileView.userNameLabel.text = "Test Name"
         
@@ -40,6 +46,42 @@ class ProfileViewController: UIViewController {
     func settingsButtonPressed(sender: UIBarButtonItem) {
         
         // Show settings
+        
+    }
+    
+}
+
+extension ProfileViewController: SchoolViewDelegate {
+    
+    func addSchoolButtonPressed() {
+        
+        self.schoolView.list.append(String(Date().timeIntervalSinceNow))
+        
+        self.schoolViewHeightConstraint.constant += 90
+        
+        UIView.animate(withDuration: 0.3) {
+        
+            self.schoolView.tableView.reloadData()
+            
+            self.view.layoutIfNeeded()
+            
+        }
+        
+    }
+    
+    func deleteSchoolButtonPressed() {
+
+        // remove selected object
+        
+        self.schoolViewHeightConstraint.constant -= 90
+        
+        UIView.animate(withDuration: 0.3) {
+            
+            self.schoolView.tableView.reloadData()
+            
+            self.view.layoutIfNeeded()
+            
+        }
         
     }
     

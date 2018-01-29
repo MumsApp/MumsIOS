@@ -1,5 +1,6 @@
 import UIKit
 import FBSDKLoginKit
+import GoogleSignIn
 
 class SignInViewController: UIViewController {
 
@@ -29,13 +30,17 @@ class SignInViewController: UIViewController {
     
     private var facebookService: FacebookService!
 
+    private var googleService: GoogleService!
+    
     private weak var delegate: IntroDelegate?
     
-    func configureWith(loginService: LoginService, facebookService: FacebookService, delegate: IntroDelegate? = nil) {
+    func configureWith(loginService: LoginService, facebookService: FacebookService, googleService: GoogleService, delegate: IntroDelegate? = nil) {
         
         self.loginService = loginService
         
         self.facebookService = facebookService
+        
+        self.googleService = googleService
         
         self.delegate = delegate
         
@@ -157,6 +162,13 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInWithGoogleButtonPressed(_ sender: UIButton) {
+   
+        GIDSignIn.sharedInstance().delegate = self
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        GIDSignIn.sharedInstance().signIn()
+        
     }
     
     @IBAction func signInWithFacebookButtonPressed(_ sender: UIButton) {
@@ -343,6 +355,42 @@ class SignInViewController: UIViewController {
         
     }
     
+    fileprivate func registerWithGoogle(googleProfile: GIDGoogleUser) {
+        
+        self.googleService.register(googleProfile: googleProfile) { errorOptional in
+            
+            if let _ = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
+                
+            } else {
+                
+                self.loginWithGoogle(googleProfile: googleProfile)
+                
+            }
+            
+        }
+        
+    }
+    
+    private func loginWithGoogle(googleProfile: GIDGoogleUser) {
+        
+        self.googleService.login(googleProfile: googleProfile) { errorOptional in
+            
+            if let _ = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
+                
+            } else {
+                
+                self.delegate?.didFinishIntro()
+                
+            }
+            
+        }
+        
+    }
+    
 }
 
 extension SignInViewController: UITextFieldDelegate {
@@ -360,6 +408,40 @@ extension SignInViewController: UITextFieldDelegate {
         }
         
         return true
+        
+    }
+    
+}
+
+extension SignInViewController: GIDSignInDelegate, GIDSignInUIDelegate {
+    
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        
+    }
+    
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        
+        self.present(viewController, animated: true, completion: nil)
+        
+    }
+    
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if let error = error {
+            
+            self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+            
+        } else {
+            
+            self.registerWithGoogle(googleProfile: user)
+            
+        }
         
     }
     
