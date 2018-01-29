@@ -56,6 +56,7 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         controller.configureWith(registerService: self.serviceFactory.registerService(),
                                  loginService: self.serviceFactory.loginService(),
                                  facebookService: self.serviceFactory.facebookService(),
+                                 googleService: self.serviceFactory.googleService(),
                                  delegate: FactoryProvider().provide())
         
         return controller

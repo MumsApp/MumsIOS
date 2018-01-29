@@ -65,5 +65,17 @@ class ServiceFactory {
         
     }
     
+    func googleService() -> GoogleService {
+        
+        let registerParser = RegisterServiceParser()
+        
+        let loginParser = LoginServiceParser(userDefaults: self.userDefaults)
+        
+        let service = GoogleService(networkService: self.networkService, serviceParser: registerParser, loginServiceParser: loginParser)
+        
+        return service
+        
+    }
+    
 }
 

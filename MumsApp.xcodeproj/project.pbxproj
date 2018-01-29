@@ -80,6 +80,7 @@
 		4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */; };
 		4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */; };
 		4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */; };
+		4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC27EB2201F90EF000EE9FA /* GoogleService.swift */; };
 		4DC6774420177F1900F34184 /* MainRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6774320177F1900F34184 /* MainRootViewController.swift */; };
 		4DC677472017800E00F34184 /* SecondaryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */; };
 		4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */; };
@@ -204,6 +205,7 @@
 		4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		4DC27EB2201F90EF000EE9FA /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		4DC6774320177F1900F34184 /* MainRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootViewController.swift; sourceTree = "<group>"; };
 		4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewControllerFactory.swift; sourceTree = "<group>"; };
 		4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondaryViewController+Identifiers.swift"; sourceTree = "<group>"; };
@@ -490,7 +492,8 @@
 				4D05A9681FE1468100B19E6E /* Resource.swift */,
 				4DFC27101FE92C63006020FF /* RegisterService */,
 				4DFC27151FE92E2E006020FF /* LoginService */,
-				4D681F88201DE32F00D404CD /* FacebookLoginService */,
+				4D681F88201DE32F00D404CD /* FacebookService */,
+				4DC27EB6201F980C000EE9FA /* GoogleService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -574,12 +577,12 @@
 			path = RangeSlider;
 			sourceTree = "<group>";
 		};
-		4D681F88201DE32F00D404CD /* FacebookLoginService */ = {
+		4D681F88201DE32F00D404CD /* FacebookService */ = {
 			isa = PBXGroup;
 			children = (
 				4D681F84201DE09200D404CD /* FacebookService.swift */,
 			);
-			path = FacebookLoginService;
+			path = FacebookService;
 			sourceTree = "<group>";
 		};
 		4D8F2D41201B56E900756CCB /* Extensions */ = {
@@ -609,6 +612,14 @@
 			);
 			name = "Support Files";
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		4DC27EB6201F980C000EE9FA /* GoogleService */ = {
+			isa = PBXGroup;
+			children = (
+				4DC27EB2201F90EF000EE9FA /* GoogleService.swift */,
+			);
+			path = GoogleService;
 			sourceTree = "<group>";
 		};
 		4DC6774520177F2400F34184 /* Main */ = {
@@ -895,6 +906,9 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -907,6 +921,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -925,6 +942,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MumsApp/Pods-MumsApp-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1101,6 +1119,7 @@
 				4D05A9441FE144A900B19E6E /* Logger.swift in Sources */,
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
 				4D36E6F9201E3565000DC94F /* ChildrenView.swift in Sources */,
+				4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */,
 				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,
 				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,

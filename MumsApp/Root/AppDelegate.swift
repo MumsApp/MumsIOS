@@ -3,6 +3,7 @@ import FBSDKCoreKit
 import Fabric
 import Crashlytics
 import GoogleMaps
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.configureRootViewController()
         
         self.configureAdditionalLibraries(application: application, launchOptions: launchOptions)
-                
+        
         return true
         
     }
@@ -70,6 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         
         GMSServices.provideAPIKey(GOOGLE_MAPS_KEY)
+        
+        GIDSignIn.sharedInstance().clientID = GOOGLE_SIGNIN_KEY
         
     }
     
