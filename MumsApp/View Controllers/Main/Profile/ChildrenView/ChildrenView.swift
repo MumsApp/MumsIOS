@@ -59,7 +59,7 @@ class ChildrenView: UIView {
         
         self.backgroundColor = .clear
         
-        self.childrenLabel.font = .semiBold(size: 20)
+        self.childrenLabel.font = .semiBold(size: 15)
         
         self.childrenLabel.textColor = .black
         

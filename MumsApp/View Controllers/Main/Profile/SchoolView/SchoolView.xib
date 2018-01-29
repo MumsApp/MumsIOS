@@ -20,14 +20,14 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="188"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8C-hy-lZZ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schools" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zum-7U-9oN">
-                            <rect key="frame" x="16" y="31" width="61" height="21"/>
+                            <rect key="frame" x="16" y="19" width="61" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -35,26 +35,26 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="zum-7U-9oN" secondAttribute="bottom" constant="8" id="O0C-Js-cnc"/>
+                        <constraint firstAttribute="bottom" secondItem="zum-7U-9oN" secondAttribute="bottom" id="8Vq-jP-6Ho"/>
                         <constraint firstItem="zum-7U-9oN" firstAttribute="leading" secondItem="r8C-hy-lZZ" secondAttribute="leading" constant="16" id="Wnq-V7-nqe"/>
-                        <constraint firstAttribute="height" constant="60" id="rzo-GD-FgX"/>
+                        <constraint firstAttribute="height" constant="40" id="rzo-GD-FgX"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsSelection="NO" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="RTA-F7-z7Z">
-                    <rect key="frame" x="0.0" y="60" width="375" height="90"/>
+                    <rect key="frame" x="0.0" y="40" width="375" height="90"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="separatorColor" red="0.90588235294117647" green="0.92156862745098034" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                     <inset key="separatorInset" minX="18" minY="0.0" maxX="18" maxY="0.0"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DP-Gw-bB7">
-                    <rect key="frame" x="0.0" y="150" width="375" height="1"/>
+                    <rect key="frame" x="0.0" y="130" width="375" height="1"/>
                     <color key="backgroundColor" red="0.90588235294117647" green="0.92156862745098034" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="lnw-78-Oyg"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ni2-8f-cBF">
-                    <rect key="frame" x="0.0" y="150" width="375" height="58"/>
+                    <rect key="frame" x="0.0" y="130" width="375" height="58"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="58" id="m46-LH-Q8Z"/>
                     </constraints>

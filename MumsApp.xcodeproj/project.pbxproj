@@ -83,6 +83,8 @@
 		4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC27EB2201F90EF000EE9FA /* GoogleService.swift */; };
 		4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DC27EBB201FA9B9000EE9FA /* SchoolCell.xib */; };
 		4DC27EC0201FA9D5000EE9FA /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC27EBF201FA9D5000EE9FA /* SchoolCell.swift */; };
+		4DC27EC2201FBFE4000EE9FA /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC27EC1201FBFE4000EE9FA /* CardsView.swift */; };
+		4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DC27EC3201FBFEE000EE9FA /* CardsView.xib */; };
 		4DC6774420177F1900F34184 /* MainRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6774320177F1900F34184 /* MainRootViewController.swift */; };
 		4DC677472017800E00F34184 /* SecondaryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */; };
 		4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */; };
@@ -210,6 +212,8 @@
 		4DC27EB2201F90EF000EE9FA /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		4DC27EBB201FA9B9000EE9FA /* SchoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolCell.xib; sourceTree = "<group>"; };
 		4DC27EBF201FA9D5000EE9FA /* SchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCell.swift; sourceTree = "<group>"; };
+		4DC27EC1201FBFE4000EE9FA /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		4DC27EC3201FBFEE000EE9FA /* CardsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsView.xib; sourceTree = "<group>"; };
 		4DC6774320177F1900F34184 /* MainRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootViewController.swift; sourceTree = "<group>"; };
 		4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewControllerFactory.swift; sourceTree = "<group>"; };
 		4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondaryViewController+Identifiers.swift"; sourceTree = "<group>"; };
@@ -635,6 +639,15 @@
 			path = SchoolView;
 			sourceTree = "<group>";
 		};
+		4DC27EC5201FBFF5000EE9FA /* CardsView */ = {
+			isa = PBXGroup;
+			children = (
+				4DC27EC3201FBFEE000EE9FA /* CardsView.xib */,
+				4DC27EC1201FBFE4000EE9FA /* CardsView.swift */,
+			);
+			path = CardsView;
+			sourceTree = "<group>";
+		};
 		4DC6774520177F2400F34184 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,6 +717,7 @@
 				4DEE83F3201E1EB7001B0AEB /* LocationView */,
 				4D36E6FA201E356E000DC94F /* ChildrenView */,
 				4DC27EBA201FA5DE000EE9FA /* SchoolView */,
+				4DC27EC5201FBFF5000EE9FA /* CardsView */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -878,6 +892,7 @@
 				4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */,
 				4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
+				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
 				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
 				4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */,
@@ -1168,6 +1183,7 @@
 				4D05A94E1FE144A900B19E6E /* NetworkService+Factory.swift in Sources */,
 				4DFC270F1FE92C3E006020FF /* RegisterServiceParser.swift in Sources */,
 				4D05A9401FE144A900B19E6E /* MOTableViewCoordinator.swift in Sources */,
+				4DC27EC2201FBFE4000EE9FA /* CardsView.swift in Sources */,
 				4DC27EC0201FA9D5000EE9FA /* SchoolCell.swift in Sources */,
 				4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */,
 				4D05A97A1FE14BE100B19E6E /* ServiceFactory.swift in Sources */,

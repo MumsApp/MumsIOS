@@ -69,7 +69,7 @@ class SchoolView: UIView {
         
         self.tableView.dataSource = self
         
-        self.schoolsLabel.font = .semiBold(size: 20)
+        self.schoolsLabel.font = .semiBold(size: 15)
         
         self.schoolsLabel.textColor = .black
 

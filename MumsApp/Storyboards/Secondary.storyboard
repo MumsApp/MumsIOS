@@ -55,24 +55,24 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSG-vz-rr3" customClass="ChildrenView" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="485" width="343" height="180"/>
+                                                <rect key="frame" x="16" y="485" width="343" height="160"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="180" id="UnC-XP-63P"/>
+                                                    <constraint firstAttribute="height" constant="160" id="UnC-XP-63P"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3U-cd-5Gz" customClass="SchoolView" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="677" width="343" height="118"/>
+                                                <rect key="frame" x="16" y="657" width="343" height="98"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="118" id="dpm-WC-Pod"/>
+                                                    <constraint firstAttribute="height" constant="98" id="dpm-WC-Pod"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5u-CZ-6cu">
-                                                <rect key="frame" x="16" y="811" width="343" height="200"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5u-CZ-6cu" customClass="CardsView" customModule="MumsApp" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="771" width="343" height="188"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="AK2-IK-oPv"/>
+                                                    <constraint firstAttribute="height" constant="188" id="AK2-IK-oPv"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

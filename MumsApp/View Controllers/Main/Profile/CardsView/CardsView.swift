@@ -1,17 +1,12 @@
+import Foundation
 import UIKit
 
-class LocationView: UIView {
-
+class CardsView: UIView {
+    
     @IBOutlet weak var contentView: UIView!
     
-    @IBOutlet weak var locationLabel: UILabel!
-
-    @IBOutlet weak var userLocationLabel: UILabel!
+    @IBOutlet weak var cardsLabel: UILabel!
     
-    @IBOutlet weak var changeButton: UIButton!
-    
-    @IBOutlet weak var mapView: CustomMapView!
-   
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -28,7 +23,7 @@ class LocationView: UIView {
     
     private func commonInit() {
         
-        Bundle.main.loadNibNamed("LocationView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("CardsView", owner: self, options: nil)
         
         self.addSubview(self.contentView)
         
@@ -46,17 +41,10 @@ class LocationView: UIView {
         
         self.backgroundColor = .clear
         
-        self.locationLabel.font = .semiBold(size: 15)
+        self.cardsLabel.font = .semiBold(size: 15)
         
-        self.locationLabel.textColor = .black
-        
-        self.userLocationLabel.font = .regular(size: 12)
-        
-        self.userLocationLabel.textColor = .mainDarkGrey
+        self.cardsLabel.textColor = .black
         
     }
-    
-    @IBAction func changeButtonPressed(_ sender: UIButton) {
-    }
-    
+
 }
