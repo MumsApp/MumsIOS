@@ -7,6 +7,12 @@ class CardsView: UIView {
     
     @IBOutlet weak var cardsLabel: UILabel!
     
+    @IBOutlet weak var containerStackView: UIStackView!
+
+    @IBOutlet weak var detailsView: UIView!
+
+    @IBOutlet weak var containerStackViewHeightConstraint: NSLayoutConstraint!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -44,6 +50,11 @@ class CardsView: UIView {
         self.cardsLabel.font = .semiBold(size: 15)
         
         self.cardsLabel.textColor = .black
+
+    }
+
+    @IBAction func switchChanged(_ sender: UISwitch) {
+        
         
     }
 

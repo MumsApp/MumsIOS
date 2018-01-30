@@ -15,6 +15,7 @@
                 <outlet property="addSchoolButton" destination="Ni2-8f-cBF" id="aig-n6-eah"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="hQt-1D-BBp"/>
                 <outlet property="schoolsLabel" destination="zum-7U-9oN" id="O3Q-ih-Mga"/>
+                <outlet property="separatorLine" destination="7DP-Gw-bB7" id="z0k-B8-OGe"/>
                 <outlet property="tableView" destination="RTA-F7-z7Z" id="aKh-Si-1cf"/>
             </connections>
         </placeholder>

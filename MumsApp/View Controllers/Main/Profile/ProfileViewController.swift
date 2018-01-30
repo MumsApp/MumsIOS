@@ -71,8 +71,8 @@ extension ProfileViewController: SchoolViewDelegate {
     
     func deleteSchoolButtonPressed() {
 
-        // remove selected object
-        
+        self.schoolView.list.removeLast()
+
         self.schoolViewHeightConstraint.constant -= 90
         
         UIView.animate(withDuration: 0.3) {

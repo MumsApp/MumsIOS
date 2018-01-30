@@ -263,7 +263,7 @@ class SignInViewController: UIViewController {
         
     }
     
-    private func isScreenEnabled(enabled: Bool) {
+    fileprivate func isScreenEnabled(enabled: Bool) {
         
         self.signInButton.isEnabled = enabled
 
@@ -289,6 +289,8 @@ class SignInViewController: UIViewController {
     
     private func registerWithFacebook() {
         
+        self.isScreenEnabled(enabled: false)
+
         if FBSDKAccessToken.current() != nil {
             
             self.facebookService.logout()
@@ -299,6 +301,8 @@ class SignInViewController: UIViewController {
             
             if let _ = errorOptional {
                 
+                self.isScreenEnabled(enabled: true)
+
                 self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
                 
             } else {
@@ -309,6 +313,8 @@ class SignInViewController: UIViewController {
                     
                 } else {
                     
+                    self.isScreenEnabled(enabled: true)
+
                     self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
                     
                 }
@@ -325,11 +331,35 @@ class SignInViewController: UIViewController {
             
             if let _ = errorOptional {
                 
+                self.isScreenEnabled(enabled: true)
+
                 self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
                 
             } else {
-               
-                self.loginWithFacebook(facebookProfile: facebookProfile, token: token)
+                
+                self.facebookService.register(facebookProfile: facebookProfile, completion: { errorOptional in
+                    
+                    if let error = errorOptional {
+                        
+                        if error.localizedDescription == Exceptions.USER_EXIST.rawValue {
+                            
+                            self.loginWithFacebook(facebookProfile: facebookProfile, token: token)
+                            
+                        } else {
+                            
+                            self.isScreenEnabled(enabled: true)
+
+                            self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
+                            
+                        }
+                        
+                    } else {
+                        
+                        self.loginWithFacebook(facebookProfile: facebookProfile, token: token)
+                        
+                    }
+                    
+                })
                 
             }
             
@@ -341,8 +371,10 @@ class SignInViewController: UIViewController {
         
         self.facebookService.login(facebookProfile: facebookProfile, completion: { errorOptional -> Void in
             
+            self.isScreenEnabled(enabled: true)
+
             if let _ = errorOptional {
-                
+
                 self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
                 
             } else {
@@ -359,9 +391,19 @@ class SignInViewController: UIViewController {
         
         self.googleService.register(googleProfile: googleProfile) { errorOptional in
             
-            if let _ = errorOptional {
+            if let error = errorOptional {
                 
-                self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
+                if error.localizedDescription == Exceptions.USER_EXIST.rawValue {
+                    
+                    self.loginWithGoogle(googleProfile: googleProfile)
+
+                } else {
+                    
+                    self.isScreenEnabled(enabled: true)
+
+                    self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
+                    
+                }
                 
             } else {
                 
@@ -377,8 +419,10 @@ class SignInViewController: UIViewController {
         
         self.googleService.login(googleProfile: googleProfile) { errorOptional in
             
+            self.isScreenEnabled(enabled: true)
+
             if let _ = errorOptional {
-                
+
                 self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
                 
             } else {
@@ -433,8 +477,12 @@ extension SignInViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
+        self.isScreenEnabled(enabled: false)
+
         if let error = error {
-            
+
+            self.isScreenEnabled(enabled: true)
+
             self.showOkAlertWith(title: "Error", message: error.localizedDescription)
             
         } else {

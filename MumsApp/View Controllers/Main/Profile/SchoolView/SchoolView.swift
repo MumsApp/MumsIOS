@@ -18,6 +18,8 @@ class SchoolView: UIView {
     
     @IBOutlet weak var addSchoolButton: UIButton!
     
+    @IBOutlet weak var separatorLine: UIView!
+    
     fileprivate weak var delegate: SchoolViewDelegate?
     
     var list: Array<String> = []
@@ -57,6 +59,7 @@ class SchoolView: UIView {
         let nib = UINib(nibName: "SchoolCell", bundle: nil)
         
         self.tableView.register(nib, forCellReuseIdentifier: "SchoolCell")
+    
     }
     
     private func configureView() {
@@ -77,6 +80,8 @@ class SchoolView: UIView {
         
         self.addSchoolButton.tintColor = .mainGreen
 
+        self.separatorLine.isHidden = true
+        
     }
    
     @IBAction func addSchoolButtonPressed(_ sender: UIButton) {
@@ -90,6 +95,8 @@ extension SchoolView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        self.configureSeparatorLine()
+
         return self.list.count
         
     }
@@ -101,6 +108,20 @@ extension SchoolView: UITableViewDelegate, UITableViewDataSource {
         cell.configureWith(delegate: self)
         
         return cell
+        
+    }
+    
+    private func configureSeparatorLine() {
+        
+        if self.list.count == 0 {
+           
+            self.separatorLine.isHidden = true
+            
+        } else {
+            
+            self.separatorLine.isHidden = false
+            
+        }
         
     }
     

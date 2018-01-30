@@ -127,7 +127,7 @@ extension Error {
         
         if let dictionary = responseOptional as? [String: Any] {
             
-            let message = dictionary["detail"] as? String
+            let message = dictionary["exceptionName"] as? String
             
             var userInfo: [String: Any] = [:]
             
@@ -135,22 +135,10 @@ extension Error {
             
             userInfo[NSUnderlyingErrorKey] = self
             
-//            userInfo["userData"] = email == nil ? "An unknown email address" : email!
-            
             error = NSError(domain: domain, code: self._code, userInfo: userInfo)
             
         }
         
-//        if error._code != 3840 && error._code != 999 {
-//
-//            var errorDict: [String: String] = [:]
-//
-//            errorDict["Description"] = error.localizedDescription
-//
-//            errorDict["Email"] = error._userInfo?["userData"] as? String ?? "nil"
-//
-//        }
-//
         return error
         
     }

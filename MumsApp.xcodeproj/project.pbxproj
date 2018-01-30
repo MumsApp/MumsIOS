@@ -80,6 +80,7 @@
 		4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */; };
 		4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */; };
 		4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */; };
+		4DBEE64220206524006E2C06 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE64120206524006E2C06 /* Exceptions.swift */; };
 		4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC27EB2201F90EF000EE9FA /* GoogleService.swift */; };
 		4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DC27EBB201FA9B9000EE9FA /* SchoolCell.xib */; };
 		4DC27EC0201FA9D5000EE9FA /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC27EBF201FA9D5000EE9FA /* SchoolCell.swift */; };
@@ -209,6 +210,7 @@
 		4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		4DBEE64120206524006E2C06 /* Exceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
 		4DC27EB2201F90EF000EE9FA /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		4DC27EBB201FA9B9000EE9FA /* SchoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolCell.xib; sourceTree = "<group>"; };
 		4DC27EBF201FA9D5000EE9FA /* SchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCell.swift; sourceTree = "<group>"; };
@@ -599,6 +601,7 @@
 				4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */,
 				4D8C63A0201C830600657FD7 /* String+Extensions.swift */,
 				4D36E6F4201E338B000DC94F /* UIView+Extensions.swift */,
+				4DBEE64120206524006E2C06 /* Exceptions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1127,6 +1130,7 @@
 				4D05A93F1FE144A900B19E6E /* DataSourceProvider.swift in Sources */,
 				4D05A9521FE144A900B19E6E /* NotificationCoordinator.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
+				4DBEE64220206524006E2C06 /* Exceptions.swift in Sources */,
 				4D05A9491FE144A900B19E6E /* ConnectionHelper+Extension.swift in Sources */,
 				4D36E700201E3859000DC94F /* RangeSeekSlider.swift in Sources */,
 				4D05A9811FE14E5600B19E6E /* PrimaryViewControllerFactory.swift in Sources */,

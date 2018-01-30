@@ -5,6 +5,8 @@ let GOOGLE_REGISTER_URL = BASE_PUBLIC_URL + "google/create"
 
 let GOOGLE_LOGIN_URL = BASE_PUBLIC_URL + "google/login"
 
+let k_id_token = "id_token"
+
 struct GoogleService: ResourceService {
     
     let serviceName = "GoogleService"
@@ -17,8 +19,8 @@ struct GoogleService: ResourceService {
     
     func register(googleProfile: GIDGoogleUser, completion: @escaping ErrorCompletion) {
         
-        let bodyParameters = [k_email: googleProfile.profile.email!, k_access_token: googleProfile.authentication.accessToken!]
-                
+        let bodyParameters = [k_email: googleProfile.profile.email!, k_id_token: googleProfile.authentication.idToken!]
+        
         if let request = URLRequest.POSTRequestJSON(urlString: GOOGLE_REGISTER_URL, bodyParameters: bodyParameters) {
             
             let response = responseHandler(completion: completion)
@@ -33,7 +35,7 @@ struct GoogleService: ResourceService {
     
     func login(googleProfile: GIDGoogleUser, completion: @escaping ErrorCompletion) {
         
-        let bodyParameters = [k_email: googleProfile.profile.email!, k_access_token: googleProfile.authentication.accessToken!]
+        let bodyParameters = [k_email: googleProfile.profile.email!, k_id_token: googleProfile.authentication.idToken!]
 
         if let request = URLRequest.POSTRequestJSON(urlString: GOOGLE_LOGIN_URL, bodyParameters: bodyParameters) {
             
