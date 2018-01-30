@@ -3,7 +3,7 @@ import GoogleMaps
 
 class LocationPopupViewController: UIViewController {
 
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -21,10 +21,15 @@ class LocationPopupViewController: UIViewController {
         self.configureView()
         
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+     
+        self.containerView.layer.cornerRadius = 4
+
+    }
 
     private func configureView() {
-        
-        self.contentView.layer.cornerRadius = 4
         
         self.titleLabel.font = .regular(size: 20)
         

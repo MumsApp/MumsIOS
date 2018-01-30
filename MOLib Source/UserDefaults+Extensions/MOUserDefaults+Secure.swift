@@ -159,8 +159,6 @@ public struct UserDefaultsImpl: MOUserDefaults {
         
         dictionary.enumerateKeysAndObjects(options: NSEnumerationOptions.concurrent) { (dictionaryKey, obj, stop) in
             
-            print(dictionary)
-
             let key = dictionaryKey as! String
             
             guard let keyData = key.data(using: .utf8) else {
@@ -177,8 +175,13 @@ public struct UserDefaultsImpl: MOUserDefaults {
                     
                     let value = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
                     
+                    print(value)
+                    print(key)
+                    
                     decryptedDictionary.setValue(value, forKey: key)
+                
                 }
+                
             }
             
         }
