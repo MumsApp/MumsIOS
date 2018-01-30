@@ -77,6 +77,7 @@
 		4D8F2D3C201B4F3800756CCB /* OnboardingGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3B201B4F3800756CCB /* OnboardingGreen+UIButton.swift */; };
 		4D8F2D3E201B502300756CCB /* OnboardingGrey+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3D201B502300756CCB /* OnboardingGrey+UIButton.swift */; };
 		4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */; };
+		4DAA14EA2020E458000B1CA0 /* LocationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */; };
 		4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */; };
 		4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */; };
 		4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */; };
@@ -207,6 +208,7 @@
 		4D8F2D3B201B4F3800756CCB /* OnboardingGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingGreen+UIButton.swift"; sourceTree = "<group>"; };
 		4D8F2D3D201B502300756CCB /* OnboardingGrey+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingGrey+UIButton.swift"; sourceTree = "<group>"; };
 		4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
+		4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPopupViewController.swift; sourceTree = "<group>"; };
 		4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
@@ -337,7 +339,6 @@
 				4D05A9141FE144A800B19E6E /* Networking */,
 				4D05A9251FE144A800B19E6E /* NotificationCoordinator */,
 				4D05A9291FE144A800B19E6E /* UserDefaults+Extensions */,
-				4D05A92E1FE144A800B19E6E /* NSDate+Formatter */,
 				4D05A92F1FE144A800B19E6E /* InAppPurchase */,
 				4D05A9321FE144A800B19E6E /* DataStorage */,
 				4D05A9391FE144A800B19E6E /* UIView+Extensions */,
@@ -422,13 +423,6 @@
 				4D05A92B1FE144A800B19E6E /* MOUserDefaults+Secure.swift */,
 			);
 			path = "UserDefaults+Extensions";
-			sourceTree = "<group>";
-		};
-		4D05A92E1FE144A800B19E6E /* NSDate+Formatter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "NSDate+Formatter";
 			sourceTree = "<group>";
 		};
 		4D05A92F1FE144A800B19E6E /* InAppPurchase */ = {
@@ -623,6 +617,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		4DAA14EB2020E461000B1CA0 /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */,
+			);
+			path = Popups;
+			sourceTree = "<group>";
+		};
 		4DC27EB6201F980C000EE9FA /* GoogleService */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +658,7 @@
 			children = (
 				4DC6774320177F1900F34184 /* MainRootViewController.swift */,
 				4DEE83EC201E17EA001B0AEB /* Profile */,
+				4DAA14EB2020E461000B1CA0 /* Popups */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1138,6 +1141,7 @@
 				4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */,
 				4D05A9731FE1487000B19E6E /* RootViewController.swift in Sources */,
 				4D05A94B1FE144A900B19E6E /* NetworkService+DownloadRequest.swift in Sources */,
+				4DAA14EA2020E458000B1CA0 /* LocationPopupViewController.swift in Sources */,
 				4D05A95D1FE144A900B19E6E /* UIViewController+Helpers.swift in Sources */,
 				4D05A95E1FE144A900B19E6E /* UIStoryboard+Helpers.swift in Sources */,
 				4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */,

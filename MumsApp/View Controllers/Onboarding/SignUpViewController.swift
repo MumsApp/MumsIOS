@@ -305,7 +305,7 @@ class SignUpViewController: UIViewController {
                 
             } else {
                 
-                self.delegate?.didFinishIntro()
+                self.delegate?.didFinishIntroWithSuccess()
 
                 self.isScreenEnabled(enabled: true)
 
@@ -435,7 +435,7 @@ class SignUpViewController: UIViewController {
 
             } else {
                 
-                self.delegate?.didFinishIntro()
+                self.delegate?.didFinishIntroWithSuccess()
                 
             }
             
@@ -483,7 +483,7 @@ class SignUpViewController: UIViewController {
                 
             } else {
                 
-                self.delegate?.didFinishIntro()
+                self.delegate?.didFinishIntroWithSuccess()
                 
             }
             

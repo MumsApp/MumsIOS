@@ -1,5 +1,11 @@
 import UIKit
 
+protocol LocationViewDelegate: class {
+    
+    func changeLocationButtonPressed()
+    
+}
+
 class LocationView: UIView {
 
     @IBOutlet weak var contentView: UIView!
@@ -12,6 +18,14 @@ class LocationView: UIView {
     
     @IBOutlet weak var mapView: CustomMapView!
    
+    private weak var delegate: LocationViewDelegate?
+    
+    func configureWith(delegate: LocationViewDelegate) {
+        
+        self.delegate = delegate
+        
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -57,6 +71,9 @@ class LocationView: UIView {
     }
     
     @IBAction func changeButtonPressed(_ sender: UIButton) {
+        
+        self.delegate?.changeLocationButtonPressed()
+        
     }
     
 }

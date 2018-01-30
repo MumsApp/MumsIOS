@@ -29,11 +29,12 @@ class RootViewController: UIViewController {
     fileprivate var authenticatedNetworkService: AuththenticatedNetworkService!
     
     fileprivate var reachabilityView: ReachabilityView?
+    
     fileprivate var reachabilityWindow: UIWindow?
     
     fileprivate var reachabilityController: UIViewController?
     
-    private var userDefaults: MOUserDefaults!
+    fileprivate var userDefaults: MOUserDefaults!
     
     weak var delegate: RootViewControllerDelegate?
     
@@ -57,14 +58,22 @@ class RootViewController: UIViewController {
         
         self.configureView()
         
+        print(self.userDefaults.secureStringForKey(k_token))
+     
+        print(self.userDefaults.secureStringForKey(k_refresh_token))
+
         let isInitialized = self.userDefaults.boolForKey(k_is_app_initialized)
         
         let isUserLoggedIn = self.appContext.isUserLoggedIn()
         
-        switch (isInitialized, isUserLoggedIn) {
+//        switch (isInitialized, isUserLoggedIn) {
+        
+//        case (true?, true):
+        
+        switch isInitialized {
             
-        case (true?, true):
-            
+        case true?:
+        
             self.didFinishIntro()
             
         default:
@@ -156,6 +165,8 @@ extension RootViewController: IntroDelegate, LogoutDelegate {
     }
     
     func didFinishIntroWithSuccess() {
+        
+        self.userDefaults.setBool(true, forKey: k_is_app_initialized)
         
         self.delegate?.rootViewControllerDidFinish(controller: self)
         

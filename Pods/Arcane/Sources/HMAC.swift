@@ -11,11 +11,6 @@ import CCommonCrypto
 
 public struct HMAC {
 
-  public enum DigestType {
-    case hex
-    case base64
-  }
-
   // MARK: - NSData
 
   public static func MD5(_ data: Data, key: Data) -> Data? {
@@ -54,36 +49,35 @@ public struct HMAC {
 
   // MARK: - String
 
-  public static func MD5(_ string: String, key: String, digest: DigestType = .hex) -> String? {
-    return HMAC.generate(string, key: key, crypto: .MD5, digest: digest)
+  public static func MD5(_ string: String, key: String) -> String? {
+    return HMAC.generate(string, key: key, crypto: .MD5)
   }
 
-  public static func SHA1(_ string: String, key: String, digest: DigestType = .hex) -> String? {
-    return HMAC.generate(string, key: key, crypto: .SHA1, digest: digest)
+  public static func SHA1(_ string: String, key: String) -> String? {
+    return HMAC.generate(string, key: key, crypto: .SHA1)
   }
 
-  public static func SHA224(_ string: String, key: String, digest: DigestType = .hex) -> String? {
-    return HMAC.generate(string, key: key, crypto: .SHA224, digest: digest)
+  public static func SHA224(_ string: String, key: String) -> String? {
+    return HMAC.generate(string, key: key, crypto: .SHA224)
   }
 
-  public static func SHA256(_ string: String, key: String, digest: DigestType = .hex) -> String? {
-    return HMAC.generate(string, key: key, crypto: .SHA256, digest: digest)
+  public static func SHA256(_ string: String, key: String) -> String? {
+    return HMAC.generate(string, key: key, crypto: .SHA256)
   }
 
-  public static func SHA384(_ string: String, key: String, digest: DigestType = .hex) -> String? {
-    return HMAC.generate(string, key: key, crypto: .SHA384, digest: digest)
+  public static func SHA384(_ string: String, key: String) -> String? {
+    return HMAC.generate(string, key: key, crypto: .SHA384)
   }
 
-  public static func SHA512(_ string: String, key: String, digest: DigestType = .hex) -> String? {
-    return HMAC.generate(string, key: key, crypto: .SHA512, digest: digest)
+  public static func SHA512(_ string: String, key: String) -> String? {
+    return HMAC.generate(string, key: key, crypto: .SHA512)
   }
 
-  static func generate(_ string: String, key: String, crypto: Crypto, digest: DigestType) -> String? {
+  static func generate(_ string: String, key: String, crypto: Crypto) -> String? {
     guard let data = string.data(using: String.Encoding.utf8),
-      let keyData = key.data(using: String.Encoding.utf8),
-      let generatedData = HMAC.generate(data, key: keyData, crypto: crypto)
+      let keyData = key.data(using: String.Encoding.utf8)
       else { return nil }
 
-    return digest == .hex ? generatedData.hexString : generatedData.base64String
+    return HMAC.generate(data, key: keyData, crypto: crypto)?.hexString
   }
 }

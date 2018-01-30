@@ -58,7 +58,7 @@ class FactoryProvider {
     
     class func tearDown() {
         
-        self.dataStore.synchronize()
+//        self.dataStore.synchronize()
         
         _ = self.userDefaults.synchronize()
         

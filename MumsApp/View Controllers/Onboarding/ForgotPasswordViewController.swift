@@ -2,6 +2,14 @@ import UIKit
 
 class ForgotPasswordViewController: UIViewController {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var sendPasswordButton: UIButton!
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -9,6 +17,13 @@ class ForgotPasswordViewController: UIViewController {
         
         self.configureNavigationBar()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.emailTextField.becomeFirstResponder()
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -20,6 +35,14 @@ class ForgotPasswordViewController: UIViewController {
     func configureView() {
         
         self.view.backgroundColor = .backgroundWhite
+        
+        self.activityIndicator.isHidden = true
+        
+        self.descriptionLabel.font = .regular(size: 15)
+        
+        self.descriptionLabel.textColor = .black
+
+        self.emailTextField.delegate = self
         
     }
     
@@ -44,5 +67,20 @@ class ForgotPasswordViewController: UIViewController {
         self.popToViewController(WelcomeViewController.self)
         
     }
+    
+    @IBAction func sendPasswordButtonPressed(_ sender: UIButton) {
+    }
+    
+}
 
+extension ForgotPasswordViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+        
+    }
+    
 }

@@ -121,7 +121,7 @@ struct FacebookService: ResourceService {
     func register(facebookProfile: FacebookProfile, completion: @escaping ErrorCompletion) {
         
         let bodyParameters = [k_email: facebookProfile.email!, k_access_token: facebookProfile.token!]
-        
+                
         if let request = URLRequest.POSTRequestJSON(urlString: FACEBOOK_REGISTER_URL, bodyParameters: bodyParameters) {
             
             let response = responseHandler(completion: completion)

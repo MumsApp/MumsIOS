@@ -49,6 +49,14 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func locationPopupViewController() -> LocationPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LocationPopupViewController.rawValue, storyboard: storyboard) as! LocationPopupViewController
+        
+        return controller
+        
+    }
+    
 }
 
 

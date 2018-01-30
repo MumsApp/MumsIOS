@@ -4,6 +4,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileView: ProfileView!
     
+    @IBOutlet weak var locationView: LocationView!
+    
     @IBOutlet weak var schoolView: SchoolView!
     
     @IBOutlet weak var schoolViewHeightConstraint: NSLayoutConstraint!
@@ -24,6 +26,8 @@ class ProfileViewController: UIViewController {
         self.schoolView.configureWith(delegate: self)
         
         self.profileView.userNameLabel.text = "Test Name"
+        
+        self.locationView.configureWith(delegate: self)
         
     }
 
@@ -82,6 +86,30 @@ extension ProfileViewController: SchoolViewDelegate {
             self.view.layoutIfNeeded()
             
         }
+        
+    }
+    
+}
+
+extension ProfileViewController: LocationViewDelegate {
+    
+    func changeLocationButtonPressed() {
+        
+        self.showCancelJobViewController()
+        
+    }
+    
+    private func showCancelJobViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.locationPopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
         
     }
     

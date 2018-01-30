@@ -15,4 +15,3 @@ SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*] = $(PODS_ROOT)/Arcane/CocoaPods/iphone
 SWIFT_INCLUDE_PATHS[sdk=macosx*] = $(PODS_ROOT)/Arcane/CocoaPods/macosx
 SWIFT_INCLUDE_PATHS[sdk=watchos*] = $(PODS_ROOT)/Arcane/CocoaPods/watchos
 SWIFT_INCLUDE_PATHS[sdk=watchsimulator*] = $(PODS_ROOT)/Arcane/CocoaPods/watchsimulator
-SWIFT_VERSION = 4.0

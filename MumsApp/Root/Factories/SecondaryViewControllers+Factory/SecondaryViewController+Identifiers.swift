@@ -7,6 +7,7 @@ enum SecondaryViewController: String {
     case MainRootViewController
     
     case ProfileViewController
+    case LocationPopupViewController
     
 }
 

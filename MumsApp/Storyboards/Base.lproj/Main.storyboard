@@ -485,7 +485,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-30-own" customClass="OnboardingTextField" customModule="MumsApp" customModuleProvider="target">
                                                 <rect key="frame" x="47.5" y="212" width="280" height="17"/>
@@ -674,13 +674,74 @@ fringilla. Morbi id elit sed dolor</string>
                     <view key="view" contentMode="scaleToFill" id="mRC-VU-VSh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NL-ml-GEQ">
+                                <rect key="frame" x="16" y="60" width="343" height="41"/>
+                                <string key="text">Enter your email below to receive your
+password reset instructions</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wu-Se-E9V" customClass="OnboardingTextField" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="47" y="141" width="280" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="7JS-bQ-QAa"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5F-rq-BP8">
+                                <rect key="frame" x="47" y="166" width="280" height="1"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="8zt-9D-sX6"/>
+                                    <constraint firstAttribute="width" constant="280" id="mok-ea-7FI"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmH-qY-xxC" customClass="OnboardingGreenButton" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="47" y="219" width="280" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="K3f-10-foi"/>
+                                    <constraint firstAttribute="width" constant="280" id="nzC-VU-aiH"/>
+                                </constraints>
+                                <state key="normal" title="Send password"/>
+                                <connections>
+                                    <action selector="sendPasswordButtonPressed:" destination="opp-1q-MEO" eventType="touchUpInside" id="M8v-AV-IYV"/>
+                                    <action selector="signUpButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a9h-Vo-uQL"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="cF7-xZ-q6j">
+                                <rect key="frame" x="177" y="233" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r5F-rq-BP8" firstAttribute="centerX" secondItem="mRC-VU-VSh" secondAttribute="centerX" id="4uh-Rl-S8l"/>
+                            <constraint firstItem="6NL-ml-GEQ" firstAttribute="leading" secondItem="Zel-nF-644" secondAttribute="leading" constant="16" id="5jX-s3-Dc6"/>
+                            <constraint firstItem="Zel-nF-644" firstAttribute="trailing" secondItem="6NL-ml-GEQ" secondAttribute="trailing" constant="16" id="5kQ-21-BCT"/>
+                            <constraint firstItem="6NL-ml-GEQ" firstAttribute="top" secondItem="Zel-nF-644" secondAttribute="top" constant="40" id="Cmx-JB-MgE"/>
+                            <constraint firstItem="cF7-xZ-q6j" firstAttribute="centerY" secondItem="XmH-qY-xxC" secondAttribute="centerY" id="IBk-1H-0ws"/>
+                            <constraint firstItem="XmH-qY-xxC" firstAttribute="centerX" secondItem="mRC-VU-VSh" secondAttribute="centerX" id="aRs-B9-wjo"/>
+                            <constraint firstItem="r5F-rq-BP8" firstAttribute="top" secondItem="4wu-Se-E9V" secondAttribute="bottom" constant="8" id="fxq-Nc-NDV"/>
+                            <constraint firstItem="4wu-Se-E9V" firstAttribute="centerX" secondItem="mRC-VU-VSh" secondAttribute="centerX" id="jQ0-L6-ORB"/>
+                            <constraint firstItem="4wu-Se-E9V" firstAttribute="top" secondItem="6NL-ml-GEQ" secondAttribute="bottom" constant="40" id="mSS-2c-jPV"/>
+                            <constraint firstItem="XmH-qY-xxC" firstAttribute="top" secondItem="r5F-rq-BP8" secondAttribute="bottom" constant="52" id="mVm-8a-ii9"/>
+                            <constraint firstItem="cF7-xZ-q6j" firstAttribute="centerX" secondItem="XmH-qY-xxC" secondAttribute="centerX" id="pMo-yh-JPb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zel-nF-644"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="cF7-xZ-q6j" id="PZb-mY-Dkq"/>
+                        <outlet property="descriptionLabel" destination="6NL-ml-GEQ" id="txk-KD-3zs"/>
+                        <outlet property="emailTextField" destination="4wu-Se-E9V" id="YEK-xg-gpZ"/>
+                        <outlet property="sendPasswordButton" destination="XmH-qY-xxC" id="n0n-lI-tqv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmw-bC-knF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2529" y="403"/>
+            <point key="canvasLocation" x="2528.8000000000002" y="402.54872563718146"/>
         </scene>
     </scenes>
     <resources>

@@ -21,6 +21,8 @@ struct LoginServiceParser: ServiceParser {
             
             self.userDefaults.setSecureString(refresh_token, forKey: k_refresh_token)
 
+            _ = self.userDefaults.synchronize()
+            
             success = true
 
         }

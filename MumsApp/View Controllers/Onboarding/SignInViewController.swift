@@ -255,7 +255,7 @@ class SignInViewController: UIViewController {
                 
             } else {
                 
-                self.delegate?.didFinishIntro()
+                self.delegate?.didFinishIntroWithSuccess()
                 
             }
             
@@ -379,7 +379,7 @@ class SignInViewController: UIViewController {
                 
             } else {
                 
-                self.delegate?.didFinishIntro()
+                self.delegate?.didFinishIntroWithSuccess()
                 
             }
             
@@ -427,7 +427,7 @@ class SignInViewController: UIViewController {
                 
             } else {
                 
-                self.delegate?.didFinishIntro()
+                self.delegate?.didFinishIntroWithSuccess()
                 
             }
             
