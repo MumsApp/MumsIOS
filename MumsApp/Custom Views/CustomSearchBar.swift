@@ -4,7 +4,7 @@ class CustomSearchBar: UISearchBar {
     
     override func awakeFromNib() {
         
-        self.tintColor = .mainGrey
+        self.tintColor = .mainDarkGrey
         
         self.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
 

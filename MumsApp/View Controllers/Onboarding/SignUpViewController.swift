@@ -81,7 +81,7 @@ class SignUpViewController: UIViewController {
         
         self.orLabel.font = .regular(size: 15)
         
-        self.orLabel.textColor = .mainGrey
+        self.orLabel.textColor = .mainDarkGrey
         
         self.activityIndicator.isHidden = true
 
