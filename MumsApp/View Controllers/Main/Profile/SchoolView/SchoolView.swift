@@ -89,6 +89,7 @@ class SchoolView: UIView {
         self.delegate?.addSchoolButtonPressed()
         
     }
+    
 }
 
 extension SchoolView: UITableViewDelegate, UITableViewDataSource {

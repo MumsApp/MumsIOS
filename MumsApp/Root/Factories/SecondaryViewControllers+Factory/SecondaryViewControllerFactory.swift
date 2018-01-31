@@ -57,6 +57,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func lobbyViewController() -> LobbyViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyViewController.rawValue, storyboard: storyboard) as! LobbyViewController
+        
+        return controller
+        
+    }
+    
 }
-
-

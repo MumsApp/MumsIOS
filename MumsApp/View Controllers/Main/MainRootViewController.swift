@@ -13,7 +13,9 @@ class MainRootViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.profileViewController()
+        let controller = factory.lobbyViewController()
+        
+//        let controller = factory.profileViewController()
         
         self.navigationController?.pushViewController(controller, animated: false)
      

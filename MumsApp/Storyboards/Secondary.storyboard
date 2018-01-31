@@ -282,9 +282,77 @@
             </objects>
             <point key="canvasLocation" x="1821.5999999999999" y="132.68365817091455"/>
         </scene>
+        <!--Lobby View Controller-->
+        <scene sceneID="nFX-ab-7au">
+            <objects>
+                <viewController storyboardIdentifier="LobbyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zor-LV-ENi" customClass="LobbyViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h1L-XS-jZl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="180" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UrV-0v-1L5">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvM-IX-k3g" customClass="CustomSearchBar" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="b3U-Dd-oQp"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="N4z-xx-Dzs">
+                                <rect key="frame" x="336" y="38.5" width="17" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="QIJ-wx-X3i"/>
+                                    <constraint firstAttribute="width" constant="17" id="YXl-nY-jBK"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-uC-wWI">
+                                <rect key="frame" x="0.0" y="76" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="JaR-s5-zLK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ayj-uC-wWI" firstAttribute="leading" secondItem="Yl6-DR-jAi" secondAttribute="leading" id="5ao-kh-E7l"/>
+                            <constraint firstItem="GvM-IX-k3g" firstAttribute="trailing" secondItem="Yl6-DR-jAi" secondAttribute="trailing" id="7nx-cv-28f"/>
+                            <constraint firstItem="Ayj-uC-wWI" firstAttribute="trailing" secondItem="Yl6-DR-jAi" secondAttribute="trailing" id="Q1o-p2-eEj"/>
+                            <constraint firstItem="Yl6-DR-jAi" firstAttribute="trailing" secondItem="N4z-xx-Dzs" secondAttribute="trailing" constant="22" id="ZMs-EQ-59f"/>
+                            <constraint firstItem="UrV-0v-1L5" firstAttribute="trailing" secondItem="Yl6-DR-jAi" secondAttribute="trailing" id="bv6-Ch-6w9"/>
+                            <constraint firstItem="N4z-xx-Dzs" firstAttribute="centerY" secondItem="GvM-IX-k3g" secondAttribute="centerY" id="g3C-K5-piw"/>
+                            <constraint firstItem="UrV-0v-1L5" firstAttribute="bottom" secondItem="Yl6-DR-jAi" secondAttribute="bottom" id="gFX-XB-JKn"/>
+                            <constraint firstItem="GvM-IX-k3g" firstAttribute="top" secondItem="Yl6-DR-jAi" secondAttribute="top" id="gty-xp-CEx"/>
+                            <constraint firstItem="GvM-IX-k3g" firstAttribute="leading" secondItem="Yl6-DR-jAi" secondAttribute="leading" id="qbh-Ic-Ik0"/>
+                            <constraint firstItem="UrV-0v-1L5" firstAttribute="leading" secondItem="Yl6-DR-jAi" secondAttribute="leading" id="vfh-V1-nfA"/>
+                            <constraint firstItem="Ayj-uC-wWI" firstAttribute="top" secondItem="GvM-IX-k3g" secondAttribute="bottom" id="yCg-Nd-L7d"/>
+                            <constraint firstItem="UrV-0v-1L5" firstAttribute="top" secondItem="Ayj-uC-wWI" secondAttribute="bottom" id="zU0-az-8NV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yl6-DR-jAi"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="GvM-IX-k3g" id="RMS-pL-LnA"/>
+                        <outlet property="tableView" destination="UrV-0v-1L5" id="hcC-fx-gxo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apJ-vN-OyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2524" y="133.5832083958021"/>
+        </scene>
     </scenes>
     <resources>
         <image name="closeIcon" width="18" height="18"/>
         <image name="locationGreyIcon" width="11" height="15"/>
+        <image name="searchIcon" width="17" height="19"/>
     </resources>
 </document>

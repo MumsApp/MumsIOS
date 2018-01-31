@@ -96,7 +96,11 @@
 		4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677532017825500F34184 /* WelcomeViewController.swift */; };
 		4DC677562017870000F34184 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677552017870000F34184 /* SignInViewController.swift */; };
 		4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */; };
-		4DCB4E9C2022263B006962F9 /* CustomGreen+UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4E9B2022263B006962F9 /* CustomGreen+UISwitch.swift */; };
+		4DCB4E9C2022263B006962F9 /* CustomGreenSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4E9B2022263B006962F9 /* CustomGreenSwitch.swift */; };
+		4DCB4E9E20222795006962F9 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4E9D20222795006962F9 /* LobbyViewController.swift */; };
+		4DCB4EA12022285D006962F9 /* LobbyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA02022285D006962F9 /* LobbyCell.xib */; };
+		4DCB4EA3202229BF006962F9 /* LobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA2202229BF006962F9 /* LobbyCell.swift */; };
+		4DCB4EA5202234F4006962F9 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */; };
 		4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */; };
 		4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83E7201E13CC001B0AEB /* ProfileView.xib */; };
 		4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E9201E15FB001B0AEB /* ProfileView.swift */; };
@@ -228,7 +232,11 @@
 		4DC677532017825500F34184 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4DC677552017870000F34184 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOfficialPageViewController.swift; sourceTree = "<group>"; };
-		4DCB4E9B2022263B006962F9 /* CustomGreen+UISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomGreen+UISwitch.swift"; sourceTree = "<group>"; };
+		4DCB4E9B2022263B006962F9 /* CustomGreenSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGreenSwitch.swift; sourceTree = "<group>"; };
+		4DCB4E9D20222795006962F9 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		4DCB4EA02022285D006962F9 /* LobbyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyCell.xib; sourceTree = "<group>"; };
+		4DCB4EA2202229BF006962F9 /* LobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyCell.swift; sourceTree = "<group>"; };
+		4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DEE83E7201E13CC001B0AEB /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		4DEE83E9201E15FB001B0AEB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -496,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				4D05A9681FE1468100B19E6E /* Resource.swift */,
+				4DBEE64120206524006E2C06 /* Exceptions.swift */,
 				4DFC27101FE92C63006020FF /* RegisterService */,
 				4DFC27151FE92E2E006020FF /* LoginService */,
 				4D681F88201DE32F00D404CD /* FacebookService */,
@@ -597,7 +606,6 @@
 				4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */,
 				4D8C63A0201C830600657FD7 /* String+Extensions.swift */,
 				4D36E6F4201E338B000DC94F /* UIView+Extensions.swift */,
-				4DBEE64120206524006E2C06 /* Exceptions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -659,6 +667,7 @@
 			isa = PBXGroup;
 			children = (
 				4DC6774320177F1900F34184 /* MainRootViewController.swift */,
+				4DCB4E9F202227A1006962F9 /* Lobby */,
 				4DEE83EC201E17EA001B0AEB /* Profile */,
 				4DAA14EB2020E461000B1CA0 /* Popups */,
 			);
@@ -686,8 +695,9 @@
 				4D8F2D39201B4EB000756CCB /* TransparentGrey+UIButton.swift */,
 				4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */,
 				4DEE83ED201E1AE7001B0AEB /* MainGreen+UIButton.swift */,
-				4DCB4E9B2022263B006962F9 /* CustomGreen+UISwitch.swift */,
+				4DCB4E9B2022263B006962F9 /* CustomGreenSwitch.swift */,
 				4D36E6F0201E31E1000DC94F /* CustomMapView.swift */,
+				4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */,
 				4D36E6FB201E3859000DC94F /* RangeSlider */,
 			);
 			path = "Custom Views";
@@ -707,6 +717,16 @@
 				4D05A9641FE145B800B19E6E /* AppContext.swift */,
 			);
 			path = "App Context";
+			sourceTree = "<group>";
+		};
+		4DCB4E9F202227A1006962F9 /* Lobby */ = {
+			isa = PBXGroup;
+			children = (
+				4DCB4E9D20222795006962F9 /* LobbyViewController.swift */,
+				4DCB4EA02022285D006962F9 /* LobbyCell.xib */,
+				4DCB4EA2202229BF006962F9 /* LobbyCell.swift */,
+			);
+			path = Lobby;
 			sourceTree = "<group>";
 		};
 		4DEE83EB201E17E1001B0AEB /* ProfileView */ = {
@@ -904,6 +924,7 @@
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
 				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
+				4DCB4EA12022285D006962F9 /* LobbyCell.xib in Resources */,
 				4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */,
 				4D36E6F7201E355E000DC94F /* ChildrenView.xib in Resources */,
 				4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */,
@@ -1136,7 +1157,7 @@
 				4D05A93F1FE144A900B19E6E /* DataSourceProvider.swift in Sources */,
 				4D05A9521FE144A900B19E6E /* NotificationCoordinator.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
-				4DCB4E9C2022263B006962F9 /* CustomGreen+UISwitch.swift in Sources */,
+				4DCB4E9C2022263B006962F9 /* CustomGreenSwitch.swift in Sources */,
 				4DBEE64220206524006E2C06 /* Exceptions.swift in Sources */,
 				4D05A9491FE144A900B19E6E /* ConnectionHelper+Extension.swift in Sources */,
 				4D36E700201E3859000DC94F /* RangeSeekSlider.swift in Sources */,
@@ -1165,6 +1186,7 @@
 				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,
 				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
+				4DCB4E9E20222795006962F9 /* LobbyViewController.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
 				4D36E701201E3859000DC94F /* TapticEngine.swift in Sources */,
 				4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */,
@@ -1174,6 +1196,7 @@
 				4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */,
 				4D05A9601FE144A900B19E6E /* UIViewController+UIAlertView.swift in Sources */,
 				4D05A9451FE144A900B19E6E /* URLRequest+Task.swift in Sources */,
+				4DCB4EA3202229BF006962F9 /* LobbyCell.swift in Sources */,
 				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
 				4D36E705201E4984000DC94F /* SchoolView.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
@@ -1202,6 +1225,7 @@
 				4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */,
 				4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */,
 				4D05A94A1FE144A900B19E6E /* NetworkService+UploadRequest.swift in Sources */,
+				4DCB4EA5202234F4006962F9 /* CustomSearchBar.swift in Sources */,
 				4DEE83EE201E1AE7001B0AEB /* MainGreen+UIButton.swift in Sources */,
 				4DFC27141FE92CB2006020FF /* LoginServiceParser.swift in Sources */,
 				4D05A9471FE144A900B19E6E /* URLRequest+Methods.swift in Sources */,
