@@ -64,6 +64,10 @@
 		4D36E701201E3859000DC94F /* TapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6FE201E3859000DC94F /* TapticEngine.swift */; };
 		4D36E703201E4974000DC94F /* SchoolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E702201E4974000DC94F /* SchoolView.xib */; };
 		4D36E705201E4984000DC94F /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E704201E4984000DC94F /* SchoolView.swift */; };
+		4D5ED8F7202246870020FD51 /* OffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F3202246860020FD51 /* OffersView.swift */; };
+		4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F4202246860020FD51 /* OffersView.xib */; };
+		4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F5202246860020FD51 /* OffersCell.xib */; };
+		4D5ED8FA202246870020FD51 /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F6202246860020FD51 /* OffersCell.swift */; };
 		4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */; };
 		4D66007D201B5C640085CC58 /* OnboardingSocial+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */; };
 		4D66007F201B642E0085CC58 /* OnboardingAccount+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */; };
@@ -200,6 +204,10 @@
 		4D36E6FE201E3859000DC94F /* TapticEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapticEngine.swift; sourceTree = "<group>"; };
 		4D36E702201E4974000DC94F /* SchoolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolView.xib; sourceTree = "<group>"; };
 		4D36E704201E4984000DC94F /* SchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
+		4D5ED8F3202246860020FD51 /* OffersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersView.swift; sourceTree = "<group>"; };
+		4D5ED8F4202246860020FD51 /* OffersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersView.xib; sourceTree = "<group>"; };
+		4D5ED8F5202246860020FD51 /* OffersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersCell.xib; sourceTree = "<group>"; };
+		4D5ED8F6202246860020FD51 /* OffersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersCell.swift; sourceTree = "<group>"; };
 		4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding+TextField.swift"; sourceTree = "<group>"; };
 		4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingSocial+UIButton.swift"; sourceTree = "<group>"; };
 		4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingAccount+UIButton.swift"; sourceTree = "<group>"; };
@@ -590,6 +598,17 @@
 			path = RangeSlider;
 			sourceTree = "<group>";
 		};
+		4D5ED8F2202246860020FD51 /* Offers */ = {
+			isa = PBXGroup;
+			children = (
+				4D5ED8F4202246860020FD51 /* OffersView.xib */,
+				4D5ED8F3202246860020FD51 /* OffersView.swift */,
+				4D5ED8F5202246860020FD51 /* OffersCell.xib */,
+				4D5ED8F6202246860020FD51 /* OffersCell.swift */,
+			);
+			path = Offers;
+			sourceTree = "<group>";
+		};
 		4D681F88201DE32F00D404CD /* FacebookService */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,6 +766,7 @@
 				4D36E6FA201E356E000DC94F /* ChildrenView */,
 				4DC27EBA201FA5DE000EE9FA /* SchoolView */,
 				4DC27EC5201FBFF5000EE9FA /* CardsView */,
+				4D5ED8F2202246860020FD51 /* Offers */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -920,9 +940,11 @@
 			files = (
 				4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */,
 				4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */,
+				4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
+				4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */,
 				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
 				4DCB4EA12022285D006962F9 /* LobbyCell.xib in Resources */,
 				4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */,
@@ -1153,6 +1175,7 @@
 				4D05A9481FE144A900B19E6E /* NetwrokService+Extension.swift in Sources */,
 				4D66007F201B642E0085CC58 /* OnboardingAccount+UIButton.swift in Sources */,
 				4D05A8DB1FE143C500B19E6E /* SignUpViewController.swift in Sources */,
+				4D5ED8F7202246870020FD51 /* OffersView.swift in Sources */,
 				4D8F2D3A201B4EB000756CCB /* TransparentGrey+UIButton.swift in Sources */,
 				4D05A93F1FE144A900B19E6E /* DataSourceProvider.swift in Sources */,
 				4D05A9521FE144A900B19E6E /* NotificationCoordinator.swift in Sources */,
@@ -1186,6 +1209,7 @@
 				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,
 				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
+				4D5ED8FA202246870020FD51 /* OffersCell.swift in Sources */,
 				4DCB4E9E20222795006962F9 /* LobbyViewController.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
 				4D36E701201E3859000DC94F /* TapticEngine.swift in Sources */,

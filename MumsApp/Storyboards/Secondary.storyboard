@@ -75,9 +75,18 @@
                                                     <constraint firstAttribute="height" constant="188" id="AK2-IK-oPv"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHG-w4-mMh" customClass="OffersView" customModule="MumsApp" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="975" width="343" height="216"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="216" id="0tY-do-LEK"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="ZHG-w4-mMh" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="1dQ-vW-nWs"/>
+                                            <constraint firstItem="ZHG-w4-mMh" firstAttribute="top" secondItem="K5u-CZ-6cu" secondAttribute="bottom" constant="16" id="4dV-1e-zjj"/>
                                             <constraint firstItem="b3U-cd-5Gz" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="4mY-a0-n7f"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="Fhu-MV-WuN" secondAttribute="trailing" constant="16" id="5PO-ZD-hsY"/>
                                             <constraint firstItem="K5u-CZ-6cu" firstAttribute="top" secondItem="b3U-cd-5Gz" secondAttribute="bottom" constant="16" id="AKw-8G-XWo"/>
@@ -93,6 +102,7 @@
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="b3U-cd-5Gz" secondAttribute="trailing" constant="16" id="jUa-dw-QOA"/>
                                             <constraint firstItem="b3U-cd-5Gz" firstAttribute="top" secondItem="OSG-vz-rr3" secondAttribute="bottom" constant="12" id="nQO-y3-JjF"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="K5u-CZ-6cu" secondAttribute="trailing" constant="16" id="qaf-Zi-HGu"/>
+                                            <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="ZHG-w4-mMh" secondAttribute="trailing" constant="16" id="rou-fe-dck"/>
                                             <constraint firstItem="OSG-vz-rr3" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="yFN-Py-ELp"/>
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="yqv-k2-gOs"/>
@@ -128,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJe-dl-Rb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="508"/>
+            <point key="canvasLocation" x="1096.8" y="507.34632683658174"/>
         </scene>
         <!--Location Popup View Controller-->
         <scene sceneID="I0M-ED-xd2">
