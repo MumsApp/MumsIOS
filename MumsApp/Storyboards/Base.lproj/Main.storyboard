@@ -33,10 +33,10 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoDescription" translatesAutoresizingMaskIntoConstraints="NO" id="sRZ-Vo-UDH">
-                                <rect key="frame" x="95" y="452.5" width="184" height="46"/>
+                                <rect key="frame" x="42.5" y="452.5" width="289" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="184" id="qmc-x4-xcb"/>
-                                    <constraint firstAttribute="height" constant="46" id="yIQ-eQ-zhH"/>
+                                    <constraint firstAttribute="width" constant="289" id="qmc-x4-xcb"/>
+                                    <constraint firstAttribute="height" constant="18" id="yIQ-eQ-zhH"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -94,14 +94,8 @@
                                     <action selector="createOfficialPageButtonPressed:" destination="hbX-fo-1H4" eventType="touchUpInside" id="qHu-m7-o5w"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A place for all parents and carers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1e-HB-gWr">
-                                <rect key="frame" x="62" y="343" width="251" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIa-JO-v77">
-                                <rect key="frame" x="138" y="315" width="99" height="20"/>
+                                <rect key="frame" x="138" y="296.5" width="99" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="to MumsApp">
                                         <attributes>
@@ -113,14 +107,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="YIx-aH-hh4">
-                                <rect key="frame" x="124" y="187" width="127" height="116"/>
+                                <rect key="frame" x="124" y="168.5" width="127" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="116" id="4ds-IC-y7K"/>
                                     <constraint firstAttribute="width" constant="127" id="axC-z5-ZS9"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnX-Sf-vCs">
-                                <rect key="frame" x="153" y="311" width="70.5" height="20"/>
+                                <rect key="frame" x="153" y="292.5" width="70.5" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Welcome">
                                         <attributes>
@@ -131,29 +125,35 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoDescription" translatesAutoresizingMaskIntoConstraints="NO" id="FkE-zt-AHS">
+                                <rect key="frame" x="43" y="324.5" width="289" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="NSw-sC-syR"/>
+                                    <constraint firstAttribute="height" constant="18" id="otF-Qa-SeT"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZnX-Sf-vCs" firstAttribute="centerX" secondItem="El1-LA-gmt" secondAttribute="centerX" id="0iY-vO-oo5"/>
+                            <constraint firstItem="FkE-zt-AHS" firstAttribute="top" secondItem="IIa-JO-v77" secondAttribute="bottom" constant="8" id="5cl-Xm-vp9"/>
                             <constraint firstItem="Tsi-Ug-ZWX" firstAttribute="bottom" secondItem="zeH-FV-OAG" secondAttribute="bottom" constant="20" id="8C0-zr-ZhU"/>
                             <constraint firstItem="ZnX-Sf-vCs" firstAttribute="top" secondItem="YIx-aH-hh4" secondAttribute="bottom" constant="8" id="AaJ-Y0-JRG"/>
-                            <constraint firstItem="Y1e-HB-gWr" firstAttribute="centerX" secondItem="El1-LA-gmt" secondAttribute="centerX" id="ObJ-DU-gFh"/>
+                            <constraint firstItem="FkE-zt-AHS" firstAttribute="centerY" secondItem="El1-LA-gmt" secondAttribute="centerY" id="NHP-dK-dHt"/>
                             <constraint firstItem="Fmh-xg-3Nd" firstAttribute="centerX" secondItem="El1-LA-gmt" secondAttribute="centerX" id="Ssr-0x-FQ1"/>
                             <constraint firstItem="zeH-FV-OAG" firstAttribute="centerX" secondItem="El1-LA-gmt" secondAttribute="centerX" id="UQT-1D-q9i"/>
                             <constraint firstItem="zeH-FV-OAG" firstAttribute="top" secondItem="seN-Ig-qZO" secondAttribute="bottom" constant="16" id="aT8-Se-Sov"/>
                             <constraint firstItem="IIa-JO-v77" firstAttribute="top" secondItem="ZnX-Sf-vCs" secondAttribute="bottom" constant="-16" id="e1J-0d-ryT"/>
-                            <constraint firstItem="Y1e-HB-gWr" firstAttribute="centerY" secondItem="El1-LA-gmt" secondAttribute="centerY" constant="20" id="iac-UM-BUD"/>
                             <constraint firstItem="IIa-JO-v77" firstAttribute="centerX" secondItem="El1-LA-gmt" secondAttribute="centerX" id="pf8-q2-uZl"/>
-                            <constraint firstItem="Y1e-HB-gWr" firstAttribute="top" secondItem="IIa-JO-v77" secondAttribute="bottom" constant="8" id="sLT-2J-64G"/>
                             <constraint firstItem="seN-Ig-qZO" firstAttribute="top" secondItem="Fmh-xg-3Nd" secondAttribute="bottom" constant="8" id="sYm-FL-xde"/>
                             <constraint firstItem="YIx-aH-hh4" firstAttribute="centerX" secondItem="El1-LA-gmt" secondAttribute="centerX" id="uMT-Fx-RQK"/>
+                            <constraint firstItem="FkE-zt-AHS" firstAttribute="centerX" secondItem="El1-LA-gmt" secondAttribute="centerX" id="xUK-qt-ilU"/>
                             <constraint firstItem="seN-Ig-qZO" firstAttribute="centerX" secondItem="El1-LA-gmt" secondAttribute="centerX" id="z2r-8k-oVT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tsi-Ug-ZWX"/>
                     </view>
                     <connections>
                         <outlet property="createOfficialPageButton" destination="zeH-FV-OAG" id="Upp-ub-O3c"/>
-                        <outlet property="descriptionLabel" destination="Y1e-HB-gWr" id="EA2-uS-r2s"/>
                         <outlet property="signInButton" destination="seN-Ig-qZO" id="87j-uZ-WZw"/>
                         <outlet property="signUpButton" destination="Fmh-xg-3Nd" id="SXz-GW-Qas"/>
                         <outletCollection property="titleLabels" destination="ZnX-Sf-vCs" collectionClass="NSMutableArray" id="uyE-HO-tDU"/>
@@ -600,13 +600,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0f-7R-h41" customClass="OnboardingAccountButton" customModule="MumsApp" customModuleProvider="target">
-                                <rect key="frame" x="202.5" y="268" width="130" height="130"/>
+                                <rect key="frame" x="197.5" y="243.5" width="140" height="140"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="gcG-b4-rft"/>
-                                    <constraint firstAttribute="height" constant="130" id="yVC-kl-qG1"/>
+                                    <constraint firstAttribute="width" constant="140" id="gcG-b4-rft"/>
+                                    <constraint firstAttribute="height" constant="140" id="yVC-kl-qG1"/>
                                 </constraints>
-                                <state key="normal" title="School" image="schoolIcon">
+                                <state key="normal" title="Organisation" image="schoolIcon">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -614,7 +614,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH1-Kf-71f">
-                                <rect key="frame" x="50" y="438" width="275.5" height="61"/>
+                                <rect key="frame" x="50" y="423.5" width="275.5" height="61"/>
                                 <string key="text">Nunc sodales risus vitae erat luctus
 ornare. Donec pharetra at magna id 
 fringilla. Morbi id elit sed dolor</string>
@@ -623,17 +623,17 @@ fringilla. Morbi id elit sed dolor</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DC-Iv-XWw">
-                                <rect key="frame" x="142" y="203.5" width="90" height="21"/>
+                                <rect key="frame" x="142" y="182.5" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAF-8b-FSJ" customClass="OnboardingAccountButton" customModule="MumsApp" customModuleProvider="target">
-                                <rect key="frame" x="42.5" y="268" width="130" height="130"/>
+                                <rect key="frame" x="37.5" y="243.5" width="140" height="140"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="FaB-T0-fru"/>
-                                    <constraint firstAttribute="width" constant="130" id="oxS-Zr-Y5K"/>
+                                    <constraint firstAttribute="height" constant="140" id="FaB-T0-fru"/>
+                                    <constraint firstAttribute="width" constant="140" id="oxS-Zr-Y5K"/>
                                 </constraints>
                                 <state key="normal" title="Advertise" image="advertiseIcon">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -647,10 +647,10 @@ fringilla. Morbi id elit sed dolor</string>
                         <constraints>
                             <constraint firstItem="5DC-Iv-XWw" firstAttribute="centerX" secondItem="3lT-FH-kce" secondAttribute="centerX" id="06y-yi-s0d"/>
                             <constraint firstItem="fH1-Kf-71f" firstAttribute="centerX" secondItem="3lT-FH-kce" secondAttribute="centerX" id="28U-aT-OtY"/>
-                            <constraint firstItem="a0f-7R-h41" firstAttribute="top" secondItem="5DC-Iv-XWw" secondAttribute="bottom" constant="44" id="IEd-4e-dum"/>
-                            <constraint firstItem="a0f-7R-h41" firstAttribute="centerY" secondItem="3lT-FH-kce" secondAttribute="centerY" id="Msa-BE-vnR"/>
+                            <constraint firstItem="a0f-7R-h41" firstAttribute="top" secondItem="5DC-Iv-XWw" secondAttribute="bottom" constant="40" id="IEd-4e-dum"/>
+                            <constraint firstItem="a0f-7R-h41" firstAttribute="centerY" secondItem="3lT-FH-kce" secondAttribute="centerY" constant="-20" id="Msa-BE-vnR"/>
                             <constraint firstItem="AAF-8b-FSJ" firstAttribute="centerX" secondItem="3lT-FH-kce" secondAttribute="centerX" constant="-80" id="aq8-1h-zJ3"/>
-                            <constraint firstItem="AAF-8b-FSJ" firstAttribute="centerY" secondItem="3lT-FH-kce" secondAttribute="centerY" id="ddL-c2-gs8"/>
+                            <constraint firstItem="AAF-8b-FSJ" firstAttribute="centerY" secondItem="3lT-FH-kce" secondAttribute="centerY" constant="-20" id="ddL-c2-gs8"/>
                             <constraint firstItem="fH1-Kf-71f" firstAttribute="top" secondItem="AAF-8b-FSJ" secondAttribute="bottom" constant="40" id="lJa-db-7SB"/>
                             <constraint firstItem="a0f-7R-h41" firstAttribute="centerX" secondItem="3lT-FH-kce" secondAttribute="centerX" constant="80" id="yNL-1h-Tl7"/>
                         </constraints>
@@ -749,7 +749,7 @@ password reset instructions</string>
         <image name="facebookIcon" width="10" height="18"/>
         <image name="googleIcon" width="20" height="17"/>
         <image name="logo" width="223" height="206"/>
-        <image name="logoDescription" width="184" height="46"/>
+        <image name="logoDescription" width="289" height="18"/>
         <image name="logoText" width="333" height="80"/>
         <image name="schoolIcon" width="71" height="71"/>
     </resources>

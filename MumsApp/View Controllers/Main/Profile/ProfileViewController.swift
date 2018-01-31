@@ -8,7 +8,9 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var schoolView: SchoolView!
     
-    @IBOutlet weak var schoolViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var locationViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var schoolViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,8 @@ class ProfileViewController: UIViewController {
         
         self.locationView.configureWith(delegate: self)
         
+        self.locationViewHeight.constant = 80
+
     }
 
     private func configureNavigationBar() {
@@ -36,8 +40,6 @@ class ProfileViewController: UIViewController {
         let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "My Profile")
         
         self.navigationItem.titleView = titleLabel
-        
-//        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         self.navigationItem.hidesBackButton = true
         
@@ -61,7 +63,7 @@ extension ProfileViewController: SchoolViewDelegate {
         
         self.schoolView.list.append(String(Date().timeIntervalSinceNow))
         
-        self.schoolViewHeightConstraint.constant += 90
+        self.schoolViewHeight.constant += 90
         
         UIView.animate(withDuration: 0.3) {
         
@@ -77,7 +79,7 @@ extension ProfileViewController: SchoolViewDelegate {
 
         self.schoolView.list.removeLast()
 
-        self.schoolViewHeightConstraint.constant -= 90
+        self.schoolViewHeight.constant -= 90
         
         UIView.animate(withDuration: 0.3) {
             
@@ -92,6 +94,32 @@ extension ProfileViewController: SchoolViewDelegate {
 }
 
 extension ProfileViewController: LocationViewDelegate {
+    
+    func showSwitchValueChanged(isVisible: Bool) {
+        
+        if isVisible {
+            
+            self.locationViewHeight.constant = 270
+            
+            UIView.animate(withDuration: 0.3) {
+                
+                self.view.layoutIfNeeded()
+                
+            }
+            
+        } else {
+            
+            self.locationViewHeight.constant = 80
+            
+            UIView.animate(withDuration: 0.3) {
+                
+                self.view.layoutIfNeeded()
+                
+            }
+            
+        }
+        
+    }
     
     func changeLocationButtonPressed() {
         

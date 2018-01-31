@@ -120,9 +120,10 @@
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="locationView" destination="Fhu-MV-WuN" id="lMh-Cu-tKX"/>
+                        <outlet property="locationViewHeight" destination="t6V-mx-ROb" id="yEx-Ad-w1D"/>
                         <outlet property="profileView" destination="aNr-8e-AI7" id="w5Z-9b-pRC"/>
                         <outlet property="schoolView" destination="b3U-cd-5Gz" id="0cN-SL-JfU"/>
-                        <outlet property="schoolViewHeightConstraint" destination="dpm-WC-Pod" id="Zus-3b-cUK"/>
+                        <outlet property="schoolViewHeight" destination="dpm-WC-Pod" id="RfV-K0-6ut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJe-dl-Rb6" userLabel="First Responder" sceneMemberID="firstResponder"/>

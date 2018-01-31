@@ -2,6 +2,7 @@ import UIKit
 
 protocol LocationViewDelegate: class {
     
+    func showSwitchValueChanged(isVisible: Bool)
     func changeLocationButtonPressed()
     
 }
@@ -14,10 +15,12 @@ class LocationView: UIView {
 
     @IBOutlet weak var userLocationLabel: UILabel!
     
-    @IBOutlet weak var changeButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
     @IBOutlet weak var mapView: CustomMapView!
    
+    @IBOutlet weak var showSwitch: UISwitch!
+    
     private weak var delegate: LocationViewDelegate?
     
     func configureWith(delegate: LocationViewDelegate) {
@@ -68,9 +71,21 @@ class LocationView: UIView {
         
         self.userLocationLabel.textColor = .mainDarkGrey
         
+        self.editButton.isHidden = true
+        
+        self.showSwitch.isOn = false
+        
     }
     
-    @IBAction func changeButtonPressed(_ sender: UIButton) {
+    @IBAction func showSwitchValueChanged(_ sender: UISwitch) {
+    
+        self.editButton.isHidden = sender.isOn ? false : true
+        
+        self.delegate?.showSwitchValueChanged(isVisible: sender.isOn)
+    
+    }
+    
+    @IBAction func editButtonPressed(_ sender: UIButton) {
         
         self.delegate?.changeLocationButtonPressed()
         

@@ -3,9 +3,7 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     @IBOutlet var titleLabels: [UILabel]!
-    
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
+        
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBOutlet weak var signInButton: UIButton!
@@ -35,11 +33,7 @@ class WelcomeViewController: UIViewController {
             labels.font = .regular(size: 33)
             
         }
-        
-        self.descriptionLabel.font = .customRegular(size: 21)
-        
-        self.descriptionLabel.textColor = .mainDarkGrey
-        
+     
     }
     
     private func configureNavigationBar() {

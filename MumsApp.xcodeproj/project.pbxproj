@@ -96,6 +96,7 @@
 		4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677532017825500F34184 /* WelcomeViewController.swift */; };
 		4DC677562017870000F34184 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677552017870000F34184 /* SignInViewController.swift */; };
 		4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */; };
+		4DCB4E9C2022263B006962F9 /* CustomGreen+UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4E9B2022263B006962F9 /* CustomGreen+UISwitch.swift */; };
 		4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */; };
 		4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83E7201E13CC001B0AEB /* ProfileView.xib */; };
 		4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E9201E15FB001B0AEB /* ProfileView.swift */; };
@@ -227,6 +228,7 @@
 		4DC677532017825500F34184 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4DC677552017870000F34184 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOfficialPageViewController.swift; sourceTree = "<group>"; };
+		4DCB4E9B2022263B006962F9 /* CustomGreen+UISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomGreen+UISwitch.swift"; sourceTree = "<group>"; };
 		4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DEE83E7201E13CC001B0AEB /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		4DEE83E9201E15FB001B0AEB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -684,6 +686,7 @@
 				4D8F2D39201B4EB000756CCB /* TransparentGrey+UIButton.swift */,
 				4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */,
 				4DEE83ED201E1AE7001B0AEB /* MainGreen+UIButton.swift */,
+				4DCB4E9B2022263B006962F9 /* CustomGreen+UISwitch.swift */,
 				4D36E6F0201E31E1000DC94F /* CustomMapView.swift */,
 				4D36E6FB201E3859000DC94F /* RangeSlider */,
 			);
@@ -1133,6 +1136,7 @@
 				4D05A93F1FE144A900B19E6E /* DataSourceProvider.swift in Sources */,
 				4D05A9521FE144A900B19E6E /* NotificationCoordinator.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
+				4DCB4E9C2022263B006962F9 /* CustomGreen+UISwitch.swift in Sources */,
 				4DBEE64220206524006E2C06 /* Exceptions.swift in Sources */,
 				4D05A9491FE144A900B19E6E /* ConnectionHelper+Extension.swift in Sources */,
 				4D36E700201E3859000DC94F /* RangeSeekSlider.swift in Sources */,

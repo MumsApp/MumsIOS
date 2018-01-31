@@ -33,10 +33,10 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoDescription" translatesAutoresizingMaskIntoConstraints="NO" id="L1E-IH-HYT">
-                                <rect key="frame" x="95" y="444" width="184" height="46"/>
+                                <rect key="frame" x="42.5" y="444" width="289" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="K8r-1s-9W4"/>
-                                    <constraint firstAttribute="width" constant="184" id="nan-u2-n7t"/>
+                                    <constraint firstAttribute="height" constant="18" id="K8r-1s-9W4"/>
+                                    <constraint firstAttribute="width" constant="289" id="nan-u2-n7t"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -59,7 +59,7 @@
     </scenes>
     <resources>
         <image name="logo" width="223" height="206"/>
-        <image name="logoDescription" width="184" height="46"/>
+        <image name="logoDescription" width="289" height="18"/>
         <image name="logoText" width="333" height="80"/>
     </resources>
 </document>

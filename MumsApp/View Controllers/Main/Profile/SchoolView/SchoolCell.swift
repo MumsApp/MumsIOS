@@ -41,8 +41,6 @@ class SchoolCell: UITableViewCell {
         
         self.followLabel.textColor = .black
         
-        self.followSwitch.layer.cornerRadius = 16
-        
     }
 
     @IBAction func deleteButtonPressed(_ sender: UIButton) {

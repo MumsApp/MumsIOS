@@ -42,7 +42,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kaw-Ve-4pH">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kaw-Ve-4pH" customClass="CustomGreenSwitch" customModule="MumsApp" customModuleProvider="target">
                     <rect key="frame" x="73" y="44" width="51" height="31"/>
                     <color key="backgroundColor" red="0.82745098039215681" green="0.85098039215686272" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="onTintColor" red="0.1215686275" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
