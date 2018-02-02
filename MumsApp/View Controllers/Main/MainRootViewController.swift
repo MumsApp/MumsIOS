@@ -1,5 +1,4 @@
 import UIKit
-import BubbleTransition
 
 class MainRootViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
@@ -46,25 +45,25 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     
-        transition.transitionMode = .present
+        self.transition.transitionMode = .present
         
-        transition.startingPoint = self.menuWindow!.center
+        self.transition.startingPoint = self.menuWindow!.center
         
-        transition.bubbleColor = UIColor.white.withAlphaComponent(0.95)
+        self.transition.bubbleColor = UIColor.white.withAlphaComponent(0.95)
         
-        return transition
+        return self.transition
   
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        transition.transitionMode = .dismiss
+        self.transition.transitionMode = .dismiss
         
-        transition.startingPoint = self.menuWindow!.center
+        self.transition.startingPoint = self.menuWindow!.center
         
-        transition.bubbleColor = UIColor.white.withAlphaComponent(0.95)
+        self.transition.bubbleColor = UIColor.white.withAlphaComponent(0.95)
         
-        return transition
+        return self.transition
         
     }
     

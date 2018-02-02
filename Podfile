@@ -13,7 +13,6 @@ pod 'ReachabilitySwift', '~> 3'
 pod 'FBSDKLoginKit', '~> 4.29.0'
 pod 'GoogleMaps', '~> 2.5.0'
 pod 'GoogleSignIn'
-pod 'BubbleTransition', '~> 2.0.0'
 
   target 'MumsAppTests' do
     inherit! :search_paths
