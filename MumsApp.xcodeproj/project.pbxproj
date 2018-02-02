@@ -72,6 +72,7 @@
 		4D66007D201B5C640085CC58 /* OnboardingSocial+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */; };
 		4D66007F201B642E0085CC58 /* OnboardingAccount+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */; };
 		4D681F85201DE09200D404CD /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D681F84201DE09200D404CD /* FacebookService.swift */; };
+		4D76895E20248946002FC25D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76895D20248946002FC25D /* MenuViewController.swift */; };
 		4D8C63A1201C830600657FD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C63A0201C830600657FD7 /* String+Extensions.swift */; };
 		4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */; };
 		4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */; };
@@ -81,6 +82,8 @@
 		4D8F2D3C201B4F3800756CCB /* OnboardingGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3B201B4F3800756CCB /* OnboardingGreen+UIButton.swift */; };
 		4D8F2D3E201B502300756CCB /* OnboardingGrey+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3D201B502300756CCB /* OnboardingGrey+UIButton.swift */; };
 		4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */; };
+		4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4DA49A502024B2EA00561EC9 /* BebasNeueRegular.otf */; };
+		4DA49A532024B69900561EC9 /* VerticallyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA49A522024B69900561EC9 /* VerticallyButton.swift */; };
 		4DAA14EA2020E458000B1CA0 /* LocationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */; };
 		4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */; };
 		4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */; };
@@ -212,6 +215,7 @@
 		4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingSocial+UIButton.swift"; sourceTree = "<group>"; };
 		4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingAccount+UIButton.swift"; sourceTree = "<group>"; };
 		4D681F84201DE09200D404CD /* FacebookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
+		4D76895D20248946002FC25D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4D8C63A0201C830600657FD7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secondary.storyboard; sourceTree = "<group>"; };
 		4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GardenGrownCaps-Regular.otf"; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 		4D8F2D3B201B4F3800756CCB /* OnboardingGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingGreen+UIButton.swift"; sourceTree = "<group>"; };
 		4D8F2D3D201B502300756CCB /* OnboardingGrey+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingGrey+UIButton.swift"; sourceTree = "<group>"; };
 		4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
+		4DA49A502024B2EA00561EC9 /* BebasNeueRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueRegular.otf; sourceTree = "<group>"; };
+		4DA49A522024B69900561EC9 /* VerticallyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyButton.swift; sourceTree = "<group>"; };
 		4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPopupViewController.swift; sourceTree = "<group>"; };
 		4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -640,6 +646,7 @@
 				4D8F2D35201B4A4200756CCB /* Poppins-Medium.ttf */,
 				4D8F2D36201B4A4300756CCB /* Poppins-Regular.ttf */,
 				4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */,
+				4DA49A502024B2EA00561EC9 /* BebasNeueRegular.otf */,
 				4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */,
 			);
 			name = "Support Files";
@@ -686,6 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				4DC6774320177F1900F34184 /* MainRootViewController.swift */,
+				4D76895D20248946002FC25D /* MenuViewController.swift */,
 				4DCB4E9F202227A1006962F9 /* Lobby */,
 				4DEE83EC201E17EA001B0AEB /* Profile */,
 				4DAA14EB2020E461000B1CA0 /* Popups */,
@@ -717,6 +725,7 @@
 				4DCB4E9B2022263B006962F9 /* CustomGreenSwitch.swift */,
 				4D36E6F0201E31E1000DC94F /* CustomMapView.swift */,
 				4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */,
+				4DA49A522024B69900561EC9 /* VerticallyButton.swift */,
 				4D36E6FB201E3859000DC94F /* RangeSlider */,
 			);
 			path = "Custom Views";
@@ -942,6 +951,7 @@
 				4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */,
 				4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
+				4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */,
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
 				4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */,
@@ -986,6 +996,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Arcane/Arcane.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
@@ -1001,6 +1012,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Arcane.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
@@ -1192,6 +1204,7 @@
 				4DAA14EA2020E458000B1CA0 /* LocationPopupViewController.swift in Sources */,
 				4D05A95D1FE144A900B19E6E /* UIViewController+Helpers.swift in Sources */,
 				4D05A95E1FE144A900B19E6E /* UIStoryboard+Helpers.swift in Sources */,
+				4D76895E20248946002FC25D /* MenuViewController.swift in Sources */,
 				4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */,
 				4D05A9581FE144A900B19E6E /* InAppPurchase+Helper.swift in Sources */,
 				4DC67752201781E000F34184 /* Timeout+UIView.swift in Sources */,
@@ -1213,6 +1226,7 @@
 				4DCB4E9E20222795006962F9 /* LobbyViewController.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
 				4D36E701201E3859000DC94F /* TapticEngine.swift in Sources */,
+				4DA49A532024B69900561EC9 /* VerticallyButton.swift in Sources */,
 				4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */,
 				4D05A96F1FE1478400B19E6E /* Config.swift in Sources */,
 				4D05A9651FE145B800B19E6E /* AppContext.swift in Sources */,

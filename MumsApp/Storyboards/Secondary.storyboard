@@ -21,10 +21,161 @@
                         <viewLayoutGuide key="safeArea" id="Yol-58-syj"/>
                     </view>
                     <navigationItem key="navigationItem" id="jMj-SG-ytX"/>
+                    <connections>
+                        <segue destination="N6F-10-aVT" kind="presentation" identifier="MenuSegue" id="eeJ-8g-82r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bY-af-zGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="360.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="qer-DG-ekV">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N6F-10-aVT" customClass="MenuViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7zc-ha-xX2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfO-5O-xuJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqE-9r-bEF">
+                                        <rect key="frame" x="150" y="584" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="CgC-BO-uIw"/>
+                                            <constraint firstAttribute="height" constant="75" id="YeV-3v-3ym"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="closeButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="V6M-ij-iy9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yiW-EH-8dr">
+                                        <rect key="frame" x="36" y="582" width="94" height="77"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="meIcon">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="ME">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18h-5V-aI1" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
+                                        <rect key="frame" x="119" y="457" width="136" height="77"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="chatIcon">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="LET'S TALK">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k1P-ar-YCZ" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="497" width="110" height="77"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="lobbyIcon">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="LOBBY">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J62-GQ-M4c" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
+                                        <rect key="frame" x="263" y="496" width="104" height="78"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="shopIcon">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="SHOP">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uL9-cn-ZFj" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
+                                        <rect key="frame" x="99" y="359" width="176" height="78"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="whereIcon">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="WHERE CAN I FIND?">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="04q-Ge-EXJ">
+                                        <rect key="frame" x="217" y="582" width="130" height="77"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="offersIcon">
+                                            <attributedString key="attributedTitle">
+                                                <fragment>
+                                                    <string key="content">MUMSAPP
+OFFERS     </string>
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="04q-Ge-EXJ" secondAttribute="bottom" constant="8" id="73V-v5-sw8"/>
+                                    <constraint firstItem="18h-5V-aI1" firstAttribute="centerX" secondItem="TfO-5O-xuJ" secondAttribute="centerX" id="Fnb-fM-zGo"/>
+                                    <constraint firstItem="04q-Ge-EXJ" firstAttribute="top" secondItem="J62-GQ-M4c" secondAttribute="bottom" constant="8" id="GpG-gZ-W3q"/>
+                                    <constraint firstItem="18h-5V-aI1" firstAttribute="leading" secondItem="k1P-ar-YCZ" secondAttribute="trailing" constant="8" id="N45-zm-Fsa"/>
+                                    <constraint firstItem="BqE-9r-bEF" firstAttribute="top" secondItem="18h-5V-aI1" secondAttribute="bottom" constant="50" id="U1r-hj-BkT"/>
+                                    <constraint firstItem="BqE-9r-bEF" firstAttribute="centerX" secondItem="TfO-5O-xuJ" secondAttribute="centerX" id="Ub4-E2-vlN"/>
+                                    <constraint firstItem="J62-GQ-M4c" firstAttribute="leading" secondItem="18h-5V-aI1" secondAttribute="trailing" constant="8" id="YX6-1R-EKc"/>
+                                    <constraint firstItem="18h-5V-aI1" firstAttribute="top" secondItem="uL9-cn-ZFj" secondAttribute="bottom" constant="20" id="buo-hu-5im"/>
+                                    <constraint firstAttribute="bottom" secondItem="yiW-EH-8dr" secondAttribute="bottom" constant="8" id="dYi-fp-McM"/>
+                                    <constraint firstItem="uL9-cn-ZFj" firstAttribute="centerX" secondItem="TfO-5O-xuJ" secondAttribute="centerX" id="fs7-ba-4BD"/>
+                                    <constraint firstItem="BqE-9r-bEF" firstAttribute="leading" secondItem="yiW-EH-8dr" secondAttribute="trailing" constant="20" id="oZH-Zv-PnV"/>
+                                    <constraint firstAttribute="bottom" secondItem="BqE-9r-bEF" secondAttribute="bottom" constant="8" id="wur-ez-CK4"/>
+                                    <constraint firstItem="yiW-EH-8dr" firstAttribute="top" secondItem="k1P-ar-YCZ" secondAttribute="bottom" constant="8" id="xRG-LZ-3Uq"/>
+                                    <constraint firstItem="04q-Ge-EXJ" firstAttribute="leading" secondItem="BqE-9r-bEF" secondAttribute="trailing" constant="-8" id="z79-Ec-hNm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TfO-5O-xuJ" firstAttribute="bottom" secondItem="QRt-jw-s2w" secondAttribute="bottom" id="GTM-X4-cWm"/>
+                            <constraint firstItem="TfO-5O-xuJ" firstAttribute="trailing" secondItem="QRt-jw-s2w" secondAttribute="trailing" id="JhP-mG-KAR"/>
+                            <constraint firstItem="TfO-5O-xuJ" firstAttribute="leading" secondItem="QRt-jw-s2w" secondAttribute="leading" id="Nh3-8t-vue"/>
+                            <constraint firstItem="TfO-5O-xuJ" firstAttribute="top" secondItem="7zc-ha-xX2" secondAttribute="top" id="U7Q-mn-PRe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QRt-jw-s2w"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="BqE-9r-bEF" id="Omv-d2-Cxb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbD-Lz-Dhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360.80000000000001" y="881.10944527736137"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="oUq-a3-QMD">
@@ -361,8 +512,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chatIcon" width="80" height="77"/>
         <image name="closeIcon" width="18" height="18"/>
+        <image name="lobbyIcon" width="77" height="77"/>
         <image name="locationGreyIcon" width="11" height="15"/>
+        <image name="meIcon" width="78" height="77"/>
+        <image name="offersIcon" width="78" height="77"/>
         <image name="searchIcon" width="17" height="19"/>
+        <image name="shopIcon" width="77" height="78"/>
+        <image name="whereIcon" width="78" height="78"/>
     </resources>
 </document>
