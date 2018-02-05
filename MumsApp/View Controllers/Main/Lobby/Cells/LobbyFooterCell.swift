@@ -20,7 +20,7 @@ class LobbyFooterCell: UITableViewCell {
         
         self.containerView.addShadow()
         
-        self.addCategoryButton.titleLabel?.font = .regular(size: 14)
+        self.addCategoryButton.titleLabel?.font = .medium(size: 15)
         
         self.addCategoryButton.tintColor = .mainGreen
         

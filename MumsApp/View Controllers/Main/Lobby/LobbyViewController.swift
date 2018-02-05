@@ -1,4 +1,5 @@
 import UIKit
+import SwipeCellKit
 
 class LobbyViewController: UIViewController {
 
@@ -67,7 +68,7 @@ class LobbyViewController: UIViewController {
     
 }
 
-extension LobbyViewController: UITableViewDelegate, UITableViewDataSource {
+extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -111,6 +112,8 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.configureWith(title: "Expectant Moms", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis.")
             
+            cell.delegate = self
+            
             return cell
             
         } else {
@@ -121,6 +124,38 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+
+            print("Delete")
+            
+        }
+        
+        deleteAction.backgroundColor = .clear
+        
+        deleteAction.image = #imageLiteral(resourceName: "deleteIcon")
+        
+        return [deleteAction]
+    
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        
+        var options = SwipeTableOptions()
+    
+        options.backgroundColor = .clear
+        
+//        options.expansionStyle = .destructive
+        
+//        options.transitionStyle = .border
+        
+        return options
+    
     }
     
 }

@@ -1,6 +1,7 @@
 import UIKit
+import SwipeCellKit
 
-class LobbyCell: UITableViewCell {
+class LobbyCell: SwipeTableViewCell {
     
     @IBOutlet weak var containerView: UIView!
 
@@ -30,7 +31,7 @@ class LobbyCell: UITableViewCell {
     private func configureView() {
         
         self.backgroundColor = .clear
-        
+                
         self.containerView.addShadow()
         
         self.lobbyTitleLabel.font = .regular(size: 20)
