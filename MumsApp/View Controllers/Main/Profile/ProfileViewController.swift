@@ -59,7 +59,11 @@ class ProfileViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.profileSettingsPopupViewController()
+        let controllers = self.navigationController?.viewControllers
+        
+        let rootViewController = controllers?.first(where: { $0.isKind(of: MainRootViewController.self) })
+        
+        let controller = factory.profileSettingsPopupViewController(mainRootViewController: rootViewController)
         
         controller.modalPresentationStyle = .overCurrentContext
         

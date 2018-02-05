@@ -109,6 +109,16 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
             
     }
     
+    func removeMenuButton() {
+        
+        self.menuButton.removeFromSuperview()
+        
+        self.menuController?.removeFromParentViewController()
+        
+        self.menuWindow?.removeFromSuperview()
+        
+    }
+    
 }
 
 extension MainRootViewController: MenuDelegate {

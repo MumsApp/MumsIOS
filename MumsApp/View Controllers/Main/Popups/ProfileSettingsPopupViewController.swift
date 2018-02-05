@@ -30,10 +30,14 @@ class ProfileSettingsPopupViewController: UIViewController {
     
     private weak var delegate: LogoutDelegate?
     
-    func configureWith(delegate: LogoutDelegate?) {
+    private weak var rootViewController: UIViewController?
+    
+    func configureWith(delegate: LogoutDelegate?, rootViewController: UIViewController?) {
         
         self.delegate = delegate
         
+        self.rootViewController = rootViewController
+    
     }
     
     override func viewDidLoad() {
@@ -85,9 +89,15 @@ class ProfileSettingsPopupViewController: UIViewController {
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
-    
-        self.delegate?.didLogout()
-    
+        
+        if let rootViewController = self.rootViewController as? MainRootViewController {
+            
+            rootViewController.removeMenuButton()
+            
+            self.delegate?.didLogout()
+
+        }
+        
     }
     
     @IBAction func askQuestionButtonPressed(_ sender: UIButton) {
