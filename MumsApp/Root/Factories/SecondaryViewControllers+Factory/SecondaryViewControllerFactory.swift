@@ -80,4 +80,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func chatViewController() -> ChatViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ChatViewController.rawValue, storyboard: storyboard) as! ChatViewController
+        
+        return controller
+        
+    }
+    
 }

@@ -115,6 +115,9 @@
 		4DE174FA2028A044001C5DD1 /* LobbyFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE174F92028A044001C5DD1 /* LobbyFooterCell.xib */; };
 		4DE174FC2028A054001C5DD1 /* LobbyFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174FB2028A054001C5DD1 /* LobbyFooterCell.swift */; };
 		4DE174FF2028BAB0001C5DD1 /* LobbyArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */; };
+		4DE175012028C8B3001C5DD1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE175002028C8B3001C5DD1 /* ChatViewController.swift */; };
+		4DE175032028C97E001C5DD1 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE175022028C97E001C5DD1 /* ChatCell.swift */; };
+		4DE175052028C985001C5DD1 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE175042028C985001C5DD1 /* ChatCell.xib */; };
 		4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */; };
 		4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83E7201E13CC001B0AEB /* ProfileView.xib */; };
 		4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E9201E15FB001B0AEB /* ProfileView.swift */; };
@@ -265,6 +268,9 @@
 		4DE174F92028A044001C5DD1 /* LobbyFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyFooterCell.xib; sourceTree = "<group>"; };
 		4DE174FB2028A054001C5DD1 /* LobbyFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyFooterCell.swift; sourceTree = "<group>"; };
 		4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyArray.swift; sourceTree = "<group>"; };
+		4DE175002028C8B3001C5DD1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4DE175022028C97E001C5DD1 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		4DE175042028C985001C5DD1 /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
 		4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DEE83E7201E13CC001B0AEB /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		4DEE83E9201E15FB001B0AEB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -710,6 +716,7 @@
 			children = (
 				4DC6774320177F1900F34184 /* MainRootViewController.swift */,
 				4D76895D20248946002FC25D /* MenuViewController.swift */,
+				4DE175072028C999001C5DD1 /* Chat */,
 				4DCB4E9F202227A1006962F9 /* Lobby */,
 				4DEE83EC201E17EA001B0AEB /* Profile */,
 				4DAA14EB2020E461000B1CA0 /* Popups */,
@@ -784,6 +791,24 @@
 				4DE174FB2028A054001C5DD1 /* LobbyFooterCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		4DE175062028C992001C5DD1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4DE175042028C985001C5DD1 /* ChatCell.xib */,
+				4DE175022028C97E001C5DD1 /* ChatCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4DE175072028C999001C5DD1 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4DE175002028C8B3001C5DD1 /* ChatViewController.swift */,
+				4DE175062028C992001C5DD1 /* Cells */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		4DEE83EB201E17E1001B0AEB /* ProfileView */ = {
@@ -983,6 +1008,7 @@
 				4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */,
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
+				4DE175052028C985001C5DD1 /* ChatCell.xib in Resources */,
 				4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */,
 				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
 				4DCB4EA12022285D006962F9 /* LobbyCell.xib in Resources */,
@@ -1253,6 +1279,7 @@
 				4D36E6F9201E3565000DC94F /* ChildrenView.swift in Sources */,
 				4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */,
 				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,
+				4DE175012028C8B3001C5DD1 /* ChatViewController.swift in Sources */,
 				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
 				4D5ED8FA202246870020FD51 /* OffersCell.swift in Sources */,
@@ -1263,6 +1290,7 @@
 				4DA49A532024B69900561EC9 /* VerticallyButton.swift in Sources */,
 				4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */,
 				4D05A96F1FE1478400B19E6E /* Config.swift in Sources */,
+				4DE175032028C97E001C5DD1 /* ChatCell.swift in Sources */,
 				4D05A9651FE145B800B19E6E /* AppContext.swift in Sources */,
 				4D05A9711FE1483800B19E6E /* FactoryProvider.swift in Sources */,
 				4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */,

@@ -4,6 +4,7 @@ protocol MenuDelegate: class {
     
     func lobbyButtonPressed()
     func profileButtonPressed()
+    func chatButtonPressed()
     
 }
 
@@ -36,6 +37,9 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func chatButtonPressed(_ sender: UIButton) {
+    
+        self.delegate?.chatButtonPressed()
+    
     }
     
     @IBAction func findButtonPressed(_ sender: UIButton) {

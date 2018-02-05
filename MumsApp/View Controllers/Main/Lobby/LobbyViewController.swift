@@ -28,10 +28,11 @@ class LobbyViewController: UIViewController {
         
         self.tableView.dataSource = self
         
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom:
+            80, right: 0)
+        
         self.searchBar.delegate = self
-        
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
-        
+
     }
     
     private func configureNavigationBar() {

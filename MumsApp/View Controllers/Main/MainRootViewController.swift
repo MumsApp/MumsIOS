@@ -1,5 +1,13 @@
 import UIKit
 
+enum ControllerType {
+    
+    case lobby
+    case chat
+    case profile
+
+}
+
 class MainRootViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     fileprivate var menuWindow: UIWindow?
@@ -139,27 +147,47 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
 extension MainRootViewController: MenuDelegate {
     
     func lobbyButtonPressed() {
+    
+        self.showViewController(type: .lobby)
         
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
-        
-        let controller = factory.lobbyViewController()
-        
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-
-        self.navigationController?.pushViewController(controller, animated: false)
-        
-        self.menuButtonPressed()
-
     }
     
     func profileButtonPressed() {
         
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        self.showViewController(type: .profile)
+
+    }
+    
+    func chatButtonPressed() {
         
-        let controller = factory.profileViewController()
+        self.showViewController(type: .chat)
+
+    }
+    
+    func showViewController(type: ControllerType) {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+
+        let controller: UIViewController!
+        
+        switch type {
+            
+        case .chat:
+            
+            controller = factory.chatViewController()
+            
+        case .lobby:
+            
+            controller = factory.lobbyViewController()
+            
+        case .profile:
+            
+            controller = factory.profileViewController()
+            
+        }
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-
+        
         self.navigationController?.pushViewController(controller, animated: false)
         
         self.menuButtonPressed()
