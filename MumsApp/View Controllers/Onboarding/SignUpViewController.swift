@@ -30,6 +30,8 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
    
+    @IBOutlet weak var termsButton: UIButton!
+    
     private var registerService: RegisterService!
     
     private var loginService: LoginService!
@@ -175,6 +177,18 @@ class SignUpViewController: UIViewController {
         
     }
    
+    @IBAction func termsButtonPressed(_ sender: UIButton) {
+    
+        let image = sender.tag == 0 ? #imageLiteral(resourceName: "onIcon") : #imageLiteral(resourceName: "offIcon")
+        
+        sender.setImage(image, for: .normal)
+    
+        sender.tag = sender.tag == 0 ? 1 : 0
+    
+        print(sender.tag)
+        
+    }
+    
     @IBAction func signUpWithGoogleButtonPressed(_ sender: UIButton) {
     
         GIDSignIn.sharedInstance().delegate = self

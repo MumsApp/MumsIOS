@@ -26,14 +26,14 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoText" translatesAutoresizingMaskIntoConstraints="NO" id="Qz0-XB-nOk">
-                                <rect key="frame" x="21" y="364.5" width="333" height="80"/>
+                                <rect key="frame" x="37.5" y="364.5" width="300" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="333" id="3Ma-sS-G8s"/>
-                                    <constraint firstAttribute="height" constant="80" id="Wvq-Sz-KbN"/>
+                                    <constraint firstAttribute="width" constant="300" id="3Ma-sS-G8s"/>
+                                    <constraint firstAttribute="height" constant="72" id="Wvq-Sz-KbN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoDescription" translatesAutoresizingMaskIntoConstraints="NO" id="sRZ-Vo-UDH">
-                                <rect key="frame" x="42.5" y="452.5" width="289" height="18"/>
+                                <rect key="frame" x="42.5" y="444.5" width="289" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="289" id="qmc-x4-xcb"/>
                                     <constraint firstAttribute="height" constant="18" id="yIQ-eQ-zhH"/>
@@ -208,7 +208,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZU-qC-lWM">
-                                                <rect key="frame" x="179.5" y="133" width="16" height="21"/>
+                                                <rect key="frame" x="179.5" y="133" width="16" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v4j-pp-DlO" customClass="OnboardingTextField" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="47.5" y="170" width="280" height="17"/>
+                                                <rect key="frame" x="47.5" y="169.5" width="280" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="o9r-AR-0dn"/>
                                                 </constraints>
@@ -230,7 +230,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VGz-2E-5gy" customClass="OnboardingTextField" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="47.5" y="212" width="280" height="17"/>
+                                                <rect key="frame" x="47.5" y="211.5" width="280" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="rGn-pi-Mr3"/>
                                                 </constraints>
@@ -239,7 +239,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="family-name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFv-Ju-mYU" customClass="OnboardingTextField" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="47.5" y="254" width="280" height="17"/>
+                                                <rect key="frame" x="47.5" y="253.5" width="280" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="TBO-XN-GcT"/>
                                                 </constraints>
@@ -248,7 +248,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rS5-lx-mBD" customClass="OnboardingTextField" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="47.5" y="296" width="280" height="17"/>
+                                                <rect key="frame" x="47.5" y="295.5" width="280" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="goe-pt-BSs"/>
                                                 </constraints>
@@ -257,7 +257,7 @@
                                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xml-Aa-ETi" customClass="OnboardingTextField" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="47.5" y="338" width="280" height="17"/>
+                                                <rect key="frame" x="47.5" y="337.5" width="280" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="KNu-3E-zmV"/>
                                                 </constraints>
@@ -274,7 +274,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-Ic-BW2">
-                                                <rect key="frame" x="47.5" y="195" width="280" height="1"/>
+                                                <rect key="frame" x="47.5" y="194.5" width="280" height="1"/>
                                                 <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="RlN-xL-eI5"/>
@@ -282,7 +282,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K13-14-zB7">
-                                                <rect key="frame" x="47.5" y="237" width="280" height="1"/>
+                                                <rect key="frame" x="47.5" y="236.5" width="280" height="1"/>
                                                 <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="fbe-3J-Nrz"/>
@@ -290,7 +290,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saL-hh-WCK">
-                                                <rect key="frame" x="47" y="279" width="280" height="1"/>
+                                                <rect key="frame" x="47" y="278.5" width="280" height="1"/>
                                                 <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="6Ja-YP-EG6"/>
@@ -298,7 +298,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajR-kI-Nu5">
-                                                <rect key="frame" x="47.5" y="321" width="280" height="1"/>
+                                                <rect key="frame" x="47.5" y="320.5" width="280" height="1"/>
                                                 <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Z0J-8q-3PW"/>
@@ -306,7 +306,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gg6-Pk-u9V">
-                                                <rect key="frame" x="47" y="363" width="280" height="1"/>
+                                                <rect key="frame" x="47" y="362.5" width="280" height="1"/>
                                                 <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="0xv-NF-ase"/>
@@ -316,6 +316,45 @@
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-N8-eRS">
                                                 <rect key="frame" x="177" y="555" width="20" height="20"/>
                                             </activityIndicatorView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cfy-MA-Km1">
+                                                <rect key="frame" x="52" y="379.5" width="270" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QM-9P-jQ9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="24" id="18x-PS-eCi"/>
+                                                            <constraint firstAttribute="height" constant="24" id="tlu-CQ-LXD"/>
+                                                        </constraints>
+                                                        <state key="normal" image="offIcon"/>
+                                                        <connections>
+                                                            <action selector="termsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nmr-zz-wyY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DXz-co-pOj">
+                                                        <rect key="frame" x="40" y="0.0" width="230" height="24"/>
+                                                        <subviews>
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pql-h3-EEa" customClass="TransparentGreyButton" customModule="MumsApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="91" height="24"/>
+                                                                <state key="normal" title="I agree to the"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lnP-qv-uIJ" customClass="TransparentGreenButton" customModule="MumsApp" customModuleProvider="target">
+                                                                <rect key="frame" x="95" y="0.0" width="135" height="24"/>
+                                                                <state key="normal">
+                                                                    <attributedString key="attributedTitle">
+                                                                        <fragment content="terms&amp;conditions">
+                                                                            <attributes>
+                                                                                <font key="NSFont" size="15" name="Poppins-Medium"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                <integer key="NSUnderline" value="1"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -328,6 +367,7 @@
                                             <constraint firstItem="XZU-qC-lWM" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="J4M-Lq-YNy"/>
                                             <constraint firstItem="ajR-kI-Nu5" firstAttribute="top" secondItem="rS5-lx-mBD" secondAttribute="bottom" constant="8" id="JPc-4I-cab"/>
                                             <constraint firstItem="Gg6-Pk-u9V" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="Kv2-JQ-Sga"/>
+                                            <constraint firstItem="cfy-MA-Km1" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="QXj-R2-LT6"/>
                                             <constraint firstItem="xml-Aa-ETi" firstAttribute="top" secondItem="ajR-kI-Nu5" secondAttribute="bottom" constant="16" id="QcC-wF-JVT"/>
                                             <constraint firstItem="saL-hh-WCK" firstAttribute="top" secondItem="dFv-Ju-mYU" secondAttribute="bottom" constant="8" id="UKm-oW-SAt"/>
                                             <constraint firstItem="saL-hh-WCK" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="WIX-w0-Yur"/>
@@ -338,6 +378,7 @@
                                             <constraint firstItem="IXa-RY-gf8" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="Z6f-eW-pj1"/>
                                             <constraint firstItem="dFv-Ju-mYU" firstAttribute="top" secondItem="K13-14-zB7" secondAttribute="bottom" constant="16" id="dmz-sr-HqK"/>
                                             <constraint firstItem="ajR-kI-Nu5" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="eYU-tE-man"/>
+                                            <constraint firstItem="cfy-MA-Km1" firstAttribute="top" secondItem="Gg6-Pk-u9V" secondAttribute="bottom" constant="16" id="feY-VJ-Gzi"/>
                                             <constraint firstItem="IXa-RY-gf8" firstAttribute="top" secondItem="tub-T2-Oel" secondAttribute="top" constant="40" id="gaQ-LU-jIc"/>
                                             <constraint firstItem="Bnm-uC-h5n" firstAttribute="top" secondItem="IWa-kN-lmE" secondAttribute="bottom" constant="8" id="iiI-1o-Hq8"/>
                                             <constraint firstItem="IWa-kN-lmE" firstAttribute="centerX" secondItem="LRr-qQ-BcX" secondAttribute="centerX" id="jT8-ha-UJd"/>
@@ -391,6 +432,7 @@
                         <outlet property="signUpButton" destination="IWa-kN-lmE" id="qOz-va-LRo"/>
                         <outlet property="signUpWithFacebookButton" destination="4HX-Lf-vw4" id="Dar-Es-cbh"/>
                         <outlet property="signUpWithGoogleButton" destination="IXa-RY-gf8" id="Xjm-k4-uE5"/>
+                        <outlet property="termsButton" destination="4QM-9P-jQ9" id="vf4-Sw-p4l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -751,6 +793,7 @@ password reset instructions</string>
         <image name="logo" width="223" height="206"/>
         <image name="logoDescription" width="289" height="18"/>
         <image name="logoText" width="333" height="80"/>
+        <image name="offIcon" width="24" height="24"/>
         <image name="schoolIcon" width="71" height="71"/>
     </resources>
 </document>

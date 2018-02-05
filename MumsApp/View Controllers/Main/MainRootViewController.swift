@@ -15,29 +15,27 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
 
         self.addMenuButton()
 
-        self.showProfileViewController()
+        self.configureNavigationBar()
+        
+        self.transition.duration = 0.3
         
     }
-
-    private func showProfileViewController() {
+    
+    private func configureNavigationBar() {
         
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-//        let controller = factory.lobbyViewController()
-        
-        let controller = factory.profileViewController()
-        
-        self.navigationController?.pushViewController(controller, animated: false)
-     
     }
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-        let controller = segue.destination
+        let controller = segue.destination as? MenuViewController
         
-        controller.transitioningDelegate = self
+        controller?.transitioningDelegate = self
         
-        controller.modalPresentationStyle = .custom
+        controller?.modalPresentationStyle = .custom
+        
+        controller?.configureWith(delegate: self)
         
     }
     
@@ -88,7 +86,7 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
             self.menuButton.backgroundColor = .white
             self.menuButton.setTitle("", for: UIControlState.normal)
             self.menuButton.setImage(#imageLiteral(resourceName: "menuIcon"), for: .normal)
-            self.menuButton.addTarget(self, action: #selector(self.menuButtonPressed(sender:)), for: UIControlEvents.touchUpInside)
+            self.menuButton.addTarget(self, action: #selector(self.menuButtonPressed), for: UIControlEvents.touchUpInside)
             self.menuButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
             
             self.menuButton.addShadow()
@@ -111,16 +109,48 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
             
     }
     
-    func menuButtonPressed(sender: UIButton) {
+}
+
+extension MainRootViewController: MenuDelegate {
+    
+    func lobbyButtonPressed() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.lobbyViewController()
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
+        self.navigationController?.pushViewController(controller, animated: false)
+        
+        self.menuButtonPressed()
+
+    }
+    
+    func profileButtonPressed() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.profileViewController()
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
+        self.navigationController?.pushViewController(controller, animated: false)
+        
+        self.menuButtonPressed()
+        
+    }
+    
+    func menuButtonPressed() {
         
         if self.menuButton.tag == 0 {
             
             self.menuButton.tag = 1
-
-            UIView.transition(with: sender, duration: 0.3, options: .transitionCrossDissolve, animations: {
             
+            UIView.transition(with: self.menuButton, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                
                 self.menuButton.setImage(#imageLiteral(resourceName: "closeIcon"), for: .normal)
-
+                
             }, completion: nil)
             
             self.performSegue(withIdentifier: "MenuSegue", sender: self)
@@ -128,13 +158,13 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         } else {
             
             self.menuButton.tag = 0
-
-            UIView.transition(with: sender, duration: 0.3, options: .transitionCrossDissolve, animations: {
-
+            
+            UIView.transition(with: self.menuButton, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                
                 self.menuButton.setImage(#imageLiteral(resourceName: "menuIcon"), for: .normal)
-
+                
             }, completion: nil)
-
+            
             self.dismissViewController()
             
         }
