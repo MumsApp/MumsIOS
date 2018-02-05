@@ -5,6 +5,7 @@ protocol MenuDelegate: class {
     func lobbyButtonPressed()
     func profileButtonPressed()
     func chatButtonPressed()
+    func shopButtonPressed()
     
 }
 
@@ -46,6 +47,9 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func shopButtonPressed(_ sender: UIButton) {
+        
+        self.delegate?.shopButtonPressed()
+        
     }
     
     @IBAction func offersButtonPressed(_ sender: UIButton) {

@@ -121,6 +121,9 @@
 		4DE175092028D032001C5DD1 /* ChatSettingsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE175082028D032001C5DD1 /* ChatSettingsPopupViewController.swift */; };
 		4DE1750B2028D3AA001C5DD1 /* ChatSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1750A2028D3AA001C5DD1 /* ChatSettingsCell.xib */; };
 		4DE1750D2028D3B8001C5DD1 /* ChatSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1750C2028D3B8001C5DD1 /* ChatSettingsCell.swift */; };
+		4DE175112028DC35001C5DD1 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE175102028DC35001C5DD1 /* ShopViewController.swift */; };
+		4DE175132028DCDE001C5DD1 /* ShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE175122028DCDE001C5DD1 /* ShopCell.xib */; };
+		4DE175152028DCEA001C5DD1 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE175142028DCEA001C5DD1 /* ShopCell.swift */; };
 		4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */; };
 		4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83E7201E13CC001B0AEB /* ProfileView.xib */; };
 		4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E9201E15FB001B0AEB /* ProfileView.swift */; };
@@ -277,6 +280,9 @@
 		4DE175082028D032001C5DD1 /* ChatSettingsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSettingsPopupViewController.swift; sourceTree = "<group>"; };
 		4DE1750A2028D3AA001C5DD1 /* ChatSettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatSettingsCell.xib; sourceTree = "<group>"; };
 		4DE1750C2028D3B8001C5DD1 /* ChatSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSettingsCell.swift; sourceTree = "<group>"; };
+		4DE175102028DC35001C5DD1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		4DE175122028DCDE001C5DD1 /* ShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCell.xib; sourceTree = "<group>"; };
+		4DE175142028DCEA001C5DD1 /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DEE83E7201E13CC001B0AEB /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		4DEE83E9201E15FB001B0AEB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -722,12 +728,14 @@
 		4DC6774520177F2400F34184 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				4DC6774320177F1900F34184 /* MainRootViewController.swift */,
-				4D76895D20248946002FC25D /* MenuViewController.swift */,
+				4DE1750F2028DC23001C5DD1 /* Root */,
 				4DE175072028C999001C5DD1 /* Chat */,
 				4DCB4E9F202227A1006962F9 /* Lobby */,
 				4DEE83EC201E17EA001B0AEB /* Profile */,
 				4DAA14EB2020E461000B1CA0 /* Popups */,
+				4DE175102028DC35001C5DD1 /* ShopViewController.swift */,
+				4DE175122028DCDE001C5DD1 /* ShopCell.xib */,
+				4DE175142028DCEA001C5DD1 /* ShopCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -826,6 +834,15 @@
 				4DE1750C2028D3B8001C5DD1 /* ChatSettingsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		4DE1750F2028DC23001C5DD1 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				4DC6774320177F1900F34184 /* MainRootViewController.swift */,
+				4D76895D20248946002FC25D /* MenuViewController.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		4DEE83EB201E17E1001B0AEB /* ProfileView */ = {
@@ -1027,6 +1044,7 @@
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
 				4DE175052028C985001C5DD1 /* ChatCell.xib in Resources */,
 				4DE1750B2028D3AA001C5DD1 /* ChatSettingsCell.xib in Resources */,
+				4DE175132028DCDE001C5DD1 /* ShopCell.xib in Resources */,
 				4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */,
 				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
 				4DCB4EA12022285D006962F9 /* LobbyCell.xib in Resources */,
@@ -1268,6 +1286,7 @@
 				4D8F2D3A201B4EB000756CCB /* TransparentGrey+UIButton.swift in Sources */,
 				4D05A93F1FE144A900B19E6E /* DataSourceProvider.swift in Sources */,
 				4D05A9521FE144A900B19E6E /* NotificationCoordinator.swift in Sources */,
+				4DE175112028DC35001C5DD1 /* ShopViewController.swift in Sources */,
 				4DE174FC2028A054001C5DD1 /* LobbyFooterCell.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
 				4DCB4E9C2022263B006962F9 /* CustomGreenSwitch.swift in Sources */,
@@ -1285,6 +1304,7 @@
 				4D76895E20248946002FC25D /* MenuViewController.swift in Sources */,
 				4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */,
 				4D05A9581FE144A900B19E6E /* InAppPurchase+Helper.swift in Sources */,
+				4DE175152028DCEA001C5DD1 /* ShopCell.swift in Sources */,
 				4DC67752201781E000F34184 /* Timeout+UIView.swift in Sources */,
 				4D05A9541FE144A900B19E6E /* MOUserDefaults+SecureProtocol.swift in Sources */,
 				4D05A9461FE144A900B19E6E /* CommonClosures.swift in Sources */,

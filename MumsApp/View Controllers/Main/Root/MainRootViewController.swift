@@ -5,7 +5,8 @@ enum ControllerType {
     case lobby
     case chat
     case profile
-
+    case shop
+    
 }
 
 class MainRootViewController: UIViewController, UIViewControllerTransitioningDelegate {
@@ -164,6 +165,12 @@ extension MainRootViewController: MenuDelegate {
 
     }
     
+    func shopButtonPressed() {
+    
+        self.showViewController(type: .shop)
+    
+    }
+    
     func showViewController(type: ControllerType) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
@@ -183,6 +190,10 @@ extension MainRootViewController: MenuDelegate {
         case .profile:
             
             controller = factory.profileViewController()
+            
+        case .shop:
+            
+            controller = factory.shopViewController()
             
         }
         

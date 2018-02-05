@@ -96,4 +96,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func shopViewController() -> ShopViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopViewController.rawValue, storyboard: storyboard) as! ShopViewController
+        
+        return controller
+        
+    }
+    
 }

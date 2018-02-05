@@ -1013,6 +1013,73 @@ OFFERS     </string>
             </objects>
             <point key="canvasLocation" x="2524" y="801.94902548725645"/>
         </scene>
+        <!--Shop View Controller-->
+        <scene sceneID="WGq-8O-VZo">
+            <objects>
+                <viewController storyboardIdentifier="ShopViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ej9-cn-90z" customClass="ShopViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HrU-AT-RmJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqp-U3-2Th" customClass="CustomSearchBar" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="aaQ-fz-LJl"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="lDg-yX-NrK">
+                                <rect key="frame" x="336" y="38" width="17" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="2ki-k0-1Pk"/>
+                                    <constraint firstAttribute="width" constant="17" id="sBj-YH-hWR"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="170" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-UC-XQ8">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tc-yG-keE">
+                                <rect key="frame" x="0.0" y="76" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="BWa-je-aYO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0tc-yG-keE" firstAttribute="top" secondItem="Eqp-U3-2Th" secondAttribute="bottom" id="29q-6P-Y6q"/>
+                            <constraint firstItem="Lbi-UC-XQ8" firstAttribute="bottom" secondItem="4QW-qa-i6q" secondAttribute="bottom" id="4vM-0U-ukE"/>
+                            <constraint firstItem="Eqp-U3-2Th" firstAttribute="trailing" secondItem="4QW-qa-i6q" secondAttribute="trailing" id="60v-BZ-yI0"/>
+                            <constraint firstItem="lDg-yX-NrK" firstAttribute="centerY" secondItem="Eqp-U3-2Th" secondAttribute="centerY" id="6Qc-EH-87J"/>
+                            <constraint firstItem="Eqp-U3-2Th" firstAttribute="leading" secondItem="4QW-qa-i6q" secondAttribute="leading" id="IvC-5k-L31"/>
+                            <constraint firstItem="Lbi-UC-XQ8" firstAttribute="trailing" secondItem="4QW-qa-i6q" secondAttribute="trailing" id="KOX-wZ-fjD"/>
+                            <constraint firstItem="0tc-yG-keE" firstAttribute="trailing" secondItem="4QW-qa-i6q" secondAttribute="trailing" id="kqu-Mi-puz"/>
+                            <constraint firstItem="Lbi-UC-XQ8" firstAttribute="top" secondItem="0tc-yG-keE" secondAttribute="bottom" id="lMh-RI-ASM"/>
+                            <constraint firstItem="0tc-yG-keE" firstAttribute="leading" secondItem="4QW-qa-i6q" secondAttribute="leading" id="v9m-R0-qx4"/>
+                            <constraint firstItem="4QW-qa-i6q" firstAttribute="trailing" secondItem="lDg-yX-NrK" secondAttribute="trailing" constant="22" id="wgU-wa-5F2"/>
+                            <constraint firstItem="Lbi-UC-XQ8" firstAttribute="leading" secondItem="4QW-qa-i6q" secondAttribute="leading" id="x6r-FF-eVR"/>
+                            <constraint firstItem="Eqp-U3-2Th" firstAttribute="top" secondItem="4QW-qa-i6q" secondAttribute="top" id="xCb-NW-6ly"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4QW-qa-i6q"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Eqp-U3-2Th" id="UU3-H2-wWD"/>
+                        <outlet property="tableView" destination="Lbi-UC-XQ8" id="7G5-K6-0yT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbB-Rh-puP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3938" y="133"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chatIcon" width="80" height="77"/>
