@@ -112,6 +112,8 @@
 		4DE174F4202881ED001C5DD1 /* TransparentGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F3202881ED001C5DD1 /* TransparentGreen+UIButton.swift */; };
 		4DE174F6202886B9001C5DD1 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */; };
 		4DE174F820288C38001C5DD1 /* ProfileSettingsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */; };
+		4DE174FA2028A044001C5DD1 /* LobbyFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE174F92028A044001C5DD1 /* LobbyFooterCell.xib */; };
+		4DE174FC2028A054001C5DD1 /* LobbyFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174FB2028A054001C5DD1 /* LobbyFooterCell.swift */; };
 		4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */; };
 		4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83E7201E13CC001B0AEB /* ProfileView.xib */; };
 		4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E9201E15FB001B0AEB /* ProfileView.swift */; };
@@ -259,6 +261,8 @@
 		4DE174F3202881ED001C5DD1 /* TransparentGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransparentGreen+UIButton.swift"; sourceTree = "<group>"; };
 		4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsPopupViewController.swift; sourceTree = "<group>"; };
+		4DE174F92028A044001C5DD1 /* LobbyFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyFooterCell.xib; sourceTree = "<group>"; };
+		4DE174FB2028A054001C5DD1 /* LobbyFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyFooterCell.swift; sourceTree = "<group>"; };
 		4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DEE83E7201E13CC001B0AEB /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		4DEE83E9201E15FB001B0AEB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -763,10 +767,20 @@
 			isa = PBXGroup;
 			children = (
 				4DCB4E9D20222795006962F9 /* LobbyViewController.swift */,
-				4DCB4EA02022285D006962F9 /* LobbyCell.xib */,
-				4DCB4EA2202229BF006962F9 /* LobbyCell.swift */,
+				4DE174FD2028A159001C5DD1 /* Cells */,
 			);
 			path = Lobby;
+			sourceTree = "<group>";
+		};
+		4DE174FD2028A159001C5DD1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4DCB4EA02022285D006962F9 /* LobbyCell.xib */,
+				4DCB4EA2202229BF006962F9 /* LobbyCell.swift */,
+				4DE174F92028A044001C5DD1 /* LobbyFooterCell.xib */,
+				4DE174FB2028A054001C5DD1 /* LobbyFooterCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		4DEE83EB201E17E1001B0AEB /* ProfileView */ = {
@@ -978,6 +992,7 @@
 				4D36E703201E4974000DC94F /* SchoolView.xib in Resources */,
 				4DEE83F0201E1EA2001B0AEB /* LocationView.xib in Resources */,
 				4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */,
+				4DE174FA2028A044001C5DD1 /* LobbyFooterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1202,6 +1217,7 @@
 				4D8F2D3A201B4EB000756CCB /* TransparentGrey+UIButton.swift in Sources */,
 				4D05A93F1FE144A900B19E6E /* DataSourceProvider.swift in Sources */,
 				4D05A9521FE144A900B19E6E /* NotificationCoordinator.swift in Sources */,
+				4DE174FC2028A054001C5DD1 /* LobbyFooterCell.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
 				4DCB4E9C2022263B006962F9 /* CustomGreenSwitch.swift in Sources */,
 				4DBEE64220206524006E2C06 /* Exceptions.swift in Sources */,
