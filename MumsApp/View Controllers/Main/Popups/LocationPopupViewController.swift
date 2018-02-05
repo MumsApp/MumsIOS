@@ -33,8 +33,6 @@ class LocationPopupViewController: UIViewController {
         
         self.titleLabel.font = .regular(size: 20)
         
-        self.titleLabel.textColor = .black
-        
     }
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {

@@ -51,7 +51,21 @@ class ProfileViewController: UIViewController {
     
     func settingsButtonPressed(sender: UIBarButtonItem) {
         
-        // Show settings
+        self.showProfileSettingsPopupViewController()
+        
+    }
+    
+    private func showProfileSettingsPopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.profileSettingsPopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
         
     }
     
@@ -123,11 +137,11 @@ extension ProfileViewController: LocationViewDelegate {
     
     func changeLocationButtonPressed() {
         
-        self.showCancelJobViewController()
+        self.showLocationPopupViewController()
         
     }
     
-    private func showCancelJobViewController() {
+    private func showLocationPopupViewController() {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         

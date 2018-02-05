@@ -32,6 +32,8 @@ class SignUpViewController: UIViewController {
    
     @IBOutlet weak var termsButton: UIButton!
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
     private var registerService: RegisterService!
     
     private var loginService: LoginService!
@@ -87,6 +89,12 @@ class SignUpViewController: UIViewController {
         
         self.activityIndicator.isHidden = true
 
+        if UIDevice.current.screenType == UIDevice.ScreenType.iPhones_5_5s_5c_SE {
+            
+            self.topConstraint.constant = 8
+            
+        }
+        
     }
     
     private func configureTextFields() {
@@ -184,8 +192,6 @@ class SignUpViewController: UIViewController {
         sender.setImage(image, for: .normal)
     
         sender.tag = sender.tag == 0 ? 1 : 0
-    
-        print(sender.tag)
         
     }
     
@@ -273,6 +279,14 @@ class SignUpViewController: UIViewController {
             
             self.showOkAlertWith(title: "Info", message: "The entered passwords are different.")
             
+            return
+            
+        }
+        
+        if self.termsButton.tag == 0 {
+            
+            self.showOkAlertWith(title: "Info", message: "Please accept terms & conditions.")
+         
             return
             
         }

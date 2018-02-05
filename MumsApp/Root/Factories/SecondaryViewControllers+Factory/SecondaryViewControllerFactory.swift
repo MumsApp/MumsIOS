@@ -65,4 +65,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func profileSettingsPopupViewController() -> ProfileSettingsPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProfileSettingsPopupViewController.rawValue, storyboard: storyboard) as! ProfileSettingsPopupViewController
+        
+        return controller
+        
+    }
+    
 }

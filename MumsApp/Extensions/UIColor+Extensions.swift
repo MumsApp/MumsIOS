@@ -10,6 +10,7 @@ extension UIColor {
         case MainGrey = 0xc8d6e6
         case MainDarkGrey = 0x9ba4bb
         case ShadowColor = 0x5a6786
+        case ContainerGrey = 0xf7f9fb
         
     }
     
@@ -61,4 +62,11 @@ extension UIColor {
         return UIColor(netHex: Colors.ShadowColor.rawValue)
         
     }
+    
+    public class var containerGreyColor: UIColor {
+        
+        return UIColor(netHex: Colors.ContainerGrey.rawValue)
+        
+    }
+    
 }

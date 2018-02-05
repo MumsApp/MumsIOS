@@ -110,6 +110,8 @@
 		4DCB4EA3202229BF006962F9 /* LobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA2202229BF006962F9 /* LobbyCell.swift */; };
 		4DCB4EA5202234F4006962F9 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */; };
 		4DE174F4202881ED001C5DD1 /* TransparentGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F3202881ED001C5DD1 /* TransparentGreen+UIButton.swift */; };
+		4DE174F6202886B9001C5DD1 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */; };
+		4DE174F820288C38001C5DD1 /* ProfileSettingsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */; };
 		4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */; };
 		4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83E7201E13CC001B0AEB /* ProfileView.xib */; };
 		4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E9201E15FB001B0AEB /* ProfileView.swift */; };
@@ -255,6 +257,8 @@
 		4DCB4EA2202229BF006962F9 /* LobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyCell.swift; sourceTree = "<group>"; };
 		4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		4DE174F3202881ED001C5DD1 /* TransparentGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransparentGreen+UIButton.swift"; sourceTree = "<group>"; };
+		4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsPopupViewController.swift; sourceTree = "<group>"; };
 		4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DEE83E7201E13CC001B0AEB /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		4DEE83E9201E15FB001B0AEB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -635,6 +639,7 @@
 				4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */,
 				4D8C63A0201C830600657FD7 /* String+Extensions.swift */,
 				4D36E6F4201E338B000DC94F /* UIView+Extensions.swift */,
+				4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 		4DAA14EB2020E461000B1CA0 /* Popups */ = {
 			isa = PBXGroup;
 			children = (
+				4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */,
 				4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */,
 			);
 			path = Popups;
@@ -1244,6 +1250,7 @@
 				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
 				4D36E705201E4984000DC94F /* SchoolView.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
+				4DE174F6202886B9001C5DD1 /* UIDevice+Extensions.swift in Sources */,
 				4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */,
 				4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */,
 				4D8C63A1201C830600657FD7 /* String+Extensions.swift in Sources */,
@@ -1262,6 +1269,7 @@
 				4D05A94E1FE144A900B19E6E /* NetworkService+Factory.swift in Sources */,
 				4DFC270F1FE92C3E006020FF /* RegisterServiceParser.swift in Sources */,
 				4D05A9401FE144A900B19E6E /* MOTableViewCoordinator.swift in Sources */,
+				4DE174F820288C38001C5DD1 /* ProfileSettingsPopupViewController.swift in Sources */,
 				4DC27EC2201FBFE4000EE9FA /* CardsView.swift in Sources */,
 				4DC27EC0201FA9D5000EE9FA /* SchoolCell.swift in Sources */,
 				4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */,
