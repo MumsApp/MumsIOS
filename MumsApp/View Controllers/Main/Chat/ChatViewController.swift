@@ -61,13 +61,27 @@ class ChatViewController: UIViewController {
     
     func settingsButtonPressed(sender: UIBarButtonItem) {
         
-        
+        self.showChatSettingsPopupViewController()
         
     }
     
     func filterButtonPressed(sender: UIBarButtonItem) {
         
         
+        
+    }
+    
+    private func showChatSettingsPopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.chatSettingsPopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
         
     }
     

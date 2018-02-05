@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="ChatSettingsCell" id="iN0-l3-epB" customClass="ChatSettingsCell" customModule="MumsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3Ja-Tg-17i">
+                    <rect key="frame" x="16" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6NS-IY-yUB"/>
+                        <constraint firstAttribute="width" constant="40" id="GQ3-RZ-HRO"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww7-hM-wnV">
+                    <rect key="frame" x="64" y="20" width="263" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujl-SV-IVf">
+                    <rect key="frame" x="335" y="18" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="500-cJ-yu6"/>
+                        <constraint firstAttribute="width" constant="24" id="g5F-j2-qoD"/>
+                    </constraints>
+                    <state key="normal" image="onIcon"/>
+                    <connections>
+                        <action selector="enableButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="OsV-fz-SQM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3Ja-Tg-17i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="BfU-kM-uCf"/>
+                <constraint firstItem="ujl-SV-IVf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ES4-g7-Tzx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ujl-SV-IVf" secondAttribute="trailing" constant="16" id="K21-75-Fiv"/>
+                <constraint firstItem="ww7-hM-wnV" firstAttribute="leading" secondItem="3Ja-Tg-17i" secondAttribute="trailing" constant="8" id="WQB-5s-im1"/>
+                <constraint firstItem="ww7-hM-wnV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aFl-ST-aNw"/>
+                <constraint firstItem="3Ja-Tg-17i" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="f6v-NE-agH"/>
+                <constraint firstItem="ujl-SV-IVf" firstAttribute="leading" secondItem="ww7-hM-wnV" secondAttribute="trailing" constant="8" id="n6c-q2-iPe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="enableButton" destination="ujl-SV-IVf" id="voS-dY-x2S"/>
+                <outlet property="userImageView" destination="3Ja-Tg-17i" id="b3e-tw-g8Z"/>
+                <outlet property="userNameLabel" destination="ww7-hM-wnV" id="1YQ-at-dnc"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="55"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="onIcon" width="24" height="24"/>
+        <image name="placeholderIcon" width="163" height="152"/>
+    </resources>
+</document>

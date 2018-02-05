@@ -16,5 +16,7 @@ enum SecondaryViewController: String {
     
     case ChatViewController
     
+    case ChatSettingsPopupViewController
+    
 }
 

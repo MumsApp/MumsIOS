@@ -88,4 +88,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func chatSettingsPopupViewController() -> ChatSettingsPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ChatSettingsPopupViewController.rawValue, storyboard: storyboard) as! ChatSettingsPopupViewController
+        
+        return controller
+        
+    }
+    
 }
