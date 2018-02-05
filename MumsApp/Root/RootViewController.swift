@@ -197,8 +197,6 @@ extension RootViewController: IntroDelegate, LogoutDelegate {
         
         FactoryProvider.tearDown()
         
-        UIApplication.shared.endIgnoringInteractionEvents()
-        
         self.delegate?.rootViewControllerDidLogout(controller: self)
         
         self.showWelcomeViewController()

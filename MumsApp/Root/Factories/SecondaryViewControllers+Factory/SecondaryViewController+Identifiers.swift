@@ -12,5 +12,7 @@ enum SecondaryViewController: String {
     
     case LobbyViewController
     
+    case ProfileSettingsPopupViewController
+    
 }
 

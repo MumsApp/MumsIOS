@@ -65,4 +65,19 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func profileSettingsPopupViewController(mainRootViewController: UIViewController?) -> ProfileSettingsPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProfileSettingsPopupViewController.rawValue, storyboard: storyboard) as! ProfileSettingsPopupViewController
+        
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let rootViewController = appDelegate.rootViewController
+        
+        controller.configureWith(delegate: rootViewController!, rootViewController: mainRootViewController)
+        
+        return controller
+        
+    }
+    
 }

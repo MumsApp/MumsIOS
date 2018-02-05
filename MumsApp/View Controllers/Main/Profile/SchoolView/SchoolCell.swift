@@ -35,7 +35,7 @@ class SchoolCell: UITableViewCell {
         
         self.schoolNameLabel.font = .regular(size: 12)
         
-        self.schoolNameLabel.textColor = .mainGrey
+        self.schoolNameLabel.textColor = .mainDarkGrey
         
         self.followLabel.font = .regular(size: 12)
         

@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.configureAdditionalLibraries(application: application, launchOptions: launchOptions)
         
+        self.window?.backgroundColor = .white
+        
         return true
         
     }

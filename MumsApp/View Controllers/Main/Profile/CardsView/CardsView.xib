@@ -42,7 +42,7 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="swU-KR-j1U">
-                    <rect key="frame" x="0.0" y="40" width="375" height="80"/>
+                    <rect key="frame" x="0.0" y="48" width="375" height="80"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ec-cf-Qop">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
@@ -63,7 +63,7 @@
                                     </connections>
                                 </switch>
                             </subviews>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="9c3-GG-u3C"/>
                                 <constraint firstItem="KA8-w1-9Yk" firstAttribute="centerY" secondItem="5ec-cf-Qop" secondAttribute="centerY" id="FoC-F2-l6b"/>
@@ -95,7 +95,7 @@
                                     </state>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="n9B-aM-bwv" secondAttribute="trailing" constant="16" id="Emw-yK-Owa"/>
                                 <constraint firstItem="Vqk-QY-qcH" firstAttribute="leading" secondItem="kTw-Rd-3gr" secondAttribute="leading" constant="16" id="I90-1k-8Xi"/>
@@ -111,14 +111,36 @@
                         <constraint firstAttribute="height" constant="80" id="iFi-6z-0lg"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTe-eG-Otq">
+                    <rect key="frame" x="0.0" y="176" width="375" height="58"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="Eg8-xf-3ag"/>
+                    </constraints>
+                    <state key="normal" title="  Add card" image="addGreenIcon">
+                        <color key="titleColor" red="0.1215686275" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-qH-XyE">
+                    <rect key="frame" x="0.0" y="175" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.90588235289999997" green="0.92156862750000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="XjM-td-Y0b"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="swU-KR-j1U" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="5It-bx-8iL"/>
+                <constraint firstItem="UZa-qH-XyE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ATP-ao-Bnb"/>
+                <constraint firstItem="QTe-eG-Otq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CdQ-3e-aNy"/>
+                <constraint firstItem="QTe-eG-Otq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="FCX-VN-OcQ"/>
                 <constraint firstItem="L7P-oD-uxJ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="M4Q-Xl-xeL"/>
                 <constraint firstItem="L7P-oD-uxJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SpW-Le-ZEx"/>
                 <constraint firstItem="L7P-oD-uxJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="YLC-Ll-wi8"/>
-                <constraint firstItem="swU-KR-j1U" firstAttribute="top" secondItem="L7P-oD-uxJ" secondAttribute="bottom" id="pBJ-21-lXd"/>
+                <constraint firstAttribute="trailing" secondItem="UZa-qH-XyE" secondAttribute="trailing" id="emp-3F-kub"/>
+                <constraint firstItem="QTe-eG-Otq" firstAttribute="top" secondItem="UZa-qH-XyE" secondAttribute="bottom" id="h3Y-5I-BmV"/>
+                <constraint firstItem="QTe-eG-Otq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="jdh-xV-bcN"/>
+                <constraint firstItem="swU-KR-j1U" firstAttribute="top" secondItem="L7P-oD-uxJ" secondAttribute="bottom" constant="8" id="pBJ-21-lXd"/>
                 <constraint firstItem="swU-KR-j1U" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="r2D-hu-5ei"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -127,6 +149,7 @@
         </view>
     </objects>
     <resources>
+        <image name="addGreenIcon" width="12" height="12"/>
         <image name="scanIcon" width="11" height="11"/>
     </resources>
 </document>

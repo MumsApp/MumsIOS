@@ -51,6 +51,8 @@ class CardsView: UIView {
         
         self.cardsLabel.textColor = .black
 
+        
+        
     }
 
     @IBAction func switchChanged(_ sender: UISwitch) {
