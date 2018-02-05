@@ -4,6 +4,8 @@ class ProfileSettingsPopupViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
    
+    @IBOutlet weak var containerBottomView: UIView!
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var closeButton: UIButton!
@@ -52,8 +54,10 @@ class ProfileSettingsPopupViewController: UIViewController {
         
         self.containerView.layer.cornerRadius = 4
         
-        self.containerView.backgroundColor = .containerGreyColor
-    
+        self.containerView.backgroundColor = .white
+
+        self.containerBottomView.backgroundColor = .containerGreyColor
+        
     }
     
     private func configureView() {

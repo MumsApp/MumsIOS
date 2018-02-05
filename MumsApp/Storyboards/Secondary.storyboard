@@ -595,7 +595,7 @@ OFFERS     </string>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="F74-6f-qI0" secondAttribute="trailing" constant="16" id="4uG-jc-C9V"/>
                                             <constraint firstItem="F74-6f-qI0" firstAttribute="centerY" secondItem="Zo2-j3-wRA" secondAttribute="centerY" id="69a-rP-EFs"/>
@@ -607,6 +607,20 @@ OFFERS     </string>
                                             <constraint firstItem="wRz-lM-cIR" firstAttribute="leading" secondItem="Zo2-j3-wRA" secondAttribute="leading" id="uoX-Ff-Qkp"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFt-nA-qR3">
+                                        <rect key="frame" x="0.0" y="337.5" width="359" height="147"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn6-6S-Y9S" customClass="OnboardingGreenButton" customModule="MumsApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="358" width="319" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="hy3-nY-CR6"/>
+                                        </constraints>
+                                        <state key="normal" title="Logout"/>
+                                        <connections>
+                                            <action selector="logoutButtonPressed:" destination="e4X-v2-sQs" eventType="touchUpInside" id="yVe-v0-WuP"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PiH-Ub-XGO">
                                         <rect key="frame" x="0.0" y="151" width="359" height="1"/>
                                         <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -702,26 +716,18 @@ OFFERS     </string>
                                             <action selector="askQuestionButtonPressed:" destination="e4X-v2-sQs" eventType="touchUpInside" id="7dD-WJ-mgw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn6-6S-Y9S" customClass="OnboardingGreenButton" customModule="MumsApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="354" width="319" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="hy3-nY-CR6"/>
-                                        </constraints>
-                                        <state key="normal" title="Logout"/>
-                                        <connections>
-                                            <action selector="logoutButtonPressed:" destination="e4X-v2-sQs" eventType="touchUpInside" id="yVe-v0-WuP"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="485" id="1tG-oT-p6K"/>
                                     <constraint firstItem="YMy-4N-U9p" firstAttribute="leading" secondItem="IP8-74-ahf" secondAttribute="trailing" constant="8" id="2ZM-gH-73z"/>
+                                    <constraint firstAttribute="trailing" secondItem="XFt-nA-qR3" secondAttribute="trailing" id="2xl-8D-YHV"/>
                                     <constraint firstAttribute="bottom" secondItem="Du8-SI-EGv" secondAttribute="bottom" constant="25" id="4DN-CQ-LqY"/>
                                     <constraint firstAttribute="trailing" secondItem="B53-kd-Mh1" secondAttribute="trailing" id="6co-H5-7of"/>
                                     <constraint firstItem="OjD-8e-I4x" firstAttribute="top" secondItem="dg0-R3-pJc" secondAttribute="bottom" constant="15" id="89N-Gc-6EG"/>
                                     <constraint firstAttribute="trailing" secondItem="YMy-4N-U9p" secondAttribute="trailing" constant="20" id="9L5-yy-uff"/>
                                     <constraint firstAttribute="trailing" secondItem="znW-kc-IAz" secondAttribute="trailing" constant="20" id="A8I-Nn-AVQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="XFt-nA-qR3" secondAttribute="bottom" id="BsH-qU-VCZ"/>
                                     <constraint firstItem="YMy-4N-U9p" firstAttribute="top" secondItem="OjD-8e-I4x" secondAttribute="bottom" constant="15" id="DR9-s1-hsi"/>
                                     <constraint firstItem="OjD-8e-I4x" firstAttribute="leading" secondItem="Gvo-C6-CCA" secondAttribute="leading" id="Dgq-8y-fAa"/>
                                     <constraint firstItem="Du8-SI-EGv" firstAttribute="centerX" secondItem="Gvo-C6-CCA" secondAttribute="centerX" id="Dif-Q6-2Kw"/>
@@ -730,6 +736,7 @@ OFFERS     </string>
                                     <constraint firstItem="IP8-74-ahf" firstAttribute="leading" secondItem="Gvo-C6-CCA" secondAttribute="leading" constant="16" id="F7w-Iv-kHM"/>
                                     <constraint firstAttribute="trailing" secondItem="Yn6-6S-Y9S" secondAttribute="trailing" constant="20" id="FHJ-bw-XDB"/>
                                     <constraint firstItem="C1L-g4-dpl" firstAttribute="top" secondItem="fEv-9V-atJ" secondAttribute="bottom" constant="15" id="J5E-ra-jYD"/>
+                                    <constraint firstItem="XFt-nA-qR3" firstAttribute="top" secondItem="B53-kd-Mh1" secondAttribute="bottom" id="NjG-Ru-B4t"/>
                                     <constraint firstItem="Yn6-6S-Y9S" firstAttribute="leading" secondItem="Gvo-C6-CCA" secondAttribute="leading" constant="20" id="P9z-LO-sOA"/>
                                     <constraint firstItem="PhG-4p-fyk" firstAttribute="centerY" secondItem="C1L-g4-dpl" secondAttribute="centerY" id="PMl-Eu-nxC"/>
                                     <constraint firstItem="Yn6-6S-Y9S" firstAttribute="centerX" secondItem="Gvo-C6-CCA" secondAttribute="centerX" id="QHL-6F-fss"/>
@@ -748,13 +755,14 @@ OFFERS     </string>
                                     <constraint firstItem="IP8-74-ahf" firstAttribute="centerY" secondItem="YMy-4N-U9p" secondAttribute="centerY" id="jpN-wb-dI3"/>
                                     <constraint firstAttribute="trailing" secondItem="C1L-g4-dpl" secondAttribute="trailing" constant="20" id="klv-TR-hHY"/>
                                     <constraint firstAttribute="trailing" secondItem="OjD-8e-I4x" secondAttribute="trailing" id="lJ0-La-23l"/>
+                                    <constraint firstItem="XFt-nA-qR3" firstAttribute="leading" secondItem="Gvo-C6-CCA" secondAttribute="leading" id="lWS-r5-fMu"/>
                                     <constraint firstItem="fEv-9V-atJ" firstAttribute="top" secondItem="YMy-4N-U9p" secondAttribute="bottom" constant="15" id="ml7-E1-Xof"/>
                                     <constraint firstItem="znW-kc-IAz" firstAttribute="leading" secondItem="Wem-T8-v5X" secondAttribute="trailing" constant="8" id="pkS-1D-A7M"/>
                                     <constraint firstItem="ak8-2l-YNp" firstAttribute="leading" secondItem="Gvo-C6-CCA" secondAttribute="leading" constant="16" id="ptb-LX-oef"/>
                                     <constraint firstItem="B53-kd-Mh1" firstAttribute="leading" secondItem="Gvo-C6-CCA" secondAttribute="leading" id="q1d-hw-Isu"/>
                                     <constraint firstItem="PiH-Ub-XGO" firstAttribute="leading" secondItem="Gvo-C6-CCA" secondAttribute="leading" id="tez-gf-BlU"/>
                                     <constraint firstItem="Wem-T8-v5X" firstAttribute="centerY" secondItem="znW-kc-IAz" secondAttribute="centerY" id="ubq-bM-aRh"/>
-                                    <constraint firstItem="Yn6-6S-Y9S" firstAttribute="top" secondItem="B53-kd-Mh1" secondAttribute="bottom" constant="16" id="yOi-a4-Uip"/>
+                                    <constraint firstItem="Yn6-6S-Y9S" firstAttribute="top" secondItem="B53-kd-Mh1" secondAttribute="bottom" constant="20" id="yOi-a4-Uip"/>
                                     <constraint firstItem="dg0-R3-pJc" firstAttribute="leading" secondItem="ak8-2l-YNp" secondAttribute="trailing" constant="8" id="yxu-FJ-iV6"/>
                                     <constraint firstAttribute="trailing" secondItem="fEv-9V-atJ" secondAttribute="trailing" id="zEu-IB-9bY"/>
                                 </constraints>
@@ -777,6 +785,7 @@ OFFERS     </string>
                         <outlet property="accessLocationSwitch" destination="YMy-4N-U9p" id="KDU-BD-5yu"/>
                         <outlet property="askQuestionButton" destination="Du8-SI-EGv" id="czD-UY-E9l"/>
                         <outlet property="closeButton" destination="F74-6f-qI0" id="Cai-FS-ad9"/>
+                        <outlet property="containerBottomView" destination="XFt-nA-qR3" id="lRR-5n-hZZ"/>
                         <outlet property="containerView" destination="Gvo-C6-CCA" id="U7D-zI-l6p"/>
                         <outlet property="emergencyLabel" destination="PhG-4p-fyk" id="Ckq-eX-Lcg"/>
                         <outlet property="emergencySwitch" destination="C1L-g4-dpl" id="DaV-En-ecJ"/>

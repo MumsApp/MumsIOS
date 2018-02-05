@@ -114,6 +114,7 @@
 		4DE174F820288C38001C5DD1 /* ProfileSettingsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */; };
 		4DE174FA2028A044001C5DD1 /* LobbyFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE174F92028A044001C5DD1 /* LobbyFooterCell.xib */; };
 		4DE174FC2028A054001C5DD1 /* LobbyFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174FB2028A054001C5DD1 /* LobbyFooterCell.swift */; };
+		4DE174FF2028BAB0001C5DD1 /* LobbyArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */; };
 		4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */; };
 		4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83E7201E13CC001B0AEB /* ProfileView.xib */; };
 		4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E9201E15FB001B0AEB /* ProfileView.swift */; };
@@ -263,6 +264,7 @@
 		4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsPopupViewController.swift; sourceTree = "<group>"; };
 		4DE174F92028A044001C5DD1 /* LobbyFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyFooterCell.xib; sourceTree = "<group>"; };
 		4DE174FB2028A054001C5DD1 /* LobbyFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyFooterCell.swift; sourceTree = "<group>"; };
+		4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyArray.swift; sourceTree = "<group>"; };
 		4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DEE83E7201E13CC001B0AEB /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		4DEE83E9201E15FB001B0AEB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -767,6 +769,7 @@
 			isa = PBXGroup;
 			children = (
 				4DCB4E9D20222795006962F9 /* LobbyViewController.swift */,
+				4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */,
 				4DE174FD2028A159001C5DD1 /* Cells */,
 			);
 			path = Lobby;
@@ -1210,6 +1213,7 @@
 			files = (
 				4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */,
 				4D05A9611FE144A900B19E6E /* UICollectionView+Extensions.swift in Sources */,
+				4DE174FF2028BAB0001C5DD1 /* LobbyArray.swift in Sources */,
 				4DC6774F201781AD00F34184 /* MOReachability.swift in Sources */,
 				4D05A9481FE144A900B19E6E /* NetwrokService+Extension.swift in Sources */,
 				4DA49A552024B90E00561EC9 /* BubbleTransition.swift in Sources */,

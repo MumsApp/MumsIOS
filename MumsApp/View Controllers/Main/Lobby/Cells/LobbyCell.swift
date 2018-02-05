@@ -13,11 +13,13 @@ class LobbyCell: SwipeTableViewCell {
     
     @IBOutlet weak var lobbyJoinSwitch: UISwitch!
     
-    func configureWith(title: String, description: String) {
+    func configureWith(lobby: Lobby) {
         
-        self.lobbyTitleLabel.text = title
+        self.lobbyTitleLabel.text = lobby.title
         
-        self.lobbyDescriptionLabel.text = description
+        self.lobbyDescriptionLabel.text = lobby.description
+        
+        self.lobbyImageView.image = lobby.image
         
     }
    

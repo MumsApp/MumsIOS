@@ -2,13 +2,15 @@ import UIKit
 
 class MainRootViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
-    var menuWindow: UIWindow?
+    fileprivate var menuWindow: UIWindow?
     
-    var menuController: UIViewController?
+    fileprivate var menuController: UIViewController?
     
-    var menuButton: UIButton!
+    fileprivate var menuButton: UIButton!
 
-    let transition = BubbleTransition()
+    private let transition = BubbleTransition()
+    
+    private var displayed: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,19 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         self.configureNavigationBar()
         
         self.transition.duration = 0.3
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if self.displayed == false {
+            
+            self.menuButtonPressed()
+
+            self.displayed = true
+            
+        }
         
     }
     

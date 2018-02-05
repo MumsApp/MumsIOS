@@ -80,7 +80,7 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
         
         if section == 0 {
             
-            return 5
+            return lobbyArray.count
             
         } else {
             
@@ -110,7 +110,9 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
          
             let cell = tableView.dequeueReusableCell(withIdentifier: "LobbyCell", for: indexPath) as! LobbyCell
             
-            cell.configureWith(title: "Expectant Moms", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis.")
+            let thisObject = lobbyArray[indexPath.row]
+            
+            cell.configureWith(lobby: thisObject)
             
             cell.delegate = self
             
