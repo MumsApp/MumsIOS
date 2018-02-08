@@ -139,7 +139,11 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         
         self.menuController?.removeFromParentViewController()
         
-        self.menuWindow?.removeFromSuperview()
+        self.menuButton = nil
+        
+        self.menuController = nil
+        
+        self.menuWindow = nil
         
     }
     

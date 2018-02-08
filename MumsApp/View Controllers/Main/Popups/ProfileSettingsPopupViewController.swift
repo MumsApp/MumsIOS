@@ -100,6 +100,8 @@ class ProfileSettingsPopupViewController: UIViewController {
             
             self.delegate?.didLogout()
 
+            self.dismissViewController()
+            
         }
         
     }

@@ -33,7 +33,7 @@ class CreateOfficialPageViewController: UIViewController {
     
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Create School/Service Page")
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Create Schools & Orgs.")
         
         self.navigationItem.titleView = titleLabel
 

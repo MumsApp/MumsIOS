@@ -27,6 +27,10 @@ let lobbyArray = [
 
     Lobby(image: #imageLiteral(resourceName: "sameButDifferentIcon"), title: "Same but different", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
     
-    Lobby(image: #imageLiteral(resourceName: "lgbtIcon"), title: "LGBT parenting", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis.")
+    Lobby(image: #imageLiteral(resourceName: "lgbtIcon"), title: "LGBT parenting", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
+    
+     Lobby(image: #imageLiteral(resourceName: "nurseryIcon"), title: "Exercising", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
+     
+      Lobby(image: #imageLiteral(resourceName: "nurseryIcon"), title: "Holiday", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis.")
 
 ]

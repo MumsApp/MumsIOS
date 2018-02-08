@@ -732,10 +732,8 @@
 				4DE175072028C999001C5DD1 /* Chat */,
 				4DCB4E9F202227A1006962F9 /* Lobby */,
 				4DEE83EC201E17EA001B0AEB /* Profile */,
+				4DE175172028E4FB001C5DD1 /* Shop */,
 				4DAA14EB2020E461000B1CA0 /* Popups */,
-				4DE175102028DC35001C5DD1 /* ShopViewController.swift */,
-				4DE175122028DCDE001C5DD1 /* ShopCell.xib */,
-				4DE175142028DCEA001C5DD1 /* ShopCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -843,6 +841,24 @@
 				4D76895D20248946002FC25D /* MenuViewController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		4DE175162028E4F4001C5DD1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4DE175122028DCDE001C5DD1 /* ShopCell.xib */,
+				4DE175142028DCEA001C5DD1 /* ShopCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4DE175172028E4FB001C5DD1 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				4DE175102028DC35001C5DD1 /* ShopViewController.swift */,
+				4DE175162028E4F4001C5DD1 /* Cells */,
+			);
+			path = Shop;
 			sourceTree = "<group>";
 		};
 		4DEE83EB201E17E1001B0AEB /* ProfileView */ = {
