@@ -95,6 +95,11 @@
 		4DC27EC0201FA9D5000EE9FA /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC27EBF201FA9D5000EE9FA /* SchoolCell.swift */; };
 		4DC27EC2201FBFE4000EE9FA /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC27EC1201FBFE4000EE9FA /* CardsView.swift */; };
 		4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DC27EC3201FBFEE000EE9FA /* CardsView.xib */; };
+		4DC2F8B5202C4D4300E331BD /* Terms.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DC2F8B4202C4D4300E331BD /* Terms.json */; };
+		4DC2F8B7202C4DB400E331BD /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2F8B6202C4DB400E331BD /* TermsViewController.swift */; };
+		4DC2F8B9202C4E3100E331BD /* TermsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2F8B8202C4E3100E331BD /* TermsCell.swift */; };
+		4DC2F8BB202C4E6A00E331BD /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2F8BA202C4E6A00E331BD /* Terms.swift */; };
+		4DC2F8BD202C4FB300E331BD /* JSON+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2F8BC202C4FB300E331BD /* JSON+Extensions.swift */; };
 		4DC6774420177F1900F34184 /* MainRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6774320177F1900F34184 /* MainRootViewController.swift */; };
 		4DC677472017800E00F34184 /* SecondaryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */; };
 		4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */; };
@@ -254,6 +259,11 @@
 		4DC27EBF201FA9D5000EE9FA /* SchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCell.swift; sourceTree = "<group>"; };
 		4DC27EC1201FBFE4000EE9FA /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		4DC27EC3201FBFEE000EE9FA /* CardsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsView.xib; sourceTree = "<group>"; };
+		4DC2F8B4202C4D4300E331BD /* Terms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Terms.json; sourceTree = "<group>"; };
+		4DC2F8B6202C4DB400E331BD /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		4DC2F8B8202C4E3100E331BD /* TermsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsCell.swift; sourceTree = "<group>"; };
+		4DC2F8BA202C4E6A00E331BD /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
+		4DC2F8BC202C4FB300E331BD /* JSON+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+Extensions.swift"; sourceTree = "<group>"; };
 		4DC6774320177F1900F34184 /* MainRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootViewController.swift; sourceTree = "<group>"; };
 		4DC677462017800E00F34184 /* SecondaryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewControllerFactory.swift; sourceTree = "<group>"; };
 		4DC677482017805D00F34184 /* SecondaryViewController+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondaryViewController+Identifiers.swift"; sourceTree = "<group>"; };
@@ -532,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				4D05A9661FE1464A00B19E6E /* User.swift */,
+				4DC2F8BA202C4E6A00E331BD /* Terms.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -613,6 +624,8 @@
 				4DC677552017870000F34184 /* SignInViewController.swift */,
 				4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */,
 				4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */,
+				4DC2F8B6202C4DB400E331BD /* TermsViewController.swift */,
+				4DC2F8B8202C4E3100E331BD /* TermsCell.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -664,6 +677,7 @@
 				4D8C63A0201C830600657FD7 /* String+Extensions.swift */,
 				4D36E6F4201E338B000DC94F /* UIView+Extensions.swift */,
 				4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */,
+				4DC2F8BC202C4FB300E331BD /* JSON+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -681,6 +695,7 @@
 				4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */,
 				4DA49A502024B2EA00561EC9 /* BebasNeueRegular.otf */,
 				4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */,
+				4DC2F8B4202C4D4300E331BD /* Terms.json */,
 			);
 			name = "Support Files";
 			path = "New Group";
@@ -1073,6 +1088,7 @@
 				4D36E703201E4974000DC94F /* SchoolView.xib in Resources */,
 				4DEE83F0201E1EA2001B0AEB /* LocationView.xib in Resources */,
 				4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */,
+				4DC2F8B5202C4D4300E331BD /* Terms.json in Resources */,
 				4DE174FA2028A044001C5DD1 /* LobbyFooterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1330,6 +1346,7 @@
 				4D05A9591FE144A900B19E6E /* DataStore.swift in Sources */,
 				4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */,
 				4D05A9441FE144A900B19E6E /* Logger.swift in Sources */,
+				4DC2F8B7202C4DB400E331BD /* TermsViewController.swift in Sources */,
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
 				4D36E6F9201E3565000DC94F /* ChildrenView.swift in Sources */,
 				4DE175092028D032001C5DD1 /* ChatSettingsPopupViewController.swift in Sources */,
@@ -1341,6 +1358,7 @@
 				4D5ED8FA202246870020FD51 /* OffersCell.swift in Sources */,
 				4DCB4E9E20222795006962F9 /* LobbyViewController.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
+				4DC2F8B9202C4E3100E331BD /* TermsCell.swift in Sources */,
 				4D36E701201E3859000DC94F /* TapticEngine.swift in Sources */,
 				4DE174F4202881ED001C5DD1 /* TransparentGreen+UIButton.swift in Sources */,
 				4DA49A532024B69900561EC9 /* VerticallyButton.swift in Sources */,
@@ -1350,6 +1368,7 @@
 				4D05A9651FE145B800B19E6E /* AppContext.swift in Sources */,
 				4D05A9711FE1483800B19E6E /* FactoryProvider.swift in Sources */,
 				4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */,
+				4DC2F8BD202C4FB300E331BD /* JSON+Extensions.swift in Sources */,
 				4D05A9601FE144A900B19E6E /* UIViewController+UIAlertView.swift in Sources */,
 				4D05A9451FE144A900B19E6E /* URLRequest+Task.swift in Sources */,
 				4DCB4EA3202229BF006962F9 /* LobbyCell.swift in Sources */,
@@ -1382,6 +1401,7 @@
 				4D05A97A1FE14BE100B19E6E /* ServiceFactory.swift in Sources */,
 				4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */,
 				4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */,
+				4DC2F8BB202C4E6A00E331BD /* Terms.swift in Sources */,
 				4D05A94A1FE144A900B19E6E /* NetworkService+UploadRequest.swift in Sources */,
 				4DCB4EA5202234F4006962F9 /* CustomSearchBar.swift in Sources */,
 				4DEE83EE201E1AE7001B0AEB /* MainGreen+UIButton.swift in Sources */,

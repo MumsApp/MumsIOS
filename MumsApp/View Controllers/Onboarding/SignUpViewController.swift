@@ -519,6 +519,22 @@ class SignUpViewController: UIViewController {
         
     }
     
+    @IBAction func showTermsButtonPressed(_ sender: UIButton) {
+    
+        self.showTermsViewController()
+    
+    }
+    
+    private func showTermsViewController() {
+        
+        let factory = PrimaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.termsViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
 }
 
 extension SignUpViewController: UITextFieldDelegate {

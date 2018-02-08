@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -350,6 +351,9 @@
                                                                         </fragment>
                                                                     </attributedString>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showTermsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9K8-gg-BbK"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -785,6 +789,71 @@ password reset instructions</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmw-bC-knF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2528.8000000000002" y="402.54872563718146"/>
+        </scene>
+        <!--Terms View Controller-->
+        <scene sceneID="rdC-KJ-vcj">
+            <objects>
+                <viewController storyboardIdentifier="TermsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UMA-Gm-03C" customClass="TermsViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IB5-0s-84B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ur-CB-9ry">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TermsCell" rowHeight="68" id="cL4-oM-8xj" customClass="TermsCell" customModule="MumsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cL4-oM-8xj" id="4qg-EG-xRh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGx-lZ-nEO">
+                                                    <rect key="frame" x="31" y="11" width="313" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv9-NQ-OlB">
+                                                    <rect key="frame" x="31" y="29" width="313" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Pv9-NQ-OlB" firstAttribute="top" secondItem="vGx-lZ-nEO" secondAttribute="bottom" id="3w0-uN-fSI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Pv9-NQ-OlB" secondAttribute="bottom" id="8LK-ux-a7l"/>
+                                                <constraint firstItem="vGx-lZ-nEO" firstAttribute="leading" secondItem="4qg-EG-xRh" secondAttribute="leadingMargin" constant="16" id="9hL-FS-aY4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Pv9-NQ-OlB" secondAttribute="trailing" constant="16" id="LgL-Pr-N28"/>
+                                                <constraint firstItem="Pv9-NQ-OlB" firstAttribute="leading" secondItem="4qg-EG-xRh" secondAttribute="leadingMargin" constant="16" id="TUW-ar-lE2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vGx-lZ-nEO" secondAttribute="trailing" constant="16" id="gy0-uB-QhJ"/>
+                                                <constraint firstItem="vGx-lZ-nEO" firstAttribute="top" secondItem="4qg-EG-xRh" secondAttribute="topMargin" id="sum-ut-NV1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="answerLabel" destination="Pv9-NQ-OlB" id="wAw-5A-z3r"/>
+                                            <outlet property="questionLabel" destination="vGx-lZ-nEO" id="hQr-0D-ecH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2ur-CB-9ry" firstAttribute="top" secondItem="IB5-0s-84B" secondAttribute="top" id="9Hd-BU-4ri"/>
+                            <constraint firstItem="2ur-CB-9ry" firstAttribute="bottom" secondItem="yxJ-q4-ked" secondAttribute="bottom" id="XMl-Dd-2vM"/>
+                            <constraint firstItem="2ur-CB-9ry" firstAttribute="trailing" secondItem="yxJ-q4-ked" secondAttribute="trailing" id="YjQ-Oy-syr"/>
+                            <constraint firstItem="2ur-CB-9ry" firstAttribute="leading" secondItem="yxJ-q4-ked" secondAttribute="leading" id="pHu-e7-aNo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yxJ-q4-ked"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="2ur-CB-9ry" id="07H-01-wec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxT-EN-TA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3253.5999999999999" y="402.54872563718146"/>
         </scene>
     </scenes>
     <resources>

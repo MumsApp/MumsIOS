@@ -92,5 +92,17 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func termsViewController() -> TermsViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.TermsViewController.rawValue, storyboard: storyboard) as! TermsViewController
+        
+        let dataSource = ArrayDataSourceProvider<Terms, DataSourceProviderTableViewAdapter<Terms>>()
+        
+        controller.configureWith(dataSource: dataSource)
+        
+        return controller
+        
+    }
+    
 }
 
