@@ -142,7 +142,7 @@ class AddProductViewController: UIViewController {
         
         }))
         
-        self.present(actionSheet, animated: true)
+        self.presentViewController(actionSheet)
         
     }
     
@@ -152,8 +152,8 @@ extension AddProductViewController: UIImagePickerControllerDelegate, UINavigatio
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
-        self.dismiss(animated: true, completion: nil)
-        
+        self.dismissViewController()
+
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -166,7 +166,7 @@ extension AddProductViewController: UIImagePickerControllerDelegate, UINavigatio
             
         }
         
-        self.dismiss(animated: true, completion: nil)
+        self.dismissViewController()
         
     }
     

@@ -6,6 +6,8 @@ class ShopViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var popupWindow: UIWindow?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,7 +72,7 @@ class ShopViewController: UIViewController {
         controller.modalTransitionStyle = .crossDissolve
         
         self.presentViewController(controller)
-        
+                
     }
     
     fileprivate func showProductDetailsViewController() {

@@ -9,13 +9,11 @@ enum ControllerType {
     
 }
 
+var mainRootVC: MainRootViewController?
+
 class MainRootViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
-    fileprivate var menuWindow: UIWindow?
-    
-    fileprivate var menuController: UIViewController?
-    
-    fileprivate var menuButton: UIButton!
+    var menuButton: UIButton!
 
     private let transition = BubbleTransition()
     
@@ -30,6 +28,8 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         
         self.transition.duration = 0.3
         
+        mainRootVC = self
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,7 +69,7 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
     
         self.transition.transitionMode = .present
         
-        self.transition.startingPoint = self.menuWindow!.center
+        self.transition.startingPoint = self.menuButton.center
         
         self.transition.bubbleColor = UIColor.white.withAlphaComponent(0.95)
         
@@ -81,7 +81,7 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         
         self.transition.transitionMode = .dismiss
         
-        self.transition.startingPoint = self.menuWindow!.center
+        self.transition.startingPoint = self.menuButton.center
         
         self.transition.bubbleColor = UIColor.white.withAlphaComponent(0.95)
         
@@ -91,59 +91,37 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
     
     private func addMenuButton() {
         
-        if let mainWindow = UIApplication.shared.keyWindow {
-            
+        if let window = UIApplication.shared.keyWindow {
+
             let size: CGFloat = 75
             
-            let y = mainWindow.frame.maxY - size + 25
-            
-            let backgroundFrame = CGRect(x: mainWindow.frame.midX - size / 2, y: y, width: size, height: size)
-             
-            self.menuController = UIViewController()
-            
-            self.menuController!.view.frame = backgroundFrame
-            
-            self.menuController!.view.backgroundColor = .clear
-            
             self.menuButton = UIButton(type: .custom)
-            self.menuButton.frame = CGRect(x: 0, y: 0, width: size, height: size)
+            
+            self.menuButton.frame = CGRect(x: window.frame.midX - size / 2, y: window.frame.maxY - size + 25, width: size, height: size)
+            
             self.menuButton.backgroundColor = .white
+            
             self.menuButton.setTitle("", for: UIControlState.normal)
+            
             self.menuButton.setImage(#imageLiteral(resourceName: "menuIcon"), for: .normal)
+            
             self.menuButton.addTarget(self, action: #selector(self.menuButtonPressed), for: UIControlEvents.touchUpInside)
+            
             self.menuButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
             
             self.menuButton.addShadow()
             
-            self.menuController!.view.addSubview(self.menuButton!)
-            
             self.menuButton.layer.cornerRadius = size / 2
-
-            self.menuWindow = UIWindow(frame: backgroundFrame)
             
-            self.menuWindow!.backgroundColor = .clear
-            
-            self.menuWindow!.rootViewController = self.menuController
-            
-            self.menuWindow!.windowLevel = UIWindowLevelStatusBar
-            
-            self.menuWindow!.isHidden = false
+            window.addSubview(self.menuButton)
             
         }
-            
+      
     }
     
     func removeMenuButton() {
         
-        self.menuButton.removeFromSuperview()
-        
-        self.menuController?.removeFromParentViewController()
-        
         self.menuButton = nil
-        
-        self.menuController = nil
-        
-        self.menuWindow = nil
         
     }
     
