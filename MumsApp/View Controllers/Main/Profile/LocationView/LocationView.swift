@@ -57,7 +57,7 @@ class LocationView: UIView {
         
     }
     
-    private func configureView() {
+    func configureView() {
         
         self.contentView.addShadow()
         

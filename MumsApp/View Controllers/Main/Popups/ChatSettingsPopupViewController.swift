@@ -34,6 +34,8 @@ class ChatSettingsPopupViewController: UIViewController {
         
         self.containerBottomView.backgroundColor = .containerGreyColor
         
+        self.containerBottomView.roundCorners(corners: [.bottomLeft, .bottomRight], withRadius: 4)
+    
     }
     
     private func configureView() {

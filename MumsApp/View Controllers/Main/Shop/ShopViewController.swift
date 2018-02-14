@@ -41,13 +41,15 @@ class ShopViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
         
-        let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "smallMenuIcon"), style: .plain, target: self, action: #selector(self.settingsButtonPressed(sender:)))
+        let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "smallMenuIcon"), style: .plain, target: self, action: #selector(self.menuButtonPressed(sender:)))
         
         self.navigationItem.rightBarButtonItem = rightButton
         
     }
     
-    func settingsButtonPressed(sender: UIBarButtonItem) {
+    func menuButtonPressed(sender: UIBarButtonItem) {
+     
+        self.showShopMenuViewController()
         
     }
     
@@ -56,7 +58,31 @@ class ShopViewController: UIViewController {
         self.tableView.registerNib(ShopCell.self)
     
     }
-
+    
+    private func showShopMenuViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.shopMenuViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
+        
+    }
+    
+    fileprivate func showProductDetailsViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.productDetailsViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
 }
 
 extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
@@ -82,6 +108,12 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
         cell.userNameLabel.text = "John S."
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.showProductDetailsViewController()
         
     }
     

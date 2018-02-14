@@ -29,6 +29,8 @@ class ShopCell: UITableViewCell, Reusable {
     
     private func configureView() {
         
+        self.selectionStyle = .none
+        
         self.backgroundColor = .clear
         
         self.containerView.addShadow()

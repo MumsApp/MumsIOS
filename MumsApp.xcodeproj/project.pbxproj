@@ -64,6 +64,13 @@
 		4D36E701201E3859000DC94F /* TapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6FE201E3859000DC94F /* TapticEngine.swift */; };
 		4D36E703201E4974000DC94F /* SchoolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E702201E4974000DC94F /* SchoolView.xib */; };
 		4D36E705201E4984000DC94F /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E704201E4984000DC94F /* SchoolView.swift */; };
+		4D39D48420348275005123F8 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D48320348275005123F8 /* ProductDetailsViewController.swift */; };
+		4D39D4862034835E005123F8 /* ItemDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D4852034835E005123F8 /* ItemDescriptionView.swift */; };
+		4D39D48820348365005123F8 /* ItemDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D39D48720348365005123F8 /* ItemDescriptionView.xib */; };
+		4D39D48A203489BE005123F8 /* ItemLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D489203489BE005123F8 /* ItemLocationView.swift */; };
+		4D39D48C20348B53005123F8 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D48B20348B53005123F8 /* PictureCell.swift */; };
+		4D39D48E20348B60005123F8 /* PictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D39D48D20348B60005123F8 /* PictureCell.xib */; };
+		4D39D49020349176005123F8 /* ShopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D48F20349176005123F8 /* ShopMenuViewController.swift */; };
 		4D5ED8F7202246870020FD51 /* OffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F3202246860020FD51 /* OffersView.swift */; };
 		4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F4202246860020FD51 /* OffersView.xib */; };
 		4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F5202246860020FD51 /* OffersCell.xib */; };
@@ -228,6 +235,13 @@
 		4D36E6FE201E3859000DC94F /* TapticEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapticEngine.swift; sourceTree = "<group>"; };
 		4D36E702201E4974000DC94F /* SchoolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolView.xib; sourceTree = "<group>"; };
 		4D36E704201E4984000DC94F /* SchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
+		4D39D48320348275005123F8 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		4D39D4852034835E005123F8 /* ItemDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescriptionView.swift; sourceTree = "<group>"; };
+		4D39D48720348365005123F8 /* ItemDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDescriptionView.xib; sourceTree = "<group>"; };
+		4D39D489203489BE005123F8 /* ItemLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLocationView.swift; sourceTree = "<group>"; };
+		4D39D48B20348B53005123F8 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
+		4D39D48D20348B60005123F8 /* PictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCell.xib; sourceTree = "<group>"; };
+		4D39D48F20349176005123F8 /* ShopMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenuViewController.swift; sourceTree = "<group>"; };
 		4D5ED8F3202246860020FD51 /* OffersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersView.swift; sourceTree = "<group>"; };
 		4D5ED8F4202246860020FD51 /* OffersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersView.xib; sourceTree = "<group>"; };
 		4D5ED8F5202246860020FD51 /* OffersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersCell.xib; sourceTree = "<group>"; };
@@ -707,6 +721,7 @@
 				4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */,
 				4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */,
 				4DE175082028D032001C5DD1 /* ChatSettingsPopupViewController.swift */,
+				4D39D48F20349176005123F8 /* ShopMenuViewController.swift */,
 				4DE1750E2028D4D3001C5DD1 /* Cells */,
 			);
 			path = Popups;
@@ -863,6 +878,11 @@
 			children = (
 				4DE175122028DCDE001C5DD1 /* ShopCell.xib */,
 				4DE175142028DCEA001C5DD1 /* ShopCell.swift */,
+				4D39D48720348365005123F8 /* ItemDescriptionView.xib */,
+				4D39D4852034835E005123F8 /* ItemDescriptionView.swift */,
+				4D39D489203489BE005123F8 /* ItemLocationView.swift */,
+				4D39D48D20348B60005123F8 /* PictureCell.xib */,
+				4D39D48B20348B53005123F8 /* PictureCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -871,6 +891,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE175102028DC35001C5DD1 /* ShopViewController.swift */,
+				4D39D48320348275005123F8 /* ProductDetailsViewController.swift */,
 				4DE175162028E4F4001C5DD1 /* Cells */,
 			);
 			path = Shop;
@@ -1068,8 +1089,10 @@
 			files = (
 				4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */,
 				4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */,
+				4D39D48E20348B60005123F8 /* PictureCell.xib in Resources */,
 				4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
+				4D39D48820348365005123F8 /* ItemDescriptionView.xib in Resources */,
 				4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */,
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
@@ -1333,15 +1356,19 @@
 				4DAA14EA2020E458000B1CA0 /* LocationPopupViewController.swift in Sources */,
 				4D05A95D1FE144A900B19E6E /* UIViewController+Helpers.swift in Sources */,
 				4D05A95E1FE144A900B19E6E /* UIStoryboard+Helpers.swift in Sources */,
+				4D39D48A203489BE005123F8 /* ItemLocationView.swift in Sources */,
 				4D76895E20248946002FC25D /* MenuViewController.swift in Sources */,
 				4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */,
 				4D05A9581FE144A900B19E6E /* InAppPurchase+Helper.swift in Sources */,
+				4D39D48C20348B53005123F8 /* PictureCell.swift in Sources */,
 				4DE175152028DCEA001C5DD1 /* ShopCell.swift in Sources */,
 				4DC67752201781E000F34184 /* Timeout+UIView.swift in Sources */,
 				4D05A9541FE144A900B19E6E /* MOUserDefaults+SecureProtocol.swift in Sources */,
 				4D05A9461FE144A900B19E6E /* CommonClosures.swift in Sources */,
 				4D8F2D3C201B4F3800756CCB /* OnboardingGreen+UIButton.swift in Sources */,
+				4D39D48420348275005123F8 /* ProductDetailsViewController.swift in Sources */,
 				4DC6774420177F1900F34184 /* MainRootViewController.swift in Sources */,
+				4D39D4862034835E005123F8 /* ItemDescriptionView.swift in Sources */,
 				4D36E6FF201E3859000DC94F /* RangeSeekSliderDelegate.swift in Sources */,
 				4D05A9591FE144A900B19E6E /* DataStore.swift in Sources */,
 				4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */,
@@ -1408,6 +1435,7 @@
 				4DFC27141FE92CB2006020FF /* LoginServiceParser.swift in Sources */,
 				4D05A9471FE144A900B19E6E /* URLRequest+Methods.swift in Sources */,
 				4D05A9551FE144A900B19E6E /* MOUserDefaults+Secure.swift in Sources */,
+				4D39D49020349176005123F8 /* ShopMenuViewController.swift in Sources */,
 				4DEE83F2201E1EAD001B0AEB /* LocationView.swift in Sources */,
 				4D05A9671FE1464A00B19E6E /* User.swift in Sources */,
 				4D05A9691FE1468100B19E6E /* Resource.swift in Sources */,

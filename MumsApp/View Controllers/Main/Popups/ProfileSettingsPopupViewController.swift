@@ -58,10 +58,12 @@ class ProfileSettingsPopupViewController: UIViewController {
 
         self.containerBottomView.backgroundColor = .containerGreyColor
         
+        self.containerBottomView.roundCorners(corners: [.bottomRight, .bottomLeft], withRadius: 4)
+    
     }
     
     private func configureView() {
-        
+                
         self.titleLabel.font = .regular(size: 20)
         
         self.publicProfileLabel.font = .regular(size: 16)
