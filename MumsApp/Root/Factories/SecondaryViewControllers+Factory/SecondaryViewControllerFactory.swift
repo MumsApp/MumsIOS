@@ -112,9 +112,27 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func shopMenuViewController() -> ShopMenuViewController {
+    func shopMenuViewController(delegate: ShopMenuDelegate?) -> ShopMenuViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopMenuViewController.rawValue, storyboard: storyboard) as! ShopMenuViewController
+        
+        controller.configureWith(delegate: delegate)
+        
+        return controller
+        
+    }
+    
+    func myProductViewController() -> MyProductsViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MyProductsViewController.rawValue, storyboard: storyboard) as! MyProductsViewController
+        
+        return controller
+        
+    }
+    
+    func addProductViewController() -> AddProductViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddProductViewController.rawValue, storyboard: storyboard) as! AddProductViewController
         
         return controller
         

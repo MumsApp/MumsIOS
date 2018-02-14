@@ -63,7 +63,7 @@ class ShopViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.shopMenuViewController()
+        let controller = factory.shopMenuViewController(delegate: self)
         
         controller.modalPresentationStyle = .overCurrentContext
         
@@ -128,3 +128,32 @@ extension ShopViewController: UISearchBarDelegate {
     }
     
 }
+
+extension ShopViewController: ShopMenuDelegate {
+    
+    func showSearchViewController() {
+        
+        self.dismissViewController()
+        
+    }
+    
+    func showMyProductsViewController() {
+        
+        self.dismissViewController()
+
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.myProductViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+
+    func showMyWishlistViewController() {
+
+        self.dismissViewController()
+
+    }
+    
+}
+

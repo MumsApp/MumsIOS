@@ -53,7 +53,7 @@ class LobbyViewController: UIViewController {
 
         self.tableView.registerNib(LobbyCell.self)
         
-        self.tableView.registerNib(LobbyFooterCell.self)
+        self.tableView.registerNib(AddCell.self)
     
     }
     
@@ -117,7 +117,9 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
             
         } else {
             
-            let cell = tableView.dequeueReusableCell(LobbyFooterCell.self, indexPath: indexPath)
+            let cell = tableView.dequeueReusableCell(AddCell.self, indexPath: indexPath)
+            
+            cell.configureWith(buttonTitle: "Add category", delegate: self)
             
             return cell
             
@@ -164,6 +166,16 @@ extension LobbyViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         searchBar.resignFirstResponder()
+        
+    }
+    
+}
+
+extension LobbyViewController: AddCellDelegate {
+    
+    func addButtonPressed() {
+        
+        
         
     }
     

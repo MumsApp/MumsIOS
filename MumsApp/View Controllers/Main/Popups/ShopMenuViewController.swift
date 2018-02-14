@@ -1,5 +1,13 @@
 import UIKit
 
+protocol ShopMenuDelegate: class {
+    
+    func showSearchViewController()
+    func showMyProductsViewController()
+    func showMyWishlistViewController()
+    
+}
+
 class ShopMenuViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
@@ -11,6 +19,14 @@ class ShopMenuViewController: UIViewController {
     @IBOutlet weak var myProductsButton: UIButton!
     
     @IBOutlet weak var myWishlistButton: UIButton!
+    
+    private weak var delegate: ShopMenuDelegate?
+    
+    func configureWith(delegate: ShopMenuDelegate?) {
+        
+        self.delegate = delegate
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,19 +64,19 @@ class ShopMenuViewController: UIViewController {
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
     
-        
+        self.delegate?.showSearchViewController()
     
     }
     
     @IBAction func myProductsButtonPressed(_ sender: UIButton) {
    
-        
+        self.delegate?.showMyProductsViewController()
     
     }
     
     @IBAction func myWishlistButtonPressed(_ sender: UIButton) {
     
-    
+        self.delegate?.showMyWishlistViewController()
     
     }
     

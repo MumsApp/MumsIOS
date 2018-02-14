@@ -58,10 +58,6 @@ class RootViewController: UIViewController {
         
         self.configureView()
         
-        print(self.userDefaults.secureStringForKey(k_token))
-     
-        print(self.userDefaults.secureStringForKey(k_refresh_token))
-
         let isInitialized = self.userDefaults.boolForKey(k_is_app_initialized)
         
         let isUserLoggedIn = self.appContext.isUserLoggedIn()
