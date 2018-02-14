@@ -6,7 +6,7 @@ protocol SchoolCellDelegate: class {
     
 }
 
-class SchoolCell: UITableViewCell {
+class SchoolCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var schoolNameLabel: UILabel!
     

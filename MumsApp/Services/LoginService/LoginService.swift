@@ -29,6 +29,3 @@ struct LoginService: ResourceService {
     }
     
 }
-
-
-

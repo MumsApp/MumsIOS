@@ -1,6 +1,6 @@
 import UIKit
 
-class LobbyFooterCell: UITableViewCell {
+class LobbyFooterCell: UITableViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
 

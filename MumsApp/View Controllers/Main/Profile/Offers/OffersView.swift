@@ -37,10 +37,8 @@ class OffersView: UIView {
         
         self.configureView()
         
-        let nib = UINib(nibName: "OffersCell", bundle: nil)
-        
-        self.tableView.register(nib, forCellReuseIdentifier: "OffersCell")
-        
+        self.tableView.registerNib(OffersCell.self)
+    
     }
     
     private func configureView() {
@@ -73,7 +71,7 @@ extension OffersView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OffersCell", for: indexPath) as! OffersCell
+        let cell = tableView.dequeueReusableCell(OffersCell.self, indexPath: indexPath)
         
         let thisObject = self.list[indexPath.row]
         

@@ -1,7 +1,7 @@
 import UIKit
 import SwipeCellKit
 
-class LobbyCell: SwipeTableViewCell {
+class LobbyCell: SwipeTableViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
 

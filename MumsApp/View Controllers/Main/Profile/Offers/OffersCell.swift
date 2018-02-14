@@ -1,6 +1,6 @@
 import UIKit
 
-class OffersCell: UITableViewCell {
+class OffersCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var offersTitleLabel: UILabel!
     

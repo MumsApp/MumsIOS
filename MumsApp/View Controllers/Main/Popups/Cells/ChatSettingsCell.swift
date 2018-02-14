@@ -1,6 +1,6 @@
 import UIKit
 
-class ChatSettingsCell: UITableViewCell {
+class ChatSettingsCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var userImageView: UIImageView!
     

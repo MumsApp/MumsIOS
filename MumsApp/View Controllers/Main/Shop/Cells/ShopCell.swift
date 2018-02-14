@@ -1,6 +1,6 @@
 import UIKit
 
-class ShopCell: UITableViewCell {
+class ShopCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var containerView: UIView!
 

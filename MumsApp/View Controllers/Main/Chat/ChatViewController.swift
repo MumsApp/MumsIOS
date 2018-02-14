@@ -53,9 +53,7 @@ class ChatViewController: UIViewController {
     
     private func registerCells() {
         
-        let nib = UINib(nibName: "ChatCell", bundle: nil)
-        
-        self.tableView.register(nib, forCellReuseIdentifier: "ChatCell")
+        self.tableView.registerNib(ChatCell.self)
         
     }
     
@@ -103,7 +101,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
+        let cell = tableView.dequeueReusableCell(ChatCell.self, indexPath: indexPath)
         
         return cell
         

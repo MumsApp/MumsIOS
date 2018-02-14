@@ -52,10 +52,8 @@ class ChatSettingsPopupViewController: UIViewController {
     
     private func registerCells() {
         
-        let nib = UINib(nibName: "ChatSettingsCell", bundle: nil)
-        
-        self.tableView.register(nib, forCellReuseIdentifier: "ChatSettingsCell")
-        
+        self.tableView.registerNib(ChatSettingsCell.self)
+    
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
@@ -82,16 +80,16 @@ extension ChatSettingsPopupViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatSettingsCell", for: indexPath) as! ChatSettingsCell
-                
+        let cell = tableView.dequeueReusableCell(ChatSettingsCell.self, indexPath: indexPath)
+        
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatSettingsCell") as! ChatSettingsCell
-
+        let cell = tableView.dequeueReusableCell(ChatSettingsCell.self)
+        
         cell.configureForHeader()
         
         return cell

@@ -1,6 +1,6 @@
 import UIKit
 
-class ChatCell: UITableViewCell {
+class ChatCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var containerView: UIView!
     

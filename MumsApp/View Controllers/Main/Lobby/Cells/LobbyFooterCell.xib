@@ -24,7 +24,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="58" id="whc-24-teg"/>
                             </constraints>
-                            <state key="normal" title="  Add category" image="addGreenIcon">
+                            <state key="normal" title="  Create category" image="addGreenIcon">
                                 <color key="titleColor" red="0.1215686275" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>

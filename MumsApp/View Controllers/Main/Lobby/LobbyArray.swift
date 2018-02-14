@@ -13,7 +13,7 @@ let lobbyArray = [
 
     Lobby(image: #imageLiteral(resourceName: "expectantMumsIcon"), title: "Expectant Mums", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
 
-    Lobby(image: #imageLiteral(resourceName: "newMumsIcon"), title: "New Moms", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
+    Lobby(image: #imageLiteral(resourceName: "newBornsIcon"), title: "New Borns", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
 
     Lobby(image: #imageLiteral(resourceName: "toddlersIcon"), title: "Toddlers", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
 
@@ -29,8 +29,8 @@ let lobbyArray = [
     
     Lobby(image: #imageLiteral(resourceName: "lgbtIcon"), title: "LGBT parenting", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
     
-     Lobby(image: #imageLiteral(resourceName: "nurseryIcon"), title: "Exercising", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
+     Lobby(image: #imageLiteral(resourceName: "mumsHealthIcon"), title: "MumsApp Health", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
      
-      Lobby(image: #imageLiteral(resourceName: "nurseryIcon"), title: "Holiday", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis.")
+      Lobby(image: #imageLiteral(resourceName: "holidayIcon"), title: "Holiday", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis.")
 
 ]

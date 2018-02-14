@@ -50,15 +50,11 @@ class LobbyViewController: UIViewController {
     }
     
     private func registerCells() {
-        
-        let nib = UINib(nibName: "LobbyCell", bundle: nil)
-        
-        self.tableView.register(nib, forCellReuseIdentifier: "LobbyCell")
 
-        let nibFooter = UINib(nibName: "LobbyFooterCell", bundle: nil)
+        self.tableView.registerNib(LobbyCell.self)
         
-        self.tableView.register(nibFooter, forCellReuseIdentifier: "LobbyFooterCell")
-
+        self.tableView.registerNib(LobbyFooterCell.self)
+    
     }
     
     func filterButtonPressed(sender: UIBarButtonItem) {
@@ -109,7 +105,7 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
         
         if indexPath.section == 0 {
          
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LobbyCell", for: indexPath) as! LobbyCell
+            let cell = tableView.dequeueReusableCell(LobbyCell.self, indexPath: indexPath)
             
             let thisObject = lobbyArray[indexPath.row]
             
@@ -121,7 +117,7 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
             
         } else {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LobbyFooterCell", for: indexPath) as! LobbyFooterCell
+            let cell = tableView.dequeueReusableCell(LobbyFooterCell.self, indexPath: indexPath)
             
             return cell
             

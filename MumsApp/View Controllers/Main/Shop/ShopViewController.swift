@@ -53,10 +53,8 @@ class ShopViewController: UIViewController {
     
     private func registerCells() {
         
-        let nib = UINib(nibName: "ShopCell", bundle: nil)
-        
-        self.tableView.register(nib, forCellReuseIdentifier: "ShopCell")
-        
+        self.tableView.registerNib(ShopCell.self)
+    
     }
 
 }
@@ -71,7 +69,7 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ShopCell", for: indexPath) as! ShopCell
+        let cell = tableView.dequeueReusableCell(ShopCell.self, indexPath: indexPath)
         
         cell.itemNameLabel.text = "Item one"
         

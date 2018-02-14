@@ -56,10 +56,8 @@ class SchoolView: UIView {
         
         self.configureView()
         
-        let nib = UINib(nibName: "SchoolCell", bundle: nil)
+        self.tableView.registerNib(SchoolCell.self)
         
-        self.tableView.register(nib, forCellReuseIdentifier: "SchoolCell")
-    
     }
     
     private func configureView() {
@@ -104,7 +102,7 @@ extension SchoolView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SchoolCell", for: indexPath) as! SchoolCell
+        let cell = tableView.dequeueReusableCell(SchoolCell.self, indexPath: indexPath)
         
         cell.configureWith(delegate: self)
         
