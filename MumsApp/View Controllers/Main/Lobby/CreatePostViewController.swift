@@ -1,12 +1,6 @@
 import UIKit
 
-class CreateCategoryViewController: UIViewController {
-
-    @IBOutlet weak var categoryContainerView: UIView!
-    
-    @IBOutlet weak var publicCategoryLabel: UILabel!
-    
-    @IBOutlet weak var publicCategorySwitch: UISwitch!
+class CreatePostViewController: UIViewController {
     
     @IBOutlet weak var titleContainerView: UIView!
     
@@ -17,39 +11,29 @@ class CreateCategoryViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     @IBOutlet weak var photoContainerView: UIView!
-   
+    
     @IBOutlet weak var addPhotoButton: UIButton!
-    
-    @IBOutlet weak var membersContainerView: UIView!
-    
-    @IBOutlet weak var addMembersButton: UIButton!
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var postLabel: UILabel!
     
-    @IBOutlet weak var coverPhotoLabel: UILabel!
-    
-    @IBOutlet weak var membersLabel: UILabel!
+    @IBOutlet weak var photoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.configureView()
-
+        
         self.configureNavigationBar()
         
     }
     
     private func configureView() {
         
-        self.categoryContainerView.addShadow()
-        
         self.titleContainerView.addShadow()
         
         self.photoContainerView.addShadow()
-        
-        self.membersContainerView.addShadow()
         
         self.descriptionContainerView.addShadow()
         
@@ -57,21 +41,13 @@ class CreateCategoryViewController: UIViewController {
         
         self.titleLabel.textColor = .mainDarkGrey
         
-        self.descriptionLabel.font = .regular(size: 13)
+        self.postLabel.font = .regular(size: 13)
         
-        self.descriptionLabel.textColor = .mainDarkGrey
+        self.postLabel.textColor = .mainDarkGrey
         
-        self.coverPhotoLabel.font = .regular(size: 13)
+        self.photoLabel.font = .regular(size: 13)
         
-        self.coverPhotoLabel.textColor = .mainDarkGrey
-        
-        self.membersLabel.font = .regular(size: 13)
-        
-        self.membersLabel.textColor = .mainDarkGrey
-    
-        self.publicCategoryLabel.font = .regular(size: 17)
-        
-        self.publicCategoryLabel.textColor = .black
+        self.photoLabel.textColor = .mainDarkGrey
     
         self.titleTextField.font = .regular(size: 17)
         
@@ -83,13 +59,11 @@ class CreateCategoryViewController: UIViewController {
         
         self.addPhotoButton.titleLabel?.font = .regular(size: 17)
         
-        self.addMembersButton.titleLabel?.font = .regular(size: 17)
-        
     }
     
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Create Category")
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Create Post")
         
         self.navigationItem.titleView = titleLabel
         
@@ -111,9 +85,9 @@ class CreateCategoryViewController: UIViewController {
         
         self.navigationController?.popViewController(animated: true)
         
-    
+        
     }
-
+    
     func doneButtonPressed(sender: UIBarButtonItem) {
         
         print("Done")
@@ -121,3 +95,4 @@ class CreateCategoryViewController: UIViewController {
     }
     
 }
+

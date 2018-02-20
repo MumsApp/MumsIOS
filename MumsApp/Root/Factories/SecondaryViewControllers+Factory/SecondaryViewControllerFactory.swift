@@ -138,4 +138,29 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func createCategoryViewController() -> CreateCategoryViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.CreateCategoryViewController.rawValue, storyboard: storyboard) as! CreateCategoryViewController
+        
+        return controller
+        
+    }
+    
+    func createPostViewController() -> CreatePostViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.CreatePostViewController.rawValue, storyboard: storyboard) as! CreatePostViewController
+        
+        return controller
+        
+    }
+    
+    func lobbyDetailsViewController() -> LobbyDetailsViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyDetailsViewController.rawValue, storyboard: storyboard) as! LobbyDetailsViewController
+        
+        return controller
+        
+    }
+    
+    
 }

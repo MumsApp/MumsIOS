@@ -28,5 +28,11 @@ enum SecondaryViewController: String {
     
     case AddProductViewController
     
+    case CreateCategoryViewController
+    
+    case CreatePostViewController
+    
+    case LobbyDetailsViewController
+    
 }
 

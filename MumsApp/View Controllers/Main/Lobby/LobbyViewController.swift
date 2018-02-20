@@ -159,6 +159,22 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
     
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.showLobbyDetailsViewController()
+        
+    }
+    
+    private func showLobbyDetailsViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.lobbyDetailsViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
 }
 
 extension LobbyViewController: UISearchBarDelegate {
@@ -175,7 +191,17 @@ extension LobbyViewController: AddCellDelegate {
     
     func addButtonPressed() {
         
+        self.showCreateCategoryViewController()
         
+    }
+    
+    private func showCreateCategoryViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.createCategoryViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
         
     }
     
