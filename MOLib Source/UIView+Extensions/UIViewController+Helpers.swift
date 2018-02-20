@@ -54,11 +54,11 @@ extension UIViewController {
         
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
                         
-                mainRootVC?.menuButton.alpha = 0
+                mainRootVC?.menuButton?.alpha = 0
                         
         }, completion: { _ in
                         
-                mainRootVC?.menuButton.isHidden = true
+                mainRootVC?.menuButton?.isHidden = true
 
         })
         
@@ -70,12 +70,12 @@ extension UIViewController {
         
         UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
             
-            mainRootVC?.menuButton.isHidden = false
+            mainRootVC?.menuButton?.isHidden = false
 
             
         }, completion: { _ in
             
-            mainRootVC?.menuButton.alpha = 1
+            mainRootVC?.menuButton?.alpha = 1
 
         })
         

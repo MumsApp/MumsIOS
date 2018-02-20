@@ -9,7 +9,7 @@ let k_access_token = "access_token"
 
 struct FacebookProfile {
     
-    var id: String?, email: String?, name: String?, imageURL: String?, token: String?
+    var id: String?, email: String?, name: String?, surname: String?, imageURL: String?, token: String?
     
 }
 
@@ -55,7 +55,7 @@ struct FacebookService: ResourceService {
     
     func getUserProfile(_ token: String, completion: @escaping (_ facebookProfile: FacebookProfile, _ errorOptional: Error?) -> Void) {
         
-        let graphPath = ["fields": "name, email, picture.width(640).height(640)"]
+        let graphPath = ["fields": "first_name, last_name, email, picture.width(640).height(640)"]
         
         FBSDKGraphRequest(graphPath: "me", parameters: graphPath, httpMethod: "GET").start { (connection, response, error) in
             
@@ -80,12 +80,13 @@ struct FacebookService: ResourceService {
                 }
 
                 var facebookProfile = FacebookProfile()
-
+                
                 facebookProfile.email = profileDictionary["email"] as? String ?? ""
-                facebookProfile.name = profileDictionary["name"] as? String ?? ""
+                facebookProfile.name = profileDictionary["first_name"] as? String ?? ""
+                facebookProfile.surname = profileDictionary["last_name"] as? String ?? ""
                 facebookProfile.id = profileDictionary["id"] as? String
                 facebookProfile.token = token
-
+                
                 if let pictureDictionary = profileDictionary["picture"] as? Dictionary<String, Any> {
 
                     if let dataDictionary = pictureDictionary["data"] as? Dictionary<String, Any> {
@@ -120,7 +121,10 @@ struct FacebookService: ResourceService {
     
     func register(facebookProfile: FacebookProfile, completion: @escaping ErrorCompletion) {
         
-        let bodyParameters = [k_email: facebookProfile.email!, k_access_token: facebookProfile.token!]
+        let bodyParameters = [k_email: facebookProfile.email!,
+                              k_access_token: facebookProfile.token!,
+                              k_name: facebookProfile.name!,
+                              k_surname: facebookProfile.surname!]
                 
         if let request = URLRequest.POSTRequestJSON(urlString: FACEBOOK_REGISTER_URL, bodyParameters: bodyParameters) {
             

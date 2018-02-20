@@ -19,7 +19,10 @@ struct GoogleService: ResourceService {
     
     func register(googleProfile: GIDGoogleUser, completion: @escaping ErrorCompletion) {
         
-        let bodyParameters = [k_email: googleProfile.profile.email!, k_id_token: googleProfile.authentication.idToken!]
+        let bodyParameters = [k_email: googleProfile.profile.email!,
+                              k_id_token: googleProfile.authentication.idToken!,
+                              k_name: googleProfile.profile.givenName!,
+                              k_surname: googleProfile.profile.familyName!]
         
         if let request = URLRequest.POSTRequestJSON(urlString: GOOGLE_REGISTER_URL, bodyParameters: bodyParameters) {
             

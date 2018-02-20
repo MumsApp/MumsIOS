@@ -4,6 +4,8 @@ let REGISTER_URL = BASE_PUBLIC_URL + "user/create"
 
 let k_email = "email"
 let k_password = "password"
+let k_name = "name"
+let k_surname = "surname"
 
 struct RegisterService: ResourceService {
     
@@ -13,9 +15,9 @@ struct RegisterService: ResourceService {
     
     let serviceParser: ServiceParser
     
-    func register(email: String, password: String, completion: @escaping ErrorCompletion) {
+    func register(email: String, password: String, name: String, surname: String, completion: @escaping ErrorCompletion) {
         
-        let bodyParams = [k_email: email, k_password: password]
+        let bodyParams = [k_email: email, k_password: password, k_name: name, k_surname: surname]
         
         if let request = URLRequest.POSTRequestJSON(urlString: REGISTER_URL, bodyParameters: bodyParams) {
             

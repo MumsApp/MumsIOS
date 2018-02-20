@@ -295,15 +295,19 @@ class SignUpViewController: UIViewController {
         
         let password = self.passwordTextField.text!
         
-        self.register(email: email, password: password)
+        let name = self.firstNameTextField.text!
+        
+        let surname = self.lastNameTextField.text!
+        
+        self.register(email: email, password: password, name: name, surname: surname)
         
     }
     
-    private func register(email: String, password: String) {
+    private func register(email: String, password: String, name: String, surname: String) {
         
         self.isScreenEnabled(enabled: false)
         
-        self.registerService.register(email: email, password: password) { errorOptional in
+        self.registerService.register(email: email, password: password, name: name, surname: surname) { errorOptional in
             
             if let error = errorOptional {
             
@@ -382,7 +386,7 @@ class SignUpViewController: UIViewController {
         }
         
         self.facebookService.performFacebookLogin(self) { tokenOptional, errorOptional -> Void in
-            
+                        
             if let _ = errorOptional {
                 
                 self.isScreenEnabled(enabled: true)
