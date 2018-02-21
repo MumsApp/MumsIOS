@@ -18,6 +18,8 @@ protocol AppContext {
     
     func isAppInitialized() -> Bool
     
+    func userId() -> String?
+    
 }
 
 class AppContextFactory {
@@ -121,6 +123,14 @@ struct DefaultAppContext: AppContext {
     func token() -> String? {
         
         return self.userDefaults.secureStringForKey(k_token)
+        
+    }
+    
+    func userId() -> String? {
+        
+        guard let id = self.userDefaults.integerForKey(k_id) else { return nil }
+        
+        return String(id)
         
     }
     

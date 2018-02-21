@@ -66,9 +66,19 @@ struct GoogleService: ResourceService {
                 
                 if let responseJSON = responseOptional as? Dictionary<String, Any> {
                     
-                    _ = self.loginServiceParser.parseDataDictionary(tag: 0, dictionary: responseJSON)
+                    let success = self.loginServiceParser.parseDataDictionary(tag: 0, dictionary: responseJSON)
                     
-                    completion(nil)
+                    if success == false {
+                        
+                        let userInfo = [NSLocalizedDescriptionKey: "An unknown error occured"]
+                        
+                        completion(NSError(domain: self.serviceName, code: 101, userInfo: userInfo))
+                        
+                    } else {
+                        
+                        completion(nil)
+                        
+                    }
                     
                 }
                 

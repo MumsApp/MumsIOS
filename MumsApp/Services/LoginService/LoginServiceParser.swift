@@ -7,12 +7,14 @@ struct LoginServiceParser: ServiceParser {
     var userDefaults: MOUserDefaults
     
     func parseDataDictionary(tag: Int, dictionary: Dictionary<String, Any>) -> Bool {
-                
+        
+        print(dictionary)
+        
         var success: Bool = false
         
         if let token = dictionary[k_token] as? String,
             let refresh_token = dictionary[k_refresh_token] as? String,
-            let id = dictionary[k_id] as? String {
+            let id = dictionary[k_id] as? Int {
             
             let standard = "Bearer "
             
@@ -20,7 +22,7 @@ struct LoginServiceParser: ServiceParser {
             
             self.userDefaults.setSecureString(refresh_token, forKey: k_refresh_token)
 
-            self.userDefaults.setString(id, forKey: k_id)
+            self.userDefaults.setInteger(id, forKey: k_id)
             
             _ = self.userDefaults.synchronize()
             

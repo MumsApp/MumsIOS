@@ -105,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MumsApp/View Controllers/Onboarding/SignInViewController.swift"
-            timestampString = "539524894.742391"
+            filePath = "MumsApp/Services/Resource.swift"
+            timestampString = "540940641.6140341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "login(email:password:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "responseHandler(tag:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

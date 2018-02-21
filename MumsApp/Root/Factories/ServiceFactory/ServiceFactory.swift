@@ -77,5 +77,25 @@ class ServiceFactory {
         
     }
     
+    func userDataService() -> UserDataService {
+        
+        let parser = UserDataServiceParser()
+        
+        let service = UserDataService(networkService: self.networkService, serviceParser: parser)
+        
+        return service
+        
+    }
+    
+    func forgotPasswordService() -> ForgotPasswordService {
+        
+        let parser = ForgotPasswordServiceParser()
+        
+        let service = ForgotPasswordService(networkService: self.networkService, serviceParser: parser)
+        
+        return service
+        
+    }
+    
 }
 

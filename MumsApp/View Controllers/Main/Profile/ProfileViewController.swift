@@ -12,12 +12,22 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var schoolViewHeight: NSLayoutConstraint!
     
+    private var userDataService: UserDataService!
+    
+    func configureWith(userDataService: UserDataService) {
+        
+        self.userDataService = userDataService
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.configureView()
     
         self.configureNavigationBar()
+        
+        self.getUserData()
         
     }
     
@@ -70,6 +80,26 @@ class ProfileViewController: UIViewController {
         controller.modalTransitionStyle = .crossDissolve
         
         self.presentViewController(controller)
+        
+    }
+    
+    private func getUserData() {
+        
+        guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
+        
+        self.userDataService.getUserData(id: id, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                print("success")
+                
+            }
+            
+        }
         
     }
     

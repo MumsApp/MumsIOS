@@ -10,6 +10,14 @@ class ForgotPasswordViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    private var forgotPasswordService: ForgotPasswordService!
+    
+    func configureWith(forgotPasswordService: ForgotPasswordService) {
+        
+        self.forgotPasswordService = forgotPasswordService
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +52,8 @@ class ForgotPasswordViewController: UIViewController {
 
         self.emailTextField.delegate = self
         
+        self.activityIndicator.isHidden = true
+
     }
     
     private func configureNavigationBar() {
@@ -69,6 +79,64 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func sendPasswordButtonPressed(_ sender: UIButton) {
+    
+        self.validate()
+            
+    }
+    
+    private func validate() {
+        
+        if self.emailTextField.text!.isEmpty || !self.emailTextField.text!.trim().isEmail() {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter a valid email address.")
+            
+            return
+            
+        }
+        
+        self.resetPassword()
+        
+    }
+    
+    private func resetPassword() {
+        
+        self.isScreenEnabled(enabled: false)
+
+        self.forgotPasswordService.reset(email: self.emailTextField.text!) { errorOptional in
+            
+            if let _ = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: "User with provided email do not exists in database")
+                
+            } else {
+                
+                self.showOkAlertWith(title: "Info", message: "We have sent you an email with instructions on how to recover your password.")
+                
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                
+                self.isScreenEnabled(enabled: true)
+
+            })
+
+        }
+        
+    }
+    
+    fileprivate func isScreenEnabled(enabled: Bool) {
+        
+        self.sendPasswordButton.isEnabled = enabled
+        
+        let title = enabled == false ? "" : "Send password"
+        
+        self.sendPasswordButton.setTitle(title, for: .normal)
+        
+        self.activityIndicator.isHidden = enabled
+        
+        self.sendPasswordButton.isUserInteractionEnabled = enabled
+        
+        self.emailTextField.isEnabled = enabled
+        
     }
     
 }

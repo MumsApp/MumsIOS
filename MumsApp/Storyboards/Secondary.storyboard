@@ -1242,7 +1242,7 @@ OFFERS     </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFH-QC-Z0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="951.72413793103453"/>
+            <point key="canvasLocation" x="2524" y="873"/>
         </scene>
         <!--Shop View Controller-->
         <scene sceneID="WGq-8O-VZo">
@@ -1839,7 +1839,7 @@ OFFERS     </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfT-4z-usw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="1713"/>
+            <point key="canvasLocation" x="2524" y="1637"/>
         </scene>
         <!--Lobby Details View Controller-->
         <scene sceneID="STw-mB-lpM">
@@ -1870,7 +1870,7 @@ OFFERS     </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OyI-6G-sGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="2390.5547226386807"/>
+            <point key="canvasLocation" x="2524" y="2325"/>
         </scene>
     </scenes>
     <resources>

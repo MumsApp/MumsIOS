@@ -88,6 +88,8 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.ForgotPasswordViewController.rawValue, storyboard: storyboard) as! ForgotPasswordViewController
         
+        controller.configureWith(forgotPasswordService: self.serviceFactory.forgotPasswordService())
+        
         return controller
         
     }

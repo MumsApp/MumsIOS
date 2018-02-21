@@ -128,7 +128,7 @@ extension Error {
         if let dictionary = responseOptional as? [String: Any] {
             
             let message = dictionary["exceptionName"] as? String
-            
+                        
             var userInfo: [String: Any] = [:]
             
             userInfo[NSLocalizedDescriptionKey] = message == nil ? "An unknown error occured" : message!
