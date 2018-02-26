@@ -59,6 +59,8 @@ class ShopViewController: UIViewController {
         
         self.tableView.registerNib(ShopCell.self)
     
+        self.tableView.registerNib(ShopFilterCell.self)
+        
     }
     
     private func showShopMenuViewController() {
@@ -89,33 +91,81 @@ class ShopViewController: UIViewController {
 
 extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 2
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        if section == 0 {
+
+            return 1
+            
+        } else {
+            
+            return 10
+
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            
+            return 140
+            
+        } else {
+            
+            return 170
+            
+        }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(ShopCell.self, indexPath: indexPath)
-        
-        cell.itemNameLabel.text = "Item one"
-        
-        cell.itemCategoryLabel.text = "Baby clothing"
-        
-        cell.itemPriceLabel.text = "$60"
-        
-        cell.itemDistanceLabel.text = "3 Miles"
-        
-        cell.userNameLabel.text = "John S."
-        
-        return cell
+        if indexPath.section == 0 {
+            
+            let cell = tableView.dequeueReusableCell(ShopFilterCell.self, indexPath: indexPath)
+
+            cell.configureWith(delegate: self)
+            
+            return cell
+            
+        } else {
+           
+            let cell = tableView.dequeueReusableCell(ShopCell.self, indexPath: indexPath)
+            
+            cell.itemNameLabel.text = "Item one"
+            
+            cell.itemCategoryLabel.text = "Baby clothing"
+            
+            cell.itemPriceLabel.text = "$60"
+            
+            cell.itemDistanceLabel.text = "3 Miles"
+            
+            cell.userNameLabel.text = "John S."
+            
+            return cell
+            
+        }
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.showProductDetailsViewController()
+        if indexPath.section == 0 {
+            
+            return
+            
+        } else {
+            
+            self.showProductDetailsViewController()
+
+        }
         
     }
     
@@ -166,6 +216,27 @@ extension ShopViewController: ShopMenuDelegate {
         let controller = factory.myWishlistViewController()
         
         self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+}
+
+extension ShopViewController: ShopFilterCellDelegate {
+    
+    func filterButtonPressed() {
+        
+        self.showFilterViewController()
+        
+    }
+    
+    func showFilterViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.shopFilterViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+
         
     }
     

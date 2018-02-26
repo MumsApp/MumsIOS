@@ -108,9 +108,12 @@
 		4D9DE8A8203E022B005BDB37 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A7203E022B005BDB37 /* Location.swift */; };
 		4D9DE8AA203E0355005BDB37 /* Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A9203E0355005BDB37 /* Children.swift */; };
 		4D9DE8AC203E04A3005BDB37 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8AB203E04A3005BDB37 /* Photo.swift */; };
+		4DA2164520446E7F00621031 /* ShopFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2164420446E7F00621031 /* ShopFilterViewController.swift */; };
 		4DA306BD204450BA00250156 /* MyWishlistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA306BC204450BA00250156 /* MyWishlistCell.xib */; };
 		4DA306BF204450C600250156 /* MyWishlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA306BE204450C600250156 /* MyWishlistCell.swift */; };
 		4DA306C12044526C00250156 /* MyWishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA306C02044526C00250156 /* MyWishlistViewController.swift */; };
+		4DA306C420445BD700250156 /* ShopFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA306C320445BD700250156 /* ShopFilterCell.xib */; };
+		4DA306C620445BDF00250156 /* ShopFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA306C520445BDF00250156 /* ShopFilterCell.swift */; };
 		4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4DA49A502024B2EA00561EC9 /* BebasNeueRegular.otf */; };
 		4DA49A532024B69900561EC9 /* VerticallyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA49A522024B69900561EC9 /* VerticallyButton.swift */; };
 		4DA49A552024B90E00561EC9 /* BubbleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA49A542024B90E00561EC9 /* BubbleTransition.swift */; };
@@ -301,9 +304,12 @@
 		4D9DE8A7203E022B005BDB37 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4D9DE8A9203E0355005BDB37 /* Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Children.swift; sourceTree = "<group>"; };
 		4D9DE8AB203E04A3005BDB37 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		4DA2164420446E7F00621031 /* ShopFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopFilterViewController.swift; sourceTree = "<group>"; };
 		4DA306BC204450BA00250156 /* MyWishlistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyWishlistCell.xib; sourceTree = "<group>"; };
 		4DA306BE204450C600250156 /* MyWishlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistCell.swift; sourceTree = "<group>"; };
 		4DA306C02044526C00250156 /* MyWishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistViewController.swift; sourceTree = "<group>"; };
+		4DA306C320445BD700250156 /* ShopFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopFilterCell.xib; sourceTree = "<group>"; };
+		4DA306C520445BDF00250156 /* ShopFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopFilterCell.swift; sourceTree = "<group>"; };
 		4DA49A502024B2EA00561EC9 /* BebasNeueRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueRegular.otf; sourceTree = "<group>"; };
 		4DA49A522024B69900561EC9 /* VerticallyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyButton.swift; sourceTree = "<group>"; };
 		4DA49A542024B90E00561EC9 /* BubbleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTransition.swift; sourceTree = "<group>"; };
@@ -760,6 +766,8 @@
 				4DE175102028DC35001C5DD1 /* ShopViewController.swift */,
 				4DE175122028DCDE001C5DD1 /* ShopCell.xib */,
 				4DE175142028DCEA001C5DD1 /* ShopCell.swift */,
+				4DA306C320445BD700250156 /* ShopFilterCell.xib */,
+				4DA306C520445BDF00250156 /* ShopFilterCell.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -1015,6 +1023,7 @@
 				4DA306C22044529800250156 /* My wishlist products */,
 				4D39D49520349CDE005123F8 /* Product details */,
 				4D39D49620349CEA005123F8 /* Add product */,
+				4DA2164420446E7F00621031 /* ShopFilterViewController.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -1238,6 +1247,7 @@
 				4D39D49820349D32005123F8 /* AddProductDescriptionView.xib in Resources */,
 				4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */,
 				4DC2F8B5202C4D4300E331BD /* Terms.json in Resources */,
+				4DA306C420445BD700250156 /* ShopFilterCell.xib in Resources */,
 				4DE174FA2028A044001C5DD1 /* AddCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1513,6 +1523,7 @@
 				4DE175012028C8B3001C5DD1 /* ChatViewController.swift in Sources */,
 				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
 				4D649244203CAD2700CE35B0 /* LobbyDetailsCell.swift in Sources */,
+				4DA2164520446E7F00621031 /* ShopFilterViewController.swift in Sources */,
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
 				4D5ED8FA202246870020FD51 /* OffersCell.swift in Sources */,
 				4DCB4E9E20222795006962F9 /* LobbyViewController.swift in Sources */,
@@ -1545,6 +1556,7 @@
 				4D1B3D772035FB0100C2618B /* CreateCategoryViewController.swift in Sources */,
 				4D05A9571FE144A900B19E6E /* InAppPurchase+Products.swift in Sources */,
 				4D39D49420349CCD005123F8 /* AddProductDescriptionView.swift in Sources */,
+				4DA306C620445BDF00250156 /* ShopFilterCell.swift in Sources */,
 				4D05A94D1FE144A900B19E6E /* AuthenticatedNetworkService+Request.swift in Sources */,
 				4DC6774C2017817B00F34184 /* Reachability+UIView.swift in Sources */,
 				4D05A9891FE14F3F00B19E6E /* Storyboards.swift in Sources */,

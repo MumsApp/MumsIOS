@@ -63,6 +63,12 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
     
     @IBAction func wishListButtonPressed(_ sender: UIButton) {
         
+        let image = sender.tag == 0 ? #imageLiteral(resourceName: "watchIcon") : #imageLiteral(resourceName: "unwatchIcon")
+        
+        sender.setImage(image, for: .normal)
+        
+        sender.tag = sender.tag == 0 ? 1 : 0
+        
     }
     
 }

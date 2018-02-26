@@ -172,4 +172,14 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    
+    
+    func shopFilterViewController() -> ShopFilterViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopFilterViewController.rawValue, storyboard: storyboard) as! ShopFilterViewController
+        
+        return controller
+        
+    }
+    
 }
