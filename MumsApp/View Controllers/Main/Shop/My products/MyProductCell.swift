@@ -1,6 +1,6 @@
 import UIKit
 
-class MyProductCell: UITableViewCell, Reusable {
+class MyProductCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
     
@@ -23,7 +23,7 @@ class MyProductCell: UITableViewCell, Reusable {
     
     private func configureView() {
         
-        self.selectionStyle = .none
+//        self.selectionStyle = .none
         
         self.backgroundColor = .clear
         
@@ -33,13 +33,13 @@ class MyProductCell: UITableViewCell, Reusable {
         
         self.itemImageView.layer.masksToBounds = true
         
-        self.itemNameLabel.font = .regular(size: 20)
+        self.itemNameLabel.font = .regular(size: 15)
         
-        self.itemCategoryLabel.font = .regular(size: 13)
+        self.itemCategoryLabel.font = .regular(size: 12)
         
         self.itemCategoryLabel.textColor = .mainDarkGrey
         
-        self.itemPriceLabel.font = .regular(size: 20)
+        self.itemPriceLabel.font = .regular(size: 15)
         
     }
     
