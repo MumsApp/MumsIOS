@@ -164,5 +164,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func myWishlistViewController() -> MyWishlistViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MyWishlistViewController.rawValue, storyboard: storyboard) as! MyWishlistViewController
+        
+        return controller
+        
+    }
     
 }

@@ -29,19 +29,19 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQc-CR-liK">
-                                    <rect key="frame" x="8" y="176" width="122" height="21"/>
+                                    <rect key="frame" x="16" y="176" width="114" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOc-2I-oBN">
-                                    <rect key="frame" x="8" y="226" width="122" height="21"/>
+                                    <rect key="frame" x="16" y="226" width="114" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKo-tR-fRl">
-                                    <rect key="frame" x="8" y="197" width="122" height="21"/>
+                                    <rect key="frame" x="16" y="197" width="114" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -60,14 +60,14 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="lOc-2I-oBN" firstAttribute="leading" secondItem="mOz-aL-goe" secondAttribute="leading" constant="8" id="A3B-OW-JIg"/>
+                                <constraint firstItem="lOc-2I-oBN" firstAttribute="leading" secondItem="mOz-aL-goe" secondAttribute="leading" constant="16" id="A3B-OW-JIg"/>
                                 <constraint firstAttribute="trailing" secondItem="VQc-CR-liK" secondAttribute="trailing" constant="8" id="CvH-op-iOc"/>
                                 <constraint firstItem="B4B-ep-FYC" firstAttribute="top" secondItem="mOz-aL-goe" secondAttribute="top" id="DjL-XE-fRa"/>
                                 <constraint firstItem="ArK-Bx-Mtz" firstAttribute="trailing" secondItem="mOz-aL-goe" secondAttribute="trailing" id="IjY-nl-br7"/>
-                                <constraint firstItem="YKo-tR-fRl" firstAttribute="leading" secondItem="mOz-aL-goe" secondAttribute="leading" constant="8" id="RLp-yj-zP9"/>
+                                <constraint firstItem="YKo-tR-fRl" firstAttribute="leading" secondItem="mOz-aL-goe" secondAttribute="leading" constant="16" id="RLp-yj-zP9"/>
                                 <constraint firstItem="mOz-aL-goe" firstAttribute="trailing" secondItem="B4B-ep-FYC" secondAttribute="trailing" id="U55-8M-nXE"/>
                                 <constraint firstItem="mOz-aL-goe" firstAttribute="trailing" secondItem="lOc-2I-oBN" secondAttribute="trailing" constant="8" id="VeV-lb-Evl"/>
-                                <constraint firstItem="VQc-CR-liK" firstAttribute="leading" secondItem="mOz-aL-goe" secondAttribute="leading" constant="8" id="Zuy-yW-DoX"/>
+                                <constraint firstItem="VQc-CR-liK" firstAttribute="leading" secondItem="mOz-aL-goe" secondAttribute="leading" constant="16" id="Zuy-yW-DoX"/>
                                 <constraint firstItem="B4B-ep-FYC" firstAttribute="leading" secondItem="mOz-aL-goe" secondAttribute="leading" id="bma-g4-but"/>
                                 <constraint firstItem="lOc-2I-oBN" firstAttribute="top" secondItem="YKo-tR-fRl" secondAttribute="bottom" constant="8" id="cYT-q1-sPz"/>
                                 <constraint firstItem="mOz-aL-goe" firstAttribute="trailing" secondItem="YKo-tR-fRl" secondAttribute="trailing" constant="8" id="krH-Ir-jRx"/>

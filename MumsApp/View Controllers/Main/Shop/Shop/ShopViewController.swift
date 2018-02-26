@@ -139,10 +139,16 @@ extension ShopViewController: ShopMenuDelegate {
         
     }
     
+    func showMyWishlistViewController() {
+
+        self.showMyWishProductsViewController()
+
+    }
+    
     func showMyProductsViewController() {
         
         self.dismissViewController()
-
+        
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
         let controller = factory.myProductViewController()
@@ -151,11 +157,16 @@ extension ShopViewController: ShopMenuDelegate {
         
     }
 
-    func showMyWishlistViewController() {
-
+    func showMyWishProductsViewController() {
+        
         self.dismissViewController()
-
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.myWishlistViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
     }
     
 }
-

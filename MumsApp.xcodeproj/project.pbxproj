@@ -108,6 +108,9 @@
 		4D9DE8A8203E022B005BDB37 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A7203E022B005BDB37 /* Location.swift */; };
 		4D9DE8AA203E0355005BDB37 /* Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A9203E0355005BDB37 /* Children.swift */; };
 		4D9DE8AC203E04A3005BDB37 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8AB203E04A3005BDB37 /* Photo.swift */; };
+		4DA306BD204450BA00250156 /* MyWishlistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA306BC204450BA00250156 /* MyWishlistCell.xib */; };
+		4DA306BF204450C600250156 /* MyWishlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA306BE204450C600250156 /* MyWishlistCell.swift */; };
+		4DA306C12044526C00250156 /* MyWishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA306C02044526C00250156 /* MyWishlistViewController.swift */; };
 		4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4DA49A502024B2EA00561EC9 /* BebasNeueRegular.otf */; };
 		4DA49A532024B69900561EC9 /* VerticallyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA49A522024B69900561EC9 /* VerticallyButton.swift */; };
 		4DA49A552024B90E00561EC9 /* BubbleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA49A542024B90E00561EC9 /* BubbleTransition.swift */; };
@@ -298,6 +301,9 @@
 		4D9DE8A7203E022B005BDB37 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4D9DE8A9203E0355005BDB37 /* Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Children.swift; sourceTree = "<group>"; };
 		4D9DE8AB203E04A3005BDB37 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		4DA306BC204450BA00250156 /* MyWishlistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyWishlistCell.xib; sourceTree = "<group>"; };
+		4DA306BE204450C600250156 /* MyWishlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistCell.swift; sourceTree = "<group>"; };
+		4DA306C02044526C00250156 /* MyWishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistViewController.swift; sourceTree = "<group>"; };
 		4DA49A502024B2EA00561EC9 /* BebasNeueRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueRegular.otf; sourceTree = "<group>"; };
 		4DA49A522024B69900561EC9 /* VerticallyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyButton.swift; sourceTree = "<group>"; };
 		4DA49A542024B90E00561EC9 /* BubbleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTransition.swift; sourceTree = "<group>"; };
@@ -828,6 +834,16 @@
 			path = UserDataService;
 			sourceTree = "<group>";
 		};
+		4DA306C22044529800250156 /* My wishlist products */ = {
+			isa = PBXGroup;
+			children = (
+				4DA306C02044526C00250156 /* MyWishlistViewController.swift */,
+				4DA306BC204450BA00250156 /* MyWishlistCell.xib */,
+				4DA306BE204450C600250156 /* MyWishlistCell.swift */,
+			);
+			path = "My wishlist products";
+			sourceTree = "<group>";
+		};
 		4DAA14EB2020E461000B1CA0 /* Popups */ = {
 			isa = PBXGroup;
 			children = (
@@ -996,6 +1012,7 @@
 			children = (
 				4D39D49D2034B0BD005123F8 /* Shop */,
 				4D39D49C2034B0B4005123F8 /* My products */,
+				4DA306C22044529800250156 /* My wishlist products */,
 				4D39D49520349CDE005123F8 /* Product details */,
 				4D39D49620349CEA005123F8 /* Add product */,
 			);
@@ -1198,6 +1215,7 @@
 				4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
 				4D39D48820348365005123F8 /* ItemDescriptionView.xib in Resources */,
+				4DA306BD204450BA00250156 /* MyWishlistCell.xib in Resources */,
 				4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */,
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
@@ -1488,6 +1506,7 @@
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
 				4D36E6F9201E3565000DC94F /* ChildrenView.swift in Sources */,
 				4DE175092028D032001C5DD1 /* ChatSettingsPopupViewController.swift in Sources */,
+				4DA306BF204450C600250156 /* MyWishlistCell.swift in Sources */,
 				4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */,
 				4D39D49220349B66005123F8 /* AddProductViewController.swift in Sources */,
 				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,
@@ -1539,6 +1558,7 @@
 				4D05A94F1FE144A900B19E6E /* NetworkService+Init.swift in Sources */,
 				4D05A94E1FE144A900B19E6E /* NetworkService+Factory.swift in Sources */,
 				4DFC270F1FE92C3E006020FF /* RegisterServiceParser.swift in Sources */,
+				4DA306C12044526C00250156 /* MyWishlistViewController.swift in Sources */,
 				4D05A9401FE144A900B19E6E /* MOTableViewCoordinator.swift in Sources */,
 				4DE174F820288C38001C5DD1 /* ProfileSettingsPopupViewController.swift in Sources */,
 				4DC27EC2201FBFE4000EE9FA /* CardsView.swift in Sources */,

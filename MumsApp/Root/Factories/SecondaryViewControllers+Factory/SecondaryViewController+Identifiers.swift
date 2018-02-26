@@ -34,5 +34,6 @@ enum SecondaryViewController: String {
     
     case LobbyDetailsViewController
     
+    case MyWishlistViewController
 }
 

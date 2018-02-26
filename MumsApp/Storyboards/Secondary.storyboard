@@ -1320,7 +1320,7 @@ OFFERS     </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uOs-CK-IHu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="psI-Go-VMg">
                                     <size key="itemSize" width="50" height="50"/>
@@ -1329,13 +1329,23 @@ OFFERS     </string>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pe0-QC-qSx" customClass="OnboardingGreenButton" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="559" width="343" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="3ze-K2-0DP"/>
+                                </constraints>
+                                <state key="normal" title="Upload another product"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uOs-CK-IHu" firstAttribute="bottom" secondItem="OzV-M5-13A" secondAttribute="bottom" id="Eio-a9-680"/>
+                            <constraint firstItem="OzV-M5-13A" firstAttribute="trailing" secondItem="pe0-QC-qSx" secondAttribute="trailing" constant="16" id="3F9-fT-f3O"/>
                             <constraint firstItem="uOs-CK-IHu" firstAttribute="trailing" secondItem="OzV-M5-13A" secondAttribute="trailing" id="R1x-t9-IW1"/>
+                            <constraint firstItem="pe0-QC-qSx" firstAttribute="leading" secondItem="OzV-M5-13A" secondAttribute="leading" constant="16" id="SgM-JY-XZe"/>
                             <constraint firstItem="uOs-CK-IHu" firstAttribute="leading" secondItem="OzV-M5-13A" secondAttribute="leading" id="c2x-Zz-ngi"/>
+                            <constraint firstItem="pe0-QC-qSx" firstAttribute="top" secondItem="uOs-CK-IHu" secondAttribute="bottom" id="gzr-lc-fv4"/>
                             <constraint firstItem="uOs-CK-IHu" firstAttribute="top" secondItem="OzV-M5-13A" secondAttribute="top" id="s0K-LY-CaT"/>
+                            <constraint firstItem="OzV-M5-13A" firstAttribute="bottom" secondItem="pe0-QC-qSx" secondAttribute="bottom" constant="60" id="wRn-ze-GDH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OzV-M5-13A"/>
                     </view>
@@ -1876,6 +1886,42 @@ OFFERS     </string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OyI-6G-sGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2524" y="2325"/>
+        </scene>
+        <!--My Wishlist View Controller-->
+        <scene sceneID="ZfR-H2-hVl">
+            <objects>
+                <viewController storyboardIdentifier="MyWishlistViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xeM-Vx-YyO" customClass="MyWishlistViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sZp-aC-3QE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BRb-5b-XcG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3dc-yu-d9H">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BRb-5b-XcG" firstAttribute="bottom" secondItem="5vo-6Q-MAD" secondAttribute="bottom" id="9ry-kr-6Ub"/>
+                            <constraint firstItem="BRb-5b-XcG" firstAttribute="top" secondItem="5vo-6Q-MAD" secondAttribute="top" id="TTH-2X-r07"/>
+                            <constraint firstItem="BRb-5b-XcG" firstAttribute="trailing" secondItem="5vo-6Q-MAD" secondAttribute="trailing" id="cWh-xu-nfj"/>
+                            <constraint firstItem="BRb-5b-XcG" firstAttribute="leading" secondItem="5vo-6Q-MAD" secondAttribute="leading" id="qmv-fC-ZIG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5vo-6Q-MAD"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="BRb-5b-XcG" id="Aqy-F8-rx3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHE-Xc-oIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5354.3999999999996" y="132.68365817091455"/>
         </scene>
     </scenes>
     <resources>

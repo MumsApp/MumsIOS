@@ -1,16 +1,16 @@
 import UIKit
 
-class MyProductsViewController: UIViewController {
+class MyWishlistViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.configureView()
         
         self.configureNavigationBar()
-
+        
         self.configureLayout()
         
     }
@@ -18,18 +18,18 @@ class MyProductsViewController: UIViewController {
     private func configureView() {
         
         self.view.backgroundColor = .backgroundWhite
-
+        
         self.collectionView.backgroundColor = .backgroundWhite
-
+        
         self.collectionView.delegate = self
-
+        
         self.collectionView.dataSource = self
-
+        
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom:
-            0, right: 0)
-
-        self.collectionView.register(MyProductCell.self, type: .cell)
-  
+            80, right: 0)
+        
+        self.collectionView.register(MyWishlistCell.self, type: .cell)
+        
     }
     
     private func configureLayout() {
@@ -40,7 +40,7 @@ class MyProductsViewController: UIViewController {
         
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         
-        layout.itemSize = CGSize(width: screenWidth/2 - 5, height: 276)
+        layout.itemSize = CGSize(width: screenWidth/2 - 5, height: 316)
         
         layout.minimumInteritemSpacing = 0
         
@@ -49,10 +49,10 @@ class MyProductsViewController: UIViewController {
         self.collectionView.collectionViewLayout = layout
         
     }
-
+    
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "My Products")
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "My Wish Products")
         
         self.navigationItem.titleView = titleLabel
         
@@ -71,11 +71,11 @@ class MyProductsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
         
     }
-   
+    
 }
 
 
-extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
@@ -85,35 +85,15 @@ extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-         return 10
+        return 10
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableClass(MyProductCell.self, forIndexPath: indexPath, type: .cell)
+        let cell = collectionView.dequeueReusableClass(MyWishlistCell.self, forIndexPath: indexPath, type: .cell)
         
         return cell
-        
-    }
-    
-}
-
-extension MyProductsViewController: AddCellDelegate {
-    
-    func addButtonPressed() {
-        
-        self.showAddProductViewController()
-        
-    }
-    
-    private func showAddProductViewController() {
-        
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
-        
-        let controller = factory.addProductViewController()
-        
-        self.navigationController?.pushViewController(controller, animated: true)
         
     }
     
