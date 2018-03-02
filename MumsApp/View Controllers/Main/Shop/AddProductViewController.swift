@@ -36,9 +36,7 @@ class AddProductViewController: UIViewController {
     }
     
     private func configureView() {
-        
-//        self.imagePicker = UIImagePickerController()
-        
+                
         self.imagePicker.delegate = self
         
     }
@@ -114,35 +112,7 @@ class AddProductViewController: UIViewController {
     
     @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
         
-        let actionSheet = UIAlertController(title: "Choose image source", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-        
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: UIAlertActionStyle.default, handler: { (_) -> Void in
-            
-            self.imagePicker.allowsEditing = false
-            
-            self.imagePicker.sourceType = .photoLibrary
-            
-            self.present(self.imagePicker, animated: true, completion: nil)
-            
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.default, handler: { (_) -> Void in
-            
-            self.imagePicker.allowsEditing = false
-            
-            self.imagePicker.sourceType = .camera
-            
-            self.present(self.imagePicker, animated: true, completion: nil)
-            
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (_) -> Void in
-            
-            self.dismissViewController()
-        
-        }))
-        
-        self.presentViewController(actionSheet)
+        self.showPhotoAlert(imagePicker: self.imagePicker)
         
     }
     

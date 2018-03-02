@@ -68,7 +68,6 @@ class AddMembersViewController: UIViewController {
         
         self.navigationController?.popViewController(animated: true)
         
-        
     }
     
     private func showChatSettingsPopupViewController() {

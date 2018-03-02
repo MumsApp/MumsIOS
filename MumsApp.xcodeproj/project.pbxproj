@@ -56,6 +56,7 @@
 		4D0F0C31204972BE000F251C /* AddMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C30204972BE000F251C /* AddMembersViewController.swift */; };
 		4D0F0C3320497334000F251C /* AddMembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3220497334000F251C /* AddMembersCell.swift */; };
 		4D0F0C352049733E000F251C /* AddMembersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F0C342049733E000F251C /* AddMembersCell.xib */; };
+		4D0F0C37204976BD000F251C /* UIViewController+PhotoExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C36204976BD000F251C /* UIViewController+PhotoExtensions.swift */; };
 		4D1B3D772035FB0100C2618B /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */; };
 		4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */; };
 		4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6F0201E31E1000DC94F /* CustomMapView.swift */; };
@@ -255,6 +256,7 @@
 		4D0F0C30204972BE000F251C /* AddMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersViewController.swift; sourceTree = "<group>"; };
 		4D0F0C3220497334000F251C /* AddMembersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersCell.swift; sourceTree = "<group>"; };
 		4D0F0C342049733E000F251C /* AddMembersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMembersCell.xib; sourceTree = "<group>"; };
+		4D0F0C36204976BD000F251C /* UIViewController+PhotoExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PhotoExtensions.swift"; sourceTree = "<group>"; };
 		4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		4D36E6F0201E31E1000DC94F /* CustomMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
@@ -586,6 +588,7 @@
 				4D05A93C1FE144A800B19E6E /* UITableView+Extensions.swift */,
 				4D05A93D1FE144A800B19E6E /* UIViewController+UIAlertView.swift */,
 				4D05A93E1FE144A800B19E6E /* UICollectionView+Extensions.swift */,
+				4D0F0C36204976BD000F251C /* UIViewController+PhotoExtensions.swift */,
 			);
 			path = "UIView+Extensions";
 			sourceTree = "<group>";
@@ -1477,6 +1480,7 @@
 				4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */,
 				4D05A9611FE144A900B19E6E /* UICollectionView+Extensions.swift in Sources */,
 				4DE1750D2028D3B8001C5DD1 /* ChatSettingsCell.swift in Sources */,
+				4D0F0C37204976BD000F251C /* UIViewController+PhotoExtensions.swift in Sources */,
 				4DE174FF2028BAB0001C5DD1 /* LobbyArray.swift in Sources */,
 				4DC6774F201781AD00F34184 /* MOReachability.swift in Sources */,
 				4D05A9481FE144A900B19E6E /* NetwrokService+Extension.swift in Sources */,

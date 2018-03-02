@@ -32,6 +32,8 @@ class CreateCategoryViewController: UIViewController {
     
     @IBOutlet weak var membersLabel: UILabel!
     
+    fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -85,6 +87,8 @@ class CreateCategoryViewController: UIViewController {
         
         self.addMembersButton.titleLabel?.font = .regular(size: 17)
         
+        self.imagePicker.delegate = self
+
     }
     
     private func configureNavigationBar() {
@@ -119,6 +123,12 @@ class CreateCategoryViewController: UIViewController {
         
     }
     
+    @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
+    
+        self.showPhotoAlert(imagePicker: self.imagePicker)
+
+    }
+    
     @IBAction func addMembersButtonPressed(_ sender: UIButton) {
     
         self.showAddMembersViewController()
@@ -134,5 +144,29 @@ class CreateCategoryViewController: UIViewController {
         
     }
 
+    
+}
+
+extension CreateCategoryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        self.dismissViewController()
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            self.addPhotoButton.setTitle(nil, for: .normal)
+            
+            self.addPhotoButton.setImage(pickedImage, for: .normal)
+            
+        }
+        
+        self.dismissViewController()
+        
+    }
     
 }

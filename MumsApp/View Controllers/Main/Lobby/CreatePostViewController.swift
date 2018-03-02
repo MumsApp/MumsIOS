@@ -20,6 +20,8 @@ class CreatePostViewController: UIViewController {
     
     @IBOutlet weak var photoLabel: UILabel!
     
+    fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,6 +61,8 @@ class CreatePostViewController: UIViewController {
         
         self.addPhotoButton.titleLabel?.font = .regular(size: 17)
         
+        self.imagePicker.delegate = self
+        
     }
     
     private func configureNavigationBar() {
@@ -88,6 +92,12 @@ class CreatePostViewController: UIViewController {
         
     }
     
+    @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
+    
+        self.showPhotoAlert(imagePicker: self.imagePicker)
+        
+    }
+    
     func doneButtonPressed(sender: UIBarButtonItem) {
         
         print("Done")
@@ -96,3 +106,26 @@ class CreatePostViewController: UIViewController {
     
 }
 
+extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        self.dismissViewController()
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            self.addPhotoButton.setTitle(nil, for: .normal)
+            
+            self.addPhotoButton.setImage(pickedImage, for: .normal)
+            
+        }
+        
+        self.dismissViewController()
+        
+    }
+    
+}

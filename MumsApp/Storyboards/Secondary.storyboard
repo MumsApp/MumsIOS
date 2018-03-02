@@ -1100,11 +1100,14 @@ OFFERS     </string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkq-t4-Koy">
                                                 <rect key="frame" x="0.0" y="471" width="375" height="180"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhd-OJ-bJl" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhd-OJ-bJl" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                         <state key="normal" title="Add cover photo" image="addPhotoIcon">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="addPhotoButtonPressed:" destination="O6X-GW-jSd" eventType="touchUpInside" id="JR3-Xk-qQ0"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1764,11 +1767,14 @@ OFFERS     </string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCs-X8-5Gn">
                                                 <rect key="frame" x="0.0" y="381" width="375" height="180"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gek-9l-I3r" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gek-9l-I3r" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                         <state key="normal" title="Add photo" image="addPhotoIcon">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="addPhotoButtonPressed:" destination="5ml-1G-wp5" eventType="touchUpInside" id="qEw-jB-Qvf"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
