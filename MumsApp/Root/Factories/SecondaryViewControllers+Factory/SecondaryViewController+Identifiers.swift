@@ -38,5 +38,7 @@ enum SecondaryViewController: String {
     
     case ShopFilterViewController
     
+    case AddMembersViewController
+    
 }
 

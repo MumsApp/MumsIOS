@@ -52,7 +52,7 @@ class MyWishlistViewController: UIViewController {
     
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "My Wish Products")
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "My Wishlist")
         
         self.navigationItem.titleView = titleLabel
         

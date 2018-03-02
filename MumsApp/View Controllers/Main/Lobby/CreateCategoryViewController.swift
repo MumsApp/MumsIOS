@@ -116,8 +116,23 @@ class CreateCategoryViewController: UIViewController {
 
     func doneButtonPressed(sender: UIBarButtonItem) {
         
-        print("Done")
         
     }
+    
+    @IBAction func addMembersButtonPressed(_ sender: UIButton) {
+    
+        self.showAddMembersViewController()
+    
+    }
+    
+    private func showAddMembersViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.addMembersViewController()
+                self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+
     
 }

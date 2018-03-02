@@ -172,11 +172,17 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    
-    
     func shopFilterViewController() -> ShopFilterViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopFilterViewController.rawValue, storyboard: storyboard) as! ShopFilterViewController
+        
+        return controller
+        
+    }
+    
+    func addMembersViewController() -> AddMembersViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddMembersViewController.rawValue, storyboard: storyboard) as! AddMembersViewController
         
         return controller
         
