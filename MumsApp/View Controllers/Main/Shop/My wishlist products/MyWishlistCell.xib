@@ -64,36 +64,37 @@
                                         <constraint firstAttribute="height" constant="30" id="amc-Jx-ftg"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww9-H8-XsF">
-                                    <rect key="frame" x="56" y="260" width="82" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nif-y6-TH6">
                                     <rect key="frame" x="63" y="134" width="67" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjJ-Cx-mZJ">
+                                    <rect key="frame" x="54" y="255" width="76" height="30"/>
+                                    <state key="normal" title="User name"/>
+                                    <connections>
+                                        <action selector="userNameButtonPressed:" destination="5RI-GR-fsp" eventType="touchUpInside" id="BJh-uV-PcI"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="1AW-Yd-l8i" firstAttribute="leading" secondItem="t4v-vl-dPw" secondAttribute="leading" constant="16" id="0S6-iM-SxW"/>
                                 <constraint firstItem="1AW-Yd-l8i" firstAttribute="top" secondItem="KUr-SY-dtr" secondAttribute="bottom" constant="8" id="0cD-g9-hN4"/>
                                 <constraint firstItem="KUr-SY-dtr" firstAttribute="leading" secondItem="t4v-vl-dPw" secondAttribute="leading" constant="16" id="1de-b5-lh6"/>
+                                <constraint firstItem="MjJ-Cx-mZJ" firstAttribute="leading" secondItem="Wv2-mZ-RYa" secondAttribute="trailing" constant="8" id="57T-yG-rFn"/>
                                 <constraint firstItem="t4v-vl-dPw" firstAttribute="trailing" secondItem="KUr-SY-dtr" secondAttribute="trailing" constant="8" id="5eA-o6-wKH"/>
-                                <constraint firstItem="Ww9-H8-XsF" firstAttribute="leading" secondItem="Wv2-mZ-RYa" secondAttribute="trailing" constant="10" id="6eZ-tI-YTW"/>
-                                <constraint firstAttribute="trailing" secondItem="Ww9-H8-XsF" secondAttribute="trailing" id="DeD-oV-MiH"/>
                                 <constraint firstItem="Wv2-mZ-RYa" firstAttribute="top" secondItem="1AW-Yd-l8i" secondAttribute="bottom" constant="8" id="Dxv-CV-i1S"/>
                                 <constraint firstItem="t4v-vl-dPw" firstAttribute="trailing" secondItem="1AW-Yd-l8i" secondAttribute="trailing" constant="8" id="GdL-tL-Iql"/>
                                 <constraint firstItem="hm4-ft-Pfi" firstAttribute="top" secondItem="t4v-vl-dPw" secondAttribute="top" id="JDd-5g-c4d"/>
-                                <constraint firstItem="Ww9-H8-XsF" firstAttribute="centerY" secondItem="Wv2-mZ-RYa" secondAttribute="centerY" id="KMh-MP-mi7"/>
                                 <constraint firstItem="ngp-uz-6jT" firstAttribute="leading" secondItem="t4v-vl-dPw" secondAttribute="leading" constant="16" id="R3y-TC-Hss"/>
                                 <constraint firstItem="Nif-y6-TH6" firstAttribute="top" secondItem="hm4-ft-Pfi" secondAttribute="bottom" constant="-26" id="Tmt-OR-sZi"/>
+                                <constraint firstItem="MjJ-Cx-mZJ" firstAttribute="centerY" secondItem="Wv2-mZ-RYa" secondAttribute="centerY" id="bfb-kj-sYu"/>
                                 <constraint firstItem="Wv2-mZ-RYa" firstAttribute="leading" secondItem="t4v-vl-dPw" secondAttribute="leading" constant="16" id="dJl-u1-taj"/>
                                 <constraint firstItem="g3K-fD-Dn5" firstAttribute="top" secondItem="t4v-vl-dPw" secondAttribute="top" id="dR1-VU-G4R"/>
                                 <constraint firstAttribute="trailing" secondItem="ngp-uz-6jT" secondAttribute="trailing" constant="8" id="etW-Mf-yLQ"/>
+                                <constraint firstItem="t4v-vl-dPw" firstAttribute="trailing" secondItem="MjJ-Cx-mZJ" secondAttribute="trailing" constant="8" id="ilO-lU-UXH"/>
                                 <constraint firstItem="KUr-SY-dtr" firstAttribute="top" secondItem="ngp-uz-6jT" secondAttribute="bottom" id="jMk-nX-6UJ"/>
                                 <constraint firstItem="hm4-ft-Pfi" firstAttribute="leading" secondItem="t4v-vl-dPw" secondAttribute="leading" id="lkr-5j-brt"/>
                                 <constraint firstItem="t4v-vl-dPw" firstAttribute="trailing" secondItem="Nif-y6-TH6" secondAttribute="trailing" constant="8" id="mQI-S3-XvZ"/>
@@ -130,7 +131,7 @@
                 <outlet property="itemNameLabel" destination="ngp-uz-6jT" id="KFC-kq-k2S"/>
                 <outlet property="itemPriceLabel" destination="1AW-Yd-l8i" id="c4g-96-pMf"/>
                 <outlet property="userImageView" destination="Wv2-mZ-RYa" id="vCd-3J-Au2"/>
-                <outlet property="userNameLabel" destination="Ww9-H8-XsF" id="UI4-V2-Qly"/>
+                <outlet property="userNameButton" destination="MjJ-Cx-mZJ" id="wjJ-fh-6h0"/>
                 <outlet property="wishListButton" destination="g3K-fD-Dn5" id="Rp7-OG-DCj"/>
             </connections>
             <point key="canvasLocation" x="-74" y="79"/>

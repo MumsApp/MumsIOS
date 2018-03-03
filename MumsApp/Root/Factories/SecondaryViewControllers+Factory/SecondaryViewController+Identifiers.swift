@@ -40,5 +40,7 @@ enum SecondaryViewController: String {
     
     case AddMembersViewController
     
+    case UserViewController
+    
 }
 

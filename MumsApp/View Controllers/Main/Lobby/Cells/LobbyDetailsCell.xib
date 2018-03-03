@@ -29,12 +29,6 @@
                                         <constraint firstAttribute="height" constant="30" id="nYE-Ml-cVG"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bo-ms-Avq">
-                                    <rect key="frame" x="60" y="21" width="221" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-vx-sLd">
                                     <rect key="frame" x="297" y="21" width="42" height="21"/>
                                     <constraints>
@@ -52,7 +46,9 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zp-8j-s5i">
                                     <rect key="frame" x="20" y="91" width="319" height="61"/>
-                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+                                    <string key="text">Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -85,26 +81,33 @@
                                         <constraint firstAttribute="height" constant="1" id="QRe-VQ-FM5"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0S-Ba-gLs">
+                                    <rect key="frame" x="60" y="16" width="221" height="30"/>
+                                    <state key="normal" title="User name"/>
+                                    <connections>
+                                        <action selector="userButtonPressed:" destination="tIC-fL-LC7" eventType="touchUpInside" id="Q34-Ag-QMA"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="ctC-vx-sLd" firstAttribute="leading" secondItem="2Bo-ms-Avq" secondAttribute="trailing" constant="16" id="Ch9-Ii-kZu"/>
                                 <constraint firstItem="bMj-wt-xIm" firstAttribute="trailing" secondItem="1zp-8j-s5i" secondAttribute="trailing" constant="16" id="Efv-yI-94M"/>
                                 <constraint firstItem="cYL-Kf-s0H" firstAttribute="top" secondItem="bMj-wt-xIm" secondAttribute="top" constant="16" id="LPQ-Of-7fF"/>
                                 <constraint firstItem="cYL-Kf-s0H" firstAttribute="leading" secondItem="bMj-wt-xIm" secondAttribute="leading" constant="20" id="M8U-7Z-8AA"/>
-                                <constraint firstItem="ctC-vx-sLd" firstAttribute="centerY" secondItem="2Bo-ms-Avq" secondAttribute="centerY" id="Mq3-Pu-2XX"/>
+                                <constraint firstItem="ctC-vx-sLd" firstAttribute="centerY" secondItem="i0S-Ba-gLs" secondAttribute="centerY" id="Mms-yB-RHa"/>
                                 <constraint firstItem="bMj-wt-xIm" firstAttribute="trailing" secondItem="VTT-kh-hsw" secondAttribute="trailing" constant="16" id="PeZ-6h-2fv"/>
+                                <constraint firstItem="ctC-vx-sLd" firstAttribute="leading" secondItem="i0S-Ba-gLs" secondAttribute="trailing" constant="16" id="RoJ-PT-KjL"/>
                                 <constraint firstItem="8ma-S0-7pj" firstAttribute="trailing" secondItem="bMj-wt-xIm" secondAttribute="trailing" id="TGB-Jj-WDm"/>
                                 <constraint firstItem="8ma-S0-7pj" firstAttribute="top" secondItem="vJu-je-QCO" secondAttribute="bottom" id="TzJ-gT-wYZ"/>
                                 <constraint firstItem="vJu-je-QCO" firstAttribute="trailing" secondItem="bMj-wt-xIm" secondAttribute="trailing" id="WYS-b3-wso"/>
+                                <constraint firstItem="i0S-Ba-gLs" firstAttribute="leading" secondItem="cYL-Kf-s0H" secondAttribute="trailing" constant="10" id="aIf-f0-Zlo"/>
                                 <constraint firstItem="1zp-8j-s5i" firstAttribute="leading" secondItem="bMj-wt-xIm" secondAttribute="leading" constant="20" id="aTi-mD-qK0"/>
                                 <constraint firstItem="VTT-kh-hsw" firstAttribute="top" secondItem="cYL-Kf-s0H" secondAttribute="bottom" constant="10" id="amR-Qk-uBE"/>
-                                <constraint firstItem="2Bo-ms-Avq" firstAttribute="centerY" secondItem="cYL-Kf-s0H" secondAttribute="centerY" id="i7v-Ug-Sbw"/>
                                 <constraint firstItem="1zp-8j-s5i" firstAttribute="top" secondItem="VTT-kh-hsw" secondAttribute="bottom" constant="14" id="l3A-ad-KO5"/>
                                 <constraint firstItem="8ma-S0-7pj" firstAttribute="bottom" secondItem="bMj-wt-xIm" secondAttribute="bottom" id="oSQ-fO-pe5"/>
                                 <constraint firstItem="vJu-je-QCO" firstAttribute="leading" secondItem="bMj-wt-xIm" secondAttribute="leading" id="q0y-EB-4eM"/>
+                                <constraint firstItem="i0S-Ba-gLs" firstAttribute="centerY" secondItem="cYL-Kf-s0H" secondAttribute="centerY" id="sin-DB-yI0"/>
                                 <constraint firstItem="bMj-wt-xIm" firstAttribute="trailing" secondItem="ctC-vx-sLd" secondAttribute="trailing" constant="16" id="skR-xt-1zP"/>
-                                <constraint firstItem="2Bo-ms-Avq" firstAttribute="leading" secondItem="cYL-Kf-s0H" secondAttribute="trailing" constant="10" id="um6-yV-3d8"/>
                                 <constraint firstItem="VTT-kh-hsw" firstAttribute="leading" secondItem="bMj-wt-xIm" secondAttribute="leading" constant="20" id="vCm-Ik-Y13"/>
                                 <constraint firstItem="8ma-S0-7pj" firstAttribute="leading" secondItem="bMj-wt-xIm" secondAttribute="leading" id="xMC-1I-fJl"/>
                             </constraints>
@@ -136,7 +139,7 @@
                 <outlet property="timeLabel" destination="ctC-vx-sLd" id="M7o-rb-hUG"/>
                 <outlet property="titleLabel" destination="VTT-kh-hsw" id="MAG-UD-xp8"/>
                 <outlet property="userImageView" destination="cYL-Kf-s0H" id="adh-UV-Gua"/>
-                <outlet property="userNameLabel" destination="2Bo-ms-Avq" id="XSU-Cl-HQS"/>
+                <outlet property="userNameButton" destination="i0S-Ba-gLs" id="whW-y2-v56"/>
             </connections>
             <point key="canvasLocation" x="37.5" y="-90.5"/>
         </view>

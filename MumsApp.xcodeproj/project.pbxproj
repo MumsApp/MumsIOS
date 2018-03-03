@@ -57,6 +57,9 @@
 		4D0F0C3320497334000F251C /* AddMembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3220497334000F251C /* AddMembersCell.swift */; };
 		4D0F0C352049733E000F251C /* AddMembersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F0C342049733E000F251C /* AddMembersCell.xib */; };
 		4D0F0C37204976BD000F251C /* UIViewController+PhotoExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C36204976BD000F251C /* UIViewController+PhotoExtensions.swift */; };
+		4D0F0C3920497BF6000F251C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3820497BF6000F251C /* UserViewController.swift */; };
+		4D0F0C3B204983EC000F251C /* RemoveContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3A204983EC000F251C /* RemoveContactCell.swift */; };
+		4D0F0C3D2049846E000F251C /* AddContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3C2049846E000F251C /* AddContactCell.swift */; };
 		4D1B3D772035FB0100C2618B /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */; };
 		4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */; };
 		4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6F0201E31E1000DC94F /* CustomMapView.swift */; };
@@ -84,6 +87,7 @@
 		4D39D49A2034A107005123F8 /* MyProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D4992034A107005123F8 /* MyProductsViewController.swift */; };
 		4D39D49F2034B281005123F8 /* MyProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D39D49E2034B281005123F8 /* MyProductCell.xib */; };
 		4D39D4A12034B292005123F8 /* MyProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D4A02034B292005123F8 /* MyProductCell.swift */; };
+		4D403BD4204AE15500956939 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD3204AE15500956939 /* UICollectionViewCell.swift */; };
 		4D450967203E11E50066954D /* ForgotPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D450966203E11E50066954D /* ForgotPasswordService.swift */; };
 		4D450969203E11F40066954D /* ForgotPasswordServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D450968203E11F40066954D /* ForgotPasswordServiceParser.swift */; };
 		4D5ED8F7202246870020FD51 /* OffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F3202246860020FD51 /* OffersView.swift */; };
@@ -257,6 +261,9 @@
 		4D0F0C3220497334000F251C /* AddMembersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersCell.swift; sourceTree = "<group>"; };
 		4D0F0C342049733E000F251C /* AddMembersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMembersCell.xib; sourceTree = "<group>"; };
 		4D0F0C36204976BD000F251C /* UIViewController+PhotoExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PhotoExtensions.swift"; sourceTree = "<group>"; };
+		4D0F0C3820497BF6000F251C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		4D0F0C3A204983EC000F251C /* RemoveContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveContactCell.swift; sourceTree = "<group>"; };
+		4D0F0C3C2049846E000F251C /* AddContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactCell.swift; sourceTree = "<group>"; };
 		4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		4D36E6F0201E31E1000DC94F /* CustomMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
@@ -284,6 +291,7 @@
 		4D39D4992034A107005123F8 /* MyProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsViewController.swift; sourceTree = "<group>"; };
 		4D39D49E2034B281005123F8 /* MyProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductCell.xib; sourceTree = "<group>"; };
 		4D39D4A02034B292005123F8 /* MyProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCell.swift; sourceTree = "<group>"; };
+		4D403BD3204AE15500956939 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		4D450966203E11E50066954D /* ForgotPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordService.swift; sourceTree = "<group>"; };
 		4D450968203E11F40066954D /* ForgotPasswordServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordServiceParser.swift; sourceTree = "<group>"; };
 		4D5ED8F3202246860020FD51 /* OffersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersView.swift; sourceTree = "<group>"; };
@@ -607,6 +615,7 @@
 			children = (
 				4D05A98B1FE14F9000B19E6E /* Onboarding */,
 				4DC6774520177F2400F34184 /* Main */,
+				4D416FC9204AC3EB00CF4B68 /* Users */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -733,8 +742,8 @@
 			isa = PBXGroup;
 			children = (
 				4D39D48320348275005123F8 /* ProductDetailsViewController.swift */,
-				4D39D4852034835E005123F8 /* ItemDescriptionView.swift */,
 				4D39D48720348365005123F8 /* ItemDescriptionView.xib */,
+				4D39D4852034835E005123F8 /* ItemDescriptionView.swift */,
 				4D39D489203489BE005123F8 /* ItemLocationView.swift */,
 				4D39D48D20348B60005123F8 /* PictureCell.xib */,
 				4D39D48B20348B53005123F8 /* PictureCell.swift */,
@@ -782,6 +791,14 @@
 			path = Shop;
 			sourceTree = "<group>";
 		};
+		4D416FC9204AC3EB00CF4B68 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				4D0F0C3820497BF6000F251C /* UserViewController.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		4D45096A203E11F70066954D /* ForgotPasswordService */ = {
 			isa = PBXGroup;
 			children = (
@@ -820,6 +837,7 @@
 				4D36E6F4201E338B000DC94F /* UIView+Extensions.swift */,
 				4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */,
 				4DC2F8BC202C4FB300E331BD /* JSON+Extensions.swift */,
+				4D403BD3204AE15500956939 /* UICollectionViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -929,6 +947,8 @@
 			children = (
 				4DE174F92028A044001C5DD1 /* AddCell.xib */,
 				4DE174FB2028A054001C5DD1 /* AddCell.swift */,
+				4D0F0C3C2049846E000F251C /* AddContactCell.swift */,
+				4D0F0C3A204983EC000F251C /* RemoveContactCell.swift */,
 				4DC6774B2017817B00F34184 /* Reachability+UIView.swift */,
 				4DC67751201781E000F34184 /* Timeout+UIView.swift */,
 				4D8F2D3B201B4F3800756CCB /* OnboardingGreen+UIButton.swift */,
@@ -1477,7 +1497,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0F0C3D2049846E000F251C /* AddContactCell.swift in Sources */,
 				4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */,
+				4D0F0C3920497BF6000F251C /* UserViewController.swift in Sources */,
 				4D05A9611FE144A900B19E6E /* UICollectionView+Extensions.swift in Sources */,
 				4DE1750D2028D3B8001C5DD1 /* ChatSettingsCell.swift in Sources */,
 				4D0F0C37204976BD000F251C /* UIViewController+PhotoExtensions.swift in Sources */,
@@ -1485,6 +1507,7 @@
 				4DC6774F201781AD00F34184 /* MOReachability.swift in Sources */,
 				4D05A9481FE144A900B19E6E /* NetwrokService+Extension.swift in Sources */,
 				4DA49A552024B90E00561EC9 /* BubbleTransition.swift in Sources */,
+				4D0F0C3B204983EC000F251C /* RemoveContactCell.swift in Sources */,
 				4D66007F201B642E0085CC58 /* OnboardingAccount+UIButton.swift in Sources */,
 				4D05A8DB1FE143C500B19E6E /* SignUpViewController.swift in Sources */,
 				4D0F0C3320497334000F251C /* AddMembersCell.swift in Sources */,
@@ -1530,6 +1553,7 @@
 				4DC2F8B7202C4DB400E331BD /* TermsViewController.swift in Sources */,
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
 				4D36E6F9201E3565000DC94F /* ChildrenView.swift in Sources */,
+				4D403BD4204AE15500956939 /* UICollectionViewCell.swift in Sources */,
 				4DE175092028D032001C5DD1 /* ChatSettingsPopupViewController.swift in Sources */,
 				4DA306BF204450C600250156 /* MyWishlistCell.swift in Sources */,
 				4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */,

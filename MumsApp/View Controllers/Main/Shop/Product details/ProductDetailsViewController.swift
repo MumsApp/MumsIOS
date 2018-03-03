@@ -6,6 +6,8 @@ class ProductDetailsViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
    
+    @IBOutlet weak var itemDescriptionView: ItemDescriptionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +31,7 @@ class ProductDetailsViewController: UIViewController {
      
         self.pageControl.numberOfPages = 5
     
+        self.itemDescriptionView.configureWith(delegate: self)
     }
     
     private func configureNavigationBar() {
@@ -88,4 +91,24 @@ extension ProductDetailsViewController: UICollectionViewDataSource, UICollection
     
     }
 
+}
+
+extension ProductDetailsViewController: UserNameDelegate {
+    
+    func userNameButtonPressed() {
+        
+        self.showUserViewController()
+        
+    }
+    
+    func showUserViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.userViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
 }

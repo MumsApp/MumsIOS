@@ -1,5 +1,11 @@
 import UIKit
 
+protocol UserNameDelegate: class {
+    
+    func userNameButtonPressed()
+    
+}
+
 class ItemDescriptionView: UIView {
     
     @IBOutlet weak var contentView: UIView!
@@ -12,13 +18,21 @@ class ItemDescriptionView: UIView {
     
     @IBOutlet weak var itemDistanceLabel: UILabel!
 
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userNameButton: UIButton!
     
     @IBOutlet weak var userImageView: UIImageView!
     
     @IBOutlet weak var itemDescriptionTextView: UITextView!
     
     @IBOutlet weak var contactUserButton: UIButton!
+    
+    private weak var delegate: UserNameDelegate?
+    
+    func configureWith(delegate: UserNameDelegate?) {
+        
+        self.delegate = delegate
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,9 +74,9 @@ class ItemDescriptionView: UIView {
 
         self.itemCategoryLabel.textColor = .mainDarkGrey
         
-        self.userNameLabel.font = .regular(size: 13)
+        self.userNameButton.titleLabel?.font = .regular(size: 13)
         
-        self.userNameLabel.textColor = .mainGreen
+        self.userNameButton.tintColor = .mainGreen
         
         self.itemPriceLabel.font = .regular(size: 20)
         
@@ -78,6 +92,12 @@ class ItemDescriptionView: UIView {
         
         self.userImageView.layer.masksToBounds = true
         
+    }
+    
+    @IBAction func userButtonPressed(_ sender: UIButton) {
+   
+        self.delegate?.userNameButtonPressed()
+    
     }
 
 }

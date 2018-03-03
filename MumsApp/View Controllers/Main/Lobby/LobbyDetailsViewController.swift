@@ -103,4 +103,20 @@ extension LobbyDetailsViewController: LobbyDetailsCellDelegate {
         
     }
     
+    func userButtonPressed() {
+        
+        self.showUserViewController()
+        
+    }
+    
+    func showUserViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.userViewController()
+    
+        self.navigationController?.pushViewController(controller, animated: true)
+    
+    }
+    
 }

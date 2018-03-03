@@ -16,20 +16,30 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var itemDistanceLabel: UILabel!
     
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userNameButton: UIButton!
    
     @IBOutlet weak var userImageView: UIImageView!
+    
+    private weak var delegate: UserNameDelegate?
+    
+    var tapGesture: UITapGestureRecognizer!
+    
+    func configureWith(delegate: UserNameDelegate?) {
+        
+        self.delegate = delegate
+                
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.configureView()
         
+        self.removeTopView()
+        
     }
     
     private func configureView() {
-        
-        //        self.selectionStyle = .none
         
         self.backgroundColor = .clear
         
@@ -51,14 +61,20 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
         
         self.itemDistanceLabel.textColor = .mainDarkGrey
 
-        self.userNameLabel.font = .regular(size: 13)
+        self.userNameButton.titleLabel?.font = .regular(size: 13)
         
-        self.userNameLabel.textColor = .mainGreen
+        self.userNameButton.tintColor = .mainGreen
 
         self.userImageView.layer.cornerRadius = 15
         
         self.userImageView.layer.masksToBounds = true
 
+        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(sender:)))
+        
+        self.userImageView.addGestureRecognizer(self.tapGesture)
+        
+        self.userImageView.isUserInteractionEnabled = true
+        
     }
     
     @IBAction func wishListButtonPressed(_ sender: UIButton) {
@@ -71,6 +87,16 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
         
     }
     
+    func imageTapped(sender: UITapGestureRecognizer) {
+                
+        self.delegate?.userNameButtonPressed()
+
+    }
+    
+    @IBAction func userNameButtonPressed(_ sender: UIButton) {
+    
+        self.delegate?.userNameButtonPressed()
+    
+    }
+ 
 }
-
-

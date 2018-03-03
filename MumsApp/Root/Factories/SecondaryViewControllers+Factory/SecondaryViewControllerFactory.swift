@@ -188,4 +188,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func userViewController() -> UserViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.UserViewController.rawValue, storyboard: storyboard) as! UserViewController
+        
+        return controller
+        
+    }
+    
 }

@@ -20,7 +20,7 @@
                 <outlet property="itemPriceLabel" destination="cHE-bF-wRT" id="2zJ-9j-yTF"/>
                 <outlet property="itemTitleLabel" destination="W3p-lY-RdD" id="CYP-cq-8Lh"/>
                 <outlet property="userImageView" destination="s4w-bn-gRR" id="gyk-Ng-stZ"/>
-                <outlet property="userNameLabel" destination="fHg-uQ-hhQ" id="LR1-Ir-iIX"/>
+                <outlet property="userNameButton" destination="11n-rb-oat" id="bC8-Vk-lpO"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -48,12 +48,6 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHg-uQ-hhQ">
-                            <rect key="frame" x="242" y="29.5" width="83" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="s4w-bn-gRR">
                             <rect key="frame" x="329" y="25" width="30" height="30"/>
                             <constraints>
@@ -61,6 +55,13 @@
                                 <constraint firstAttribute="height" constant="30" id="vAd-oq-isX"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11n-rb-oat">
+                            <rect key="frame" x="250" y="25" width="75" height="30"/>
+                            <state key="normal" title="User name"/>
+                            <connections>
+                                <action selector="userButtonPressed:" destination="-1" eventType="touchUpInside" id="YaY-8M-fFD"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -68,8 +69,8 @@
                         <constraint firstItem="erk-OV-utP" firstAttribute="centerY" secondItem="jxx-8a-0zL" secondAttribute="centerY" id="1ua-YD-JcJ"/>
                         <constraint firstAttribute="trailing" secondItem="s4w-bn-gRR" secondAttribute="trailing" constant="16" id="4Ak-3b-DT0"/>
                         <constraint firstItem="s4w-bn-gRR" firstAttribute="centerY" secondItem="jxx-8a-0zL" secondAttribute="centerY" id="841-4m-EdY"/>
-                        <constraint firstItem="fHg-uQ-hhQ" firstAttribute="centerY" secondItem="jxx-8a-0zL" secondAttribute="centerY" id="H20-Wj-wkq"/>
-                        <constraint firstItem="s4w-bn-gRR" firstAttribute="leading" secondItem="fHg-uQ-hhQ" secondAttribute="trailing" constant="4" id="MvH-JS-kdA"/>
+                        <constraint firstItem="s4w-bn-gRR" firstAttribute="leading" secondItem="11n-rb-oat" secondAttribute="trailing" constant="4" id="dgW-ml-myI"/>
+                        <constraint firstItem="11n-rb-oat" firstAttribute="centerY" secondItem="s4w-bn-gRR" secondAttribute="centerY" id="ryN-er-cDo"/>
                         <constraint firstAttribute="height" constant="80" id="wy5-z4-loV"/>
                     </constraints>
                 </view>

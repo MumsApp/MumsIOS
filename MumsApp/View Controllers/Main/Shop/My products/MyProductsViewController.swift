@@ -72,6 +72,22 @@ class MyProductsViewController: UIViewController {
         
     }
    
+    @IBAction func addProductButtonPressed(_ sender: UIButton) {
+    
+        self.showAddProductViewController()
+
+    }
+    
+    private func showAddProductViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.addProductViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+
 }
 
 
@@ -99,22 +115,3 @@ extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDa
     
 }
 
-extension MyProductsViewController: AddCellDelegate {
-    
-    func addButtonPressed() {
-        
-        self.showAddProductViewController()
-        
-    }
-    
-    private func showAddProductViewController() {
-        
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
-        
-        let controller = factory.addProductViewController()
-        
-        self.navigationController?.pushViewController(controller, animated: true)
-        
-    }
-    
-}

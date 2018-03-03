@@ -24,7 +24,7 @@ class MyWishlistViewController: UIViewController {
         self.collectionView.delegate = self
         
         self.collectionView.dataSource = self
-        
+                
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom:
             80, right: 0)
         
@@ -72,6 +72,16 @@ class MyWishlistViewController: UIViewController {
         
     }
     
+    fileprivate func showProductDetailsViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.productDetailsViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
 }
 
 
@@ -89,11 +99,39 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.showProductDetailsViewController()
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableClass(MyWishlistCell.self, forIndexPath: indexPath, type: .cell)
         
+        cell.configureWith(delegate: self)
+    
         return cell
+        
+    }
+    
+}
+
+extension MyWishlistViewController: UserNameDelegate {
+    
+    func userNameButtonPressed() {
+        
+        self.showUserViewController()
+        
+    }
+ 
+    func showUserViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.userViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
         
     }
     

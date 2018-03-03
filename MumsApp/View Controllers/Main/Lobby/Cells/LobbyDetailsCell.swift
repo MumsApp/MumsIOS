@@ -3,6 +3,7 @@ import UIKit
 protocol LobbyDetailsCellDelegate: class {
     
     func replyButtonPressed()
+    func userButtonPressed()
     
 }
 
@@ -12,7 +13,7 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
     
     @IBOutlet weak var userImageView: UIImageView!
     
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userNameButton: UIButton!
    
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -24,6 +25,8 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
   
     private weak var delegate: LobbyDetailsCellDelegate? = nil
     
+    var tapGesture: UITapGestureRecognizer!
+
     func configureWith(delegate: LobbyDetailsCellDelegate?) {
         
         self.delegate = delegate
@@ -47,9 +50,9 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
         
         self.userImageView.layer.masksToBounds = true
 
-        self.userNameLabel.font = .regular(size: 13)
+        self.userNameButton.titleLabel?.font = .regular(size: 13)
         
-        self.userNameLabel.textColor = .mainGreen
+        self.userNameButton.tintColor = .mainGreen
         
         self.timeLabel.font = .regular(size: 13)
         
@@ -67,6 +70,11 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
         
         self.replyButton.setTitleColor(.mainGreen, for: .normal)
         
+        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(sender:)))
+        
+        self.userImageView.addGestureRecognizer(self.tapGesture)
+        
+        self.userImageView.isUserInteractionEnabled = true
     }
     
     @IBAction func replyButtonPressed(_ sender: UIButton) {
@@ -75,4 +83,15 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
         
     }
     
+    @IBAction func userButtonPressed(_ sender: UIButton) {
+    
+        self.delegate?.userButtonPressed()
+    
+    }
+    
+    func imageTapped(sender: UITapGestureRecognizer) {
+        
+        self.delegate?.userButtonPressed()
+        
+    }
 }

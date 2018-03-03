@@ -147,7 +147,9 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.itemDistanceLabel.text = "3 Miles"
             
-            cell.userNameLabel.text = "John S."
+            cell.userNameButton.setTitle("John S.", for: .normal)
+            
+            cell.configureWith(delegate: self)
             
             return cell
             
@@ -237,6 +239,25 @@ extension ShopViewController: ShopFilterCellDelegate {
         
         self.navigationController?.pushViewController(controller, animated: true)
 
+    }
+    
+}
+
+extension ShopViewController: UserNameDelegate {
+    
+    func userNameButtonPressed() {
+        
+        self.showUserViewController()
+        
+    }
+    
+    func showUserViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.userViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
         
     }
     
