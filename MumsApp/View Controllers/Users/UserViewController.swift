@@ -97,6 +97,8 @@ class UserViewController: UIViewController {
         
     }
     
+    
+    
 }
 
 extension UserViewController: UITableViewDelegate, UITableViewDataSource {
@@ -163,7 +165,21 @@ extension UserViewController: AddCellDelegate, RemoveContactCellDelegate {
     
     func removeButtonPressed() {
         
-        print("REMOVE")
+        self.showRemoveContactPopupViewController()
+        
+    }
+    
+    private func showRemoveContactPopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.removeContactPopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
         
     }
     

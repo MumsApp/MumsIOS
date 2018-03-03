@@ -28,6 +28,8 @@ class ItemDescriptionView: UIView {
     
     private weak var delegate: UserNameDelegate?
     
+    private var tapGesture: UITapGestureRecognizer!
+    
     func configureWith(delegate: UserNameDelegate?) {
         
         self.delegate = delegate
@@ -91,6 +93,18 @@ class ItemDescriptionView: UIView {
         self.userImageView.layer.cornerRadius = 15
         
         self.userImageView.layer.masksToBounds = true
+        
+        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(sender:)))
+        
+        self.userImageView.addGestureRecognizer(self.tapGesture)
+        
+        self.userImageView.isUserInteractionEnabled = true
+        
+    }
+    
+    func imageTapped(sender: UITapGestureRecognizer) {
+        
+        self.delegate?.userNameButtonPressed()
         
     }
     

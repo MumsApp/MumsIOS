@@ -196,4 +196,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func removeContactPopupViewController() -> RemoveContactPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.RemoveContactPopupViewController.rawValue, storyboard: storyboard) as! RemoveContactPopupViewController
+        
+        return controller
+        
+    }
+    
 }

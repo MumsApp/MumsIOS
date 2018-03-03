@@ -42,5 +42,7 @@ enum SecondaryViewController: String {
     
     case UserViewController
     
+    case RemoveContactPopupViewController
+    
 }
 
