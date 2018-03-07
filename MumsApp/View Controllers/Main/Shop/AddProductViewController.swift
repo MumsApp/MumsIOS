@@ -116,6 +116,26 @@ class AddProductViewController: UIViewController {
         
     }
     
+    @IBAction func uploadProductButtonPressed(_ sender: UIButton) {
+    
+        self.showProductAddedPopupViewControlle()
+    
+    }
+    
+    fileprivate func showProductAddedPopupViewControlle() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.productAddedPopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
+        
+    }
+    
 }
 
 extension AddProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

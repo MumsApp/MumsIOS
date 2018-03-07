@@ -212,4 +212,20 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
 
+    func removeProductPopupViewController() -> RemoveProductPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.RemoveProductPopupViewController.rawValue, storyboard: storyboard) as! RemoveProductPopupViewController
+        
+        return controller
+        
+    }
+    
+    func productAddedPopupViewController() -> ProductAddedPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProductAddedPopupViewController.rawValue, storyboard: storyboard) as! ProductAddedPopupViewController
+        
+        return controller
+        
+    }
+    
 }

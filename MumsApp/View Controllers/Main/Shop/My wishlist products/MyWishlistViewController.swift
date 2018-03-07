@@ -82,6 +82,20 @@ class MyWishlistViewController: UIViewController {
         
     }
     
+    fileprivate func showRemoveProductPopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.removeProductPopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
+        
+    }
+
 }
 
 
@@ -109,7 +123,7 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let cell = collectionView.dequeueReusableClass(MyWishlistCell.self, forIndexPath: indexPath, type: .cell)
         
-        cell.configureWith(delegate: self)
+        cell.configureWith(delegate: self, delegateWishlist: self)
     
         return cell
         
@@ -132,6 +146,23 @@ extension MyWishlistViewController: UserNameDelegate {
         let controller = factory.userViewController()
         
         self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+}
+
+extension MyWishlistViewController: MyWishlistCellDelegate {
+    
+    func wishlistButtonPressed(tag: Int) {
+        
+        if tag == 1 {
+            
+            self.showRemoveProductPopupViewController()
+            
+        } else {
+            
+            
+        }
         
     }
     

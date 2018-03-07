@@ -1,5 +1,11 @@
 import UIKit
 
+protocol MyWishlistCellDelegate: class {
+    
+    func wishlistButtonPressed(tag: Int)
+    
+}
+
 class MyWishlistCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
@@ -22,12 +28,16 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
     
     private weak var delegate: UserNameDelegate?
     
+    private weak var delegateWishlist: MyWishlistCellDelegate?
+    
     var tapGesture: UITapGestureRecognizer!
     
-    func configureWith(delegate: UserNameDelegate?) {
+    func configureWith(delegate: UserNameDelegate?, delegateWishlist: MyWishlistCellDelegate?) {
         
         self.delegate = delegate
-                
+        
+        self.delegateWishlist = delegateWishlist
+        
     }
     
     override func awakeFromNib() {
@@ -84,6 +94,8 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
         sender.setImage(image, for: .normal)
         
         sender.tag = sender.tag == 0 ? 1 : 0
+        
+        self.delegateWishlist?.wishlistButtonPressed(tag: sender.tag)
         
     }
     

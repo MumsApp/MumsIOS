@@ -114,4 +114,10 @@ class ItemDescriptionView: UIView {
     
     }
 
+    @IBAction func contactUserButtonPressed(_ sender: UIButton) {
+    
+        self.delegate?.userNameButtonPressed()
+    
+    }
+    
 }

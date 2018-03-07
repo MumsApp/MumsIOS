@@ -88,7 +88,7 @@
 		4D39D49F2034B281005123F8 /* MyProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D39D49E2034B281005123F8 /* MyProductCell.xib */; };
 		4D39D4A12034B292005123F8 /* MyProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D4A02034B292005123F8 /* MyProductCell.swift */; };
 		4D403BD4204AE15500956939 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD3204AE15500956939 /* UICollectionViewCell.swift */; };
-		4D403BD6204AF4CA00956939 /* RemoveContactPopupUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD5204AF4CA00956939 /* RemoveContactPopupUIViewController.swift */; };
+		4D403BD6204AF4CA00956939 /* RemoveContactPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD5204AF4CA00956939 /* RemoveContactPopupViewController.swift */; };
 		4D403BD8204AFBE000956939 /* RemoveCompanyPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD7204AFBE000956939 /* RemoveCompanyPopupViewController.swift */; };
 		4D450967203E11E50066954D /* ForgotPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D450966203E11E50066954D /* ForgotPasswordService.swift */; };
 		4D450969203E11F40066954D /* ForgotPasswordServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D450968203E11F40066954D /* ForgotPasswordServiceParser.swift */; };
@@ -156,6 +156,8 @@
 		4DCB4EA12022285D006962F9 /* LobbyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA02022285D006962F9 /* LobbyCell.xib */; };
 		4DCB4EA3202229BF006962F9 /* LobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA2202229BF006962F9 /* LobbyCell.swift */; };
 		4DCB4EA5202234F4006962F9 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */; };
+		4DE0D99320501190002C0759 /* RemoveProductPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D99220501190002C0759 /* RemoveProductPopupViewController.swift */; };
+		4DE0D995205018B4002C0759 /* ProductAddedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D994205018B4002C0759 /* ProductAddedPopupViewController.swift */; };
 		4DE174F4202881ED001C5DD1 /* TransparentGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F3202881ED001C5DD1 /* TransparentGreen+UIButton.swift */; };
 		4DE174F6202886B9001C5DD1 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */; };
 		4DE174F820288C38001C5DD1 /* ProfileSettingsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */; };
@@ -294,7 +296,7 @@
 		4D39D49E2034B281005123F8 /* MyProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductCell.xib; sourceTree = "<group>"; };
 		4D39D4A02034B292005123F8 /* MyProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCell.swift; sourceTree = "<group>"; };
 		4D403BD3204AE15500956939 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
-		4D403BD5204AF4CA00956939 /* RemoveContactPopupUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveContactPopupUIViewController.swift; sourceTree = "<group>"; };
+		4D403BD5204AF4CA00956939 /* RemoveContactPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveContactPopupViewController.swift; sourceTree = "<group>"; };
 		4D403BD7204AFBE000956939 /* RemoveCompanyPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCompanyPopupViewController.swift; sourceTree = "<group>"; };
 		4D450966203E11E50066954D /* ForgotPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordService.swift; sourceTree = "<group>"; };
 		4D450968203E11F40066954D /* ForgotPasswordServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordServiceParser.swift; sourceTree = "<group>"; };
@@ -362,6 +364,8 @@
 		4DCB4EA02022285D006962F9 /* LobbyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyCell.xib; sourceTree = "<group>"; };
 		4DCB4EA2202229BF006962F9 /* LobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyCell.swift; sourceTree = "<group>"; };
 		4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		4DE0D99220501190002C0759 /* RemoveProductPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveProductPopupViewController.swift; sourceTree = "<group>"; };
+		4DE0D994205018B4002C0759 /* ProductAddedPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddedPopupViewController.swift; sourceTree = "<group>"; };
 		4DE174F3202881ED001C5DD1 /* TransparentGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransparentGreen+UIButton.swift"; sourceTree = "<group>"; };
 		4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsPopupViewController.swift; sourceTree = "<group>"; };
@@ -891,8 +895,10 @@
 				4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */,
 				4DE175082028D032001C5DD1 /* ChatSettingsPopupViewController.swift */,
 				4D39D48F20349176005123F8 /* ShopMenuViewController.swift */,
-				4D403BD5204AF4CA00956939 /* RemoveContactPopupUIViewController.swift */,
+				4D403BD5204AF4CA00956939 /* RemoveContactPopupViewController.swift */,
 				4D403BD7204AFBE000956939 /* RemoveCompanyPopupViewController.swift */,
+				4DE0D99220501190002C0759 /* RemoveProductPopupViewController.swift */,
+				4DE0D994205018B4002C0759 /* ProductAddedPopupViewController.swift */,
 				4DE1750E2028D4D3001C5DD1 /* Cells */,
 			);
 			path = Popups;
@@ -1004,6 +1010,14 @@
 			path = Lobby;
 			sourceTree = "<group>";
 		};
+		4DE0D9962050198E002C0759 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				4DA2164420446E7F00621031 /* ShopFilterViewController.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		4DE174FD2028A159001C5DD1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1061,7 +1075,7 @@
 				4DA306C22044529800250156 /* My wishlist products */,
 				4D39D49520349CDE005123F8 /* Product details */,
 				4D39D49620349CEA005123F8 /* Add product */,
-				4DA2164420446E7F00621031 /* ShopFilterViewController.swift */,
+				4DE0D9962050198E002C0759 /* Filter */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -1568,8 +1582,10 @@
 				4DE175012028C8B3001C5DD1 /* ChatViewController.swift in Sources */,
 				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
 				4D649244203CAD2700CE35B0 /* LobbyDetailsCell.swift in Sources */,
+				4DE0D99320501190002C0759 /* RemoveProductPopupViewController.swift in Sources */,
 				4D403BD8204AFBE000956939 /* RemoveCompanyPopupViewController.swift in Sources */,
 				4DA2164520446E7F00621031 /* ShopFilterViewController.swift in Sources */,
+				4DE0D995205018B4002C0759 /* ProductAddedPopupViewController.swift in Sources */,
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
 				4D5ED8FA202246870020FD51 /* OffersCell.swift in Sources */,
 				4DCB4E9E20222795006962F9 /* LobbyViewController.swift in Sources */,
@@ -1642,7 +1658,7 @@
 				4D05A9671FE1464A00B19E6E /* User.swift in Sources */,
 				4D05A9691FE1468100B19E6E /* Resource.swift in Sources */,
 				4D9DE8A4203E00FD005BDB37 /* UserDataServiceParser.swift in Sources */,
-				4D403BD6204AF4CA00956939 /* RemoveContactPopupUIViewController.swift in Sources */,
+				4D403BD6204AF4CA00956939 /* RemoveContactPopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -46,5 +46,9 @@ enum SecondaryViewController: String {
     
     case RemoveCompanyPopupViewController
     
+    case RemoveProductPopupViewController
+    
+    case ProductAddedPopupViewController
+    
 }
 
