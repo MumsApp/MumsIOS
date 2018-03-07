@@ -83,6 +83,16 @@ class ChatViewController: UIViewController {
         
     }
     
+    fileprivate func showConversationViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.conversationViewController()
+    
+        self.navigationController?.pushViewController(controller, animated: true)
+    
+    }
+    
 }
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
@@ -104,6 +114,12 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(ChatCell.self, indexPath: indexPath)
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.showConversationViewController()
         
     }
    

@@ -12,6 +12,7 @@ extension UIColor {
         case ShadowColor = 0x5a6786
         case ContainerGrey = 0xf7f9fb
         case LineGrey = 0xe7ebef
+        case PlaceholderColor = 0xEAF0F7
         
     }
     
@@ -73,6 +74,12 @@ extension UIColor {
     public class var lineGreyColor: UIColor {
         
         return UIColor(netHex: Colors.LineGrey.rawValue)
+        
+    }
+    
+    public class var placeholderColor: UIColor {
+        
+        return UIColor(netHex: Colors.PlaceholderColor.rawValue)
         
     }
     

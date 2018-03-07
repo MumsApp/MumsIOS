@@ -837,7 +837,7 @@ OFFERS     </string>
                                     <constraint firstAttribute="height" constant="19" id="pyd-wL-8PH"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oNF-yD-4gB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oNF-yD-4gB">
                                 <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1019,7 +1019,7 @@ OFFERS     </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yz-Ei-v7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="801"/>
+            <point key="canvasLocation" x="6862" y="134"/>
         </scene>
         <!--Create Category View Controller-->
         <scene sceneID="19b-Tj-uTB">
@@ -1249,6 +1249,21 @@ OFFERS     </string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFH-QC-Z0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2524" y="873"/>
+        </scene>
+        <!--Conversation View Controller-->
+        <scene sceneID="dfA-I6-PBl">
+            <objects>
+                <viewController storyboardIdentifier="ConversationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c4z-Qn-cau" customClass="ConversationViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pqg-QX-nPc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Kam-Qw-tdF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8FV-Xm-9Dp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3236" y="798"/>
         </scene>
         <!--Shop View Controller-->
         <scene sceneID="WGq-8O-VZo">
@@ -2715,7 +2730,7 @@ you want to remove</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vst-EY-L97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="1519"/>
+            <point key="canvasLocation" x="6862" y="828"/>
         </scene>
         <!--Remove Company Popup View Controller-->
         <scene sceneID="aJW-UY-2f0">
@@ -2856,7 +2871,7 @@ from your contacts?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6WQ-py-47b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="2216.9415292353824"/>
+            <point key="canvasLocation" x="6862" y="1531"/>
         </scene>
         <!--Remove Product Popup View Controller-->
         <scene sceneID="xmh-QD-I9M">
@@ -3012,7 +3027,7 @@ you want to remove</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bcb-rl-XfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="2919"/>
+            <point key="canvasLocation" x="6862" y="2223"/>
         </scene>
         <!--Product Added Popup View Controller-->
         <scene sceneID="x1P-Cj-8R8">
@@ -3135,7 +3150,7 @@ you want to remove</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCg-vM-XU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="3627.4362818590707"/>
+            <point key="canvasLocation" x="6862" y="2918"/>
         </scene>
     </scenes>
     <resources>

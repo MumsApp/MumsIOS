@@ -169,6 +169,40 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         
     }
     
+    func showButtons() {
+        
+        mainRootVC?.menuButton?.isHidden = false
+        
+        mainRootVC?.emergencyButton?.isHidden = false
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+            
+            mainRootVC?.menuButton?.alpha = 1
+            
+            mainRootVC?.emergencyButton?.alpha = 1
+            
+        })
+        
+    }
+    
+    func hideButtons() {
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+            
+            mainRootVC?.menuButton?.alpha = 0
+            
+            mainRootVC?.emergencyButton?.alpha = 0
+            
+        }, completion: { _ in
+            
+            mainRootVC?.menuButton?.isHidden = true
+            
+            mainRootVC?.emergencyButton?.isHidden = true
+            
+        })
+        
+    }
+    
 }
 
 extension MainRootViewController: MenuDelegate {

@@ -14,6 +14,17 @@ pod 'FBSDKLoginKit', '~> 4.29.0'
 pod 'GoogleMaps', '~> 2.5.0'
 pod 'GoogleSignIn'
 pod 'SwipeCellKit', '~> 1.9.1'
+pod 'MessageKit', '~> 0.10.2'
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        if target.name == 'MessageKit'
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '4.0'
+            end
+        end
+    end
+end
 
   target 'MumsAppTests' do
     inherit! :search_paths

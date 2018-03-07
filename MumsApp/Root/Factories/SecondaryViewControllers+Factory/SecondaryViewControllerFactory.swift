@@ -228,4 +228,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func conversationViewController() -> ConversationViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ConversationViewController.rawValue, storyboard: storyboard) as! ConversationViewController
+        
+        return controller
+        
+    }
+    
 }

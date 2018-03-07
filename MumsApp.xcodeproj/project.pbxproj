@@ -158,6 +158,9 @@
 		4DCB4EA5202234F4006962F9 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */; };
 		4DE0D99320501190002C0759 /* RemoveProductPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D99220501190002C0759 /* RemoveProductPopupViewController.swift */; };
 		4DE0D995205018B4002C0759 /* ProductAddedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D994205018B4002C0759 /* ProductAddedPopupViewController.swift */; };
+		4DE0D9982050200F002C0759 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D9972050200F002C0759 /* ConversationViewController.swift */; };
+		4DE0D99A20503774002C0759 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D99920503774002C0759 /* Message.swift */; };
+		4DE0D99C2050383C002C0759 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D99B2050383C002C0759 /* SampleData.swift */; };
 		4DE174F4202881ED001C5DD1 /* TransparentGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F3202881ED001C5DD1 /* TransparentGreen+UIButton.swift */; };
 		4DE174F6202886B9001C5DD1 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */; };
 		4DE174F820288C38001C5DD1 /* ProfileSettingsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */; };
@@ -366,6 +369,9 @@
 		4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		4DE0D99220501190002C0759 /* RemoveProductPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveProductPopupViewController.swift; sourceTree = "<group>"; };
 		4DE0D994205018B4002C0759 /* ProductAddedPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddedPopupViewController.swift; sourceTree = "<group>"; };
+		4DE0D9972050200F002C0759 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		4DE0D99920503774002C0759 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4DE0D99B2050383C002C0759 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		4DE174F3202881ED001C5DD1 /* TransparentGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransparentGreen+UIButton.swift"; sourceTree = "<group>"; };
 		4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsPopupViewController.swift; sourceTree = "<group>"; };
@@ -638,6 +644,7 @@
 				4D9DE8AB203E04A3005BDB37 /* Photo.swift */,
 				4DC2F8BA202C4E6A00E331BD /* Terms.swift */,
 				4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */,
+				4DE0D99920503774002C0759 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1044,6 +1051,8 @@
 			isa = PBXGroup;
 			children = (
 				4DE175002028C8B3001C5DD1 /* ChatViewController.swift */,
+				4DE0D9972050200F002C0759 /* ConversationViewController.swift */,
+				4DE0D99B2050383C002C0759 /* SampleData.swift */,
 				4DE175062028C992001C5DD1 /* Cells */,
 			);
 			path = Chat;
@@ -1337,6 +1346,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -1353,6 +1363,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -1538,6 +1549,7 @@
 				4D05A9521FE144A900B19E6E /* NotificationCoordinator.swift in Sources */,
 				4DE175112028DC35001C5DD1 /* ShopViewController.swift in Sources */,
 				4DE174FC2028A054001C5DD1 /* AddCell.swift in Sources */,
+				4DE0D9982050200F002C0759 /* ConversationViewController.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
 				4D39D4A12034B292005123F8 /* MyProductCell.swift in Sources */,
 				4DCB4E9C2022263B006962F9 /* CustomGreenSwitch.swift in Sources */,
@@ -1609,6 +1621,7 @@
 				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
 				4D36E705201E4984000DC94F /* SchoolView.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
+				4DE0D99A20503774002C0759 /* Message.swift in Sources */,
 				4D374DC4203CAA6F00AB89F3 /* LobbyDetailsViewController.swift in Sources */,
 				4DE174F6202886B9001C5DD1 /* UIDevice+Extensions.swift in Sources */,
 				4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */,
@@ -1654,6 +1667,7 @@
 				4D39D49A2034A107005123F8 /* MyProductsViewController.swift in Sources */,
 				4D05A9551FE144A900B19E6E /* MOUserDefaults+Secure.swift in Sources */,
 				4D39D49020349176005123F8 /* ShopMenuViewController.swift in Sources */,
+				4DE0D99C2050383C002C0759 /* SampleData.swift in Sources */,
 				4DEE83F2201E1EAD001B0AEB /* LocationView.swift in Sources */,
 				4D05A9671FE1464A00B19E6E /* User.swift in Sources */,
 				4D05A9691FE1468100B19E6E /* Resource.swift in Sources */,

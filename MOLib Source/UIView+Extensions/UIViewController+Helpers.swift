@@ -52,15 +52,7 @@ extension UIViewController {
 
     public func presentViewController(_ viewController: UIViewController) {
         
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-                        
-                mainRootVC?.menuButton?.alpha = 0
-                        
-        }, completion: { _ in
-                        
-                mainRootVC?.menuButton?.isHidden = true
-
-        })
+        mainRootVC?.hideButtons()
         
         self.present(viewController, animated: true, completion: nil)
     
@@ -68,16 +60,7 @@ extension UIViewController {
     
     public func dismissViewController() {
         
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
-            
-            mainRootVC?.menuButton?.isHidden = false
-
-            
-        }, completion: { _ in
-            
-            mainRootVC?.menuButton?.alpha = 1
-
-        })
+        mainRootVC?.showButtons()
         
         self.dismiss(animated: true, completion: nil)
     

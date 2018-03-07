@@ -25,6 +25,8 @@ class ChatCell: UITableViewCell, Reusable {
         
         self.backgroundColor = .clear
         
+        self.selectionStyle = .none
+        
         self.containerView.addShadow()
 
         self.userImageView.layer.cornerRadius = 35

@@ -54,7 +54,6 @@ class LobbyDetailsViewController: UIViewController {
         
         self.navigationController?.popViewController(animated: true)
         
-        
     }
     
     func writeButtonPressed(sender: UIBarButtonItem) {
