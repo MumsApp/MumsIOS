@@ -15,6 +15,8 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
     
     var menuButton: UIButton!
 
+    var emergencyButton: UIButton!
+
     private let transition = BubbleTransition()
     
     private var displayed: Bool = false
@@ -24,6 +26,8 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
 
         self.addMenuButton()
 
+        self.addEmergencyButton()
+        
         self.configureNavigationBar()
         
         self.transition.duration = 0.3
@@ -125,6 +129,46 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         
     }
     
+    private func addEmergencyButton() {
+        
+        if let window = UIApplication.shared.keyWindow {
+            
+            let size: CGFloat = 90
+            
+            self.emergencyButton = UIButton(type: .custom)
+            
+            self.emergencyButton.frame = CGRect(x: window.frame.maxX - size - 16, y: window.frame.maxY - size - 16, width: size, height: size)
+            
+            self.emergencyButton.backgroundColor = .clear
+            
+            self.emergencyButton.setTitle("", for: UIControlState.normal)
+            
+            self.emergencyButton.setImage(#imageLiteral(resourceName: "emergencyIcon"), for: .normal)
+            
+            self.emergencyButton.addTarget(self, action: #selector(self.emergencyButtonPressed), for: UIControlEvents.touchUpInside)
+            
+            self.emergencyButton.layer.cornerRadius = size / 2
+            
+            self.emergencyButton.isHidden = true
+            
+            window.addSubview(self.emergencyButton)
+            
+        }
+        
+    }
+    
+    func removeEmergencyButton() {
+        
+        self.emergencyButton = nil
+        
+    }
+    
+    func emergencyButtonPressed() {
+        
+        print("CALL 991")
+        
+    }
+    
 }
 
 extension MainRootViewController: MenuDelegate {
@@ -193,6 +237,8 @@ extension MainRootViewController: MenuDelegate {
             
             self.menuButton.tag = 1
             
+            self.emergencyButton.isHidden = true
+            
             UIView.transition(with: self.menuButton, duration: 0.3, options: .transitionCrossDissolve, animations: {
                 
                 self.menuButton.setImage(#imageLiteral(resourceName: "closeIcon"), for: .normal)
@@ -205,6 +251,8 @@ extension MainRootViewController: MenuDelegate {
             
             self.menuButton.tag = 0
             
+            self.emergencyButton.isHidden = false
+
             UIView.transition(with: self.menuButton, duration: 0.3, options: .transitionCrossDissolve, animations: {
                 
                 self.menuButton.setImage(#imageLiteral(resourceName: "menuIcon"), for: .normal)

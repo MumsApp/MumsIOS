@@ -204,4 +204,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func removeCompanyPopupViewController() -> RemoveCompanyPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.RemoveCompanyPopupViewController.rawValue, storyboard: storyboard) as! RemoveCompanyPopupViewController
+        
+        return controller
+        
+    }
+
 }

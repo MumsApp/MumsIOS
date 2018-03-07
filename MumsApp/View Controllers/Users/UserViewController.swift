@@ -165,7 +165,8 @@ extension UserViewController: AddCellDelegate, RemoveContactCellDelegate {
     
     func removeButtonPressed() {
         
-        self.showRemoveContactPopupViewController()
+        self.showRemoveCompanyPopupViewController()
+//        self.showRemoveContactPopupViewController()
         
     }
     
@@ -174,6 +175,20 @@ extension UserViewController: AddCellDelegate, RemoveContactCellDelegate {
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
         let controller = factory.removeContactPopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
+        
+    }
+    
+    private func showRemoveCompanyPopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.removeCompanyPopupViewController()
         
         controller.modalPresentationStyle = .overCurrentContext
         
