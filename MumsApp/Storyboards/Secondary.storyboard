@@ -1105,6 +1105,11 @@ OFFERS     </string>
                                                         <state key="normal" title="Add cover photo" image="addPhotoIcon">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="addPhotoButtonPressed:" destination="O6X-GW-jSd" eventType="touchUpInside" id="JR3-Xk-qQ0"/>
                                                         </connections>
@@ -1814,6 +1819,11 @@ OFFERS     </string>
                                                         <state key="normal" title="Add photo" image="addPhotoIcon">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="addPhotoButtonPressed:" destination="5ml-1G-wp5" eventType="touchUpInside" id="qEw-jB-Qvf"/>
                                                         </connections>
