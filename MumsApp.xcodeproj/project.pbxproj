@@ -102,6 +102,12 @@
 		4D66007D201B5C640085CC58 /* OnboardingSocial+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */; };
 		4D66007F201B642E0085CC58 /* OnboardingAccount+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */; };
 		4D681F85201DE09200D404CD /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D681F84201DE09200D404CD /* FacebookService.swift */; };
+		4D69BA9620514364006AB41D /* AddProductImagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D69BA9520514364006AB41D /* AddProductImagesView.xib */; };
+		4D69BA982051436D006AB41D /* AddProductImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BA972051436D006AB41D /* AddProductImagesView.swift */; };
+		4D69BA9A20514BE8006AB41D /* AddImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D69BA9920514BE8006AB41D /* AddImageCell.xib */; };
+		4D69BA9C20514DF6006AB41D /* AddImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BA9B20514DF6006AB41D /* AddImageCell.swift */; };
+		4D69BA9E20514E18006AB41D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BA9D20514E18006AB41D /* ImageCell.swift */; };
+		4D69BAA020514E2A006AB41D /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D69BA9F20514E2A006AB41D /* ImageCell.xib */; };
 		4D76895E20248946002FC25D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76895D20248946002FC25D /* MenuViewController.swift */; };
 		4D8C63A1201C830600657FD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C63A0201C830600657FD7 /* String+Extensions.swift */; };
 		4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */; };
@@ -313,6 +319,12 @@
 		4D66007C201B5C640085CC58 /* OnboardingSocial+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingSocial+UIButton.swift"; sourceTree = "<group>"; };
 		4D66007E201B642E0085CC58 /* OnboardingAccount+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingAccount+UIButton.swift"; sourceTree = "<group>"; };
 		4D681F84201DE09200D404CD /* FacebookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
+		4D69BA9520514364006AB41D /* AddProductImagesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProductImagesView.xib; sourceTree = "<group>"; };
+		4D69BA972051436D006AB41D /* AddProductImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductImagesView.swift; sourceTree = "<group>"; };
+		4D69BA9920514BE8006AB41D /* AddImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddImageCell.xib; sourceTree = "<group>"; };
+		4D69BA9B20514DF6006AB41D /* AddImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageCell.swift; sourceTree = "<group>"; };
+		4D69BA9D20514E18006AB41D /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		4D69BA9F20514E2A006AB41D /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		4D76895D20248946002FC25D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4D8C63A0201C830600657FD7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secondary.storyboard; sourceTree = "<group>"; };
@@ -780,6 +792,12 @@
 			children = (
 				4D39D49720349D32005123F8 /* AddProductDescriptionView.xib */,
 				4D39D49320349CCD005123F8 /* AddProductDescriptionView.swift */,
+				4D69BA9520514364006AB41D /* AddProductImagesView.xib */,
+				4D69BA972051436D006AB41D /* AddProductImagesView.swift */,
+				4D69BA9920514BE8006AB41D /* AddImageCell.xib */,
+				4D69BA9B20514DF6006AB41D /* AddImageCell.swift */,
+				4D69BA9F20514E2A006AB41D /* ImageCell.xib */,
+				4D69BA9D20514E18006AB41D /* ImageCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1284,8 +1302,10 @@
 				4D39D48E20348B60005123F8 /* PictureCell.xib in Resources */,
 				4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
+				4D69BA9620514364006AB41D /* AddProductImagesView.xib in Resources */,
 				4D39D48820348365005123F8 /* ItemDescriptionView.xib in Resources */,
 				4DA306BD204450BA00250156 /* MyWishlistCell.xib in Resources */,
+				4D69BA9A20514BE8006AB41D /* AddImageCell.xib in Resources */,
 				4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */,
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
@@ -1300,6 +1320,7 @@
 				4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */,
 				4D36E6F7201E355E000DC94F /* ChildrenView.xib in Resources */,
 				4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */,
+				4D69BAA020514E2A006AB41D /* ImageCell.xib in Resources */,
 				4D8F2D38201B4A4300756CCB /* Poppins-Regular.ttf in Resources */,
 				4D36E6F3201E31EE000DC94F /* GoogleMapsStyle.json in Resources */,
 				4D0F0C352049733E000F251C /* AddMembersCell.xib in Resources */,
@@ -1590,6 +1611,7 @@
 				4DA306BF204450C600250156 /* MyWishlistCell.swift in Sources */,
 				4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */,
 				4D39D49220349B66005123F8 /* AddProductViewController.swift in Sources */,
+				4D69BA982051436D006AB41D /* AddProductImagesView.swift in Sources */,
 				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,
 				4DE175012028C8B3001C5DD1 /* ChatViewController.swift in Sources */,
 				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
@@ -1610,6 +1632,7 @@
 				4D05A96F1FE1478400B19E6E /* Config.swift in Sources */,
 				4D9DE8A2203E00EF005BDB37 /* UserDataService.swift in Sources */,
 				4DE175032028C97E001C5DD1 /* ChatCell.swift in Sources */,
+				4D69BA9C20514DF6006AB41D /* AddImageCell.swift in Sources */,
 				4D450967203E11E50066954D /* ForgotPasswordService.swift in Sources */,
 				4D05A9651FE145B800B19E6E /* AppContext.swift in Sources */,
 				4D05A9711FE1483800B19E6E /* FactoryProvider.swift in Sources */,
@@ -1651,6 +1674,7 @@
 				4DC27EC2201FBFE4000EE9FA /* CardsView.swift in Sources */,
 				4DC27EC0201FA9D5000EE9FA /* SchoolCell.swift in Sources */,
 				4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */,
+				4D69BA9E20514E18006AB41D /* ImageCell.swift in Sources */,
 				4D9DE8AA203E0355005BDB37 /* Children.swift in Sources */,
 				4D05A97A1FE14BE100B19E6E /* ServiceFactory.swift in Sources */,
 				4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */,

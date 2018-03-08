@@ -5,8 +5,15 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var contentView: UIView!
-    
+
     @IBOutlet weak var addPhotoButton: UIButton!
+    
+    @IBOutlet weak var photosView: AddProductImagesView!
+    
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
+    let HEIGHT_SMALL: CGFloat = 1050
+    let HEIGHT_BIG: CGFloat = 1280
     
     fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
 
@@ -36,8 +43,16 @@ class AddProductViewController: UIViewController {
     }
     
     private func configureView() {
-                
+        
+        self.view.backgroundColor = .backgroundWhite
+        
         self.imagePicker.delegate = self
+        
+        self.photosView.isHidden = true
+     
+        self.heightConstraint.constant = HEIGHT_SMALL
+
+        self.photosView.configureWith(delegate: self, imageCellDelegate: self)
         
     }
     
@@ -154,9 +169,85 @@ extension AddProductViewController: UIImagePickerControllerDelegate, UINavigatio
             
             self.addPhotoButton.setImage(pickedImage, for: .normal)
             
+            self.photosView.images.insert(pickedImage, at: 0)
+
+            self.photosView.collectionView.reloadData()
+            
         }
         
+        self.photosView.isHidden = false
+        
+        self.heightConstraint.constant = HEIGHT_BIG
+        
         self.dismissViewController()
+        
+    }
+    
+}
+
+extension AddProductViewController: AddImageCellDelegate, ImageCellDelegate {
+    
+    func addPhotoButtonPressed() {
+        
+        self.showPhotoAlert(imagePicker: self.imagePicker)
+        
+    }
+    
+    func deleteImageButtomPressed(tag: Int) {
+        
+        self.photosView.images.remove(at: tag)
+        
+        self.photosView.collectionView.reloadData()
+        
+        if self.photosView.images.count == 0 {
+            
+            self.addPhotoButton.setTitle("Add photo", for: .normal)
+            
+            self.addPhotoButton.setImage(#imageLiteral(resourceName: "addPhotoIcon"), for: .normal)
+            
+            self.photosView.isHidden = true
+       
+            self.heightConstraint.constant = HEIGHT_SMALL
+
+        } else {
+            
+            let image = self.photosView.images[tag]
+            
+            self.addPhotoButton.setImage(image, for: .normal)
+            
+        }
+        
+    }
+    
+    func deselectOtherCells() {
+        
+//        self.photosView.collectionView.indexPathsForSelectedItems?.forEach({ indexPath in
+//            
+//            self.photosView.collectionView.deselectItem(at: indexPath, animated: true)
+//            
+//            let cell = self.photosView.collectionView.cellForItem(at: indexPath) as? ImageCell
+//            
+//            cell?.layer.borderWidth = 0
+//            
+//        })
+//        
+//        let indexPath = IndexPath(row: 1, section: 0)
+//        
+//        self.photosView.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .bottom)
+//        
+//        let cell = self.photosView.collectionView.cellForItem(at: indexPath) as? ImageCell
+//
+//        cell?.layer.borderColor = UIColor.mainGreen.cgColor
+//        
+//        cell?.layer.borderWidth = 3
+        
+    }
+    
+    func selectedImage(tag: Int) {
+        
+        let image = self.photosView.images[tag]
+        
+        self.addPhotoButton.setImage(image, for: .normal)
         
     }
     

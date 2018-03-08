@@ -1,4 +1,5 @@
 # platform :ios, '9.0'
+# don't update MessageKit
 
 target 'MumsApp' do
 
