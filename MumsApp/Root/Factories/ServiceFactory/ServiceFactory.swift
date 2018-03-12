@@ -77,11 +77,11 @@ class ServiceFactory {
         
     }
     
-    func userDataService() -> UserDataService {
+    func userDetailsService() -> UserDetailsService {
         
-        let parser = UserDataServiceParser()
+        let parser = UserDetailsServiceParser()
         
-        let service = UserDataService(networkService: self.networkService, serviceParser: parser)
+        let service = UserDetailsService(networkService: self.networkService, serviceParser: parser)
         
         return service
         
@@ -98,4 +98,3 @@ class ServiceFactory {
     }
     
 }
-

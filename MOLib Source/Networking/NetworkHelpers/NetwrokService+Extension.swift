@@ -88,5 +88,5 @@ extension NetworkService {
 protocol ServiceParser {
     
     func parseDataDictionary(tag: Int, dictionary: Dictionary<String, Any>) -> Bool
-    
+
 }

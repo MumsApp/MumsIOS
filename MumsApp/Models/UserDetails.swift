@@ -5,9 +5,9 @@ let k_location = "location"
 let k_children = "children"
 let k_photo = "photo"
 
-struct UserData: Resource, Storable {
+struct UserDetails: Resource, Storable {
     
-    static let typeName = "UserData"
+    static let typeName = "UserDetails"
     
     var id: String?
     var name: String?
@@ -44,9 +44,9 @@ struct UserData: Resource, Storable {
         
     }
     
-    static func fromDictionary(dictionary: Dictionary<String, Any>) -> UserData {
+    static func fromDictionary(dictionary: Dictionary<String, Any>) -> UserDetails {
         
-        let resource = UserData(dictionary: dictionary)
+        let resource = UserDetails(dictionary: dictionary)
         
         return resource
         

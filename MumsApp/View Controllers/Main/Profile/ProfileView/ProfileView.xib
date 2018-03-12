@@ -44,7 +44,7 @@
                         <action selector="changeButtonPressed:" destination="-1" eventType="touchUpInside" id="jEZ-VC-Pci"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Vestibulum commodo dui sed accumsan venenatis. Suspendisse tempor maximus enim ut molestie." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O6C-00-bcQ">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Vestibulum commodo dui sed accumsan venenatis. Suspendisse tempor maximus enim ut molestie." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6C-00-bcQ">
                     <rect key="frame" x="8" y="102" width="359" height="57"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

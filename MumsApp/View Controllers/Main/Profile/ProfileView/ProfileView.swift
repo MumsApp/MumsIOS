@@ -1,5 +1,12 @@
 import UIKit
 
+protocol ProfileViewDelegate: class {
+    
+    func changeButtonPressed()
+    func imageTapped()
+    
+}
+
 class ProfileView: UIView {
 
     @IBOutlet var contentView: UIView!
@@ -12,6 +19,15 @@ class ProfileView: UIView {
 
     @IBOutlet weak var changeButton: UIButton!
     
+    var tapGesture: UITapGestureRecognizer!
+    
+    private weak var delegate: ProfileViewDelegate?
+    
+    func configureWith(delegate: ProfileViewDelegate?) {
+        
+        self.delegate = delegate
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,11 +73,23 @@ class ProfileView: UIView {
         
         self.userDescriptionLabel.textColor = .mainDarkGrey
         
+        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+        
+        self.userImageView.addGestureRecognizer(self.tapGesture)
+        
+        self.userImageView.isUserInteractionEnabled = true
+        
+    }
+    
+    func imageTapped() {
+                
+        self.delegate?.imageTapped()
+        
     }
     
     @IBAction func changeButtonPressed(_ sender: UIButton) {
 
-        
+        self.delegate?.changeButtonPressed()
     
     }
 

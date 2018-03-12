@@ -61,6 +61,7 @@
 		4D0F0C3B204983EC000F251C /* RemoveContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3A204983EC000F251C /* RemoveContactCell.swift */; };
 		4D0F0C3D2049846E000F251C /* AddContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3C2049846E000F251C /* AddContactCell.swift */; };
 		4D1933E920569E7F006D6D5B /* SignUpOrganisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933E820569E7F006D6D5B /* SignUpOrganisationViewController.swift */; };
+		4D1933EB2056CC4D006D6D5B /* UserNamePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933EA2056CC4C006D6D5B /* UserNamePopupViewController.swift */; };
 		4D1B3D772035FB0100C2618B /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */; };
 		4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */; };
 		4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6F0201E31E1000DC94F /* CustomMapView.swift */; };
@@ -130,9 +131,9 @@
 		4D8F2D3C201B4F3800756CCB /* OnboardingGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3B201B4F3800756CCB /* OnboardingGreen+UIButton.swift */; };
 		4D8F2D3E201B502300756CCB /* OnboardingGrey+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3D201B502300756CCB /* OnboardingGrey+UIButton.swift */; };
 		4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */; };
-		4D9DE8A2203E00EF005BDB37 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A1203E00EF005BDB37 /* UserDataService.swift */; };
-		4D9DE8A4203E00FD005BDB37 /* UserDataServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A3203E00FD005BDB37 /* UserDataServiceParser.swift */; };
-		4D9DE8A6203E01B8005BDB37 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A5203E01B8005BDB37 /* UserData.swift */; };
+		4D9DE8A2203E00EF005BDB37 /* UserDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A1203E00EF005BDB37 /* UserDetailsService.swift */; };
+		4D9DE8A4203E00FD005BDB37 /* UserDetailsServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A3203E00FD005BDB37 /* UserDetailsServiceParser.swift */; };
+		4D9DE8A6203E01B8005BDB37 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A5203E01B8005BDB37 /* UserDetails.swift */; };
 		4D9DE8A8203E022B005BDB37 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A7203E022B005BDB37 /* Location.swift */; };
 		4D9DE8AA203E0355005BDB37 /* Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A9203E0355005BDB37 /* Children.swift */; };
 		4D9DE8AC203E04A3005BDB37 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8AB203E04A3005BDB37 /* Photo.swift */; };
@@ -292,6 +293,7 @@
 		4D0F0C3A204983EC000F251C /* RemoveContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveContactCell.swift; sourceTree = "<group>"; };
 		4D0F0C3C2049846E000F251C /* AddContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactCell.swift; sourceTree = "<group>"; };
 		4D1933E820569E7F006D6D5B /* SignUpOrganisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOrganisationViewController.swift; sourceTree = "<group>"; };
+		4D1933EA2056CC4C006D6D5B /* UserNamePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNamePopupViewController.swift; sourceTree = "<group>"; };
 		4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		4D36E6F0201E31E1000DC94F /* CustomMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
@@ -361,9 +363,9 @@
 		4D8F2D3B201B4F3800756CCB /* OnboardingGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingGreen+UIButton.swift"; sourceTree = "<group>"; };
 		4D8F2D3D201B502300756CCB /* OnboardingGrey+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingGrey+UIButton.swift"; sourceTree = "<group>"; };
 		4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
-		4D9DE8A1203E00EF005BDB37 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
-		4D9DE8A3203E00FD005BDB37 /* UserDataServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataServiceParser.swift; sourceTree = "<group>"; };
-		4D9DE8A5203E01B8005BDB37 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		4D9DE8A1203E00EF005BDB37 /* UserDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsService.swift; sourceTree = "<group>"; };
+		4D9DE8A3203E00FD005BDB37 /* UserDetailsServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsServiceParser.swift; sourceTree = "<group>"; };
+		4D9DE8A5203E01B8005BDB37 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		4D9DE8A7203E022B005BDB37 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4D9DE8A9203E0355005BDB37 /* Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Children.swift; sourceTree = "<group>"; };
 		4D9DE8AB203E04A3005BDB37 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -678,7 +680,7 @@
 			isa = PBXGroup;
 			children = (
 				4D05A9661FE1464A00B19E6E /* User.swift */,
-				4D9DE8A5203E01B8005BDB37 /* UserData.swift */,
+				4D9DE8A5203E01B8005BDB37 /* UserDetails.swift */,
 				4D9DE8A7203E022B005BDB37 /* Location.swift */,
 				4D9DE8A9203E0355005BDB37 /* Children.swift */,
 				4D9DE8AB203E04A3005BDB37 /* Photo.swift */,
@@ -709,7 +711,7 @@
 				4D681F88201DE32F00D404CD /* FacebookService */,
 				4DC27EB6201F980C000EE9FA /* GoogleService */,
 				4D45096A203E11F70066954D /* ForgotPasswordService */,
-				4D9DE8AD203E06CC005BDB37 /* UserDataService */,
+				4D9DE8AD203E06CC005BDB37 /* UserDetailsService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -959,13 +961,13 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		4D9DE8AD203E06CC005BDB37 /* UserDataService */ = {
+		4D9DE8AD203E06CC005BDB37 /* UserDetailsService */ = {
 			isa = PBXGroup;
 			children = (
-				4D9DE8A1203E00EF005BDB37 /* UserDataService.swift */,
-				4D9DE8A3203E00FD005BDB37 /* UserDataServiceParser.swift */,
+				4D9DE8A1203E00EF005BDB37 /* UserDetailsService.swift */,
+				4D9DE8A3203E00FD005BDB37 /* UserDetailsServiceParser.swift */,
 			);
-			path = UserDataService;
+			path = UserDetailsService;
 			sourceTree = "<group>";
 		};
 		4DA306C22044529800250156 /* My wishlist products */ = {
@@ -981,6 +983,7 @@
 		4DAA14EB2020E461000B1CA0 /* Popups */ = {
 			isa = PBXGroup;
 			children = (
+				4D1933EA2056CC4C006D6D5B /* UserNamePopupViewController.swift */,
 				4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */,
 				4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */,
 				4DE175082028D032001C5DD1 /* ChatSettingsPopupViewController.swift */,
@@ -1707,7 +1710,7 @@
 				4DA49A532024B69900561EC9 /* VerticallyButton.swift in Sources */,
 				4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */,
 				4D05A96F1FE1478400B19E6E /* Config.swift in Sources */,
-				4D9DE8A2203E00EF005BDB37 /* UserDataService.swift in Sources */,
+				4D9DE8A2203E00EF005BDB37 /* UserDetailsService.swift in Sources */,
 				4DE175032028C97E001C5DD1 /* ChatCell.swift in Sources */,
 				4D69BA9C20514DF6006AB41D /* AddImageCell.swift in Sources */,
 				4D450967203E11E50066954D /* ForgotPasswordService.swift in Sources */,
@@ -1740,6 +1743,7 @@
 				4D05A9501FE144A900B19E6E /* NetworkService+DataRequest.swift in Sources */,
 				4D8F2D3E201B502300756CCB /* OnboardingGrey+UIButton.swift in Sources */,
 				4D05A94C1FE144A900B19E6E /* MockNetworkService.swift in Sources */,
+				4D1933EB2056CC4D006D6D5B /* UserNamePopupViewController.swift in Sources */,
 				4D05A95F1FE144A900B19E6E /* UITableView+Extensions.swift in Sources */,
 				4D66007D201B5C640085CC58 /* OnboardingSocial+UIButton.swift in Sources */,
 				4D05A9831FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift in Sources */,
@@ -1764,7 +1768,7 @@
 				4D05A94A1FE144A900B19E6E /* NetworkService+UploadRequest.swift in Sources */,
 				4DCB4EA5202234F4006962F9 /* CustomSearchBar.swift in Sources */,
 				4DEE83EE201E1AE7001B0AEB /* MainGreen+UIButton.swift in Sources */,
-				4D9DE8A6203E01B8005BDB37 /* UserData.swift in Sources */,
+				4D9DE8A6203E01B8005BDB37 /* UserDetails.swift in Sources */,
 				4DFC27141FE92CB2006020FF /* LoginServiceParser.swift in Sources */,
 				4D05A9471FE144A900B19E6E /* URLRequest+Methods.swift in Sources */,
 				4D69BAB720519565006AB41D /* OrganisationMembersView.swift in Sources */,
@@ -1775,7 +1779,7 @@
 				4DEE83F2201E1EAD001B0AEB /* LocationView.swift in Sources */,
 				4D05A9671FE1464A00B19E6E /* User.swift in Sources */,
 				4D05A9691FE1468100B19E6E /* Resource.swift in Sources */,
-				4D9DE8A4203E00FD005BDB37 /* UserDataServiceParser.swift in Sources */,
+				4D9DE8A4203E00FD005BDB37 /* UserDetailsServiceParser.swift in Sources */,
 				4D403BD6204AF4CA00956939 /* RemoveContactPopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

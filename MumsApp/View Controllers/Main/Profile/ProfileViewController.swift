@@ -12,11 +12,15 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var schoolViewHeight: NSLayoutConstraint!
     
-    private var userDataService: UserDataService!
+    fileprivate var userDetailsService: UserDetailsService!
     
-    func configureWith(userDataService: UserDataService) {
+    fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
+
+    fileprivate weak var userNamePopupViewController: UserNamePopupViewController?
+    
+    func configureWith(userDetailsService: UserDetailsService) {
         
-        self.userDataService = userDataService
+        self.userDetailsService = userDetailsService
         
     }
     
@@ -43,6 +47,10 @@ class ProfileViewController: UIViewController {
         
         self.locationViewHeight.constant = 80
 
+        self.profileView.configureWith(delegate: self)
+     
+        self.imagePicker.delegate = self
+        
     }
 
     private func configureNavigationBar() {
@@ -87,7 +95,7 @@ class ProfileViewController: UIViewController {
         
         guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
         
-        self.userDataService.getUserData(id: id, token: token) { errorOptional in
+        self.userDetailsService.getUserDetails(id: id, token: token) { dataOptional, errorOptional in
             
             if let error = errorOptional {
                 
@@ -95,7 +103,55 @@ class ProfileViewController: UIViewController {
                 
             } else {
                 
-                print("success")
+                guard let data = dataOptional as? StorableDictionary,
+                    let dictionary = data[k_data] as? StorableDictionary else {
+                    
+                        return
+                
+                }
+                
+                let details = UserDetails(dictionary: dictionary)
+                
+                self.configureViewWithData(userDetails: details)
+                
+            }
+            
+        }
+        
+    }
+    
+    private func configureViewWithData(userDetails: UserDetails) {
+        
+//        self.profileView.userImageView.image = self
+        
+        if let name = userDetails.name, let surname = userDetails.surname {
+            
+            self.profileView.userNameLabel.text = name + " " + surname
+   
+        }
+        
+        if let description = userDetails.description {
+            
+            self.profileView.userDescriptionLabel.text = description
+            
+        }
+        
+    }
+    
+    fileprivate func updateUserPhoto() {
+        
+        guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
+
+        guard let photoData = UIImageJPEGRepresentation(self.profileView.userImageView.image!, 0.7) else { return }
+        
+        self.userDetailsService.updateUserPhoto(id: id, token: token, photo: photoData) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                print(error.localizedDescription)
+                
+            } else {
+                
                 
             }
             
@@ -186,6 +242,103 @@ extension ProfileViewController: LocationViewDelegate {
         controller.modalTransitionStyle = .crossDissolve
         
         self.presentViewController(controller)
+        
+    }
+    
+}
+
+extension ProfileViewController: ProfileViewDelegate {
+    
+    func imageTapped() {
+        
+        self.showPhotoAlert(imagePicker: self.imagePicker)
+
+    }
+    
+    func changeButtonPressed() {
+        
+        self.showUserNamePopupViewController()
+        
+    }
+    
+    private func showUserNamePopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.userNamePopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        controller.configureWith(delegate: self)
+        
+        self.userNamePopupViewController = controller
+        
+        self.presentViewController(controller)
+        
+    }
+
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        self.dismissViewController()
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+
+            self.profileView.userImageView.image = pickedImage
+            
+        }
+        
+        self.dismissViewController()
+        
+        self.updateUserPhoto()
+        
+    }
+    
+}
+
+extension ProfileViewController: UserNamePopupDelegate {
+    
+    func saveUserDetails(firstName: String, lastName: String, description: String) {
+        
+        guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
+        
+        self.userDetailsService.updateUserName(id: id, token: token, name: firstName, surname: lastName, description: description) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+
+                    self.userNamePopupViewController?.blockView(bool: false)
+                    
+                    topController.showOkAlertWith(title: "Error", message: error.localizedDescription)
+
+                }
+                
+            } else {
+                
+                self.profileView.userNameLabel.text = firstName + " " + lastName
+                
+                self.profileView.userDescriptionLabel.text = description
+                
+                self.dismissViewController()
+                
+                self.userNamePopupViewController = nil
+                
+            }
+            
+        }
         
     }
     

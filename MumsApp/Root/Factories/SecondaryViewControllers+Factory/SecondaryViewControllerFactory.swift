@@ -45,7 +45,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProfileViewController.rawValue, storyboard: storyboard) as! ProfileViewController
         
-        controller.configureWith(userDataService: self.serviceFactory.userDataService())
+        controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService())
         
         return controller
         
@@ -239,6 +239,14 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
     func conversationViewController() -> ConversationViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ConversationViewController.rawValue, storyboard: storyboard) as! ConversationViewController
+        
+        return controller
+        
+    }
+    
+    func userNamePopupViewController() -> UserNamePopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.UserNamePopupViewController.rawValue, storyboard: storyboard) as! UserNamePopupViewController
         
         return controller
         

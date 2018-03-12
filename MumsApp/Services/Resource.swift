@@ -86,7 +86,7 @@ extension ResourceService {
                 print(responseOptional as Any)
                 
                 var completionError: Error? = nil
-                
+                                
                 if let error = errorOptional {
                     
                     completionError = error.translateErrorForResponse(responseOptional: responseOptional, inDomain: self.serviceName)
@@ -104,6 +104,7 @@ extension ResourceService {
                 DispatchQueue.main.async {
                     
                     completion(responseOptional, completionError)
+                
                 }
                 
             }
