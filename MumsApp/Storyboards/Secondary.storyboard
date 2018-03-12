@@ -3181,6 +3181,110 @@ you want to remove</string>
             </objects>
             <point key="canvasLocation" x="6862" y="2918"/>
         </scene>
+        <!--Organisation View Controller-->
+        <scene sceneID="YsB-6s-WEw">
+            <objects>
+                <viewController storyboardIdentifier="OrganisationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="khc-5n-y0U" customClass="OrganisationViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OPf-Em-ylr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1550"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guj-XT-pfA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="1530"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iss-3F-YFX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1550"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGS-a2-nXC" customClass="OrganisationProfileView" customModule="MumsApp" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="16" width="343" height="220"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="220" id="0if-Zf-czm"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ep7-f8-9A7" customClass="ItemLocationView" customModule="MumsApp" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="252" width="343" height="270"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="270" id="JEu-eQ-PWh"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRo-Kb-yfT" customClass="OrganisationPhotosView" customModule="MumsApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="538" width="375" height="220"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="220" id="yhz-24-fcG"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRg-TD-0ap" customClass="OrganisationNewsView" customModule="MumsApp" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="774" width="343" height="380"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="380" id="Ftz-gg-HEH"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ4-V0-e0k" customClass="OrganisationMembersView" customModule="MumsApp" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="1170" width="343" height="265"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="265" id="Dpx-7V-n0M"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="sZ4-V0-e0k" firstAttribute="top" secondItem="WRg-TD-0ap" secondAttribute="bottom" constant="16" id="DJn-us-12Z"/>
+                                            <constraint firstItem="VRo-Kb-yfT" firstAttribute="top" secondItem="ep7-f8-9A7" secondAttribute="bottom" constant="16" id="FaL-bt-Byk"/>
+                                            <constraint firstItem="VRo-Kb-yfT" firstAttribute="leading" secondItem="auR-X3-Wxf" secondAttribute="leading" id="I3j-oF-ZfL"/>
+                                            <constraint firstItem="WRg-TD-0ap" firstAttribute="leading" secondItem="auR-X3-Wxf" secondAttribute="leading" constant="16" id="KtC-XC-kJQ"/>
+                                            <constraint firstItem="auR-X3-Wxf" firstAttribute="trailing" secondItem="sZ4-V0-e0k" secondAttribute="trailing" constant="16" id="LQ1-gC-A1Q"/>
+                                            <constraint firstItem="auR-X3-Wxf" firstAttribute="trailing" secondItem="WRg-TD-0ap" secondAttribute="trailing" constant="16" id="SoP-6P-K02"/>
+                                            <constraint firstItem="xGS-a2-nXC" firstAttribute="top" secondItem="auR-X3-Wxf" secondAttribute="top" constant="16" id="TDB-Hb-NRd"/>
+                                            <constraint firstItem="ep7-f8-9A7" firstAttribute="leading" secondItem="auR-X3-Wxf" secondAttribute="leading" constant="16" id="VtA-kf-IcX"/>
+                                            <constraint firstItem="sZ4-V0-e0k" firstAttribute="leading" secondItem="auR-X3-Wxf" secondAttribute="leading" constant="16" id="aKC-7h-7Kp"/>
+                                            <constraint firstItem="xGS-a2-nXC" firstAttribute="leading" secondItem="auR-X3-Wxf" secondAttribute="leading" constant="16" id="hJe-gX-zo9"/>
+                                            <constraint firstItem="auR-X3-Wxf" firstAttribute="trailing" secondItem="VRo-Kb-yfT" secondAttribute="trailing" id="knh-Tl-dbB"/>
+                                            <constraint firstItem="auR-X3-Wxf" firstAttribute="trailing" secondItem="xGS-a2-nXC" secondAttribute="trailing" constant="16" id="mTp-vN-ocb"/>
+                                            <constraint firstItem="ep7-f8-9A7" firstAttribute="top" secondItem="xGS-a2-nXC" secondAttribute="bottom" constant="16" id="o4c-ik-nP8"/>
+                                            <constraint firstItem="WRg-TD-0ap" firstAttribute="top" secondItem="VRo-Kb-yfT" secondAttribute="bottom" constant="16" id="oBu-DQ-tfw"/>
+                                            <constraint firstItem="auR-X3-Wxf" firstAttribute="trailing" secondItem="ep7-f8-9A7" secondAttribute="trailing" constant="16" id="qKt-Aq-yaq"/>
+                                            <constraint firstAttribute="height" constant="1550" id="ubq-Hg-gxE"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="auR-X3-Wxf"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iss-3F-YFX" firstAttribute="top" secondItem="guj-XT-pfA" secondAttribute="top" id="91h-BN-7Zr"/>
+                                    <constraint firstAttribute="bottom" secondItem="iss-3F-YFX" secondAttribute="bottom" id="9jd-Ax-D6q"/>
+                                    <constraint firstItem="iss-3F-YFX" firstAttribute="leading" secondItem="guj-XT-pfA" secondAttribute="leading" id="F9p-be-zRe"/>
+                                    <constraint firstAttribute="trailing" secondItem="iss-3F-YFX" secondAttribute="trailing" id="mOy-JE-wlA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iss-3F-YFX" firstAttribute="width" secondItem="OPf-Em-ylr" secondAttribute="width" id="9fZ-Vy-WhH"/>
+                            <constraint firstItem="guj-XT-pfA" firstAttribute="bottom" secondItem="nJj-Pi-Xfm" secondAttribute="bottom" id="K7T-aZ-ZMb"/>
+                            <constraint firstItem="guj-XT-pfA" firstAttribute="trailing" secondItem="nJj-Pi-Xfm" secondAttribute="trailing" id="TRd-Qr-rko"/>
+                            <constraint firstItem="guj-XT-pfA" firstAttribute="leading" secondItem="nJj-Pi-Xfm" secondAttribute="leading" id="gUt-Nl-SDq"/>
+                            <constraint firstItem="guj-XT-pfA" firstAttribute="top" secondItem="nJj-Pi-Xfm" secondAttribute="top" id="nv0-RY-Nh5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nJj-Pi-Xfm"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="1550"/>
+                    <connections>
+                        <outlet property="locationView" destination="ep7-f8-9A7" id="ct2-c9-Og2"/>
+                        <outlet property="membersView" destination="sZ4-V0-e0k" id="iNE-9d-rtI"/>
+                        <outlet property="newsView" destination="WRg-TD-0ap" id="TvR-3Q-HaE"/>
+                        <outlet property="photosView" destination="VRo-Kb-yfT" id="78f-qr-Ys2"/>
+                        <outlet property="profileView" destination="xGS-a2-nXC" id="KQg-Dk-6pF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0l-Zh-oXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096.8" y="2036.5817091454273"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addPhotoIcon" width="29" height="28"/>

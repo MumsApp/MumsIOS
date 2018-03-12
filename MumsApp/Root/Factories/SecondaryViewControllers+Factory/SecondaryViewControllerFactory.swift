@@ -82,6 +82,14 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func organisationViewController() -> OrganisationViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.OrganisationViewController.rawValue, storyboard: storyboard) as! OrganisationViewController
+        
+        return controller
+        
+    }
+    
     func chatViewController() -> ChatViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ChatViewController.rawValue, storyboard: storyboard) as! ChatViewController

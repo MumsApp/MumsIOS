@@ -38,28 +38,6 @@ class ImageCell: UICollectionViewCell, Reusable {
         
         self.delegate?.selectedImage(tag: self.tag)
         
-//        self.delegate?.deselectOtherCells()
-
-//        self.layer.borderWidth = 3
-
-//        self.layer.borderColor = UIColor.mainGreen.cgColor
-        
-    }
-    
-    func select() {
-        
-        self.layer.borderWidth = 3
-        
-        self.layer.borderColor = UIColor.mainGreen.cgColor
-        
-    }
-
-    func deselect() {
-        
-        self.layer.borderWidth = 0
-        
-        self.layer.borderColor = UIColor.clear.cgColor
-
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {

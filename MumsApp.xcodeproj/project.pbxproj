@@ -108,6 +108,17 @@
 		4D69BA9C20514DF6006AB41D /* AddImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BA9B20514DF6006AB41D /* AddImageCell.swift */; };
 		4D69BA9E20514E18006AB41D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BA9D20514E18006AB41D /* ImageCell.swift */; };
 		4D69BAA020514E2A006AB41D /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D69BA9F20514E2A006AB41D /* ImageCell.xib */; };
+		4D69BAA22051811F006AB41D /* OrganisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BAA12051811E006AB41D /* OrganisationViewController.swift */; };
+		4D69BAA52051824B006AB41D /* OrganisationProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BAA42051824B006AB41D /* OrganisationProfileView.swift */; };
+		4D69BAA7205182A7006AB41D /* OrganisationProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D69BAA6205182A7006AB41D /* OrganisationProfileView.xib */; };
+		4D69BAAA2051872A006AB41D /* OrganisationPhotosView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D69BAA92051872A006AB41D /* OrganisationPhotosView.xib */; };
+		4D69BAAC2051874C006AB41D /* OrganisationPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BAAB2051874C006AB41D /* OrganisationPhotosView.swift */; };
+		4D69BAAE20518B0B006AB41D /* OrganisationNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BAAD20518B0B006AB41D /* OrganisationNewsView.swift */; };
+		4D69BAB020518B1C006AB41D /* OrganisationNewsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D69BAAF20518B1C006AB41D /* OrganisationNewsView.xib */; };
+		4D69BAB220518C08006AB41D /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D69BAB120518C08006AB41D /* NewsCell.xib */; };
+		4D69BAB420518C13006AB41D /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BAB320518C13006AB41D /* NewsCell.swift */; };
+		4D69BAB720519565006AB41D /* OrganisationMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69BAB620519565006AB41D /* OrganisationMembersView.swift */; };
+		4D69BAB92051956F006AB41D /* OrganisationMembersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D69BAB82051956F006AB41D /* OrganisationMembersView.xib */; };
 		4D76895E20248946002FC25D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76895D20248946002FC25D /* MenuViewController.swift */; };
 		4D8C63A1201C830600657FD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C63A0201C830600657FD7 /* String+Extensions.swift */; };
 		4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */; };
@@ -134,6 +145,8 @@
 		4DA49A532024B69900561EC9 /* VerticallyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA49A522024B69900561EC9 /* VerticallyButton.swift */; };
 		4DA49A552024B90E00561EC9 /* BubbleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA49A542024B90E00561EC9 /* BubbleTransition.swift */; };
 		4DAA14EA2020E458000B1CA0 /* LocationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */; };
+		4DAAAEC7205689D900A66981 /* MembersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAAEC6205689D900A66981 /* MembersCell.xib */; };
+		4DAAAEC9205689E900A66981 /* MembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAAEC8205689E900A66981 /* MembersCell.swift */; };
 		4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */; };
 		4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */; };
 		4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */; };
@@ -325,6 +338,17 @@
 		4D69BA9B20514DF6006AB41D /* AddImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageCell.swift; sourceTree = "<group>"; };
 		4D69BA9D20514E18006AB41D /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		4D69BA9F20514E2A006AB41D /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		4D69BAA12051811E006AB41D /* OrganisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationViewController.swift; sourceTree = "<group>"; };
+		4D69BAA42051824B006AB41D /* OrganisationProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationProfileView.swift; sourceTree = "<group>"; };
+		4D69BAA6205182A7006AB41D /* OrganisationProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrganisationProfileView.xib; sourceTree = "<group>"; };
+		4D69BAA92051872A006AB41D /* OrganisationPhotosView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrganisationPhotosView.xib; sourceTree = "<group>"; };
+		4D69BAAB2051874C006AB41D /* OrganisationPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationPhotosView.swift; sourceTree = "<group>"; };
+		4D69BAAD20518B0B006AB41D /* OrganisationNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationNewsView.swift; sourceTree = "<group>"; };
+		4D69BAAF20518B1C006AB41D /* OrganisationNewsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrganisationNewsView.xib; sourceTree = "<group>"; };
+		4D69BAB120518C08006AB41D /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		4D69BAB320518C13006AB41D /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		4D69BAB620519565006AB41D /* OrganisationMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationMembersView.swift; sourceTree = "<group>"; };
+		4D69BAB82051956F006AB41D /* OrganisationMembersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrganisationMembersView.xib; sourceTree = "<group>"; };
 		4D76895D20248946002FC25D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4D8C63A0201C830600657FD7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secondary.storyboard; sourceTree = "<group>"; };
@@ -351,6 +375,8 @@
 		4DA49A522024B69900561EC9 /* VerticallyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyButton.swift; sourceTree = "<group>"; };
 		4DA49A542024B90E00561EC9 /* BubbleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTransition.swift; sourceTree = "<group>"; };
 		4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPopupViewController.swift; sourceTree = "<group>"; };
+		4DAAAEC6205689D900A66981 /* MembersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembersCell.xib; sourceTree = "<group>"; };
+		4DAAAEC8205689E900A66981 /* MembersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCell.swift; sourceTree = "<group>"; };
 		4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
@@ -860,6 +886,42 @@
 			path = FacebookService;
 			sourceTree = "<group>";
 		};
+		4D69BAA320518129006AB41D /* Organisation */ = {
+			isa = PBXGroup;
+			children = (
+				4D69BAA12051811E006AB41D /* OrganisationViewController.swift */,
+				4D69BAA82051842A006AB41D /* Views */,
+			);
+			path = Organisation;
+			sourceTree = "<group>";
+		};
+		4D69BAA82051842A006AB41D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D69BAA6205182A7006AB41D /* OrganisationProfileView.xib */,
+				4D69BAA42051824B006AB41D /* OrganisationProfileView.swift */,
+				4D69BAA92051872A006AB41D /* OrganisationPhotosView.xib */,
+				4D69BAAB2051874C006AB41D /* OrganisationPhotosView.swift */,
+				4D69BAAF20518B1C006AB41D /* OrganisationNewsView.xib */,
+				4D69BAAD20518B0B006AB41D /* OrganisationNewsView.swift */,
+				4D69BAB82051956F006AB41D /* OrganisationMembersView.xib */,
+				4D69BAB620519565006AB41D /* OrganisationMembersView.swift */,
+				4D69BAB520518C17006AB41D /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D69BAB520518C17006AB41D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D69BAB120518C08006AB41D /* NewsCell.xib */,
+				4D69BAB320518C13006AB41D /* NewsCell.swift */,
+				4DAAAEC6205689D900A66981 /* MembersCell.xib */,
+				4DAAAEC8205689E900A66981 /* MembersCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		4D8F2D41201B56E900756CCB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,6 +1026,7 @@
 				4DE175072028C999001C5DD1 /* Chat */,
 				4DCB4E9F202227A1006962F9 /* Lobby */,
 				4DEE83EC201E17EA001B0AEB /* Profile */,
+				4D69BAA320518129006AB41D /* Organisation */,
 				4DE175172028E4FB001C5DD1 /* Shop */,
 				4DAA14EB2020E461000B1CA0 /* Popups */,
 			);
@@ -1297,20 +1360,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D69BAB92051956F006AB41D /* OrganisationMembersView.xib in Resources */,
+				4DAAAEC7205689D900A66981 /* MembersCell.xib in Resources */,
 				4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */,
 				4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */,
 				4D39D48E20348B60005123F8 /* PictureCell.xib in Resources */,
 				4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */,
 				4D05A8E31FE143C500B19E6E /* Assets.xcassets in Resources */,
 				4D69BA9620514364006AB41D /* AddProductImagesView.xib in Resources */,
+				4D69BAA7205182A7006AB41D /* OrganisationProfileView.xib in Resources */,
 				4D39D48820348365005123F8 /* ItemDescriptionView.xib in Resources */,
 				4DA306BD204450BA00250156 /* MyWishlistCell.xib in Resources */,
+				4D69BAB220518C08006AB41D /* NewsCell.xib in Resources */,
 				4D69BA9A20514BE8006AB41D /* AddImageCell.xib in Resources */,
 				4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */,
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
 				4D39D49F2034B281005123F8 /* MyProductCell.xib in Resources */,
 				4DE175052028C985001C5DD1 /* ChatCell.xib in Resources */,
+				4D69BAB020518B1C006AB41D /* OrganisationNewsView.xib in Resources */,
 				4DE1750B2028D3AA001C5DD1 /* ChatSettingsCell.xib in Resources */,
 				4DE175132028DCDE001C5DD1 /* ShopCell.xib in Resources */,
 				4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */,
@@ -1331,6 +1399,7 @@
 				4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */,
 				4DC2F8B5202C4D4300E331BD /* Terms.json in Resources */,
 				4DA306C420445BD700250156 /* ShopFilterCell.xib in Resources */,
+				4D69BAAA2051872A006AB41D /* OrganisationPhotosView.xib in Resources */,
 				4DE174FA2028A044001C5DD1 /* AddCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1552,6 +1621,7 @@
 				4D0F0C3D2049846E000F251C /* AddContactCell.swift in Sources */,
 				4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */,
 				4D0F0C3920497BF6000F251C /* UserViewController.swift in Sources */,
+				4D69BAAE20518B0B006AB41D /* OrganisationNewsView.swift in Sources */,
 				4D05A9611FE144A900B19E6E /* UICollectionView+Extensions.swift in Sources */,
 				4DE1750D2028D3B8001C5DD1 /* ChatSettingsCell.swift in Sources */,
 				4D0F0C37204976BD000F251C /* UIViewController+PhotoExtensions.swift in Sources */,
@@ -1612,6 +1682,7 @@
 				4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */,
 				4D39D49220349B66005123F8 /* AddProductViewController.swift in Sources */,
 				4D69BA982051436D006AB41D /* AddProductImagesView.swift in Sources */,
+				4D69BAB420518C13006AB41D /* NewsCell.swift in Sources */,
 				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,
 				4DE175012028C8B3001C5DD1 /* ChatViewController.swift in Sources */,
 				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
@@ -1624,6 +1695,8 @@
 				4D5ED8FA202246870020FD51 /* OffersCell.swift in Sources */,
 				4DCB4E9E20222795006962F9 /* LobbyViewController.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
+				4D69BAA22051811F006AB41D /* OrganisationViewController.swift in Sources */,
+				4D69BAA52051824B006AB41D /* OrganisationProfileView.swift in Sources */,
 				4DC2F8B9202C4E3100E331BD /* TermsCell.swift in Sources */,
 				4D36E701201E3859000DC94F /* TapticEngine.swift in Sources */,
 				4DE174F4202881ED001C5DD1 /* TransparentGreen+UIButton.swift in Sources */,
@@ -1642,6 +1715,7 @@
 				4D05A9451FE144A900B19E6E /* URLRequest+Task.swift in Sources */,
 				4DCB4EA3202229BF006962F9 /* LobbyCell.swift in Sources */,
 				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
+				4DAAAEC9205689E900A66981 /* MembersCell.swift in Sources */,
 				4D36E705201E4984000DC94F /* SchoolView.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
 				4DE0D99A20503774002C0759 /* Message.swift in Sources */,
@@ -1670,6 +1744,7 @@
 				4DFC270F1FE92C3E006020FF /* RegisterServiceParser.swift in Sources */,
 				4DA306C12044526C00250156 /* MyWishlistViewController.swift in Sources */,
 				4D05A9401FE144A900B19E6E /* MOTableViewCoordinator.swift in Sources */,
+				4D69BAAC2051874C006AB41D /* OrganisationPhotosView.swift in Sources */,
 				4DE174F820288C38001C5DD1 /* ProfileSettingsPopupViewController.swift in Sources */,
 				4DC27EC2201FBFE4000EE9FA /* CardsView.swift in Sources */,
 				4DC27EC0201FA9D5000EE9FA /* SchoolCell.swift in Sources */,
@@ -1688,6 +1763,7 @@
 				4D9DE8A6203E01B8005BDB37 /* UserData.swift in Sources */,
 				4DFC27141FE92CB2006020FF /* LoginServiceParser.swift in Sources */,
 				4D05A9471FE144A900B19E6E /* URLRequest+Methods.swift in Sources */,
+				4D69BAB720519565006AB41D /* OrganisationMembersView.swift in Sources */,
 				4D39D49A2034A107005123F8 /* MyProductsViewController.swift in Sources */,
 				4D05A9551FE144A900B19E6E /* MOUserDefaults+Secure.swift in Sources */,
 				4D39D49020349176005123F8 /* ShopMenuViewController.swift in Sources */,

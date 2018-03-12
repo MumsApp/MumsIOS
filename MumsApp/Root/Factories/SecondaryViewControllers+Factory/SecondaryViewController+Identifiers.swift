@@ -52,5 +52,7 @@ enum SecondaryViewController: String {
     
     case ConversationViewController
     
+    case OrganisationViewController
+    
 }
 

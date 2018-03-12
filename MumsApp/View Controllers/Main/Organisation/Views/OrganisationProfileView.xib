@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrganisationProfileView" customModule="MumsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="giu-6h-WwO" id="Vpk-jf-K2u"/>
+                <outlet property="followButton" destination="nUQ-gY-aju" id="BHZ-Sa-8pm"/>
+                <outlet property="organisationDescriptionTextView" destination="KqI-rQ-m0h" id="Lo4-6U-h70"/>
+                <outlet property="organisationImageView" destination="xmU-IN-M9l" id="ia1-Sv-Igw"/>
+                <outlet property="organisationNameLabel" destination="dBs-B9-FtI" id="wwW-EI-aT3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="giu-6h-WwO">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="xmU-IN-M9l">
+                    <rect key="frame" x="8" y="16" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="Axj-2i-U9P"/>
+                        <constraint firstAttribute="height" constant="70" id="wjS-Rh-tqm"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUQ-gY-aju" customClass="OnboardingGreenButton" customModule="MumsApp" customModuleProvider="target">
+                    <rect key="frame" x="295" y="34" width="80" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="76V-YT-j5Z"/>
+                        <constraint firstAttribute="width" constant="80" id="NpU-RL-M9v"/>
+                    </constraints>
+                    <state key="normal" title="Follow"/>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KqI-rQ-m0h">
+                    <rect key="frame" x="8" y="119" width="359" height="81"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <string key="text">Vestibulum commodo dui sed accumsan venenatis. Suspendisse tempor maximus enim ut molestie.Vestibulum commodo dui sed accumsan venenatis. Suspendisse tempor maximus enim ut molestie.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARJ-D3-bD5">
+                    <rect key="frame" x="8" y="102" width="359" height="1"/>
+                    <color key="backgroundColor" red="0.90588235294117647" green="0.92156862745098034" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="arW-5H-LX0"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name and last name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBs-B9-FtI">
+                    <rect key="frame" x="94" y="41" width="193" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xmU-IN-M9l" firstAttribute="leading" secondItem="N8D-24-0bi" secondAttribute="leading" constant="8" id="0Fw-Re-jfq"/>
+                <constraint firstItem="dBs-B9-FtI" firstAttribute="centerY" secondItem="xmU-IN-M9l" secondAttribute="centerY" id="0Tk-Zd-rMx"/>
+                <constraint firstItem="N8D-24-0bi" firstAttribute="trailing" secondItem="nUQ-gY-aju" secondAttribute="trailing" id="1KC-3g-DrS"/>
+                <constraint firstItem="ARJ-D3-bD5" firstAttribute="top" secondItem="xmU-IN-M9l" secondAttribute="bottom" constant="16" id="5j6-Oi-bW1"/>
+                <constraint firstItem="N8D-24-0bi" firstAttribute="trailing" secondItem="KqI-rQ-m0h" secondAttribute="trailing" constant="8" id="6JM-90-QfO"/>
+                <constraint firstItem="dBs-B9-FtI" firstAttribute="leading" secondItem="xmU-IN-M9l" secondAttribute="trailing" constant="16" id="8at-hH-fx1"/>
+                <constraint firstItem="KqI-rQ-m0h" firstAttribute="leading" secondItem="N8D-24-0bi" secondAttribute="leading" constant="8" id="Jkd-na-hmF"/>
+                <constraint firstItem="ARJ-D3-bD5" firstAttribute="leading" secondItem="N8D-24-0bi" secondAttribute="leading" constant="8" id="Jvr-ud-hzP"/>
+                <constraint firstItem="nUQ-gY-aju" firstAttribute="centerY" secondItem="dBs-B9-FtI" secondAttribute="centerY" id="kkb-ua-e5j"/>
+                <constraint firstItem="xmU-IN-M9l" firstAttribute="top" secondItem="N8D-24-0bi" secondAttribute="top" constant="16" id="lYK-sA-cPy"/>
+                <constraint firstItem="N8D-24-0bi" firstAttribute="bottom" secondItem="KqI-rQ-m0h" secondAttribute="bottom" constant="20" id="mk2-zF-RLA"/>
+                <constraint firstItem="nUQ-gY-aju" firstAttribute="leading" secondItem="dBs-B9-FtI" secondAttribute="trailing" constant="8" id="sqc-Q4-fBp"/>
+                <constraint firstItem="KqI-rQ-m0h" firstAttribute="top" secondItem="ARJ-D3-bD5" secondAttribute="bottom" constant="16" id="t6M-SB-w06"/>
+                <constraint firstItem="N8D-24-0bi" firstAttribute="trailing" secondItem="ARJ-D3-bD5" secondAttribute="trailing" constant="8" id="vd3-ob-zbc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="N8D-24-0bi"/>
+            <point key="canvasLocation" x="34.5" y="-190"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholderImage" width="163" height="152"/>
+    </resources>
+</document>
