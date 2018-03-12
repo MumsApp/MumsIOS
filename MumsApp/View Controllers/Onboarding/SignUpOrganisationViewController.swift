@@ -49,7 +49,7 @@ class SignUpOrganisationViewController: UIViewController {
     
     func configureView() {
         
-        self.view.backgroundColor = .backgroundWhite
+        self.contentView.backgroundColor = .backgroundWhite
         
         self.activityIndicator.isHidden = true
         
@@ -95,7 +95,7 @@ class SignUpOrganisationViewController: UIViewController {
     
     func backButtonPressed(sender: UIBarButtonItem) {
         
-        self.popToViewController(WelcomeViewController.self)
+        self.navigationController?.popViewController(animated: true)
         
     }
     

@@ -75,8 +75,8 @@ class SignInViewController: UIViewController {
     
     func configureView() {
         
-        self.view.backgroundColor = .backgroundWhite
-        
+        self.contentView.backgroundColor = .backgroundWhite
+
         self.orLabel.font = .regular(size: 15)
         
         self.orLabel.textColor = .mainDarkGrey
