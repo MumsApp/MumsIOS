@@ -249,9 +249,9 @@ extension MainRootViewController: MenuDelegate {
             
         case .profile:
             
-            controller = factory.organisationViewController()
+//            controller = factory.organisationViewController()
 
-//            controller = factory.profileViewController()
+            controller = factory.profileViewController()
             
         case .shop:
             

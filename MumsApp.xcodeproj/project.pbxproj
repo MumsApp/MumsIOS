@@ -60,6 +60,7 @@
 		4D0F0C3920497BF6000F251C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3820497BF6000F251C /* UserViewController.swift */; };
 		4D0F0C3B204983EC000F251C /* RemoveContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3A204983EC000F251C /* RemoveContactCell.swift */; };
 		4D0F0C3D2049846E000F251C /* AddContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3C2049846E000F251C /* AddContactCell.swift */; };
+		4D1933E920569E7F006D6D5B /* SignUpOrganisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933E820569E7F006D6D5B /* SignUpOrganisationViewController.swift */; };
 		4D1B3D772035FB0100C2618B /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */; };
 		4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */; };
 		4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6F0201E31E1000DC94F /* CustomMapView.swift */; };
@@ -290,6 +291,7 @@
 		4D0F0C3820497BF6000F251C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		4D0F0C3A204983EC000F251C /* RemoveContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveContactCell.swift; sourceTree = "<group>"; };
 		4D0F0C3C2049846E000F251C /* AddContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactCell.swift; sourceTree = "<group>"; };
+		4D1933E820569E7F006D6D5B /* SignUpOrganisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOrganisationViewController.swift; sourceTree = "<group>"; };
 		4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		4D36E6F0201E31E1000DC94F /* CustomMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
@@ -765,9 +767,10 @@
 				4D05A8DA1FE143C500B19E6E /* SignUpViewController.swift */,
 				4DC677552017870000F34184 /* SignInViewController.swift */,
 				4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */,
-				4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */,
 				4DC2F8B6202C4DB400E331BD /* TermsViewController.swift */,
 				4DC2F8B8202C4E3100E331BD /* TermsCell.swift */,
+				4DC67757201789D600F34184 /* CreateOfficialPageViewController.swift */,
+				4D1933E820569E7F006D6D5B /* SignUpOrganisationViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -1646,6 +1649,7 @@
 				4DCB4E9C2022263B006962F9 /* CustomGreenSwitch.swift in Sources */,
 				4DBEE64220206524006E2C06 /* Exceptions.swift in Sources */,
 				4D05A9491FE144A900B19E6E /* ConnectionHelper+Extension.swift in Sources */,
+				4D1933E920569E7F006D6D5B /* SignUpOrganisationViewController.swift in Sources */,
 				4D36E700201E3859000DC94F /* RangeSeekSlider.swift in Sources */,
 				4D05A9811FE14E5600B19E6E /* PrimaryViewControllerFactory.swift in Sources */,
 				4D05A9411FE144A900B19E6E /* MOCollectionViewCoordinator.swift in Sources */,

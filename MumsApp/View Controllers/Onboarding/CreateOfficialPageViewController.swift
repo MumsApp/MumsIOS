@@ -54,9 +54,25 @@ class CreateOfficialPageViewController: UIViewController {
     }
     
     @IBAction func advertiseButtonPressed(_ sender: UIButton) {
+    
+        self.showSignUpOrganisationViewController()
+    
     }
     
     @IBAction func schoolButtonPressed(_ sender: UIButton) {
+   
+        self.showSignUpOrganisationViewController()
+
+    }
+    
+    private func showSignUpOrganisationViewController() {
+        
+        let factory = PrimaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.signUpOrganisationViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
     }
     
 }

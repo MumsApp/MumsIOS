@@ -106,5 +106,13 @@ class PrimaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func signUpOrganisationViewController() -> SignUpOrganisationViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: PrimaryViewController.SignUpOrganisationViewController.rawValue, storyboard: storyboard) as! SignUpOrganisationViewController
+        
+        return controller
+        
+    }
+    
 }
 

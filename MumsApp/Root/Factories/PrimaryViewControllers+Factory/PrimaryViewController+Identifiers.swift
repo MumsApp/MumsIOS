@@ -10,5 +10,6 @@ enum PrimaryViewController: String {
     case CreateOfficialPageViewController
     case ForgotPasswordViewController
     case TermsViewController
+    case SignUpOrganisationViewController
     
 }
