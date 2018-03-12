@@ -62,6 +62,7 @@
 		4D0F0C3D2049846E000F251C /* AddContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3C2049846E000F251C /* AddContactCell.swift */; };
 		4D1933E920569E7F006D6D5B /* SignUpOrganisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933E820569E7F006D6D5B /* SignUpOrganisationViewController.swift */; };
 		4D1933EB2056CC4D006D6D5B /* UserNamePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933EA2056CC4C006D6D5B /* UserNamePopupViewController.swift */; };
+		4D1933ED2056FAEF006D6D5B /* GoogleMaps+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933EC2056FAEF006D6D5B /* GoogleMaps+Extensions.swift */; };
 		4D1B3D772035FB0100C2618B /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */; };
 		4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */; };
 		4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6F0201E31E1000DC94F /* CustomMapView.swift */; };
@@ -294,6 +295,7 @@
 		4D0F0C3C2049846E000F251C /* AddContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactCell.swift; sourceTree = "<group>"; };
 		4D1933E820569E7F006D6D5B /* SignUpOrganisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOrganisationViewController.swift; sourceTree = "<group>"; };
 		4D1933EA2056CC4C006D6D5B /* UserNamePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNamePopupViewController.swift; sourceTree = "<group>"; };
+		4D1933EC2056FAEF006D6D5B /* GoogleMaps+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMaps+Extensions.swift"; sourceTree = "<group>"; };
 		4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		4D36E6F0201E31E1000DC94F /* CustomMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
@@ -938,6 +940,7 @@
 				4DE174F5202886B9001C5DD1 /* UIDevice+Extensions.swift */,
 				4DC2F8BC202C4FB300E331BD /* JSON+Extensions.swift */,
 				4D403BD3204AE15500956939 /* UICollectionViewCell.swift */,
+				4D1933EC2056FAEF006D6D5B /* GoogleMaps+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1479,6 +1482,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MumsApp/Pods-MumsApp-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1761,6 +1765,7 @@
 				4D9DE8AA203E0355005BDB37 /* Children.swift in Sources */,
 				4D05A97A1FE14BE100B19E6E /* ServiceFactory.swift in Sources */,
 				4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */,
+				4D1933ED2056FAEF006D6D5B /* GoogleMaps+Extensions.swift in Sources */,
 				4D9DE8AC203E04A3005BDB37 /* Photo.swift in Sources */,
 				4D0F0C31204972BE000F251C /* AddMembersViewController.swift in Sources */,
 				4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */,

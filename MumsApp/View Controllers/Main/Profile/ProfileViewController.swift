@@ -18,6 +18,8 @@ class ProfileViewController: UIViewController {
 
     fileprivate weak var userNamePopupViewController: UserNamePopupViewController?
     
+    fileprivate var userDetails: UserDetails!
+    
     func configureWith(userDetailsService: UserDetailsService) {
         
         self.userDetailsService = userDetailsService
@@ -110,9 +112,9 @@ class ProfileViewController: UIViewController {
                 
                 }
                 
-                let details = UserDetails(dictionary: dictionary)
+                self.userDetails = UserDetails(dictionary: dictionary)
                 
-                self.configureViewWithData(userDetails: details)
+                self.configureViewWithData(userDetails: self.userDetails)
                 
             }
             
@@ -133,6 +135,12 @@ class ProfileViewController: UIViewController {
         if let description = userDetails.description {
             
             self.profileView.userDescriptionLabel.text = description
+            
+        }
+        
+        if let location = userDetails.location {
+            
+            self.locationView.mapView.addMarker(lat: Double(location.lat!)!, lon: Double(location.lon!)!)
             
         }
         
@@ -240,6 +248,8 @@ extension ProfileViewController: LocationViewDelegate {
         controller.modalPresentationStyle = .overCurrentContext
         
         controller.modalTransitionStyle = .crossDissolve
+        
+        controller.locationOptional = self.userDetails.location
         
         self.presentViewController(controller)
         

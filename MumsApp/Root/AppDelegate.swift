@@ -4,6 +4,7 @@ import Fabric
 import Crashlytics
 import GoogleMaps
 import GoogleSignIn
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -73,6 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         
         GMSServices.provideAPIKey(GOOGLE_MAPS_KEY)
+        
+        GMSPlacesClient.provideAPIKey(GOOGLE_MAPS_KEY)
         
         GIDSignIn.sharedInstance().clientID = GOOGLE_SIGNIN_KEY
         

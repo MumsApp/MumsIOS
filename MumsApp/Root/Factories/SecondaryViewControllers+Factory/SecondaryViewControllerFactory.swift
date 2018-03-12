@@ -55,6 +55,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LocationPopupViewController.rawValue, storyboard: storyboard) as! LocationPopupViewController
         
+        controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService())
+        
         return controller
         
     }

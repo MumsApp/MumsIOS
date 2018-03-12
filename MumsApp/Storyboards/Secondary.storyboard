@@ -364,15 +364,6 @@ OFFERS     </string>
                                             <action selector="doneButtonPressed:" destination="TaB-fe-D7R" eventType="touchUpInside" id="iEi-fd-A0s"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YN3-Em-gZe" customClass="OnboardingTextField" customModule="MumsApp" customModuleProvider="target">
-                                        <rect key="frame" x="39" y="313" width="300" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="GPi-fL-Y9F"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
-                                    </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sf-V6-Y2M">
                                         <rect key="frame" x="20" y="351" width="319" height="1"/>
                                         <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -390,32 +381,49 @@ OFFERS     </string>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationGreyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cJd-ap-HD1">
                                         <rect key="frame" x="20" y="321" width="11" height="15"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny6-ga-8TQ">
+                                        <rect key="frame" x="39" y="313" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="rAe-z8-ksS"/>
+                                        </constraints>
+                                        <state key="normal" title="Enter location">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="enterLocationButtonPressed:" destination="TaB-fe-D7R" eventType="touchUpInside" id="NdS-Lt-xal"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="PWg-Oz-8H2">
+                                        <rect key="frame" x="169" y="386" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="eJA-ch-fSm" secondAttribute="trailing" id="0hb-Bh-ywE"/>
                                     <constraint firstAttribute="trailing" secondItem="6Wr-1q-xli" secondAttribute="trailing" constant="20" id="0qg-sT-xf7"/>
-                                    <constraint firstItem="9sf-V6-Y2M" firstAttribute="top" secondItem="YN3-Em-gZe" secondAttribute="bottom" constant="8" id="2p5-eS-62L"/>
                                     <constraint firstAttribute="bottom" secondItem="6Wr-1q-xli" secondAttribute="bottom" constant="20" id="2ya-AY-dOL"/>
-                                    <constraint firstItem="cJd-ap-HD1" firstAttribute="centerY" secondItem="YN3-Em-gZe" secondAttribute="centerY" id="4xr-Cb-kWs"/>
                                     <constraint firstItem="6Wr-1q-xli" firstAttribute="leading" secondItem="Qou-7L-oEK" secondAttribute="leading" constant="20" id="7JY-Ch-xgq"/>
-                                    <constraint firstItem="YN3-Em-gZe" firstAttribute="trailing" secondItem="9sf-V6-Y2M" secondAttribute="trailing" id="7Th-uh-IZd"/>
                                     <constraint firstItem="5gk-gk-Ceb" firstAttribute="leading" secondItem="Qou-7L-oEK" secondAttribute="leading" id="7uy-sf-hYh"/>
                                     <constraint firstAttribute="height" constant="440" id="8mt-yH-zdB"/>
                                     <constraint firstItem="ZKT-b4-MgQ" firstAttribute="top" secondItem="eJA-ch-fSm" secondAttribute="bottom" id="9dM-8B-iyx"/>
+                                    <constraint firstItem="cJd-ap-HD1" firstAttribute="centerY" secondItem="Ny6-ga-8TQ" secondAttribute="centerY" id="Ggx-n0-7c9"/>
                                     <constraint firstItem="eJA-ch-fSm" firstAttribute="top" secondItem="5gk-gk-Ceb" secondAttribute="bottom" id="HQj-6k-QYZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ny6-ga-8TQ" secondAttribute="trailing" constant="20" id="I4M-xO-KWk"/>
                                     <constraint firstItem="9sf-V6-Y2M" firstAttribute="leading" secondItem="Qou-7L-oEK" secondAttribute="leading" constant="20" id="JMG-ny-YaE"/>
                                     <constraint firstItem="6Wr-1q-xli" firstAttribute="top" secondItem="9sf-V6-Y2M" secondAttribute="bottom" constant="20" id="KT3-vq-jor"/>
                                     <constraint firstItem="6Wr-1q-xli" firstAttribute="centerX" secondItem="Qou-7L-oEK" secondAttribute="centerX" id="OZs-ar-dlH"/>
                                     <constraint firstItem="5gk-gk-Ceb" firstAttribute="top" secondItem="Qou-7L-oEK" secondAttribute="top" id="P1y-ru-6xa"/>
                                     <constraint firstAttribute="trailing" secondItem="5gk-gk-Ceb" secondAttribute="trailing" id="PqN-52-aLB"/>
                                     <constraint firstItem="9sf-V6-Y2M" firstAttribute="centerX" secondItem="Qou-7L-oEK" secondAttribute="centerX" id="RbN-in-oC0"/>
+                                    <constraint firstItem="PWg-Oz-8H2" firstAttribute="centerX" secondItem="6Wr-1q-xli" secondAttribute="centerX" id="T2Y-TC-QaK"/>
                                     <constraint firstItem="cJd-ap-HD1" firstAttribute="leading" secondItem="9sf-V6-Y2M" secondAttribute="leading" id="Ukq-9J-e5T"/>
                                     <constraint firstAttribute="trailing" secondItem="9sf-V6-Y2M" secondAttribute="trailing" constant="20" id="Xte-lO-7Kj"/>
+                                    <constraint firstItem="9sf-V6-Y2M" firstAttribute="top" secondItem="Ny6-ga-8TQ" secondAttribute="bottom" constant="8" id="cZJ-c8-ael"/>
                                     <constraint firstItem="eJA-ch-fSm" firstAttribute="leading" secondItem="Qou-7L-oEK" secondAttribute="leading" id="coB-8X-kmy"/>
+                                    <constraint firstItem="PWg-Oz-8H2" firstAttribute="centerY" secondItem="6Wr-1q-xli" secondAttribute="centerY" id="fZL-rN-tff"/>
                                     <constraint firstAttribute="trailing" secondItem="ZKT-b4-MgQ" secondAttribute="trailing" id="ilu-Gy-YkN"/>
                                     <constraint firstItem="ZKT-b4-MgQ" firstAttribute="leading" secondItem="Qou-7L-oEK" secondAttribute="leading" id="k6B-qF-00z"/>
-                                    <constraint firstItem="YN3-Em-gZe" firstAttribute="leading" secondItem="cJd-ap-HD1" secondAttribute="trailing" constant="8" id="nZZ-xc-oWG"/>
+                                    <constraint firstItem="Ny6-ga-8TQ" firstAttribute="leading" secondItem="cJd-ap-HD1" secondAttribute="trailing" constant="8" id="wgy-eQ-ebs"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -435,7 +443,8 @@ OFFERS     </string>
                         <outlet property="closeButton" destination="yMx-qd-QH7" id="ACf-3g-GCK"/>
                         <outlet property="containerView" destination="Qou-7L-oEK" id="EWS-o9-xh5"/>
                         <outlet property="doneButton" destination="6Wr-1q-xli" id="5xj-Cf-MCS"/>
-                        <outlet property="locationTextField" destination="YN3-Em-gZe" id="ucQ-n4-a2O"/>
+                        <outlet property="enterLocationButton" destination="Ny6-ga-8TQ" id="Igg-9Z-LaQ"/>
+                        <outlet property="loadingIndicator" destination="PWg-Oz-8H2" id="hQy-6n-Oae"/>
                         <outlet property="mapView" destination="eJA-ch-fSm" id="SjW-2X-Nbr"/>
                         <outlet property="titleLabel" destination="sma-iW-DK4" id="Ap0-S5-bfg"/>
                     </connections>

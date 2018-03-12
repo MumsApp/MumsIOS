@@ -19,6 +19,8 @@ PODS:
   - GoogleMaps/Base (2.5.0)
   - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
+  - GooglePlaces (2.5.0):
+    - GoogleMaps/Base (= 2.5.0)
   - GoogleSignIn (4.1.1):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -59,6 +61,7 @@ DEPENDENCIES:
   - Crashlytics (~> 3.9.3)
   - FBSDKLoginKit (~> 4.29.0)
   - GoogleMaps (~> 2.5.0)
+  - GooglePlaces
   - GoogleSignIn
   - MessageKit (~> 0.10.2)
   - ReachabilitySwift (~> 3)
@@ -85,6 +88,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   GoogleSignIn: 3fdaa34a2ba04dbd7a25d7db39aecb0da98d5bdc
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
@@ -96,6 +100,6 @@ SPEC CHECKSUMS:
   SwipeCellKit: e9ff953c820394a4e641cfb0118b6c959506aec2
   XCGLogger: 49bceee6dc0c738eae5d6454fdbf800d62256b74
 
-PODFILE CHECKSUM: c2ad0a1d80dbe49dd88ef6531a5c810b39032100
+PODFILE CHECKSUM: a69c8406acf723f9c241540c7b43d08b38fff1ce
 
 COCOAPODS: 1.3.1

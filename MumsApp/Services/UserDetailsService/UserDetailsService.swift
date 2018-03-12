@@ -88,7 +88,7 @@ struct UserDetailsService: ResourceService {
 
     // MARK: - UPDATE LOCATION
 
-    func updateUserLocation(id: String, token: String, name: String, placeID: Int, lat: Double, lon: Double, formattedAddress: String, completion: @escaping ErrorCompletion) {
+    func updateUserLocation(id: String, token: String, name: String, placeID: String, lat: Double, lon: Double, formattedAddress: String, completion: @escaping ErrorCompletion) {
         
         let pathParameters = [k_id: id]
         
