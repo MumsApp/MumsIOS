@@ -13,7 +13,7 @@ class CustomMapView: GMSMapView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.isUserInteractionEnabled = false
+        self.isUserInteractionEnabled = true
         
         self.configureMap()
         

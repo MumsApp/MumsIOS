@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMaps
 
 class ProfileViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class ProfileViewController: UIViewController {
 
     fileprivate weak var userNamePopupViewController: UserNamePopupViewController?
     
-    fileprivate var userDetails: UserDetails!
+    fileprivate var userDetails: UserDetails?
     
     func configureWith(userDetailsService: UserDetailsService) {
         
@@ -114,7 +115,7 @@ class ProfileViewController: UIViewController {
                 
                 self.userDetails = UserDetails(dictionary: dictionary)
                 
-                self.configureViewWithData(userDetails: self.userDetails)
+                self.configureViewWithData(userDetails: self.userDetails!)
                 
             }
             
@@ -141,6 +142,14 @@ class ProfileViewController: UIViewController {
         if let location = userDetails.location {
             
             self.locationView.mapView.addMarker(lat: Double(location.lat!)!, lon: Double(location.lon!)!)
+            
+            let locationCoordinate = CLLocationCoordinate2D(latitude: Double(location.lat!)!, longitude: Double(location.lon!)!)
+
+            let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 7)
+            
+            self.locationView.mapView.animate(with: cameraUpdate)
+
+            self.locationView.userLocationLabel.text = location.formattedAddress
             
         }
         
@@ -249,7 +258,11 @@ extension ProfileViewController: LocationViewDelegate {
         
         controller.modalTransitionStyle = .crossDissolve
         
-        controller.locationOptional = self.userDetails.location
+        if let location = self.userDetails?.location {
+
+            controller.locationOptional = location
+
+        }
         
         self.presentViewController(controller)
         

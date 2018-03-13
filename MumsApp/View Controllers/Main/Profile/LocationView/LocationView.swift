@@ -75,6 +75,8 @@ class LocationView: UIView {
         
         self.showSwitch.isOn = false
         
+        self.mapView.animate(toZoom: 15)
+        
     }
     
     @IBAction func showSwitchValueChanged(_ sender: UISwitch) {
