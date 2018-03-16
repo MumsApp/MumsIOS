@@ -6,6 +6,7 @@ enum ControllerType {
     case chat
     case profile
     case shop
+    case offers
     
 }
 
@@ -231,6 +232,12 @@ extension MainRootViewController: MenuDelegate {
     
     }
     
+    func offersButtonPressed() {
+        
+        self.showViewController(type: .offers)
+        
+    }
+    
     func showViewController(type: ControllerType) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
@@ -256,7 +263,11 @@ extension MainRootViewController: MenuDelegate {
         case .shop:
             
             controller = factory.shopViewController()
+         
+        case .offers:
             
+            controller = factory.offersViewController()
+        
         }
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)

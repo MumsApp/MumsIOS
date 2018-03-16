@@ -6,6 +6,7 @@ protocol MenuDelegate: class {
     func profileButtonPressed()
     func chatButtonPressed()
     func shopButtonPressed()
+    func offersButtonPressed()
     
 }
 
@@ -53,6 +54,9 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func offersButtonPressed(_ sender: UIButton) {
+    
+        self.delegate?.offersButtonPressed()
+    
     }
     
 }

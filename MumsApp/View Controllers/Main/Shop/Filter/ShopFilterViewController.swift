@@ -12,6 +12,8 @@ class ShopFilterViewController: UIViewController {
     
     @IBOutlet weak var selectCategoryButton: UIButton!
     
+    @IBOutlet weak var selectCategoryImageView: UIImageView!
+    
     @IBOutlet weak var priceRangeTitleLabel: UILabel!
     
     @IBOutlet weak var freeLabel: UILabel!
@@ -59,8 +61,8 @@ class ShopFilterViewController: UIViewController {
         
         self.distanceContainer.addShadow()
         
-       
         self.selectCategoryButton.titleLabel?.font = .regular(size: 12)
+        
         self.selectCategoryButton.setTitleColor(.mainDarkGrey, for: .normal)
         
         self.freeLabel.font = .regular(size: 12)
@@ -120,9 +122,34 @@ class ShopFilterViewController: UIViewController {
     }
     
     @IBAction func selectCategoryButtonPressed(_ sender: UIButton) {
+    
+        self.showShopCategoriesViewController()
+        
     }
     
     @IBAction func setLocationButtonPressed(_ sender: UIButton) {
+    }
+    
+    private func showShopCategoriesViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.shopCategoriesViewController(delegate: self)
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+}
+
+extension ShopFilterViewController: ShopCategoriesViewControllerDelegate {
+    
+    func categorySelected(title: String) {
+        
+        self.selectCategoryButton.setTitle(title, for: .normal)
+        
+        self.selectCategoryImageView.image = nil
+        
     }
     
 }

@@ -254,4 +254,23 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func offersViewController() -> OffersViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.OffersViewController.rawValue, storyboard: storyboard) as! OffersViewController
+        
+        return controller
+        
+    }
+    
+    func shopCategoriesViewController(delegate: ShopCategoriesViewControllerDelegate?) -> ShopCategoriesViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopCategoriesViewController.rawValue, storyboard: storyboard) as! ShopCategoriesViewController
+        
+        controller.configureWith(delegate: delegate)
+        
+        return controller
+        
+    }
+    
+    
 }

@@ -56,5 +56,9 @@ enum SecondaryViewController: String {
     
     case UserNamePopupViewController
     
+    case OffersViewController
+    
+    case ShopCategoriesViewController
+    
 }
 
