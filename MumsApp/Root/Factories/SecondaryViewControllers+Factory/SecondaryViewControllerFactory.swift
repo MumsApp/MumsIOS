@@ -272,5 +272,20 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func promotionViewController() -> PromotionViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.PromotionViewController.rawValue, storyboard: storyboard) as! PromotionViewController
+        
+        return controller
+        
+    }
+    
+    func promotionPopupViewController() -> PromotionPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.PromotionPopupViewController.rawValue, storyboard: storyboard) as! PromotionPopupViewController
+        
+        return controller
+        
+    }
     
 }

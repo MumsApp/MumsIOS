@@ -2,6 +2,10 @@ import UIKit
 
 class CreateCategoryViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var contentView: UIView!
+    
     @IBOutlet weak var categoryContainerView: UIView!
     
     @IBOutlet weak var publicCategoryLabel: UILabel!
@@ -41,6 +45,10 @@ class CreateCategoryViewController: UIViewController {
 
         self.configureNavigationBar()
         
+        self.addNotifationsForKeyboard()
+
+        self.addGestureRecognizerToContentView()
+
     }
     
     private func configureView() {
@@ -89,6 +97,8 @@ class CreateCategoryViewController: UIViewController {
         
         self.imagePicker.delegate = self
 
+        self.titleTextField.delegate = self
+        
     }
     
     private func configureNavigationBar() {
@@ -118,6 +128,52 @@ class CreateCategoryViewController: UIViewController {
     
     }
 
+    private func addNotifationsForKeyboard() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    
+    func keyboardWasShown(notification: Notification) {
+        
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        
+        let keyboardInfo = userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue
+        
+        let keyboardSize = keyboardInfo.cgRectValue.size
+        
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        
+        self.scrollView.contentInset = contentInsets
+        
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+    }
+    
+    func keyboardWasHide(notification: Notification) {
+        
+        self.scrollView.contentInset = .zero
+        
+        self.scrollView.scrollIndicatorInsets = .zero
+        
+    }
+    
+    private func addGestureRecognizerToContentView() {
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.contentViewPressed(sender:)))
+        
+        self.contentView.addGestureRecognizer(gesture)
+        
+    }
+    
+    func contentViewPressed(sender: UITapGestureRecognizer) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
     func doneButtonPressed(sender: UIBarButtonItem) {
         
         
@@ -166,6 +222,18 @@ extension CreateCategoryViewController: UIImagePickerControllerDelegate, UINavig
         }
         
         self.dismissViewController()
+        
+    }
+    
+}
+
+extension CreateCategoryViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
         
     }
     

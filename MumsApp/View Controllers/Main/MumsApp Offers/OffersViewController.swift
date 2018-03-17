@@ -81,10 +81,20 @@ extension OffersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        self.showPromotionViewController()
         
     }
     
+    private func showPromotionViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.promotionViewController()
+    
+        self.navigationController?.pushViewController(controller, animated: true)
+    
+    }
+
 }
 
 extension OffersViewController: UISearchBarDelegate {
