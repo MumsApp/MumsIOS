@@ -62,6 +62,12 @@ class LocationPopupViewController: UIViewController {
         
         self.mapView.addMarker(lat: Double(location.lat!)!, lon: Double(location.lon!)!)
         
+        let locationCoordinate = CLLocationCoordinate2D(latitude: Double(location.lat!)!, longitude: Double(location.lon!)!)
+        
+        let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
+        
+        self.mapView.animate(with: cameraUpdate)
+        
     }
     
     @IBAction func enterLocationButtonPressed(_ sender: UIButton) {

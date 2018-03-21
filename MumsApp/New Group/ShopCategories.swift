@@ -51,8 +51,3 @@ struct ShopCategories {
     ]
 
 }
-
-
-
-
-

@@ -74,9 +74,7 @@ class LocationView: UIView {
         self.editButton.isHidden = true
         
         self.showSwitch.isOn = false
-        
-        self.mapView.animate(toZoom: 15)
-        
+                
     }
     
     @IBAction func showSwitchValueChanged(_ sender: UISwitch) {

@@ -145,11 +145,13 @@ class ProfileViewController: UIViewController {
             
             let locationCoordinate = CLLocationCoordinate2D(latitude: Double(location.lat!)!, longitude: Double(location.lon!)!)
 
-            let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 7)
+            let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
             
             self.locationView.mapView.animate(with: cameraUpdate)
 
             self.locationView.userLocationLabel.text = location.formattedAddress
+            
+            self.showSwitchValueChanged(isVisible: true)
             
         }
         
