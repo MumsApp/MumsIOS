@@ -147,9 +147,25 @@ OFFERS     </string>
                                             <action selector="findButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="him-2a-dFj"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-Q2-TfU" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.5" y="393" width="111" height="71"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="schoolDaysIcon">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="SCHOOL">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="ENo-Q2-TfU" firstAttribute="centerX" secondItem="k1P-ar-YCZ" secondAttribute="centerX" id="6tT-E7-x4E"/>
                                     <constraint firstAttribute="bottom" secondItem="04q-Ge-EXJ" secondAttribute="bottom" constant="8" id="73V-v5-sw8"/>
                                     <constraint firstItem="18h-5V-aI1" firstAttribute="centerX" secondItem="TfO-5O-xuJ" secondAttribute="centerX" id="Fnb-fM-zGo"/>
                                     <constraint firstItem="04q-Ge-EXJ" firstAttribute="top" secondItem="J62-GQ-M4c" secondAttribute="bottom" constant="8" id="GpG-gZ-W3q"/>
@@ -157,6 +173,7 @@ OFFERS     </string>
                                     <constraint firstItem="uL9-cn-ZFj" firstAttribute="top" secondItem="k1P-ar-YCZ" secondAttribute="bottom" constant="8" id="QZ4-pi-0iT"/>
                                     <constraint firstItem="BqE-9r-bEF" firstAttribute="top" secondItem="18h-5V-aI1" secondAttribute="bottom" constant="50" id="U1r-hj-BkT"/>
                                     <constraint firstItem="BqE-9r-bEF" firstAttribute="centerX" secondItem="TfO-5O-xuJ" secondAttribute="centerX" id="Ub4-E2-vlN"/>
+                                    <constraint firstItem="ENo-Q2-TfU" firstAttribute="centerY" secondItem="yiW-EH-8dr" secondAttribute="centerY" constant="30" id="WJh-R5-HY4"/>
                                     <constraint firstItem="BqE-9r-bEF" firstAttribute="leading" secondItem="uL9-cn-ZFj" secondAttribute="trailing" constant="-22" id="XkE-nn-YlP"/>
                                     <constraint firstItem="J62-GQ-M4c" firstAttribute="leading" secondItem="18h-5V-aI1" secondAttribute="trailing" constant="8" id="YX6-1R-EKc"/>
                                     <constraint firstItem="yiW-EH-8dr" firstAttribute="centerX" secondItem="TfO-5O-xuJ" secondAttribute="centerX" id="dwi-HM-qVf"/>
@@ -216,35 +233,27 @@ OFFERS     </string>
                                                     <constraint firstAttribute="height" constant="160" id="UnC-XP-63P"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3U-cd-5Gz" customClass="SchoolView" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="657" width="343" height="98"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="98" id="dpm-WC-Pod"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5u-CZ-6cu" customClass="CardsView" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="771" width="343" height="188"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="188" id="AK2-IK-oPv"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHG-w4-mMh" customClass="OffersView" customModule="MumsApp" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="975" width="343" height="216"/>
+                                                <rect key="frame" x="16" y="865" width="343" height="216"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="216" id="0tY-do-LEK"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5u-CZ-6cu" customClass="CardsView" customModule="MumsApp" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="661" width="343" height="188"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="188" id="AK2-IK-oPv"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ZHG-w4-mMh" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="1dQ-vW-nWs"/>
+                                            <constraint firstItem="K5u-CZ-6cu" firstAttribute="top" secondItem="OSG-vz-rr3" secondAttribute="bottom" constant="16" id="3rH-Mt-RKs"/>
                                             <constraint firstItem="ZHG-w4-mMh" firstAttribute="top" secondItem="K5u-CZ-6cu" secondAttribute="bottom" constant="16" id="4dV-1e-zjj"/>
-                                            <constraint firstItem="b3U-cd-5Gz" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="4mY-a0-n7f"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="Fhu-MV-WuN" secondAttribute="trailing" constant="16" id="5PO-ZD-hsY"/>
-                                            <constraint firstItem="K5u-CZ-6cu" firstAttribute="top" secondItem="b3U-cd-5Gz" secondAttribute="bottom" constant="16" id="AKw-8G-XWo"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="OSG-vz-rr3" secondAttribute="trailing" constant="16" id="Gf4-PU-jks"/>
                                             <constraint firstItem="Fhu-MV-WuN" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="IVZ-V7-WEe"/>
                                             <constraint firstItem="aNr-8e-AI7" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="N4X-Vj-PJO"/>
@@ -254,8 +263,6 @@ OFFERS     </string>
                                             <constraint firstItem="OSG-vz-rr3" firstAttribute="top" secondItem="Fhu-MV-WuN" secondAttribute="bottom" constant="12" id="ZwV-Ks-ChM"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="aNr-8e-AI7" secondAttribute="trailing" constant="16" id="ghT-r8-ba6"/>
                                             <constraint firstAttribute="height" constant="1500" id="isG-a3-X4W"/>
-                                            <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="b3U-cd-5Gz" secondAttribute="trailing" constant="16" id="jUa-dw-QOA"/>
-                                            <constraint firstItem="b3U-cd-5Gz" firstAttribute="top" secondItem="OSG-vz-rr3" secondAttribute="bottom" constant="12" id="nQO-y3-JjF"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="K5u-CZ-6cu" secondAttribute="trailing" constant="16" id="qaf-Zi-HGu"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="ZHG-w4-mMh" secondAttribute="trailing" constant="16" id="rou-fe-dck"/>
                                             <constraint firstItem="OSG-vz-rr3" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="yFN-Py-ELp"/>
@@ -287,8 +294,6 @@ OFFERS     </string>
                         <outlet property="locationView" destination="Fhu-MV-WuN" id="lMh-Cu-tKX"/>
                         <outlet property="locationViewHeight" destination="t6V-mx-ROb" id="yEx-Ad-w1D"/>
                         <outlet property="profileView" destination="aNr-8e-AI7" id="w5Z-9b-pRC"/>
-                        <outlet property="schoolView" destination="b3U-cd-5Gz" id="0cN-SL-JfU"/>
-                        <outlet property="schoolViewHeight" destination="dpm-WC-Pod" id="RfV-K0-6ut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJe-dl-Rb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3658,13 +3663,6 @@ you want to remove</string>
                                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ixv-Ja-hUl">
                                                 <rect key="frame" x="168" y="213" width="39" height="37"/>
                                             </pageControl>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="98l-qV-Gta">
-                                                <rect key="frame" x="16" y="28" width="70" height="70"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="GIq-qQ-aDP"/>
-                                                    <constraint firstAttribute="width" constant="70" id="MFn-h1-YIS"/>
-                                                </constraints>
-                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImX-EO-pVa" customClass="OtherPromotionsView" customModule="MumsApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="660" width="375" height="440"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3676,21 +3674,32 @@ you want to remove</string>
                                                     <constraint firstAttribute="height" constant="384" id="54A-4K-9kR"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AK7-ct-tgv">
+                                                <rect key="frame" x="16" y="28" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="8sT-oY-C4Z"/>
+                                                    <constraint firstAttribute="width" constant="70" id="zMV-mZ-Pt1"/>
+                                                </constraints>
+                                                <state key="normal" image="placeholderIcon"/>
+                                                <connections>
+                                                    <action selector="companyImageButtonPressed:" destination="6z6-v9-xI9" eventType="touchUpInside" id="aYB-xC-YhI"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="euO-u4-yug" firstAttribute="leading" secondItem="KGx-Lh-fsI" secondAttribute="leading" id="2Xr-Z6-4kY"/>
                                             <constraint firstItem="euO-u4-yug" firstAttribute="trailing" secondItem="KGx-Lh-fsI" secondAttribute="trailing" id="6MW-EP-v5q"/>
                                             <constraint firstItem="cYa-zX-iXq" firstAttribute="top" secondItem="euO-u4-yug" secondAttribute="bottom" constant="10" id="ADk-m9-GF2"/>
+                                            <constraint firstItem="AK7-ct-tgv" firstAttribute="top" secondItem="KGx-Lh-fsI" secondAttribute="top" constant="8" id="C79-X9-Tfg"/>
                                             <constraint firstItem="ImX-EO-pVa" firstAttribute="bottom" secondItem="KGx-Lh-fsI" secondAttribute="bottom" id="I9b-Xc-QSU"/>
                                             <constraint firstItem="ImX-EO-pVa" firstAttribute="leading" secondItem="KGx-Lh-fsI" secondAttribute="leading" id="O5E-Z6-fIu"/>
                                             <constraint firstItem="cYa-zX-iXq" firstAttribute="leading" secondItem="KGx-Lh-fsI" secondAttribute="leading" constant="16" id="ODB-kT-7WM"/>
                                             <constraint firstItem="KGx-Lh-fsI" firstAttribute="trailing" secondItem="ImX-EO-pVa" secondAttribute="trailing" id="Osw-UY-r2T"/>
                                             <constraint firstItem="euO-u4-yug" firstAttribute="top" secondItem="KGx-Lh-fsI" secondAttribute="top" id="a4m-uu-Yvm"/>
+                                            <constraint firstItem="AK7-ct-tgv" firstAttribute="leading" secondItem="KGx-Lh-fsI" secondAttribute="leading" constant="16" id="aDa-Nr-71I"/>
                                             <constraint firstAttribute="height" constant="1100" id="lXL-fo-QFz"/>
-                                            <constraint firstItem="98l-qV-Gta" firstAttribute="leading" secondItem="KGx-Lh-fsI" secondAttribute="leading" constant="16" id="m94-WA-UXX"/>
                                             <constraint firstItem="Ixv-Ja-hUl" firstAttribute="centerX" secondItem="euO-u4-yug" secondAttribute="centerX" id="n9c-e6-YH5"/>
-                                            <constraint firstItem="98l-qV-Gta" firstAttribute="top" secondItem="KGx-Lh-fsI" secondAttribute="top" constant="8" id="sVG-Oz-giU"/>
                                             <constraint firstItem="KGx-Lh-fsI" firstAttribute="trailing" secondItem="cYa-zX-iXq" secondAttribute="trailing" constant="16" id="tEl-Lf-0vB"/>
                                             <constraint firstItem="ImX-EO-pVa" firstAttribute="top" secondItem="cYa-zX-iXq" secondAttribute="bottom" constant="16" id="yCc-Ow-tw0"/>
                                             <constraint firstItem="cYa-zX-iXq" firstAttribute="top" secondItem="Ixv-Ja-hUl" secondAttribute="bottom" constant="10" id="yK5-HD-Lf3"/>
@@ -3719,7 +3728,7 @@ you want to remove</string>
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="collectionView" destination="euO-u4-yug" id="lso-2L-dab"/>
-                        <outlet property="companyImageView" destination="98l-qV-Gta" id="bEG-hy-E4E"/>
+                        <outlet property="companyImageButton" destination="AK7-ct-tgv" id="P8R-Cc-fRd"/>
                         <outlet property="pageControl" destination="Ixv-Ja-hUl" id="VBz-pP-ll3"/>
                         <outlet property="promotionDescriptionView" destination="cYa-zX-iXq" id="uaS-FZ-aXi"/>
                     </connections>
@@ -3727,27 +3736,6 @@ you want to remove</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h76-gD-n6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9037.6000000000004" y="239.28035982008998"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="r4s-0v-7Gw">
-            <objects>
-                <viewController id="Zzp-dv-JVw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7YS-35-JKD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tim-Cook" translatesAutoresizingMaskIntoConstraints="NO" id="QLa-Gj-9SB">
-                                <rect key="frame" x="0.0" y="198" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ab9-y7-l1x"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4nx-1y-r2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="10037.6" y="112.89355322338831"/>
         </scene>
         <!--Promotion Popup View Controller-->
         <scene sceneID="Q0x-qh-8jD">
@@ -3889,7 +3877,6 @@ you want to remove</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Tim-Cook" width="275" height="183"/>
         <image name="addPhotoIcon" width="29" height="28"/>
         <image name="arrowRight" width="8" height="12"/>
         <image name="chatIcon" width="80" height="76"/>
@@ -3904,6 +3891,7 @@ you want to remove</string>
         <image name="placeholderIcon" width="163" height="152"/>
         <image name="placeholderImage" width="163" height="152"/>
         <image name="plusIcon" width="12" height="12"/>
+        <image name="schoolDaysIcon" width="71" height="71"/>
         <image name="searchIcon" width="17" height="19"/>
         <image name="shopIcon" width="77" height="78"/>
         <image name="shopMyProductsIcon" width="25" height="26"/>

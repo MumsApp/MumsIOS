@@ -7,11 +7,11 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var locationView: LocationView!
     
-    @IBOutlet weak var schoolView: SchoolView!
+//    @IBOutlet weak var schoolView: SchoolView!
     
     @IBOutlet weak var locationViewHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var schoolViewHeight: NSLayoutConstraint!
+//    @IBOutlet weak var schoolViewHeight: NSLayoutConstraint!
     
     fileprivate var userDetailsService: UserDetailsService!
     
@@ -41,8 +41,6 @@ class ProfileViewController: UIViewController {
     func configureView() {
         
         self.view.backgroundColor = .backgroundWhite
-        
-        self.schoolView.configureWith(delegate: self)
         
         self.profileView.userNameLabel.text = "Test Name"
         
@@ -180,41 +178,41 @@ class ProfileViewController: UIViewController {
     
 }
 
-extension ProfileViewController: SchoolViewDelegate {
-    
-    func addSchoolButtonPressed() {
-        
-        self.schoolView.list.append(String(Date().timeIntervalSinceNow))
-        
-        self.schoolViewHeight.constant += 90
-        
-        UIView.animate(withDuration: 0.3) {
-        
-            self.schoolView.tableView.reloadData()
-            
-            self.view.layoutIfNeeded()
-            
-        }
-        
-    }
-    
-    func deleteSchoolButtonPressed() {
-
-        self.schoolView.list.removeLast()
-
-        self.schoolViewHeight.constant -= 90
-        
-        UIView.animate(withDuration: 0.3) {
-            
-            self.schoolView.tableView.reloadData()
-            
-            self.view.layoutIfNeeded()
-            
-        }
-        
-    }
-    
-}
+//extension ProfileViewController: SchoolViewDelegate {
+//
+//    func addSchoolButtonPressed() {
+//
+//        self.schoolView.list.append(String(Date().timeIntervalSinceNow))
+//
+//        self.schoolViewHeight.constant += 90
+//
+//        UIView.animate(withDuration: 0.3) {
+//
+//            self.schoolView.tableView.reloadData()
+//
+//            self.view.layoutIfNeeded()
+//
+//        }
+//
+//    }
+//
+//    func deleteSchoolButtonPressed() {
+//
+//        self.schoolView.list.removeLast()
+//
+//        self.schoolViewHeight.constant -= 90
+//
+//        UIView.animate(withDuration: 0.3) {
+//
+//            self.schoolView.tableView.reloadData()
+//
+//            self.view.layoutIfNeeded()
+//
+//        }
+//
+//    }
+//
+//}
 
 extension ProfileViewController: LocationViewDelegate {
     

@@ -73,11 +73,33 @@ class ConversationViewController: MessagesViewController {
         
         self.navigationItem.leftBarButtonItem = backButton
         
+        let detailsButton = UIBarButtonItem(title: "Details", style: .plain, target: self, action: #selector(self.detailsButtonPressed(sender:)))
+        
+        detailsButton.tintColor = .mainGreen
+        
+        self.navigationItem.rightBarButtonItem = detailsButton
+
     }
     
     func backButtonPressed(sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    func detailsButtonPressed(sender: UIBarButtonItem) {
+        
+        self.showOrganisationViewController()
+        
+    }
+    
+    private func showOrganisationViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.organisationViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
         
     }
     

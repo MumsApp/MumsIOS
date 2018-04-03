@@ -45,9 +45,9 @@ class ChatViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = rightButton
         
-        let leftButton = UIBarButtonItem(image: #imageLiteral(resourceName: "filterIcon"), style: .plain, target: self, action: #selector(self.filterButtonPressed(sender:)))
-        
-        self.navigationItem.leftBarButtonItem = leftButton
+//        let leftButton = UIBarButtonItem(image: #imageLiteral(resourceName: "filterIcon"), style: .plain, target: self, action: #selector(self.filterButtonPressed(sender:)))
+//        
+//        self.navigationItem.leftBarButtonItem = leftButton
         
     }
     

@@ -48,9 +48,9 @@ class LobbyViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
         
-        let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "filterIcon"), style: .plain, target: self, action: #selector(self.filterButtonPressed(sender:)))
+//        let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "filterIcon"), style: .plain, target: self, action: #selector(self.filterButtonPressed(sender:)))
         
-        self.navigationItem.rightBarButtonItem = rightButton
+//        self.navigationItem.rightBarButtonItem = rightButton
         
     }
     

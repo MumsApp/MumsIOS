@@ -1,12 +1,12 @@
 import UIKit
 
 class PromotionViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var pageControl: UIPageControl!
 
-    @IBOutlet weak var companyImageView: UIImageView!
+    @IBOutlet weak var companyImageButton: UIButton!
     
     @IBOutlet weak var promotionDescriptionView: PromotionDescriptionView!
     
@@ -33,9 +33,9 @@ class PromotionViewController: UIViewController {
         
         self.pageControl.numberOfPages = 5
         
-        self.companyImageView.layer.cornerRadius = 35
+        self.companyImageButton.layer.cornerRadius = 35
         
-        self.companyImageView.layer.masksToBounds = true
+        self.companyImageButton.layer.masksToBounds = true
         
         self.promotionDescriptionView.configureView(delegate: self)
         
@@ -60,6 +60,22 @@ class PromotionViewController: UIViewController {
     func backButtonPressed(sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    private func showOrganisationViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.organisationViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    @IBAction func companyImageButtonPressed(_ sender: UIButton) {
+    
+        self.showOrganisationViewController()
         
     }
     
