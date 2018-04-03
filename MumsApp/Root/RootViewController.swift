@@ -74,7 +74,9 @@ class RootViewController: UIViewController {
             
         default:
             
-            self.showWelcomeViewController()
+            self.didFinishIntro()
+
+//            self.showWelcomeViewController()
             
         }
         

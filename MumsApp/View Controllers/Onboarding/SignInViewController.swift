@@ -374,7 +374,7 @@ class SignInViewController: UIViewController {
             self.isScreenEnabled(enabled: true)
 
             if let _ = errorOptional {
-
+                
                 self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
                 
             } else {

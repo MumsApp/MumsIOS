@@ -31,6 +31,11 @@ class LobbyViewController: UIViewController {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom:
             80, right: 0)
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.tableView.estimatedRowHeight = 180
+        
+        
         self.searchBar.delegate = self
 
     }
@@ -91,7 +96,7 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
         
         if indexPath.section == 0 {
             
-            return 180
+            return UITableViewAutomaticDimension
             
         } else {
             

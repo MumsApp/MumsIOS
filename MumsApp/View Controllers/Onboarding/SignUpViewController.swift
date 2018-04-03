@@ -313,7 +313,7 @@ class SignUpViewController: UIViewController {
             
                 self.isScreenEnabled(enabled: true)
 
-                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
                 
             } else {
                 
@@ -333,7 +333,7 @@ class SignUpViewController: UIViewController {
                 
                 self.isScreenEnabled(enabled: true)
 
-                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                self.showOkAlertWith(title: "Error", message: "Authorization failed. Try again or choose a different authorization method.")
                 
             } else {
                 

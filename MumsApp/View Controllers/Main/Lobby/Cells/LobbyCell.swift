@@ -48,6 +48,8 @@ class LobbyCell: SwipeTableViewCell, Reusable {
                 
         self.lobbyJoinSwitch.isOn = false
         
+        self.lobbyDescriptionLabel.numberOfLines = 0
+        
     }
     
     @IBAction func lobbySwitchPressed(_ sender: UISwitch) {
