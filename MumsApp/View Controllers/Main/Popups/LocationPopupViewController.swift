@@ -2,6 +2,8 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
+
+
 class LocationPopupViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
@@ -141,6 +143,14 @@ extension LocationPopupViewController: GMSAutocompleteViewControllerDelegate {
         self.place = place
         
         self.enterLocationButton.setTitle(place.formattedAddress, for: .normal)
+        
+        self.mapView.clear()
+        
+        self.mapView.addMarker(lat: self.place!.coordinate.latitude, lon: self.place!.coordinate.longitude)
+        
+        let camera = GMSCameraPosition.camera(withTarget: self.place!.coordinate, zoom: 12.0)
+        
+        self.mapView.camera = camera
         
         self.dismiss(animated: true, completion: nil)
     

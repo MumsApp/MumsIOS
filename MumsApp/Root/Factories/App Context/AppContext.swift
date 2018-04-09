@@ -6,7 +6,7 @@ let k_is_app_initialized = "is_app_initialized"
 
 protocol AppContext {
     
-    func isUserLoggedIn() -> Bool
+    func isUserLoggedIn() -> Bool?
     
     func user() -> User?
     
@@ -74,7 +74,7 @@ struct DefaultAppContext: AppContext {
         
     }
     
-    func isUserLoggedIn() -> Bool {
+    func isUserLoggedIn() -> Bool? {
         
         let user = self.dataStore.fetchAllEntities(User.self).first as? User
         

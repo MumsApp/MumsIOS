@@ -10,6 +10,8 @@ class AddProductViewController: UIViewController {
     
     @IBOutlet weak var photosView: AddProductImagesView!
     
+    @IBOutlet weak var descriptionView: AddProductDescriptionView!
+    
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     let HEIGHT_SMALL: CGFloat = 1050
@@ -53,6 +55,8 @@ class AddProductViewController: UIViewController {
         self.heightConstraint.constant = HEIGHT_SMALL
 
         self.photosView.configureWith(delegate: self, imageCellDelegate: self)
+     
+        self.descriptionView.configureWith(delegate: self)
         
     }
     
@@ -249,6 +253,38 @@ extension AddProductViewController: AddImageCellDelegate, ImageCellDelegate {
         
         self.addPhotoButton.setImage(image, for: .normal)
         
+    }
+    
+}
+
+extension AddProductViewController: AddProductDescriptionViewDelegate {
+    
+    func showShopCategoriesViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.shopCategoriesViewController(delegate: self)
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+
+    func showCategoryButtonPressed() {
+        
+        self.showShopCategoriesViewController()
+
+    }
+    
+}
+
+extension AddProductViewController: ShopCategoriesViewControllerDelegate {
+    
+    func categorySelected(title: String) {
+    
+        self.descriptionView.selectCategoryButton.setTitle(title, for: .normal)
+        
+        self.descriptionView.selectCategoryButton.setTitleColor(.black, for: .normal)
+
     }
     
 }

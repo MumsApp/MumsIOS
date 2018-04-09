@@ -151,6 +151,10 @@ class ProfileViewController: UIViewController {
             
             self.showSwitchValueChanged(isVisible: true)
             
+        } else {
+            
+            self.showSwitchValueChanged(isVisible: false)
+
         }
         
     }
@@ -222,6 +226,10 @@ extension ProfileViewController: LocationViewDelegate {
             
             self.locationViewHeight.constant = 270
             
+            self.locationView.showSwitch.isOn = true
+            
+            self.locationView.editButton.isHidden = false
+            
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()
@@ -232,6 +240,8 @@ extension ProfileViewController: LocationViewDelegate {
             
             self.locationViewHeight.constant = 80
             
+            self.locationView.showSwitch.isOn = false
+
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()

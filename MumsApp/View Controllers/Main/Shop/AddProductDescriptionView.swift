@@ -1,5 +1,11 @@
 import UIKit
 
+protocol AddProductDescriptionViewDelegate: class {
+    
+    func showCategoryButtonPressed()
+    
+}
+
 //£
 
 class AddProductDescriptionView: UIView {
@@ -8,13 +14,21 @@ class AddProductDescriptionView: UIView {
     
     @IBOutlet weak var itemTitleTextField: UITextField!
     
-    @IBOutlet weak var itemCategoryTextField: UITextField!
+    @IBOutlet weak var selectCategoryButton: UIButton!
     
     @IBOutlet weak var askForCategoryButton: UIButton!
     
     @IBOutlet weak var itemPriceTextField: UITextField!
     
     @IBOutlet weak var descriptionTextView: UITextView!
+    
+    private var delegate: AddProductDescriptionViewDelegate?
+    
+    func configureWith(delegate: AddProductDescriptionViewDelegate?) {
+        
+        self.delegate = delegate
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,7 +66,7 @@ class AddProductDescriptionView: UIView {
      
         self.itemTitleTextField.font = .regular(size: 17)
         
-        self.itemCategoryTextField.font = .regular(size: 17)
+        self.selectCategoryButton.titleLabel?.font = .regular(size: 17)
         
         self.itemPriceTextField.font = .regular(size: 17)
         
@@ -73,13 +87,16 @@ class AddProductDescriptionView: UIView {
         self.itemTitleTextField.delegate = self
         
         self.itemPriceTextField.delegate = self
-    
-        self.itemCategoryTextField.delegate = self
-    
+        
         self.descriptionTextView.delegate = self
         
     }
     
+    @IBAction func selectCategoryButtonPressed(_ sender: UIButton) {
+        
+        self.delegate?.showCategoryButtonPressed()
+    
+    }
     
 }
 
@@ -116,5 +133,6 @@ extension AddProductDescriptionView: UITextFieldDelegate, UITextViewDelegate {
         return true
     
     }
+
 }
 
