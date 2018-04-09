@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMaps
 
 let KIDS_CELL = "KidsCell"
 let ADD_CONTACT_CELL = "AddContactCell"
@@ -35,6 +36,8 @@ class UserViewController: UIViewController {
         self.configureTableView()
         
         self.configureNavigationBar()
+        
+        self.configureLocationView()
         
     }
 
@@ -90,14 +93,24 @@ class UserViewController: UIViewController {
         
     }
     
+    private func configureLocationView() {
+        
+        self.locationView.mapView.addMarker(lat: LONDON_LAT, lon: LONDON_LONG)
+        
+        let locationCoordinate = CLLocationCoordinate2D(latitude: LONDON_LAT, longitude: LONDON_LONG)
+        
+        let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
+        
+        self.locationView.mapView.animate(with: cameraUpdate)
+        
+    }
+    
     func backButtonPressed(sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
         
         
     }
-    
-    
     
 }
 
@@ -165,8 +178,8 @@ extension UserViewController: AddCellDelegate, RemoveContactCellDelegate {
     
     func removeButtonPressed() {
         
-        self.showRemoveCompanyPopupViewController()
-//        self.showRemoveContactPopupViewController()
+//        self.showRemoveCompanyPopupViewController()
+        self.showRemoveContactPopupViewController()
         
     }
     

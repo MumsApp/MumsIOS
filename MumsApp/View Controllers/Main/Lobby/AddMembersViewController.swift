@@ -60,7 +60,7 @@ class AddMembersViewController: UIViewController {
     
     func doneButtonPressed(sender: UIBarButtonItem) {
         
-        print("Save")
+        self.navigationController?.popViewController(animated: true)
         
     }
     

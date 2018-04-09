@@ -176,6 +176,7 @@ class CreateCategoryViewController: UIViewController {
     
     func doneButtonPressed(sender: UIBarButtonItem) {
         
+        self.navigationController?.popViewController(animated: true)
         
     }
     

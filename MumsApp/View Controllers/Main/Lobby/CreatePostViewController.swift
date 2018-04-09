@@ -156,7 +156,7 @@ class CreatePostViewController: UIViewController {
     
     func doneButtonPressed(sender: UIBarButtonItem) {
         
-        print("Done")
+        self.navigationController?.popViewController(animated: true)
         
     }
     
