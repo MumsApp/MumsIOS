@@ -1,4 +1,5 @@
 import UIKit
+import MessageUI
 
 class ProfileSettingsPopupViewController: UIViewController {
 
@@ -109,6 +110,28 @@ class ProfileSettingsPopupViewController: UIViewController {
     }
     
     @IBAction func askQuestionButtonPressed(_ sender: UIButton) {
+    
+        if !MFMailComposeViewController.canSendMail() { return }
+    
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        
+        composeVC.setToRecipients(["support@mumsapp.com"])
+        composeVC.setSubject("Subject")
+        composeVC.setMessageBody("Message", isHTML: false)
+        
+        self.present(composeVC, animated: true, completion: nil)
+        
+    }
+    
+}
+
+extension ProfileSettingsPopupViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+ 
+        controller.dismiss(animated: true, completion: nil)
+    
     }
     
 }
