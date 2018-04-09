@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMaps
 
 class OrganisationViewController: UIViewController {
         
@@ -19,12 +20,23 @@ class OrganisationViewController: UIViewController {
         
         self.configureNavigationBar()
         
+        self.configureLocationView()
+        
+        self.profileView.organisationDescriptionTextView.isScrollEnabled = false
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.profileView.organisationDescriptionTextView.isScrollEnabled = true
+    
     }
     
     func configureView() {
         
         self.view.backgroundColor = .backgroundWhite
-        
+
     }
     
     private func configureNavigationBar() {
@@ -38,6 +50,18 @@ class OrganisationViewController: UIViewController {
         let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "backButtonIcon"), style: .plain, target: self, action: #selector(self.backButtonPressed(sender:)))
         
         self.navigationItem.leftBarButtonItem = backButton
+        
+    }
+    
+    private func configureLocationView() {
+        
+        self.locationView.mapView.addMarker(lat: LONDON_LAT, lon: LONDON_LONG)
+        
+        let locationCoordinate = CLLocationCoordinate2D(latitude: LONDON_LAT, longitude: LONDON_LONG)
+        
+        let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
+        
+        self.locationView.mapView.animate(with: cameraUpdate)
         
     }
     

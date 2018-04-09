@@ -78,7 +78,7 @@ class MyProductsViewController: UIViewController {
 
     }
     
-    private func showAddProductViewController() {
+    fileprivate func showAddProductViewController() {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
@@ -89,7 +89,6 @@ class MyProductsViewController: UIViewController {
     }
 
 }
-
 
 extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -113,5 +112,10 @@ extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDa
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.showAddProductViewController()
+        
+    }
+    
 }
-

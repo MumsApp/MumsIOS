@@ -97,6 +97,14 @@ class ShopFilterViewController: UIViewController {
         
         self.setLocationButton.titleLabel?.font = .regular(size: 14)
         
+        self.priceSlider.delegate = self
+    
+        self.priceSlider.tag = 0
+    
+        self.distanceSlider.delegate = self
+        
+        self.distanceSlider.tag = 1
+    
     }
 
     private func configureNavigationBar() {
@@ -113,7 +121,20 @@ class ShopFilterViewController: UIViewController {
         
         self.navigationItem.leftBarButtonItem = backButton
         
+        let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneButtonPressed(sender:)))
+        
+        rightButton.tintColor = .mainGreen
+        
+        self.navigationItem.rightBarButtonItem = rightButton
+    
     }
+    
+    func doneButtonPressed(sender: UIBarButtonItem) {
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
     
     func backButtonPressed(sender: UIBarButtonItem) {
         
@@ -128,6 +149,9 @@ class ShopFilterViewController: UIViewController {
     }
     
     @IBAction func setLocationButtonPressed(_ sender: UIButton) {
+    
+        self.showLocationPopupViewController()
+    
     }
     
     private func showShopCategoriesViewController() {
@@ -140,6 +164,20 @@ class ShopFilterViewController: UIViewController {
         
     }
     
+    private func showLocationPopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.locationPopupViewController(delegate: nil)
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
+        
+    }
+    
 }
 
 extension ShopFilterViewController: ShopCategoriesViewControllerDelegate {
@@ -149,6 +187,32 @@ extension ShopFilterViewController: ShopCategoriesViewControllerDelegate {
         self.selectCategoryButton.setTitle(title, for: .normal)
         
         self.selectCategoryImageView.image = nil
+        
+    }
+    
+}
+
+extension ShopFilterViewController: RangeSeekSliderDelegate {
+    
+    func rangeSeekSlider(_ slider: RangeSeekSlider, didChange minValue: CGFloat, maxValue: CGFloat) {
+        
+        if slider.tag == 0 {
+            
+            self.minPriceLabel.text = "£" + String(describing: Int(minValue))
+            
+            self.maxPriceLabel.text = "£" + String(describing: Int(maxValue))
+
+        } else {
+            
+            let textMin = minValue > 1 ? " miles" : " mile"
+            
+            let textMax = maxValue > 1 ? " miles" : " mile"
+
+            self.minDistanceLabel.text = String(describing: Int(minValue)) + textMin
+            
+            self.maxDistanceLabel.text = String(describing: Int(maxValue)) + textMax
+            
+        }
         
     }
     

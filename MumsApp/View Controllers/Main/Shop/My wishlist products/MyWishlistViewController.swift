@@ -155,13 +155,14 @@ extension MyWishlistViewController: MyWishlistCellDelegate {
     
     func wishlistButtonPressed(tag: Int) {
         
-        if tag == 1 {
+        if tag == 0 {
             
             self.showRemoveProductPopupViewController()
             
         } else {
             
-            
+            self.showRemoveProductPopupViewController()
+
         }
         
     }

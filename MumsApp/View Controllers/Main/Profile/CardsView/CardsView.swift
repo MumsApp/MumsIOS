@@ -11,6 +11,8 @@ class CardsView: UIView {
 
     @IBOutlet weak var detailsView: UIView!
 
+    @IBOutlet weak var addButton: UIButton!
+    
     @IBOutlet weak var containerStackViewHeightConstraint: NSLayoutConstraint!
     
     override init(frame: CGRect) {
@@ -51,7 +53,9 @@ class CardsView: UIView {
         
         self.cardsLabel.textColor = .black
 
+        self.addButton.titleLabel?.font = .medium(size: 15)
         
+        self.addButton.tintColor = .mainGreen
         
     }
 

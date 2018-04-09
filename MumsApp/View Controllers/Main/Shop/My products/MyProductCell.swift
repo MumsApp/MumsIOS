@@ -44,8 +44,7 @@ class MyProductCell: UICollectionViewCell, Reusable {
     }
     
     @IBAction func editButtonPressed(_ sender: UIButton) {
-    
+            
     }
     
 }
-

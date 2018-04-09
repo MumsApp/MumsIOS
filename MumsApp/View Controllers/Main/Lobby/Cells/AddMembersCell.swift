@@ -37,6 +37,8 @@ class AddMembersCell: UITableViewCell, Reusable {
         
         self.descriptionLabel.textColor = .mainDarkGrey
         
+        self.addSwitch.isOn = false
+        
     }
     
 }

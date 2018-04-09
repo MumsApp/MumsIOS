@@ -53,7 +53,9 @@ class ProfileViewController: UIViewController {
         self.profileView.configureWith(delegate: self)
      
         self.imagePicker.delegate = self
-        
+     
+        self.heightConstraint.constant = 930 + self.locationViewHeight.constant
+
     }
 
     private func configureNavigationBar() {
@@ -153,10 +155,6 @@ class ProfileViewController: UIViewController {
             
             self.showSwitchValueChanged(isVisible: true)
             
-        } else {
-            
-            self.showSwitchValueChanged(isVisible: false)
-
         }
         
     }
@@ -232,7 +230,7 @@ extension ProfileViewController: LocationViewDelegate {
             
             self.locationView.editButton.isHidden = false
             
-            self.heightConstraint.constant = 1200
+            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
 
             UIView.animate(withDuration: 0.3) {
                 
@@ -246,7 +244,7 @@ extension ProfileViewController: LocationViewDelegate {
             
             self.locationView.showSwitch.isOn = false
 
-            self.heightConstraint.constant = 1010
+            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
 
             UIView.animate(withDuration: 0.3) {
                 
