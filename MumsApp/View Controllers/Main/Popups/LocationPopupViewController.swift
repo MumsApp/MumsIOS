@@ -2,7 +2,11 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-
+protocol LocationPopupDelegate: class {
+    
+    func locationUpdated(coordinate: CLLocationCoordinate2D, locationName: String)
+    
+}
 
 class LocationPopupViewController: UIViewController {
 
@@ -26,9 +30,13 @@ class LocationPopupViewController: UIViewController {
 
     var locationOptional: Location?
     
-    func configureWith(userDetailsService: UserDetailsService) {
+    private var delegate: LocationPopupDelegate?
+    
+    func configureWith(userDetailsService: UserDetailsService, delegate: LocationPopupDelegate?) {
         
         self.userDetailsService = userDetailsService
+        
+        self.delegate = delegate
         
     }
     
@@ -105,6 +113,9 @@ class LocationPopupViewController: UIViewController {
                 self.blockViews(bool: true)
 
             } else {
+                
+                self.delegate?.locationUpdated(coordinate: self.place!.coordinate,
+                                               locationName: place.formattedAddress ?? "")
                 
                 self.dismissViewController()
 

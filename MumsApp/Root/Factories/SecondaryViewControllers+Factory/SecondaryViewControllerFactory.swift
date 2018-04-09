@@ -51,11 +51,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func locationPopupViewController() -> LocationPopupViewController {
+    func locationPopupViewController(delegate: LocationPopupDelegate?) -> LocationPopupViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LocationPopupViewController.rawValue, storyboard: storyboard) as! LocationPopupViewController
         
-        controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService())
+        controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService(), delegate: delegate)
         
         return controller
         

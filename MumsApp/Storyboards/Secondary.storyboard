@@ -244,14 +244,14 @@ OFFERS     </string>
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZR1-yo-poD" customClass="ProfileViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XUL-zf-ZiI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-gw-Shb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1480"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="1180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO1-WB-Vy4">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNr-8e-AI7" customClass="ProfileView" customModule="MumsApp" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="16" width="343" height="179"/>
@@ -303,7 +303,7 @@ OFFERS     </string>
                                             <constraint firstItem="K5u-CZ-6cu" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="XPA-bg-rmL"/>
                                             <constraint firstItem="OSG-vz-rr3" firstAttribute="top" secondItem="Fhu-MV-WuN" secondAttribute="bottom" constant="12" id="ZwV-Ks-ChM"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="aNr-8e-AI7" secondAttribute="trailing" constant="16" id="ghT-r8-ba6"/>
-                                            <constraint firstAttribute="height" constant="1500" id="isG-a3-X4W"/>
+                                            <constraint firstAttribute="height" constant="1200" id="isG-a3-X4W"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="K5u-CZ-6cu" secondAttribute="trailing" constant="16" id="qaf-Zi-HGu"/>
                                             <constraint firstItem="yqv-k2-gOs" firstAttribute="trailing" secondItem="ZHG-w4-mMh" secondAttribute="trailing" constant="16" id="rou-fe-dck"/>
                                             <constraint firstItem="OSG-vz-rr3" firstAttribute="leading" secondItem="yqv-k2-gOs" secondAttribute="leading" constant="16" id="yFN-Py-ELp"/>
@@ -330,8 +330,9 @@ OFFERS     </string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="03U-3W-a6S"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1500"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="heightConstraint" destination="isG-a3-X4W" id="BXF-Db-Cww"/>
                         <outlet property="locationView" destination="Fhu-MV-WuN" id="lMh-Cu-tKX"/>
                         <outlet property="locationViewHeight" destination="t6V-mx-ROb" id="yEx-Ad-w1D"/>
                         <outlet property="profileView" destination="aNr-8e-AI7" id="w5Z-9b-pRC"/>
@@ -339,7 +340,7 @@ OFFERS     </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJe-dl-Rb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.8" y="507.34632683658174"/>
+            <point key="canvasLocation" x="1097" y="373"/>
         </scene>
         <!--Location Popup View Controller-->
         <scene sceneID="I0M-ED-xd2">

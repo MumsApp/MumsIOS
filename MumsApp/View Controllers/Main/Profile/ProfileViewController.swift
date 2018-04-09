@@ -21,6 +21,8 @@ class ProfileViewController: UIViewController {
     
     fileprivate var userDetails: UserDetails?
     
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
     func configureWith(userDetailsService: UserDetailsService) {
         
         self.userDetailsService = userDetailsService
@@ -230,6 +232,8 @@ extension ProfileViewController: LocationViewDelegate {
             
             self.locationView.editButton.isHidden = false
             
+            self.heightConstraint.constant = 1200
+
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()
@@ -241,6 +245,8 @@ extension ProfileViewController: LocationViewDelegate {
             self.locationViewHeight.constant = 80
             
             self.locationView.showSwitch.isOn = false
+
+            self.heightConstraint.constant = 1010
 
             UIView.animate(withDuration: 0.3) {
                 
@@ -262,7 +268,7 @@ extension ProfileViewController: LocationViewDelegate {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.locationPopupViewController()
+        let controller = factory.locationPopupViewController(delegate: self)
         
         controller.modalPresentationStyle = .overCurrentContext
         
@@ -372,6 +378,26 @@ extension ProfileViewController: UserNamePopupDelegate {
             }
             
         }
+        
+    }
+    
+}
+
+extension ProfileViewController: LocationPopupDelegate {
+    
+    func locationUpdated(coordinate: CLLocationCoordinate2D, locationName: String) {
+        
+        self.locationView.mapView.clear()
+        
+        self.locationView.mapView.addMarker(lat: coordinate.latitude, lon: coordinate.longitude)
+        
+        let cameraUpdate = GMSCameraUpdate.setTarget(coordinate, zoom: 12)
+        
+        self.locationView.mapView.animate(with: cameraUpdate)
+        
+        self.locationView.userLocationLabel.text = locationName
+        
+        self.showSwitchValueChanged(isVisible: true)
         
     }
     
