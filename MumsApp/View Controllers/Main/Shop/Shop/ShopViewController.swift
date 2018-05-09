@@ -1,12 +1,27 @@
 import UIKit
 
+enum ShopViewType {
+    
+    case shop
+    case services
+    
+}
+
 class ShopViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
+
+    private var type: ShopViewType = .shop
+
     var popupWindow: UIWindow?
+    
+    func configureWith(type: ShopViewType) {
+        
+        self.type = type
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +52,9 @@ class ShopViewController: UIViewController {
     
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Shop")
+        let title = self.type == .shop ? "Shop" : "Where Can I Find"
+        
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: title)
         
         self.navigationItem.titleView = titleLabel
         

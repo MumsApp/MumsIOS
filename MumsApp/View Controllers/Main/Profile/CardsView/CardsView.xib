@@ -13,11 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardsView" customModule="MumsApp" customModuleProvider="target">
             <connections>
                 <outlet property="addButton" destination="QTe-eG-Otq" id="Zw8-vg-QQ0"/>
+                <outlet property="cardNameLabel" destination="Gia-eC-aoq" id="fKT-2c-aIs"/>
                 <outlet property="cardsLabel" destination="JUw-TV-OpS" id="F98-qM-xGH"/>
                 <outlet property="containerStackView" destination="swU-KR-j1U" id="jyB-51-hAf"/>
                 <outlet property="containerStackViewHeightConstraint" destination="iFi-6z-0lg" id="b65-RD-xz4"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="AqP-RG-ZmH"/>
                 <outlet property="detailsView" destination="kTw-Rd-3gr" id="b9l-GJ-L6R"/>
+                <outlet property="emergencyLabel" destination="Qot-0D-6d5" id="e8E-tc-76H"/>
+                <outlet property="scanButton" destination="Vqk-QY-qcH" id="WSU-37-EJQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -48,8 +51,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ec-cf-Qop">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gia-eC-aoq">
-                                    <rect key="frame" x="16" y="13.5" width="286" height="14.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rac insurance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gia-eC-aoq">
+                                    <rect key="frame" x="16" y="13" width="286" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -95,6 +98,9 @@
                                     <state key="normal" title=" Scan" image="scanIcon">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="scanButtonPressed:" destination="-1" eventType="touchUpInside" id="qJJ-rD-RVD"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

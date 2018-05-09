@@ -135,6 +135,10 @@
 		4D74FF48205BFF6F0016D3E9 /* OtherPromotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74FF47205BFF6F0016D3E9 /* OtherPromotionsView.swift */; };
 		4D74FF4A205BFF7C0016D3E9 /* OtherPromotionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D74FF49205BFF7C0016D3E9 /* OtherPromotionsView.xib */; };
 		4D76895E20248946002FC25D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76895D20248946002FC25D /* MenuViewController.swift */; };
+		4D85DE8C207CAC8500972B9F /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85DE8B207CAC8500972B9F /* SchoolsViewController.swift */; };
+		4D85DE8F207CB3C900972B9F /* AddSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85DE8E207CB3C900972B9F /* AddSchoolViewController.swift */; };
+		4D85DE91207CB65D00972B9F /* AddSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85DE90207CB65D00972B9F /* AddSchoolCell.swift */; };
+		4D85DE93207CB66800972B9F /* AddSchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D85DE92207CB66800972B9F /* AddSchoolCell.xib */; };
 		4D8C63A1201C830600657FD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C63A0201C830600657FD7 /* String+Extensions.swift */; };
 		4D8C63A3201C8CA900657FD7 /* Secondary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */; };
 		4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */; };
@@ -384,6 +388,10 @@
 		4D74FF47205BFF6F0016D3E9 /* OtherPromotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPromotionsView.swift; sourceTree = "<group>"; };
 		4D74FF49205BFF7C0016D3E9 /* OtherPromotionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPromotionsView.xib; sourceTree = "<group>"; };
 		4D76895D20248946002FC25D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4D85DE8B207CAC8500972B9F /* SchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewController.swift; sourceTree = "<group>"; };
+		4D85DE8E207CB3C900972B9F /* AddSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchoolViewController.swift; sourceTree = "<group>"; };
+		4D85DE90207CB65D00972B9F /* AddSchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchoolCell.swift; sourceTree = "<group>"; };
+		4D85DE92207CB66800972B9F /* AddSchoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSchoolCell.xib; sourceTree = "<group>"; };
 		4D8C63A0201C830600657FD7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4D8C63A2201C8CA900657FD7 /* Secondary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secondary.storyboard; sourceTree = "<group>"; };
 		4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GardenGrownCaps-Regular.otf"; sourceTree = "<group>"; };
@@ -707,6 +715,7 @@
 				4D05A98B1FE14F9000B19E6E /* Onboarding */,
 				4DC6774520177F2400F34184 /* Main */,
 				4D416FC9204AC3EB00CF4B68 /* Users */,
+				4D85DE8D207CAC9200972B9F /* Schools */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -1002,6 +1011,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		4D85DE8D207CAC9200972B9F /* Schools */ = {
+			isa = PBXGroup;
+			children = (
+				4D85DE8B207CAC8500972B9F /* SchoolsViewController.swift */,
+				4D85DE8E207CB3C900972B9F /* AddSchoolViewController.swift */,
+				4DC27EBA201FA5DE000EE9FA /* SchoolView */,
+			);
+			path = Schools;
+			sourceTree = "<group>";
+		};
 		4D8F2D41201B56E900756CCB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1090,6 +1109,8 @@
 				4D36E704201E4984000DC94F /* SchoolView.swift */,
 				4DC27EBB201FA9B9000EE9FA /* SchoolCell.xib */,
 				4DC27EBF201FA9D5000EE9FA /* SchoolCell.swift */,
+				4D85DE92207CB66800972B9F /* AddSchoolCell.xib */,
+				4D85DE90207CB65D00972B9F /* AddSchoolCell.swift */,
 			);
 			path = SchoolView;
 			sourceTree = "<group>";
@@ -1283,7 +1304,6 @@
 				4DEE83EB201E17E1001B0AEB /* ProfileView */,
 				4DEE83F3201E1EB7001B0AEB /* LocationView */,
 				4D36E6FA201E356E000DC94F /* ChildrenView */,
-				4DC27EBA201FA5DE000EE9FA /* SchoolView */,
 				4DC27EC5201FBFF5000EE9FA /* CardsView */,
 				4D5ED8F2202246860020FD51 /* Offers */,
 			);
@@ -1460,6 +1480,7 @@
 				4D69BAB92051956F006AB41D /* OrganisationMembersView.xib in Resources */,
 				4DAAAEC7205689D900A66981 /* MembersCell.xib in Resources */,
 				4D05A8E61FE143C500B19E6E /* LaunchScreen.storyboard in Resources */,
+				4D85DE93207CB66800972B9F /* AddSchoolCell.xib in Resources */,
 				4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */,
 				4D39D48E20348B60005123F8 /* PictureCell.xib in Resources */,
 				4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */,
@@ -1735,6 +1756,7 @@
 				4D05A8DB1FE143C500B19E6E /* SignUpViewController.swift in Sources */,
 				4D0F0C3320497334000F251C /* AddMembersCell.swift in Sources */,
 				4D5ED8F7202246870020FD51 /* OffersView.swift in Sources */,
+				4D85DE8C207CAC8500972B9F /* SchoolsViewController.swift in Sources */,
 				4D9DE8A8203E022B005BDB37 /* Location.swift in Sources */,
 				4DE8840E207BB95200682236 /* LocationManager.swift in Sources */,
 				4D8F2D3A201B4EB000756CCB /* TransparentGrey+UIButton.swift in Sources */,
@@ -1779,6 +1801,7 @@
 				4DC67758201789D600F34184 /* CreateOfficialPageViewController.swift in Sources */,
 				4D05A9441FE144A900B19E6E /* Logger.swift in Sources */,
 				4DC2F8B7202C4DB400E331BD /* TermsViewController.swift in Sources */,
+				4D85DE8F207CB3C900972B9F /* AddSchoolViewController.swift in Sources */,
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
 				4D36E6F9201E3565000DC94F /* ChildrenView.swift in Sources */,
 				4D403BD4204AE15500956939 /* UICollectionViewCell.swift in Sources */,
@@ -1802,6 +1825,7 @@
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
 				4D74FF3C205BEEF50016D3E9 /* CategoriesHeaderCell.swift in Sources */,
 				4D69BAA22051811F006AB41D /* OrganisationViewController.swift in Sources */,
+				4D85DE91207CB65D00972B9F /* AddSchoolCell.swift in Sources */,
 				4D69BAA52051824B006AB41D /* OrganisationProfileView.swift in Sources */,
 				4DC2F8B9202C4E3100E331BD /* TermsCell.swift in Sources */,
 				4D36E701201E3859000DC94F /* TapticEngine.swift in Sources */,
@@ -2057,11 +2081,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7JSNJN952C;
+				DEVELOPMENT_TEAM = 59V23AMF4S;
 				INFOPLIST_FILE = "$(SRCROOT)/MumsApp/New Group/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.caviarsoft.MumsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2074,11 +2098,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7JSNJN952C;
+				DEVELOPMENT_TEAM = 59V23AMF4S;
 				INFOPLIST_FILE = "$(SRCROOT)/MumsApp/New Group/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.universeldev.MumsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.caviarsoft.MumsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

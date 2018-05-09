@@ -5,6 +5,13 @@ import GooglePlaces
 protocol LocationPopupDelegate: class {
     
     func locationUpdated(coordinate: CLLocationCoordinate2D, locationName: String)
+
+}
+
+enum LocationPopupType {
+    
+    case profile
+    case other
     
 }
 
@@ -32,11 +39,15 @@ class LocationPopupViewController: UIViewController {
     
     private var delegate: LocationPopupDelegate?
     
-    func configureWith(userDetailsService: UserDetailsService, delegate: LocationPopupDelegate?) {
+    private var type: LocationPopupType = .profile
+    
+    func configureWith(userDetailsService: UserDetailsService, delegate: LocationPopupDelegate?, type: LocationPopupType) {
         
         self.userDetailsService = userDetailsService
         
         self.delegate = delegate
+        
+        self.type = type
         
     }
     
@@ -92,6 +103,20 @@ class LocationPopupViewController: UIViewController {
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
     
+        if self.type == .profile {
+            
+            self.updateProfileLocation()
+            
+        } else {
+            
+            self.dismissViewController()
+            
+        }
+        
+    }
+    
+    private func updateProfileLocation() {
+        
         guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
         
         guard let place = self.place else { return }
@@ -105,22 +130,22 @@ class LocationPopupViewController: UIViewController {
                                                    lat: place.coordinate.latitude,
                                                    lon: place.coordinate.longitude,
                                                    formattedAddress: place.formattedAddress ?? "") { errorOptional in
-            
-            if let error = errorOptional {
-                
-                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
-
-                self.blockViews(bool: true)
-
-            } else {
-                
-                self.delegate?.locationUpdated(coordinate: self.place!.coordinate,
-                                               locationName: place.formattedAddress ?? "")
-                
-                self.dismissViewController()
-
-            }
-            
+                                                   
+                                                    if let error = errorOptional {
+                                                        
+                                                        self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                                                        
+                                                        self.blockViews(bool: true)
+                                                        
+                                                    } else {
+                                                        
+                                                        self.delegate?.locationUpdated(coordinate: self.place!.coordinate,
+                                                                                       locationName: place.formattedAddress ?? "")
+                                                        
+                                                        self.dismissViewController()
+                                                        
+                                                    }
+                                                    
         }
         
     }

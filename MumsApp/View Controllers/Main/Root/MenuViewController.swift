@@ -7,6 +7,8 @@ protocol MenuDelegate: class {
     func chatButtonPressed()
     func shopButtonPressed()
     func offersButtonPressed()
+    func servicesButtonPressed()
+    func schoolsButtonPressed()
     
 }
 
@@ -44,7 +46,10 @@ class MenuViewController: UIViewController {
     
     }
     
-    @IBAction func findButtonPressed(_ sender: UIButton) {
+    @IBAction func servicesButtonPressed(_ sender: UIButton) {
+   
+        self.delegate?.servicesButtonPressed()
+    
     }
     
     @IBAction func shopButtonPressed(_ sender: UIButton) {
@@ -57,6 +62,12 @@ class MenuViewController: UIViewController {
     
         self.delegate?.offersButtonPressed()
     
+    }
+    
+    @IBAction func schoolsButtonPressed(_ sender: UIButton) {
+        
+        self.delegate?.schoolsButtonPressed()
+
     }
     
 }

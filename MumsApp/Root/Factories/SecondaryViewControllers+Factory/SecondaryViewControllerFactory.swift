@@ -51,11 +51,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func locationPopupViewController(delegate: LocationPopupDelegate?) -> LocationPopupViewController {
+    func locationPopupViewController(delegate: LocationPopupDelegate?, type: LocationPopupType) -> LocationPopupViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LocationPopupViewController.rawValue, storyboard: storyboard) as! LocationPopupViewController
         
-        controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService(), delegate: delegate)
+        controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService(), delegate: delegate, type: type)
         
         return controller
         
@@ -108,9 +108,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func shopViewController() -> ShopViewController {
+    func shopViewController(type: ShopViewType) -> ShopViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopViewController.rawValue, storyboard: storyboard) as! ShopViewController
+        
+        controller.configureWith(type: type)
         
         return controller
         
@@ -283,6 +285,22 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
     func promotionPopupViewController() -> PromotionPopupViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.PromotionPopupViewController.rawValue, storyboard: storyboard) as! PromotionPopupViewController
+        
+        return controller
+        
+    }
+    
+    func schoolsViewController() -> SchoolsViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.SchoolsViewController.rawValue, storyboard: storyboard) as! SchoolsViewController
+        
+        return controller
+
+    }
+
+    func addSchoolViewController() -> AddSchoolViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddSchoolViewController.rawValue, storyboard: storyboard) as! AddSchoolViewController
         
         return controller
         

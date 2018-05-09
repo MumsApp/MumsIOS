@@ -63,6 +63,10 @@ enum SecondaryViewController: String {
     case PromotionViewController
     
     case PromotionPopupViewController
+ 
+    case SchoolsViewController
+    
+    case AddSchoolViewController
     
 }
 

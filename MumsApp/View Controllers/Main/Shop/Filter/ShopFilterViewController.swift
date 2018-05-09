@@ -168,7 +168,7 @@ class ShopFilterViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.locationPopupViewController(delegate: nil)
+        let controller = factory.locationPopupViewController(delegate: nil, type: .other)
         
         controller.modalPresentationStyle = .overCurrentContext
         

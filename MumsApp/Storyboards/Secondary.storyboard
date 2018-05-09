@@ -129,63 +129,17 @@ OFFERS     </string>
                                             <attributedString key="attributedTitle">
                                                 <fragment>
                                                     <string key="content">  WHERE CAN
-</string>
+  I FIND?     </string>
                                                     <attributes>
                                                         <color key="NSColor" red="0.70196000000000003" green="0.72941" blue="0.80391999999999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <font key="NSFont" size="17" name="BebasNeueRegular"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                     </attributes>
                                                 </fragment>
-                                                <fragment content="  I FIND?     ">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.70196000000000003" green="0.72941" blue="0.80391999999999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                            <tabStops>
-                                                                <textTab alignment="left" location="28">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="56">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="84">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="112">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="140">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="168">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="196">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="224">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="252">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="280">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="308">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="336">
-                                                                    <options/>
-                                                                </textTab>
-                                                            </tabStops>
-                                                        </paragraphStyle>
-                                                    </attributes>
-                                                </fragment>
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="findButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="him-2a-dFj"/>
+                                            <action selector="servicesButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="jrZ-hg-MW4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-Q2-TfU" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
@@ -202,6 +156,9 @@ OFFERS     </string>
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="schoolsButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="Fg6-ee-KUF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -430,6 +387,10 @@ OFFERS     </string>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationGreyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cJd-ap-HD1">
                                         <rect key="frame" x="20" y="321" width="11" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="11" id="YYQ-gj-12A"/>
+                                            <constraint firstAttribute="height" constant="15" id="s71-Jr-O9u"/>
+                                        </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny6-ga-8TQ">
                                         <rect key="frame" x="39" y="313" width="300" height="30"/>
@@ -3779,7 +3740,38 @@ you want to remove</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h76-gD-n6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9037.6000000000004" y="239.28035982008998"/>
+            <point key="canvasLocation" x="9038" y="327"/>
+        </scene>
+        <!--Schools View Controller-->
+        <scene sceneID="bWb-Cj-Wl1">
+            <objects>
+                <viewController storyboardIdentifier="SchoolsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zp1-zM-BAO" customClass="SchoolsViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wlj-9f-yiM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="waB-sS-xSW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="waB-sS-xSW" firstAttribute="leading" secondItem="BRF-N9-REG" secondAttribute="leading" id="Vxc-Fb-9OB"/>
+                            <constraint firstItem="waB-sS-xSW" firstAttribute="trailing" secondItem="BRF-N9-REG" secondAttribute="trailing" id="iu5-zI-sim"/>
+                            <constraint firstItem="waB-sS-xSW" firstAttribute="bottom" secondItem="BRF-N9-REG" secondAttribute="bottom" id="mVx-ae-Ipy"/>
+                            <constraint firstItem="waB-sS-xSW" firstAttribute="top" secondItem="BRF-N9-REG" secondAttribute="top" id="sGn-ZZ-UFL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BRF-N9-REG"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="waB-sS-xSW" id="l5g-cU-5eE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mF8-aa-7fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9756" y="131.78410794602701"/>
         </scene>
         <!--Promotion Popup View Controller-->
         <scene sceneID="Q0x-qh-8jD">
@@ -3918,6 +3910,73 @@ you want to remove</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2D-eh-0Rz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6861.6000000000004" y="3602.2488755622194"/>
+        </scene>
+        <!--Add School View Controller-->
+        <scene sceneID="K7a-0S-qdw">
+            <objects>
+                <viewController storyboardIdentifier="AddSchoolViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EqL-kI-I6R" customClass="AddSchoolViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZWm-46-s6L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viX-VM-GTV" customClass="CustomSearchBar" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="FQE-ve-6SD"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="S12-sg-Egz">
+                                <rect key="frame" x="336" y="38" width="17" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="ZOP-8h-WYV"/>
+                                    <constraint firstAttribute="height" constant="19" id="alH-Uc-WVt"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AhJ-PD-WvC">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShY-hd-Auk">
+                                <rect key="frame" x="0.0" y="76" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="RbU-8c-HG2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AhJ-PD-WvC" firstAttribute="trailing" secondItem="2vL-MW-Kao" secondAttribute="trailing" id="3tI-qV-TAu"/>
+                            <constraint firstItem="S12-sg-Egz" firstAttribute="centerY" secondItem="viX-VM-GTV" secondAttribute="centerY" id="8zi-PW-joe"/>
+                            <constraint firstItem="AhJ-PD-WvC" firstAttribute="bottom" secondItem="2vL-MW-Kao" secondAttribute="bottom" id="BEh-Fu-vgj"/>
+                            <constraint firstItem="ShY-hd-Auk" firstAttribute="top" secondItem="viX-VM-GTV" secondAttribute="bottom" id="DaY-6A-9nz"/>
+                            <constraint firstItem="AhJ-PD-WvC" firstAttribute="top" secondItem="ShY-hd-Auk" secondAttribute="bottom" id="G0m-vK-VoU"/>
+                            <constraint firstItem="2vL-MW-Kao" firstAttribute="trailing" secondItem="S12-sg-Egz" secondAttribute="trailing" constant="22" id="KdP-j4-bwU"/>
+                            <constraint firstItem="viX-VM-GTV" firstAttribute="leading" secondItem="2vL-MW-Kao" secondAttribute="leading" id="T1q-a5-uPE"/>
+                            <constraint firstItem="viX-VM-GTV" firstAttribute="top" secondItem="2vL-MW-Kao" secondAttribute="top" id="VN9-xg-qnl"/>
+                            <constraint firstItem="ShY-hd-Auk" firstAttribute="trailing" secondItem="2vL-MW-Kao" secondAttribute="trailing" id="Xch-0y-MbH"/>
+                            <constraint firstItem="viX-VM-GTV" firstAttribute="trailing" secondItem="2vL-MW-Kao" secondAttribute="trailing" id="tuT-jc-NYI"/>
+                            <constraint firstItem="AhJ-PD-WvC" firstAttribute="leading" secondItem="2vL-MW-Kao" secondAttribute="leading" id="vIa-SJ-yBy"/>
+                            <constraint firstItem="ShY-hd-Auk" firstAttribute="leading" secondItem="2vL-MW-Kao" secondAttribute="leading" id="xpm-7Z-3Hg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2vL-MW-Kao"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="viX-VM-GTV" id="22J-9o-hDc"/>
+                        <outlet property="tableView" destination="AhJ-PD-WvC" id="R6l-NL-5Ds"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iqu-1T-aEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10478" y="132"/>
         </scene>
     </scenes>
     <resources>

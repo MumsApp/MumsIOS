@@ -7,7 +7,8 @@ enum ControllerType {
     case profile
     case shop
     case offers
-    
+    case services
+    case schools
 }
 
 var mainRootVC: MainRootViewController?
@@ -238,6 +239,18 @@ extension MainRootViewController: MenuDelegate {
         
     }
     
+    func servicesButtonPressed() {
+        
+        self.showViewController(type: .services)
+        
+    }
+    
+    func schoolsButtonPressed() {
+        
+        self.showViewController(type: .schools)
+        
+    }
+    
     func showViewController(type: ControllerType) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
@@ -256,18 +269,24 @@ extension MainRootViewController: MenuDelegate {
             
         case .profile:
             
-//            controller = factory.organisationViewController()
-
             controller = factory.profileViewController()
             
         case .shop:
             
-            controller = factory.shopViewController()
+            controller = factory.shopViewController(type: .shop)
          
         case .offers:
             
             controller = factory.offersViewController()
         
+        case .services:
+            
+            controller = factory.shopViewController(type: .services)
+
+        case .schools:
+            
+            controller = factory.schoolsViewController()
+
         }
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)

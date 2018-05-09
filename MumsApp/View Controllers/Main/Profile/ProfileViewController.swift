@@ -266,7 +266,7 @@ extension ProfileViewController: LocationViewDelegate {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.locationPopupViewController(delegate: self)
+        let controller = factory.locationPopupViewController(delegate: self, type: .profile)
         
         controller.modalPresentationStyle = .overCurrentContext
         

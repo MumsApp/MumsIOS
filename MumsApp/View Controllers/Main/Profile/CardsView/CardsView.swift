@@ -13,6 +13,12 @@ class CardsView: UIView {
 
     @IBOutlet weak var addButton: UIButton!
     
+    @IBOutlet weak var scanButton: UIButton!
+    
+    @IBOutlet weak var cardNameLabel: UILabel!
+    
+    @IBOutlet weak var emergencyLabel: UILabel!
+    
     @IBOutlet weak var containerStackViewHeightConstraint: NSLayoutConstraint!
     
     override init(frame: CGRect) {
@@ -57,11 +63,23 @@ class CardsView: UIView {
         
         self.addButton.tintColor = .mainGreen
         
+        self.cardNameLabel.font = .regular(size: 12)
+        
+        self.emergencyLabel.font = .regular(size: 12)
+        
+        self.scanButton.titleLabel?.font = .medium(size: 13)
+    
     }
 
     @IBAction func switchChanged(_ sender: UISwitch) {
         
         
     }
-
+    
+    @IBAction func scanButtonPressed(_ sender: UIButton) {
+    
+        
+    
+    }
+    
 }
