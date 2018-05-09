@@ -29,156 +29,69 @@
                                             <constraint firstAttribute="height" constant="75" id="YeV-3v-3ym"/>
                                         </constraints>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yiW-EH-8dr" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
-                                        <rect key="frame" x="141" y="360" width="93" height="77"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="meIcon">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="ME">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="profileButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="aMx-My-ppN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18h-5V-aI1" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="457" width="110" height="77"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="lobbyIcon">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Lobby">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="lobbyButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="eFL-UT-yWl"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k1P-ar-YCZ" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
-                                        <rect key="frame" x="-11" y="499" width="135" height="76"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="chatIcon">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Let's Talk">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="chatButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="tqF-1T-3g7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J62-GQ-M4c" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
-                                        <rect key="frame" x="250" y="497" width="104" height="78"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="shopIcon">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="SHOP">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="shopButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="USD-w0-rWZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="04q-Ge-EXJ">
-                                        <rect key="frame" x="217" y="583" width="127" height="76"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="offersIcon">
-                                            <attributedString key="attributedTitle">
-                                                <fragment>
-                                                    <string key="content">MUMSAPP
-OFFERS     </string>
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="offersButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="HZW-4H-q5E"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uL9-cn-ZFj">
-                                        <rect key="frame" x="30" y="583" width="142" height="77"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="whereIcon">
-                                            <attributedString key="attributedTitle">
-                                                <fragment>
-                                                    <string key="content">  WHERE CAN
-  I FIND?     </string>
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.70196000000000003" green="0.72941" blue="0.80391999999999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="servicesButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="jrZ-hg-MW4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-Q2-TfU" customClass="VerticallyButton" customModule="MumsApp" customModuleProvider="target">
-                                        <rect key="frame" x="1.5" y="393" width="110" height="71"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="schoolDaysIcon">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="SCHOOL">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="BebasNeueRegular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="schoolsButtonPressed:" destination="N6F-10-aVT" eventType="touchUpInside" id="Fg6-ee-KUF"/>
-                                        </connections>
-                                    </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PX8-vi-LCb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KyB-K1-wBc">
+                                            <size key="itemSize" width="140" height="200"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="d0N-op-saF">
+                                                <rect key="frame" x="40" y="0.0" width="140" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Lx-xP-5UY">
+                                                            <rect key="frame" x="-5" y="25" width="150" height="150"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="150" id="nYr-8J-qER"/>
+                                                                <constraint firstAttribute="height" constant="150" id="vnB-r6-Y0u"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="9Lx-xP-5UY" firstAttribute="centerX" secondItem="d0N-op-saF" secondAttribute="centerX" id="7la-mj-fnR"/>
+                                                    <constraint firstItem="9Lx-xP-5UY" firstAttribute="centerY" secondItem="d0N-op-saF" secondAttribute="centerY" id="rqx-Ip-MRa"/>
+                                                </constraints>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ru8-6A-swE">
+                                                <rect key="frame" x="195" y="0.0" width="140" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NqN-YR-68D">
+                                                            <rect key="frame" x="-5" y="25" width="150" height="150"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="150" id="hRs-r8-wz2"/>
+                                                                <constraint firstAttribute="width" constant="150" id="qkK-Y3-qCt"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="NqN-YR-68D" firstAttribute="centerX" secondItem="ru8-6A-swE" secondAttribute="centerX" id="MCB-0f-M7s"/>
+                                                    <constraint firstItem="NqN-YR-68D" firstAttribute="centerY" secondItem="ru8-6A-swE" secondAttribute="centerY" id="XtM-vH-wOb"/>
+                                                </constraints>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ENo-Q2-TfU" firstAttribute="centerX" secondItem="k1P-ar-YCZ" secondAttribute="centerX" id="6tT-E7-x4E"/>
-                                    <constraint firstAttribute="bottom" secondItem="04q-Ge-EXJ" secondAttribute="bottom" constant="8" id="73V-v5-sw8"/>
-                                    <constraint firstItem="18h-5V-aI1" firstAttribute="centerX" secondItem="TfO-5O-xuJ" secondAttribute="centerX" id="Fnb-fM-zGo"/>
-                                    <constraint firstItem="04q-Ge-EXJ" firstAttribute="top" secondItem="J62-GQ-M4c" secondAttribute="bottom" constant="8" id="GpG-gZ-W3q"/>
-                                    <constraint firstItem="18h-5V-aI1" firstAttribute="leading" secondItem="k1P-ar-YCZ" secondAttribute="trailing" constant="8" id="N45-zm-Fsa"/>
-                                    <constraint firstItem="uL9-cn-ZFj" firstAttribute="top" secondItem="k1P-ar-YCZ" secondAttribute="bottom" constant="8" id="QZ4-pi-0iT"/>
-                                    <constraint firstItem="BqE-9r-bEF" firstAttribute="top" secondItem="18h-5V-aI1" secondAttribute="bottom" constant="50" id="U1r-hj-BkT"/>
                                     <constraint firstItem="BqE-9r-bEF" firstAttribute="centerX" secondItem="TfO-5O-xuJ" secondAttribute="centerX" id="Ub4-E2-vlN"/>
-                                    <constraint firstItem="ENo-Q2-TfU" firstAttribute="centerY" secondItem="yiW-EH-8dr" secondAttribute="centerY" constant="30" id="WJh-R5-HY4"/>
-                                    <constraint firstItem="BqE-9r-bEF" firstAttribute="leading" secondItem="uL9-cn-ZFj" secondAttribute="trailing" constant="-22" id="XkE-nn-YlP"/>
-                                    <constraint firstItem="J62-GQ-M4c" firstAttribute="leading" secondItem="18h-5V-aI1" secondAttribute="trailing" constant="8" id="YX6-1R-EKc"/>
-                                    <constraint firstItem="yiW-EH-8dr" firstAttribute="centerX" secondItem="TfO-5O-xuJ" secondAttribute="centerX" id="dwi-HM-qVf"/>
-                                    <constraint firstItem="18h-5V-aI1" firstAttribute="top" secondItem="yiW-EH-8dr" secondAttribute="bottom" constant="20" id="uxZ-fJ-blf"/>
-                                    <constraint firstAttribute="bottom" secondItem="uL9-cn-ZFj" secondAttribute="bottom" constant="7" id="vRa-TX-JJY"/>
+                                    <constraint firstItem="PX8-vi-LCb" firstAttribute="top" secondItem="TfO-5O-xuJ" secondAttribute="top" id="hxh-Xj-iBN"/>
+                                    <constraint firstItem="PX8-vi-LCb" firstAttribute="leading" secondItem="TfO-5O-xuJ" secondAttribute="leading" id="pxY-U9-ugj"/>
+                                    <constraint firstAttribute="bottom" secondItem="PX8-vi-LCb" secondAttribute="bottom" id="u6z-yL-F8x"/>
                                     <constraint firstAttribute="bottom" secondItem="BqE-9r-bEF" secondAttribute="bottom" constant="8" id="wur-ez-CK4"/>
-                                    <constraint firstItem="04q-Ge-EXJ" firstAttribute="leading" secondItem="BqE-9r-bEF" secondAttribute="trailing" constant="-8" id="z79-Ec-hNm"/>
+                                    <constraint firstAttribute="trailing" secondItem="PX8-vi-LCb" secondAttribute="trailing" id="yJB-c9-uMy"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -191,6 +104,9 @@ OFFERS     </string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QRt-jw-s2w"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="PX8-vi-LCb" id="lGp-sy-hqs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbD-Lz-Dhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -970,7 +886,7 @@ OFFERS     </string>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTS-kF-3hZ" customClass="OnboardingGreenButton" customModule="MumsApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="420.5" width="319" height="48"/>
+                                        <rect key="frame" x="19.5" y="420.5" width="319" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="hga-Qg-Cvs"/>
                                         </constraints>
@@ -3982,24 +3898,17 @@ you want to remove</string>
     <resources>
         <image name="addPhotoIcon" width="29" height="28"/>
         <image name="arrowRight" width="8" height="12"/>
-        <image name="chatIcon" width="80" height="76"/>
         <image name="closeIcon" width="18" height="18"/>
-        <image name="lobbyIcon" width="77" height="77"/>
         <image name="locationGreyIcon" width="11" height="15"/>
         <image name="logo" width="223" height="206"/>
         <image name="logoDescription" width="289" height="18"/>
         <image name="logoText" width="333" height="80"/>
-        <image name="meIcon" width="77" height="77"/>
-        <image name="offersIcon" width="76" height="76"/>
         <image name="placeholderIcon" width="163" height="152"/>
         <image name="placeholderImage" width="163" height="152"/>
         <image name="plusIcon" width="12" height="12"/>
-        <image name="schoolDaysIcon" width="71" height="71"/>
         <image name="searchIcon" width="17" height="19"/>
-        <image name="shopIcon" width="77" height="78"/>
         <image name="shopMyProductsIcon" width="25" height="26"/>
         <image name="shopMyWishlistIcon" width="16" height="22"/>
         <image name="shopSearchIcon" width="18" height="17"/>
-        <image name="whereIcon" width="77" height="77"/>
     </resources>
 </document>

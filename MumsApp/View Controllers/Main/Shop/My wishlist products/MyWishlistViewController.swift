@@ -98,7 +98,6 @@ class MyWishlistViewController: UIViewController {
 
 }
 
-
 extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
