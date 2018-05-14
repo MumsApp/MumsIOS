@@ -83,54 +83,12 @@ class MenuViewController: UIViewController {
         self.menuItems.append(Menu(image: #imageLiteral(resourceName: "chatIcon"), title: "LET'S TALK", tag: 2))
         self.menuItems.append(Menu(image: #imageLiteral(resourceName: "shopIcon"), title: "SHOP", tag: 3))
         self.menuItems.append(Menu(image: #imageLiteral(resourceName: "offersIcon"), title: "MUMSAPP OFFERS", tag: 4))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "mumsHealthIcon"), title: "HEALTH", tag: 5))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "holidayIcon"), title: "HOLIDAY", tag: 6))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "holidayIcon"), title: "HOLIDAY", tag: 5))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "mumsHealthIcon"), title: "MUMSAPP HEALTH", tag: 6))
         self.menuItems.append(Menu(image: #imageLiteral(resourceName: "holidayIcon"), title: "ADD TO MENU", tag: 7))
 
     }
-    
-    @IBAction func profileButtonPressed(_ sender: UIButton) {
-   
-        self.delegate?.profileButtonPressed()
-    
-    }
-    
-    @IBAction func lobbyButtonPressed(_ sender: UIButton) {
-    
-        self.delegate?.lobbyButtonPressed()
-    
-    }
-    
-    @IBAction func chatButtonPressed(_ sender: UIButton) {
-    
-        self.delegate?.chatButtonPressed()
-    
-    }
-    
-    @IBAction func servicesButtonPressed(_ sender: UIButton) {
-   
-        self.delegate?.servicesButtonPressed()
-    
-    }
-    
-    @IBAction func shopButtonPressed(_ sender: UIButton) {
-        
-        self.delegate?.shopButtonPressed()
-        
-    }
-    
-    @IBAction func offersButtonPressed(_ sender: UIButton) {
-    
-        self.delegate?.offersButtonPressed()
-    
-    }
-    
-    @IBAction func schoolsButtonPressed(_ sender: UIButton) {
-        
-        self.delegate?.schoolsButtonPressed()
-
-    }
-    
+ 
 }
 
 extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -175,15 +133,16 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         case 5:
             
-            return
+            print("Holiday")
             
         case 6:
             
-            return
-            
+            print("Health")
+
         case 7:
             
-            return
+            print("Add new item")
+
             
         case .none, .some(_):
             

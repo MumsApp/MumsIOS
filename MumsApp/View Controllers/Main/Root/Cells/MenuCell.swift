@@ -16,6 +16,10 @@ class MenuCell: UICollectionViewCell, Reusable {
         
         self.menuIcon.layer.cornerRadius = 10
         
+        self.menuTitle.font = .medium(size: 15)
+        
+        self.menuTitle.textColor = .mainDarkGrey
+
     }
     
     func configureWith(item: Menu) {
