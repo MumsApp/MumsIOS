@@ -27,5 +27,17 @@ extension UIFont {
         
     }
     
+    class func menuRegular(size: CGFloat) -> UIFont {
+        
+        return UIFont(name: "BebasNeueRegular", size: size)!
+        
+    }
+    
+    class func menuBold(size: CGFloat) -> UIFont {
+        
+        return UIFont(name: "BebasNeueBold", size: size)!
+        
+    }
+    
 }
 

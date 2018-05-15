@@ -60,6 +60,7 @@
 		4D0F0C3920497BF6000F251C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3820497BF6000F251C /* UserViewController.swift */; };
 		4D0F0C3B204983EC000F251C /* RemoveContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3A204983EC000F251C /* RemoveContactCell.swift */; };
 		4D0F0C3D2049846E000F251C /* AddContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0C3C2049846E000F251C /* AddContactCell.swift */; };
+		4D1880BF20AB0AA2001478F3 /* BebasNeueBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D1880BE20AB0AA2001478F3 /* BebasNeueBold.otf */; };
 		4D1933E920569E7F006D6D5B /* SignUpOrganisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933E820569E7F006D6D5B /* SignUpOrganisationViewController.swift */; };
 		4D1933EB2056CC4D006D6D5B /* UserNamePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933EA2056CC4C006D6D5B /* UserNamePopupViewController.swift */; };
 		4D1933ED2056FAEF006D6D5B /* GoogleMaps+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933EC2056FAEF006D6D5B /* GoogleMaps+Extensions.swift */; };
@@ -315,6 +316,7 @@
 		4D0F0C3820497BF6000F251C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		4D0F0C3A204983EC000F251C /* RemoveContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveContactCell.swift; sourceTree = "<group>"; };
 		4D0F0C3C2049846E000F251C /* AddContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactCell.swift; sourceTree = "<group>"; };
+		4D1880BE20AB0AA2001478F3 /* BebasNeueBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeueBold.otf; sourceTree = "<group>"; };
 		4D1933E820569E7F006D6D5B /* SignUpOrganisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOrganisationViewController.swift; sourceTree = "<group>"; };
 		4D1933EA2056CC4C006D6D5B /* UserNamePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNamePopupViewController.swift; sourceTree = "<group>"; };
 		4D1933EC2056FAEF006D6D5B /* GoogleMaps+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMaps+Extensions.swift"; sourceTree = "<group>"; };
@@ -1062,6 +1064,7 @@
 				4D8F2D36201B4A4300756CCB /* Poppins-Regular.ttf */,
 				4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */,
 				4DA49A502024B2EA00561EC9 /* BebasNeueRegular.otf */,
+				4D1880BE20AB0AA2001478F3 /* BebasNeueBold.otf */,
 				4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */,
 				4DC2F8B4202C4D4300E331BD /* Terms.json */,
 				4D74FF36205BE46D0016D3E9 /* ShopCategories.swift */,
@@ -1509,6 +1512,7 @@
 				4DA49A512024B2EB00561EC9 /* BebasNeueRegular.otf in Resources */,
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
+				4D1880BF20AB0AA2001478F3 /* BebasNeueBold.otf in Resources */,
 				4D39D49F2034B281005123F8 /* MyProductCell.xib in Resources */,
 				4DE175052028C985001C5DD1 /* ChatCell.xib in Resources */,
 				4D69BAB020518B1C006AB41D /* OrganisationNewsView.xib in Resources */,

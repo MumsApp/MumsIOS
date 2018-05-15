@@ -156,25 +156,23 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
     
         options.backgroundColor = .clear
         
-//        options.expansionStyle = .destructive
-        
-//        options.transitionStyle = .border
-        
         return options
     
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.showLobbyDetailsViewController()
+        let thisObject = lobbyArray[indexPath.row]
+
+        self.showLobbyDetailsViewController(title: thisObject.title)
         
     }
     
-    private func showLobbyDetailsViewController() {
+    private func showLobbyDetailsViewController(title: String) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.lobbyDetailsViewController()
+        let controller = factory.lobbyDetailsViewController(title: title)
         
         self.navigationController?.pushViewController(controller, animated: true)
         

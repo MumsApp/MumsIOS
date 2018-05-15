@@ -168,9 +168,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func lobbyDetailsViewController() -> LobbyDetailsViewController {
+    func lobbyDetailsViewController(title: String) -> LobbyDetailsViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyDetailsViewController.rawValue, storyboard: storyboard) as! LobbyDetailsViewController
+        
+        controller.configureWith(title: title)
         
         return controller
         

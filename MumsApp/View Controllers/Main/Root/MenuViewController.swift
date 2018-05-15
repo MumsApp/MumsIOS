@@ -78,14 +78,14 @@ class MenuViewController: UIViewController {
     
     private func configureMenu() {
         
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "meIcon"), title: "ME", tag: 0))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "lobbyIcon"), title: "LOBBY", tag: 1))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "chatIcon"), title: "LET'S TALK", tag: 2))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "shopIcon"), title: "SHOP", tag: 3))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "offersIcon"), title: "MUMSAPP OFFERS", tag: 4))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "holidayIcon"), title: "HOLIDAY", tag: 5))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "mumsHealthIcon"), title: "MUMSAPP HEALTH", tag: 6))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "holidayIcon"), title: "ADD TO MENU", tag: 7))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "me"), title: "ME", tag: 0))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "lobby"), title: "LOBBY", tag: 1))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "chat"), title: "LET'S TALK", tag: 2))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "shop"), title: "SHOP", tag: 3))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "offers"), title: "MUMSAPP OFFERS", tag: 4))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "holiday"), title: "HOLIDAY", tag: 5))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "health"), title: "MUMSAPP HEALTH", tag: 6))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "add"), title: "ADD TO MENU", tag: 7))
 
     }
  

@@ -4,6 +4,12 @@ class LobbyDetailsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    func configureWith(title: String) {
+        
+        self.title = title
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +38,7 @@ class LobbyDetailsViewController: UIViewController {
     
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Title")
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: self.title!)
         
         self.navigationItem.titleView = titleLabel
         
