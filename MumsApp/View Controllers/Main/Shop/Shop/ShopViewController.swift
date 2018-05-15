@@ -76,6 +76,8 @@ class ShopViewController: UIViewController {
         
         self.tableView.registerNib(ShopCell.self)
     
+        self.tableView.registerNib(ShopAdsCell.self)
+
         self.tableView.registerNib(ShopFilterCell.self)
         
     }
@@ -154,21 +156,43 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else {
            
-            let cell = tableView.dequeueReusableCell(ShopCell.self, indexPath: indexPath)
-            
-            cell.itemNameLabel.text = "Item one"
-            
-            cell.itemCategoryLabel.text = "Baby clothing"
-            
-            cell.itemPriceLabel.text = "$60"
-            
-            cell.itemDistanceLabel.text = "3 Miles"
-            
-            cell.userNameButton.setTitle("John S.", for: .normal)
-            
-            cell.configureWith(delegate: self)
-            
-            return cell
+            if indexPath.row == 2 {
+                
+                let cell = tableView.dequeueReusableCell(ShopAdsCell.self, indexPath: indexPath)
+                
+                cell.itemNameLabel.text = "Item one"
+                
+                cell.itemCategoryLabel.text = "Baby clothing"
+                
+                cell.itemPriceLabel.text = "$60"
+                
+                cell.itemDistanceLabel.text = "3 Miles"
+                
+                cell.userNameButton.setTitle("John S.", for: .normal)
+                
+                cell.configureWith(delegate: self)
+                
+                return cell
+                
+            } else {
+             
+                let cell = tableView.dequeueReusableCell(ShopCell.self, indexPath: indexPath)
+                
+                cell.itemNameLabel.text = "Item one"
+                
+                cell.itemCategoryLabel.text = "Baby clothing"
+                
+                cell.itemPriceLabel.text = "$60"
+                
+                cell.itemDistanceLabel.text = "3 Miles"
+                
+                cell.userNameButton.setTitle("John S.", for: .normal)
+                
+                cell.configureWith(delegate: self)
+                
+                return cell
+                
+            }
             
         }
         

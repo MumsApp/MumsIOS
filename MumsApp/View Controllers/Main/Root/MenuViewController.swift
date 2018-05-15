@@ -9,7 +9,9 @@ protocol MenuDelegate: class {
     func offersButtonPressed()
     func servicesButtonPressed()
     func schoolsButtonPressed()
-    
+    func healthButtonPressed()
+    func holidayButtonPressed()
+    func addButtonPressed()
 }
 
 struct Menu {
@@ -133,17 +135,19 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         case 5:
             
+            self.delegate?.holidayButtonPressed()
             print("Holiday")
             
         case 6:
             
+            self.delegate?.healthButtonPressed()
             print("Health")
 
         case 7:
             
+            self.delegate?.addButtonPressed()
             print("Add new item")
 
-            
         case .none, .some(_):
             
             return

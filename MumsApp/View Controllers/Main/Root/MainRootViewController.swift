@@ -9,6 +9,9 @@ enum ControllerType {
     case offers
     case services
     case schools
+    case health
+    case holiday
+    
 }
 
 var mainRootVC: MainRootViewController?
@@ -251,6 +254,24 @@ extension MainRootViewController: MenuDelegate {
         
     }
     
+    func healthButtonPressed() {
+        
+        self.showViewController(type: .health)
+
+    }
+    
+    func holidayButtonPressed() {
+
+        self.showViewController(type: .holiday)
+
+    }
+    
+    func addButtonPressed() {
+        
+        return
+        
+    }
+    
     func showViewController(type: ControllerType) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
@@ -287,6 +308,14 @@ extension MainRootViewController: MenuDelegate {
             
             controller = factory.schoolsViewController()
 
+        case .health:
+            
+            controller = factory.lobbyDetailsViewController(title: "Health")
+           
+        case .holiday:
+            
+            controller = factory.lobbyDetailsViewController(title: "Holiday")
+            
         }
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
