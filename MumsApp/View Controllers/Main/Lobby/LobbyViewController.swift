@@ -172,7 +172,7 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.lobbyDetailsViewController(title: title)
+        let controller = factory.lobbyDetailsViewController(title: title, backButton: true)
         
         self.navigationController?.pushViewController(controller, animated: true)
         

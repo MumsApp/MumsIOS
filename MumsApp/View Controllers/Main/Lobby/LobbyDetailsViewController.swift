@@ -4,9 +4,13 @@ class LobbyDetailsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    func configureWith(title: String) {
+    private var isBackButtonVisible: Bool = false
+    
+    func configureWith(title: String, backButton: Bool) {
         
         self.title = title
+        
+        self.isBackButtonVisible = backButton
         
     }
     
@@ -52,7 +56,7 @@ class LobbyDetailsViewController: UIViewController {
         
         let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "backButtonIcon"), style: .plain, target: self, action: #selector(self.backButtonPressed(sender:)))
         
-        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.leftBarButtonItem = self.isBackButtonVisible == true ? backButton : nil
         
     }
 
