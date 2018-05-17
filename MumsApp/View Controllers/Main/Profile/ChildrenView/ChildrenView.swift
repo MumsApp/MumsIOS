@@ -1,29 +1,37 @@
 import Foundation
 import UIKit
 
+protocol ChildrenViewDelegate: class {
+    
+    func childrenAdded()
+    
+}
+
 class ChildrenView: UIView {
     
     @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var childrenLabel: UILabel!
     
-    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var femaleButton: UIButton!
     
-    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var maleButton: UIButton!
     
-    @IBOutlet weak var numberTextField: UITextField!
+    @IBOutlet weak var toComeButton: UIButton!
     
-    @IBOutlet weak var minusButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var separatorView: UIView!
     
-    @IBOutlet weak var minLabel: UILabel!
+    private var delegate: ChildrenViewDelegate?
     
-    @IBOutlet weak var maxLabel: UILabel!
+    func configureWith(delegate: ChildrenViewDelegate) {
+        
+        self.delegate = delegate
+        
+    }
     
-    @IBOutlet weak var slider: RangeSeekSlider!
-    
-    var count = 0
+    var list: Array<String> = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,6 +59,8 @@ class ChildrenView: UIView {
         
         self.configureView()
         
+        self.tableView.registerNib(ChildrenCell.self)
+
     }
     
     private func configureView() {
@@ -63,57 +73,75 @@ class ChildrenView: UIView {
         
         self.childrenLabel.textColor = .black
         
-        self.numberLabel.font = .regular(size: 12)
+        self.femaleButton.titleLabel?.font = .regular(size: 12)
         
-        self.numberLabel.textColor = .mainDarkGrey
+        self.femaleButton.setTitleColor(.mainDarkGrey, for: .normal)
         
-        self.ageLabel.font = .regular(size: 12)
-        
-        self.ageLabel.textColor = .mainDarkGrey
+        self.maleButton.titleLabel?.font = .regular(size: 12)
 
-        self.numberTextField.font = .regular(size: 13)
-        
-        self.minLabel.font = .regular(size: 12)
-        
-        self.maxLabel.font = .regular(size: 12)
+        self.maleButton.setTitleColor(.mainDarkGrey, for: .normal)
 
-        self.minusButton.layer.cornerRadius = 4
+        self.toComeButton.titleLabel?.font = .regular(size: 12)
+
+        self.toComeButton.setTitleColor(.mainDarkGrey, for: .normal)
+
+        self.tableView.delegate = self
         
-        self.plusButton.layer.cornerRadius = 4
-        
-        self.slider.delegate = self
+        self.tableView.dataSource = self
         
     }
     
-    @IBAction func minusButtonPressed(_ sender: UIButton) {
+    @IBAction func addFemaleButtonPressed(_ sender: UIButton) {
+        
+        self.list.append("Boy (2 yrs)")
+        
+        self.tableView.reloadData()
+        
+        self.delegate?.childrenAdded()
+        
+    }
     
-        if self.count > 0 {
-            
-            self.count -= 1
-            
-        }
+    @IBAction func addMaleButtonPressed(_ sender: UIButton) {
     
-        self.numberTextField.text = String(count)
+        self.delegate?.childrenAdded()
 
     }
     
-    @IBAction func plusButtonPressed(_ sender: UIButton) {
-    
-        self.count += 1
-    
-        self.numberTextField.text = String(count)
-    
+    @IBAction func addToComeButtonPressed(_ sender: UIButton) {
+
+        self.delegate?.childrenAdded()
+
     }
     
 }
 
-extension ChildrenView: RangeSeekSliderDelegate {
+extension ChildrenView: UITableViewDelegate, UITableViewDataSource {
     
-    func rangeSeekSlider(_ slider: RangeSeekSlider, didChange minValue: CGFloat, maxValue: CGFloat) {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        self.minLabel.text = String(describing: Int(minValue))
+        return self.list.count
         
-        self.maxLabel.text = String(describing: Int(maxValue))
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(ChildrenCell.self)
+        
+        let thisItem = self.list[indexPath.row]
+        
+        cell.configureWith(type: thisItem, delegate: self)
+        
+        return cell
+        
+    }
+    
+}
+
+extension ChildrenView: ChildrenCellDelgate {
+    
+    func editButtonPressed() {
+    
+        // Show edit popup
         
     }
     

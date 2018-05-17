@@ -67,6 +67,8 @@
 		4D1933EB2056CC4D006D6D5B /* UserNamePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933EA2056CC4C006D6D5B /* UserNamePopupViewController.swift */; };
 		4D1933ED2056FAEF006D6D5B /* GoogleMaps+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1933EC2056FAEF006D6D5B /* GoogleMaps+Extensions.swift */; };
 		4D1B3D772035FB0100C2618B /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */; };
+		4D1DF44D20ADAD5000017BF8 /* ChildrenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DF44C20ADAD5000017BF8 /* ChildrenCell.xib */; };
+		4D1DF44F20ADAD5C00017BF8 /* ChildrenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DF44E20ADAD5C00017BF8 /* ChildrenCell.swift */; };
 		4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */; };
 		4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6F0201E31E1000DC94F /* CustomMapView.swift */; };
 		4D36E6F3201E31EE000DC94F /* GoogleMapsStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */; };
@@ -325,6 +327,8 @@
 		4D1933EA2056CC4C006D6D5B /* UserNamePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNamePopupViewController.swift; sourceTree = "<group>"; };
 		4D1933EC2056FAEF006D6D5B /* GoogleMaps+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMaps+Extensions.swift"; sourceTree = "<group>"; };
 		4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
+		4D1DF44C20ADAD5000017BF8 /* ChildrenCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildrenCell.xib; sourceTree = "<group>"; };
+		4D1DF44E20ADAD5C00017BF8 /* ChildrenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenCell.swift; sourceTree = "<group>"; };
 		4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		4D36E6F0201E31E1000DC94F /* CustomMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
 		4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapsStyle.json; sourceTree = "<group>"; };
@@ -836,6 +840,8 @@
 			children = (
 				4D36E6F6201E355E000DC94F /* ChildrenView.xib */,
 				4D36E6F8201E3565000DC94F /* ChildrenView.swift */,
+				4D1DF44C20ADAD5000017BF8 /* ChildrenCell.xib */,
+				4D1DF44E20ADAD5C00017BF8 /* ChildrenCell.swift */,
 			);
 			path = ChildrenView;
 			sourceTree = "<group>";
@@ -1523,6 +1529,7 @@
 				4DE175052028C985001C5DD1 /* ChatCell.xib in Resources */,
 				4D69BAB020518B1C006AB41D /* OrganisationNewsView.xib in Resources */,
 				4DE1750B2028D3AA001C5DD1 /* ChatSettingsCell.xib in Resources */,
+				4D1DF44D20ADAD5000017BF8 /* ChildrenCell.xib in Resources */,
 				4DE175132028DCDE001C5DD1 /* ShopCell.xib in Resources */,
 				4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */,
 				4D649242203CAD1700CE35B0 /* LobbyDetailsCell.xib in Resources */,
@@ -1849,6 +1856,7 @@
 				4DC677562017870000F34184 /* SignInViewController.swift in Sources */,
 				4D5ED8FA202246870020FD51 /* OffersCell.swift in Sources */,
 				4DCB4E9E20222795006962F9 /* LobbyViewController.swift in Sources */,
+				4D1DF44F20ADAD5C00017BF8 /* ChildrenCell.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
 				4D74FF3C205BEEF50016D3E9 /* CategoriesHeaderCell.swift in Sources */,
 				4D69BAA22051811F006AB41D /* OrganisationViewController.swift in Sources */,

@@ -7,7 +7,11 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var locationView: LocationView!
     
-//    @IBOutlet weak var schoolView: SchoolView!
+    @IBOutlet weak var childrenView: ChildrenView!
+    
+    @IBOutlet weak var childrenViewHeight: NSLayoutConstraint!
+    
+    //    @IBOutlet weak var schoolView: SchoolView!
     
     @IBOutlet weak var locationViewHeight: NSLayoutConstraint!
     
@@ -56,6 +60,8 @@ class ProfileViewController: UIViewController {
      
         self.heightConstraint.constant = 930 + self.locationViewHeight.constant
 
+        self.childrenView.configureWith(delegate: self)
+        
     }
 
     private func configureNavigationBar() {
@@ -119,6 +125,8 @@ class ProfileViewController: UIViewController {
                 
                 self.configureViewWithData(userDetails: self.userDetails!)
                 
+                self.updateChildrenView()
+                
             }
             
         }
@@ -173,6 +181,40 @@ class ProfileViewController: UIViewController {
                 
             } else {
                 
+                
+            }
+            
+        }
+        
+    }
+    
+    fileprivate func updateChildrenView() {
+        
+        if self.childrenView.list.count == 0 {
+            
+            self.childrenView.separatorView.isHidden = true
+
+            self.childrenViewHeight.constant = 170
+            
+            self.heightConstraint.constant = self.heightConstraint.constant + CGFloat(self.childrenView.list.count) * 20
+            
+            UIView.animate(withDuration: 0.3) {
+                
+                self.view.layoutIfNeeded()
+                
+            }
+            
+        } else {
+            
+            self.childrenView.separatorView.isHidden = false
+            
+            self.childrenViewHeight.constant = 170 + CGFloat(self.childrenView.list.count) * 40
+            
+            self.heightConstraint.constant = 930 + self.locationViewHeight.constant + CGFloat(self.childrenView.list.count) * 40
+            
+            UIView.animate(withDuration: 0.3) {
+                
+                self.view.layoutIfNeeded()
                 
             }
             
@@ -396,6 +438,16 @@ extension ProfileViewController: LocationPopupDelegate {
         self.locationView.userLocationLabel.text = locationName
         
         self.showSwitchValueChanged(isVisible: true)
+        
+    }
+    
+}
+
+extension ProfileViewController: ChildrenViewDelegate {
+    
+    func childrenAdded() {
+        
+        self.updateChildrenView()
         
     }
     

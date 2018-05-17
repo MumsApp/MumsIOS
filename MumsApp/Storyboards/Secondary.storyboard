@@ -214,6 +214,8 @@
                     </view>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="childrenView" destination="OSG-vz-rr3" id="AJ5-XA-Cui"/>
+                        <outlet property="childrenViewHeight" destination="UnC-XP-63P" id="I7o-4h-5px"/>
                         <outlet property="heightConstraint" destination="isG-a3-X4W" id="BXF-Db-Cww"/>
                         <outlet property="locationView" destination="Fhu-MV-WuN" id="lMh-Cu-tKX"/>
                         <outlet property="locationViewHeight" destination="t6V-mx-ROb" id="yEx-Ad-w1D"/>
@@ -3908,7 +3910,7 @@ you want to remove</string>
         <image name="addPhotoIcon" width="29" height="28"/>
         <image name="arrowRight" width="8" height="12"/>
         <image name="closeIcon" width="18" height="18"/>
-        <image name="gradient" width="187" height="333"/>
+        <image name="gradient" width="187" height="109"/>
         <image name="locationGreyIcon" width="11" height="15"/>
         <image name="logo" width="223" height="206"/>
         <image name="logoDescription" width="289" height="18"/>
