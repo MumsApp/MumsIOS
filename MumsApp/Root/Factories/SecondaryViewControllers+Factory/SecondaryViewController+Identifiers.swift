@@ -68,5 +68,7 @@ enum SecondaryViewController: String {
     
     case AddSchoolViewController
     
+    case AddChildrenPopupViewController
+    
 }
 

@@ -3,7 +3,7 @@ import UIKit
 
 protocol ChildrenViewDelegate: class {
     
-    func childrenAdded()
+    func addChildrenButtonPressed(type: ChildrenType)
     
 }
 
@@ -28,6 +28,7 @@ class ChildrenView: UIView {
     func configureWith(delegate: ChildrenViewDelegate) {
         
         self.delegate = delegate
+        
         
     }
     
@@ -97,19 +98,19 @@ class ChildrenView: UIView {
         
         self.tableView.reloadData()
         
-        self.delegate?.childrenAdded()
+        self.delegate?.addChildrenButtonPressed(type: .female)
         
     }
     
     @IBAction func addMaleButtonPressed(_ sender: UIButton) {
     
-        self.delegate?.childrenAdded()
+        self.delegate?.addChildrenButtonPressed(type: .male)
 
     }
     
     @IBAction func addToComeButtonPressed(_ sender: UIButton) {
 
-        self.delegate?.childrenAdded()
+        self.delegate?.addChildrenButtonPressed(type: .tocome)
 
     }
     

@@ -324,6 +324,20 @@ extension ProfileViewController: LocationViewDelegate {
         
     }
     
+    fileprivate func showAddChildrenPopupViewController(type: ChildrenType) {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.addChildrenPopupViewController(type: type)
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
+        
+    }
+    
 }
 
 extension ProfileViewController: ProfileViewDelegate {
@@ -445,9 +459,11 @@ extension ProfileViewController: LocationPopupDelegate {
 
 extension ProfileViewController: ChildrenViewDelegate {
     
-    func childrenAdded() {
+    func addChildrenButtonPressed(type: ChildrenType) {
         
-        self.updateChildrenView()
+        self.showAddChildrenPopupViewController(type: type)
+        
+//        self.updateChildrenView()
         
     }
     
