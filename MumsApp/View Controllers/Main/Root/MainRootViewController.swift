@@ -11,6 +11,7 @@ enum ControllerType {
     case schools
     case health
     case holiday
+    case add
     
 }
 
@@ -170,7 +171,9 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
     
     func emergencyButtonPressed() {
         
-        print("CALL 991")
+        guard let number = URL(string: "tel://" + EMERGENCY_NUMBER) else { return }
+
+        UIApplication.shared.open(number)
         
     }
     
@@ -268,7 +271,7 @@ extension MainRootViewController: MenuDelegate {
     
     func addButtonPressed() {
         
-        return
+        self.showViewController(type: .add)
         
     }
     
@@ -315,6 +318,12 @@ extension MainRootViewController: MenuDelegate {
         case .holiday:
             
             controller = factory.lobbyDetailsViewController(title: "Holiday", backButton: false)
+            
+        case .add:
+            
+            print("Show add item view controller")
+            
+            return
             
         }
         

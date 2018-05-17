@@ -58,19 +58,24 @@ class RootViewController: UIViewController {
         
         self.configureView()
         
-        guard let isInitialized = self.userDefaults.boolForKey(k_is_app_initialized),
-            let isUserLoggedIn = self.appContext.isUserLoggedIn(),
-            isInitialized,
-            isUserLoggedIn else {
+        let a = self.userDefaults.boolForKey(k_is_app_initialized)
+        let b = self.appContext.isUserLoggedIn()
+        
+        print(a)
+        print(b)
+        
+//        let isUserLoggedIn = self.appContext.isUserLoggedIn(),
+//          isUserLoggedIn
+        
+        guard let isInitialized = self.userDefaults.boolForKey(k_is_app_initialized), isInitialized else {
                 
-                self.didFinishIntro()
-
+                self.showWelcomeViewController()
 
                 return
                 
         }
 
-        self.showWelcomeViewController()
+        self.didFinishIntro()
         
     }
     
