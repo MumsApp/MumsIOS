@@ -38,3 +38,13 @@ extension UIView {
  
     
 }
+
+extension UIView {
+    
+    public func setBackground() {
+        
+        self.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
+        
+    }
+    
+}

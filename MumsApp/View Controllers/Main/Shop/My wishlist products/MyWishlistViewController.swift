@@ -17,9 +17,9 @@ class MyWishlistViewController: UIViewController {
     
     private func configureView() {
         
-        self.view.backgroundColor = .backgroundWhite
-        
-        self.collectionView.backgroundColor = .backgroundWhite
+        self.view.setBackground()
+
+        self.collectionView.backgroundColor = .clear
         
         self.collectionView.delegate = self
         

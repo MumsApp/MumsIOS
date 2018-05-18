@@ -35,7 +35,7 @@ class OrganisationViewController: UIViewController {
     
     func configureView() {
         
-        self.view.backgroundColor = .backgroundWhite
+        self.view.setBackground()
 
     }
     

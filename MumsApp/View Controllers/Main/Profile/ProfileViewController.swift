@@ -48,8 +48,8 @@ class ProfileViewController: UIViewController {
     
     func configureView() {
         
-        self.view.backgroundColor = .backgroundWhite
-        
+        self.view.setBackground()
+
         self.profileView.userNameLabel.text = "Test Name"
         
         self.locationView.configureWith(delegate: self)

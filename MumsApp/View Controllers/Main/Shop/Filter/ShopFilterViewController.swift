@@ -49,6 +49,8 @@ class ShopFilterViewController: UIViewController {
     
     private func configureView() {
         
+        self.view.setBackground()
+
         self.productTypeTitleLabel.font = .semiBold(size: 15)
         
         self.priceRangeTitleLabel.font = .semiBold(size: 15)

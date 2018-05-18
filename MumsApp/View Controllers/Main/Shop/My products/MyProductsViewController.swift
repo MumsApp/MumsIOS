@@ -17,9 +17,9 @@ class MyProductsViewController: UIViewController {
     
     private func configureView() {
         
-        self.view.backgroundColor = .backgroundWhite
+        self.view.setBackground()
 
-        self.collectionView.backgroundColor = .backgroundWhite
+        self.collectionView.backgroundColor = .clear
 
         self.collectionView.delegate = self
 

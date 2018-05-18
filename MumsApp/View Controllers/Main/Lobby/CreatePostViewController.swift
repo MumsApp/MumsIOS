@@ -41,6 +41,8 @@ class CreatePostViewController: UIViewController {
     
     private func configureView() {
         
+        self.view.setBackground()
+
         self.titleContainerView.addShadow()
         
         self.photoContainerView.addShadow()

@@ -39,7 +39,9 @@ class ConversationViewController: MessagesViewController {
     
     private func configureView() {
         
-        self.messagesCollectionView.backgroundColor = .backgroundWhite
+        self.view.setBackground()
+
+        self.messagesCollectionView.backgroundColor = .clear
         
         self.messagesCollectionView.messagesDataSource = self
         

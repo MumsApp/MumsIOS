@@ -19,9 +19,9 @@ class ChatViewController: UIViewController {
     
     private func configureView() {
         
-        self.view.backgroundColor = .backgroundWhite
+        self.view.setBackground()
 
-        self.tableView.backgroundColor = .backgroundWhite
+        self.tableView.backgroundColor = .clear
 
         self.tableView.delegate = self
         

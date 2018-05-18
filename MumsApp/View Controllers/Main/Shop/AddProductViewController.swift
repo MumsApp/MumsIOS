@@ -46,8 +46,8 @@ class AddProductViewController: UIViewController {
     
     private func configureView() {
         
-        self.view.backgroundColor = .backgroundWhite
-        
+        self.view.setBackground()
+
         self.imagePicker.delegate = self
         
         self.photosView.isHidden = true

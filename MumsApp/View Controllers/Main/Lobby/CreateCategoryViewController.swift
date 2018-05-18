@@ -53,6 +53,8 @@ class CreateCategoryViewController: UIViewController {
     
     private func configureView() {
         
+        self.view.setBackground()
+
         self.categoryContainerView.addShadow()
         
         self.titleContainerView.addShadow()
