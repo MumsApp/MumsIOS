@@ -765,7 +765,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kea-dO-KeB" customClass="CustomSearchBar" customModule="MumsApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Emz-Wn-wzX"/>
@@ -777,51 +777,62 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fGM-5R-z6e">
-                                <rect key="frame" x="336" y="38" width="17" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="17" id="I7K-aN-vKk"/>
-                                    <constraint firstAttribute="height" constant="19" id="pyd-wL-8PH"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oNF-yD-4gB">
-                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHo-9O-b8J">
-                                <rect key="frame" x="0.0" y="76" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="136" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Oaw-tt-baY"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wL-Q0-OQH" customClass="Segmentio" customModule="Segmentio">
+                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="87T-qr-1Ye"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fGM-5R-z6e">
+                                <rect key="frame" x="336" y="98.5" width="17" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="I7K-aN-vKk"/>
+                                    <constraint firstAttribute="height" constant="19" id="pyd-wL-8PH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kea-dO-KeB" firstAttribute="leading" secondItem="Tw3-lW-gBn" secondAttribute="leading" id="8TI-AT-01v"/>
                             <constraint firstItem="fGM-5R-z6e" firstAttribute="centerY" secondItem="kea-dO-KeB" secondAttribute="centerY" id="CqR-L0-vTC"/>
                             <constraint firstItem="oNF-yD-4gB" firstAttribute="trailing" secondItem="Tw3-lW-gBn" secondAttribute="trailing" id="Ssb-el-GYy"/>
+                            <constraint firstItem="kea-dO-KeB" firstAttribute="top" secondItem="8wL-Q0-OQH" secondAttribute="bottom" id="VCV-U3-eBZ"/>
+                            <constraint firstItem="8wL-Q0-OQH" firstAttribute="top" secondItem="Tw3-lW-gBn" secondAttribute="top" id="WGB-Y3-2F9"/>
                             <constraint firstItem="BHo-9O-b8J" firstAttribute="leading" secondItem="Tw3-lW-gBn" secondAttribute="leading" id="aEV-x8-6AV"/>
                             <constraint firstItem="BHo-9O-b8J" firstAttribute="top" secondItem="kea-dO-KeB" secondAttribute="bottom" id="hwz-gf-BCz"/>
+                            <constraint firstItem="8wL-Q0-OQH" firstAttribute="leading" secondItem="Tw3-lW-gBn" secondAttribute="leading" id="iV3-Qe-Bvn"/>
                             <constraint firstItem="oNF-yD-4gB" firstAttribute="bottom" secondItem="Tw3-lW-gBn" secondAttribute="bottom" id="iX4-Uc-UzJ"/>
-                            <constraint firstItem="kea-dO-KeB" firstAttribute="top" secondItem="Tw3-lW-gBn" secondAttribute="top" id="pbW-U4-LiF"/>
                             <constraint firstItem="BHo-9O-b8J" firstAttribute="trailing" secondItem="Tw3-lW-gBn" secondAttribute="trailing" id="poS-Su-gS0"/>
                             <constraint firstItem="oNF-yD-4gB" firstAttribute="leading" secondItem="Tw3-lW-gBn" secondAttribute="leading" id="qju-rc-XCG"/>
                             <constraint firstItem="Tw3-lW-gBn" firstAttribute="trailing" secondItem="fGM-5R-z6e" secondAttribute="trailing" constant="22" id="txK-46-GPj"/>
                             <constraint firstItem="oNF-yD-4gB" firstAttribute="top" secondItem="BHo-9O-b8J" secondAttribute="bottom" id="vXu-TU-LO6"/>
+                            <constraint firstItem="8wL-Q0-OQH" firstAttribute="trailing" secondItem="Tw3-lW-gBn" secondAttribute="trailing" id="xHA-9O-D0e"/>
                             <constraint firstItem="kea-dO-KeB" firstAttribute="trailing" secondItem="Tw3-lW-gBn" secondAttribute="trailing" id="z8b-L0-YIU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tw3-lW-gBn"/>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="kea-dO-KeB" id="AQ6-p6-6Lr"/>
+                        <outlet property="segmentedControl" destination="8wL-Q0-OQH" id="zZ5-K3-rsz"/>
                         <outlet property="tableView" destination="oNF-yD-4gB" id="v90-86-HGv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DdD-q2-7ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="133"/>
+            <point key="canvasLocation" x="3236" y="132.68365817091455"/>
         </scene>
         <!--Chat Settings Popup View Controller-->
         <scene sceneID="LgV-fL-PmT">

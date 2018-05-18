@@ -17,6 +17,7 @@ pod 'GooglePlaces', '~> 2.6.0'
 pod 'GoogleSignIn', '~> 4.1.2'
 pod 'SwipeCellKit', '~> 1.9.1'
 pod 'MessageKit', '~> 0.10.2'
+pod 'Segmentio', '~> 3.0'
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|

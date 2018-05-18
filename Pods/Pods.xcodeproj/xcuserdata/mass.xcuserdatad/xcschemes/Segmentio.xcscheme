@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '22DF4E434A0472E5969E053FC2345E00'
-               BlueprintName = 'XCGLogger'
+               BlueprintIdentifier = '3DEB850D375F2FD50C9F570232770E59'
+               BlueprintName = 'Segmentio'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'XCGLogger.framework'>
+               BuildableName = 'Segmentio.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

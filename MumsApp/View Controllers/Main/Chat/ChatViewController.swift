@@ -1,4 +1,5 @@
 import UIKit
+import Segmentio
 
 class ChatViewController: UIViewController {
 
@@ -6,6 +7,10 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var segmentedControl: Segmentio!
+    
+    private var segmentedContent = [SegmentioItem]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +36,76 @@ class ChatViewController: UIViewController {
 
         self.searchBar.delegate = self
 
+        let friendsItem = SegmentioItem(title: "Friends", image: nil)
+        
+        let othersItem = SegmentioItem(
+            title: "Others", image: nil)
+
+        self.segmentedContent.append(friendsItem)
+        self.segmentedContent.append(othersItem)
+        
+        let indicatorOptions = SegmentioIndicatorOptions(
+            type: .bottom,
+            ratio: 1,
+            height: 4,
+            color: .mainGreen
+        )
+        
+        let horizontalOptions = SegmentioHorizontalSeparatorOptions(
+            type: SegmentioHorizontalSeparatorType.topAndBottom, // Top, Bottom, TopAndBottom
+            height: 1,
+            color: .clear
+        )
+        
+        let verticalOptions = SegmentioVerticalSeparatorOptions(
+            ratio: 0.6, // from 0.1 to 1
+            color: .clear
+        )
+        
+        let states = SegmentioStates(
+            defaultState: SegmentioState(
+                backgroundColor: .clear,
+                titleFont: .medium(size: 15),
+                titleTextColor: .black
+            ),
+            selectedState: SegmentioState(
+                backgroundColor: .clear,
+                titleFont: .medium(size: 15),
+                titleTextColor: .black
+            ),
+            highlightedState: SegmentioState(
+                backgroundColor: .clear,
+                titleFont: .medium(size: 15),
+                titleTextColor: .black
+            )
+        )
+        
+        let options = SegmentioOptions(
+            backgroundColor: .white,
+            segmentPosition: SegmentioPosition.fixed(maxVisibleItems: 2),
+            scrollEnabled: false,
+            indicatorOptions: indicatorOptions,
+            horizontalSeparatorOptions: horizontalOptions,
+            verticalSeparatorOptions: verticalOptions,
+            imageContentMode: .center,
+            labelTextAlignment: .center,
+            segmentStates: states
+        )
+        
+        self.segmentedControl.setup(
+            content: segmentedContent,
+            style: SegmentioStyle.imageOverLabel,
+            options: options
+        )
+        
+        self.segmentedControl.selectedSegmentioIndex = 0
+
+        self.segmentedControl.valueDidChange = { segmentio, segmentIndex in
+        
+            print("Selected item: ", segmentIndex)
+        
+        }
+
     }
 
     private func configureNavigationBar() {
@@ -49,6 +124,8 @@ class ChatViewController: UIViewController {
 //        
 //        self.navigationItem.leftBarButtonItem = leftButton
         
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+
     }
     
     private func registerCells() {
