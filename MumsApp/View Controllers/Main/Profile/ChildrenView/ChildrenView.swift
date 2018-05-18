@@ -29,11 +29,8 @@ class ChildrenView: UIView {
         
         self.delegate = delegate
         
-        
     }
-    
-    var list: Array<String> = []
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -94,10 +91,6 @@ class ChildrenView: UIView {
     
     @IBAction func addFemaleButtonPressed(_ sender: UIButton) {
         
-        self.list.append("Boy (2 yrs)")
-        
-        self.tableView.reloadData()
-        
         self.delegate?.addChildrenButtonPressed(type: .female)
         
     }
@@ -120,7 +113,7 @@ extension ChildrenView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.list.count
+        return 5
         
     }
     
@@ -128,9 +121,7 @@ extension ChildrenView: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(ChildrenCell.self)
         
-        let thisItem = self.list[indexPath.row]
-        
-        cell.configureWith(type: thisItem, delegate: self)
+        cell.configureWith(type: "Children", delegate: self)
         
         return cell
         

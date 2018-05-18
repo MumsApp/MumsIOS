@@ -27,6 +27,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
+    var childrenList: Array<String> = []
+    
     func configureWith(userDetailsService: UserDetailsService) {
         
         self.userDetailsService = userDetailsService
@@ -190,13 +192,13 @@ class ProfileViewController: UIViewController {
     
     fileprivate func updateChildrenView() {
         
-        if self.childrenView.list.count == 0 {
+        if self.childrenList.count == 0 {
             
             self.childrenView.separatorView.isHidden = true
 
             self.childrenViewHeight.constant = 170
             
-            self.heightConstraint.constant = self.heightConstraint.constant + CGFloat(self.childrenView.list.count) * 20
+            self.heightConstraint.constant = self.heightConstraint.constant + CGFloat(self.childrenList.count) * 20
             
             UIView.animate(withDuration: 0.3) {
                 
@@ -208,9 +210,9 @@ class ProfileViewController: UIViewController {
             
             self.childrenView.separatorView.isHidden = false
             
-            self.childrenViewHeight.constant = 170 + CGFloat(self.childrenView.list.count) * 40
+            self.childrenViewHeight.constant = 170 + CGFloat(self.childrenList.count) * 40
             
-            self.heightConstraint.constant = 930 + self.locationViewHeight.constant + CGFloat(self.childrenView.list.count) * 40
+            self.heightConstraint.constant = 930 + self.locationViewHeight.constant + CGFloat(self.childrenList.count) * 40
             
             UIView.animate(withDuration: 0.3) {
                 
@@ -328,7 +330,7 @@ extension ProfileViewController: LocationViewDelegate {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.addChildrenPopupViewController(type: type)
+        let controller = factory.addChildrenPopupViewController(type: type, delegate: self)
         
         controller.modalPresentationStyle = .overCurrentContext
         
@@ -463,7 +465,17 @@ extension ProfileViewController: ChildrenViewDelegate {
         
         self.showAddChildrenPopupViewController(type: type)
         
-//        self.updateChildrenView()
+    }
+    
+}
+
+extension ProfileViewController: AddChildrenPopupViewControllerDelegate {
+    
+    func saveChildrenButtonPressed() {
+        
+        self.childrenList.append("Boy 2 yrs")
+        
+        self.updateChildrenView()
         
     }
     

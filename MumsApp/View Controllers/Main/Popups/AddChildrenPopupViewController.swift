@@ -8,6 +8,12 @@ enum ChildrenType {
     
 }
 
+protocol AddChildrenPopupViewControllerDelegate: class {
+    
+    func saveChildrenButtonPressed()
+    
+}
+
 class AddChildrenPopupViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
@@ -42,9 +48,13 @@ class AddChildrenPopupViewController: UIViewController {
 
     private var count = 0
     
-    func configureWith(type: ChildrenType) {
+    private weak var delegate: AddChildrenPopupViewControllerDelegate?
+    
+    func configureWith(type: ChildrenType, delegate: AddChildrenPopupViewControllerDelegate?) {
         
         self.type = type
+        
+        self.delegate = delegate
         
     }
     
@@ -126,6 +136,8 @@ class AddChildrenPopupViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
     
+        self.delegate?.saveChildrenButtonPressed()
+        
         self.dismissViewController()
     
     }
