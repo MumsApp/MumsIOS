@@ -151,11 +151,11 @@ class ProfileViewController: UIViewController {
             
         }
         
-        if let location = userDetails.location {
+        if let location = userDetails.location, let lat = location.lat, let lon = location.lon {
             
-            self.locationView.mapView.addMarker(lat: Double(location.lat!)!, lon: Double(location.lon!)!)
+            self.locationView.mapView.addMarker(lat: Double(lat)!, lon: Double(lon)!)
             
-            let locationCoordinate = CLLocationCoordinate2D(latitude: Double(location.lat!)!, longitude: Double(location.lon!)!)
+            let locationCoordinate = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!)
 
             let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
             

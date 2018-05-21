@@ -59,7 +59,7 @@ class RootViewController: UIViewController {
         self.configureView()
         
         let a = self.userDefaults.boolForKey(k_is_app_initialized)
-        let b = self.appContext.isUserLoggedIn()
+        let b = self.appContext.token()
         
         print(a)
         print(b)
@@ -67,14 +67,16 @@ class RootViewController: UIViewController {
 //        let isUserLoggedIn = self.appContext.isUserLoggedIn(),
 //          isUserLoggedIn
         
-        guard let isInitialized = self.userDefaults.boolForKey(k_is_app_initialized), isInitialized else {
+        guard let isInitialized = self.userDefaults.boolForKey(k_is_app_initialized),
+                let token = self.appContext.token(),
+                isInitialized else {
                 
                 self.showWelcomeViewController()
 
                 return
                 
         }
-
+        
         self.didFinishIntro()
         
     }
