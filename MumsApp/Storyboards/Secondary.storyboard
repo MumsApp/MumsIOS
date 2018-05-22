@@ -126,11 +126,11 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZR1-yo-poD" customClass="ProfileViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XUL-zf-ZiI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-gw-Shb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1180"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="1480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO1-WB-Vy4">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
@@ -192,12 +192,22 @@
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="yqv-k2-gOs"/>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tou-BA-PZG" customClass="FriendsView" customModule="MumsApp" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="1097" width="343" height="245"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="245" id="TE2-F7-OqJ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="dO1-WB-Vy4" secondAttribute="bottom" id="BQl-yA-nUe"/>
                                     <constraint firstItem="dO1-WB-Vy4" firstAttribute="leading" secondItem="KSa-gw-Shb" secondAttribute="leading" id="HXR-Uz-qvP"/>
+                                    <constraint firstAttribute="trailing" secondItem="tou-BA-PZG" secondAttribute="trailing" constant="16" id="Kdu-gY-ODT"/>
+                                    <constraint firstItem="tou-BA-PZG" firstAttribute="leading" secondItem="KSa-gw-Shb" secondAttribute="leading" constant="16" id="QZ9-1O-pFa"/>
                                     <constraint firstAttribute="trailing" secondItem="dO1-WB-Vy4" secondAttribute="trailing" id="SFO-1D-Xki"/>
+                                    <constraint firstItem="tou-BA-PZG" firstAttribute="top" secondItem="ZHG-w4-mMh" secondAttribute="bottom" constant="16" id="UQl-kM-70x"/>
                                     <constraint firstItem="dO1-WB-Vy4" firstAttribute="top" secondItem="KSa-gw-Shb" secondAttribute="top" id="p7l-Y5-Ubr"/>
                                 </constraints>
                             </scrollView>
@@ -212,10 +222,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="03U-3W-a6S"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="childrenView" destination="OSG-vz-rr3" id="AJ5-XA-Cui"/>
                         <outlet property="childrenViewHeight" destination="UnC-XP-63P" id="I7o-4h-5px"/>
+                        <outlet property="friendsView" destination="tou-BA-PZG" id="bR4-cv-41A"/>
                         <outlet property="heightConstraint" destination="isG-a3-X4W" id="BXF-Db-Cww"/>
                         <outlet property="locationView" destination="Fhu-MV-WuN" id="lMh-Cu-tKX"/>
                         <outlet property="locationViewHeight" destination="t6V-mx-ROb" id="yEx-Ad-w1D"/>

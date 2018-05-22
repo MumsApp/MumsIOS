@@ -156,6 +156,8 @@
 		4D8F2D3C201B4F3800756CCB /* OnboardingGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3B201B4F3800756CCB /* OnboardingGreen+UIButton.swift */; };
 		4D8F2D3E201B502300756CCB /* OnboardingGrey+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3D201B502300756CCB /* OnboardingGrey+UIButton.swift */; };
 		4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */; };
+		4D8F49BF20B3FD4D00DD95FB /* FriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F49BE20B3FD4D00DD95FB /* FriendsView.xib */; };
+		4D8F49C120B3FD5C00DD95FB /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F49C020B3FD5C00DD95FB /* FriendsView.swift */; };
 		4D9BB303205C12FB0001D54C /* PromotionPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BB302205C12FB0001D54C /* PromotionPopupViewController.swift */; };
 		4D9DE8A2203E00EF005BDB37 /* UserDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A1203E00EF005BDB37 /* UserDetailsService.swift */; };
 		4D9DE8A4203E00FD005BDB37 /* UserDetailsServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A3203E00FD005BDB37 /* UserDetailsServiceParser.swift */; };
@@ -417,6 +419,8 @@
 		4D8F2D3B201B4F3800756CCB /* OnboardingGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingGreen+UIButton.swift"; sourceTree = "<group>"; };
 		4D8F2D3D201B502300756CCB /* OnboardingGrey+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingGrey+UIButton.swift"; sourceTree = "<group>"; };
 		4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
+		4D8F49BE20B3FD4D00DD95FB /* FriendsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsView.xib; sourceTree = "<group>"; };
+		4D8F49C020B3FD5C00DD95FB /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		4D9BB302205C12FB0001D54C /* PromotionPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionPopupViewController.swift; sourceTree = "<group>"; };
 		4D9DE8A1203E00EF005BDB37 /* UserDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsService.swift; sourceTree = "<group>"; };
 		4D9DE8A3203E00FD005BDB37 /* UserDetailsServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsServiceParser.swift; sourceTree = "<group>"; };
@@ -954,7 +958,7 @@
 			path = ForgotPasswordService;
 			sourceTree = "<group>";
 		};
-		4D5ED8F2202246860020FD51 /* Offers */ = {
+		4D5ED8F2202246860020FD51 /* OffersView */ = {
 			isa = PBXGroup;
 			children = (
 				4D5ED8F4202246860020FD51 /* OffersView.xib */,
@@ -962,7 +966,7 @@
 				4D5ED8F5202246860020FD51 /* OffersCell.xib */,
 				4D5ED8F6202246860020FD51 /* OffersCell.swift */,
 			);
-			path = Offers;
+			path = OffersView;
 			sourceTree = "<group>";
 		};
 		4D681F88201DE32F00D404CD /* FacebookService */ = {
@@ -1085,6 +1089,15 @@
 			);
 			name = "Support Files";
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		4D8F49C220B3FD6500DD95FB /* FriendsView */ = {
+			isa = PBXGroup;
+			children = (
+				4D8F49BE20B3FD4D00DD95FB /* FriendsView.xib */,
+				4D8F49C020B3FD5C00DD95FB /* FriendsView.swift */,
+			);
+			path = FriendsView;
 			sourceTree = "<group>";
 		};
 		4D9DE8AD203E06CC005BDB37 /* UserDetailsService */ = {
@@ -1333,11 +1346,12 @@
 			isa = PBXGroup;
 			children = (
 				4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */,
+				4D8F49C220B3FD6500DD95FB /* FriendsView */,
 				4DEE83EB201E17E1001B0AEB /* ProfileView */,
 				4DEE83F3201E1EB7001B0AEB /* LocationView */,
 				4D36E6FA201E356E000DC94F /* ChildrenView */,
 				4DC27EC5201FBFF5000EE9FA /* CardsView */,
-				4D5ED8F2202246860020FD51 /* Offers */,
+				4D5ED8F2202246860020FD51 /* OffersView */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1543,6 +1557,7 @@
 				4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */,
 				4D69BAA020514E2A006AB41D /* ImageCell.xib in Resources */,
 				4D8F2D38201B4A4300756CCB /* Poppins-Regular.ttf in Resources */,
+				4D8F49BF20B3FD4D00DD95FB /* FriendsView.xib in Resources */,
 				4D36E6F3201E31EE000DC94F /* GoogleMapsStyle.json in Resources */,
 				4D1880C120AB1829001478F3 /* ShopAdsCell.xib in Resources */,
 				4D0F0C352049733E000F251C /* AddMembersCell.xib in Resources */,
@@ -1804,6 +1819,7 @@
 				4DE175112028DC35001C5DD1 /* ShopViewController.swift in Sources */,
 				4DE174FC2028A054001C5DD1 /* AddCell.swift in Sources */,
 				4DE0D9982050200F002C0759 /* ConversationViewController.swift in Sources */,
+				4D8F49C120B3FD5C00DD95FB /* FriendsView.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
 				4D39D4A12034B292005123F8 /* MyProductCell.swift in Sources */,
 				4DCB4E9C2022263B006962F9 /* CustomGreenSwitch.swift in Sources */,

@@ -7,14 +7,16 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var locationView: LocationView!
     
+    @IBOutlet weak var locationViewHeight: NSLayoutConstraint!
+
     @IBOutlet weak var childrenView: ChildrenView!
     
     @IBOutlet weak var childrenViewHeight: NSLayoutConstraint!
     
     //    @IBOutlet weak var schoolView: SchoolView!
     
-    @IBOutlet weak var locationViewHeight: NSLayoutConstraint!
-    
+    @IBOutlet weak var friendsView: FriendsView!
+
 //    @IBOutlet weak var schoolViewHeight: NSLayoutConstraint!
     
     fileprivate var userDetailsService: UserDetailsService!
@@ -54,13 +56,13 @@ class ProfileViewController: UIViewController {
         
         self.locationView.configureWith(delegate: self)
         
-        self.locationViewHeight.constant = 80
+//        self.locationViewHeight.constant = 80
 
         self.profileView.configureWith(delegate: self)
      
         self.imagePicker.delegate = self
      
-        self.heightConstraint.constant = 930 + self.locationViewHeight.constant
+        self.heightConstraint.constant = 1500
 
         self.childrenView.configureWith(delegate: self)
         
@@ -198,7 +200,7 @@ class ProfileViewController: UIViewController {
 
             self.childrenViewHeight.constant = 170
             
-            self.heightConstraint.constant = self.heightConstraint.constant + CGFloat(self.childrenList.count) * 20
+//            self.heightConstraint.constant = self.heightConstraint.constant + CGFloat(self.childrenList.count) * 20
             
             UIView.animate(withDuration: 0.3) {
                 
@@ -212,7 +214,7 @@ class ProfileViewController: UIViewController {
             
             self.childrenViewHeight.constant = 170 + CGFloat(self.childrenList.count) * 40
             
-            self.heightConstraint.constant = 930 + self.locationViewHeight.constant + CGFloat(self.childrenList.count) * 40
+//            self.heightConstraint.constant = 930 + self.locationViewHeight.constant + CGFloat(self.childrenList.count) * 40
             
             UIView.animate(withDuration: 0.3) {
                 
@@ -274,7 +276,7 @@ extension ProfileViewController: LocationViewDelegate {
             
             self.locationView.editButton.isHidden = false
             
-            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
+//            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
 
             UIView.animate(withDuration: 0.3) {
                 
@@ -288,7 +290,7 @@ extension ProfileViewController: LocationViewDelegate {
             
             self.locationView.showSwitch.isOn = false
 
-            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
+//            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
 
             UIView.animate(withDuration: 0.3) {
                 
