@@ -63,12 +63,22 @@ class ShopViewController: UIViewController {
         let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "smallMenuIcon"), style: .plain, target: self, action: #selector(self.menuButtonPressed(sender:)))
         
         self.navigationItem.rightBarButtonItem = rightButton
+     
+        let leftButton = UIBarButtonItem(image: #imageLiteral(resourceName: "addIcon"), style: .plain, target: self, action: #selector(self.addButtonPressed(sender:)))
         
+        self.navigationItem.leftBarButtonItem = leftButton
+
     }
     
     func menuButtonPressed(sender: UIBarButtonItem) {
      
         self.showShopMenuViewController()
+        
+    }
+    
+    func addButtonPressed(sender: UIBarButtonItem) {
+        
+        self.addProductViewController()
         
     }
     
@@ -101,6 +111,16 @@ class ShopViewController: UIViewController {
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
         let controller = factory.productDetailsViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    private func addProductViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.addProductViewController()
         
         self.navigationController?.pushViewController(controller, animated: true)
         
