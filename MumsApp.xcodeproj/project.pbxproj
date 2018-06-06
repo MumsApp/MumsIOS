@@ -158,6 +158,8 @@
 		4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */; };
 		4D8F49BF20B3FD4D00DD95FB /* FriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8F49BE20B3FD4D00DD95FB /* FriendsView.xib */; };
 		4D8F49C120B3FD5C00DD95FB /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F49C020B3FD5C00DD95FB /* FriendsView.swift */; };
+		4D97E3EA20C57C2400CEBB9F /* Comic Sans MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D97E3E820C57C2400CEBB9F /* Comic Sans MS.ttf */; };
+		4D97E3EB20C57C2400CEBB9F /* Comic Sans MS Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D97E3E920C57C2400CEBB9F /* Comic Sans MS Bold.ttf */; };
 		4D9BB303205C12FB0001D54C /* PromotionPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BB302205C12FB0001D54C /* PromotionPopupViewController.swift */; };
 		4D9DE8A2203E00EF005BDB37 /* UserDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A1203E00EF005BDB37 /* UserDetailsService.swift */; };
 		4D9DE8A4203E00FD005BDB37 /* UserDetailsServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DE8A3203E00FD005BDB37 /* UserDetailsServiceParser.swift */; };
@@ -421,6 +423,8 @@
 		4D8F2D3F201B564E00756CCB /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		4D8F49BE20B3FD4D00DD95FB /* FriendsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsView.xib; sourceTree = "<group>"; };
 		4D8F49C020B3FD5C00DD95FB /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		4D97E3E820C57C2400CEBB9F /* Comic Sans MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comic Sans MS.ttf"; sourceTree = "<group>"; };
+		4D97E3E920C57C2400CEBB9F /* Comic Sans MS Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comic Sans MS Bold.ttf"; sourceTree = "<group>"; };
 		4D9BB302205C12FB0001D54C /* PromotionPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionPopupViewController.swift; sourceTree = "<group>"; };
 		4D9DE8A1203E00EF005BDB37 /* UserDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsService.swift; sourceTree = "<group>"; };
 		4D9DE8A3203E00FD005BDB37 /* UserDetailsServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsServiceParser.swift; sourceTree = "<group>"; };
@@ -1077,6 +1081,8 @@
 				4D05A8E41FE143C500B19E6E /* LaunchScreen.storyboard */,
 				4D05A8E71FE143C500B19E6E /* Info.plist */,
 				4D05A8DF1FE143C500B19E6E /* MumsApp.xcdatamodeld */,
+				4D97E3E920C57C2400CEBB9F /* Comic Sans MS Bold.ttf */,
+				4D97E3E820C57C2400CEBB9F /* Comic Sans MS.ttf */,
 				4D8F2D33201B49BC00756CCB /* GardenGrownCaps-Regular.otf */,
 				4D8F2D35201B4A4200756CCB /* Poppins-Medium.ttf */,
 				4D8F2D36201B4A4300756CCB /* Poppins-Regular.ttf */,
@@ -1542,6 +1548,7 @@
 				4DC27EC4201FBFEE000EE9FA /* CardsView.xib in Resources */,
 				4DC27EBC201FA9B9000EE9FA /* SchoolCell.xib in Resources */,
 				4D1880BF20AB0AA2001478F3 /* BebasNeueBold.otf in Resources */,
+				4D97E3EB20C57C2400CEBB9F /* Comic Sans MS Bold.ttf in Resources */,
 				4D39D49F2034B281005123F8 /* MyProductCell.xib in Resources */,
 				4DE175052028C985001C5DD1 /* ChatCell.xib in Resources */,
 				4D69BAB020518B1C006AB41D /* OrganisationNewsView.xib in Resources */,
@@ -1568,6 +1575,7 @@
 				4DEE83F0201E1EA2001B0AEB /* LocationView.xib in Resources */,
 				4D39D49820349D32005123F8 /* AddProductDescriptionView.xib in Resources */,
 				4D8F2D37201B4A4300756CCB /* Poppins-Medium.ttf in Resources */,
+				4D97E3EA20C57C2400CEBB9F /* Comic Sans MS.ttf in Resources */,
 				4DC2F8B5202C4D4300E331BD /* Terms.json in Resources */,
 				4DA306C420445BD700250156 /* ShopFilterCell.xib in Resources */,
 				4D69BAAA2051872A006AB41D /* OrganisationPhotosView.xib in Resources */,

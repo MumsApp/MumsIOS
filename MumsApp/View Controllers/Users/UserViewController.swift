@@ -43,8 +43,8 @@ class UserViewController: UIViewController {
 
     private func configureView() {
         
-        self.view.backgroundColor = .backgroundWhite
-
+        self.view.setBackground()
+        
         self.userImageView.layer.cornerRadius = 35
         
         self.userNameLabel.font = .regular(size: 20)

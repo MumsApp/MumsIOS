@@ -1,5 +1,7 @@
 import UIKit
 
+// !- GET VOUCHER CODE SHOULD BE OPTIONAL !- //
+
 class PromotionViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
