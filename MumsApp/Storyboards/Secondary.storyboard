@@ -3280,7 +3280,7 @@ you want to remove</string>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gs6-XA-6JQ">
-                                <rect key="frame" x="8" y="58.5" width="359" height="350"/>
+                                <rect key="frame" x="8" y="78.5" width="359" height="350"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmJ-Ta-Lu0">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="90"/>
@@ -3423,7 +3423,7 @@ you want to remove</string>
                             <constraint firstItem="QzX-bB-X2y" firstAttribute="top" secondItem="VaA-oj-uR1" secondAttribute="top" id="Aah-tU-JDX"/>
                             <constraint firstItem="hx3-Nf-1c4" firstAttribute="trailing" secondItem="Gs6-XA-6JQ" secondAttribute="trailing" constant="8" id="UHd-Td-jYi"/>
                             <constraint firstItem="Gs6-XA-6JQ" firstAttribute="leading" secondItem="hx3-Nf-1c4" secondAttribute="leading" constant="8" id="XI2-zu-7au"/>
-                            <constraint firstItem="Gs6-XA-6JQ" firstAttribute="centerY" secondItem="VaA-oj-uR1" secondAttribute="centerY" constant="-100" id="qnK-NU-bMe"/>
+                            <constraint firstItem="Gs6-XA-6JQ" firstAttribute="centerY" secondItem="VaA-oj-uR1" secondAttribute="centerY" constant="-80" id="qnK-NU-bMe"/>
                             <constraint firstItem="QzX-bB-X2y" firstAttribute="trailing" secondItem="hx3-Nf-1c4" secondAttribute="trailing" id="tB4-ra-gQM"/>
                             <constraint firstItem="QzX-bB-X2y" firstAttribute="bottom" secondItem="hx3-Nf-1c4" secondAttribute="bottom" id="wdY-xz-DZh"/>
                         </constraints>
@@ -3949,18 +3949,11 @@ you want to remove</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5WP-Zk-cbB">
                                 <rect key="frame" x="8" y="96.5" width="359" height="474"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenCircle" translatesAutoresizingMaskIntoConstraints="NO" id="fHN-q5-ekh">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fHN-q5-ekh">
                                         <rect key="frame" x="144" y="117" width="71" height="71"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="71" id="cwo-qb-l5G"/>
                                             <constraint firstAttribute="width" constant="71" id="wMB-eD-d3F"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="femaleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Uec-Tp-FgH">
-                                        <rect key="frame" x="162" y="135" width="35" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="Vm1-DY-4eW"/>
-                                            <constraint firstAttribute="height" constant="35" id="inO-ix-YQc"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add child" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqq-Yi-aBg">
@@ -4111,7 +4104,6 @@ you want to remove</string>
                                     <constraint firstAttribute="height" constant="474" id="8F8-H0-3DR"/>
                                     <constraint firstItem="Oxt-nn-JgW" firstAttribute="leading" secondItem="7yB-tw-o4a" secondAttribute="trailing" constant="4" id="BYU-xB-xxt"/>
                                     <constraint firstItem="ufI-dh-SYI" firstAttribute="top" secondItem="rkU-Y6-DTL" secondAttribute="bottom" constant="44" id="DZJ-AH-c8k"/>
-                                    <constraint firstItem="Uec-Tp-FgH" firstAttribute="centerY" secondItem="fHN-q5-ekh" secondAttribute="centerY" id="De5-SF-tWl"/>
                                     <constraint firstAttribute="bottom" secondItem="ufI-dh-SYI" secondAttribute="bottom" constant="24" id="En9-1Z-HJ8"/>
                                     <constraint firstItem="Mdk-Lq-ibF" firstAttribute="centerX" secondItem="5WP-Zk-cbB" secondAttribute="centerX" id="HGg-co-SgN"/>
                                     <constraint firstItem="7yB-tw-o4a" firstAttribute="centerY" secondItem="dLu-I7-gv4" secondAttribute="centerY" id="NPe-Z0-Dej"/>
@@ -4130,7 +4122,6 @@ you want to remove</string>
                                     <constraint firstItem="Oxt-nn-JgW" firstAttribute="centerY" secondItem="7yB-tw-o4a" secondAttribute="centerY" id="dUn-lA-dyO"/>
                                     <constraint firstItem="bZd-iu-pcs" firstAttribute="centerY" secondItem="tx7-Nb-WY8" secondAttribute="centerY" id="eje-xP-sl4"/>
                                     <constraint firstItem="Pqq-Yi-aBg" firstAttribute="top" secondItem="5WP-Zk-cbB" secondAttribute="top" constant="65" id="fAo-4i-x0x"/>
-                                    <constraint firstItem="Uec-Tp-FgH" firstAttribute="centerX" secondItem="fHN-q5-ekh" secondAttribute="centerX" id="g23-YQ-IHn"/>
                                     <constraint firstItem="ksX-SH-2E9" firstAttribute="leading" secondItem="bhr-fa-xy6" secondAttribute="trailing" constant="4" id="gwr-DF-eJl"/>
                                     <constraint firstItem="bhr-fa-xy6" firstAttribute="leading" secondItem="dLu-I7-gv4" secondAttribute="trailing" constant="3" id="iNP-eP-a3J"/>
                                     <constraint firstItem="Mdk-Lq-ibF" firstAttribute="top" secondItem="fHN-q5-ekh" secondAttribute="bottom" constant="8" id="iqk-i5-fdV"/>
@@ -4163,7 +4154,7 @@ you want to remove</string>
                         <outlet property="saveButton" destination="ufI-dh-SYI" id="Bha-Dt-51h"/>
                         <outlet property="smallContainerView" destination="bZd-iu-pcs" id="Eqn-pN-cXY"/>
                         <outlet property="titleLabel" destination="Pqq-Yi-aBg" id="nL1-n2-Src"/>
-                        <outlet property="typeImageView" destination="Uec-Tp-FgH" id="igb-n4-E6Z"/>
+                        <outlet property="typeImageView" destination="fHN-q5-ekh" id="Otp-1B-hwr"/>
                         <outlet property="typeLabel" destination="Mdk-Lq-ibF" id="ig0-20-FQA"/>
                         <outlet property="weeksButton" destination="fe7-I8-eLu" id="awB-P5-LWD"/>
                         <outlet property="yearsButton" destination="RdP-Tx-g7l" id="ERk-Be-xqf"/>
@@ -4178,13 +4169,12 @@ you want to remove</string>
         <image name="addPhotoIcon" width="29" height="28"/>
         <image name="arrowRight" width="8" height="12"/>
         <image name="closeIcon" width="18" height="18"/>
-        <image name="femaleIcon" width="50" height="50"/>
         <image name="gradient" width="187" height="109"/>
-        <image name="greenCircle" width="71" height="71"/>
         <image name="locationGreyIcon" width="11" height="15"/>
         <image name="logo" width="223" height="206"/>
         <image name="logoDescription" width="208" height="46"/>
         <image name="logoText" width="333" height="80"/>
+        <image name="maleIcon" width="50" height="50"/>
         <image name="offIcon" width="24" height="24"/>
         <image name="placeholderIcon" width="163" height="152"/>
         <image name="placeholderImage" width="163" height="152"/>

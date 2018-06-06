@@ -35,7 +35,7 @@ class OffersViewController: UIViewController {
     
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "MumsApp Offers")
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "MumsApp Offers and Services")
         
         self.navigationItem.titleView = titleLabel
         
