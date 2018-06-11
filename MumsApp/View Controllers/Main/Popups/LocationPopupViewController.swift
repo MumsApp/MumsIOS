@@ -5,7 +5,8 @@ import GooglePlaces
 protocol LocationPopupDelegate: class {
     
     func locationUpdated(coordinate: CLLocationCoordinate2D, locationName: String)
-
+    func locationNotSelected()
+    
 }
 
 enum LocationPopupType {
@@ -77,13 +78,13 @@ class LocationPopupViewController: UIViewController {
     
     func configureData() {
         
-        guard let location = self.locationOptional else { return }
+        guard let location = self.locationOptional, let lat = location.lat, let lon = location.lon else { return }
         
         self.enterLocationButton.setTitle(location.formattedAddress, for: .normal)
         
-        self.mapView.addMarker(lat: Double(location.lat!)!, lon: Double(location.lon!)!)
+        self.mapView.addMarker(lat: Double(lat)!, lon: Double(lon)!)
         
-        let locationCoordinate = CLLocationCoordinate2D(latitude: Double(location.lat!)!, longitude: Double(location.lon!)!)
+        let locationCoordinate = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!)
         
         let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
         
@@ -119,7 +120,13 @@ class LocationPopupViewController: UIViewController {
         
         guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
         
-        guard let place = self.place else { return }
+        guard let place = self.place else {
+            
+            self.showOkAlertWith(title: "Info", message: "Choose your location.")
+            
+            return
+            
+        }
         
         self.blockViews(bool: false)
         
@@ -152,6 +159,8 @@ class LocationPopupViewController: UIViewController {
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
     
+        self.delegate?.locationNotSelected()
+        
         self.dismissViewController()
     
     }

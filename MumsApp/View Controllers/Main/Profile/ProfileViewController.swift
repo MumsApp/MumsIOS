@@ -54,17 +54,17 @@ class ProfileViewController: UIViewController {
         
         self.view.setBackground()
 
-        self.profileView.userNameLabel.text = "Test Name"
+        self.profileView.userNameLabel.text = ""
         
         self.locationView.configureWith(delegate: self)
         
-//        self.locationViewHeight.constant = 80
-
         self.profileView.configureWith(delegate: self)
      
         self.imagePicker.delegate = self
-     
-        self.heightConstraint.constant = 1500
+
+        self.locationViewHeight.constant = 80
+
+        self.heightConstraint.constant = 1270
 
         self.childrenView.configureWith(delegate: self)
         
@@ -108,7 +108,7 @@ class ProfileViewController: UIViewController {
         
     }
     
-    private func getUserData() {
+    fileprivate func getUserData() {
         
         guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
         
@@ -260,6 +260,8 @@ extension ProfileViewController: LocationViewDelegate {
             
 //            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
 
+            self.showLocationPopupViewController()
+
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()
@@ -271,6 +273,8 @@ extension ProfileViewController: LocationViewDelegate {
             self.locationViewHeight.constant = 80
             
             self.locationView.showSwitch.isOn = false
+
+            self.locationView.editButton.isHidden = true
 
 //            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
 
@@ -438,6 +442,18 @@ extension ProfileViewController: LocationPopupDelegate {
         self.locationView.userLocationLabel.text = locationName
         
         self.showSwitchValueChanged(isVisible: true)
+        
+        self.getUserData()
+        
+    }
+    
+    func locationNotSelected() {
+        
+        if let location = self.userDetails?.location, let _ = location.lat, let _ = location.lon {} else {
+            
+            self.showSwitchValueChanged(isVisible: false)
+
+        }
         
     }
     
