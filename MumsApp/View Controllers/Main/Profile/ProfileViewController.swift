@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController {
     
     fileprivate var childService: ChildService!
     
+    fileprivate var userImageService: UserImageService!
+    
     fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
 
     fileprivate weak var userNamePopupViewController: UserNamePopupViewController?
@@ -27,11 +29,13 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
-    func configureWith(userDetailsService: UserDetailsService, childService: ChildService) {
+    func configureWith(userDetailsService: UserDetailsService, childService: ChildService, userImageService: UserImageService) {
         
         self.userDetailsService = userDetailsService
         
         self.childService = childService
+        
+        self.userImageService = userImageService
         
     }
     
@@ -173,6 +177,12 @@ class ProfileViewController: UIViewController {
             
         }
         
+        if let photo = userDetails.photo {
+            
+            self.profileView.userImageView.downloadedFrom(link: "https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg")
+            
+        }
+        
         self.updateChildrenView()
 
     }
@@ -180,10 +190,8 @@ class ProfileViewController: UIViewController {
     fileprivate func updateUserPhoto() {
         
         guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
-
-        guard let photoData = UIImageJPEGRepresentation(self.profileView.userImageView.image!, 0.7) else { return }
-        
-        self.userDetailsService.updateUserPhoto(id: id, token: token, photo: photoData) { errorOptional in
+      
+        self.userImageService.postNewUserImage(id: id, token: token, image: self.profileView.userImageView.image!) { errorOptional in
             
             if let error = errorOptional {
                 
@@ -193,9 +201,9 @@ class ProfileViewController: UIViewController {
                 
                 
             }
-            
+ 
         }
-        
+ 
     }
     
     fileprivate func updateChildrenView() {

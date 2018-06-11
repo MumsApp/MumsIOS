@@ -77,6 +77,14 @@ class ServiceFactory {
         
     }
     
+    func userImageService() -> UserImageService {
+        
+        let service = UserImageService(networkService: self.networkService, dataStore: self.dataStore)
+        
+        return service
+        
+    }
+    
     func userDetailsService() -> UserDetailsService {
         
         let parser = UserDetailsServiceParser()
@@ -106,5 +114,5 @@ class ServiceFactory {
         return service
         
     }
-    
+
 }

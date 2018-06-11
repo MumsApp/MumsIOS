@@ -146,6 +146,8 @@
 		4D7C71A620CE7C4600A0A47C /* ChildService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71A520CE7C4600A0A47C /* ChildService.swift */; };
 		4D7C71A820CE7C4F00A0A47C /* ChildServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71A720CE7C4F00A0A47C /* ChildServiceParser.swift */; };
 		4D7C71AB20CE9A9100A0A47C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71AA20CE9A9100A0A47C /* UIImage+Extensions.swift */; };
+		4D7C71AD20CEA16000A0A47C /* UserImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71AC20CEA16000A0A47C /* UserImageService.swift */; };
+		4D7C71AF20CEA5F900A0A47C /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71AE20CEA5F900A0A47C /* UIImageView+Extensions.swift */; };
 		4D85DE8C207CAC8500972B9F /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85DE8B207CAC8500972B9F /* SchoolsViewController.swift */; };
 		4D85DE8F207CB3C900972B9F /* AddSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85DE8E207CB3C900972B9F /* AddSchoolViewController.swift */; };
 		4D85DE91207CB65D00972B9F /* AddSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85DE90207CB65D00972B9F /* AddSchoolCell.swift */; };
@@ -414,6 +416,8 @@
 		4D7C71A520CE7C4600A0A47C /* ChildService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildService.swift; sourceTree = "<group>"; };
 		4D7C71A720CE7C4F00A0A47C /* ChildServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildServiceParser.swift; sourceTree = "<group>"; };
 		4D7C71AA20CE9A9100A0A47C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		4D7C71AC20CEA16000A0A47C /* UserImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageService.swift; sourceTree = "<group>"; };
+		4D7C71AE20CEA5F900A0A47C /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		4D85DE8B207CAC8500972B9F /* SchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewController.swift; sourceTree = "<group>"; };
 		4D85DE8E207CB3C900972B9F /* AddSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchoolViewController.swift; sourceTree = "<group>"; };
 		4D85DE90207CB65D00972B9F /* AddSchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchoolCell.swift; sourceTree = "<group>"; };
@@ -1087,6 +1091,7 @@
 				4D403BD3204AE15500956939 /* UICollectionViewCell.swift */,
 				4D1933EC2056FAEF006D6D5B /* GoogleMaps+Extensions.swift */,
 				4D7C71AA20CE9A9100A0A47C /* UIImage+Extensions.swift */,
+				4D7C71AE20CEA5F900A0A47C /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1126,6 +1131,7 @@
 		4D9DE8AD203E06CC005BDB37 /* UserDetailsService */ = {
 			isa = PBXGroup;
 			children = (
+				4D7C71AC20CEA16000A0A47C /* UserImageService.swift */,
 				4D9DE8A1203E00EF005BDB37 /* UserDetailsService.swift */,
 				4D9DE8A3203E00FD005BDB37 /* UserDetailsServiceParser.swift */,
 			);
@@ -1868,6 +1874,7 @@
 				4D74FF45205BFB520016D3E9 /* PromotionDescriptionView.swift in Sources */,
 				4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */,
 				4D05A9581FE144A900B19E6E /* InAppPurchase+Helper.swift in Sources */,
+				4D7C71AF20CEA5F900A0A47C /* UIImageView+Extensions.swift in Sources */,
 				4D39D48C20348B53005123F8 /* PictureCell.swift in Sources */,
 				4DE175152028DCEA001C5DD1 /* ShopCell.swift in Sources */,
 				4DC67752201781E000F34184 /* Timeout+UIView.swift in Sources */,
@@ -1976,6 +1983,7 @@
 				4D9DE8AA203E0355005BDB37 /* Children.swift in Sources */,
 				4D05A97A1FE14BE100B19E6E /* ServiceFactory.swift in Sources */,
 				4D74FF3E205BEF040016D3E9 /* CategoriesCell.swift in Sources */,
+				4D7C71AD20CEA16000A0A47C /* UserImageService.swift in Sources */,
 				4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */,
 				4D1933ED2056FAEF006D6D5B /* GoogleMaps+Extensions.swift in Sources */,
 				4D9DE8AC203E04A3005BDB37 /* Photo.swift in Sources */,

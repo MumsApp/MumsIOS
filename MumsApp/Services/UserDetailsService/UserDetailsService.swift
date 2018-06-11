@@ -3,7 +3,6 @@ import Foundation
 let USER_DETAILS_URL = BASE_URL + "user/{id}/{level}"
 let USER_NAME_URL = BASE_URL + "user/{id}"
 let USER_LOCATION_URL = BASE_URL + "user/{id}/location"
-let USER_PHOTO_URL = BASE_URL + "user/{id}/photo"
 
 let k_level = "level"
 
@@ -85,27 +84,27 @@ struct UserDetailsService: ResourceService {
         
     }
   
-    // MARK: - UPDATE PHOTO
-    
-    func updateUserPhoto(id: String, token: String, photo: Data, completion: @escaping ErrorCompletion) {
-        
-        let pathParameters = [k_id: id]
-        
-        let url = USER_PHOTO_URL.URLReplacingPathParamaters(parameters: pathParameters)
-        
-        if var request = URLRequest.POSTRequestData(urlString: url, bodyData: photo) {
-            
-            request.setValue(token, forHTTPHeaderField: kAuthorization)
-            
-            let response = responseHandler(completion: completion)
-            
-            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
-            
-            _ = self.networkService.enqueueNetworkRequest(request: task)
-            
-        }
-        
-    }
+//    // MARK: - UPDATE PHOTO
+//    
+//    func updateUserPhoto(id: String, token: String, photo: Data, completion: @escaping ErrorCompletion) {
+//        
+//        let pathParameters = [k_id: id]
+//        
+//        let url = USER_PHOTO_URL.URLReplacingPathParamaters(parameters: pathParameters)
+//        
+//        if var request = URLRequest.POSTRequestData(urlString: url, bodyData: photo) {
+//            
+//            request.setValue(token, forHTTPHeaderField: kAuthorization)
+//            
+//            let response = responseHandler(completion: completion)
+//            
+//            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+//            
+//            _ = self.networkService.enqueueNetworkRequest(request: task)
+//            
+//        }
+//        
+//    }
     
 }
 

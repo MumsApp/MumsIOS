@@ -46,7 +46,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProfileViewController.rawValue, storyboard: storyboard) as! ProfileViewController
         
         controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService(),
-                                 childService: self.serviceFactory.childService())
+                                 childService: self.serviceFactory.childService(),
+                                 userImageService: self.serviceFactory.userImageService())
         
         return controller
         
