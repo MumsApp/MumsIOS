@@ -1,24 +1,31 @@
 import UIKit
+import SwipeCellKit
 
 protocol ChildrenCellDelgate: class {
     
-    func editButtonPressed()
+    func editButtonPressed(children: Children)
     
 }
 
-class ChildrenCell: UITableViewCell, Reusable {
+class ChildrenCell: SwipeTableViewCell, Reusable {
 
     @IBOutlet weak var childrenLabel: UILabel!
     
     @IBOutlet weak var editButton: UIButton!
     
-    private weak var delegate: ChildrenCellDelgate?
+    private weak var delegateChildren: ChildrenCellDelgate?
     
-    func configureWith(type: String, delegate: ChildrenCellDelgate) {
+    private var children: Children?
+    
+    func configureWith(children: Children, delegate: ChildrenCellDelgate) {
         
-        self.childrenLabel.text = type
+        self.children = children
+
+        let title = String(children.age!) + String(children.ageUnit!) + String(children.sex!)
+
+        self.childrenLabel.text = title
         
-        self.delegate = delegate
+        self.delegateChildren = delegate
         
     }
     
@@ -44,8 +51,8 @@ class ChildrenCell: UITableViewCell, Reusable {
     }
 
     @IBAction func editButtonPressed(_ sender: UIButton) {
-    
-        self.delegate?.editButtonPressed()
+        
+        self.delegateChildren?.editButtonPressed(children: self.children!)
         
     }
     

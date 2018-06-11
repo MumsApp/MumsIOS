@@ -1,10 +1,13 @@
 import Foundation
 import UIKit
+import SwipeCellKit
 
 protocol ChildrenViewDelegate: class {
     
     func addChildrenButtonPressed(type: ChildrenType)
-    
+    func editChildrenButtonPressed(children: Children)
+    func deleteChildrenButtonPressed(children: Children)
+
 }
 
 class ChildrenView: UIView {
@@ -23,7 +26,9 @@ class ChildrenView: UIView {
     
     @IBOutlet weak var separatorView: UIView!
     
-    private var delegate: ChildrenViewDelegate?
+    fileprivate var delegate: ChildrenViewDelegate?
+    
+    var childrenList: Array<Children> = []
     
     func configureWith(delegate: ChildrenViewDelegate) {
         
@@ -109,11 +114,11 @@ class ChildrenView: UIView {
     
 }
 
-extension ChildrenView: UITableViewDelegate, UITableViewDataSource {
+extension ChildrenView: UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return self.childrenList.count
         
     }
     
@@ -121,9 +126,43 @@ extension ChildrenView: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(ChildrenCell.self)
         
-        cell.configureWith(type: "Children", delegate: self)
+        let children = self.childrenList[indexPath.row]
+                
+        cell.configureWith(children: children, delegate: self)
+        
+        cell.delegate = self
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+            
+            let children = self.childrenList[indexPath.row]
+
+            self.delegate?.deleteChildrenButtonPressed(children: children)
+            
+        }
+        
+        deleteAction.backgroundColor = .clear
+        
+        deleteAction.image = #imageLiteral(resourceName: "deleteIcon").resizeImage(CGSize(width: 30, height: 30))
+        
+        return [deleteAction]
+        
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        
+        var options = SwipeTableOptions()
+        
+        options.backgroundColor = .clear
+        
+        return options
         
     }
     
@@ -131,9 +170,9 @@ extension ChildrenView: UITableViewDelegate, UITableViewDataSource {
 
 extension ChildrenView: ChildrenCellDelgate {
     
-    func editButtonPressed() {
+    func editButtonPressed(children: Children) {
     
-        // Show edit popup
+        self.delegate?.editChildrenButtonPressed(children: children)
         
     }
     

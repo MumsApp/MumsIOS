@@ -50,9 +50,9 @@ struct ChildService: ResourceService {
     
     // MARK: - UPDATE CHILD DETAILS
     
-    func updateChildDetails(id: String, child_id: String, token: String, age: Int, ageUnit: Int, sex: Int, completion: @escaping ErrorCompletion) {
+    func updateChildDetails(id: String, child_id: Int, token: String, age: Int, ageUnit: Int, sex: Int, completion: @escaping ErrorCompletion) {
         
-        let pathParameters = [k_id: id, k_child_id: child_id]
+        let pathParameters = [k_id: id, k_child_id: String(child_id)]
 
         let url = USER_CHILDREN_DETAILS_URL.URLReplacingPathParamaters(parameters: pathParameters)
         
@@ -74,9 +74,9 @@ struct ChildService: ResourceService {
     
     // MARK: - DELETE CHILD DETAILS
     
-    func deleteChildDetails(id: String, child_id: String, token: String, completion: @escaping ErrorCompletion) {
+    func deleteChildDetails(id: String, child_id: Int, token: String, completion: @escaping ErrorCompletion) {
         
-        let pathParameters = [k_id: id, k_child_id: child_id]
+        let pathParameters = [k_id: id, k_child_id: String(child_id)]
 
         let url = USER_CHILDREN_DETAILS_URL.URLReplacingPathParamaters(parameters: pathParameters)
         

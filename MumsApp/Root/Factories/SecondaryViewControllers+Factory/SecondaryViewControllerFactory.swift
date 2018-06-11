@@ -309,11 +309,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func addChildrenPopupViewController(type: ChildrenType, delegate: AddChildrenPopupViewControllerDelegate?) -> AddChildrenPopupViewController {
+    func addChildrenPopupViewController(type: ChildrenType, delegate: AddChildrenPopupViewControllerDelegate?, children: Children?) -> AddChildrenPopupViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddChildrenPopupViewController.rawValue, storyboard: storyboard) as! AddChildrenPopupViewController
         
-        controller.configureWith(type: type, delegate: delegate, childService: self.serviceFactory.childService())
+        controller.configureWith(type: type, delegate: delegate, childService: self.serviceFactory.childService(), children: children)
         
         return controller
         

@@ -27,8 +27,6 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
-    var childrenList: Array<Children> = []
-    
     func configureWith(userDetailsService: UserDetailsService, childService: ChildService) {
         
         self.userDetailsService = userDetailsService
@@ -153,7 +151,9 @@ class ProfileViewController: UIViewController {
         
         if let children = userDetails.children {
             
-            self.childrenList.append(children)
+            self.childrenView.childrenList.append(children)
+            
+            self.childrenView.tableView.reloadData()
             
         }
         
@@ -200,13 +200,11 @@ class ProfileViewController: UIViewController {
     
     fileprivate func updateChildrenView() {
         
-        if self.childrenList.count == 0 {
+        if self.childrenView.childrenList.count == 0 {
             
             self.childrenView.separatorView.isHidden = true
 
             self.childrenViewHeight.constant = 170
-            
-//            self.heightConstraint.constant = self.heightConstraint.constant + CGFloat(self.childrenList.count) * 20
             
             UIView.animate(withDuration: 0.3) {
                 
@@ -218,9 +216,7 @@ class ProfileViewController: UIViewController {
             
             self.childrenView.separatorView.isHidden = false
             
-            self.childrenViewHeight.constant = 170 + CGFloat(self.childrenList.count) * 40
-            
-//            self.heightConstraint.constant = 930 + self.locationViewHeight.constant + CGFloat(self.childrenList.count) * 40
+            self.childrenViewHeight.constant = 170 + CGFloat(self.childrenView.childrenList.count) * 60
             
             UIView.animate(withDuration: 0.3) {
                 
@@ -298,11 +294,11 @@ extension ProfileViewController: LocationViewDelegate {
         
     }
     
-    fileprivate func showAddChildrenPopupViewController(type: ChildrenType) {
+    fileprivate func showAddChildrenPopupViewController(type: ChildrenType, children: Children?) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.addChildrenPopupViewController(type: type, delegate: self)
+        let controller = factory.addChildrenPopupViewController(type: type, delegate: self, children: children)
         
         controller.modalPresentationStyle = .overCurrentContext
         
@@ -435,7 +431,35 @@ extension ProfileViewController: ChildrenViewDelegate {
     
     func addChildrenButtonPressed(type: ChildrenType) {
         
-        self.showAddChildrenPopupViewController(type: type)
+        self.showAddChildrenPopupViewController(type: type, children: nil)
+        
+    }
+    
+    func editChildrenButtonPressed(children: Children) {
+        
+        let type = ChildrenType(rawValue: children.sex!)!
+
+        self.showAddChildrenPopupViewController(type: type, children: children)
+        
+    }
+    
+    func deleteChildrenButtonPressed(children: Children) {
+        
+        guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
+
+        self.childService.deleteChildDetails(id: id, child_id: children.id!, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                
+                
+            }
+            
+        }
         
     }
     

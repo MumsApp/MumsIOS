@@ -1,10 +1,8 @@
 import UIKit
 
-enum ChildrenType {
+enum ChildrenType: Int {
     
-    case female
-    case male
-    case tocome
+    case female = 1, male, tocome
     
 }
 
@@ -54,7 +52,9 @@ class AddChildrenPopupViewController: UIViewController {
     
     private var ageUnit: Int?
     
-    func configureWith(type: ChildrenType, delegate: AddChildrenPopupViewControllerDelegate?, childService: ChildService) {
+    private var children: Children?
+    
+    func configureWith(type: ChildrenType, delegate: AddChildrenPopupViewControllerDelegate?, childService: ChildService, children: Children?) {
         
         self.type = type
         
@@ -62,6 +62,8 @@ class AddChildrenPopupViewController: UIViewController {
         
         self.childService = childService
         
+        self.children = children
+             
     }
     
     override func viewDidLoad() {
@@ -132,6 +134,36 @@ class AddChildrenPopupViewController: UIViewController {
 
         }
         
+        self.configureChildren()
+        
+    }
+    
+    private func configureChildren() {
+        
+        guard let children = self.children else { return }
+        
+        self.ageCountLabel.text = String(children.age!)
+        
+        self.count = children.age!
+        
+        switch children.ageUnit! {
+            
+        case 1:
+            
+            self.weeksButtonPressed(self.weeksButton)
+            
+        case 2:
+            
+            self.monthsButtonPressed(self.monthsButton)
+
+        case 3:
+
+            self.yearsButtonPressed(self.yearsButton)
+            
+        default: return
+            
+        }
+        
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
@@ -142,7 +174,7 @@ class AddChildrenPopupViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
     
-        self.addChild()
+        self.prepareToSaveChild()
     
     }
     
@@ -198,10 +230,10 @@ class AddChildrenPopupViewController: UIViewController {
         
     }
     
-    private func addChild() {
+    private func prepareToSaveChild() {
         
         guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
-
+        
         guard let age = Int(self.ageCountLabel.text!) else { return }
         
         guard let ageUnit = self.ageUnit else {
@@ -230,7 +262,43 @@ class AddChildrenPopupViewController: UIViewController {
             
         }
         
+        if self.children == nil {
+            
+            self.addChild(id: id, token: token, age: age, ageUnit: ageUnit, sex: sex)
+            
+        } else {
+            
+            guard let children_id = self.children?.id else { return }
+            
+            self.updateChild(id: id, child_id: children_id, token: token, age: age, ageUnit: ageUnit, sex: sex)
+            
+        }
+        
+    }
+    
+    private func addChild(id: String, token: String, age: Int, ageUnit: Int, sex: Int) {
+        
         self.childService.addChildDetails(id: id, token: token, age: age, ageUnit: ageUnit, sex: sex) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.delegate?.saveChildrenButtonPressed()
+                
+                self.dismissViewController()
+                
+            }
+            
+        }
+        
+    }
+    
+    func updateChild(id: String, child_id: Int, token: String, age: Int, ageUnit: Int, sex: Int) {
+        
+        self.childService.updateChildDetails(id: id, child_id: child_id, token: token, age: age, ageUnit: ageUnit, sex: sex) { errorOptional in
             
             if let error = errorOptional {
                 

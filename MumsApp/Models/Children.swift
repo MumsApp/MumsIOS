@@ -8,12 +8,14 @@ struct Children: Resource {
     
     static let typeName = "Children"
     
+    var id: Int?
     var age: Int?
     var ageUnit: Int?
     var sex: Int?
     
     init(dictionary: StorableDictionary) {
         
+        self.id = dictionary[k_id] as? Int
         self.age = dictionary[k_age] as? Int
         self.ageUnit = dictionary[k_ageUnit] as? Int
         self.sex = dictionary[k_sex] as? Int
@@ -32,6 +34,7 @@ struct Children: Resource {
         
         var dictionary = Dictionary<String, Any>()
         
+        dictionary[k_id] = self.id
         dictionary[k_age] = self.age
         dictionary[k_ageUnit] = self.ageUnit
         dictionary[k_sex] = self.sex
