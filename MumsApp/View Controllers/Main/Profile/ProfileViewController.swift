@@ -151,6 +151,14 @@ class ProfileViewController: UIViewController {
             
             self.profileView.userDescriptionLabel.text = description
             
+        } else {
+            
+            self.showOkAlertWith(title: "Info", message: "Tell us something about yourself.") { _ in
+                
+                self.showUserNamePopupViewController()
+
+            }
+            
         }
         
         if let children = userDetails.children {
@@ -316,6 +324,24 @@ extension ProfileViewController: LocationViewDelegate {
         
     }
     
+    fileprivate func showUserNamePopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.userNamePopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        controller.configureWith(delegate: self, userDetails: self.userDetails)
+        
+        self.userNamePopupViewController = controller
+        
+        self.presentViewController(controller)
+        
+    }
+    
 }
 
 extension ProfileViewController: ProfileViewDelegate {
@@ -332,24 +358,6 @@ extension ProfileViewController: ProfileViewDelegate {
         
     }
     
-    private func showUserNamePopupViewController() {
-        
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
-        
-        let controller = factory.userNamePopupViewController()
-        
-        controller.modalPresentationStyle = .overCurrentContext
-        
-        controller.modalTransitionStyle = .crossDissolve
-        
-        controller.configureWith(delegate: self)
-        
-        self.userNamePopupViewController = controller
-        
-        self.presentViewController(controller)
-        
-    }
-
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

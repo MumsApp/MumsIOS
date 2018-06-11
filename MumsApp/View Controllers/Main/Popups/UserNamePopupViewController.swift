@@ -26,9 +26,13 @@ class UserNamePopupViewController: UIViewController {
 
     private weak var delegate: UserNamePopupDelegate?
     
-    func configureWith(delegate: UserNamePopupDelegate?) {
+    private var userDetails: UserDetails?
+    
+    func configureWith(delegate: UserNamePopupDelegate?, userDetails: UserDetails?) {
         
         self.delegate = delegate
+        
+        self.userDetails = userDetails
         
     }
     
@@ -66,6 +70,16 @@ class UserNamePopupViewController: UIViewController {
         self.descriptionTextField.font = .regular(size: 13)
 
         self.blockView(bool: false)
+
+        guard let userDetails = self.userDetails, let name = userDetails.name, let surname = userDetails.surname  else { return }
+        
+        self.firstnameTextField.text = name
+        
+        self.lastnameTextField.text = surname
+        
+        guard let description = userDetails.description else { return }
+    
+        self.descriptionTextField.text = description
 
     }
     
