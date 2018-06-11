@@ -143,6 +143,8 @@
 		4D74FF48205BFF6F0016D3E9 /* OtherPromotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74FF47205BFF6F0016D3E9 /* OtherPromotionsView.swift */; };
 		4D74FF4A205BFF7C0016D3E9 /* OtherPromotionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D74FF49205BFF7C0016D3E9 /* OtherPromotionsView.xib */; };
 		4D76895E20248946002FC25D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76895D20248946002FC25D /* MenuViewController.swift */; };
+		4D7C71A620CE7C4600A0A47C /* ChildService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71A520CE7C4600A0A47C /* ChildService.swift */; };
+		4D7C71A820CE7C4F00A0A47C /* ChildServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71A720CE7C4F00A0A47C /* ChildServiceParser.swift */; };
 		4D85DE8C207CAC8500972B9F /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85DE8B207CAC8500972B9F /* SchoolsViewController.swift */; };
 		4D85DE8F207CB3C900972B9F /* AddSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85DE8E207CB3C900972B9F /* AddSchoolViewController.swift */; };
 		4D85DE91207CB65D00972B9F /* AddSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85DE90207CB65D00972B9F /* AddSchoolCell.swift */; };
@@ -408,6 +410,8 @@
 		4D74FF47205BFF6F0016D3E9 /* OtherPromotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPromotionsView.swift; sourceTree = "<group>"; };
 		4D74FF49205BFF7C0016D3E9 /* OtherPromotionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPromotionsView.xib; sourceTree = "<group>"; };
 		4D76895D20248946002FC25D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4D7C71A520CE7C4600A0A47C /* ChildService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildService.swift; sourceTree = "<group>"; };
+		4D7C71A720CE7C4F00A0A47C /* ChildServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildServiceParser.swift; sourceTree = "<group>"; };
 		4D85DE8B207CAC8500972B9F /* SchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewController.swift; sourceTree = "<group>"; };
 		4D85DE8E207CB3C900972B9F /* AddSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchoolViewController.swift; sourceTree = "<group>"; };
 		4D85DE90207CB65D00972B9F /* AddSchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchoolCell.swift; sourceTree = "<group>"; };
@@ -780,6 +784,7 @@
 				4DC27EB6201F980C000EE9FA /* GoogleService */,
 				4D45096A203E11F70066954D /* ForgotPasswordService */,
 				4D9DE8AD203E06CC005BDB37 /* UserDetailsService */,
+				4D7C71A920CE7CCA00A0A47C /* ChildService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1046,6 +1051,15 @@
 				4D74FF3D205BEF040016D3E9 /* CategoriesCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		4D7C71A920CE7CCA00A0A47C /* ChildService */ = {
+			isa = PBXGroup;
+			children = (
+				4D7C71A520CE7C4600A0A47C /* ChildService.swift */,
+				4D7C71A720CE7C4F00A0A47C /* ChildServiceParser.swift */,
+			);
+			path = ChildService;
 			sourceTree = "<group>";
 		};
 		4D85DE8D207CAC9200972B9F /* Schools */ = {
@@ -1352,12 +1366,12 @@
 			isa = PBXGroup;
 			children = (
 				4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */,
-				4D8F49C220B3FD6500DD95FB /* FriendsView */,
 				4DEE83EB201E17E1001B0AEB /* ProfileView */,
 				4DEE83F3201E1EB7001B0AEB /* LocationView */,
 				4D36E6FA201E356E000DC94F /* ChildrenView */,
 				4DC27EC5201FBFF5000EE9FA /* CardsView */,
 				4D5ED8F2202246860020FD51 /* OffersView */,
+				4D8F49C220B3FD6500DD95FB /* FriendsView */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1801,6 +1815,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D7C71A820CE7C4F00A0A47C /* ChildServiceParser.swift in Sources */,
 				4D0F0C3D2049846E000F251C /* AddContactCell.swift in Sources */,
 				4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */,
 				4D0F0C3920497BF6000F251C /* UserViewController.swift in Sources */,
@@ -1843,6 +1858,7 @@
 				4D05A94B1FE144A900B19E6E /* NetworkService+DownloadRequest.swift in Sources */,
 				4DAA14EA2020E458000B1CA0 /* LocationPopupViewController.swift in Sources */,
 				4D05A95D1FE144A900B19E6E /* UIViewController+Helpers.swift in Sources */,
+				4D7C71A620CE7C4600A0A47C /* ChildService.swift in Sources */,
 				4D05A95E1FE144A900B19E6E /* UIStoryboard+Helpers.swift in Sources */,
 				4D39D48A203489BE005123F8 /* ItemLocationView.swift in Sources */,
 				4D76895E20248946002FC25D /* MenuViewController.swift in Sources */,

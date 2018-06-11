@@ -13,13 +13,11 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var childrenViewHeight: NSLayoutConstraint!
     
-    //    @IBOutlet weak var schoolView: SchoolView!
-    
     @IBOutlet weak var friendsView: FriendsView!
 
-//    @IBOutlet weak var schoolViewHeight: NSLayoutConstraint!
-    
     fileprivate var userDetailsService: UserDetailsService!
+    
+    fileprivate var childService: ChildService!
     
     fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
 
@@ -29,11 +27,13 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
-    var childrenList: Array<String> = []
+    var childrenList: Array<Children> = []
     
-    func configureWith(userDetailsService: UserDetailsService) {
+    func configureWith(userDetailsService: UserDetailsService, childService: ChildService) {
         
         self.userDetailsService = userDetailsService
+        
+        self.childService = childService
         
     }
     
@@ -129,8 +129,6 @@ class ProfileViewController: UIViewController {
                 
                 self.configureViewWithData(userDetails: self.userDetails!)
                 
-                self.updateChildrenView()
-                
             }
             
         }
@@ -153,6 +151,12 @@ class ProfileViewController: UIViewController {
             
         }
         
+        if let children = userDetails.children {
+            
+            self.childrenList.append(children)
+            
+        }
+        
         if let location = userDetails.location, let lat = location.lat, let lon = location.lon {
             
             self.locationView.mapView.addMarker(lat: Double(lat)!, lon: Double(lon)!)
@@ -169,6 +173,8 @@ class ProfileViewController: UIViewController {
             
         }
         
+        self.updateChildrenView()
+
     }
     
     fileprivate func updateUserPhoto() {
@@ -227,42 +233,6 @@ class ProfileViewController: UIViewController {
     }
     
 }
-
-//extension ProfileViewController: SchoolViewDelegate {
-//
-//    func addSchoolButtonPressed() {
-//
-//        self.schoolView.list.append(String(Date().timeIntervalSinceNow))
-//
-//        self.schoolViewHeight.constant += 90
-//
-//        UIView.animate(withDuration: 0.3) {
-//
-//            self.schoolView.tableView.reloadData()
-//
-//            self.view.layoutIfNeeded()
-//
-//        }
-//
-//    }
-//
-//    func deleteSchoolButtonPressed() {
-//
-//        self.schoolView.list.removeLast()
-//
-//        self.schoolViewHeight.constant -= 90
-//
-//        UIView.animate(withDuration: 0.3) {
-//
-//            self.schoolView.tableView.reloadData()
-//
-//            self.view.layoutIfNeeded()
-//
-//        }
-//
-//    }
-//
-//}
 
 extension ProfileViewController: LocationViewDelegate {
     
@@ -474,9 +444,7 @@ extension ProfileViewController: ChildrenViewDelegate {
 extension ProfileViewController: AddChildrenPopupViewControllerDelegate {
     
     func saveChildrenButtonPressed() {
-        
-        self.childrenList.append("Boy 2 yrs")
-        
+                
         self.updateChildrenView()
         
     }

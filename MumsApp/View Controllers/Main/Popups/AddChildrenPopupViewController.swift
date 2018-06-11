@@ -44,17 +44,23 @@ class AddChildrenPopupViewController: UIViewController {
     
     @IBOutlet weak var saveButton: UIButton!
     
+    private weak var delegate: AddChildrenPopupViewControllerDelegate?
+
+    private var childService: ChildService!
+    
     private var type: ChildrenType = .female
 
     private var count = 0
     
-    private weak var delegate: AddChildrenPopupViewControllerDelegate?
+    private var ageUnit: Int?
     
-    func configureWith(type: ChildrenType, delegate: AddChildrenPopupViewControllerDelegate?) {
+    func configureWith(type: ChildrenType, delegate: AddChildrenPopupViewControllerDelegate?, childService: ChildService) {
         
         self.type = type
         
         self.delegate = delegate
+        
+        self.childService = childService
         
     }
     
@@ -136,9 +142,7 @@ class AddChildrenPopupViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
     
-        self.delegate?.saveChildrenButtonPressed()
-        
-        self.dismissViewController()
+        self.addChild()
     
     }
     
@@ -170,6 +174,8 @@ class AddChildrenPopupViewController: UIViewController {
         self.monthsButton.setImage(#imageLiteral(resourceName: "offIcon"), for: .normal)
         self.yearsButton.setImage(#imageLiteral(resourceName: "offIcon"), for: .normal)
 
+        self.ageUnit = 1
+
     }
     
     @IBAction func monthsButtonPressed(_ sender: UIButton) {
@@ -178,6 +184,8 @@ class AddChildrenPopupViewController: UIViewController {
         self.monthsButton.setImage(#imageLiteral(resourceName: "onIcon"), for: .normal)
         self.yearsButton.setImage(#imageLiteral(resourceName: "offIcon"), for: .normal)
         
+        self.ageUnit = 2
+
     }
     
     @IBAction func yearsButtonPressed(_ sender: UIButton) {
@@ -185,6 +193,58 @@ class AddChildrenPopupViewController: UIViewController {
         self.weeksButton.setImage(#imageLiteral(resourceName: "offIcon"), for: .normal)
         self.monthsButton.setImage(#imageLiteral(resourceName: "offIcon"), for: .normal)
         self.yearsButton.setImage(#imageLiteral(resourceName: "onIcon"), for: .normal)
+        
+        self.ageUnit = 3
+        
+    }
+    
+    private func addChild() {
+        
+        guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
+
+        guard let age = Int(self.ageCountLabel.text!) else { return }
+        
+        guard let ageUnit = self.ageUnit else {
+            
+            self.showOkAlertWith(title: "Info", message: "Please choose the type of age.")
+            
+            return
+            
+        }
+        
+        var sex = 1
+        
+        switch self.type {
+            
+        case .female:
+            
+            sex = 1
+            
+        case .male:
+            
+            sex = 2
+            
+        case .tocome:
+            
+            sex = 3
+            
+        }
+        
+        self.childService.addChildDetails(id: id, token: token, age: age, ageUnit: ageUnit, sex: sex) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.delegate?.saveChildrenButtonPressed()
+                
+                self.dismissViewController()
+                
+            }
+            
+        }
         
     }
     

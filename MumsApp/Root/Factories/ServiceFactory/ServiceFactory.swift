@@ -97,4 +97,14 @@ class ServiceFactory {
         
     }
     
+    func childService() -> ChildService {
+        
+        let parser = ChildServiceParser()
+        
+        let service = ChildService(networkService: self.networkService, serviceParser: parser)
+        
+        return service
+        
+    }
+    
 }

@@ -1,22 +1,22 @@
 import Foundation
 
-let k_number = "number"
-let k_ageRangeFrom = "ageRangeFrom"
-let k_ageRangeTo = "ageRangeTo"
+let k_age = "age"
+let k_ageUnit = "ageUnit"
+let k_sex = "sex"
 
 struct Children: Resource {
     
     static let typeName = "Children"
     
-    var number: Int?
-    var ageRangeFrom: Int?
-    var ageRangeTo: Int?
+    var age: Int?
+    var ageUnit: Int?
+    var sex: Int?
     
     init(dictionary: StorableDictionary) {
         
-        self.number = dictionary[k_number] as? Int
-        self.ageRangeFrom = dictionary[k_ageRangeFrom] as? Int
-        self.ageRangeTo = dictionary[k_ageRangeTo] as? Int
+        self.age = dictionary[k_age] as? Int
+        self.ageUnit = dictionary[k_ageUnit] as? Int
+        self.sex = dictionary[k_sex] as? Int
         
     }
     
@@ -32,9 +32,9 @@ struct Children: Resource {
         
         var dictionary = Dictionary<String, Any>()
         
-        dictionary[k_number] = self.number
-        dictionary[k_ageRangeFrom] = self.ageRangeFrom
-        dictionary[k_ageRangeTo] = self.ageRangeTo
+        dictionary[k_age] = self.age
+        dictionary[k_ageUnit] = self.ageUnit
+        dictionary[k_sex] = self.sex
         
         return dictionary
         

@@ -45,7 +45,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProfileViewController.rawValue, storyboard: storyboard) as! ProfileViewController
         
-        controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService())
+        controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService(),
+                                 childService: self.serviceFactory.childService())
         
         return controller
         
@@ -312,7 +313,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddChildrenPopupViewController.rawValue, storyboard: storyboard) as! AddChildrenPopupViewController
         
-        controller.configureWith(type: type, delegate: delegate)
+        controller.configureWith(type: type, delegate: delegate, childService: self.serviceFactory.childService())
         
         return controller
         
