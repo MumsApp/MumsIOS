@@ -14,7 +14,7 @@ struct UserDetails: Resource, Storable {
     var surname: String?
     var description: String?
     var location: Location?
-    var children: Children?
+    var children: Array<Children>?
     var photo: Photo?
     
     init(dictionary: StorableDictionary) {
@@ -30,9 +30,15 @@ struct UserDetails: Resource, Storable {
 
         }
         
-        if let childrenDictionary = dictionary[k_children] as? Dictionary<String, Any> {
+        if let childrenArray = dictionary[k_children] as? Array<Dictionary<String, Any>> {
+        
+            self.children = []
             
-            self.children = Children.fromDictionary(dictionary: childrenDictionary)
+            for childrenDictionary in childrenArray {
+                
+                self.children?.append(Children.fromDictionary(dictionary: childrenDictionary))
+
+            }
             
         }
         
@@ -61,37 +67,21 @@ struct UserDetails: Resource, Storable {
         dictionary[k_surname] = self.surname
         dictionary[k_description] = self.description
         dictionary[k_location] = self.location?.toDictionary()
-        dictionary[k_children] = self.children?.toDictionary()
+        
         dictionary[k_photo] = self.photo?.toDictionary()
+        
+        var childrenArray: Array<Dictionary<String, Any>> = []
+        
+        for children in self.children! {
+            
+            childrenArray.append(children.toDictionary())
+            
+        }
+        
+        dictionary[k_children] = childrenArray
         
         return dictionary
         
     }
     
 }
-
-//{
-//    "status": "ok",
-//    "data"  : {
-//        "id"         : 1,
-//        "name"       : "john",
-//        "surname"    : "doe",
-//        "description": "some description details",
-//        "location"   : {
-//            "name"            : "home",
-//            "placeID"         : "8",
-//            "lat"             : "10.9990",
-//            "lon"             : "11.2340",
-//            "formattedAddress": "Some street with details"
-//        },
-//        "children"   : {
-//        "number"      : 4,
-//        "ageRangeFrom": 8,
-//        "ageRangeTo"  : 9
-//        },
-//        "photo"      : {
-//            "src": "67c2aadef308629c783c8912717330ba.jpeg"
-//        }
-//    }
-//}
-

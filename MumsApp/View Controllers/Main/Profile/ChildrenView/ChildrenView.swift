@@ -92,6 +92,8 @@ class ChildrenView: UIView {
         
         self.tableView.dataSource = self
         
+        self.separatorView.isHidden = true
+        
     }
     
     @IBAction func addFemaleButtonPressed(_ sender: UIButton) {

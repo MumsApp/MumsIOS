@@ -139,8 +139,6 @@ class ProfileViewController: UIViewController {
     
     private func configureViewWithData(userDetails: UserDetails) {
         
-//        self.profileView.userImageView.image = self
-        
         if let name = userDetails.name, let surname = userDetails.surname {
             
             self.profileView.userNameLabel.text = name + " " + surname
@@ -163,31 +161,45 @@ class ProfileViewController: UIViewController {
         
         if let children = userDetails.children {
             
-            self.childrenView.childrenList.append(children)
+            self.childrenView.childrenList = children
             
             self.childrenView.tableView.reloadData()
             
         }
         
-        if let location = userDetails.location, let lat = location.lat, let lon = location.lon {
+        if let location = userDetails.location {
             
-            self.locationView.mapView.addMarker(lat: Double(lat)!, lon: Double(lon)!)
+            if let lat = location.lat, let lon = location.lon {
+                
+                self.locationView.mapView.addMarker(lat: lat, lon: lon)
+                
+                let locationCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                
+                let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
+                
+                self.locationView.mapView.animate(with: cameraUpdate)
+                
+                self.locationView.userLocationLabel.text = location.formattedAddress
+                
+            }
             
-            let locationCoordinate = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!)
-
-            let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
-            
-            self.locationView.mapView.animate(with: cameraUpdate)
-
-            self.locationView.userLocationLabel.text = location.formattedAddress
-            
-            self.showSwitchValueChanged(isVisible: true)
+            if let enabled = location.enabled, enabled {
+                
+                self.showSwitchValueChanged(isVisible: true)
+                
+            } else {
+                
+                self.showSwitchValueChanged(isVisible: false)
+                
+            }
             
         }
         
-        if let photo = userDetails.photo {
+        if let photoURL = userDetails.photo?.src {
             
-            self.profileView.userImageView.downloadedFrom(link: "https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg")
+            let url = BASE_PUBLIC_IMAGE_URL + photoURL
+            
+            self.profileView.userImageView.downloadedFrom(link: url)
             
         }
         
@@ -220,7 +232,7 @@ class ProfileViewController: UIViewController {
             
             self.childrenView.separatorView.isHidden = true
 
-            self.childrenViewHeight.constant = 170
+            self.childrenViewHeight.constant = 175
             
             UIView.animate(withDuration: 0.3) {
                 
@@ -232,7 +244,7 @@ class ProfileViewController: UIViewController {
             
             self.childrenView.separatorView.isHidden = false
             
-            self.childrenViewHeight.constant = 170 + CGFloat(self.childrenView.childrenList.count) * 60
+            self.childrenViewHeight.constant = 175 + CGFloat(self.childrenView.childrenList.count) * 40
             
             UIView.animate(withDuration: 0.3) {
                 
@@ -258,10 +270,14 @@ extension ProfileViewController: LocationViewDelegate {
             
             self.locationView.editButton.isHidden = false
             
-//            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
+            self.enableLocation(bool: true)
 
-            self.showLocationPopupViewController()
+            if self.userDetails?.location?.lat == nil {
+                
+                self.showLocationPopupViewController()
 
+            }
+            
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()
@@ -275,9 +291,9 @@ extension ProfileViewController: LocationViewDelegate {
             self.locationView.showSwitch.isOn = false
 
             self.locationView.editButton.isHidden = true
-
-//            self.heightConstraint.constant = 930 + self.locationViewHeight.constant
-
+            
+            self.enableLocation(bool: false)
+            
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()
@@ -311,7 +327,7 @@ extension ProfileViewController: LocationViewDelegate {
         }
         
         self.presentViewController(controller)
-        
+
     }
     
     fileprivate func showAddChildrenPopupViewController(type: ChildrenType, children: Children?) {
@@ -343,6 +359,25 @@ extension ProfileViewController: LocationViewDelegate {
         self.userNamePopupViewController = controller
         
         self.presentViewController(controller)
+        
+    }
+    
+    private func enableLocation(bool: Bool) {
+        
+        guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
+        
+        self.userDetailsService.enableUserLocation(id: id, token: token, bool: bool) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                
+            }
+            
+        }
         
     }
     
@@ -487,7 +522,7 @@ extension ProfileViewController: ChildrenViewDelegate {
                 
             } else {
                 
-                
+                self.getUserData()
                 
             }
             
@@ -500,8 +535,8 @@ extension ProfileViewController: ChildrenViewDelegate {
 extension ProfileViewController: AddChildrenPopupViewControllerDelegate {
     
     func saveChildrenButtonPressed() {
-                
-        self.updateChildrenView()
+        
+        self.getUserData()
         
     }
     

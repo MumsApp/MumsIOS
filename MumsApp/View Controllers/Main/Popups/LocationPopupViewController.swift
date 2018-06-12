@@ -82,9 +82,9 @@ class LocationPopupViewController: UIViewController {
         
         self.enterLocationButton.setTitle(location.formattedAddress, for: .normal)
         
-        self.mapView.addMarker(lat: Double(lat)!, lon: Double(lon)!)
+        self.mapView.addMarker(lat: lat, lon: lon)
         
-        let locationCoordinate = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!)
+        let locationCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         
         let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
         

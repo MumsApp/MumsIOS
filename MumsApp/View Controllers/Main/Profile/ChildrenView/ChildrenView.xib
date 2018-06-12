@@ -23,7 +23,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="325"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ol3-mI-dIV">
@@ -44,13 +44,13 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBH-dy-UzC">
-                    <rect key="frame" x="0.0" y="40" width="375" height="285"/>
+                    <rect key="frame" x="0.0" y="40" width="375" height="130"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MHz-Jq-mNh">
-                            <rect key="frame" x="24" y="24" width="327" height="220"/>
+                            <rect key="frame" x="24" y="24" width="327" height="65"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YR4-mN-cV3" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="94" width="96" height="32"/>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YR4-mN-cV3" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="7.5" width="114" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <state key="normal" title="Add female" image="femaleIcon">
                                         <color key="titleColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,15 +59,15 @@
                                         <action selector="addFemaleButtonPressed:" destination="-1" eventType="touchUpInside" id="fKE-dv-tl5"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUi-gd-8Dl">
-                                    <rect key="frame" x="106" y="0.0" width="1" height="220"/>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUi-gd-8Dl">
+                                    <rect key="frame" x="114" y="0.0" width="1" height="65"/>
                                     <color key="backgroundColor" red="0.90588235294117647" green="0.92156862745098034" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1" id="bda-p5-YXw"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb3-Gl-7gO" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
-                                    <rect key="frame" x="117" y="94" width="85" height="32"/>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb3-Gl-7gO" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
+                                    <rect key="frame" x="115" y="7.5" width="103" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <state key="normal" title="Add male" image="maleIcon">
                                         <color key="titleColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,15 +76,15 @@
                                         <action selector="addMaleButtonPressed:" destination="-1" eventType="touchUpInside" id="rLt-dQ-zc7"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIW-AU-oTl">
-                                    <rect key="frame" x="212" y="0.0" width="1" height="220"/>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iIW-AU-oTl">
+                                    <rect key="frame" x="218" y="0.0" width="1" height="65"/>
                                     <color key="backgroundColor" red="0.90588235289999997" green="0.92156862750000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1" id="LCB-oD-9xf"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd7-nv-g06" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
-                                    <rect key="frame" x="223" y="94" width="104" height="32"/>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd7-nv-g06" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
+                                    <rect key="frame" x="219" y="7.5" width="108" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <state key="normal" title="Add to come" image="comeIcon">
                                         <color key="titleColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -102,14 +102,14 @@
                             </constraints>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZw-SW-3aV">
-                            <rect key="frame" x="24" y="268" width="327" height="1"/>
+                            <rect key="frame" x="24" y="105" width="327" height="1"/>
                             <color key="backgroundColor" red="0.90588235289999997" green="0.92156862750000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="W9Y-hS-R9G"/>
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aLx-KT-oUX">
-                            <rect key="frame" x="24" y="277" width="327" height="0.0"/>
+                            <rect key="frame" x="24" y="114" width="327" height="16"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </tableView>
@@ -119,12 +119,12 @@
                         <constraint firstAttribute="trailing" secondItem="MHz-Jq-mNh" secondAttribute="trailing" constant="24" id="3OF-mM-iwS"/>
                         <constraint firstAttribute="trailing" secondItem="aLx-KT-oUX" secondAttribute="trailing" constant="24" id="Czg-Tu-vBn"/>
                         <constraint firstItem="aLx-KT-oUX" firstAttribute="leading" secondItem="wBH-dy-UzC" secondAttribute="leading" constant="24" id="LGL-MD-ZvT"/>
-                        <constraint firstAttribute="bottom" secondItem="aLx-KT-oUX" secondAttribute="bottom" constant="8" id="Ml7-wb-bS4"/>
+                        <constraint firstAttribute="bottom" secondItem="aLx-KT-oUX" secondAttribute="bottom" id="Ml7-wb-bS4"/>
                         <constraint firstAttribute="trailing" secondItem="eZw-SW-3aV" secondAttribute="trailing" constant="24" id="QYP-zD-6yx"/>
                         <constraint firstItem="aLx-KT-oUX" firstAttribute="top" secondItem="eZw-SW-3aV" secondAttribute="bottom" constant="8" id="QzG-NZ-HwL"/>
                         <constraint firstItem="MHz-Jq-mNh" firstAttribute="leading" secondItem="wBH-dy-UzC" secondAttribute="leading" constant="24" id="S6Q-1w-Hwg"/>
                         <constraint firstItem="MHz-Jq-mNh" firstAttribute="top" secondItem="wBH-dy-UzC" secondAttribute="top" constant="24" id="YUn-hu-IMt"/>
-                        <constraint firstItem="eZw-SW-3aV" firstAttribute="top" secondItem="MHz-Jq-mNh" secondAttribute="bottom" constant="24" id="dig-Hf-s3l"/>
+                        <constraint firstItem="eZw-SW-3aV" firstAttribute="top" secondItem="MHz-Jq-mNh" secondAttribute="bottom" constant="16" id="dig-Hf-s3l"/>
                         <constraint firstItem="eZw-SW-3aV" firstAttribute="leading" secondItem="wBH-dy-UzC" secondAttribute="leading" constant="24" id="s8c-s3-cA0"/>
                     </constraints>
                 </view>
@@ -145,8 +145,8 @@
         </view>
     </objects>
     <resources>
-        <image name="comeIcon" width="32" height="32"/>
-        <image name="femaleIcon" width="32" height="32"/>
-        <image name="maleIcon" width="32" height="32"/>
+        <image name="comeIcon" width="50" height="50"/>
+        <image name="femaleIcon" width="50" height="50"/>
+        <image name="maleIcon" width="50" height="50"/>
     </resources>
 </document>

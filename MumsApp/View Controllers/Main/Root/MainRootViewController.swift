@@ -321,9 +321,7 @@ extension MainRootViewController: MenuDelegate {
             
         case .add:
             
-            print("Show add item view controller")
-            
-            return
+            controller = factory.addToMenuViewController()
             
         }
         

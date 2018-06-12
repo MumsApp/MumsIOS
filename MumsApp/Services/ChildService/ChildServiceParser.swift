@@ -19,8 +19,7 @@ struct ChildServiceParser: ServiceParser {
 
         case 2:
             
-            //            success = self.parseUserName(dictionary: dictionary)
-            return success
+            success = self.parseDeleteChild(dictionary: dictionary)
             
         case 3:
             
@@ -51,6 +50,20 @@ struct ChildServiceParser: ServiceParser {
     }
     
     private func parseUpdateChild(dictionary: Dictionary<String, Any>) -> Bool {
+        
+        var success = false
+        
+        if let status = dictionary[k_status] as? String, status == k_ok {
+            
+            success = true
+            
+        }
+        
+        return success
+        
+    }
+    
+    private func parseDeleteChild(dictionary: Dictionary<String, Any>) -> Bool {
         
         var success = false
         

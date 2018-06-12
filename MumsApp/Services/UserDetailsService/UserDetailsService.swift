@@ -5,6 +5,7 @@ let USER_NAME_URL = BASE_URL + "user/{id}"
 let USER_LOCATION_URL = BASE_URL + "user/{id}/location"
 
 let k_level = "level"
+let k_enabled = "enabled"
 
 struct UserDetailsService: ResourceService {
     
@@ -68,7 +69,29 @@ struct UserDetailsService: ResourceService {
         
         let url = USER_LOCATION_URL.URLReplacingPathParamaters(parameters: pathParameters)
         
-        let bodyParameters = [k_name: name, k_placeID: placeID, k_lat: lat, k_lon: lon, k_formattedAddress: formattedAddress] as [String : Any]
+        let bodyParameters = [k_name: name, k_placeID: placeID, k_lat: lat, k_lon: lon, k_formattedAddress: formattedAddress, k_enabled: true] as [String : Any]
+        
+        if var request = URLRequest.PUTRequestJSON(urlString: url, bodyParameters: bodyParameters) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(tag: 3, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+    
+    func enableUserLocation(id: String, token: String, bool: Bool, completion: @escaping ErrorCompletion) {
+        
+        let pathParameters = [k_id: id]
+        
+        let url = USER_LOCATION_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        let bodyParameters = [k_enabled: bool] as [String : Any]
         
         if var request = URLRequest.PUTRequestJSON(urlString: url, bodyParameters: bodyParameters) {
             
@@ -85,4 +108,3 @@ struct UserDetailsService: ResourceService {
     }
     
 }
-

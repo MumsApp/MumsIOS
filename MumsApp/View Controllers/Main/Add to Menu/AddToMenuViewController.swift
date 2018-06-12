@@ -1,0 +1,112 @@
+import UIKit
+
+class AddToMenuViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.configureView()
+        
+        self.registerCells()
+        
+        self.configureNavigationBar()
+        
+    }
+    
+    private func configureView() {
+        
+        self.view.setBackground()
+        
+        self.tableView.backgroundColor = .clear
+        
+        self.tableView.delegate = self
+        
+        self.tableView.dataSource = self
+        
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom:
+            80, right: 0)
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.tableView.estimatedRowHeight = 180
+        
+        
+        self.searchBar.delegate = self
+        
+    }
+    
+    private func configureNavigationBar() {
+        
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Add To Menu")
+        
+        self.navigationItem.titleView = titleLabel
+        
+        self.navigationItem.hidesBackButton = true
+        
+    }
+    
+    private func registerCells() {
+        
+        self.tableView.registerNib(AddToMenuCell.self)
+        
+    }
+    
+}
+
+extension AddToMenuViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return lobbyArray.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+      
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(AddToMenuCell.self, indexPath: indexPath)
+        
+        let thisObject = lobbyArray[indexPath.row]
+        
+        cell.configureWith(lobby: thisObject, delegate: self)
+                
+        return cell
+        
+    }
+    
+}
+
+extension AddToMenuViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        searchBar.resignFirstResponder()
+        
+    }
+    
+}
+
+extension AddToMenuViewController: AddToMenuCellDelegate {
+    
+    func addToMenu() {
+    
+        print("Add to menu")
+        
+    }
+    
+}

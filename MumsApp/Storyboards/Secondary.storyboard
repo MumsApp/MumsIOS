@@ -4164,6 +4164,73 @@ you want to remove</string>
             </objects>
             <point key="canvasLocation" x="6861.6000000000004" y="4281.4092953523241"/>
         </scene>
+        <!--Add To Menu View Controller-->
+        <scene sceneID="QRY-5M-PQO">
+            <objects>
+                <viewController storyboardIdentifier="AddToMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="apo-k8-8wP" customClass="AddToMenuViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LVo-wn-Kkc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qht-8Z-w19" customClass="CustomSearchBar" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="uGA-Ov-hj5"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XR0-8K-srL">
+                                <rect key="frame" x="336" y="38" width="17" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="YdN-sU-hhy"/>
+                                    <constraint firstAttribute="height" constant="19" id="akB-Ag-Fwz"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aBl-4B-wAn">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWt-1K-Wf4">
+                                <rect key="frame" x="0.0" y="76" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="tck-Oa-ePr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aBl-4B-wAn" firstAttribute="leading" secondItem="gxv-R6-RS1" secondAttribute="leading" id="0GM-cv-7RZ"/>
+                            <constraint firstItem="tWt-1K-Wf4" firstAttribute="top" secondItem="qht-8Z-w19" secondAttribute="bottom" id="AjX-3O-KGx"/>
+                            <constraint firstItem="aBl-4B-wAn" firstAttribute="trailing" secondItem="gxv-R6-RS1" secondAttribute="trailing" id="DY7-aq-xzF"/>
+                            <constraint firstItem="qht-8Z-w19" firstAttribute="leading" secondItem="gxv-R6-RS1" secondAttribute="leading" id="IDI-ND-VY5"/>
+                            <constraint firstItem="XR0-8K-srL" firstAttribute="centerY" secondItem="qht-8Z-w19" secondAttribute="centerY" id="ISW-XP-gu8"/>
+                            <constraint firstItem="aBl-4B-wAn" firstAttribute="top" secondItem="tWt-1K-Wf4" secondAttribute="bottom" id="ZfE-ys-MZV"/>
+                            <constraint firstItem="qht-8Z-w19" firstAttribute="trailing" secondItem="gxv-R6-RS1" secondAttribute="trailing" id="aiD-jf-on6"/>
+                            <constraint firstItem="qht-8Z-w19" firstAttribute="top" secondItem="gxv-R6-RS1" secondAttribute="top" id="cYj-q8-m1Y"/>
+                            <constraint firstItem="tWt-1K-Wf4" firstAttribute="leading" secondItem="gxv-R6-RS1" secondAttribute="leading" id="hSq-C8-rqR"/>
+                            <constraint firstItem="gxv-R6-RS1" firstAttribute="trailing" secondItem="XR0-8K-srL" secondAttribute="trailing" constant="22" id="lOL-QV-9SD"/>
+                            <constraint firstItem="aBl-4B-wAn" firstAttribute="bottom" secondItem="gxv-R6-RS1" secondAttribute="bottom" id="nem-i4-CMw"/>
+                            <constraint firstItem="tWt-1K-Wf4" firstAttribute="trailing" secondItem="gxv-R6-RS1" secondAttribute="trailing" id="v5Y-t4-8pl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gxv-R6-RS1"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="qht-8Z-w19" id="ytf-Qm-Zu9"/>
+                        <outlet property="tableView" destination="aBl-4B-wAn" id="cIV-gJ-cK1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bj-Yh-oh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11222" y="132"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addPhotoIcon" width="29" height="28"/>

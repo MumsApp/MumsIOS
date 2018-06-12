@@ -320,4 +320,13 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func addToMenuViewController() -> AddToMenuViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddToMenuViewController.rawValue, storyboard: storyboard) as! AddToMenuViewController
+        
+        return controller
+        
+    }
+    
+    
 }

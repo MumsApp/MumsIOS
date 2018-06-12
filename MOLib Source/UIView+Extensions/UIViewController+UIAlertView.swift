@@ -8,7 +8,7 @@ extension UIViewController {
         
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
             
-//            mainRootVC?.showButtons()
+            mainRootVC?.showButtons()
             
         }))
         
@@ -22,7 +22,7 @@ extension UIViewController {
         
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
             
-//            mainRootVC?.showButtons()
+            mainRootVC?.showButtons()
             
             completion(action)
 
