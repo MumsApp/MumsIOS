@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,13 +30,13 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zON-d2-HFz">
-                                    <rect key="frame" x="102" y="35" width="180" height="20.5"/>
+                                    <rect key="frame" x="102" y="35" width="201" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="bqZ-YQ-UM9">
-                                    <rect key="frame" x="102" y="65.5" width="237" height="69.5"/>
+                                    <rect key="frame" x="102" y="65" width="237" height="70"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKR-MR-dW7">
                                             <rect key="frame" x="0.0" y="0.0" width="237" height="20.5"/>
@@ -46,31 +46,32 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nyq-TR-pa6" customClass="CustomGreenSwitch" customModule="MumsApp" customModuleProvider="target">
-                                    <rect key="frame" x="290" y="35" width="51" height="31"/>
-                                    <color key="backgroundColor" red="0.82745098039999998" green="0.85098039219999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StB-V7-XCr">
+                                    <rect key="frame" x="311" y="31.5" width="28" height="28"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="49" id="QYq-v2-roK"/>
+                                        <constraint firstAttribute="width" constant="28" id="Cpv-Bu-Gf8"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28" id="DiG-aQ-AzW"/>
+                                        <constraint firstAttribute="height" constant="28" id="ecp-sD-1CF"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="rVr-Hy-oTh"/>
                                     </constraints>
-                                    <color key="onTintColor" red="0.1215686275" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="favouriteOff"/>
                                     <connections>
-                                        <action selector="lobbySwitchPressed:" destination="iN0-l3-epB" eventType="valueChanged" id="9lM-UG-gvB"/>
+                                        <action selector="favouriteButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="eLg-az-Owj"/>
                                     </connections>
-                                </switch>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstItem="yj1-Sx-QOl" firstAttribute="trailing" secondItem="StB-V7-XCr" secondAttribute="trailing" constant="16" id="0Cv-RZ-HMK"/>
                                 <constraint firstItem="zON-d2-HFz" firstAttribute="leading" secondItem="RVd-5w-7E3" secondAttribute="trailing" constant="16" id="Ihm-1s-2C1"/>
                                 <constraint firstItem="RVd-5w-7E3" firstAttribute="leading" secondItem="yj1-Sx-QOl" secondAttribute="leading" constant="16" id="P7s-X6-WZu"/>
                                 <constraint firstItem="RVd-5w-7E3" firstAttribute="top" secondItem="IDR-sk-Y7q" secondAttribute="top" constant="35" id="VSc-fK-7dt"/>
-                                <constraint firstItem="yj1-Sx-QOl" firstAttribute="trailing" secondItem="nyq-TR-pa6" secondAttribute="trailing" constant="16" id="XIN-5P-MGh"/>
                                 <constraint firstAttribute="bottom" secondItem="bqZ-YQ-UM9" secondAttribute="bottom" constant="35" id="h2M-Vx-Saw"/>
-                                <constraint firstItem="nyq-TR-pa6" firstAttribute="top" secondItem="zON-d2-HFz" secondAttribute="top" id="ikH-Ny-k6H"/>
+                                <constraint firstItem="StB-V7-XCr" firstAttribute="centerY" secondItem="zON-d2-HFz" secondAttribute="centerY" id="mAb-T8-Ud2"/>
+                                <constraint firstItem="StB-V7-XCr" firstAttribute="leading" secondItem="zON-d2-HFz" secondAttribute="trailing" constant="8" id="mSC-Wt-a1T"/>
                                 <constraint firstItem="yj1-Sx-QOl" firstAttribute="trailing" secondItem="bqZ-YQ-UM9" secondAttribute="trailing" constant="16" id="rG2-0B-LP8"/>
                                 <constraint firstItem="bqZ-YQ-UM9" firstAttribute="leading" secondItem="RVd-5w-7E3" secondAttribute="trailing" constant="16" id="tt8-HV-Zop"/>
                                 <constraint firstItem="bqZ-YQ-UM9" firstAttribute="top" secondItem="zON-d2-HFz" secondAttribute="bottom" constant="10" id="ugI-J3-GpS"/>
-                                <constraint firstItem="nyq-TR-pa6" firstAttribute="leading" secondItem="zON-d2-HFz" secondAttribute="trailing" constant="8" id="x8w-CD-PIV"/>
                                 <constraint firstItem="zON-d2-HFz" firstAttribute="top" secondItem="RVd-5w-7E3" secondAttribute="top" id="y7Q-nL-Co0"/>
                             </constraints>
                             <viewLayoutGuide key="safeArea" id="yj1-Sx-QOl"/>
@@ -96,9 +97,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="containerView" destination="WFo-8T-hvg" id="AEK-GC-m5U"/>
+                <outlet property="favouriteButton" destination="StB-V7-XCr" id="N0h-g4-9WC"/>
                 <outlet property="lobbyDescriptionLabel" destination="tKR-MR-dW7" id="wz6-eU-NQM"/>
                 <outlet property="lobbyImageView" destination="RVd-5w-7E3" id="4z6-iQ-yzs"/>
-                <outlet property="lobbyJoinSwitch" destination="nyq-TR-pa6" id="g9j-26-Emw"/>
                 <outlet property="lobbyTitleLabel" destination="zON-d2-HFz" id="gac-IA-bdX"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="54"/>
@@ -106,5 +107,6 @@
     </objects>
     <resources>
         <image name="expectantMumsIcon" width="71" height="71"/>
+        <image name="favouriteOff" width="30" height="29"/>
     </resources>
 </document>

@@ -11,7 +11,7 @@ class LobbyCell: SwipeTableViewCell, Reusable {
     
     @IBOutlet weak var lobbyDescriptionLabel: UILabel!
     
-    @IBOutlet weak var lobbyJoinSwitch: UISwitch!
+    @IBOutlet weak var favouriteButton: UIButton!
     
     func configureWith(lobby: Lobby) {
         
@@ -45,16 +45,18 @@ class LobbyCell: SwipeTableViewCell, Reusable {
         self.lobbyDescriptionLabel.font = .regular(size: 13)
     
         self.lobbyDescriptionLabel.textColor = .mainDarkGrey
-                
-        self.lobbyJoinSwitch.isOn = false
         
         self.lobbyDescriptionLabel.numberOfLines = 0
         
     }
     
-    @IBAction func lobbySwitchPressed(_ sender: UISwitch) {
+    @IBAction func favouriteButtonPressed(_ sender: UIButton) {
     
+        let image = sender.tag == 0 ? #imageLiteral(resourceName: "favouriteOn") : #imageLiteral(resourceName: "favouriteOff")
         
+        sender.setImage(image, for: .normal)
+        
+        sender.tag = sender.tag == 0 ? 1 : 0
     
     }
     
