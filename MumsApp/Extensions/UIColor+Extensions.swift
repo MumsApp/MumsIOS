@@ -14,6 +14,7 @@ extension UIColor {
         case LineGrey = 0xe7ebef
         case PlaceholderColor = 0xEAF0F7
         case ContainerLightGrey = 0xdaddea
+        case ChatGrey = 0xF6FAFD
     }
     
     convenience init(red: Int, green: Int, blue: Int) {
@@ -86,6 +87,12 @@ extension UIColor {
     public class var placeholderColor: UIColor {
         
         return UIColor(netHex: Colors.PlaceholderColor.rawValue)
+        
+    }
+    
+    public class var chatGreyColor: UIColor {
+        
+        return UIColor(netHex: Colors.ChatGrey.rawValue)
         
     }
     

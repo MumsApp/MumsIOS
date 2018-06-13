@@ -98,6 +98,11 @@
 		4D39D4A12034B292005123F8 /* MyProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D4A02034B292005123F8 /* MyProductCell.swift */; };
 		4D3BABDD20594D3900C8CDDD /* OfficialOffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3BABDC20594D3900C8CDDD /* OfficialOffersCell.xib */; };
 		4D3BABDF20594D4A00C8CDDD /* OfficialOffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BABDE20594D4A00C8CDDD /* OfficialOffersCell.swift */; };
+		4D3F889B20D1171700FEE609 /* LobbyConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3F889A20D1171700FEE609 /* LobbyConversationViewController.swift */; };
+		4D3F889D20D1178500FEE609 /* LobbyConversationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3F889C20D1178500FEE609 /* LobbyConversationCell.xib */; };
+		4D3F889F20D1179300FEE609 /* LobbyConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3F889E20D1179300FEE609 /* LobbyConversationCell.swift */; };
+		4D3F88A120D1257B00FEE609 /* LobbyConversationFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3F88A020D1257B00FEE609 /* LobbyConversationFooter.xib */; };
+		4D3F88A320D125EE00FEE609 /* LobbyConversationFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3F88A220D125EE00FEE609 /* LobbyConversationFooter.swift */; };
 		4D403BD4204AE15500956939 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD3204AE15500956939 /* UICollectionViewCell.swift */; };
 		4D403BD6204AF4CA00956939 /* RemoveContactPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD5204AF4CA00956939 /* RemoveContactPopupViewController.swift */; };
 		4D403BD8204AFBE000956939 /* RemoveCompanyPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD7204AFBE000956939 /* RemoveCompanyPopupViewController.swift */; };
@@ -371,6 +376,11 @@
 		4D39D4A02034B292005123F8 /* MyProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCell.swift; sourceTree = "<group>"; };
 		4D3BABDC20594D3900C8CDDD /* OfficialOffersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfficialOffersCell.xib; sourceTree = "<group>"; };
 		4D3BABDE20594D4A00C8CDDD /* OfficialOffersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialOffersCell.swift; sourceTree = "<group>"; };
+		4D3F889A20D1171700FEE609 /* LobbyConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyConversationViewController.swift; sourceTree = "<group>"; };
+		4D3F889C20D1178500FEE609 /* LobbyConversationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyConversationCell.xib; sourceTree = "<group>"; };
+		4D3F889E20D1179300FEE609 /* LobbyConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyConversationCell.swift; sourceTree = "<group>"; };
+		4D3F88A020D1257B00FEE609 /* LobbyConversationFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyConversationFooter.xib; sourceTree = "<group>"; };
+		4D3F88A220D125EE00FEE609 /* LobbyConversationFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyConversationFooter.swift; sourceTree = "<group>"; };
 		4D403BD3204AE15500956939 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		4D403BD5204AF4CA00956939 /* RemoveContactPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveContactPopupViewController.swift; sourceTree = "<group>"; };
 		4D403BD7204AFBE000956939 /* RemoveCompanyPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCompanyPopupViewController.swift; sourceTree = "<group>"; };
@@ -1286,6 +1296,7 @@
 			children = (
 				4DCB4E9D20222795006962F9 /* LobbyViewController.swift */,
 				4D374DC3203CAA6F00AB89F3 /* LobbyDetailsViewController.swift */,
+				4D3F889A20D1171700FEE609 /* LobbyConversationViewController.swift */,
 				4D1B3D762035FB0100C2618B /* CreateCategoryViewController.swift */,
 				4D374DC1203CA9C600AB89F3 /* CreatePostViewController.swift */,
 				4D0F0C30204972BE000F251C /* AddMembersViewController.swift */,
@@ -1311,6 +1322,10 @@
 				4DCB4EA2202229BF006962F9 /* LobbyCell.swift */,
 				4D649241203CAD1700CE35B0 /* LobbyDetailsCell.xib */,
 				4D649243203CAD2700CE35B0 /* LobbyDetailsCell.swift */,
+				4D3F889C20D1178500FEE609 /* LobbyConversationCell.xib */,
+				4D3F889E20D1179300FEE609 /* LobbyConversationCell.swift */,
+				4D3F88A020D1257B00FEE609 /* LobbyConversationFooter.xib */,
+				4D3F88A220D125EE00FEE609 /* LobbyConversationFooter.swift */,
 				4D0F0C342049733E000F251C /* AddMembersCell.xib */,
 				4D0F0C3220497334000F251C /* AddMembersCell.swift */,
 			);
@@ -1594,6 +1609,7 @@
 				4D69BAB020518B1C006AB41D /* OrganisationNewsView.xib in Resources */,
 				4DE1750B2028D3AA001C5DD1 /* ChatSettingsCell.xib in Resources */,
 				4D1DF44D20ADAD5000017BF8 /* ChildrenCell.xib in Resources */,
+				4D3F889D20D1178500FEE609 /* LobbyConversationCell.xib in Resources */,
 				4DE175132028DCDE001C5DD1 /* ShopCell.xib in Resources */,
 				4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */,
 				4D649242203CAD1700CE35B0 /* LobbyDetailsCell.xib in Resources */,
@@ -1619,6 +1635,7 @@
 				4D97E3EA20C57C2400CEBB9F /* Comic Sans MS.ttf in Resources */,
 				4DC2F8B5202C4D4300E331BD /* Terms.json in Resources */,
 				4DA306C420445BD700250156 /* ShopFilterCell.xib in Resources */,
+				4D3F88A120D1257B00FEE609 /* LobbyConversationFooter.xib in Resources */,
 				4D69BAAA2051872A006AB41D /* OrganisationPhotosView.xib in Resources */,
 				4D74FF43205BFB390016D3E9 /* PromotionDescriptionView.xib in Resources */,
 				4DE174FA2028A044001C5DD1 /* AddCell.xib in Resources */,
@@ -1925,6 +1942,7 @@
 				4D36E6F5201E338B000DC94F /* UIView+Extensions.swift in Sources */,
 				4D649244203CAD2700CE35B0 /* LobbyDetailsCell.swift in Sources */,
 				4DE0D99320501190002C0759 /* RemoveProductPopupViewController.swift in Sources */,
+				4D3F889B20D1171700FEE609 /* LobbyConversationViewController.swift in Sources */,
 				4D403BD8204AFBE000956939 /* RemoveCompanyPopupViewController.swift in Sources */,
 				4DA2164520446E7F00621031 /* ShopFilterViewController.swift in Sources */,
 				4DE0D995205018B4002C0759 /* ProductAddedPopupViewController.swift in Sources */,
@@ -1978,6 +1996,7 @@
 				4DE8840C207BB95200682236 /* LocationCoordinator.swift in Sources */,
 				4D74FF37205BE46D0016D3E9 /* ShopCategories.swift in Sources */,
 				4D05A9891FE14F3F00B19E6E /* Storyboards.swift in Sources */,
+				4D3F88A320D125EE00FEE609 /* LobbyConversationFooter.swift in Sources */,
 				4D43389B205949AB00E5C3EA /* OffersViewController.swift in Sources */,
 				4DC677472017800E00F34184 /* SecondaryViewControllerFactory.swift in Sources */,
 				4D05A9501FE144A900B19E6E /* NetworkService+DataRequest.swift in Sources */,
@@ -2010,6 +2029,7 @@
 				4DC677542017825500F34184 /* WelcomeViewController.swift in Sources */,
 				4DC2F8BB202C4E6A00E331BD /* Terms.swift in Sources */,
 				4D05A94A1FE144A900B19E6E /* NetworkService+UploadRequest.swift in Sources */,
+				4D3F889F20D1179300FEE609 /* LobbyConversationCell.swift in Sources */,
 				4DCB4EA5202234F4006962F9 /* CustomSearchBar.swift in Sources */,
 				4DEE83EE201E1AE7001B0AEB /* MainGreen+UIButton.swift in Sources */,
 				4D9DE8A6203E01B8005BDB37 /* UserDetails.swift in Sources */,

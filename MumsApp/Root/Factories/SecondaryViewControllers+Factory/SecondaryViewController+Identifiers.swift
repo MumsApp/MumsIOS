@@ -72,5 +72,7 @@ enum SecondaryViewController: String {
     
     case AddToMenuViewController
     
+    case LobbyConversationViewController
+    
 }
 

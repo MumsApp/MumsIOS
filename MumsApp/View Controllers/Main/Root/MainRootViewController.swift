@@ -143,7 +143,7 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
             
             self.emergencyButton = UIButton(type: .custom)
             
-            self.emergencyButton.frame = CGRect(x: window.frame.maxX - size - 16, y: window.frame.maxY - size - 16, width: size, height: size)
+            self.emergencyButton.frame = CGRect(x: window.frame.maxX - size - 16, y: window.frame.maxY - size, width: size, height: size)
             
             self.emergencyButton.backgroundColor = .clear
             

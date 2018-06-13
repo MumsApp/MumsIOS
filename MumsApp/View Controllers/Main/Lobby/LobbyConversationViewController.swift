@@ -1,22 +1,18 @@
 import UIKit
 
-class LobbyDetailsViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
+class LobbyConversationViewController: UIViewController {
     
-    private var isBackButtonVisible: Bool = false
+    @IBOutlet weak var tableView: UITableView!
     
     func configureWith(title: String, backButton: Bool) {
         
         self.title = title
-        
-        self.isBackButtonVisible = backButton
-        
+                
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.configureView()
         
         self.configureNavigationBar()
@@ -26,23 +22,27 @@ class LobbyDetailsViewController: UIViewController {
     private func configureView() {
         
         self.view.setBackground()
-
+        
         self.tableView.backgroundColor = .clear
         
         self.tableView.delegate = self
         
         self.tableView.dataSource = self
         
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom:
+        self.tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom:
             80, right: 0)
         
-        self.tableView.registerNib(LobbyDetailsCell.self)
+        self.tableView.registerNib(LobbyConversationCell.self)
+        
+        self.tableView.registerNib(LobbyConversationFooter.self)
+        
+       
         
     }
     
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: self.title!)
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Title")
         
         self.navigationItem.titleView = titleLabel
         
@@ -56,77 +56,84 @@ class LobbyDetailsViewController: UIViewController {
         
         let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "backButtonIcon"), style: .plain, target: self, action: #selector(self.backButtonPressed(sender:)))
         
-        self.navigationItem.leftBarButtonItem = self.isBackButtonVisible == true ? backButton : nil
+        self.navigationItem.leftBarButtonItem = backButton
         
+    }
+    
+    func backButtonPressed(sender: UIBarButtonItem) {
+
+        self.navigationController?.popViewController(animated: true)
+
     }
 
-    func backButtonPressed(sender: UIBarButtonItem) {
-        
-        self.navigationController?.popViewController(animated: true)
-        
-    }
-    
     func writeButtonPressed(sender: UIBarButtonItem) {
-        
-        self.showCreatePostViewController()
-        
-    }
-    
-    private func showCreatePostViewController() {
-        
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
-        
-        let controller = factory.createPostViewController()
-        
-        self.navigationController?.pushViewController(controller, animated: true)
-        
-    }
-    
-    fileprivate func showLobbyConversationViewController() {
-        
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
-        
-        let controller = factory.lobbyConversationViewController()
-        
-        self.navigationController?.pushViewController(controller, animated: true)
-        
+
+
     }
     
 }
 
-extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+extension LobbyConversationViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 2
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        if section == 0 {
+
+            return 10
+
+        } else {
+
+            return 1
+
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            
+            return 130
+            
+        } else {
+            
+            return 60
+            
+        }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(LobbyDetailsCell.self)
-        
-        cell.configureWith(delegate: self)
-        
-        return cell
+        if indexPath.section == 0 {
+            
+            let cell = tableView.dequeueReusableCell(LobbyConversationCell.self)
+            
+            cell.configureWith(delegate: self)
+            
+            cell.containerView.backgroundColor = indexPath.row % 2 == 0 ? .white : .chatGreyColor
+            
+            return cell
+            
+        } else {
+            
+            let cell = tableView.dequeueReusableCell(LobbyConversationFooter.self)
+            
+            return cell
+
+        }
         
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        self.showLobbyConversationViewController()
-        
-    }
-    
+
 }
 
-extension LobbyDetailsViewController: LobbyDetailsCellDelegate {
-    
-    func replyButtonPressed() {
-        
-        self.showLobbyConversationViewController()
-        
-    }
+extension LobbyConversationViewController: LobbyConversationCellDelegate {
     
     func userButtonPressed() {
         
@@ -139,9 +146,9 @@ extension LobbyDetailsViewController: LobbyDetailsCellDelegate {
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
         let controller = factory.userViewController()
-    
+        
         self.navigationController?.pushViewController(controller, animated: true)
-    
+        
     }
     
 }

@@ -328,5 +328,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func lobbyConversationViewController() -> LobbyConversationViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyConversationViewController.rawValue, storyboard: storyboard) as! LobbyConversationViewController
+        
+        return controller
+        
+    }
     
 }

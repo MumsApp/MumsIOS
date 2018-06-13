@@ -1,33 +1,28 @@
 import UIKit
 
-protocol LobbyDetailsCellDelegate: class {
+protocol LobbyConversationCellDelegate: class {
     
-    func replyButtonPressed()
     func userButtonPressed()
     
 }
 
-class LobbyDetailsCell: UITableViewCell, Reusable {
-
+class LobbyConversationCell: UITableViewCell, Reusable {
+    
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var userImageView: UIImageView!
     
     @IBOutlet weak var userNameButton: UIButton!
-   
+    
     @IBOutlet weak var timeLabel: UILabel!
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    
+        
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBOutlet weak var replyButton: UIButton!
-  
-    private weak var delegate: LobbyDetailsCellDelegate? = nil
+    private weak var delegate: LobbyConversationCellDelegate? = nil
     
     var tapGesture: UITapGestureRecognizer!
-
-    func configureWith(delegate: LobbyDetailsCellDelegate?) {
+    
+    func configureWith(delegate: LobbyConversationCellDelegate?) {
         
         self.delegate = delegate
         
@@ -35,23 +30,19 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    
+        
         self.configureView()
         
     }
-
+    
     private func configureView() {
         
         self.backgroundColor = .clear
-        
-        self.containerView.addShadow()
-        
-        self.selectionStyle = .none
-        
+                
         self.userImageView.layer.cornerRadius = 15
         
         self.userImageView.layer.masksToBounds = true
-
+        
         self.userNameButton.titleLabel?.font = .regular(size: 13)
         
         self.userNameButton.tintColor = .mainGreen
@@ -60,35 +51,22 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
         
         self.timeLabel.textColor = .mainDarkGrey
         
-        self.titleLabel.font = .regular(size: 20)
-        
-        self.titleLabel.textColor = .black
-        
         self.descriptionLabel.font = .regular(size: 13)
         
         self.descriptionLabel.textColor = .mainDarkGrey
-        
-        self.replyButton.titleLabel?.font = .regular(size: 14)
-        
-        self.replyButton.setTitleColor(.mainGreen, for: .normal)
         
         self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(sender:)))
         
         self.userImageView.addGestureRecognizer(self.tapGesture)
         
         self.userImageView.isUserInteractionEnabled = true
-    }
     
-    @IBAction func replyButtonPressed(_ sender: UIButton) {
-   
-        self.delegate?.replyButtonPressed()
-        
     }
     
     @IBAction func userButtonPressed(_ sender: UIButton) {
-    
+        
         self.delegate?.userButtonPressed()
-    
+        
     }
     
     func imageTapped(sender: UITapGestureRecognizer) {
