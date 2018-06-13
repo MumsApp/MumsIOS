@@ -224,13 +224,19 @@
                     </view>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
+                        <outlet property="cardsView" destination="K5u-CZ-6cu" id="6Ut-hy-rm3"/>
+                        <outlet property="cardsViewHeight" destination="AK2-IK-oPv" id="hhv-2b-YSr"/>
                         <outlet property="childrenView" destination="OSG-vz-rr3" id="AJ5-XA-Cui"/>
                         <outlet property="childrenViewHeight" destination="UnC-XP-63P" id="I7o-4h-5px"/>
                         <outlet property="friendsView" destination="tou-BA-PZG" id="bR4-cv-41A"/>
+                        <outlet property="friendsViewHeight" destination="TE2-F7-OqJ" id="1N0-jU-3FQ"/>
                         <outlet property="heightConstraint" destination="isG-a3-X4W" id="BXF-Db-Cww"/>
                         <outlet property="locationView" destination="Fhu-MV-WuN" id="lMh-Cu-tKX"/>
                         <outlet property="locationViewHeight" destination="t6V-mx-ROb" id="yEx-Ad-w1D"/>
+                        <outlet property="offersView" destination="ZHG-w4-mMh" id="wAB-up-Hzx"/>
+                        <outlet property="offersViewHeight" destination="0tY-do-LEK" id="CTO-lJ-pCB"/>
                         <outlet property="profileView" destination="aNr-8e-AI7" id="w5Z-9b-pRC"/>
+                        <outlet property="profileViewHeight" destination="QyP-Vs-eKA" id="Hf3-2W-boq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJe-dl-Rb6" userLabel="First Responder" sceneMemberID="firstResponder"/>

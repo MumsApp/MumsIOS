@@ -7,14 +7,28 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var locationView: LocationView!
     
-    @IBOutlet weak var locationViewHeight: NSLayoutConstraint!
-
     @IBOutlet weak var childrenView: ChildrenView!
+
+    @IBOutlet weak var cardsView: CardsView!
     
-    @IBOutlet weak var childrenViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var offersView: OffersView!
     
     @IBOutlet weak var friendsView: FriendsView!
 
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var profileViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var locationViewHeight: NSLayoutConstraint!
+
+    @IBOutlet weak var childrenViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var cardsViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var offersViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var friendsViewHeight: NSLayoutConstraint!
+    
     fileprivate var userDetailsService: UserDetailsService!
     
     fileprivate var childService: ChildService!
@@ -26,8 +40,6 @@ class ProfileViewController: UIViewController {
     fileprivate weak var userNamePopupViewController: UserNamePopupViewController?
     
     fileprivate var userDetails: UserDetails?
-    
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     func configureWith(userDetailsService: UserDetailsService, childService: ChildService, userImageService: UserImageService) {
         
@@ -234,6 +246,8 @@ class ProfileViewController: UIViewController {
 
             self.childrenViewHeight.constant = 175
             
+            self.updateViewHeight()
+
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()
@@ -246,13 +260,27 @@ class ProfileViewController: UIViewController {
             
             self.childrenViewHeight.constant = 175 + CGFloat(self.childrenView.childrenList.count) * 40
             
+            self.updateViewHeight()
+
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()
                 
+            
             }
             
         }
+        
+    }
+    
+    fileprivate func updateViewHeight() {
+        
+        self.heightConstraint.constant = self.profileViewHeight.constant +
+            self.locationViewHeight.constant +
+            self.childrenViewHeight.constant +
+            self.cardsViewHeight.constant +
+            self.offersViewHeight.constant +
+            self.friendsViewHeight.constant + 200
         
     }
     
@@ -278,6 +306,8 @@ extension ProfileViewController: LocationViewDelegate {
 
             }
             
+            self.updateViewHeight()
+
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()
@@ -294,6 +324,8 @@ extension ProfileViewController: LocationViewDelegate {
             
             self.enableLocation(bool: false)
             
+            self.updateViewHeight()
+
             UIView.animate(withDuration: 0.3) {
                 
                 self.view.layoutIfNeeded()
