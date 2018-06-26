@@ -7,8 +7,10 @@ class LobbyViewController: UIViewController {
    
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var lobbyRoomsArray: Array<LobbyRoom> = []
+    fileprivate var lobbyRooms: Array<LobbyRoom> = []
 
+    fileprivate var filteredLobbyRooms: Array<LobbyRoom> = []
+    
     private var lobbyService: LobbyService!
     
     let imageLoader = ImageCacheLoader()
@@ -91,11 +93,49 @@ class LobbyViewController: UIViewController {
                         
                         for d in data {
                             
-                            self.lobbyRoomsArray.append(LobbyRoom(dictionary: d))
+                            self.lobbyRooms.append(LobbyRoom(dictionary: d))
                             
                         }
                         
-                        self.lobbyRoomsArray.sort (by: { $0.isFavourite! && !$1.isFavourite! })
+                        self.lobbyRooms.sort (by: { $0.isFavourite! && !$1.isFavourite! })
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    func searchLobbyRooms(searchTerm: String) {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.lobbyService.searchLobbyRoomsWithPagination(token: token, searchTerm: searchTerm, page: 1) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                if let dictionary = dataOptional as? Dictionary<String, Any> {
+                    
+                    if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+                        self.filteredLobbyRooms = []
+                        
+                        for d in data {
+                            
+                            self.filteredLobbyRooms.append(LobbyRoom(dictionary: d))
+                            
+                        }
+                        
+                        self.filteredLobbyRooms.sort (by: { $0.isFavourite! && !$1.isFavourite! })
                         
                         self.tableView.reloadData()
                         
@@ -169,6 +209,12 @@ class LobbyViewController: UIViewController {
         
     }
     
+    func isFiltering() -> Bool {
+    
+        return self.searchBar.text == "" ? false : true
+    
+    }
+    
 }
 
 extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
@@ -183,7 +229,15 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
         
         if section == 0 {
             
-            return self.lobbyRoomsArray.count
+            if self.isFiltering() {
+                
+                return self.filteredLobbyRooms.count
+
+            } else {
+                
+                return self.lobbyRooms.count
+
+            }
             
         } else {
             
@@ -213,7 +267,17 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
          
             let cell = tableView.dequeueReusableCell(LobbyCell.self, indexPath: indexPath)
             
-            let thisObject = self.lobbyRoomsArray[indexPath.row]
+            let thisObject: LobbyRoom!
+                
+            if self.isFiltering() {
+                
+                thisObject = self.filteredLobbyRooms[indexPath.row]
+                
+            } else {
+                
+                thisObject = self.lobbyRooms[indexPath.row]
+                
+            }
             
             cell.configureWith(lobby: thisObject, lobbyDelegate: self)
             
@@ -249,7 +313,7 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
         
         let deleteAction = SwipeAction(style: .destructive, title: nil) { action, indexPath in
 
-            if let id = self.lobbyRoomsArray[indexPath.row].id {
+            if let id = self.lobbyRooms[indexPath.row].id {
                 
                 self.deleteLobbyRoom(id: String(id))
 
@@ -261,7 +325,15 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
         
         deleteAction.image = #imageLiteral(resourceName: "deleteIcon")
         
-        return [deleteAction]
+        if self.isFiltering() {
+
+            return []
+            
+        } else {
+            
+            return [deleteAction]
+
+        }
     
     }
     
@@ -277,8 +349,18 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let thisObject = self.lobbyRoomsArray[indexPath.row]
-
+        let thisObject: LobbyRoom!
+            
+        if self.isFiltering() {
+            
+            thisObject = self.filteredLobbyRooms[indexPath.row]
+            
+        } else  {
+            
+            thisObject = self.lobbyRooms[indexPath.row]
+            
+        }
+        
         self.showLobbyDetailsViewController(title: thisObject.title!)
         
     }
@@ -300,6 +382,16 @@ extension LobbyViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         searchBar.resignFirstResponder()
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText != "" {
+            
+            self.searchLobbyRooms(searchTerm: searchText)
+            
+        }
         
     }
     

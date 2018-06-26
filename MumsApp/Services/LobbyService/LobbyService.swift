@@ -1,14 +1,14 @@
 import Foundation
 import UIKit
 
-
 let LOBBY_URL = BASE_URL + "lobby/room/page/{page}/" + PAGINATION
 let LOBBY_FAVOURITE_URL = BASE_URL + "lobby/room/{id}/favourite"
-
 let LOBBY_UPDATE_URL = BASE_URL + "lobby/room/{id}"
+let LOBBY_SEARCH_URL = BASE_URL + "lobby/room/search/{page}/" + PAGINATION
 
 let k_page = "page"
 let k_public = "public"
+let k_searchTerm = "searchTerm"
 
 struct LobbyService: ResourceService {
     
@@ -93,6 +93,30 @@ struct LobbyService: ResourceService {
         let url = LOBBY_UPDATE_URL.URLReplacingPathParamaters(parameters: pathParameters)
         
         if var request = URLRequest.DELETERequest(urlString: url) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(tag: 1, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+    
+    // MARK: - Search lobby rooms data with pagination
+    
+    func searchLobbyRoomsWithPagination(token: String, searchTerm: String, page: Int, completion: @escaping JSONResponseCompletion) {
+        
+        let pathParameters = [k_page: String(page)]
+        
+        let url = LOBBY_SEARCH_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        let bodyParameters = [k_searchTerm: searchTerm]
+        
+        if var request = URLRequest.GETRequest(urlString: url, bodyParameters: bodyParameters) {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
