@@ -13,11 +13,13 @@ class LobbyViewController: UIViewController {
     
     private var lobbyService: LobbyService!
     
-    let imageLoader = ImageCacheLoader()
+    fileprivate var imageLoader: ImageCacheLoader!
     
-    func configureWith(lobbyService: LobbyService) {
+    func configureWith(lobbyService: LobbyService, imageLoader: ImageCacheLoader) {
         
         self.lobbyService = lobbyService
+        
+        self.imageLoader = imageLoader
         
     }
     
@@ -361,15 +363,15 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
             
         }
         
-        self.showLobbyDetailsViewController(title: thisObject.title!)
+        self.showLobbyDetailsViewController(roomId: String(thisObject.id!), title: thisObject.title!)
         
     }
     
-    private func showLobbyDetailsViewController(title: String) {
+    private func showLobbyDetailsViewController(roomId: String, title: String) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.lobbyDetailsViewController(title: title, backButton: true)
+        let controller = factory.lobbyDetailsViewController(roomId: roomId, title: title, backButton: true)
         
         self.navigationController?.pushViewController(controller, animated: true)
         

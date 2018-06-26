@@ -1,6 +1,6 @@
 import UIKit
 
-class CreatePostViewController: UIViewController {
+class CreateTopicViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -26,6 +26,18 @@ class CreatePostViewController: UIViewController {
     
     fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
 
+    private var lobbyTopicService: LobbyTopicService!
+    
+    private var roomId: String!
+    
+    func configureWith(roomId: String, lobbyTopicService: LobbyTopicService) {
+        
+        self.roomId = roomId
+        
+        self.lobbyTopicService = lobbyTopicService
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -158,13 +170,33 @@ class CreatePostViewController: UIViewController {
     
     func doneButtonPressed(sender: UIBarButtonItem) {
         
-        self.navigationController?.popViewController(animated: true)
+        self.addLobbyTopic()
+        
+    }
+    
+    private func addLobbyTopic() {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.lobbyTopicService.addLobbyTopic(roomId: self.roomId, token: token, title: self.titleTextField.text!, description: self.descriptionTextView.text!) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.navigationController?.popViewController(animated: true)
+
+            }
+        
+        }
         
     }
     
 }
 
-extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension CreateTopicViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
@@ -188,7 +220,7 @@ extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigatio
     
 }
 
-extension CreatePostViewController: UITextFieldDelegate {
+extension CreateTopicViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     

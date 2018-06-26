@@ -1,6 +1,6 @@
 import Foundation
 
-struct AddLobbyServiceParser: ServiceParser {
+struct LobbyTopicServiceParser: ServiceParser {
     
     func parseDataDictionary(tag: Int, dictionary: Dictionary<String, Any>) -> Bool {
         
@@ -12,6 +12,10 @@ struct AddLobbyServiceParser: ServiceParser {
             
             success = self.parseStatus(dictionary: dictionary)
             
+        case 1:
+            
+            success = self.parseData(dictionary: dictionary)
+
         default:
             
             return success
@@ -21,6 +25,7 @@ struct AddLobbyServiceParser: ServiceParser {
         return success
         
     }
+
     
     private func parseStatus(dictionary: Dictionary<String, Any>) -> Bool {
         
@@ -28,12 +33,31 @@ struct AddLobbyServiceParser: ServiceParser {
         
         if let status = dictionary[k_status] as? String, status == k_ok {
             
-            success = true
-        
+            if let _ = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                
+                success = true
+                
+            }
+            
         }
         
         return success
         
     }
     
+    
+    private func parseData(dictionary: Dictionary<String, Any>) -> Bool {
+        
+        var success = false
+        
+        if let status = dictionary[k_status] as? String, status == k_ok {
+            
+            success = true
+            
+        }
+        
+        return success
+        
+    }
+
 }

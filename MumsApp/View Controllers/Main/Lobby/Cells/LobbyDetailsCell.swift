@@ -27,9 +27,17 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
     
     var tapGesture: UITapGestureRecognizer!
 
-    func configureWith(delegate: LobbyDetailsCellDelegate?) {
+    func configureWith(delegate: LobbyDetailsCellDelegate?, topic: LobbyTopic) {
         
         self.delegate = delegate
+        
+        self.userNameButton.setTitle(topic.creator?.name, for: .normal)
+        
+        self.timeLabel.text = String(topic.creationDate!)
+        
+        self.titleLabel.text = topic.title
+        
+        self.descriptionLabel.text = topic.description
         
     }
     

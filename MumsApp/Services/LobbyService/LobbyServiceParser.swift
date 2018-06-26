@@ -10,11 +10,11 @@ struct LobbyServiceParser: ServiceParser {
             
         case 0:
             
-            success = self.parseGetLobbyRooms(dictionary: dictionary)
+            success = self.parseData(dictionary: dictionary)
             
         case 1:
             
-            success = self.parseFavouriteLobbyRooms(dictionary: dictionary)
+            success = self.parseStatus(dictionary: dictionary)
             
         case 2:
             
@@ -34,7 +34,7 @@ struct LobbyServiceParser: ServiceParser {
         
     }
     
-    private func parseGetLobbyRooms(dictionary: Dictionary<String, Any>) -> Bool {
+    private func parseData(dictionary: Dictionary<String, Any>) -> Bool {
         
         var success = false
         
@@ -52,7 +52,7 @@ struct LobbyServiceParser: ServiceParser {
         
     }
     
-    private func parseFavouriteLobbyRooms(dictionary: Dictionary<String, Any>) -> Bool {
+    private func parseStatus(dictionary: Dictionary<String, Any>) -> Bool {
         
         var success = false
         

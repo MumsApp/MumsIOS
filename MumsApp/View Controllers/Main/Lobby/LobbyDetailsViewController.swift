@@ -6,12 +6,26 @@ class LobbyDetailsViewController: UIViewController {
     
     private var isBackButtonVisible: Bool = false
     
-    func configureWith(title: String, backButton: Bool) {
+    private var lobbyTopicService: LobbyTopicService!
+    
+    private var roomId: String!
+    
+    fileprivate var lobbyTopics: Array<LobbyTopic> = []
+    
+    fileprivate var imageLoader: ImageCacheLoader!
+
+    func configureWith(roomId: String, title: String, backButton: Bool, lobbyTopicService: LobbyTopicService, imageLoader: ImageCacheLoader) {
         
         self.title = title
         
         self.isBackButtonVisible = backButton
         
+        self.roomId = roomId
+        
+        self.lobbyTopicService = lobbyTopicService
+        
+        self.imageLoader = imageLoader
+
     }
     
     override func viewDidLoad() {
@@ -20,6 +34,8 @@ class LobbyDetailsViewController: UIViewController {
         self.configureView()
         
         self.configureNavigationBar()
+        
+        self.getLobbyTopicsWithPagination(page: 1)
         
     }
     
@@ -68,15 +84,15 @@ class LobbyDetailsViewController: UIViewController {
     
     func writeButtonPressed(sender: UIBarButtonItem) {
         
-        self.showCreatePostViewController()
+        self.showCreateTopicViewController()
         
     }
     
-    private func showCreatePostViewController() {
+    private func showCreateTopicViewController() {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.createPostViewController()
+        let controller = factory.createTopicViewController(roomId: self.roomId)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -92,13 +108,47 @@ class LobbyDetailsViewController: UIViewController {
         
     }
     
+    private func getLobbyTopicsWithPagination(page: Int) {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.lobbyTopicService.getLobbyTopicsWithPagination(roomId: self.roomId, token: token, page: page) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                if let dictionary = dataOptional as? Dictionary<String, Any> {
+                    
+                    if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+                        for d in data {
+                            
+                            self.lobbyTopics.append(LobbyTopic(dictionary: d))
+                            
+                        }
+                                                
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
 }
 
 extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return self.lobbyTopics.count
         
     }
     
@@ -106,7 +156,23 @@ extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(LobbyDetailsCell.self)
         
-        cell.configureWith(delegate: self)
+        let thisObject = self.lobbyTopics[indexPath.row]
+        
+        cell.configureWith(delegate: self, topic: thisObject)
+        
+        if let img = thisObject.creator?.img {
+            
+            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + img) { (image) in
+                
+                if let _ = tableView.cellForRow(at: indexPath) {
+                    
+                    cell.userImageView.image = image
+                    
+                }
+                
+            }
+            
+        }
         
         return cell
         

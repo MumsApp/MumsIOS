@@ -30,7 +30,7 @@ enum SecondaryViewController: String {
     
     case CreateCategoryViewController
     
-    case CreatePostViewController
+    case CreateTopicViewController
     
     case LobbyDetailsViewController
     

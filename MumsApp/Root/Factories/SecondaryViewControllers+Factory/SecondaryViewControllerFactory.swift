@@ -67,7 +67,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyViewController.rawValue, storyboard: storyboard) as! LobbyViewController
         
-        controller.configureWith(lobbyService: self.serviceFactory.lobbyService())
+        controller.configureWith(lobbyService: self.serviceFactory.lobbyService(), imageLoader: self.serviceFactory.imageCacheLoader())
         
         return controller
         
@@ -166,19 +166,21 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func createPostViewController() -> CreatePostViewController {
+    func createTopicViewController(roomId: String) -> CreateTopicViewController {
         
-        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.CreatePostViewController.rawValue, storyboard: storyboard) as! CreatePostViewController
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.CreateTopicViewController.rawValue, storyboard: storyboard) as! CreateTopicViewController
+        
+        controller.configureWith(roomId: roomId, lobbyTopicService: self.serviceFactory.lobbyTopicService())
         
         return controller
         
     }
     
-    func lobbyDetailsViewController(title: String, backButton: Bool) -> LobbyDetailsViewController {
+    func lobbyDetailsViewController(roomId: String, title: String, backButton: Bool) -> LobbyDetailsViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyDetailsViewController.rawValue, storyboard: storyboard) as! LobbyDetailsViewController
         
-        controller.configureWith(title: title, backButton: backButton)
+        controller.configureWith(roomId: roomId, title: title, backButton: backButton, lobbyTopicService: self.serviceFactory.lobbyTopicService(), imageLoader: self.serviceFactory.imageCacheLoader())
         
         return controller
         

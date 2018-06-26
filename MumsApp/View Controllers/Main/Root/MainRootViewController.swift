@@ -313,11 +313,11 @@ extension MainRootViewController: MenuDelegate {
 
         case .health:
             
-            controller = factory.lobbyDetailsViewController(title: "Health", backButton: false)
+            controller = factory.lobbyDetailsViewController(roomId: String(6), title: "Health", backButton: false)
            
         case .holiday:
             
-            controller = factory.lobbyDetailsViewController(title: "Holiday", backButton: false)
+            controller = factory.lobbyDetailsViewController(roomId: String(3), title: "Holiday", backButton: false)
             
         case .add:
             
