@@ -79,7 +79,7 @@ class ServiceFactory {
     
     func userImageService() -> UserImageService {
         
-        let service = UserImageService(networkService: self.networkService, dataStore: self.dataStore)
+        let service = UserImageService(networkService: self.networkService)
         
         return service
         
@@ -115,4 +115,24 @@ class ServiceFactory {
         
     }
 
+    func lobbyService() -> LobbyService {
+        
+        let parser = LobbyServiceParser()
+        
+        let service = LobbyService(networkService: self.networkService, serviceParser: parser)
+        
+        return service
+        
+    }
+    
+    func addLobbyService() -> AddLobbyService {
+        
+        let parser = AddLobbyServiceParser()
+        
+        let service = AddLobbyService(serviceParser: parser, networkService: self.networkService)
+        
+        return service
+        
+    }
+    
 }

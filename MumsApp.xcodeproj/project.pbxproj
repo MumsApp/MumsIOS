@@ -106,6 +106,11 @@
 		4D403BD4204AE15500956939 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD3204AE15500956939 /* UICollectionViewCell.swift */; };
 		4D403BD6204AF4CA00956939 /* RemoveContactPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD5204AF4CA00956939 /* RemoveContactPopupViewController.swift */; };
 		4D403BD8204AFBE000956939 /* RemoveCompanyPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD7204AFBE000956939 /* RemoveCompanyPopupViewController.swift */; };
+		4D42E4A520E237E1009E3428 /* LobbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42E4A420E237E1009E3428 /* LobbyService.swift */; };
+		4D42E4A720E238B7009E3428 /* LobbyServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42E4A620E238B7009E3428 /* LobbyServiceParser.swift */; };
+		4D42E4A920E238F1009E3428 /* LobbyRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42E4A820E238F1009E3428 /* LobbyRoom.swift */; };
+		4D42E4AB20E2506E009E3428 /* AddLobbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42E4AA20E2506E009E3428 /* AddLobbyService.swift */; };
+		4D42E4AE20E27EA6009E3428 /* AddLobbyServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42E4AD20E27EA6009E3428 /* AddLobbyServiceParser.swift */; };
 		4D43389B205949AB00E5C3EA /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43389A205949AB00E5C3EA /* OffersViewController.swift */; };
 		4D450967203E11E50066954D /* ForgotPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D450966203E11E50066954D /* ForgotPasswordService.swift */; };
 		4D450969203E11F40066954D /* ForgotPasswordServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D450968203E11F40066954D /* ForgotPasswordServiceParser.swift */; };
@@ -384,6 +389,11 @@
 		4D403BD3204AE15500956939 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		4D403BD5204AF4CA00956939 /* RemoveContactPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveContactPopupViewController.swift; sourceTree = "<group>"; };
 		4D403BD7204AFBE000956939 /* RemoveCompanyPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCompanyPopupViewController.swift; sourceTree = "<group>"; };
+		4D42E4A420E237E1009E3428 /* LobbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyService.swift; sourceTree = "<group>"; };
+		4D42E4A620E238B7009E3428 /* LobbyServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyServiceParser.swift; sourceTree = "<group>"; };
+		4D42E4A820E238F1009E3428 /* LobbyRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyRoom.swift; sourceTree = "<group>"; };
+		4D42E4AA20E2506E009E3428 /* AddLobbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLobbyService.swift; sourceTree = "<group>"; };
+		4D42E4AD20E27EA6009E3428 /* AddLobbyServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLobbyServiceParser.swift; sourceTree = "<group>"; };
 		4D43389A205949AB00E5C3EA /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		4D450966203E11E50066954D /* ForgotPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordService.swift; sourceTree = "<group>"; };
 		4D450968203E11F40066954D /* ForgotPasswordServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordServiceParser.swift; sourceTree = "<group>"; };
@@ -781,6 +791,7 @@
 				4DC2F8BA202C4E6A00E331BD /* Terms.swift */,
 				4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */,
 				4DE0D99920503774002C0759 /* Message.swift */,
+				4D42E4A820E238F1009E3428 /* LobbyRoom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -800,6 +811,7 @@
 			children = (
 				4D05A9681FE1468100B19E6E /* Resource.swift */,
 				4DBEE64120206524006E2C06 /* Exceptions.swift */,
+				4D42E4AC20E250C2009E3428 /* LobbyService */,
 				4DFC27101FE92C63006020FF /* RegisterService */,
 				4DFC27151FE92E2E006020FF /* LoginService */,
 				4D681F88201DE32F00D404CD /* FacebookService */,
@@ -964,6 +976,17 @@
 				4D0F0C3820497BF6000F251C /* UserViewController.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		4D42E4AC20E250C2009E3428 /* LobbyService */ = {
+			isa = PBXGroup;
+			children = (
+				4D42E4A420E237E1009E3428 /* LobbyService.swift */,
+				4D42E4A620E238B7009E3428 /* LobbyServiceParser.swift */,
+				4D42E4AA20E2506E009E3428 /* AddLobbyService.swift */,
+				4D42E4AD20E27EA6009E3428 /* AddLobbyServiceParser.swift */,
+			);
+			path = LobbyService;
 			sourceTree = "<group>";
 		};
 		4D43389C205949B100E5C3EA /* MumsApp Offers */ = {
@@ -1887,10 +1910,12 @@
 				4DE174FC2028A054001C5DD1 /* AddCell.swift in Sources */,
 				4DE0D9982050200F002C0759 /* ConversationViewController.swift in Sources */,
 				4D8F49C120B3FD5C00DD95FB /* FriendsView.swift in Sources */,
+				4D42E4A520E237E1009E3428 /* LobbyService.swift in Sources */,
 				4D05A8D91FE143C500B19E6E /* AppDelegate.swift in Sources */,
 				4D39D4A12034B292005123F8 /* MyProductCell.swift in Sources */,
 				4DCB4E9C2022263B006962F9 /* CustomGreenSwitch.swift in Sources */,
 				4DBEE64220206524006E2C06 /* Exceptions.swift in Sources */,
+				4D42E4A720E238B7009E3428 /* LobbyServiceParser.swift in Sources */,
 				4D05A9491FE144A900B19E6E /* ConnectionHelper+Extension.swift in Sources */,
 				4D70F9CC20CFBF350021F3D3 /* AddToMenuCell.swift in Sources */,
 				4D1933E920569E7F006D6D5B /* SignUpOrganisationViewController.swift in Sources */,
@@ -1952,6 +1977,7 @@
 				4D1DF44F20ADAD5C00017BF8 /* ChildrenCell.swift in Sources */,
 				4D05A8E11FE143C500B19E6E /* MumsApp.xcdatamodeld in Sources */,
 				4D74FF3C205BEEF50016D3E9 /* CategoriesHeaderCell.swift in Sources */,
+				4D42E4AB20E2506E009E3428 /* AddLobbyService.swift in Sources */,
 				4D69BAA22051811F006AB41D /* OrganisationViewController.swift in Sources */,
 				4D85DE91207CB65D00972B9F /* AddSchoolCell.swift in Sources */,
 				4D69BAA52051824B006AB41D /* OrganisationProfileView.swift in Sources */,
@@ -2001,6 +2027,7 @@
 				4DC677472017800E00F34184 /* SecondaryViewControllerFactory.swift in Sources */,
 				4D05A9501FE144A900B19E6E /* NetworkService+DataRequest.swift in Sources */,
 				4D8F2D3E201B502300756CCB /* OnboardingGrey+UIButton.swift in Sources */,
+				4D42E4AE20E27EA6009E3428 /* AddLobbyServiceParser.swift in Sources */,
 				4D05A94C1FE144A900B19E6E /* MockNetworkService.swift in Sources */,
 				4D1933EB2056CC4D006D6D5B /* UserNamePopupViewController.swift in Sources */,
 				4D05A95F1FE144A900B19E6E /* UITableView+Extensions.swift in Sources */,
@@ -2048,6 +2075,7 @@
 				4D70F9CA20CFBEC40021F3D3 /* AddToMenuViewController.swift in Sources */,
 				4D1880C320AB1840001478F3 /* ShopAdsCell.swift in Sources */,
 				4D403BD6204AF4CA00956939 /* RemoveContactPopupViewController.swift in Sources */,
+				4D42E4A920E238F1009E3428 /* LobbyRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

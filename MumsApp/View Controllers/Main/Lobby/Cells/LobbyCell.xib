@@ -22,7 +22,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDR-sk-Y7q">
                             <rect key="frame" x="0.0" y="0.0" width="355" height="170"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expectantMumsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RVd-5w-7E3">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImageCircle" translatesAutoresizingMaskIntoConstraints="NO" id="RVd-5w-7E3">
                                     <rect key="frame" x="16" y="35" width="70" height="70"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="70" id="74z-tS-pkz"/>
@@ -106,7 +106,7 @@
         </view>
     </objects>
     <resources>
-        <image name="expectantMumsIcon" width="71" height="71"/>
         <image name="favouriteOff" width="30" height="29"/>
+        <image name="placeholderImageCircle" width="400" height="400"/>
     </resources>
 </document>

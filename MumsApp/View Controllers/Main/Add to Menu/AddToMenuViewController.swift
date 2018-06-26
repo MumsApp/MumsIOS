@@ -6,6 +6,8 @@ class AddToMenuViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var lobbyRoomsArray: Array<LobbyRoom> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,7 +69,7 @@ extension AddToMenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return lobbyArray.count
+        return self.lobbyRoomsArray.count
         
     }
     
@@ -81,7 +83,7 @@ extension AddToMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(AddToMenuCell.self, indexPath: indexPath)
         
-        let thisObject = lobbyArray[indexPath.row]
+        let thisObject = self.lobbyRoomsArray[indexPath.row]
         
         cell.configureWith(lobby: thisObject, delegate: self)
                 

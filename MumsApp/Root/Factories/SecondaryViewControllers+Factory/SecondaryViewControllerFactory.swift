@@ -67,6 +67,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyViewController.rawValue, storyboard: storyboard) as! LobbyViewController
         
+        controller.configureWith(lobbyService: self.serviceFactory.lobbyService())
+        
         return controller
         
     }
@@ -157,6 +159,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
     func createCategoryViewController() -> CreateCategoryViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.CreateCategoryViewController.rawValue, storyboard: storyboard) as! CreateCategoryViewController
+        
+        controller.configureWith(addLobbyService: self.serviceFactory.addLobbyService())
         
         return controller
         

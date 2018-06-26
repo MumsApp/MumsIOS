@@ -20,13 +20,13 @@ class AddToMenuCell: UITableViewCell, Reusable {
     
     private weak var delegate: AddToMenuCellDelegate?
     
-    func configureWith(lobby: Lobby, delegate: AddToMenuCellDelegate?) {
+    func configureWith(lobby: LobbyRoom, delegate: AddToMenuCellDelegate?) {
         
         self.lobbyTitleLabel.text = lobby.title
         
         self.lobbyDescriptionLabel.text = lobby.description
         
-        self.lobbyImageView.image = lobby.image
+//        self.lobbyImageView.image = lobby.image
         
         self.delegate = delegate
         

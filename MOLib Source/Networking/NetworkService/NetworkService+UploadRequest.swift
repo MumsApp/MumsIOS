@@ -35,10 +35,10 @@ extension AlamofireNetworkService {
         
         let urlRequest = request.urlRequest.url
         
-        self.manager.upload(multipartFormData: { (formData) in
+        self.manager.upload(multipartFormData: { formData in
             
             formData.append(data, withName: request.name, fileName: request.fileName, mimeType: request.mimeType)
-            
+
             }, usingThreshold: UInt64.init(), to: urlRequest!, method: method!, headers: headers, encodingCompletion: alamofireUploadOperation.handleEncodingCompletion())
     
         return alamofireUploadOperation
@@ -57,7 +57,7 @@ extension AlamofireNetworkService {
 
         let urlRequest = request.urlRequest.url
         
-        self.manager.upload(multipartFormData: { (formData) in
+        self.manager.upload(multipartFormData: { formData in
             
             formData.append(fileURL, withName: request.name, fileName: request.fileName, mimeType: request.mimeType)
             

@@ -7,6 +7,18 @@ class LobbyViewController: UIViewController {
    
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var lobbyRoomsArray: Array<LobbyRoom> = []
+
+    private var lobbyService: LobbyService!
+    
+    let imageLoader = ImageCacheLoader()
+    
+    func configureWith(lobbyService: LobbyService) {
+        
+        self.lobbyService = lobbyService
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -15,6 +27,8 @@ class LobbyViewController: UIViewController {
         self.registerCells()
 
         self.configureNavigationBar()
+        
+        self.getLobbyRooms()
         
     }
 
@@ -48,9 +62,6 @@ class LobbyViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
         
-//        let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "filterIcon"), style: .plain, target: self, action: #selector(self.filterButtonPressed(sender:)))
-        
-//        self.navigationItem.rightBarButtonItem = rightButton
         
     }
     
@@ -61,10 +72,100 @@ class LobbyViewController: UIViewController {
         self.tableView.registerNib(AddCell.self)
     
     }
-    
-    func filterButtonPressed(sender: UIBarButtonItem) {
+
+    private func getLobbyRooms() {
         
-        // Show filters
+        guard let token = self.appContext.token() else { return }
+        
+        self.lobbyService.getLobbyRoomsWithPagination(token: token, page: 1) { dataOptional, errorOptional in
+        
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                if let dictionary = dataOptional as? Dictionary<String, Any> {
+                    
+                    if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+                        for d in data {
+                            
+                            self.lobbyRoomsArray.append(LobbyRoom(dictionary: d))
+                            
+                        }
+                        
+                        self.lobbyRoomsArray.sort (by: { $0.isFavourite! && !$1.isFavourite! })
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    func addFavouriteLobbyRoom(id: String) {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.lobbyService.addFavouriteLobbyRoom(lobbyId: id, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                print(error.localizedDescription)
+                
+            } else {
+                
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    func removeFavouriteLobbyRoom(id: String) {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.lobbyService.removeFavouriteLobbyRoom(lobbyId: id, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                print(error.localizedDescription)
+                
+            } else {
+                
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    func deleteLobbyRoom(id: String) {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.lobbyService.deleteLobbyRoom(lobbyId: id, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                print(error.localizedDescription)
+                
+            } else {
+                
+                
+                
+            }
+            
+        }
         
     }
     
@@ -82,7 +183,7 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
         
         if section == 0 {
             
-            return lobbyArray.count
+            return self.lobbyRoomsArray.count
             
         } else {
             
@@ -112,12 +213,22 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
          
             let cell = tableView.dequeueReusableCell(LobbyCell.self, indexPath: indexPath)
             
-            let thisObject = lobbyArray[indexPath.row]
+            let thisObject = self.lobbyRoomsArray[indexPath.row]
             
-            cell.configureWith(lobby: thisObject)
+            cell.configureWith(lobby: thisObject, lobbyDelegate: self)
             
             cell.delegate = self
             
+            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + thisObject.img!) { (image) in
+                
+                if let _ = tableView.cellForRow(at: indexPath) {
+                
+                    cell.lobbyImageView.image = image
+            
+                }
+            
+            }
+
             return cell
             
         } else {
@@ -138,8 +249,12 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
         
         let deleteAction = SwipeAction(style: .destructive, title: nil) { action, indexPath in
 
-            print("Delete")
-            
+            if let id = self.lobbyRoomsArray[indexPath.row].id {
+                
+                self.deleteLobbyRoom(id: String(id))
+
+            }
+
         }
         
         deleteAction.backgroundColor = .clear
@@ -162,9 +277,9 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let thisObject = lobbyArray[indexPath.row]
+        let thisObject = self.lobbyRoomsArray[indexPath.row]
 
-        self.showLobbyDetailsViewController(title: thisObject.title)
+        self.showLobbyDetailsViewController(title: thisObject.title!)
         
     }
     
@@ -205,6 +320,24 @@ extension LobbyViewController: AddCellDelegate {
         let controller = factory.createCategoryViewController()
         
         self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+}
+
+extension LobbyViewController: LobbyCellDelegate {
+    
+    func setFavourite(_ on: Bool, lobbyId: String) {
+        
+        if on {
+            
+            self.addFavouriteLobbyRoom(id: lobbyId)
+            
+        } else {
+            
+            self.removeFavouriteLobbyRoom(id: lobbyId)
+            
+        }
         
     }
     

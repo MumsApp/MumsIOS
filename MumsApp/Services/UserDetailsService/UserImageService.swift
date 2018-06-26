@@ -9,14 +9,11 @@ class UserImageService {
     
     let networkService: NetworkService
     
-    let dataStore: DataStore
-    
     var imageUploadOperation: UploadOperation!
     
-    init(networkService: NetworkService, dataStore: DataStore) {
+    init(networkService: NetworkService) {
         
         self.networkService = networkService
-        self.dataStore = dataStore
     
     }
     
@@ -72,7 +69,7 @@ class UserImageService {
         
         let userInfo = [NSLocalizedDescriptionKey: NSLocalizedString("There was an error uploading the image", comment: "")]
         
-        var error: NSError? = NSError(domain: "UserImageService", code: kImageServiceErrorCode, userInfo: userInfo)
+        let error: NSError? = NSError(domain: "UserImageService", code: kImageServiceErrorCode, userInfo: userInfo)
         
         if let dictionary = responseOptional as? [String: AnyObject] {
             

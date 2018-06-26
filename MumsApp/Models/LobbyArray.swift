@@ -2,11 +2,11 @@ import Foundation
 import UIKit
 
 struct Lobby {
-    
+
     let image: UIImage
     let title: String
     let description: String
-    
+
 }
 
 let lobbyArray = [
@@ -26,15 +26,15 @@ let lobbyArray = [
     Lobby(image: #imageLiteral(resourceName: "universityIcon"), title: "University", description: "Often the first time they have been away from home, university years are a whole new world not just for your children, but for you as a parent."),
 
     Lobby(image: #imageLiteral(resourceName: "sameButDifferentIcon"), title: "Same but different", description: " Here we celebrate and acknowledge those who create a place in the world through strength and courage, whilst bringing love and positivity into a family. You know who you are!"),
-    
+
     Lobby(image: #imageLiteral(resourceName: "lgbtIcon"), title: "LGBT parenting", description: "As we all know, oranges are not the only fruit. So MumsApp welcomes conversations from parents of all sexualities and genders."),
 
      Lobby(image: #imageLiteral(resourceName: "mumsHealthIcon"), title: "MumsApp Health", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
-     
+
       Lobby(image: #imageLiteral(resourceName: "holidayIcon"), title: "Holiday", description: "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Nulla inter dum libero tortor, quis."),
-    
+
     Lobby(image: #imageLiteral(resourceName: "IVFIcon"), title: "IVF", description: "For many reasons some prospective parents may require In-vitro fertilisation. This is an experience better shared with those who have travelled that often challenging path."),
-    
+
     Lobby(image: #imageLiteral(resourceName: "adoptionIcon"), title: "Adoption", description: "For many reasons adoption is an option would-be parents chose. Here you can discuss issues surrounding this often-challenging yet rewarding route to parenthood.")
-    
+
 ]

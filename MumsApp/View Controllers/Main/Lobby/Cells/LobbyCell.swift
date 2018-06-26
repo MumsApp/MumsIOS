@@ -1,6 +1,12 @@
 import UIKit
 import SwipeCellKit
 
+protocol LobbyCellDelegate: class {
+    
+    func setFavourite(_ on: Bool, lobbyId: String)
+    
+}
+
 class LobbyCell: SwipeTableViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
@@ -13,21 +19,35 @@ class LobbyCell: SwipeTableViewCell, Reusable {
     
     @IBOutlet weak var favouriteButton: UIButton!
     
-    func configureWith(lobby: Lobby) {
+    private weak var lobbyDelegate: LobbyCellDelegate?
+    
+    var lobbyRoom: LobbyRoom?
+    
+    func configureWith(lobby: LobbyRoom, lobbyDelegate: LobbyCellDelegate?) {
+        
+        self.lobbyDelegate = lobbyDelegate
+        
+        self.lobbyRoom = lobby
         
         self.lobbyTitleLabel.text = lobby.title
         
         self.lobbyDescriptionLabel.text = lobby.description
         
-        self.lobbyImageView.image = lobby.image
+        let favouriteImage = lobby.isFavourite == true ? #imageLiteral(resourceName: "favouriteOn") : #imageLiteral(resourceName: "favouriteOff")
         
+        self.favouriteButton.setImage(favouriteImage, for: .normal)
+        
+        self.favouriteButton.tag = lobby.isFavourite == true ? 1 : 0
+
+        self.lobbyImageView.layer.cornerRadius = 35
+                
     }
    
     override func awakeFromNib() {
         super.awakeFromNib()
 
         self.configureView()
-        
+                
     }
 
     private func configureView() {
@@ -48,6 +68,7 @@ class LobbyCell: SwipeTableViewCell, Reusable {
         
         self.lobbyDescriptionLabel.numberOfLines = 0
         
+        
     }
     
     @IBAction func favouriteButtonPressed(_ sender: UIButton) {
@@ -58,6 +79,10 @@ class LobbyCell: SwipeTableViewCell, Reusable {
         
         sender.tag = sender.tag == 0 ? 1 : 0
     
+        guard let id = self.lobbyRoom?.id else { return }
+        
+        self.lobbyDelegate?.setFavourite(Bool(sender.tag as NSNumber), lobbyId: String(id))
+        
     }
     
 }

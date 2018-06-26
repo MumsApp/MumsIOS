@@ -38,6 +38,16 @@ class CreateCategoryViewController: UIViewController {
     
     fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
 
+    private var addLobbyService: AddLobbyService?
+    
+    fileprivate var pickedImage: UIImage?
+    
+    func configureWith(addLobbyService: AddLobbyService?) {
+        
+        self.addLobbyService = addLobbyService
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -126,7 +136,6 @@ class CreateCategoryViewController: UIViewController {
     func backButtonPressed(sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
-        
     
     }
 
@@ -178,7 +187,7 @@ class CreateCategoryViewController: UIViewController {
     
     func doneButtonPressed(sender: UIBarButtonItem) {
         
-        self.navigationController?.popViewController(animated: true)
+        self.addLobby()
         
     }
     
@@ -203,6 +212,29 @@ class CreateCategoryViewController: UIViewController {
         
     }
 
+    private func addLobby() {
+
+        guard let token = self.appContext.token() else { return }
+        
+        if let image = self.pickedImage {
+            
+            self.addLobbyService?.addLobbyRoom(token: token, title: self.titleTextField.text!, description: self.descriptionTextView.text!, isPublic: self.publicCategorySwitch.isOn, image: image, completion: { errorOptional in
+                
+                if let error = errorOptional {
+                    
+                    self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                    
+                } else {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                }
+                
+            })
+            
+        }
+      
+    }
     
 }
 
@@ -221,6 +253,8 @@ extension CreateCategoryViewController: UIImagePickerControllerDelegate, UINavig
             self.addPhotoButton.setTitle(nil, for: .normal)
             
             self.addPhotoButton.setImage(pickedImage, for: .normal)
+         
+            self.pickedImage = pickedImage
             
         }
         
