@@ -258,6 +258,7 @@
 		4DEE83EE201E1AE7001B0AEB /* MainGreen+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83ED201E1AE7001B0AEB /* MainGreen+UIButton.swift */; };
 		4DEE83F0201E1EA2001B0AEB /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83EF201E1EA2001B0AEB /* LocationView.xib */; };
 		4DEE83F2201E1EAD001B0AEB /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83F1201E1EAD001B0AEB /* LocationView.swift */; };
+		4DF057E820E388570080498A /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF057E720E388570080498A /* Date+Extension.swift */; };
 		4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC270C1FE92C32006020FF /* RegisterService.swift */; };
 		4DFC270F1FE92C3E006020FF /* RegisterServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC270E1FE92C3E006020FF /* RegisterServiceParser.swift */; };
 		4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC27111FE92CA9006020FF /* LoginService.swift */; };
@@ -545,6 +546,7 @@
 		4DEE83ED201E1AE7001B0AEB /* MainGreen+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainGreen+UIButton.swift"; sourceTree = "<group>"; };
 		4DEE83EF201E1EA2001B0AEB /* LocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
 		4DEE83F1201E1EAD001B0AEB /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		4DF057E720E388570080498A /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		4DFC270C1FE92C32006020FF /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		4DFC270E1FE92C3E006020FF /* RegisterServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceParser.swift; sourceTree = "<group>"; };
 		4DFC27111FE92CA9006020FF /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -1153,6 +1155,7 @@
 				4D1933EC2056FAEF006D6D5B /* GoogleMaps+Extensions.swift */,
 				4D7C71AA20CE9A9100A0A47C /* UIImage+Extensions.swift */,
 				4D7C71AE20CEA5F900A0A47C /* UIImageView+Extensions.swift */,
+				4DF057E720E388570080498A /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2082,6 +2085,7 @@
 				4D39D49A2034A107005123F8 /* MyProductsViewController.swift in Sources */,
 				4D05A9551FE144A900B19E6E /* MOUserDefaults+Secure.swift in Sources */,
 				4DE8840D207BB95200682236 /* GeoLocation.swift in Sources */,
+				4DF057E820E388570080498A /* Date+Extension.swift in Sources */,
 				4D39D49020349176005123F8 /* ShopMenuViewController.swift in Sources */,
 				4DE0D99C2050383C002C0759 /* SampleData.swift in Sources */,
 				4DEE83F2201E1EAD001B0AEB /* LocationView.swift in Sources */,

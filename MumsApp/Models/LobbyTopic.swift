@@ -13,7 +13,7 @@ struct LobbyTopic: Resource {
     
     var description: String?
     
-    var creationDate: Int?
+    var creationDate: Double?
     
     var img: String?
     
@@ -27,7 +27,7 @@ struct LobbyTopic: Resource {
         
         self.description = dictionary[k_description] as? String
         
-        self.creationDate = dictionary[k_creationDate] as? Int
+        self.creationDate = dictionary[k_creationDate] as? Double
         
         self.img = dictionary[k_img] as? String
         

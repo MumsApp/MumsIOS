@@ -33,7 +33,9 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
         
         self.userNameButton.setTitle(topic.creator?.name, for: .normal)
         
-        self.timeLabel.text = String(topic.creationDate!)
+        let timeInterval = TimeInterval(topic.creationDate!)
+        
+        self.timeLabel.text = Date(timeIntervalSince1970: timeInterval).timeAgoSinceNow()
         
         self.titleLabel.text = topic.title
         

@@ -29,10 +29,10 @@
                                         <constraint firstAttribute="height" constant="30" id="nYE-Ml-cVG"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-vx-sLd">
-                                    <rect key="frame" x="297" y="21" width="42" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-vx-sLd">
+                                    <rect key="frame" x="209" y="21" width="130" height="21"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="42" id="feS-bF-Pkf"/>
+                                        <constraint firstAttribute="width" constant="130" id="feS-bF-Pkf"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -81,8 +81,8 @@ consectetur adipiscing elit.</string>
                                         <constraint firstAttribute="height" constant="1" id="QRe-VQ-FM5"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0S-Ba-gLs">
-                                    <rect key="frame" x="60" y="16" width="221" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0S-Ba-gLs">
+                                    <rect key="frame" x="60" y="16" width="133" height="30"/>
                                     <state key="normal" title="User name"/>
                                     <connections>
                                         <action selector="userButtonPressed:" destination="tIC-fL-LC7" eventType="touchUpInside" id="Q34-Ag-QMA"/>
