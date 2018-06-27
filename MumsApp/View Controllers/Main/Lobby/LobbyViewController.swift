@@ -7,6 +7,8 @@ class LobbyViewController: UIViewController {
    
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var emptyLabel: UILabel!
+    
     fileprivate var lobbyRooms: Array<LobbyRoom> = []
 
     fileprivate var filteredLobbyRooms: Array<LobbyRoom> = []
@@ -55,7 +57,7 @@ class LobbyViewController: UIViewController {
         
         
         self.searchBar.delegate = self
-
+        
     }
     
     private func configureNavigationBar() {

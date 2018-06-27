@@ -14,7 +14,9 @@ class LobbyConversationViewController: UIViewController {
 
     fileprivate var imageLoader: ImageCacheLoader!
 
-    func configureWith(roomId: String, topicId: String, title: String, lobbyPostService: LobbyPostService, imageLoader: ImageCacheLoader) {
+    private var shouldReply = false
+    
+    func configureWith(shouldReply: Bool, roomId: String, topicId: String, title: String, lobbyPostService: LobbyPostService, imageLoader: ImageCacheLoader) {
         
         self.title = title
         
@@ -25,7 +27,9 @@ class LobbyConversationViewController: UIViewController {
         self.lobbyPostService = lobbyPostService
         
         self.imageLoader = imageLoader
-
+        
+        self.shouldReply = shouldReply
+        
     }
     
     override func viewDidLoad() {
@@ -122,6 +126,12 @@ class LobbyConversationViewController: UIViewController {
 
                             self.tableView.reloadData()
                         
+                            if self.shouldReply {
+                                
+                                self.showAddPostAlert()
+                                
+                            }
+                            
                         }
                         
                     }

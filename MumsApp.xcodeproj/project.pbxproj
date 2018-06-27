@@ -832,7 +832,6 @@
 			children = (
 				4D05A9681FE1468100B19E6E /* Resource.swift */,
 				4DBEE64120206524006E2C06 /* Exceptions.swift */,
-				4D42E4AC20E250C2009E3428 /* LobbyService */,
 				4DFC27101FE92C63006020FF /* RegisterService */,
 				4DFC27151FE92E2E006020FF /* LoginService */,
 				4D681F88201DE32F00D404CD /* FacebookService */,
@@ -840,6 +839,7 @@
 				4D45096A203E11F70066954D /* ForgotPasswordService */,
 				4D9DE8AD203E06CC005BDB37 /* UserDetailsService */,
 				4D7C71A920CE7CCA00A0A47C /* ChildService */,
+				4D42E4AC20E250C2009E3428 /* LobbyService */,
 			);
 			path = Services;
 			sourceTree = "<group>";

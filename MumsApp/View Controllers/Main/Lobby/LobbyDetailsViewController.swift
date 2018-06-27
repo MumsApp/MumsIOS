@@ -102,11 +102,11 @@ class LobbyDetailsViewController: UIViewController {
         
     }
     
-    fileprivate func showLobbyConversationViewController(topicId: String, title: String) {
+    fileprivate func showLobbyConversationViewController(shouldReply: Bool, topicId: String, title: String) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.lobbyConversationViewController(roomId: self.roomId, topicId: topicId, title: title)
+        let controller = factory.lobbyConversationViewController(shouldReply: shouldReply, roomId: self.roomId, topicId: topicId, title: title)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -194,7 +194,7 @@ extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource
         
         let thisObject = self.lobbyTopics[indexPath.row]
         
-        self.showLobbyConversationViewController(topicId: String(thisObject.id!), title: thisObject.title!)
+        self.showLobbyConversationViewController(shouldReply: false, topicId: String(thisObject.id!), title: thisObject.title!)
         
     }
     
@@ -204,7 +204,7 @@ extension LobbyDetailsViewController: LobbyDetailsCellDelegate {
     
     func replyButtonPressed(topic: LobbyTopic) {
         
-        self.showLobbyConversationViewController(topicId: String(topic.id!), title: topic.title!)
+        self.showLobbyConversationViewController(shouldReply: true, topicId: String(topic.id!), title: topic.title!)
 
     }
     
