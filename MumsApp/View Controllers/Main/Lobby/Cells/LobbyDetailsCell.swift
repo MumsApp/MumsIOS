@@ -2,7 +2,7 @@ import UIKit
 
 protocol LobbyDetailsCellDelegate: class {
     
-    func replyButtonPressed()
+    func replyButtonPressed(topic: LobbyTopic)
     func userButtonPressed()
     
 }
@@ -27,6 +27,8 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
     
     var tapGesture: UITapGestureRecognizer!
 
+    private var topic: LobbyTopic!
+    
     func configureWith(delegate: LobbyDetailsCellDelegate?, topic: LobbyTopic) {
         
         self.delegate = delegate
@@ -40,6 +42,8 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
         self.titleLabel.text = topic.title
         
         self.descriptionLabel.text = topic.description
+        
+        self.topic = topic
         
     }
     
@@ -91,7 +95,7 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
     
     @IBAction func replyButtonPressed(_ sender: UIButton) {
    
-        self.delegate?.replyButtonPressed()
+        self.delegate?.replyButtonPressed(topic: self.topic)
         
     }
     

@@ -53,7 +53,11 @@ class LobbyDetailsViewController: UIViewController {
             80, right: 0)
         
         self.tableView.registerNib(LobbyDetailsCell.self)
+    
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
+        self.tableView.estimatedRowHeight = 225
+
     }
     
     private func configureNavigationBar() {
@@ -98,11 +102,11 @@ class LobbyDetailsViewController: UIViewController {
         
     }
     
-    fileprivate func showLobbyConversationViewController() {
+    fileprivate func showLobbyConversationViewController(topicId: String, title: String) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.lobbyConversationViewController()
+        let controller = factory.lobbyConversationViewController(roomId: self.roomId, topicId: topicId, title: title)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -129,7 +133,9 @@ class LobbyDetailsViewController: UIViewController {
                             self.lobbyTopics.append(LobbyTopic(dictionary: d))
                             
                         }
-                                                
+                        
+                        self.lobbyTopics.sort (by: { $0.creationDate! > $1.creationDate! })
+                        
                         self.tableView.reloadData()
                         
                     }
@@ -149,6 +155,12 @@ extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.lobbyTopics.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
         
     }
     
@@ -180,7 +192,9 @@ extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.showLobbyConversationViewController()
+        let thisObject = self.lobbyTopics[indexPath.row]
+        
+        self.showLobbyConversationViewController(topicId: String(thisObject.id!), title: thisObject.title!)
         
     }
     
@@ -188,10 +202,10 @@ extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource
 
 extension LobbyDetailsViewController: LobbyDetailsCellDelegate {
     
-    func replyButtonPressed() {
+    func replyButtonPressed(topic: LobbyTopic) {
         
-        self.showLobbyConversationViewController()
-        
+        self.showLobbyConversationViewController(topicId: String(topic.id!), title: topic.title!)
+
     }
     
     func userButtonPressed() {

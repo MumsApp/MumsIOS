@@ -118,6 +118,10 @@
 		4D43389B205949AB00E5C3EA /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43389A205949AB00E5C3EA /* OffersViewController.swift */; };
 		4D450967203E11E50066954D /* ForgotPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D450966203E11E50066954D /* ForgotPasswordService.swift */; };
 		4D450969203E11F40066954D /* ForgotPasswordServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D450968203E11F40066954D /* ForgotPasswordServiceParser.swift */; };
+		4D59F95520E38C1300186DB4 /* LobbyPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D59F95420E38C1300186DB4 /* LobbyPostService.swift */; };
+		4D59F95720E38C1E00186DB4 /* LobbyPostServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D59F95620E38C1E00186DB4 /* LobbyPostServiceParser.swift */; };
+		4D59F95920E38D1300186DB4 /* LobbyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D59F95820E38D1300186DB4 /* LobbyPost.swift */; };
+		4D59F95B20E3930C00186DB4 /* Alert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D59F95A20E3930C00186DB4 /* Alert+Extension.swift */; };
 		4D5ED8F7202246870020FD51 /* OffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F3202246860020FD51 /* OffersView.swift */; };
 		4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F4202246860020FD51 /* OffersView.xib */; };
 		4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F5202246860020FD51 /* OffersCell.xib */; };
@@ -406,6 +410,10 @@
 		4D43389A205949AB00E5C3EA /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		4D450966203E11E50066954D /* ForgotPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordService.swift; sourceTree = "<group>"; };
 		4D450968203E11F40066954D /* ForgotPasswordServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordServiceParser.swift; sourceTree = "<group>"; };
+		4D59F95420E38C1300186DB4 /* LobbyPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyPostService.swift; sourceTree = "<group>"; };
+		4D59F95620E38C1E00186DB4 /* LobbyPostServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyPostServiceParser.swift; sourceTree = "<group>"; };
+		4D59F95820E38D1300186DB4 /* LobbyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyPost.swift; sourceTree = "<group>"; };
+		4D59F95A20E3930C00186DB4 /* Alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extension.swift"; sourceTree = "<group>"; };
 		4D5ED8F3202246860020FD51 /* OffersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersView.swift; sourceTree = "<group>"; };
 		4D5ED8F4202246860020FD51 /* OffersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersView.xib; sourceTree = "<group>"; };
 		4D5ED8F5202246860020FD51 /* OffersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersCell.xib; sourceTree = "<group>"; };
@@ -803,6 +811,7 @@
 				4DE0D99920503774002C0759 /* Message.swift */,
 				4D42E4A820E238F1009E3428 /* LobbyRoom.swift */,
 				4D42E4B320E2C0FD009E3428 /* LobbyTopic.swift */,
+				4D59F95820E38D1300186DB4 /* LobbyPost.swift */,
 				4D42E4B520E2C151009E3428 /* Creator.swift */,
 			);
 			path = Models;
@@ -999,6 +1008,8 @@
 				4D42E4AD20E27EA6009E3428 /* AddLobbyServiceParser.swift */,
 				4D42E4AF20E2BF67009E3428 /* LobbyTopicService.swift */,
 				4D42E4B120E2BFD2009E3428 /* LobbyTopicServiceParser.swift */,
+				4D59F95420E38C1300186DB4 /* LobbyPostService.swift */,
+				4D59F95620E38C1E00186DB4 /* LobbyPostServiceParser.swift */,
 			);
 			path = LobbyService;
 			sourceTree = "<group>";
@@ -1156,6 +1167,7 @@
 				4D7C71AA20CE9A9100A0A47C /* UIImage+Extensions.swift */,
 				4D7C71AE20CEA5F900A0A47C /* UIImageView+Extensions.swift */,
 				4DF057E720E388570080498A /* Date+Extension.swift */,
+				4D59F95A20E3930C00186DB4 /* Alert+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1901,6 +1913,7 @@
 				4D0F0C3D2049846E000F251C /* AddContactCell.swift in Sources */,
 				4DC677492017805D00F34184 /* SecondaryViewController+Identifiers.swift in Sources */,
 				4D0F0C3920497BF6000F251C /* UserViewController.swift in Sources */,
+				4D59F95920E38D1300186DB4 /* LobbyPost.swift in Sources */,
 				4D69BAAE20518B0B006AB41D /* OrganisationNewsView.swift in Sources */,
 				4D05A9611FE144A900B19E6E /* UICollectionView+Extensions.swift in Sources */,
 				4DE1750D2028D3B8001C5DD1 /* ChatSettingsCell.swift in Sources */,
@@ -2021,6 +2034,7 @@
 				4D42E4B020E2BF67009E3428 /* LobbyTopicService.swift in Sources */,
 				4DAAAEC9205689E900A66981 /* MembersCell.swift in Sources */,
 				4D36E705201E4984000DC94F /* SchoolView.swift in Sources */,
+				4D59F95720E38C1E00186DB4 /* LobbyPostServiceParser.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
 				4DE0D99A20503774002C0759 /* Message.swift in Sources */,
 				4D9BB303205C12FB0001D54C /* PromotionPopupViewController.swift in Sources */,
@@ -2033,11 +2047,13 @@
 				4D1B3D772035FB0100C2618B /* CreateCategoryViewController.swift in Sources */,
 				4D05A9571FE144A900B19E6E /* InAppPurchase+Products.swift in Sources */,
 				4D39D49420349CCD005123F8 /* AddProductDescriptionView.swift in Sources */,
+				4D59F95520E38C1300186DB4 /* LobbyPostService.swift in Sources */,
 				4DA306C620445BDF00250156 /* ShopFilterCell.swift in Sources */,
 				4D05A94D1FE144A900B19E6E /* AuthenticatedNetworkService+Request.swift in Sources */,
 				4DC6774C2017817B00F34184 /* Reachability+UIView.swift in Sources */,
 				4DE8840C207BB95200682236 /* LocationCoordinator.swift in Sources */,
 				4D74FF37205BE46D0016D3E9 /* ShopCategories.swift in Sources */,
+				4D59F95B20E3930C00186DB4 /* Alert+Extension.swift in Sources */,
 				4D05A9891FE14F3F00B19E6E /* Storyboards.swift in Sources */,
 				4D3F88A320D125EE00FEE609 /* LobbyConversationFooter.swift in Sources */,
 				4D43389B205949AB00E5C3EA /* OffersViewController.swift in Sources */,

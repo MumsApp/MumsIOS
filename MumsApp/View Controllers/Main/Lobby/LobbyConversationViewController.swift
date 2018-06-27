@@ -4,10 +4,28 @@ class LobbyConversationViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    func configureWith(title: String, backButton: Bool) {
+    private var lobbyPostService: LobbyPostService!
+    
+    fileprivate var lobbyPosts: Array<LobbyPost> = []
+    
+    private var roomId: String!
+
+    private var topicId: String!
+
+    fileprivate var imageLoader: ImageCacheLoader!
+
+    func configureWith(roomId: String, topicId: String, title: String, lobbyPostService: LobbyPostService, imageLoader: ImageCacheLoader) {
         
         self.title = title
-                
+        
+        self.roomId = roomId
+
+        self.topicId = topicId
+
+        self.lobbyPostService = lobbyPostService
+        
+        self.imageLoader = imageLoader
+
     }
     
     override func viewDidLoad() {
@@ -16,6 +34,8 @@ class LobbyConversationViewController: UIViewController {
         self.configureView()
         
         self.configureNavigationBar()
+        
+        self.getLobbyPostsWithPagination(page: 1)
         
     }
     
@@ -36,13 +56,15 @@ class LobbyConversationViewController: UIViewController {
         
         self.tableView.registerNib(LobbyConversationFooter.self)
         
-       
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.tableView.estimatedRowHeight = 60
         
     }
     
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Title")
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: self.title!)
         
         self.navigationItem.titleView = titleLabel
         
@@ -68,7 +90,84 @@ class LobbyConversationViewController: UIViewController {
 
     func writeButtonPressed(sender: UIBarButtonItem) {
 
+        self.showAddPostAlert()
 
+    }
+    
+    private func getLobbyPostsWithPagination(page: Int) {
+        
+        guard let token = self.appContext.token() else { return }
+    
+        self.lobbyPostService.getLobbyPostsWithPagination(roomId: self.roomId, topicId: self.topicId, token: token, page: page) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                if let dictionary = dataOptional as? Dictionary<String, Any> {
+                    
+                    if let data = dictionary[k_data] as? Dictionary<String, Any> {
+                        
+                        if let posts = data[k_posts] as? Array<Dictionary<String, Any>> {
+                            
+                            for p in posts {
+                                
+                                self.lobbyPosts.append(LobbyPost(dictionary: p))
+                                
+                            }
+                            
+                            self.lobbyPosts.sort (by: { $0.creationDate! > $1.creationDate! })
+
+                            self.tableView.reloadData()
+                        
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    private func addLobbyPost(description: String) {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.lobbyPostService.addLobbyPost(roomId: self.roomId, topicId: self.topicId, description: description, token: token) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+               // Reload
+                
+            }
+            
+        }
+        
+    }
+    
+    private func showAddPostAlert() {
+        
+        self.showInputDialog(title: "Create post", subtitle: "", actionTitle: "Post", cancelTitle: "Cancel", inputPlaceholder: "Type something", inputKeyboardType: .default, cancelHandler: { _ in
+            
+            self.dismissViewController()
+            
+        }) { text in
+            
+            guard let description = text else { return }
+            
+            self.addLobbyPost(description: description)
+            
+        }
+        
     }
     
 }
@@ -85,7 +184,7 @@ extension LobbyConversationViewController: UITableViewDelegate, UITableViewDataS
         
         if section == 0 {
 
-            return 10
+            return self.lobbyPosts.count
 
         } else {
 
@@ -99,7 +198,7 @@ extension LobbyConversationViewController: UITableViewDelegate, UITableViewDataS
         
         if indexPath.section == 0 {
             
-            return 130
+            return UITableViewAutomaticDimension
             
         } else {
             
@@ -115,9 +214,25 @@ extension LobbyConversationViewController: UITableViewDelegate, UITableViewDataS
             
             let cell = tableView.dequeueReusableCell(LobbyConversationCell.self)
             
-            cell.configureWith(delegate: self)
+            let thisObject = self.lobbyPosts[indexPath.row]
+            
+            cell.configureWith(delegate: self, lobbyPost: thisObject)
             
             cell.containerView.backgroundColor = indexPath.row % 2 == 0 ? .white : .chatGreyColor
+            
+            if let img = thisObject.author?.img {
+                
+                self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + img) { (image) in
+                    
+                    if let _ = tableView.cellForRow(at: indexPath) {
+                        
+                        cell.userImageView.image = image
+                        
+                    }
+                    
+                }
+                
+            }
             
             return cell
             

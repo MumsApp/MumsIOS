@@ -334,9 +334,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func lobbyConversationViewController() -> LobbyConversationViewController {
+    func lobbyConversationViewController(roomId: String, topicId: String, title: String) -> LobbyConversationViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyConversationViewController.rawValue, storyboard: storyboard) as! LobbyConversationViewController
+        
+        controller.configureWith(roomId: roomId, topicId: topicId, title: title, lobbyPostService: self.serviceFactory.lobbyPostService(), imageLoader: self.serviceFactory.imageCacheLoader())
         
         return controller
         

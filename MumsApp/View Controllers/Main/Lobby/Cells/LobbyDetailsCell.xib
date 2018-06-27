@@ -39,13 +39,16 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Far far away, behind the world" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTT-kh-hsw">
-                                    <rect key="frame" x="20" y="56" width="319" height="21"/>
+                                    <rect key="frame" x="20" y="56" width="319" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="Bpa-Lr-Esk"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zp-8j-s5i">
-                                    <rect key="frame" x="20" y="91" width="319" height="61"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zp-8j-s5i">
+                                    <rect key="frame" x="20" y="100" width="319" height="52"/>
                                     <string key="text">Lorem ipsum dolor sit amet, consectetur 
 adipiscing elit. Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit.</string>
@@ -91,6 +94,7 @@ consectetur adipiscing elit.</string>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="vJu-je-QCO" firstAttribute="top" secondItem="1zp-8j-s5i" secondAttribute="bottom" constant="16" id="E77-G8-xtf"/>
                                 <constraint firstItem="bMj-wt-xIm" firstAttribute="trailing" secondItem="1zp-8j-s5i" secondAttribute="trailing" constant="16" id="Efv-yI-94M"/>
                                 <constraint firstItem="cYL-Kf-s0H" firstAttribute="top" secondItem="bMj-wt-xIm" secondAttribute="top" constant="16" id="LPQ-Of-7fF"/>
                                 <constraint firstItem="cYL-Kf-s0H" firstAttribute="leading" secondItem="bMj-wt-xIm" secondAttribute="leading" constant="20" id="M8U-7Z-8AA"/>

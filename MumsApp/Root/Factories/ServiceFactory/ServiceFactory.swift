@@ -145,6 +145,16 @@ class ServiceFactory {
         
     }
     
+    func lobbyPostService() -> LobbyPostService {
+        
+        let parser = LobbyPostServiceParser()
+        
+        let service = LobbyPostService(networkService: self.networkService, serviceParser: parser)
+        
+        return service
+        
+    }
+    
     func imageCacheLoader() -> ImageCacheLoader {
         
         return ImageCacheLoader()

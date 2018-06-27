@@ -22,10 +22,22 @@ class LobbyConversationCell: UITableViewCell, Reusable {
     
     var tapGesture: UITapGestureRecognizer!
     
-    func configureWith(delegate: LobbyConversationCellDelegate?) {
+    var post: LobbyPost!
+    
+    func configureWith(delegate: LobbyConversationCellDelegate?, lobbyPost: LobbyPost) {
         
         self.delegate = delegate
         
+        self.userNameButton.setTitle(lobbyPost.author?.name, for: .normal)
+
+        let timeInterval = TimeInterval(lobbyPost.creationDate!)
+        
+        self.timeLabel.text = Date(timeIntervalSince1970: timeInterval).timeAgoSinceNow()
+        
+        self.descriptionLabel.text = lobbyPost.description
+
+        self.post = lobbyPost
+    
     }
     
     override func awakeFromNib() {
