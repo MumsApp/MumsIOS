@@ -14,6 +14,10 @@ class LobbyDetailsViewController: UIViewController {
     
     fileprivate var imageLoader: ImageCacheLoader!
 
+    fileprivate var pages: Int = 1
+    
+    fileprivate var currentPage: Int = 1
+    
     func configureWith(roomId: String, title: String, backButton: Bool, lobbyTopicService: LobbyTopicService, imageLoader: ImageCacheLoader) {
         
         self.title = title
@@ -54,6 +58,8 @@ class LobbyDetailsViewController: UIViewController {
         
         self.tableView.registerNib(LobbyDetailsCell.self)
     
+        self.tableView.registerNib(LobbyConversationFooter.self)
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         self.tableView.estimatedRowHeight = 225
@@ -112,7 +118,7 @@ class LobbyDetailsViewController: UIViewController {
         
     }
     
-    private func getLobbyTopicsWithPagination(page: Int) {
+    fileprivate func getLobbyTopicsWithPagination(page: Int) {
         
         guard let token = self.appContext.token() else { return }
 
@@ -127,6 +133,14 @@ class LobbyDetailsViewController: UIViewController {
                 if let dictionary = dataOptional as? Dictionary<String, Any> {
                     
                     if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+//                        if let pages = data[k_pages] as? Int {
+//
+//                            self.pages = pages
+//
+//                        }
+                        
+                        self.lobbyTopics = []
                         
                         for d in data {
                             
@@ -152,41 +166,78 @@ class LobbyDetailsViewController: UIViewController {
 
 extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 2
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.lobbyTopics.count
+        if section == 0 {
+            
+            return self.lobbyTopics.count
+            
+        } else {
+            
+            return 1
+            
+        }
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UITableViewAutomaticDimension
+        if indexPath.section == 0 {
+            
+            return UITableViewAutomaticDimension
+            
+        } else {
+            
+            return 60
+            
+        }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(LobbyDetailsCell.self)
-        
-        let thisObject = self.lobbyTopics[indexPath.row]
-        
-        cell.configureWith(delegate: self, topic: thisObject)
-        
-        if let img = thisObject.creator?.img {
+        if indexPath.section == 0 {
+
+            let cell = tableView.dequeueReusableCell(LobbyDetailsCell.self)
             
-            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + img) { (image) in
+            let thisObject = self.lobbyTopics[indexPath.row]
+            
+            cell.configureWith(delegate: self, topic: thisObject)
+            
+            if let img = thisObject.creator?.img {
                 
-                if let _ = tableView.cellForRow(at: indexPath) {
+                self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + img) { (image) in
                     
-                    cell.userImageView.image = image
+                    if let _ = tableView.cellForRow(at: indexPath) {
+                        
+                        cell.userImageView.image = image
+                        
+                    }
                     
                 }
                 
             }
             
+            return cell
+            
+        } else {
+            
+            let cell = tableView.dequeueReusableCell(LobbyConversationFooter.self)
+            
+            cell.configureWith(delegate: self)
+            
+            cell.pageLabel.text = "Page \(self.currentPage)/\(self.pages)"
+            
+            return cell
+            
         }
         
-        return cell
         
     }
     
@@ -208,20 +259,73 @@ extension LobbyDetailsViewController: LobbyDetailsCellDelegate {
 
     }
     
-    func userButtonPressed() {
+    func userButtonPressed(userId: String) {
         
-        self.showUserViewController()
+        self.showUserViewController(userId: userId)
         
     }
     
-    func showUserViewController() {
+    func showUserViewController(userId: String) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.userViewController()
+        let controller = factory.userViewController(userId: userId)
     
         self.navigationController?.pushViewController(controller, animated: true)
     
+    }
+    
+}
+
+extension LobbyDetailsViewController: LobbyConversationFooterDelegate {
+    
+    func firstButtonPressed() {
+        
+        if self.currentPage != 1 {
+            
+            self.currentPage = 1
+            
+            self.getLobbyTopicsWithPagination(page: 1)
+            
+        }
+        
+    }
+    
+    func previousButtonPressed() {
+        
+        if self.currentPage > 1 {
+            
+            self.currentPage -= 1
+            
+            self.getLobbyTopicsWithPagination(page: self.currentPage)
+            
+        }
+        
+        
+    }
+    
+    func nextButtonPressed() {
+        
+        if self.currentPage < self.pages {
+            
+            self.currentPage += 1
+            
+            self.getLobbyTopicsWithPagination(page: self.currentPage)
+            
+        }
+        
+    }
+    
+    func lastButtonPressed() {
+        
+        if self.currentPage != self.pages {
+            
+            self.currentPage = self.pages
+            
+            self.getLobbyTopicsWithPagination(page: self.pages)
+            
+        }
+        
     }
     
 }

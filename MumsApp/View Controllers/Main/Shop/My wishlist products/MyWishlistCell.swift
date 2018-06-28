@@ -32,6 +32,8 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
     
     var tapGesture: UITapGestureRecognizer!
     
+    var userId: String!
+    
     func configureWith(delegate: UserNameDelegate?, delegateWishlist: MyWishlistCellDelegate?) {
         
         self.delegate = delegate
@@ -101,14 +103,14 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
     
     func imageTapped(sender: UITapGestureRecognizer) {
                 
-        self.delegate?.userNameButtonPressed()
+        self.delegate?.userNameButtonPressed(userId: self.userId)
 
     }
     
     @IBAction func userNameButtonPressed(_ sender: UIButton) {
     
-        self.delegate?.userNameButtonPressed()
-    
+        self.delegate?.userNameButtonPressed(userId: self.userId)
+
     }
  
 }

@@ -201,7 +201,7 @@ class ProfileViewController: UIViewController {
                 
             } else {
                 
-                self.showSwitchValueChanged(isVisible: false)
+//                self.showSwitchValueChanged(isVisible: false)
                 
             }
             
@@ -443,7 +443,9 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 
-            self.profileView.userImageView.image = pickedImage
+            let newImage = pickedImage.crop(to: CGSize(width: 70, height: 70))
+            
+            self.profileView.userImageView.image = newImage
             
         }
         

@@ -1,5 +1,14 @@
 import UIKit
 
+protocol LobbyConversationFooterDelegate: class {
+    
+    func firstButtonPressed()
+    func previousButtonPressed()
+    func nextButtonPressed()
+    func lastButtonPressed()
+    
+}
+
 class LobbyConversationFooter: UITableViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
@@ -13,6 +22,14 @@ class LobbyConversationFooter: UITableViewCell, Reusable {
     @IBOutlet weak var nextButton: UIButton!
     
     @IBOutlet weak var lastButton: UIButton!
+    
+    private weak var delegate: LobbyConversationFooterDelegate?
+    
+    func configureWith(delegate: LobbyConversationFooterDelegate?) {
+        
+        self.delegate = delegate
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,25 +50,25 @@ class LobbyConversationFooter: UITableViewCell, Reusable {
 
     @IBAction func firstButtonPressed(_ sender: UIButton) {
     
-        print("First button pressed")
+        self.delegate?.firstButtonPressed()
     
     }
     
     @IBAction func previousButtonPressed(_ sender: UIButton) {
     
-        print("Previous button pressed")
+        self.delegate?.previousButtonPressed()
     
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
     
-        print("Next button pressed")
+        self.delegate?.nextButtonPressed()
     
     }
     
     @IBAction func lastButtonPressed(_ sender: UIButton) {
     
-        print("Last button pressed")
+        self.delegate?.lastButtonPressed()
     
     }
     

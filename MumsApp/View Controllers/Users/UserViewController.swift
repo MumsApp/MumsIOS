@@ -26,7 +26,27 @@ class UserViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
    
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+   
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var locationView: ItemLocationView!
+    
+    private var userId: String!
+    
+    private var userDetailsService: UserDetailsService!
+    
+    private var userDetails: UserDetails?
+    
+    fileprivate var childrenList: Array<Children> = []
+    
+    func configureWith(userId: String, userDetailsService: UserDetailsService) {
+        
+        self.userId = userId
+        
+        self.userDetailsService = userDetailsService
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +57,16 @@ class UserViewController: UIViewController {
         
         self.configureNavigationBar()
         
-        self.configureLocationView()
-        
     }
 
     private func configureView() {
         
         self.view.setBackground()
         
-        self.userImageView.layer.cornerRadius = 35
+        self.heightConstraint.constant = 750
         
+        self.userImageView.layer.cornerRadius = 35
+                
         self.userNameLabel.font = .regular(size: 20)
         
         self.userNameLabel.textColor = .black
@@ -62,6 +82,8 @@ class UserViewController: UIViewController {
         self.containerView.addShadow()
         
         self.tableView.addShadow()
+        
+        self.getUserDetails()
         
     }
     
@@ -93,22 +115,125 @@ class UserViewController: UIViewController {
         
     }
     
-    private func configureLocationView() {
-        
-        self.locationView.mapView.addMarker(lat: LONDON_LAT, lon: LONDON_LONG)
-        
-        let locationCoordinate = CLLocationCoordinate2D(latitude: LONDON_LAT, longitude: LONDON_LONG)
-        
-        let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
-        
-        self.locationView.mapView.animate(with: cameraUpdate)
-        
-    }
-    
     func backButtonPressed(sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
         
+        
+    }
+    
+    private func getUserDetails() {
+
+        guard let token = self.appContext.token() else { return }
+
+        self.userDetailsService.getUserDetails(id: self.userId, token: token) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                guard let data = dataOptional as? StorableDictionary,
+                    let dictionary = data[k_data] as? StorableDictionary else {
+                        
+                        return
+                        
+                }
+                
+                self.userDetails = UserDetails(dictionary: dictionary)
+                
+                self.configureViewWithData(userDetails: self.userDetails!)
+                
+            }
+            
+        }
+        
+    }
+    
+    private func configureViewWithData(userDetails: UserDetails) {
+        
+        if let name = userDetails.name, let surname = userDetails.surname {
+            
+            self.userNameLabel.text = name + " " + surname
+            
+        }
+        
+        if let description = userDetails.description {
+            
+            self.userDescriptionTextView.text = description
+            
+        } else {
+            
+            self.userDescriptionTextView.text = "This user has not added a description about himself."
+            
+        }
+        
+        if let children = userDetails.children {
+            
+            self.childrenList = children
+            
+            self.tableView.reloadData()
+            
+        }
+        
+        if let location = userDetails.location {
+            
+            if let lat = location.lat, let lon = location.lon, let enabled = location.enabled, enabled {
+                
+                self.locationView.mapView.addMarker(lat: lat, lon: lon)
+                
+                let locationCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                
+                let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
+                
+                self.locationView.mapView.animate(with: cameraUpdate)
+                
+                self.locationView.userLocationLabel.text = location.formattedAddress
+                
+            } else {
+                
+                self.locationView.mapView.clear()
+                
+                self.locationView.userLocationLabel.text = "The location for this user is unknown."
+
+            }
+            
+        }
+        
+        if let photoURL = userDetails.photo?.src {
+            
+            let url = BASE_PUBLIC_IMAGE_URL + photoURL
+            
+            self.userImageView.downloadedFrom(link: url)
+            
+        }
+        
+        self.updateChildrenView()
+        
+    }
+    
+    private func updateChildrenView() {
+        
+        if self.childrenList.count == 0 {
+            
+            self.tableViewHeight.constant = 120
+
+            self.heightConstraint.constant = 750
+            
+        } else {
+
+            self.tableViewHeight.constant = CGFloat(80 + self.childrenList.count * 40)
+
+            self.heightConstraint.constant = 630 + self.tableViewHeight.constant
+
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            
+            self.view.layoutIfNeeded()
+            
+        }
         
     }
     
@@ -118,7 +243,15 @@ extension UserViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
   
-        return 1
+        if self.childrenList.count == 0 {
+
+            return 1
+            
+        } else {
+            
+            return self.childrenList.count
+
+        }
         
     }
     
@@ -130,8 +263,20 @@ extension UserViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: KIDS_CELL, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: KIDS_CELL, for: indexPath) as! KidsCell
+        
+        if self.childrenList.count == 0 {
             
+            cell.kidsLabel.text = "This user has no children."
+            
+        } else {
+            
+            let thisObject = self.childrenList[indexPath.row]
+
+            cell.kidsLabel.text = thisObject.formatter()
+
+        }
+        
         return cell
         
     }
@@ -144,7 +289,7 @@ extension UserViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        let type: UserViewType = .remove
+        let type: UserViewType = .add
         
         if type == .add {
             

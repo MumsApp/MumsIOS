@@ -44,8 +44,8 @@
                                         <action selector="nextButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="vVt-4M-TQo"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page 2/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25j-el-opm">
-                                    <rect key="frame" x="145" y="53" width="69" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page 1/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25j-el-opm">
+                                    <rect key="frame" x="146.5" y="53" width="66" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -61,8 +61,8 @@
                                         <action selector="previousButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Z71-cf-XXb"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4G-bz-ot8">
-                                    <rect key="frame" x="321" y="47" width="30" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4G-bz-ot8">
+                                    <rect key="frame" x="321" y="48.5" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="Ihx-zA-PYC"/>
                                         <constraint firstAttribute="height" constant="30" id="k0k-ch-uYB"/>

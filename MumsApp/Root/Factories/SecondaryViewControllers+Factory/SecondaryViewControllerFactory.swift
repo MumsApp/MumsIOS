@@ -210,9 +210,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func userViewController() -> UserViewController {
+    func userViewController(userId: String) -> UserViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.UserViewController.rawValue, storyboard: storyboard) as! UserViewController
+        
+        controller.configureWith(userId: userId, userDetailsService: self.serviceFactory.userDetailsService())
         
         return controller
         

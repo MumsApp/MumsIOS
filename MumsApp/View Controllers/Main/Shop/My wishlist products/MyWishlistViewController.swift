@@ -132,17 +132,17 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
 
 extension MyWishlistViewController: UserNameDelegate {
     
-    func userNameButtonPressed() {
+    func userNameButtonPressed(userId: String) {
         
-        self.showUserViewController()
+        self.showUserViewController(userId: userId)
         
     }
  
-    func showUserViewController() {
+    func showUserViewController(userId: String) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.userViewController()
+        let controller = factory.userViewController(userId: userId)
         
         self.navigationController?.pushViewController(controller, animated: true)
         

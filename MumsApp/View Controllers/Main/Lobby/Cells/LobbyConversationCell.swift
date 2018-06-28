@@ -2,7 +2,7 @@ import UIKit
 
 protocol LobbyConversationCellDelegate: class {
     
-    func userButtonPressed()
+    func userButtonPressed(userId: String)
     
 }
 
@@ -77,13 +77,18 @@ class LobbyConversationCell: UITableViewCell, Reusable {
     
     @IBAction func userButtonPressed(_ sender: UIButton) {
         
-        self.delegate?.userButtonPressed()
+        guard let id = self.post.author?.id else { return }
+        
+        self.delegate?.userButtonPressed(userId: String(id))
         
     }
     
     func imageTapped(sender: UITapGestureRecognizer) {
         
-        self.delegate?.userButtonPressed()
-        
+        guard let id = self.post.author?.id else { return }
+
+        self.delegate?.userButtonPressed(userId: String(id))
+
     }
+    
 }

@@ -16,6 +16,10 @@ class LobbyConversationViewController: UIViewController {
 
     private var shouldReply = false
     
+    fileprivate var pages: Int = 1
+    
+    fileprivate var currentPage: Int = 1
+    
     func configureWith(shouldReply: Bool, roomId: String, topicId: String, title: String, lobbyPostService: LobbyPostService, imageLoader: ImageCacheLoader) {
         
         self.title = title
@@ -98,7 +102,7 @@ class LobbyConversationViewController: UIViewController {
 
     }
     
-    private func getLobbyPostsWithPagination(page: Int) {
+    fileprivate func getLobbyPostsWithPagination(page: Int) {
         
         guard let token = self.appContext.token() else { return }
     
@@ -114,7 +118,15 @@ class LobbyConversationViewController: UIViewController {
                     
                     if let data = dictionary[k_data] as? Dictionary<String, Any> {
                         
+                        if let pages = data[k_pages] as? Int {
+                            
+                            self.pages = pages
+                            
+                        }
+                        
                         if let posts = data[k_posts] as? Array<Dictionary<String, Any>> {
+                            
+                            self.lobbyPosts = []
                             
                             for p in posts {
                                 
@@ -250,6 +262,10 @@ extension LobbyConversationViewController: UITableViewDelegate, UITableViewDataS
             
             let cell = tableView.dequeueReusableCell(LobbyConversationFooter.self)
             
+            cell.configureWith(delegate: self)
+            
+            cell.pageLabel.text = "Page \(self.currentPage)/\(self.pages)"
+            
             return cell
 
         }
@@ -260,20 +276,73 @@ extension LobbyConversationViewController: UITableViewDelegate, UITableViewDataS
 
 extension LobbyConversationViewController: LobbyConversationCellDelegate {
     
-    func userButtonPressed() {
+    func userButtonPressed(userId: String) {
         
-        self.showUserViewController()
+        self.showUserViewController(userId: userId)
         
     }
     
-    func showUserViewController() {
+    func showUserViewController(userId: String) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.userViewController()
+        let controller = factory.userViewController(userId: userId)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
+    }
+    
+}
+
+extension LobbyConversationViewController: LobbyConversationFooterDelegate {
+    
+    func firstButtonPressed() {
+        
+        if self.currentPage != 1 {
+            
+            self.currentPage = 1
+            
+            self.getLobbyPostsWithPagination(page: 1)
+
+        }
+        
+    }
+    
+    func previousButtonPressed() {
+        
+        if self.currentPage > 1 {
+            
+            self.currentPage -= 1
+            
+            self.getLobbyPostsWithPagination(page: self.currentPage)
+            
+        }
+        
+
+    }
+    
+    func nextButtonPressed() {
+        
+        if self.currentPage < self.pages {
+            
+            self.currentPage += 1
+
+            self.getLobbyPostsWithPagination(page: self.currentPage)
+            
+        }
+        
+    }
+    
+    func lastButtonPressed() {
+        
+        if self.currentPage != self.pages {
+            
+            self.currentPage = self.pages
+            
+            self.getLobbyPostsWithPagination(page: self.pages)
+            
+        }
+
     }
     
 }

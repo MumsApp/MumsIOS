@@ -1,6 +1,7 @@
 import Foundation
 
 let k_author = "author"
+let k_pages = "pages"
 
 struct LobbyPost: Resource {
     

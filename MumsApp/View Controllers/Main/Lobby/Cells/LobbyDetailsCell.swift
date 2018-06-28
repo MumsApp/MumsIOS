@@ -3,7 +3,7 @@ import UIKit
 protocol LobbyDetailsCellDelegate: class {
     
     func replyButtonPressed(topic: LobbyTopic)
-    func userButtonPressed()
+    func userButtonPressed(userId: String)
     
 }
 
@@ -101,13 +101,17 @@ class LobbyDetailsCell: UITableViewCell, Reusable {
     
     @IBAction func userButtonPressed(_ sender: UIButton) {
     
-        self.delegate?.userButtonPressed()
+        guard let id = self.topic.creator?.id else { return }
+        
+        self.delegate?.userButtonPressed(userId: String(id))
     
     }
     
     func imageTapped(sender: UITapGestureRecognizer) {
-        
-        self.delegate?.userButtonPressed()
-        
+
+        guard let id = self.topic.creator?.id else { return }
+
+        self.delegate?.userButtonPressed(userId: String(id))
+
     }
 }

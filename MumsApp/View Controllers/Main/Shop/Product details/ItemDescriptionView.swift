@@ -2,7 +2,7 @@ import UIKit
 
 protocol UserNameDelegate: class {
     
-    func userNameButtonPressed()
+    func userNameButtonPressed(userId: String)
     
 }
 
@@ -29,6 +29,8 @@ class ItemDescriptionView: UIView {
     private weak var delegate: UserNameDelegate?
     
     private var tapGesture: UITapGestureRecognizer!
+    
+    private var userId: String!
     
     func configureWith(delegate: UserNameDelegate?) {
         
@@ -104,19 +106,19 @@ class ItemDescriptionView: UIView {
     
     func imageTapped(sender: UITapGestureRecognizer) {
         
-        self.delegate?.userNameButtonPressed()
+        self.delegate?.userNameButtonPressed(userId: self.userId)
         
     }
     
     @IBAction func userButtonPressed(_ sender: UIButton) {
    
-        self.delegate?.userNameButtonPressed()
+        self.delegate?.userNameButtonPressed(userId: self.userId)
     
     }
 
     @IBAction func contactUserButtonPressed(_ sender: UIButton) {
     
-        self.delegate?.userNameButtonPressed()
+        self.delegate?.userNameButtonPressed(userId: self.userId)
     
     }
     
