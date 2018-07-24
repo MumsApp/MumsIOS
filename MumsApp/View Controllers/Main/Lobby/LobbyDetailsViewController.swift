@@ -132,25 +132,29 @@ class LobbyDetailsViewController: UIViewController {
                 
                 if let dictionary = dataOptional as? Dictionary<String, Any> {
                     
-                    if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
-                        
-//                        if let pages = data[k_pages] as? Int {
-//
-//                            self.pages = pages
-//
-//                        }
-                        
-                        self.lobbyTopics = []
-                        
-                        for d in data {
-                            
-                            self.lobbyTopics.append(LobbyTopic(dictionary: d))
-                            
+                    if let data = dictionary[k_data] as? Dictionary<String, Any> {
+
+                        if let pages = data[k_pages] as? Int {
+
+                            self.pages = pages
+
                         }
                         
-                        self.lobbyTopics.sort (by: { $0.creationDate! > $1.creationDate! })
-                        
-                        self.tableView.reloadData()
+                        if let posts = data[k_posts] as? Array<Dictionary<String, Any>> {
+                            
+                            self.lobbyTopics = []
+                            
+                            for post in posts {
+                                
+                                self.lobbyTopics.append(LobbyTopic(dictionary: post))
+                                
+                            }
+                            
+                            self.lobbyTopics.sort (by: { $0.creationDate! > $1.creationDate! })
+                            
+                            self.tableView.reloadData()
+                            
+                        }
                         
                     }
                     

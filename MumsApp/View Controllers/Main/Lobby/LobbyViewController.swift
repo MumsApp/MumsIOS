@@ -166,7 +166,6 @@ class LobbyViewController: UIViewController {
             } else {
                 
                 
-                
             }
             
         }
@@ -184,7 +183,6 @@ class LobbyViewController: UIViewController {
                 print(error.localizedDescription)
                 
             } else {
-                
                 
                 
             }

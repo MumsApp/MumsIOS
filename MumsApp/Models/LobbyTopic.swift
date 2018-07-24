@@ -19,6 +19,8 @@ struct LobbyTopic: Resource {
     
     var creator: Creator?
     
+    var pages: Int?
+    
     init(dictionary: StorableDictionary) {
         
         self.id = dictionary[k_id] as? Int
@@ -33,6 +35,8 @@ struct LobbyTopic: Resource {
         
         self.creator = Creator.fromDictionary(dictionary: dictionary[k_creator] as! Dictionary<String, Any>)
         
+        self.pages = dictionary[k_pages] as? Int
+
     }
     
     static func fromDictionary(dictionary: Dictionary<String, Any>) -> LobbyTopic {
@@ -58,6 +62,8 @@ struct LobbyTopic: Resource {
         dictionary[k_img] = self.img
         
         dictionary[k_creator] = self.creator?.toDictionary()
+        
+        dictionary[k_pages] = self.pages
         
         return dictionary
         

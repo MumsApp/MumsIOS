@@ -3,6 +3,8 @@ import Foundation
 let k_title = "title"
 let k_img = "img"
 let k_isFavourite = "isFavourite"
+let k_isOwner = "isOwner"
+let k_isJoined = "isJoined"
 
 struct LobbyRoom: Resource {
     
@@ -18,6 +20,10 @@ struct LobbyRoom: Resource {
         
     var isFavourite: Bool?
     
+    var isOwner: Bool?
+    
+    var isJoined: Bool?
+    
     init(dictionary: StorableDictionary) {
         
         self.id = dictionary[k_id] as? Int
@@ -29,6 +35,10 @@ struct LobbyRoom: Resource {
         self.img = dictionary[k_img] as? String
         
         self.isFavourite = dictionary[k_isFavourite] as? Bool
+        
+        self.isOwner = dictionary[k_isOwner] as? Bool
+        
+        self.isJoined = dictionary[k_isJoined] as? Bool
         
     }
     
@@ -53,6 +63,10 @@ struct LobbyRoom: Resource {
         dictionary[k_img] = self.img
         
         dictionary[k_isFavourite] = self.isFavourite
+        
+        dictionary[k_isOwner] = self.isOwner
+        
+        dictionary[k_isJoined] = self.isJoined
         
         return dictionary
         
