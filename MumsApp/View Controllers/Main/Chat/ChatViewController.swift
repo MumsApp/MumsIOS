@@ -116,7 +116,7 @@ class ChatViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
         
-        let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "settingsIcon"), style: .plain, target: self, action: #selector(self.settingsButtonPressed(sender:)))
+//        let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "settingsIcon"), style: .plain, target: self, action: #selector(self.settingsButtonPressed(sender:)))
         
 //        self.navigationItem.rightBarButtonItem = rightButton
         

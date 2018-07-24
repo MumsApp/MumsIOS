@@ -184,11 +184,15 @@ class ShopFilterViewController: UIViewController {
 
 extension ShopFilterViewController: ShopCategoriesViewControllerDelegate {
     
-    func categorySelected(title: String) {
+    func categorySelected(category: ShopSubCategory) {
         
-        self.selectCategoryButton.setTitle(title, for: .normal)
-        
-        self.selectCategoryImageView.image = nil
+        if let title = category.name {
+         
+            self.selectCategoryButton.setTitle(title, for: .normal)
+            
+            self.selectCategoryImageView.image = nil
+
+        }
         
     }
     

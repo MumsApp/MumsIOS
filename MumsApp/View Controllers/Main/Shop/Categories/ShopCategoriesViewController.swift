@@ -2,7 +2,7 @@ import UIKit
 
 protocol ShopCategoriesViewControllerDelegate: class {
     
-    func categorySelected(title: String)
+    func categorySelected(category: ShopSubCategory)
     
 }
 
@@ -10,22 +10,17 @@ class ShopCategoriesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private let categories = ShopCategories().list
-    
-    fileprivate var list = [Objects]()
-
-    private struct Objects {
-        
-        var sectionName : String!
-        var sectionObjects : [String]!
-    
-    }
+    fileprivate var shopCategories = [ShopCategory]()
 
     fileprivate weak var delegate: ShopCategoriesViewControllerDelegate?
     
-    func configureWith(delegate: ShopCategoriesViewControllerDelegate?) {
+    private var shopCategoryService: ShopCategoryService!
+    
+    func configureWith(delegate: ShopCategoriesViewControllerDelegate?, shopCategoryService: ShopCategoryService) {
         
         self.delegate = delegate
+        
+        self.shopCategoryService = shopCategoryService
         
     }
     
@@ -36,6 +31,8 @@ class ShopCategoriesViewController: UIViewController {
     
         self.configureNavigationBar()
         
+        self.getShopCategories()
+        
     }
     
     private func configureView() {
@@ -45,12 +42,6 @@ class ShopCategoriesViewController: UIViewController {
         self.tableView.dataSource = self
 
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
-
-        for (key, value) in categories {
-            
-            self.list.append(Objects(sectionName: key, sectionObjects: value))
-            
-        }
         
     }
     
@@ -76,25 +67,61 @@ class ShopCategoriesViewController: UIViewController {
         
     }
     
+    private func getShopCategories() {
+
+        guard let token = self.appContext.token() else { return }
+
+        self.shopCategoryService.getShopCategories(token: token) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                if let dictionary = dataOptional as? Dictionary<String, Any> {
+                    
+                    if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+                        self.shopCategories = []
+                        
+                        for d in data {
+                            
+                            self.shopCategories.append(ShopCategory(dictionary: d))
+                            
+                        }
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+                }
+            
+            }
+            
+        }
+        
+    }
+    
 }
 
 extension ShopCategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return self.list.count
+        return self.shopCategories.count
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return self.list[section].sectionObjects.count
+        return self.shopCategories[section].subCategories!.count
 
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return self.list[section].sectionName
+        return self.shopCategories[section].name
 
     }
     
@@ -102,7 +129,7 @@ extension ShopCategoriesViewController: UITableViewDelegate, UITableViewDataSour
         
         let header = tableView.dequeueReusableCell(CategoriesHeaderCell.self)
         
-        let thisObject = self.list[section].sectionName
+        let thisObject = self.shopCategories[section].name
 
         header.headerLabel.text = thisObject
 
@@ -120,9 +147,9 @@ extension ShopCategoriesViewController: UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(CategoriesCell.self, indexPath: indexPath)
         
-        let thisObject = self.list[indexPath.section].sectionObjects[indexPath.row]
+        let thisObject = self.shopCategories[indexPath.section].subCategories![indexPath.row]
         
-        cell.categoryLabel.text = thisObject
+        cell.categoryLabel.text = thisObject.name
         
         return cell
         
@@ -132,9 +159,9 @@ extension ShopCategoriesViewController: UITableViewDelegate, UITableViewDataSour
         
         self.navigationController?.popViewController(animated: true)
         
-        let thisObject = self.list[indexPath.section].sectionObjects[indexPath.row]
+        let thisObject = self.shopCategories[indexPath.section].subCategories![indexPath.row]
         
-        self.delegate?.categorySelected(title: thisObject)
+        self.delegate?.categorySelected(category: thisObject)
         
     }
     

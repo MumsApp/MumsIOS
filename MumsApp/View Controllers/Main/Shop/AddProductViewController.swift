@@ -279,11 +279,15 @@ extension AddProductViewController: AddProductDescriptionViewDelegate {
 
 extension AddProductViewController: ShopCategoriesViewControllerDelegate {
     
-    func categorySelected(title: String) {
+    func categorySelected(category: ShopSubCategory) {
     
-        self.descriptionView.selectCategoryButton.setTitle(title, for: .normal)
-        
-        self.descriptionView.selectCategoryButton.setTitleColor(.black, for: .normal)
+        if let title = category.name {
+            
+            self.descriptionView.selectCategoryButton.setTitle(title, for: .normal)
+            
+            self.descriptionView.selectCategoryButton.setTitleColor(.black, for: .normal)
+
+        }
 
     }
     

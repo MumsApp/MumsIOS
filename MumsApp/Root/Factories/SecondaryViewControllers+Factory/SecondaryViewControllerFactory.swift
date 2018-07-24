@@ -280,7 +280,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopCategoriesViewController.rawValue, storyboard: storyboard) as! ShopCategoriesViewController
         
-        controller.configureWith(delegate: delegate)
+        controller.configureWith(delegate: delegate, shopCategoryService: self.serviceFactory.shopCategoryService())
         
         return controller
         

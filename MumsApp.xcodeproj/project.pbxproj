@@ -235,6 +235,10 @@
 		4DCB4EA12022285D006962F9 /* LobbyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA02022285D006962F9 /* LobbyCell.xib */; };
 		4DCB4EA3202229BF006962F9 /* LobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA2202229BF006962F9 /* LobbyCell.swift */; };
 		4DCB4EA5202234F4006962F9 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */; };
+		4DCEA1F32106FF2E0083EBD4 /* ShopCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA1F22106FF2E0083EBD4 /* ShopCategoryService.swift */; };
+		4DCEA1F52106FFD50083EBD4 /* ShopCategoryServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA1F42106FFD40083EBD4 /* ShopCategoryServiceParser.swift */; };
+		4DCEA1F7210700230083EBD4 /* ShopCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA1F6210700230083EBD4 /* ShopCategory.swift */; };
+		4DCEA1F9210700980083EBD4 /* ShopSubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA1F8210700980083EBD4 /* ShopSubCategory.swift */; };
 		4DE0D99320501190002C0759 /* RemoveProductPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D99220501190002C0759 /* RemoveProductPopupViewController.swift */; };
 		4DE0D995205018B4002C0759 /* ProductAddedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D994205018B4002C0759 /* ProductAddedPopupViewController.swift */; };
 		4DE0D9982050200F002C0759 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE0D9972050200F002C0759 /* ConversationViewController.swift */; };
@@ -245,7 +249,6 @@
 		4DE174F820288C38001C5DD1 /* ProfileSettingsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */; };
 		4DE174FA2028A044001C5DD1 /* AddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE174F92028A044001C5DD1 /* AddCell.xib */; };
 		4DE174FC2028A054001C5DD1 /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174FB2028A054001C5DD1 /* AddCell.swift */; };
-		4DE174FF2028BAB0001C5DD1 /* LobbyArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */; };
 		4DE175012028C8B3001C5DD1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE175002028C8B3001C5DD1 /* ChatViewController.swift */; };
 		4DE175032028C97E001C5DD1 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE175022028C97E001C5DD1 /* ChatCell.swift */; };
 		4DE175052028C985001C5DD1 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE175042028C985001C5DD1 /* ChatCell.xib */; };
@@ -529,6 +532,10 @@
 		4DCB4EA02022285D006962F9 /* LobbyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyCell.xib; sourceTree = "<group>"; };
 		4DCB4EA2202229BF006962F9 /* LobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyCell.swift; sourceTree = "<group>"; };
 		4DCB4EA4202234F4006962F9 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		4DCEA1F22106FF2E0083EBD4 /* ShopCategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCategoryService.swift; sourceTree = "<group>"; };
+		4DCEA1F42106FFD40083EBD4 /* ShopCategoryServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCategoryServiceParser.swift; sourceTree = "<group>"; };
+		4DCEA1F6210700230083EBD4 /* ShopCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCategory.swift; sourceTree = "<group>"; };
+		4DCEA1F8210700980083EBD4 /* ShopSubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSubCategory.swift; sourceTree = "<group>"; };
 		4DE0D99220501190002C0759 /* RemoveProductPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveProductPopupViewController.swift; sourceTree = "<group>"; };
 		4DE0D994205018B4002C0759 /* ProductAddedPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddedPopupViewController.swift; sourceTree = "<group>"; };
 		4DE0D9972050200F002C0759 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
@@ -539,7 +546,6 @@
 		4DE174F720288C38001C5DD1 /* ProfileSettingsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsPopupViewController.swift; sourceTree = "<group>"; };
 		4DE174F92028A044001C5DD1 /* AddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCell.xib; sourceTree = "<group>"; };
 		4DE174FB2028A054001C5DD1 /* AddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
-		4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyArray.swift; sourceTree = "<group>"; };
 		4DE175002028C8B3001C5DD1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		4DE175022028C97E001C5DD1 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		4DE175042028C985001C5DD1 /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
@@ -811,12 +817,13 @@
 				4D9DE8A9203E0355005BDB37 /* Children.swift */,
 				4D9DE8AB203E04A3005BDB37 /* Photo.swift */,
 				4DC2F8BA202C4E6A00E331BD /* Terms.swift */,
-				4DE174FE2028BAB0001C5DD1 /* LobbyArray.swift */,
 				4DE0D99920503774002C0759 /* Message.swift */,
 				4D42E4A820E238F1009E3428 /* LobbyRoom.swift */,
 				4D42E4B320E2C0FD009E3428 /* LobbyTopic.swift */,
 				4D59F95820E38D1300186DB4 /* LobbyPost.swift */,
 				4D42E4B520E2C151009E3428 /* Creator.swift */,
+				4DCEA1F6210700230083EBD4 /* ShopCategory.swift */,
+				4DCEA1F8210700980083EBD4 /* ShopSubCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1025,6 +1032,8 @@
 				4D42E4B120E2BFD2009E3428 /* LobbyTopicServiceParser.swift */,
 				4D59F95420E38C1300186DB4 /* LobbyPostService.swift */,
 				4D59F95620E38C1E00186DB4 /* LobbyPostServiceParser.swift */,
+				4DCEA1F22106FF2E0083EBD4 /* ShopCategoryService.swift */,
+				4DCEA1F42106FFD40083EBD4 /* ShopCategoryServiceParser.swift */,
 			);
 			path = LobbyService;
 			sourceTree = "<group>";
@@ -1369,11 +1378,18 @@
 			path = Lobby;
 			sourceTree = "<group>";
 		};
+		4DCEA1F12106FEF30083EBD4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4D74FF39205BE6440016D3E9 /* ShopCategoriesViewController.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		4DE0D9962050198E002C0759 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
 				4DA2164420446E7F00621031 /* ShopFilterViewController.swift */,
-				4D74FF39205BE6440016D3E9 /* ShopCategoriesViewController.swift */,
 				4D74FF3F205BF68C0016D3E9 /* Cells */,
 			);
 			path = Filter;
@@ -1443,6 +1459,7 @@
 				4DA306C22044529800250156 /* My wishlist products */,
 				4D39D49520349CDE005123F8 /* Product details */,
 				4D39D49620349CEA005123F8 /* Add product */,
+				4DCEA1F12106FEF30083EBD4 /* Categories */,
 				4DE0D9962050198E002C0759 /* Filter */,
 			);
 			path = Shop;
@@ -1932,7 +1949,6 @@
 				4D05A9611FE144A900B19E6E /* UICollectionView+Extensions.swift in Sources */,
 				4DE1750D2028D3B8001C5DD1 /* ChatSettingsCell.swift in Sources */,
 				4D0F0C37204976BD000F251C /* UIViewController+PhotoExtensions.swift in Sources */,
-				4DE174FF2028BAB0001C5DD1 /* LobbyArray.swift in Sources */,
 				4DC6774F201781AD00F34184 /* MOReachability.swift in Sources */,
 				4D05A9481FE144A900B19E6E /* NetwrokService+Extension.swift in Sources */,
 				4DA49A552024B90E00561EC9 /* BubbleTransition.swift in Sources */,
@@ -1974,6 +1990,7 @@
 				4D7C71A620CE7C4600A0A47C /* ChildService.swift in Sources */,
 				4D05A95E1FE144A900B19E6E /* UIStoryboard+Helpers.swift in Sources */,
 				4D39D48A203489BE005123F8 /* ItemLocationView.swift in Sources */,
+				4DCEA1F9210700980083EBD4 /* ShopSubCategory.swift in Sources */,
 				4D76895E20248946002FC25D /* MenuViewController.swift in Sources */,
 				4D74FF45205BFB520016D3E9 /* PromotionDescriptionView.swift in Sources */,
 				4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */,
@@ -2045,11 +2062,13 @@
 				4D05A9451FE144A900B19E6E /* URLRequest+Task.swift in Sources */,
 				4DCB4EA3202229BF006962F9 /* LobbyCell.swift in Sources */,
 				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
+				4DCEA1F32106FF2E0083EBD4 /* ShopCategoryService.swift in Sources */,
 				4D42E4B020E2BF67009E3428 /* LobbyTopicService.swift in Sources */,
 				4DAAAEC9205689E900A66981 /* MembersCell.swift in Sources */,
 				4D36E705201E4984000DC94F /* SchoolView.swift in Sources */,
 				4D59F95720E38C1E00186DB4 /* LobbyPostServiceParser.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
+				4DCEA1F7210700230083EBD4 /* ShopCategory.swift in Sources */,
 				4DE0D99A20503774002C0759 /* Message.swift in Sources */,
 				4D9BB303205C12FB0001D54C /* PromotionPopupViewController.swift in Sources */,
 				4D374DC4203CAA6F00AB89F3 /* LobbyDetailsViewController.swift in Sources */,
@@ -2113,6 +2132,7 @@
 				4DFC27141FE92CB2006020FF /* LoginServiceParser.swift in Sources */,
 				4D59F95F20E3B86D00186DB4 /* Children+Extension.swift in Sources */,
 				4D05A9471FE144A900B19E6E /* URLRequest+Methods.swift in Sources */,
+				4DCEA1F52106FFD50083EBD4 /* ShopCategoryServiceParser.swift in Sources */,
 				4D69BAB720519565006AB41D /* OrganisationMembersView.swift in Sources */,
 				4D39D49A2034A107005123F8 /* MyProductsViewController.swift in Sources */,
 				4D05A9551FE144A900B19E6E /* MOUserDefaults+Secure.swift in Sources */,
