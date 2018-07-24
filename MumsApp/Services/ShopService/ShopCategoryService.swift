@@ -18,7 +18,7 @@ struct ShopCategoryService: ResourceService {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
-            let response = responseHandler(tag: 0, completion: completion)
+            let response = responseHandler(type: .data, completion: completion)
             
             let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
             

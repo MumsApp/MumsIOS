@@ -66,7 +66,7 @@ struct GoogleService: ResourceService {
                 
                 if let responseJSON = responseOptional as? Dictionary<String, Any> {
                     
-                    let success = self.loginServiceParser.parseDataDictionary(tag: 0, dictionary: responseJSON)
+                    let success = self.loginServiceParser.parseDataDictionary(type: .status, dictionary: responseJSON)
                     
                     if success == false {
                         

@@ -11,6 +11,9 @@ public protocol NetworkService {
     
     func enqueueNetworkDownloadRequest(request: NetworkDownloadRequest) -> DownloadOperation?
 
+    func enqueueNetworkMultipleUploadRequest(request: NetworkUploadRequest, multipleData: Array<Data>) -> UploadOperation?
+
+    
 }
 
 extension NetworkService {
@@ -87,6 +90,6 @@ extension NetworkService {
 
 protocol ServiceParser {
     
-    func parseDataDictionary(tag: Int, dictionary: Dictionary<String, Any>) -> Bool
+    func parseDataDictionary(type: ParserType, dictionary: Dictionary<String, Any>) -> Bool
 
 }

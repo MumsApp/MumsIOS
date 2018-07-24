@@ -62,6 +62,18 @@ class MockNetworkService : NetworkService {
         
     }
     
+    func enqueueNetworkMultipleUploadRequest(request: NetworkUploadRequest, multipleData: Array<Data>) -> UploadOperation? {
+        
+        let operation = MockRequestOperation(request: request.urlRequest)
+        
+        let completion = completionForRequest(request: request)
+        
+        operation.startConnection(completion: completion)
+        
+        return operation
+        
+    }
+    
     func enqueueNetworkDownloadRequest(request: NetworkDownloadRequest) -> DownloadOperation? {
         
         return nil

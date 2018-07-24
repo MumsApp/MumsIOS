@@ -16,7 +16,7 @@ struct ForgotPasswordService: ResourceService {
         
         if let request = URLRequest.POSTRequestJSON(urlString: RESET_PASSWORD_URL, bodyParameters: bodyParams) {
             
-            let response = responseHandler(completion: completion)
+            let response = responseHandler(type: .status, completion: completion)
             
             let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
             

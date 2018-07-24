@@ -152,6 +152,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddProductViewController.rawValue, storyboard: storyboard) as! AddProductViewController
         
+        controller.configureWith(shopService: self.serviceFactory.shopService())
+        
         return controller
         
     }

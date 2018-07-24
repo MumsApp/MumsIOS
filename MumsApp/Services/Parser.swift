@@ -1,27 +1,33 @@
 import Foundation
 
-struct ShopCategoryServiceParser: ServiceParser {
+enum ParserType {
     
-    func parseDataDictionary(tag: Int, dictionary: Dictionary<String, Any>) -> Bool {
+    case data
+    case status
+    
+}
+
+struct Parser: ServiceParser {
+    
+    func parseDataDictionary(type: ParserType, dictionary: Dictionary<String, Any>) -> Bool {
         
         var success: Bool = false
         
-        switch tag {
+        switch type {
             
-        case 0:
+        case .data:
             
             success = self.parseData(dictionary: dictionary)
-
-        default:
             
-            return success
+        case .status:
             
+            success = self.parseStatus(dictionary: dictionary)
+   
         }
         
         return success
         
     }
-    
     
     private func parseData(dictionary: Dictionary<String, Any>) -> Bool {
         
@@ -40,5 +46,19 @@ struct ShopCategoryServiceParser: ServiceParser {
         return success
         
     }
-
+    
+    private func parseStatus(dictionary: Dictionary<String, Any>) -> Bool {
+        
+        var success = false
+        
+        if let status = dictionary[k_status] as? String, status == k_ok {
+            
+            success = true
+            
+        }
+        
+        return success
+        
+    }
+    
 }

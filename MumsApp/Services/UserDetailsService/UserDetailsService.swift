@@ -27,7 +27,7 @@ struct UserDetailsService: ResourceService {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
-            let response = responseHandler(tag: 0, completion: completion)
+            let response = responseHandler(type: .data, completion: completion)
 
             let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
             
@@ -51,7 +51,7 @@ struct UserDetailsService: ResourceService {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
-            let response = responseHandler(tag: 1, completion: completion)
+            let response = responseHandler(type: .status, completion: completion)
             
             let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
             
@@ -75,7 +75,7 @@ struct UserDetailsService: ResourceService {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
-            let response = responseHandler(tag: 3, completion: completion)
+            let response = responseHandler(type: .status, completion: completion)
             
             let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
             
@@ -97,7 +97,7 @@ struct UserDetailsService: ResourceService {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
-            let response = responseHandler(tag: 3, completion: completion)
+            let response = responseHandler(type: .status, completion: completion)
             
             let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
             

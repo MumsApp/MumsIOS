@@ -80,6 +80,18 @@ public class AuththenticatedNetworkService: NetworkService {
         
     }
     
+    public func enqueueNetworkMultipleUploadRequest(request: NetworkUploadRequest, multipleData: Array<Data>) -> UploadOperation? {
+        
+        let taskCompletion = authenticatedCheckResponseHandler(request: request)
+        
+        let authenticatedCheckTask = DataUploadTask(urlRequest: request.urlRequest, name: request.name, fileName: request.fileName, mimeType: request.mimeType, taskCompletion: taskCompletion)
+        
+        let operation = networkService.enqueueNetworkMultipleUploadRequest(request: authenticatedCheckTask, multipleData: multipleData)
+        
+        return operation
+        
+    }
+    
     public func enqueueNetworkDownloadRequest(request: NetworkDownloadRequest) -> DownloadOperation? {
         
         return nil

@@ -9,6 +9,8 @@ class ServiceFactory {
     
     private var userDefaults: MOUserDefaults
     
+    private var parser = Parser()
+    
     static func serviceFactory() -> ServiceFactory {
         
         let factoryProvider = FactoryProvider()
@@ -33,9 +35,7 @@ class ServiceFactory {
     
     func registerService() -> RegisterService {
         
-        let parser = RegisterServiceParser()
-        
-        let service = RegisterService(networkService: self.networkService, serviceParser: parser)
+        let service = RegisterService(networkService: self.networkService, serviceParser: self.parser)
         
         return service
         
@@ -55,11 +55,9 @@ class ServiceFactory {
         
         let loginManager = FBSDKLoginManager()
 
-        let registerParser = RegisterServiceParser()
-
         let loginParser = LoginServiceParser(userDefaults: self.userDefaults)
         
-        let service = FacebookService(loginManager: loginManager, networkService: self.networkService, serviceParser: registerParser, loginServiceParser: loginParser)
+        let service = FacebookService(loginManager: loginManager, networkService: self.networkService, serviceParser: self.parser, loginServiceParser: loginParser)
         
         return service
         
@@ -67,11 +65,9 @@ class ServiceFactory {
     
     func googleService() -> GoogleService {
         
-        let registerParser = RegisterServiceParser()
-        
         let loginParser = LoginServiceParser(userDefaults: self.userDefaults)
         
-        let service = GoogleService(networkService: self.networkService, serviceParser: registerParser, loginServiceParser: loginParser)
+        let service = GoogleService(networkService: self.networkService, serviceParser: self.parser, loginServiceParser: loginParser)
         
         return service
         
@@ -87,9 +83,7 @@ class ServiceFactory {
     
     func userDetailsService() -> UserDetailsService {
         
-        let parser = UserDetailsServiceParser()
-        
-        let service = UserDetailsService(networkService: self.networkService, serviceParser: parser)
+        let service = UserDetailsService(networkService: self.networkService, serviceParser: self.parser)
         
         return service
         
@@ -97,9 +91,7 @@ class ServiceFactory {
     
     func forgotPasswordService() -> ForgotPasswordService {
         
-        let parser = ForgotPasswordServiceParser()
-        
-        let service = ForgotPasswordService(networkService: self.networkService, serviceParser: parser)
+        let service = ForgotPasswordService(networkService: self.networkService, serviceParser: self.parser)
         
         return service
         
@@ -107,9 +99,7 @@ class ServiceFactory {
     
     func childService() -> ChildService {
         
-        let parser = ChildServiceParser()
-        
-        let service = ChildService(networkService: self.networkService, serviceParser: parser)
+        let service = ChildService(networkService: self.networkService, serviceParser: self.parser)
         
         return service
         
@@ -117,9 +107,7 @@ class ServiceFactory {
 
     func lobbyService() -> LobbyService {
         
-        let parser = LobbyServiceParser()
-        
-        let service = LobbyService(networkService: self.networkService, serviceParser: parser)
+        let service = LobbyService(networkService: self.networkService, serviceParser: self.parser)
         
         return service
         
@@ -127,9 +115,7 @@ class ServiceFactory {
     
     func addLobbyService() -> AddLobbyService {
         
-        let parser = AddLobbyServiceParser()
-        
-        let service = AddLobbyService(serviceParser: parser, networkService: self.networkService)
+        let service = AddLobbyService(serviceParser: self.parser, networkService: self.networkService)
         
         return service
         
@@ -137,9 +123,7 @@ class ServiceFactory {
     
     func lobbyTopicService() -> LobbyTopicService {
         
-        let parser = LobbyTopicServiceParser()
-        
-        let service = LobbyTopicService(networkService: self.networkService, serviceParser: parser)
+        let service = LobbyTopicService(networkService: self.networkService, serviceParser: self.parser)
         
         return service
         
@@ -147,9 +131,7 @@ class ServiceFactory {
     
     func lobbyPostService() -> LobbyPostService {
         
-        let parser = LobbyPostServiceParser()
-        
-        let service = LobbyPostService(networkService: self.networkService, serviceParser: parser)
+        let service = LobbyPostService(networkService: self.networkService, serviceParser: self.parser)
         
         return service
         
@@ -163,12 +145,17 @@ class ServiceFactory {
     
     func shopCategoryService() -> ShopCategoryService {
         
-        let parser = ShopCategoryServiceParser()
-        
-        let service = ShopCategoryService(networkService: self.networkService, serviceParser: parser)
+        let service = ShopCategoryService(networkService: self.networkService, serviceParser: self.parser)
         
         return service
         
     }
     
+    func shopService() -> ShopService {
+        
+        let service = ShopService(networkService: self.networkService, serviceParser: self.parser)
+        
+        return service
+        
+    }
 }

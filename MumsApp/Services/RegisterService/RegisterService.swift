@@ -6,6 +6,8 @@ let k_email = "email"
 let k_password = "password"
 let k_name = "name"
 let k_surname = "surname"
+let k_ok = "ok"
+let k_status = "status"
 
 struct RegisterService: ResourceService {
     
@@ -21,7 +23,7 @@ struct RegisterService: ResourceService {
         
         if let request = URLRequest.POSTRequestJSON(urlString: REGISTER_URL, bodyParameters: bodyParams) {
             
-            let response = responseHandler(completion: completion)
+            let response = responseHandler(type: .status, completion: completion)
             
             let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
             

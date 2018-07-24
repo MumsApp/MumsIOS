@@ -20,7 +20,7 @@ protocol Resource {
 extension ResourceService {
     
     /// Used to handle response and return Error completion
-    func responseHandler(tag: Int = 0, completion: @escaping ErrorCompletion) -> JSONResponseCompletion {
+    func responseHandler(type: ParserType = .data, completion: @escaping ErrorCompletion) -> JSONResponseCompletion {
         
         let responseCompletion: JSONResponseCompletion = { (responseOptional: Any?, errorOptional: Error?) in
             
@@ -46,7 +46,7 @@ extension ResourceService {
                         
                         if let resposne = responseOptional as? Dictionary<String, Any> {
                             
-                            success = self.serviceParser.parseDataDictionary(tag: tag, dictionary: resposne)
+                            success = self.serviceParser.parseDataDictionary(type: type, dictionary: resposne)
                             
                         }
                         
@@ -77,7 +77,7 @@ extension ResourceService {
     }
     
     /// Used to handle response and return JSON completion
-    func responseHandler(tag: Int = 0, completion: @escaping JSONResponseCompletion) -> JSONResponseCompletion {
+    func responseHandler(type: ParserType = .data, completion: @escaping JSONResponseCompletion) -> JSONResponseCompletion {
         
         let responseCompletion: JSONResponseCompletion = { (responseOptional: Any?, errorOptional: Error?) in
             
@@ -95,7 +95,7 @@ extension ResourceService {
                     
                     if responseOptional != nil {
                         
-                        _ = self.serviceParser.parseDataDictionary(tag: tag, dictionary: responseOptional as! Dictionary<String, Any>)
+                        _ = self.serviceParser.parseDataDictionary(type: type, dictionary: responseOptional as! Dictionary<String, Any>)
                         
                     }
                     

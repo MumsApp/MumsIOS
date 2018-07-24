@@ -6,7 +6,7 @@ struct LoginServiceParser: ServiceParser {
     
     var userDefaults: MOUserDefaults
     
-    func parseDataDictionary(tag: Int, dictionary: Dictionary<String, Any>) -> Bool {
+    func parseDataDictionary(type: ParserType, dictionary: Dictionary<String, Any>) -> Bool {
         
         print(dictionary)
         

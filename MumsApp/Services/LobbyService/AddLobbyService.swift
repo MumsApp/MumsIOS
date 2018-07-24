@@ -26,7 +26,7 @@ struct AddLobbyService: ResourceService {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
-            let response = responseHandler(tag: 0, completion: completion)
+            let response = responseHandler(type: .status, completion: completion)
             
             let task = DataUploadJsonResponseTask(urlRequest: request, name: "file", fileName: "file.jpg", mimeType: "image/jpg", taskCompletion: response)
             

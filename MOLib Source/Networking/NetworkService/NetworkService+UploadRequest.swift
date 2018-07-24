@@ -45,6 +45,36 @@ extension AlamofireNetworkService {
 
     }
     
+    func enqueueNetworkMultipleUploadRequest(request: NetworkUploadRequest, multipleData: Array<Data>) -> UploadOperation? {
+        
+        let method = HTTPMethod(rawValue: request.urlRequest.httpMethod!.uppercased())
+        
+        let dataResponseCompletion = completionForRequest(request: request)
+        
+        let alamofireUploadOperation = AlamofireUploadOperation(dataCompletion: dataResponseCompletion)
+        
+        let headers = request.urlRequest.allHTTPHeaderFields
+        
+        let urlRequest = request.urlRequest.url
+        
+        var count = 0
+        
+        self.manager.upload(multipartFormData: { formData in
+            
+            for data in multipleData {
+                
+                formData.append(data, withName: request.name + String(count), fileName: request.fileName, mimeType: request.mimeType)
+
+                count += 1
+                
+            }
+            
+        }, usingThreshold: UInt64.init(), to: urlRequest!, method: method!, headers: headers, encodingCompletion: alamofireUploadOperation.handleEncodingCompletion())
+        
+        return alamofireUploadOperation
+        
+    }
+    
     func enqueueNetworkUploadRequest(request: NetworkUploadRequest, fileURL: URL) -> UploadOperation? {
         
         let method = HTTPMethod(rawValue: request.urlRequest.httpMethod!.uppercased())

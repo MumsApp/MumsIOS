@@ -19,6 +19,14 @@ class AddProductViewController: UIViewController {
     
     fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
 
+    private var shopService: ShopService!
+    
+    func configureWith(shopService: ShopService) {
+        
+        self.shopService = shopService
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -137,11 +145,11 @@ class AddProductViewController: UIViewController {
     
     @IBAction func uploadProductButtonPressed(_ sender: UIButton) {
     
-        self.showProductAddedPopupViewControlle()
-    
+        self.addProduct()
+        
     }
     
-    fileprivate func showProductAddedPopupViewControlle() {
+    fileprivate func showProductAddedPopupViewController() {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
@@ -152,6 +160,26 @@ class AddProductViewController: UIViewController {
         controller.modalTransitionStyle = .crossDissolve
         
         self.presentViewController(controller)
+        
+    }
+    
+    private func addProduct() {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.shopService.addShopProduct(name: self.descriptionView.itemTitleTextField.text!, description: self.descriptionView.descriptionTextView.text!, price: self.descriptionView.itemPriceTextField.text!, category: "1", token: token, lat: "12.242", lon: "12.321", images: self.photosView.images) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                print(error.localizedDescription)
+                
+            } else {
+                
+                self.showProductAddedPopupViewController()
+
+            }
+            
+        }
         
     }
     

@@ -5,6 +5,8 @@ let KIDS_CELL = "KidsCell"
 let ADD_CONTACT_CELL = "AddContactCell"
 let REMOVE_CONTACT_CELL = "RemoveContactCell"
 
+let k_data = "data"
+
 enum UserViewType {
     
     case add
