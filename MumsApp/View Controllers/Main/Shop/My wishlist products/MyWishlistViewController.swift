@@ -4,6 +4,20 @@ class MyWishlistViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var shopService: ShopService!
+    
+    fileprivate var products: Array<Product> = []
+    
+    fileprivate var imageLoader: ImageCacheLoader!
+
+    func configureWith(shopService: ShopService, imageLoader: ImageCacheLoader) {
+        
+        self.shopService = shopService
+        
+        self.imageLoader = imageLoader
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -13,6 +27,8 @@ class MyWishlistViewController: UIViewController {
         
         self.configureLayout()
         
+        self.getUserFavouriteShopProducts()
+
     }
     
     private func configureView() {
@@ -72,11 +88,11 @@ class MyWishlistViewController: UIViewController {
         
     }
     
-    fileprivate func showProductDetailsViewController() {
+    fileprivate func showProductDetailsViewController(product: Product) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.productDetailsViewController()
+        let controller = factory.productDetailsViewController(product: product)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -96,6 +112,42 @@ class MyWishlistViewController: UIViewController {
         
     }
 
+    private func getUserFavouriteShopProducts() {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.shopService.getUserFavouriteShopProducts(token: token) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                if let dictionary = dataOptional as? Dictionary<String, Any> {
+                    
+                    if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+                        self.products = []
+                        
+                        for d in data {
+                            
+                            self.products.append(Product(dictionary: d))
+                            
+                        }
+                        
+                        self.collectionView.reloadData()
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
 }
 
 extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -108,13 +160,15 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 10
+        return self.products.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        self.showProductDetailsViewController()
+        let product = self.products[indexPath.row]
+        
+        self.showProductDetailsViewController(product: product)
         
     }
     
@@ -122,8 +176,38 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let cell = collectionView.dequeueReusableClass(MyWishlistCell.self, forIndexPath: indexPath, type: .cell)
         
-        cell.configureWith(delegate: self, delegateWishlist: self)
+        let product = self.products[indexPath.row]
+
+        cell.configureWith(delegate: self, delegateWishlist: self, product: product)
     
+        if let src = product.creatorPhoto {
+            
+            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
+                
+                if let _ = collectionView.cellForItem(at: indexPath) {
+                    
+                    cell.userImageView.image = image
+                    
+                }
+                
+            }
+            
+        }
+        
+        if let src = product.photos?.first?.src {
+            
+            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
+                
+                if let _ = collectionView.cellForItem(at: indexPath) {
+                    
+                    cell.itemImageView.image = image
+                    
+                }
+                
+            }
+            
+        }
+        
         return cell
         
     }

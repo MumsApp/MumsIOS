@@ -94,11 +94,11 @@ class MyProductsViewController: UIViewController {
 
     }
     
-    fileprivate func showAddProductViewController() {
+    fileprivate func showAddProductViewController(productOptional: Product? = nil) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.addProductViewController()
+        let controller = factory.addProductViewController(productOptional: productOptional)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -184,7 +184,9 @@ extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        self.showAddProductViewController()
+        let product = self.products[indexPath.row]
+        
+        self.showAddProductViewController(productOptional: product)
         
     }
     

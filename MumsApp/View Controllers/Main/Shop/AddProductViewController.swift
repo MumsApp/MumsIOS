@@ -30,9 +30,13 @@ class AddProductViewController: UIViewController {
     
     fileprivate var selectedLon: String?
     
-    func configureWith(shopService: ShopService) {
+    private var productOptional: Product?
+    
+    func configureWith(shopService: ShopService, productOptional: Product?) {
         
         self.shopService = shopService
+        
+        self.productOptional = productOptional
         
     }
     
@@ -47,6 +51,8 @@ class AddProductViewController: UIViewController {
         
         self.addGestureRecognizerToContentView()
 
+        self.configureData()
+        
     }
 
     deinit {
@@ -101,6 +107,43 @@ class AddProductViewController: UIViewController {
         
     }
     
+    private func configureData() {
+        
+        if let product = self.productOptional {
+            
+            self.descriptionView.itemTitleTextField.text = product.name
+            
+            self.descriptionView.selectCategoryButton.setTitle(product.categoryName, for: .normal)
+
+            self.descriptionView.selectCategoryButton.setTitleColor(.black, for: .normal)
+
+            self.selectedCategoryId = product.category
+            
+            self.descriptionView.itemPriceTextField.text = "£" + product.price!
+            
+            if let lat = product.lat, let lon = product.lon {
+                
+                self.itemLocationView.configureLocationViewWith(lat: Double(lat)!, lon: Double(lon)!)
+                
+                self.itemLocationView.userLocationLabel.text = "TO DO"
+                
+                self.selectedLat = lat
+                
+                self.selectedLon = lon
+                
+            }
+            
+            self.descriptionView.descriptionTextView.text = product.description
+            
+            if let lat = product.lat, let lon = product.lon {
+                
+                self.itemLocationView.configureLocationViewWith(lat: Double(lat)!, lon: Double(lon)!)
+                
+            }
+            
+        }
+        
+    }
     
     private func addNotifationsForKeyboard() {
         

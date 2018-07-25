@@ -26,4 +26,16 @@ class ItemLocationView: LocationView {
         
     }
     
+    func configureLocationViewWith(lat: Double, lon: Double) {
+        
+        self.mapView.addMarker(lat: lat, lon: lon)
+        
+        let locationCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        
+        let cameraUpdate = GMSCameraUpdate.setTarget(locationCoordinate, zoom: 12)
+        
+        self.mapView.animate(with: cameraUpdate)
+        
+    }
+    
 }

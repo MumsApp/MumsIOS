@@ -1,12 +1,15 @@
 import Foundation
 import UIKit
 
-let ADD_SHOP_PRODUCT_URL = BASE_URL + "shop/product?name={name}&description={description}&price={price}&category={category}&lat={lat}&lon={lon}"
-
-let USER_SHOP_PRODUCT_URL = BASE_URL + "shop/product/my"
+let ADD_SHOP_PRODUCTS_URL = BASE_URL + "shop/product?name={name}&description={description}&price={price}&category={category}&lat={lat}&lon={lon}"
+let USER_SHOP_PRODUCTS_URL = BASE_URL + "shop/product/my"
+let SHOP_PRODUCTS_URL = BASE_URL + "shop/product/paginated/{page}/" + PAGINATION
+let SHOP_FAVOURITE_PRODUCTS_URL = BASE_URL + "shop/product/favourite"
+let SHOP_ADD_FAVOURITE_URL = BASE_URL + "shop/product/{id}/favourite"
 
 let k_price = "price"
 let k_category = "category"
+let k_products = "products"
 
 struct ShopService: ResourceService {
     
@@ -22,7 +25,7 @@ struct ShopService: ResourceService {
         
         let pathParameters = [k_name: name, k_description: description, k_price: price, k_category: category, k_lat: lat, k_lon: lon]
         
-        let url = ADD_SHOP_PRODUCT_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        let url = ADD_SHOP_PRODUCTS_URL.URLReplacingPathParamaters(parameters: pathParameters)
         
         if var request = URLRequest.POSTRequestData(urlString: url) {
 
@@ -52,7 +55,7 @@ struct ShopService: ResourceService {
 
     func getUserShopProducts(token: String, completion: @escaping JSONResponseCompletion) {
         
-        if var request = URLRequest.GETRequest(urlString: USER_SHOP_PRODUCT_URL) {
+        if var request = URLRequest.GETRequest(urlString: USER_SHOP_PRODUCTS_URL) {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
@@ -66,4 +69,88 @@ struct ShopService: ResourceService {
         
     }
     
+    // MARK: - Get shop products
+ 
+    func getShopProducts(token: String, page: Int, completion: @escaping JSONResponseCompletion) {
+        
+        let pathParameters = [k_page: String(page)]
+        
+        let url = SHOP_PRODUCTS_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        if var request = URLRequest.GETRequest(urlString: url) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .data, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+    
+    // MARK: - Get user favourite shop products
+    
+    func getUserFavouriteShopProducts(token: String, completion: @escaping JSONResponseCompletion) {
+        
+        if var request = URLRequest.GETRequest(urlString: SHOP_FAVOURITE_PRODUCTS_URL) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .data, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+    
+    // MARK: - Add favourite shop product
+    
+    func addFavouriteProduct(id: String, token: String, completion: @escaping ErrorCompletion) {
+        
+        let pathParameters = [k_id: id]
+        
+        let url = SHOP_ADD_FAVOURITE_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        if var request = URLRequest.POSTRequestData(urlString: url) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .status, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+    
+    // MARK: - Remove favourite shop product
+    
+    func removeFavouriteProduct(id: String, token: String, completion: @escaping ErrorCompletion) {
+        
+        let pathParameters = [k_id: id]
+        
+        let url = SHOP_ADD_FAVOURITE_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        if var request = URLRequest.DELETERequest(urlString: url) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .status, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+
 }

@@ -34,11 +34,21 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
     
     var userId: String!
     
-    func configureWith(delegate: UserNameDelegate?, delegateWishlist: MyWishlistCellDelegate?) {
+    func configureWith(delegate: UserNameDelegate?, delegateWishlist: MyWishlistCellDelegate?, product: Product) {
         
         self.delegate = delegate
         
         self.delegateWishlist = delegateWishlist
+        
+        self.itemNameLabel.text = product.name
+        
+        self.itemCategoryLabel.text = product.categoryName
+        
+        self.itemPriceLabel.text = "£" + product.price!
+        
+        self.itemDistanceLabel.text = "TO DO"
+        
+        self.userNameButton.setTitle(product.creatorName, for: .normal)
         
     }
     

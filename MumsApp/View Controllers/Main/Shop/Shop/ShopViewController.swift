@@ -15,11 +15,23 @@ class ShopViewController: UIViewController {
 
     private var type: ShopViewType = .shop
 
-    var popupWindow: UIWindow?
+    private var shopService: ShopService!
     
-    func configureWith(type: ShopViewType) {
+    fileprivate var pages: Int = 1
+    
+    fileprivate var currentPage: Int = 1
+    
+    fileprivate var products: Array<Product> = []
+
+    fileprivate var imageLoader: ImageCacheLoader!
+    
+    func configureWith(type: ShopViewType, shopService: ShopService, imageLoader: ImageCacheLoader) {
         
         self.type = type
+        
+        self.shopService = shopService
+        
+        self.imageLoader = imageLoader
         
     }
     
@@ -31,6 +43,8 @@ class ShopViewController: UIViewController {
         self.configureNavigationBar()
         
         self.registerCells()
+        
+        self.getShopProducts(page: 1)
         
     }
     
@@ -106,11 +120,11 @@ class ShopViewController: UIViewController {
                 
     }
     
-    fileprivate func showProductDetailsViewController() {
+    fileprivate func showProductDetailsViewController(product: Product) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.productDetailsViewController()
+        let controller = factory.productDetailsViewController(product: product)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -123,6 +137,84 @@ class ShopViewController: UIViewController {
         let controller = factory.addProductViewController()
         
         self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    private func getShopProducts(page: Int) {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.shopService.getShopProducts(token: token, page: page) { dataOptional, errorOptional in
+            
+            if let dictionary = dataOptional as? Dictionary<String, Any> {
+                
+                if let data = dictionary[k_data] as? Dictionary<String, Any> {
+                    
+                    if let pages = data[k_pages] as? Int {
+                        
+                        self.pages = pages
+                        
+                    }
+                    
+                    if let productsArray = data[k_products] as? Array<Dictionary<String, Any>> {
+                        
+                        self.products = []
+                        
+                        for product in productsArray {
+                            
+                            self.products.append(Product(dictionary: product))
+                            
+                        }
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    func addFavouriteProduct(id: String) {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.shopService.addFavouriteProduct(id: id, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                return
+                
+            }
+            
+        }
+        
+    }
+    
+    func removeFavouriteProduct(id: String) {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.shopService.removeFavouriteProduct(id: id, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                return
+                
+            }
+            
+        }
         
     }
     
@@ -144,7 +236,7 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             
-            return 10
+            return self.products.count
 
         }
         
@@ -198,17 +290,37 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
              
                 let cell = tableView.dequeueReusableCell(ShopCell.self, indexPath: indexPath)
                 
-                cell.itemNameLabel.text = "Item one"
+                let product = self.products[indexPath.row]
                 
-                cell.itemCategoryLabel.text = "Baby clothing"
+                cell.configureWith(delegate: self, product: product, cellDelegate: self)
                 
-                cell.itemPriceLabel.text = "$60"
+                if let src = product.photos?.first?.src {
+                    
+                    self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
+                        
+                        if let _ = tableView.cellForRow(at: indexPath) {
+                            
+                            cell.itemImageView.image = image
+                            
+                        }
+                        
+                    }
+                    
+                }
                 
-                cell.itemDistanceLabel.text = "3 Miles"
-                
-                cell.userNameButton.setTitle("John S.", for: .normal)
-                
-                cell.configureWith(delegate: self)
+                if let src = product.creatorPhoto {
+
+                    self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
+                        
+                        if let _ = tableView.cellForRow(at: indexPath) {
+                            
+                            cell.userImageView.image = image
+                            
+                        }
+                        
+                    }
+                    
+                }
                 
                 return cell
                 
@@ -226,7 +338,9 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             
-            self.showProductDetailsViewController()
+            let product = self.products[indexPath.row]
+            
+            self.showProductDetailsViewController(product: product)
 
         }
         
@@ -319,6 +433,24 @@ extension ShopViewController: UserNameDelegate {
         let controller = factory.userViewController(userId: userId)
         
         self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+}
+
+extension ShopViewController: ShopCellDelegate {
+    
+    func watchButtonPressed(tag: Int, id: String) {
+        
+        if tag == 0 {
+            
+            self.addFavouriteProduct(id: id)
+            
+        } else {
+            
+            self.removeFavouriteProduct(id: id)
+            
+        }
         
     }
     

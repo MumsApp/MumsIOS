@@ -116,15 +116,17 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopViewController.rawValue, storyboard: storyboard) as! ShopViewController
         
-        controller.configureWith(type: type)
+        controller.configureWith(type: type, shopService: self.serviceFactory.shopService(), imageLoader: self.serviceFactory.imageCacheLoader())
         
         return controller
         
     }
     
-    func productDetailsViewController() -> ProductDetailsViewController {
+    func productDetailsViewController(product: Product) -> ProductDetailsViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProductDetailsViewController.rawValue, storyboard: storyboard) as! ProductDetailsViewController
+        
+        controller.configureWith(product: product, imageLoader: self.serviceFactory.imageCacheLoader())
         
         return controller
         
@@ -150,11 +152,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func addProductViewController() -> AddProductViewController {
+    func addProductViewController(productOptional: Product? = nil) -> AddProductViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddProductViewController.rawValue, storyboard: storyboard) as! AddProductViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService())
+        controller.configureWith(shopService: self.serviceFactory.shopService(), productOptional: productOptional)
         
         return controller
         
@@ -193,6 +195,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
     func myWishlistViewController() -> MyWishlistViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MyWishlistViewController.rawValue, storyboard: storyboard) as! MyWishlistViewController
+        
+        controller.configureWith(shopService: self.serviceFactory.shopService(), imageLoader: self.serviceFactory.imageCacheLoader())
         
         return controller
         

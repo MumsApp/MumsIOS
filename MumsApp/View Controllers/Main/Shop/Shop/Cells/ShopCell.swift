@@ -1,5 +1,11 @@
 import UIKit
 
+protocol ShopCellDelegate: class {
+    
+    func watchButtonPressed(tag: Int, id: String)
+    
+}
+
 class ShopCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var containerView: UIView!
@@ -22,13 +28,34 @@ class ShopCell: UITableViewCell, Reusable {
     
     private weak var delegate: UserNameDelegate?
     
+    private weak var cellDelegate: ShopCellDelegate?
+    
     var tapGesture: UITapGestureRecognizer!
     
     var userId: String!
     
-    func configureWith(delegate: UserNameDelegate?) {
+    private var productId: String!
+    
+    func configureWith(delegate: UserNameDelegate?, product: Product, cellDelegate: ShopCellDelegate?) {
         
         self.delegate = delegate
+        
+        self.cellDelegate = cellDelegate
+        
+        self.itemNameLabel.text = product.name
+        
+        self.itemCategoryLabel.text = product.categoryName
+        
+        self.itemPriceLabel.text = "£" + product.price!
+        
+        self.itemDistanceLabel.text = product.lat
+        
+        self.userNameButton.setTitle(product.creatorName, for: .normal)
+     
+        self.productId = String(product.id!)
+        
+//        self.tag = product.isFavourite ? 1 : 0
+//        self.userId = product.creatorId
         
     }
     
@@ -85,8 +112,10 @@ class ShopCell: UITableViewCell, Reusable {
         
         sender.setImage(image, for: .normal)
         
-        sender.tag = sender.tag == 0 ? 1 : 0
+        self.cellDelegate?.watchButtonPressed(tag: sender.tag, id: self.productId)
         
+        sender.tag = sender.tag == 0 ? 1 : 0
+
     }
 
     func imageTapped(sender: UITapGestureRecognizer) {

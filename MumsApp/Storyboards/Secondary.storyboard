@@ -1452,6 +1452,7 @@
                     <connections>
                         <outlet property="collectionView" destination="911-na-qjB" id="cfG-Hq-kuN"/>
                         <outlet property="itemDescriptionView" destination="5ba-4e-ppl" id="QUW-WK-M8m"/>
+                        <outlet property="itemLocationView" destination="bK7-pG-FvX" id="9jg-BR-a9r"/>
                         <outlet property="pageControl" destination="neB-Jg-JSS" id="qPB-CY-F8e"/>
                     </connections>
                 </viewController>
@@ -4281,7 +4282,7 @@ you want to remove</string>
         <image name="closeIcon" width="18" height="18"/>
         <image name="gradient" width="187" height="109"/>
         <image name="locationGreyIcon" width="11" height="15"/>
-        <image name="logo" width="209" height="206"/>
+        <image name="logo" width="214" height="206"/>
         <image name="logoDescription" width="208" height="46"/>
         <image name="logoText" width="333" height="80"/>
         <image name="maleIcon" width="50" height="50"/>
