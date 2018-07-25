@@ -105,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MumsApp/View Controllers/Main/Shop/Shop/ShopViewController.swift"
-            timestampString = "554212428.420146"
+            filePath = "MumsApp/View Controllers/Main/Shop/Filter/ShopFilterViewController.swift"
+            timestampString = "554220619.155692"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "445"
-            endingLineNumber = "445"
-            landmarkName = "watchButtonPressed(tag:id:)"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "searchShopProducts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -6,10 +6,17 @@ let USER_SHOP_PRODUCTS_URL = BASE_URL + "shop/product/my"
 let SHOP_PRODUCTS_URL = BASE_URL + "shop/product/paginated/{page}/" + PAGINATION
 let SHOP_FAVOURITE_PRODUCTS_URL = BASE_URL + "shop/product/favourite"
 let SHOP_ADD_FAVOURITE_URL = BASE_URL + "shop/product/{id}/favourite"
+let SHOP_SEARCH_URL = BASE_URL + "shop/product/search/{page}/" + PAGINATION
 
 let k_price = "price"
 let k_category = "category"
 let k_products = "products"
+let k_priceFrom = "priceFrom"
+let k_priceTo = "priceTo"
+let k_userLat = "userLat"
+let k_userLon = "userLon"
+let k_distanceFrom = "distanceFrom"
+let k_distanceTo = "distanceTo"
 
 struct ShopService: ResourceService {
     
@@ -144,6 +151,60 @@ struct ShopService: ResourceService {
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
             let response = responseHandler(type: .status, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+
+    // MARK: - Search shop products with pagination
+    
+    func searchShopProducts(searchTerm: String, page: Int, token: String, completion: @escaping JSONResponseCompletion) {
+        
+        let pathParameters = [k_page: String(page)]
+        
+        let bodyParameters = [k_searchTerm: searchTerm]
+        
+        let url = SHOP_SEARCH_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        if var request = URLRequest.GETRequest(urlString: url, bodyParameters: bodyParameters) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .data, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+    
+    // MARK: - Search shop products with pagination and filters
+    
+    func searchShopProducts(page: Int, category: Int, priceFrom: CGFloat, priceTo: CGFloat, userLat: String, userLon: String, distanceFrom: CGFloat, distanceTo: CGFloat, token: String, completion: @escaping JSONResponseCompletion) {
+        
+        let pathParameters = [k_page: String(page)]
+        
+        let bodyParameters = [k_category: category,
+                              k_priceFrom: priceFrom,
+                              k_priceTo: priceTo,
+                              k_userLat: userLat,
+                              k_userLon: userLon,
+                              k_distanceFrom: distanceFrom,
+                              k_distanceTo: distanceTo] as [String : Any]
+        
+        let url = SHOP_SEARCH_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        if var request = URLRequest.GETRequest(urlString: url, bodyParameters: bodyParameters) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .data, completion: completion)
             
             let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
             

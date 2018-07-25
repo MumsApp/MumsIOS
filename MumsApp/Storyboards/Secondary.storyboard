@@ -2177,14 +2177,14 @@
             <objects>
                 <viewController storyboardIdentifier="ShopFilterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yQx-2n-MGW" customClass="ShopFilterViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RI9-Yi-5zn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="730"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjI-o3-pPU">
-                                <rect key="frame" x="0.0" y="20" width="375" height="680"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="710"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thP-gt-VMM">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="730"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1W-Iq-CYn">
                                                 <rect key="frame" x="16" y="82" width="343" height="55"/>
@@ -2230,7 +2230,7 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hideLabels" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                                                <real key="value" value="1"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
                                                                 <real key="value" value="50"/>
@@ -2239,7 +2239,7 @@
                                                                 <color key="value" red="0.1215686275" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedMinValue">
-                                                                <real key="value" value="1"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedMaxValue">
                                                                 <real key="value" value="50"/>
@@ -2250,6 +2250,10 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="handleBorderColor">
                                                                 <color key="value" red="0.006529744667" green="0.84994250790000003" blue="0.01013445095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="step">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableStep" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhh-bg-Erq">
@@ -2261,7 +2265,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 mile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-Qb-K5C">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-Qb-K5C">
                                                         <rect key="frame" x="16" y="60" width="60" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="qHe-M2-xrB"/>
@@ -2334,7 +2338,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOZ-uh-etZ" customClass="RangeSeekSlider" customModule="MumsApp" customModuleProvider="target">
-                                                                <rect key="frame" x="54" y="116" width="235" height="33"/>
+                                                                <rect key="frame" x="84" y="116" width="175" height="33"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" red="0.7843137255" green="0.83921568629999999" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -2363,12 +2367,16 @@
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="handleBorderColor">
                                                                         <color key="value" red="0.006529744667" green="0.84994250790000003" blue="0.01013445095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableStep" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="step">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£300" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-Qg-FTM">
-                                                                <rect key="frame" x="297" y="125" width="30" height="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£300" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-Qg-FTM">
+                                                                <rect key="frame" x="267" y="125" width="60" height="16"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="7Uh-aF-jNa"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="7Uh-aF-jNa"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <nil key="textColor"/>
@@ -2380,22 +2388,22 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-Cg-ePf">
-                                                                <rect key="frame" x="16" y="125" width="30" height="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-Cg-ePf">
+                                                                <rect key="frame" x="16" y="125" width="60" height="16"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="Xxh-Nm-7sD"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="Xxh-Nm-7sD"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EGg-md-yBr" customClass="CustomGreenSwitch" customModule="MumsApp">
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EGg-md-yBr" customClass="CustomGreenSwitch" customModule="MumsApp">
                                                                 <rect key="frame" x="284" y="15" width="51" height="31"/>
                                                                 <color key="backgroundColor" red="0.82745098039999998" green="0.85098039219999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="onTintColor" red="0.1215686275" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
-                                                                    <action selector="emergencySwitchChanged:" destination="e4X-v2-sQs" eventType="valueChanged" id="gKI-xB-vcD"/>
+                                                                    <action selector="priceSwitchChanged:" destination="yQx-2n-MGW" eventType="valueChanged" id="bbQ-yN-TWM"/>
                                                                 </connections>
                                                             </switch>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdB-Yl-MXT">
@@ -2458,7 +2466,7 @@
                                             <constraint firstItem="5bb-1N-sZt" firstAttribute="top" secondItem="kyq-QB-DrJ" secondAttribute="bottom" constant="34" id="Wgj-4h-zr0"/>
                                             <constraint firstItem="epH-DF-UW3" firstAttribute="leading" secondItem="Z9E-A2-xWW" secondAttribute="leading" constant="16" id="Xjx-3R-QuW"/>
                                             <constraint firstItem="5bb-1N-sZt" firstAttribute="leading" secondItem="Z9E-A2-xWW" secondAttribute="leading" constant="16" id="d2L-kT-qgw"/>
-                                            <constraint firstAttribute="height" constant="700" id="d6D-eG-DQH"/>
+                                            <constraint firstAttribute="height" constant="730" id="d6D-eG-DQH"/>
                                             <constraint firstItem="Z9E-A2-xWW" firstAttribute="trailing" secondItem="5bb-1N-sZt" secondAttribute="trailing" constant="16" id="hgY-ei-12l"/>
                                             <constraint firstItem="epH-DF-UW3" firstAttribute="top" secondItem="Mnd-zO-H8h" secondAttribute="bottom" constant="34" id="ntY-az-lb3"/>
                                             <constraint firstItem="kyq-QB-DrJ" firstAttribute="top" secondItem="epH-DF-UW3" secondAttribute="bottom" constant="34" id="pLI-5D-mh6"/>
@@ -2488,7 +2496,7 @@
                         <viewLayoutGuide key="safeArea" id="kf9-gO-Oh2"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="700"/>
+                    <size key="freeformSize" width="375" height="730"/>
                     <connections>
                         <outlet property="categoryContainer" destination="a1W-Iq-CYn" id="qq1-Sm-u5m"/>
                         <outlet property="distanceContainer" destination="5bb-1N-sZt" id="7aW-uP-5hA"/>
@@ -2512,7 +2520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVJ-Um-GGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5354" y="814"/>
+            <point key="canvasLocation" x="5354" y="829"/>
         </scene>
         <!--Add Members View Controller-->
         <scene sceneID="p2r-Gr-S9U">

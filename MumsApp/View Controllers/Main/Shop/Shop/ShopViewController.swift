@@ -146,29 +146,43 @@ class ShopViewController: UIViewController {
 
         self.shopService.getShopProducts(token: token, page: page) { dataOptional, errorOptional in
             
-            if let dictionary = dataOptional as? Dictionary<String, Any> {
+            if let error = errorOptional {
                 
-                if let data = dictionary[k_data] as? Dictionary<String, Any> {
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.parseShopResults(dataOptional: dataOptional)
+
+            }
+            
+        }
+        
+    }
+    
+    private func parseShopResults(dataOptional: Any?) {
+        
+        if let dictionary = dataOptional as? Dictionary<String, Any> {
+            
+            if let data = dictionary[k_data] as? Dictionary<String, Any> {
+                
+                if let pages = data[k_pages] as? Int {
                     
-                    if let pages = data[k_pages] as? Int {
+                    self.pages = pages
+                    
+                }
+                
+                if let productsArray = data[k_products] as? Array<Dictionary<String, Any>> {
+                    
+                    self.products = []
+                    
+                    for product in productsArray {
                         
-                        self.pages = pages
+                        self.products.append(Product(dictionary: product))
                         
                     }
                     
-                    if let productsArray = data[k_products] as? Array<Dictionary<String, Any>> {
-                        
-                        self.products = []
-                        
-                        for product in productsArray {
-                            
-                            self.products.append(Product(dictionary: product))
-                            
-                        }
-                        
-                        self.tableView.reloadData()
-                        
-                    }
+                    self.tableView.reloadData()
                     
                 }
                 
@@ -211,6 +225,26 @@ class ShopViewController: UIViewController {
             } else {
                 
                 return
+                
+            }
+            
+        }
+        
+    }
+    
+    func searchShopProducts(searchTerm: String, page: Int) {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.shopService.searchShopProducts(searchTerm: searchTerm, page: page, token: token) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.parseShopResults(dataOptional: dataOptional)
                 
             }
             
@@ -356,6 +390,16 @@ extension ShopViewController: UISearchBarDelegate {
         
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText != "" {
+            
+            self.searchShopProducts(searchTerm: searchText, page: 1)
+            
+        }
+        
+    }
+    
 }
 
 extension ShopViewController: ShopMenuDelegate {
@@ -455,3 +499,4 @@ extension ShopViewController: ShopCellDelegate {
     }
     
 }
+

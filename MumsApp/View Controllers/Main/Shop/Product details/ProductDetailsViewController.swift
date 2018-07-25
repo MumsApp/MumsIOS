@@ -32,6 +32,13 @@ class ProductDetailsViewController: UIViewController {
         self.configureData()
         
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        self.itemDescriptionView.itemDescriptionTextView.setContentOffset(.zero, animated: false)
+
+    }
 
     private func configureView() {
         

@@ -37,6 +37,16 @@ class ShopFilterViewController: UIViewController {
     @IBOutlet weak var distanceSlider: RangeSeekSlider!
     
     @IBOutlet weak var setLocationButton: UIButton!
+
+    fileprivate var selectedCategoryId: Int = 0
+
+    private var shopService: ShopService!
+    
+    func configureWith(shopService: ShopService) {
+        
+        self.shopService = shopService
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,10 +143,9 @@ class ShopFilterViewController: UIViewController {
     
     func doneButtonPressed(sender: UIBarButtonItem) {
         
-        self.navigationController?.popViewController(animated: true)
+        self.searchShopProducts()
         
     }
-    
     
     func backButtonPressed(sender: UIBarButtonItem) {
         
@@ -154,6 +163,36 @@ class ShopFilterViewController: UIViewController {
     
         self.showLocationPopupViewController()
     
+    }
+    
+    @IBAction func priceSwitchChanged(_ sender: UISwitch) {
+    
+        if sender.isOn {
+            
+            self.priceSlider.handleColor = .lineGreyColor
+            
+            self.priceSlider.colorBetweenHandles = .lineGreyColor
+            
+            self.priceSlider.setNeedsLayout()
+            
+            self.priceSlider.layoutIfNeeded()
+            
+            self.priceSlider.isUserInteractionEnabled = false
+            
+        } else {
+            
+            self.priceSlider.handleColor = .mainGreen
+            
+            self.priceSlider.colorBetweenHandles = .mainGreen
+            
+            self.priceSlider.setNeedsLayout()
+            
+            self.priceSlider.layoutIfNeeded()
+            
+            self.priceSlider.isUserInteractionEnabled = true
+            
+        }
+        
     }
     
     private func showShopCategoriesViewController() {
@@ -180,6 +219,28 @@ class ShopFilterViewController: UIViewController {
         
     }
     
+    private func searchShopProducts() {
+
+        guard let token = self.appContext.token() else { return }
+        
+        self.shopService.searchShopProducts(page: 1, category: self.selectedCategoryId, priceFrom: self.priceSlider.selectedMinValue, priceTo: self.priceSlider.selectedMaxValue, userLat: "12.4", userLon: "12.5", distanceFrom: self.distanceSlider.selectedMinValue, distanceTo: self.distanceSlider.selectedMaxValue, token: token) { dataOptional, errorOptional in
+
+            if let error = errorOptional {
+            
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                print(dataOptional)
+
+                self.navigationController?.popViewController(animated: true)
+
+            }
+            
+        }
+
+    }
+    
 }
 
 extension ShopFilterViewController: ShopCategoriesViewControllerDelegate {
@@ -192,6 +253,8 @@ extension ShopFilterViewController: ShopCategoriesViewControllerDelegate {
             
             self.selectCategoryImageView.image = nil
 
+            self.selectedCategoryId = category.id!
+            
         }
         
     }
@@ -210,10 +273,12 @@ extension ShopFilterViewController: RangeSeekSliderDelegate {
 
         } else {
             
-            let textMin = minValue > 1 ? " miles" : " mile"
+            let textMin = minValue == 1 ? " mile" : " miles"
             
-            let textMax = maxValue > 1 ? " miles" : " mile"
+            let textMax = maxValue == 1 ? " mile" : " miles"
 
+            print(minValue)
+            
             self.minDistanceLabel.text = String(describing: Int(minValue)) + textMin
             
             self.maxDistanceLabel.text = String(describing: Int(maxValue)) + textMax
