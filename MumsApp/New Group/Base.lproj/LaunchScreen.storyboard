@@ -58,7 +58,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="223" height="206"/>
+        <image name="logo" width="209" height="206"/>
         <image name="logoDescription" width="208" height="46"/>
         <image name="logoText" width="333" height="80"/>
     </resources>

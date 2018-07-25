@@ -1734,6 +1734,7 @@
                         <outlet property="contentView" destination="OBg-EL-YKg" id="NBs-Pr-xqE"/>
                         <outlet property="descriptionView" destination="fRx-xr-BOj" id="pZb-Mc-Wmy"/>
                         <outlet property="heightConstraint" destination="Tqu-97-bNR" id="UFk-r5-g9S"/>
+                        <outlet property="itemLocationView" destination="B0C-wg-2es" id="N2G-S5-RkN"/>
                         <outlet property="photosView" destination="TGU-7R-fxf" id="Akz-eg-siN"/>
                         <outlet property="scrollView" destination="gb1-sj-N4h" id="cHN-eN-cvm"/>
                     </connections>
@@ -4280,7 +4281,7 @@ you want to remove</string>
         <image name="closeIcon" width="18" height="18"/>
         <image name="gradient" width="187" height="109"/>
         <image name="locationGreyIcon" width="11" height="15"/>
-        <image name="logo" width="223" height="206"/>
+        <image name="logo" width="209" height="206"/>
         <image name="logoDescription" width="208" height="46"/>
         <image name="logoText" width="333" height="80"/>
         <image name="maleIcon" width="50" height="50"/>

@@ -13,12 +13,22 @@ class MyProductCell: UICollectionViewCell, Reusable {
     @IBOutlet weak var itemCategoryLabel: UILabel!
     
     @IBOutlet weak var itemPriceLabel: UILabel!
+
+    func configureWith(product: Product) {
+        
+        self.itemNameLabel.text = product.name
+        
+        self.itemCategoryLabel.text = product.categoryName
+        
+        self.itemPriceLabel.text = "£" + product.price!
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.configureView()
-        
+             
     }
     
     private func configureView() {

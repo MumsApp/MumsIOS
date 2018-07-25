@@ -31,7 +31,7 @@ extension Children {
             
         case 3:
             
-            title += "To come " + String(age)
+            title += "Baby on board " + String(age)
             
         default:
             

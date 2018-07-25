@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMaps
 
 class AddProductViewController: UIViewController {
 
@@ -10,16 +11,24 @@ class AddProductViewController: UIViewController {
     
     @IBOutlet weak var photosView: AddProductImagesView!
     
+    @IBOutlet weak var itemLocationView: ItemLocationView!
+    
     @IBOutlet weak var descriptionView: AddProductDescriptionView!
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    
-    let HEIGHT_SMALL: CGFloat = 1050
-    let HEIGHT_BIG: CGFloat = 1280
-    
-    fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
 
     private var shopService: ShopService!
+
+    fileprivate let HEIGHT_SMALL: CGFloat = 1050
+    fileprivate let HEIGHT_BIG: CGFloat = 1280
+    
+    fileprivate let imagePicker: UIImagePickerController = UIImagePickerController()
+    
+    fileprivate var selectedCategoryId: Int?
+
+    fileprivate var selectedLat: String?
+    
+    fileprivate var selectedLon: String?
     
     func configureWith(shopService: ShopService) {
         
@@ -66,6 +75,8 @@ class AddProductViewController: UIViewController {
      
         self.descriptionView.configureWith(delegate: self)
         
+        self.itemLocationView.configureWith(delegate: self)
+    
     }
     
     private func configureNavigationBar() {
@@ -145,7 +156,7 @@ class AddProductViewController: UIViewController {
     
     @IBAction func uploadProductButtonPressed(_ sender: UIButton) {
     
-        self.addProduct()
+        self.validate()
         
     }
     
@@ -159,15 +170,88 @@ class AddProductViewController: UIViewController {
         
         controller.modalTransitionStyle = .crossDissolve
         
+        controller.configureWith(delegate: self)
+        
         self.presentViewController(controller)
         
+    }
+    
+    fileprivate func showMyProductsViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.myProductViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+
+    }
+    
+    private func validate() {
+
+        if self.descriptionView.itemTitleTextField.text == "" {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter the product name.")
+
+            return
+            
+        }
+        
+        if self.descriptionView.selectCategoryButton.titleLabel?.text == "Add category" {
+            
+            self.showOkAlertWith(title: "Info", message: "Please select a category.")
+            
+            return
+            
+        }
+        
+        if self.descriptionView.itemPriceTextField.text == "" {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter the product price.")
+            
+            return
+            
+        }
+        
+        if self.descriptionView.descriptionTextView.text == "Add description" {
+            
+            self.showOkAlertWith(title: "Info", message: "Please enter the product description.")
+            
+            return
+            
+        }
+        
+        if self.photosView.images.count == 0 {
+            
+            self.showOkAlertWith(title: "Info", message: "Please add a product photo.")
+            
+            return
+            
+        }
+        
+        if self.selectedLat == nil || self.selectedLon == nil {
+            
+            self.showOkAlertWith(title: "Info", message: "Please add your location.")
+
+            return
+        
+        }
+        
+        self.addProduct()
+
     }
     
     private func addProduct() {
         
         guard let token = self.appContext.token() else { return }
 
-        self.shopService.addShopProduct(name: self.descriptionView.itemTitleTextField.text!, description: self.descriptionView.descriptionTextView.text!, price: self.descriptionView.itemPriceTextField.text!, category: "1", token: token, lat: "12.242", lon: "12.321", images: self.photosView.images) { errorOptional in
+        self.shopService.addShopProduct(name: self.descriptionView.itemTitleTextField.text!,
+                                        description: self.descriptionView.descriptionTextView.text!,
+                                        price: self.descriptionView.itemPriceTextField.text!,
+                                        category: String(self.selectedCategoryId!),
+                                        token: token,
+                                        lat: self.selectedLat!,
+                                        lon: self.selectedLon!,
+                                        images: self.photosView.images) { errorOptional in
             
             if let error = errorOptional {
                 
@@ -317,6 +401,81 @@ extension AddProductViewController: ShopCategoriesViewControllerDelegate {
 
         }
 
+        if let id = category.id {
+            
+            self.selectedCategoryId = id
+            
+        }
+        
     }
     
+}
+
+extension AddProductViewController: LocationViewDelegate {
+    
+    func showSwitchValueChanged(isVisible: Bool) {}
+    
+    func changeLocationButtonPressed() {
+        
+        self.showLocationPopupViewController()
+        
+    }
+    
+    fileprivate func showLocationPopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.locationPopupViewController(delegate: self, type: .other)
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+        
+        self.presentViewController(controller)
+        
+    }
+    
+}
+
+extension AddProductViewController: LocationPopupDelegate {
+    
+    func locationUpdated(coordinate: CLLocationCoordinate2D, locationName: String) {
+        
+        self.itemLocationView.mapView.clear()
+        
+        self.itemLocationView.mapView.addMarker(lat: coordinate.latitude, lon: coordinate.longitude)
+        
+        let cameraUpdate = GMSCameraUpdate.setTarget(coordinate, zoom: 12)
+        
+        self.itemLocationView.mapView.animate(with: cameraUpdate)
+        
+        self.itemLocationView.userLocationLabel.text = locationName
+        
+        self.selectedLat = String(coordinate.latitude)
+        
+        self.selectedLon = String(coordinate.longitude)
+        
+    }
+    
+    func locationNotSelected() {
+        
+        
+    }
+    
+}
+
+extension AddProductViewController: ProductAddedPopupDelegate {
+    
+    func backToMyProductButtonPressed() {
+        
+        self.showMyProductsViewController()
+        
+    }
+    
+    func backToSearchButtonPressed() {
+
+        self.popToViewController(ShopViewController.self)
+        
+    }
+
 }

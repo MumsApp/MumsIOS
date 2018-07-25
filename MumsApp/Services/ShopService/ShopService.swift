@@ -3,6 +3,8 @@ import UIKit
 
 let ADD_SHOP_PRODUCT_URL = BASE_URL + "shop/product?name={name}&description={description}&price={price}&category={category}&lat={lat}&lon={lon}"
 
+let USER_SHOP_PRODUCT_URL = BASE_URL + "shop/product/my"
+
 let k_price = "price"
 let k_category = "category"
 
@@ -26,7 +28,7 @@ struct ShopService: ResourceService {
 
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
-            let response = responseHandler(type: .data, completion: completion)
+            let response = responseHandler(type: .status, completion: completion)
             
             let task = DataUploadJsonResponseTask(urlRequest: request, name: "file", fileName: "file.jpg", mimeType: "image/jpg", taskCompletion: response)
        
@@ -41,6 +43,24 @@ struct ShopService: ResourceService {
             }
             
             _ = self.networkService.enqueueNetworkMultipleUploadRequest(request: task, multipleData: array)
+            
+        }
+        
+    }
+    
+    // MARK: - Get user shop products
+
+    func getUserShopProducts(token: String, completion: @escaping JSONResponseCompletion) {
+        
+        if var request = URLRequest.GETRequest(urlString: USER_SHOP_PRODUCT_URL) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .data, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
             
         }
         

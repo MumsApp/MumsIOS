@@ -8,7 +8,7 @@ class ItemLocationView: LocationView {
         
         self.showSwitch.isHidden = true
         
-        self.editButton.isHidden = true
+        self.editButton.isHidden = false
         
         self.configureLocationView()
         

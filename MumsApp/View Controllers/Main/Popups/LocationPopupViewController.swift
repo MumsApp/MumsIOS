@@ -110,6 +110,15 @@ class LocationPopupViewController: UIViewController {
             
         } else {
             
+            guard let place = self.place else {
+            
+                return
+            
+            }
+            
+            self.delegate?.locationUpdated(coordinate: self.place!.coordinate,
+                                           locationName: place.formattedAddress ?? "")
+            
             self.dismissViewController()
             
         }

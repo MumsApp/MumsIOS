@@ -49,44 +49,50 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MHz-Jq-mNh">
                             <rect key="frame" x="24" y="24" width="327" height="65"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YR4-mN-cV3" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="7.5" width="114" height="50"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YR4-mN-cV3" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="7.5" width="94" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <state key="normal" title="Add female" image="femaleIcon">
+                                    <state key="normal" image="femaleIcon">
+                                        <string key="title">Add girl
+</string>
                                         <color key="titleColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="addFemaleButtonPressed:" destination="-1" eventType="touchUpInside" id="fKE-dv-tl5"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUi-gd-8Dl">
-                                    <rect key="frame" x="114" y="0.0" width="1" height="65"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUi-gd-8Dl">
+                                    <rect key="frame" x="101" y="0.0" width="1" height="65"/>
                                     <color key="backgroundColor" red="0.90588235294117647" green="0.92156862745098034" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1" id="bda-p5-YXw"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb3-Gl-7gO" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
-                                    <rect key="frame" x="115" y="7.5" width="103" height="50"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb3-Gl-7gO" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
+                                    <rect key="frame" x="108.5" y="7.5" width="97" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <state key="normal" title="Add male" image="maleIcon">
+                                    <state key="normal" image="maleIcon">
+                                        <string key="title">Add boy
+</string>
                                         <color key="titleColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="addMaleButtonPressed:" destination="-1" eventType="touchUpInside" id="rLt-dQ-zc7"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iIW-AU-oTl">
-                                    <rect key="frame" x="218" y="0.0" width="1" height="65"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIW-AU-oTl">
+                                    <rect key="frame" x="212.5" y="0.0" width="1" height="65"/>
                                     <color key="backgroundColor" red="0.90588235289999997" green="0.92156862750000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1" id="LCB-oD-9xf"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd7-nv-g06" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
-                                    <rect key="frame" x="219" y="7.5" width="108" height="50"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd7-nv-g06" customClass="VerticallyTopButton" customModule="MumsApp" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="7.5" width="107" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <state key="normal" title="Add to come" image="comeIcon">
+                                    <state key="normal" image="comeIcon">
+                                        <string key="title">Add baby 
+on board</string>
                                         <color key="titleColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>

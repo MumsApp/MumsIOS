@@ -118,19 +118,19 @@ class AddChildrenPopupViewController: UIViewController {
             
             self.typeImageView.image = #imageLiteral(resourceName: "femaleIcon")
             
-            self.typeLabel.text = "Female"
+            self.typeLabel.text = "Girl"
             
         case .male:
             
             self.typeImageView.image = #imageLiteral(resourceName: "maleIcon")
             
-            self.typeLabel.text = "Male"
+            self.typeLabel.text = "Boy"
 
         case .tocome:
             
             self.typeImageView.image = #imageLiteral(resourceName: "comeIcon")
             
-            self.typeLabel.text = "To come"
+            self.typeLabel.text = "Baby on board"
 
         }
         

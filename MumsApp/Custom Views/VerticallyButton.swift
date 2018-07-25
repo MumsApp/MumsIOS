@@ -58,6 +58,9 @@ class VerticallyTopButton: UIButton {
     }
     
     override func layoutSubviews() {
+        
+        titleLabel?.numberOfLines = 0
+        
         if let image = imageView?.image, let title = titleLabel?.attributedText {
             let imageSize = image.size
             let titleSize = title.size()

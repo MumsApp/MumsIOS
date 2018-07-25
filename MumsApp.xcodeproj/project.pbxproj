@@ -70,6 +70,7 @@
 		4D1DF44D20ADAD5000017BF8 /* ChildrenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DF44C20ADAD5000017BF8 /* ChildrenCell.xib */; };
 		4D1DF44F20ADAD5C00017BF8 /* ChildrenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DF44E20ADAD5C00017BF8 /* ChildrenCell.swift */; };
 		4D1DF45120ADC1B500017BF8 /* AddChildrenPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DF45020ADC1B500017BF8 /* AddChildrenPopupViewController.swift */; };
+		4D2D4FCF21083C93005810F5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D4FCE21083C93005810F5 /* Product.swift */; };
 		4D36E6EF201E2E2E000DC94F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */; };
 		4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E6F0201E31E1000DC94F /* CustomMapView.swift */; };
 		4D36E6F3201E31EE000DC94F /* GoogleMapsStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */; };
@@ -360,6 +361,7 @@
 		4D1DF44C20ADAD5000017BF8 /* ChildrenCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildrenCell.xib; sourceTree = "<group>"; };
 		4D1DF44E20ADAD5C00017BF8 /* ChildrenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenCell.swift; sourceTree = "<group>"; };
 		4D1DF45020ADC1B500017BF8 /* AddChildrenPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildrenPopupViewController.swift; sourceTree = "<group>"; };
+		4D2D4FCE21083C93005810F5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		4D36E6EE201E2E2D000DC94F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		4D36E6F0201E31E1000DC94F /* CustomMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
 		4D36E6F2201E31EE000DC94F /* GoogleMapsStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapsStyle.json; sourceTree = "<group>"; };
@@ -810,6 +812,7 @@
 				4D42E4B520E2C151009E3428 /* Creator.swift */,
 				4DCEA1F6210700230083EBD4 /* ShopCategory.swift */,
 				4DCEA1F8210700980083EBD4 /* ShopSubCategory.swift */,
+				4D2D4FCE21083C93005810F5 /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2124,6 +2127,7 @@
 				4DEE83F2201E1EAD001B0AEB /* LocationView.swift in Sources */,
 				4D05A9671FE1464A00B19E6E /* User.swift in Sources */,
 				4D05A9691FE1468100B19E6E /* Resource.swift in Sources */,
+				4D2D4FCF21083C93005810F5 /* Product.swift in Sources */,
 				4D70F9CA20CFBEC40021F3D3 /* AddToMenuViewController.swift in Sources */,
 				4D1880C320AB1840001478F3 /* ShopAdsCell.swift in Sources */,
 				4D403BD6204AF4CA00956939 /* RemoveContactPopupViewController.swift in Sources */,

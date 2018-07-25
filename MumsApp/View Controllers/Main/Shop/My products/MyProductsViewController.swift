@@ -4,6 +4,20 @@ class MyProductsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var shopService: ShopService!
+    
+    fileprivate var products: Array<Product> = []
+    
+    fileprivate var imageLoader: ImageCacheLoader!
+
+    func configureWith(shopService: ShopService, imageLoader: ImageCacheLoader) {
+        
+        self.shopService = shopService
+        
+        self.imageLoader = imageLoader
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -12,6 +26,8 @@ class MyProductsViewController: UIViewController {
         self.configureNavigationBar()
 
         self.configureLayout()
+        
+        self.getUserShopProducts()
         
     }
     
@@ -68,7 +84,7 @@ class MyProductsViewController: UIViewController {
     
     func backButtonPressed(sender: UIBarButtonItem) {
         
-        self.navigationController?.popViewController(animated: true)
+        self.popToViewController(ShopViewController.self)
         
     }
    
@@ -87,6 +103,42 @@ class MyProductsViewController: UIViewController {
         self.navigationController?.pushViewController(controller, animated: true)
         
     }
+    
+    private func getUserShopProducts() {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.shopService.getUserShopProducts(token: token) { dataOptional, errorOptional in
+    
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                if let dictionary = dataOptional as? Dictionary<String, Any> {
+                    
+                    if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+                        self.products = []
+                        
+                        for d in data {
+                            
+                            self.products.append(Product(dictionary: d))
+                            
+                        }
+                        
+                        self.collectionView.reloadData()
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
 
 }
 
@@ -100,13 +152,31 @@ extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-         return 10
+         return self.products.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableClass(MyProductCell.self, forIndexPath: indexPath, type: .cell)
+        
+        let product = self.products[indexPath.row]
+        
+        cell.configureWith(product: product)
+        
+        if let src = product.photos?.first?.src {
+        
+            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
+                                
+                if let _ = collectionView.cellForItem(at: indexPath) {
+                    
+                    cell.itemImageView.image = image
+                    
+                }
+                
+            }
+            
+        }
         
         return cell
         

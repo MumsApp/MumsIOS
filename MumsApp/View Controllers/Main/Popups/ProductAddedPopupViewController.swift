@@ -1,5 +1,12 @@
 import UIKit
 
+protocol ProductAddedPopupDelegate: class {
+    
+    func backToSearchButtonPressed()
+    func backToMyProductButtonPressed()
+    
+}
+
 class ProductAddedPopupViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
@@ -13,6 +20,14 @@ class ProductAddedPopupViewController: UIViewController {
     @IBOutlet weak var backToSearchButton: UIButton!
     
     @IBOutlet weak var backToMyProductList: UIButton!
+    
+    private weak var delegate: ProductAddedPopupDelegate?
+    
+    func configureWith(delegate: ProductAddedPopupDelegate) {
+        
+        self.delegate = delegate
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +61,10 @@ class ProductAddedPopupViewController: UIViewController {
     
     @IBAction func backToSearchButtonPressed(_ sender: UIButton) {
         
-        // TODO: - remove
+        self.delegate?.backToSearchButtonPressed()
         
         self.dismissViewController()
-        
+
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
@@ -60,6 +75,8 @@ class ProductAddedPopupViewController: UIViewController {
     
     @IBAction func backToMyProductButtonPressed(_ sender: UIButton) {
         
+        self.delegate?.backToMyProductButtonPressed()
+    
         self.dismissViewController()
         
     }
