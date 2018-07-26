@@ -87,6 +87,8 @@ class AddProductViewController: UIViewController {
         
         self.itemLocationView.configureWith(delegate: self)
     
+        self.descriptionView.itemPriceTextField.delegate = self
+        
     }
     
     private func configureNavigationBar() {
@@ -576,4 +578,26 @@ extension AddProductViewController: ProductAddedPopupDelegate {
         
     }
 
+}
+
+extension AddProductViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+       
+        guard textField == self.descriptionView.itemPriceTextField else { return false }
+        
+        let text = (textField.text ?? "") as NSString
+        
+        let newText = text.replacingCharacters(in: range, with: string)
+        
+        if let regex = try? NSRegularExpression(pattern: "^[0-9]*((\\.|,)[0-9]{0,2})?$", options: .caseInsensitive) {
+        
+            return regex.numberOfMatches(in: newText, options: .reportProgress, range: NSRange(location: 0, length: (newText as NSString).length)) > 0
+        
+        }
+        
+        return false
+    
+    }
+    
 }
