@@ -98,6 +98,20 @@ extension AddProductImagesView: UICollectionViewDelegate, UICollectionViewDataSo
             
             cell.itemButton.setImage(thisImage, for: .normal)
             
+            if indexPath.row == 1 {
+                
+                cell.layer.borderColor = UIColor.mainGreen.cgColor
+                
+                cell.layer.borderWidth = 3
+            
+            } else {
+                
+                cell.layer.borderColor = .none
+                
+                cell.layer.borderWidth = 0
+
+            }
+        
             return cell
             
         }

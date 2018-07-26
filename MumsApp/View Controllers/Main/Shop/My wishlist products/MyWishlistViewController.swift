@@ -98,11 +98,11 @@ class MyWishlistViewController: UIViewController {
         
     }
     
-    fileprivate func showRemoveProductPopupViewController() {
+    fileprivate func showRemoveProductPopupViewController(product: Product, productImage: UIImage) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.removeProductPopupViewController()
+        let controller = factory.removeProductPopupViewController(product: product, productImage: productImage, delegate: self)
         
         controller.modalPresentationStyle = .overCurrentContext
         
@@ -112,7 +112,7 @@ class MyWishlistViewController: UIViewController {
         
     }
 
-    private func getUserFavouriteShopProducts() {
+    fileprivate func getUserFavouriteShopProducts() {
         
         guard let token = self.appContext.token() else { return }
         
@@ -201,7 +201,7 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
                 if let _ = collectionView.cellForItem(at: indexPath) {
                     
                     cell.itemImageView.image = image
-                    
+                                        
                 }
                 
             }
@@ -236,17 +236,19 @@ extension MyWishlistViewController: UserNameDelegate {
 
 extension MyWishlistViewController: MyWishlistCellDelegate {
     
-    func wishlistButtonPressed(tag: Int) {
+    func wishlistButtonPressed(product: Product, productImage: UIImage) {
         
-        if tag == 0 {
-            
-            self.showRemoveProductPopupViewController()
-            
-        } else {
-            
-            self.showRemoveProductPopupViewController()
+        self.showRemoveProductPopupViewController(product: product, productImage: productImage)
 
-        }
+    }
+    
+}
+
+extension MyWishlistViewController: RemoveProductPopupViewControllerDelegate {
+    
+    func productRemoved() {
+        
+        self.getUserFavouriteShopProducts()
         
     }
     

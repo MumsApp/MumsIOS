@@ -72,6 +72,8 @@ class ProductDetailsViewController: UIViewController {
         
         self.itemDescriptionView.userNameButton.setTitle(product.creatorName, for: .normal)
         
+        self.itemDescriptionView.userId = String(product.creatorId!)
+        
         self.itemLocationView.editButton.isHidden = true
         
         if let lat = product.lat, let lon = product.lon {

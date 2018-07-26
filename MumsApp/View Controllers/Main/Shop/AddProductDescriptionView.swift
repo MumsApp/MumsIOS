@@ -6,8 +6,6 @@ protocol AddProductDescriptionViewDelegate: class {
     
 }
 
-//£
-
 class AddProductDescriptionView: UIView {
     
     @IBOutlet weak var contentView: UIView!

@@ -54,8 +54,13 @@ class ShopCell: UITableViewCell, Reusable {
      
         self.productId = String(product.id!)
         
-//        self.tag = product.isFavourite ? 1 : 0
-//        self.userId = product.creatorId
+        self.watchButton.tag = product.isUserFavourite! ? 1 : 0
+        
+        let image = self.watchButton.tag == 1 ? #imageLiteral(resourceName: "watchIcon") : #imageLiteral(resourceName: "unwatchIcon")
+        
+        self.watchButton.setImage(image, for: .normal)
+
+        self.userId = String(product.creatorId!)
         
     }
     

@@ -30,7 +30,7 @@ class ItemDescriptionView: UIView {
     
     private var tapGesture: UITapGestureRecognizer!
     
-    private var userId: String!
+    var userId: String!
     
     func configureWith(delegate: UserNameDelegate?) {
         

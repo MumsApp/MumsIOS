@@ -2,7 +2,7 @@ import UIKit
 
 protocol MyWishlistCellDelegate: class {
     
-    func wishlistButtonPressed(tag: Int)
+    func wishlistButtonPressed(product: Product, productImage: UIImage)
     
 }
 
@@ -31,12 +31,14 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
     private weak var delegateWishlist: MyWishlistCellDelegate?
     
     var tapGesture: UITapGestureRecognizer!
-    
-    var userId: String!
+        
+    private var product: Product!
     
     func configureWith(delegate: UserNameDelegate?, delegateWishlist: MyWishlistCellDelegate?, product: Product) {
         
         self.delegate = delegate
+        
+        self.product = product
         
         self.delegateWishlist = delegateWishlist
         
@@ -49,6 +51,7 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
         self.itemDistanceLabel.text = "TO DO"
         
         self.userNameButton.setTitle(product.creatorName, for: .normal)
+        
         
     }
     
@@ -107,19 +110,19 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
         
         sender.tag = sender.tag == 0 ? 1 : 0
         
-        self.delegateWishlist?.wishlistButtonPressed(tag: sender.tag)
+        self.delegateWishlist?.wishlistButtonPressed(product: self.product, productImage: self.itemImageView.image!)
         
     }
     
     func imageTapped(sender: UITapGestureRecognizer) {
                 
-        self.delegate?.userNameButtonPressed(userId: self.userId)
+        self.delegate?.userNameButtonPressed(userId: String(product.creatorId!))
 
     }
     
     @IBAction func userNameButtonPressed(_ sender: UIButton) {
     
-        self.delegate?.userNameButtonPressed(userId: self.userId)
+        self.delegate?.userNameButtonPressed(userId: String(product.creatorId!))
 
     }
  

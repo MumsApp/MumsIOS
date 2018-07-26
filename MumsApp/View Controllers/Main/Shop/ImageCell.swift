@@ -3,7 +3,6 @@ import UIKit
 protocol ImageCellDelegate: class {
     
     func deleteImageButtomPressed(tag: Int)
-    func deselectOtherCells()
     func selectedImage(tag: Int)
     
 }
@@ -22,6 +21,7 @@ class ImageCell: UICollectionViewCell, Reusable {
         
         self.tag = tag
         
+        print(tag)
     }
     
     override func awakeFromNib() {

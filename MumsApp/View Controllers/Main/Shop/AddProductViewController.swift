@@ -378,36 +378,22 @@ extension AddProductViewController: AddImageCellDelegate, ImageCellDelegate {
         
     }
     
-    func deselectOtherCells() {
-        
-//        self.photosView.collectionView.indexPathsForSelectedItems?.forEach({ indexPath in
-//            
-//            self.photosView.collectionView.deselectItem(at: indexPath, animated: true)
-//            
-//            let cell = self.photosView.collectionView.cellForItem(at: indexPath) as? ImageCell
-//            
-//            cell?.layer.borderWidth = 0
-//            
-//        })
-//        
-//        let indexPath = IndexPath(row: 1, section: 0)
-//        
-//        self.photosView.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .bottom)
-//        
-//        let cell = self.photosView.collectionView.cellForItem(at: indexPath) as? ImageCell
-//
-//        cell?.layer.borderColor = UIColor.mainGreen.cgColor
-//        
-//        cell?.layer.borderWidth = 3
-        
-    }
-    
     func selectedImage(tag: Int) {
         
         let image = self.photosView.images[tag]
         
         self.addPhotoButton.setImage(image, for: .normal)
         
+        let i = self.photosView.images.remove(at: tag)
+        
+        self.photosView.images.insert(i, at: 0)
+        
+        let indexPathFrom = IndexPath(row: tag + 1, section: 0)
+        
+        let indexPathTo = IndexPath(row: 1, section: 0)
+        
+        self.photosView.collectionView.moveItem(at: indexPathFrom, to: indexPathTo)
+                
     }
     
 }

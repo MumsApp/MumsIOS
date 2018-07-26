@@ -246,9 +246,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
 
-    func removeProductPopupViewController() -> RemoveProductPopupViewController {
+    func removeProductPopupViewController(product: Product, productImage: UIImage, delegate: RemoveProductPopupViewControllerDelegate?) -> RemoveProductPopupViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.RemoveProductPopupViewController.rawValue, storyboard: storyboard) as! RemoveProductPopupViewController
+        
+        controller.configureWith(product: product, productImage: productImage, shopService: self.serviceFactory.shopService(), delegate: delegate)
         
         return controller
         
