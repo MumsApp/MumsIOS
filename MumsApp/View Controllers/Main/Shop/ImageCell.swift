@@ -21,7 +21,6 @@ class ImageCell: UICollectionViewCell, Reusable {
         
         self.tag = tag
         
-        print(tag)
     }
     
     override func awakeFromNib() {

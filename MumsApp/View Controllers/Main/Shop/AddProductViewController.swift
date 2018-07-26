@@ -32,11 +32,15 @@ class AddProductViewController: UIViewController {
     
     private var productOptional: Product?
     
-    func configureWith(shopService: ShopService, productOptional: Product?) {
+    private var imageLoader: ImageCacheLoader!
+    
+    func configureWith(shopService: ShopService, imageLoader: ImageCacheLoader, productOptional: Product?) {
         
         self.shopService = shopService
         
         self.productOptional = productOptional
+        
+        self.imageLoader = imageLoader
         
     }
     
@@ -111,37 +115,73 @@ class AddProductViewController: UIViewController {
     
     private func configureData() {
         
-        if let product = self.productOptional {
+        guard let product = self.productOptional else { return }
             
-            self.descriptionView.itemTitleTextField.text = product.name
+        if let photos = product.photos {
             
-            self.descriptionView.selectCategoryButton.setTitle(product.categoryName, for: .normal)
-
-            self.descriptionView.selectCategoryButton.setTitleColor(.black, for: .normal)
-
-            self.selectedCategoryId = product.category
+            self.addPhotoButton.setTitle(nil, for: .normal)
             
-            self.descriptionView.itemPriceTextField.text = "£" + product.price!
-            
-            if let lat = product.lat, let lon = product.lon {
-                
-                self.itemLocationView.configureLocationViewWith(lat: Double(lat)!, lon: Double(lon)!)
-                
-                self.itemLocationView.userLocationLabel.text = product.pointName
-                
-                self.selectedLat = lat
-                
-                self.selectedLon = lon
+            self.addPhotoButton.setImage(nil, for: .normal)
+                        
+            for image in photos {
+                                
+                if let src = image.src {
+                    
+                    self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { image in
+                        
+                        if image == #imageLiteral(resourceName: "placeholderImage") { return }
+                        
+                        self.photosView.images.insert(image, at: 0)
+                        
+                        self.addPhotoButton.setImage(image, for: .normal)
+                        
+                        self.photosView.collectionView.reloadData()
+                        
+                    }
+                    
+                }
                 
             }
             
-            self.descriptionView.descriptionTextView.text = product.description
+        }
+        
+        self.photosView.isHidden = false
+        
+        self.heightConstraint.constant = HEIGHT_BIG
+        
+        
+        
+        
+        
+        
+        
+        self.descriptionView.itemTitleTextField.text = product.name
+        
+        self.descriptionView.selectCategoryButton.setTitle(product.categoryName, for: .normal)
+        
+        self.descriptionView.selectCategoryButton.setTitleColor(.black, for: .normal)
+        
+        self.selectedCategoryId = product.category
+        
+        self.descriptionView.itemPriceTextField.text = "£" + product.price!
+        
+        if let lat = product.lat, let lon = product.lon {
             
-            if let lat = product.lat, let lon = product.lon {
-                
-                self.itemLocationView.configureLocationViewWith(lat: Double(lat)!, lon: Double(lon)!)
-                
-            }
+            self.itemLocationView.configureLocationViewWith(lat: Double(lat)!, lon: Double(lon)!)
+            
+            self.itemLocationView.userLocationLabel.text = product.pointName
+            
+            self.selectedLat = lat
+            
+            self.selectedLon = lon
+            
+        }
+        
+        self.descriptionView.descriptionTextView.text = product.description
+        
+        if let lat = product.lat, let lon = product.lon {
+            
+            self.itemLocationView.configureLocationViewWith(lat: Double(lat)!, lon: Double(lon)!)
             
         }
         
@@ -194,6 +234,14 @@ class AddProductViewController: UIViewController {
     }
     
     @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
+        
+        if self.photosView.images.count == 5 {
+            
+            self.showOkAlertWith(title: "Info", message: "You can add a maximum of 5 photos.")
+            
+            return
+            
+        }
         
         self.showPhotoAlert(imagePicker: self.imagePicker)
         
@@ -350,6 +398,14 @@ extension AddProductViewController: UIImagePickerControllerDelegate, UINavigatio
 extension AddProductViewController: AddImageCellDelegate, ImageCellDelegate {
     
     func addPhotoButtonPressed() {
+        
+        if self.photosView.images.count == 5 {
+            
+            self.showOkAlertWith(title: "Info", message: "You can add a maximum of 5 photos.")
+            
+            return
+            
+        }
         
         self.showPhotoAlert(imagePicker: self.imagePicker)
         

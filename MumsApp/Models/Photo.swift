@@ -7,7 +7,7 @@ struct Photo: Resource {
     
     static let typeName = "Photo"
     
-    var id: String?
+    var id: Int?
     
     var thumbnail: Bool?
     
@@ -15,7 +15,7 @@ struct Photo: Resource {
 
     init(dictionary: StorableDictionary) {
         
-        self.id = dictionary[k_id] as? String
+        self.id = dictionary[k_id] as? Int
 
         self.thumbnail = dictionary[k_thumbnail] as? Bool
 

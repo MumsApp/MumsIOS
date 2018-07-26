@@ -42,11 +42,15 @@ class UserViewController: UIViewController {
     
     fileprivate var childrenList: Array<Children> = []
     
-    func configureWith(userId: String, userDetailsService: UserDetailsService) {
+    private var imageLoader: ImageCacheLoader!
+    
+    func configureWith(userId: String, userDetailsService: UserDetailsService, imageLoader: ImageCacheLoader) {
         
         self.userId = userId
         
         self.userDetailsService = userDetailsService
+        
+        self.imageLoader = imageLoader
         
     }
     
@@ -207,7 +211,11 @@ class UserViewController: UIViewController {
             
             let url = BASE_PUBLIC_IMAGE_URL + photoURL
             
-            self.userImageView.downloadedFrom(link: url)
+            self.imageLoader.obtainImageWithPath(imagePath: url) { image in
+                
+                self.userImageView.image = image
+                
+            }
             
         }
         

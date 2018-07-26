@@ -47,7 +47,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService(),
                                  childService: self.serviceFactory.childService(),
-                                 userImageService: self.serviceFactory.userImageService())
+                                 userImageService: self.serviceFactory.userImageService(),
+                                 imageLoader: self.serviceFactory.imageCacheLoader())
         
         return controller
         
@@ -156,7 +157,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddProductViewController.rawValue, storyboard: storyboard) as! AddProductViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService(), productOptional: productOptional)
+        controller.configureWith(shopService: self.serviceFactory.shopService(), imageLoader: self.serviceFactory.imageCacheLoader(), productOptional: productOptional)
         
         return controller
         
@@ -224,7 +225,9 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.UserViewController.rawValue, storyboard: storyboard) as! UserViewController
         
-        controller.configureWith(userId: userId, userDetailsService: self.serviceFactory.userDetailsService())
+        controller.configureWith(userId: userId,
+                                 userDetailsService: self.serviceFactory.userDetailsService(),
+                                 imageLoader: self.serviceFactory.imageCacheLoader())
         
         return controller
         

@@ -46,7 +46,7 @@ struct Product: Resource {
     init(dictionary: StorableDictionary) {
         
         self.id = dictionary[k_id] as? Int
-        
+                
         self.name = dictionary[k_name] as? String
         
         self.description = dictionary[k_description] as? String
