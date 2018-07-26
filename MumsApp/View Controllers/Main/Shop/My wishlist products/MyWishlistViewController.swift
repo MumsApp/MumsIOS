@@ -184,11 +184,7 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
             
             self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
                 
-                if let _ = collectionView.cellForItem(at: indexPath) {
-                    
-                    cell.userImageView.image = image
-                    
-                }
+                cell.userImageView.image = image
                 
             }
             
@@ -197,13 +193,9 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
         if let src = product.photos?.first?.src {
             
             self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
-                
-                if let _ = collectionView.cellForItem(at: indexPath) {
-                    
-                    cell.itemImageView.image = image
-                                        
-                }
-                
+
+                cell.itemImageView.image = image
+
             }
             
         }

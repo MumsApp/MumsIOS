@@ -52,7 +52,6 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
         
         self.userNameButton.setTitle(product.creatorName, for: .normal)
         
-        
     }
     
     override func awakeFromNib() {

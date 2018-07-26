@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 let k_categoryName = "categoryName"
 let k_creatorName = "creatorName"
@@ -41,7 +42,7 @@ struct Product: Resource {
     var isUserFavourite: Bool?
     
     var photos: Array<Photo>?
-    
+        
     init(dictionary: StorableDictionary) {
         
         self.id = dictionary[k_id] as? Int

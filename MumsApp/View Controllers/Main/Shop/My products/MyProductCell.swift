@@ -13,9 +13,9 @@ class MyProductCell: UICollectionViewCell, Reusable {
     @IBOutlet weak var itemCategoryLabel: UILabel!
     
     @IBOutlet weak var itemPriceLabel: UILabel!
-
+    
     func configureWith(product: Product) {
-        
+                
         self.itemNameLabel.text = product.name
         
         self.itemCategoryLabel.text = product.categoryName

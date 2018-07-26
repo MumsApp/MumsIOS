@@ -21,6 +21,8 @@ class ShopViewController: UIViewController {
     
     fileprivate var currentPage: Int = 1
     
+    fileprivate var isLoadingList: Bool = false
+
     fileprivate var products: Array<Product> = []
 
     fileprivate var imageLoader: ImageCacheLoader!
@@ -44,7 +46,7 @@ class ShopViewController: UIViewController {
         
         self.registerCells()
         
-        self.getShopProducts(page: 1)
+        self.getShopProducts(page: 1, loadMore: false)
         
     }
     
@@ -140,7 +142,7 @@ class ShopViewController: UIViewController {
         
     }
     
-    private func getShopProducts(page: Int) {
+    fileprivate func getShopProducts(page: Int, loadMore: Bool) {
         
         guard let token = self.appContext.token() else { return }
 
@@ -152,7 +154,7 @@ class ShopViewController: UIViewController {
                 
             } else {
                 
-                self.parseShopResults(dataOptional: dataOptional)
+                self.parseShopResults(dataOptional: dataOptional, loadMore: loadMore)
 
             }
             
@@ -160,7 +162,7 @@ class ShopViewController: UIViewController {
         
     }
     
-    private func parseShopResults(dataOptional: Any?) {
+    private func parseShopResults(dataOptional: Any?, loadMore: Bool) {
         
         if let dictionary = dataOptional as? Dictionary<String, Any> {
             
@@ -174,7 +176,11 @@ class ShopViewController: UIViewController {
                 
                 if let productsArray = data[k_products] as? Array<Dictionary<String, Any>> {
                     
-                    self.products = []
+                    if !loadMore {
+                        
+                        self.products = []
+
+                    }
                     
                     for product in productsArray {
                         
@@ -182,6 +188,10 @@ class ShopViewController: UIViewController {
                         
                     }
                     
+                    print(productsArray.count)
+
+                    self.isLoadingList = false
+
                     self.tableView.reloadData()
                     
                 }
@@ -244,7 +254,7 @@ class ShopViewController: UIViewController {
                 
             } else {
                 
-                self.parseShopResults(dataOptional: dataOptional)
+                self.parseShopResults(dataOptional: dataOptional, loadMore: false)
                 
             }
             
@@ -302,63 +312,65 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else {
            
-            if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(ShopCell.self, indexPath: indexPath)
+            
+            let product = self.products[indexPath.row]
+            
+            cell.configureWith(delegate: self, product: product, cellDelegate: self)
+            
+            if let src = product.photos?.first?.src {
                 
-                let cell = tableView.dequeueReusableCell(ShopAdsCell.self, indexPath: indexPath)
-                
-                cell.itemNameLabel.text = "Item one"
-                
-                cell.itemCategoryLabel.text = "Baby clothing"
-                
-                cell.itemPriceLabel.text = "$60"
-                
-                cell.itemDistanceLabel.text = "3 Miles"
-                
-                cell.userNameButton.setTitle("John S.", for: .normal)
-                
-                cell.configureWith(delegate: self)
-                
-                return cell
-                
-            } else {
-             
-                let cell = tableView.dequeueReusableCell(ShopCell.self, indexPath: indexPath)
-                
-                let product = self.products[indexPath.row]
-                
-                cell.configureWith(delegate: self, product: product, cellDelegate: self)
-                
-                if let src = product.photos?.first?.src {
+                self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
                     
-                    self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
+                    if let _ = tableView.cellForRow(at: indexPath) {
                         
-                        if let _ = tableView.cellForRow(at: indexPath) {
-                            
-                            cell.itemImageView.image = image
-                            
-                        }
+                        cell.itemImageView.image = image
                         
                     }
                     
                 }
-                
-                if let src = product.creatorPhoto {
-
-                    self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
-                        
-                        if let _ = tableView.cellForRow(at: indexPath) {
-                            
-                            cell.userImageView.image = image
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-                return cell
                 
             }
+            
+            if let src = product.creatorPhoto {
+                
+                self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
+                    
+                    if let _ = tableView.cellForRow(at: indexPath) {
+                        
+                        cell.userImageView.image = image
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            return cell
+            
+            
+//            if indexPath.row == 2 {
+//
+//                let cell = tableView.dequeueReusableCell(ShopAdsCell.self, indexPath: indexPath)
+//
+//                cell.itemNameLabel.text = "Item one"
+//
+//                cell.itemCategoryLabel.text = "Baby clothing"
+//
+//                cell.itemPriceLabel.text = "$60"
+//
+//                cell.itemDistanceLabel.text = "3 Miles"
+//
+//                cell.userNameButton.setTitle("John S.", for: .normal)
+//
+//                cell.configureWith(delegate: self)
+//
+//                return cell
+//
+//            } else {
+//
+//
+//            }
             
         }
         
@@ -378,6 +390,28 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
 
         }
         
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height) && !self.isLoadingList){
+        
+            if self.currentPage >= self.pages {
+                
+                return
+                
+            }
+            
+            self.currentPage += 1
+            
+            self.isLoadingList = true
+            
+            print(currentPage)
+            
+            self.getShopProducts(page: 2, loadMore: true)
+    
+        }
+    
     }
     
 }
