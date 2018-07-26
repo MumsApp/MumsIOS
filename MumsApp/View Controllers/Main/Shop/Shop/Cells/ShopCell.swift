@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 protocol ShopCellDelegate: class {
     
@@ -10,7 +11,7 @@ class ShopCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var containerView: UIView!
 
-    @IBOutlet weak var itemImageView: UIImageView!
+    @IBOutlet weak var itemImageView: LoadableImageView!
     
     @IBOutlet weak var watchButton: UIButton!
     
@@ -24,7 +25,7 @@ class ShopCell: UITableViewCell, Reusable {
     
     @IBOutlet weak var userNameButton: UIButton!
     
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: LoadableImageView!
     
     private weak var delegate: UserNameDelegate?
     
@@ -61,6 +62,10 @@ class ShopCell: UITableViewCell, Reusable {
         self.watchButton.setImage(image, for: .normal)
 
         self.userId = String(product.creatorId!)
+
+        self.userImageView.loadImage(urlStringOptional:  product.creatorPhoto)
+        
+        self.itemImageView.loadImage(urlStringOptional: product.photos?.first?.src)
         
     }
     

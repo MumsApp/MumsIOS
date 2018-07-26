@@ -41,17 +41,13 @@ class ProfileViewController: UIViewController {
     
     fileprivate var userDetails: UserDetails?
     
-    private var imageLoader: ImageCacheLoader!
-    
-    func configureWith(userDetailsService: UserDetailsService, childService: ChildService, userImageService: UserImageService, imageLoader: ImageCacheLoader) {
+    func configureWith(userDetailsService: UserDetailsService, childService: ChildService, userImageService: UserImageService) {
         
         self.userDetailsService = userDetailsService
         
         self.childService = childService
         
         self.userImageService = userImageService
-        
-        self.imageLoader = imageLoader
         
     }
     
@@ -211,17 +207,7 @@ class ProfileViewController: UIViewController {
             
         }
         
-        if let photoURL = userDetails.photo?.src {
-            
-            let url = BASE_PUBLIC_IMAGE_URL + photoURL
-            
-            self.imageLoader.obtainImageWithPath(imagePath: url) { image in
-                
-                self.profileView.userImageView.image = image
-
-            }
-            
-        }
+        self.profileView.userImageView.loadImage(urlStringOptional: userDetails.photo?.src)
         
         self.updateChildrenView()
 

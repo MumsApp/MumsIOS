@@ -18,7 +18,7 @@ class UserViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
 
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: LoadableImageView!
     
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -42,16 +42,12 @@ class UserViewController: UIViewController {
     
     fileprivate var childrenList: Array<Children> = []
     
-    private var imageLoader: ImageCacheLoader!
-    
-    func configureWith(userId: String, userDetailsService: UserDetailsService, imageLoader: ImageCacheLoader) {
+    func configureWith(userId: String, userDetailsService: UserDetailsService) {
         
         self.userId = userId
         
         self.userDetailsService = userDetailsService
-        
-        self.imageLoader = imageLoader
-        
+                
     }
     
     override func viewDidLoad() {
@@ -210,14 +206,8 @@ class UserViewController: UIViewController {
         }
         
         if let photoURL = userDetails.photo?.src {
-            
-            let url = BASE_PUBLIC_IMAGE_URL + photoURL
-            
-            self.imageLoader.obtainImageWithPath(imagePath: url) { image in
-                
-                self.userImageView.image = image
-                
-            }
+                        
+            self.userImageView.loadImage(urlStringOptional: photoURL)
             
         }
         

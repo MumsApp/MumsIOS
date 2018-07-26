@@ -47,8 +47,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService(),
                                  childService: self.serviceFactory.childService(),
-                                 userImageService: self.serviceFactory.userImageService(),
-                                 imageLoader: self.serviceFactory.imageCacheLoader())
+                                 userImageService: self.serviceFactory.userImageService())
         
         return controller
         
@@ -68,7 +67,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyViewController.rawValue, storyboard: storyboard) as! LobbyViewController
         
-        controller.configureWith(lobbyService: self.serviceFactory.lobbyService(), imageLoader: self.serviceFactory.imageCacheLoader())
+        controller.configureWith(lobbyService: self.serviceFactory.lobbyService())
         
         return controller
         
@@ -117,7 +116,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopViewController.rawValue, storyboard: storyboard) as! ShopViewController
         
-        controller.configureWith(type: type, shopService: self.serviceFactory.shopService(), imageLoader: self.serviceFactory.imageCacheLoader())
+        controller.configureWith(type: type, shopService: self.serviceFactory.shopService())
         
         return controller
         
@@ -127,7 +126,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProductDetailsViewController.rawValue, storyboard: storyboard) as! ProductDetailsViewController
         
-        controller.configureWith(product: product, imageLoader: self.serviceFactory.imageCacheLoader())
+        controller.configureWith(product: product)
         
         return controller
         
@@ -147,7 +146,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MyProductsViewController.rawValue, storyboard: storyboard) as! MyProductsViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService(), imageLoader: self.serviceFactory.imageCacheLoader())
+        controller.configureWith(shopService: self.serviceFactory.shopService())
         
         return controller
         
@@ -187,7 +186,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyDetailsViewController.rawValue, storyboard: storyboard) as! LobbyDetailsViewController
         
-        controller.configureWith(roomId: roomId, title: title, backButton: backButton, lobbyTopicService: self.serviceFactory.lobbyTopicService(), imageLoader: self.serviceFactory.imageCacheLoader())
+        controller.configureWith(roomId: roomId, title: title, backButton: backButton, lobbyTopicService: self.serviceFactory.lobbyTopicService())
         
         return controller
         
@@ -197,7 +196,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MyWishlistViewController.rawValue, storyboard: storyboard) as! MyWishlistViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService(), imageLoader: self.serviceFactory.imageCacheLoader())
+        controller.configureWith(shopService: self.serviceFactory.shopService())
         
         return controller
         
@@ -226,8 +225,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.UserViewController.rawValue, storyboard: storyboard) as! UserViewController
         
         controller.configureWith(userId: userId,
-                                 userDetailsService: self.serviceFactory.userDetailsService(),
-                                 imageLoader: self.serviceFactory.imageCacheLoader())
+                                 userDetailsService: self.serviceFactory.userDetailsService())
         
         return controller
         
@@ -355,7 +353,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyConversationViewController.rawValue, storyboard: storyboard) as! LobbyConversationViewController
         
-        controller.configureWith(shouldReply: shouldReply, roomId: roomId, topicId: topicId, title: title, lobbyPostService: self.serviceFactory.lobbyPostService(), imageLoader: self.serviceFactory.imageCacheLoader())
+        controller.configureWith(shouldReply: shouldReply, roomId: roomId, topicId: topicId, title: title, lobbyPostService: self.serviceFactory.lobbyPostService())
         
         return controller
         

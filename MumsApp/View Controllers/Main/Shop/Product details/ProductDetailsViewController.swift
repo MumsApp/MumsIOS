@@ -12,14 +12,10 @@ class ProductDetailsViewController: UIViewController {
     
     fileprivate var product: Product!
     
-    fileprivate var imageLoader: ImageCacheLoader!
-    
-    func configureWith(product: Product, imageLoader: ImageCacheLoader) {
+    func configureWith(product: Product) {
         
         self.product = product
-        
-        self.imageLoader = imageLoader
-        
+                
     }
     
     override func viewDidLoad() {
@@ -86,12 +82,8 @@ class ProductDetailsViewController: UIViewController {
         
         if let src = self.product.creatorPhoto {
             
-            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { image in
-                
-               self.itemDescriptionView.userImageView.image = image
-                
-            }
-            
+            self.itemDescriptionView.userImageView.loadImage(urlStringOptional: src)
+
         }
         
     }
@@ -138,15 +130,7 @@ extension ProductDetailsViewController: UICollectionViewDataSource, UICollection
         
         let cell = collectionView.dequeueReusableClass(PictureCell.self, forIndexPath: indexPath, type: .cell)
         
-        if let src = self.product.photos?[indexPath.row].src {
-            
-            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { image in
-                
-                cell.imageView.image = image
-                
-            }
-            
-        }
+        cell.configureWith(url: self.product.photos?[indexPath.row].src)
         
         return cell
     }

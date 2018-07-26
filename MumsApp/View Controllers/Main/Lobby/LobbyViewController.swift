@@ -21,13 +21,9 @@ class LobbyViewController: UIViewController {
     
     private var lobbyService: LobbyService!
     
-    fileprivate var imageLoader: ImageCacheLoader!
-    
-    func configureWith(lobbyService: LobbyService, imageLoader: ImageCacheLoader) {
+    func configureWith(lobbyService: LobbyService) {
         
         self.lobbyService = lobbyService
-        
-        self.imageLoader = imageLoader
         
     }
     
@@ -296,16 +292,6 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
             cell.configureWith(lobby: thisObject, lobbyDelegate: self)
             
             cell.delegate = self
-            
-            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + thisObject.img!) { (image) in
-                
-                if let _ = tableView.cellForRow(at: indexPath) {
-                
-                    cell.lobbyImageView.image = image
-            
-                }
-            
-            }
 
             return cell
             

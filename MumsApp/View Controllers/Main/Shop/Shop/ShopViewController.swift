@@ -24,17 +24,13 @@ class ShopViewController: UIViewController {
     fileprivate var isLoadingList: Bool = false
 
     fileprivate var products: Array<Product> = []
-
-    fileprivate var imageLoader: ImageCacheLoader!
     
-    func configureWith(type: ShopViewType, shopService: ShopService, imageLoader: ImageCacheLoader) {
+    func configureWith(type: ShopViewType, shopService: ShopService) {
         
         self.type = type
         
         self.shopService = shopService
-        
-        self.imageLoader = imageLoader
-        
+                
     }
     
     override func viewDidLoad() {
@@ -317,34 +313,6 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             let product = self.products[indexPath.row]
             
             cell.configureWith(delegate: self, product: product, cellDelegate: self)
-            
-            if let src = product.photos?.first?.src {
-                
-                self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
-                    
-                    cell.itemImageView.image = image
-                    
-                }
-                
-            } else {
-                
-                cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
-                
-            }
-            
-            if let src = product.creatorPhoto {
-
-                self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
-
-                    cell.userImageView.image = image
-
-                }
-
-            } else {
-
-                cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
-
-            }
             
             return cell
             

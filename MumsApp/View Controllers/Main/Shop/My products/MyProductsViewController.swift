@@ -8,13 +8,9 @@ class MyProductsViewController: UIViewController {
     
     fileprivate var products: Array<Product> = []
     
-    fileprivate var imageLoader: ImageCacheLoader!
-
-    func configureWith(shopService: ShopService, imageLoader: ImageCacheLoader) {
+    func configureWith(shopService: ShopService) {
         
         self.shopService = shopService
-        
-        self.imageLoader = imageLoader
         
     }
     
@@ -163,16 +159,6 @@ extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDa
         let product = self.products[indexPath.row]
         
         cell.configureWith(product: product)
-        
-        if let src = product.photos?.first?.src {
-            
-            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
-                
-                cell.itemImageView.image = image
-                
-            }
-            
-        }
         
         return cell
         

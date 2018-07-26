@@ -22,7 +22,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFV-Ye-z3g">
                             <rect key="frame" x="0.0" y="0.0" width="138" height="258"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="B4B-ep-FYC">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="B4B-ep-FYC" customClass="LoadableImageView" customModule="MumsApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="138" height="160"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="160" id="I2k-1w-6wH"/>

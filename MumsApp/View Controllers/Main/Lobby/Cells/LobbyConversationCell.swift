@@ -10,7 +10,7 @@ class LobbyConversationCell: UITableViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
     
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: LoadableImageView!
     
     @IBOutlet weak var userNameButton: UIButton!
     
@@ -38,6 +38,8 @@ class LobbyConversationCell: UITableViewCell, Reusable {
 
         self.post = lobbyPost
     
+        self.userImageView.loadImage(urlStringOptional: lobbyPost.author?.img)
+        
     }
     
     override func awakeFromNib() {

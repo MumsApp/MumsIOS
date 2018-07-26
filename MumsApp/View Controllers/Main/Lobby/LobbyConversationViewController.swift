@@ -12,15 +12,13 @@ class LobbyConversationViewController: UIViewController {
 
     private var topicId: String!
 
-    fileprivate var imageLoader: ImageCacheLoader!
-
     private var shouldReply = false
     
     fileprivate var pages: Int = 1
     
     fileprivate var currentPage: Int = 1
     
-    func configureWith(shouldReply: Bool, roomId: String, topicId: String, title: String, lobbyPostService: LobbyPostService, imageLoader: ImageCacheLoader) {
+    func configureWith(shouldReply: Bool, roomId: String, topicId: String, title: String, lobbyPostService: LobbyPostService) {
         
         self.title = title
         
@@ -29,9 +27,7 @@ class LobbyConversationViewController: UIViewController {
         self.topicId = topicId
 
         self.lobbyPostService = lobbyPostService
-        
-        self.imageLoader = imageLoader
-        
+                
         self.shouldReply = shouldReply
         
     }
@@ -241,21 +237,7 @@ extension LobbyConversationViewController: UITableViewDelegate, UITableViewDataS
             cell.configureWith(delegate: self, lobbyPost: thisObject)
             
             cell.containerView.backgroundColor = indexPath.row % 2 == 0 ? .white : .chatGreyColor
-            
-            if let img = thisObject.author?.img {
-                
-                self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + img) { (image) in
-                    
-                    cell.userImageView.image = image
-                    
-                }
-                
-            } else {
-                
-                cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
-                
-            }
-            
+        
             return cell
             
         } else {

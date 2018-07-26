@@ -8,13 +8,9 @@ class MyWishlistViewController: UIViewController {
     
     fileprivate var products: Array<Product> = []
     
-    fileprivate var imageLoader: ImageCacheLoader!
-
-    func configureWith(shopService: ShopService, imageLoader: ImageCacheLoader) {
+    func configureWith(shopService: ShopService) {
         
         self.shopService = shopService
-        
-        self.imageLoader = imageLoader
         
     }
     
@@ -179,30 +175,6 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
         let product = self.products[indexPath.row]
 
         cell.configureWith(delegate: self, delegateWishlist: self, product: product)
-    
-        if let src = product.creatorPhoto {
-            
-            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
-                
-                cell.userImageView.image = image
-                
-            }
-            
-        } else {
-            
-            cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
-            
-        }
-        
-        if let src = product.photos?.first?.src {
-            
-            self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
-
-                cell.itemImageView.image = image
-
-            }
-            
-        }
         
         return cell
         

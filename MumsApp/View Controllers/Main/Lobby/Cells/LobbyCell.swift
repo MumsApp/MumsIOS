@@ -11,7 +11,7 @@ class LobbyCell: SwipeTableViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
 
-    @IBOutlet weak var lobbyImageView: UIImageView!
+    @IBOutlet weak var lobbyImageView: LoadableImageView!
     
     @IBOutlet weak var lobbyTitleLabel: UILabel!
     
@@ -40,7 +40,9 @@ class LobbyCell: SwipeTableViewCell, Reusable {
         self.favouriteButton.tag = lobby.isFavourite == true ? 1 : 0
 
         self.lobbyImageView.layer.cornerRadius = 35
-                
+        
+        self.lobbyImageView.loadImage(urlStringOptional: lobby.img)
+    
     }
    
     override func awakeFromNib() {

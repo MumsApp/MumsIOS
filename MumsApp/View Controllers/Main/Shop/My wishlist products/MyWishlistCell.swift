@@ -10,7 +10,7 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
     
-    @IBOutlet weak var itemImageView: UIImageView!
+    @IBOutlet weak var itemImageView: LoadableImageView!
     
     @IBOutlet weak var wishListButton: UIButton!
     
@@ -24,7 +24,7 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var userNameButton: UIButton!
    
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: LoadableImageView!
     
     private weak var delegate: UserNameDelegate?
     
@@ -52,6 +52,10 @@ class MyWishlistCell: UICollectionViewCell, Reusable {
         
         self.userNameButton.setTitle(product.creatorName, for: .normal)
         
+        self.userImageView.loadImage(urlStringOptional:  product.creatorPhoto)
+        
+        self.itemImageView.loadImage(urlStringOptional: product.photos?.first?.src)
+
     }
     
     override func awakeFromNib() {

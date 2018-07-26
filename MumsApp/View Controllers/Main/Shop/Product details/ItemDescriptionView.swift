@@ -20,7 +20,7 @@ class ItemDescriptionView: UIView {
 
     @IBOutlet weak var userNameButton: UIButton!
     
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: LoadableImageView!
     
     @IBOutlet weak var itemDescriptionTextView: UITextView!
     

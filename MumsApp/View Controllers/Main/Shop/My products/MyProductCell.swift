@@ -4,7 +4,7 @@ class MyProductCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
     
-    @IBOutlet weak var itemImageView: UIImageView!
+    @IBOutlet weak var itemImageView: LoadableImageView!
     
     @IBOutlet weak var editButton: UIButton!
     
@@ -21,7 +21,9 @@ class MyProductCell: UICollectionViewCell, Reusable {
         self.itemCategoryLabel.text = product.categoryName
         
         self.itemPriceLabel.text = "£" + product.price!
-        
+                
+        self.itemImageView.loadImage(urlStringOptional: product.photos?.first?.src)
+
     }
     
     override func awakeFromNib() {

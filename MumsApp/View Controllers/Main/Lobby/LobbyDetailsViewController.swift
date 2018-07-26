@@ -12,13 +12,11 @@ class LobbyDetailsViewController: UIViewController {
     
     fileprivate var lobbyTopics: Array<LobbyTopic> = []
     
-    fileprivate var imageLoader: ImageCacheLoader!
-
     fileprivate var pages: Int = 1
     
     fileprivate var currentPage: Int = 1
     
-    func configureWith(roomId: String, title: String, backButton: Bool, lobbyTopicService: LobbyTopicService, imageLoader: ImageCacheLoader) {
+    func configureWith(roomId: String, title: String, backButton: Bool, lobbyTopicService: LobbyTopicService) {
         
         self.title = title
         
@@ -28,8 +26,6 @@ class LobbyDetailsViewController: UIViewController {
         
         self.lobbyTopicService = lobbyTopicService
         
-        self.imageLoader = imageLoader
-
     }
     
     override func viewDidLoad() {
@@ -213,20 +209,6 @@ extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource
             let thisObject = self.lobbyTopics[indexPath.row]
             
             cell.configureWith(delegate: self, topic: thisObject)
-            
-            if let img = thisObject.creator?.img {
-                
-                self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + img) { (image) in
-                
-                    cell.userImageView.image = image
-                    
-                }
-                
-            } else {
-                
-                cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
-                
-            }
             
             return cell
             

@@ -11,7 +11,7 @@ class ProfileView: UIView {
 
     @IBOutlet var contentView: UIView!
     
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: LoadableImageView!
    
     @IBOutlet weak var userNameLabel: UILabel!
     
