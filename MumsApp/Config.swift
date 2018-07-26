@@ -23,3 +23,7 @@ let EMERGENCY_NUMBER = "0"
 // PAGINATION
 
 let PAGINATION = "50"
+
+// SUPPORT EMAIL
+
+let SUPPORT_EMAIL = "test@test.com"

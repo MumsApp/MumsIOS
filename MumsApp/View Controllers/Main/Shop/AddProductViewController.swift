@@ -151,12 +151,6 @@ class AddProductViewController: UIViewController {
         
         self.heightConstraint.constant = HEIGHT_BIG
         
-        
-        
-        
-        
-        
-        
         self.descriptionView.itemTitleTextField.text = product.name
         
         self.descriptionView.selectCategoryButton.setTitle(product.categoryName, for: .normal)
@@ -165,7 +159,7 @@ class AddProductViewController: UIViewController {
         
         self.selectedCategoryId = product.category
         
-        self.descriptionView.itemPriceTextField.text = "£" + product.price!
+        self.descriptionView.itemPriceTextField.text = product.price!
         
         if let lat = product.lat, let lon = product.lon {
             

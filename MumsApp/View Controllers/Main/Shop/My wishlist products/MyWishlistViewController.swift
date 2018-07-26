@@ -188,6 +188,10 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
                 
             }
             
+        } else {
+            
+            cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
+            
         }
         
         if let src = product.photos?.first?.src {

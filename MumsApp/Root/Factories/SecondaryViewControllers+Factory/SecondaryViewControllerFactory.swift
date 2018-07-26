@@ -163,21 +163,21 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func createCategoryViewController() -> CreateCategoryViewController {
+    func createCategoryViewController(reloadDelegate: ReloadDelegate?) -> CreateCategoryViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.CreateCategoryViewController.rawValue, storyboard: storyboard) as! CreateCategoryViewController
         
-        controller.configureWith(addLobbyService: self.serviceFactory.addLobbyService())
+        controller.configureWith(addLobbyService: self.serviceFactory.addLobbyService(), reloadDelegate: reloadDelegate)
         
         return controller
         
     }
     
-    func createTopicViewController(roomId: String) -> CreateTopicViewController {
+    func createTopicViewController(roomId: String, reloadDelegate: ReloadDelegate?) -> CreateTopicViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.CreateTopicViewController.rawValue, storyboard: storyboard) as! CreateTopicViewController
         
-        controller.configureWith(roomId: roomId, lobbyTopicService: self.serviceFactory.lobbyTopicService())
+        controller.configureWith(roomId: roomId, lobbyTopicService: self.serviceFactory.lobbyTopicService(), reloadDelegate: reloadDelegate)
         
         return controller
         

@@ -168,7 +168,7 @@ class LobbyConversationViewController: UIViewController {
                 
             } else {
                 
-               // Reload
+                self.getLobbyPostsWithPagination(page: self.currentPage)
                 
             }
             
@@ -246,13 +246,13 @@ extension LobbyConversationViewController: UITableViewDelegate, UITableViewDataS
                 
                 self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + img) { (image) in
                     
-                    if let _ = tableView.cellForRow(at: indexPath) {
-                        
-                        cell.userImageView.image = image
-                        
-                    }
+                    cell.userImageView.image = image
                     
                 }
+                
+            } else {
+                
+                cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
                 
             }
             

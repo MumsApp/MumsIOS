@@ -322,28 +322,28 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
                     
-                    if let _ = tableView.cellForRow(at: indexPath) {
-                        
-                        cell.itemImageView.image = image
-                        
-                    }
+                    cell.itemImageView.image = image
                     
                 }
+                
+            } else {
+                
+                cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
                 
             }
             
             if let src = product.creatorPhoto {
-                
+
                 self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { (image) in
-                    
-                    if let _ = tableView.cellForRow(at: indexPath) {
-                        
-                        cell.userImageView.image = image
-                        
-                    }
-                    
+
+                    cell.userImageView.image = image
+
                 }
-                
+
+            } else {
+
+                cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
+
             }
             
             return cell

@@ -70,7 +70,7 @@ class ShopCell: UITableViewCell, Reusable {
         self.configureView()
         
     }
-    
+ 
     private func configureView() {
         
         self.selectionStyle = .none

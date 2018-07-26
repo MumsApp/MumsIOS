@@ -1,13 +1,14 @@
 import Foundation
 import UIKit
 
+let cache = NSCache<NSString, UIImage>()
+
 typealias ImageCacheLoaderCompletionHandler = ((UIImage) -> ())
 
 class ImageCacheLoader {
     
     var task: URLSessionDownloadTask!
     var session: URLSession!
-    var cache: NSCache<NSString, UIImage>!
     
     init() {
         
@@ -15,13 +16,11 @@ class ImageCacheLoader {
     
         task = URLSessionDownloadTask()
         
-        self.cache = NSCache()
-    
     }
     
     func obtainImageWithPath(imagePath: String, completionHandler: @escaping ImageCacheLoaderCompletionHandler) {
        
-        if let image = self.cache.object(forKey: imagePath as NSString) {
+        if let image = cache.object(forKey: imagePath as NSString) {
         
             DispatchQueue.main.async {
             
@@ -47,7 +46,7 @@ class ImageCacheLoader {
                 
                     let img: UIImage! = UIImage(data: data)
                     
-                    self.cache.setObject(img, forKey: imagePath as NSString)
+                    cache.setObject(img, forKey: imagePath as NSString)
                     
                     DispatchQueue.main.async {
                     
@@ -62,7 +61,6 @@ class ImageCacheLoader {
             task.resume()
         
         }
-    
     }
     
 }

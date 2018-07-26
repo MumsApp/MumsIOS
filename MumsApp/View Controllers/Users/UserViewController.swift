@@ -183,6 +183,8 @@ class UserViewController: UIViewController {
             
         }
         
+        self.locationView.editButton.isHidden = true
+        
         if let location = userDetails.location {
             
             if let lat = location.lat, let lon = location.lon, let enabled = location.enabled, enabled {

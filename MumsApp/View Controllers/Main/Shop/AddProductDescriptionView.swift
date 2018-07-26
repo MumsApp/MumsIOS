@@ -96,6 +96,16 @@ class AddProductDescriptionView: UIView {
     
     }
     
+    @IBAction func askForCategoryButtonPressed(_ sender: UIButton) {
+    
+        if let url = URL(string: "mailto:\(SUPPORT_EMAIL)") {
+            
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+           
+        }
+
+    }
+    
 }
 
 extension AddProductDescriptionView: UITextFieldDelegate, UITextViewDelegate {

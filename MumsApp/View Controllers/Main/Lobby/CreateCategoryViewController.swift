@@ -42,10 +42,14 @@ class CreateCategoryViewController: UIViewController {
     
     fileprivate var pickedImage: UIImage?
     
-    func configureWith(addLobbyService: AddLobbyService?) {
+    private weak var reloadDelegate: ReloadDelegate?
+    
+    func configureWith(addLobbyService: AddLobbyService?, reloadDelegate: ReloadDelegate?) {
         
         self.addLobbyService = addLobbyService
     
+        self.reloadDelegate = reloadDelegate
+        
     }
     
     override func viewDidLoad() {
@@ -110,6 +114,8 @@ class CreateCategoryViewController: UIViewController {
         self.imagePicker.delegate = self
 
         self.titleTextField.delegate = self
+        
+        self.descriptionTextView.delegate = self
         
     }
     
@@ -226,6 +232,8 @@ class CreateCategoryViewController: UIViewController {
                     
                 } else {
                     
+                    self.reloadDelegate?.reloadData()
+                    
                     self.navigationController?.popViewController(animated: true)
                     
                 }
@@ -264,11 +272,35 @@ extension CreateCategoryViewController: UIImagePickerControllerDelegate, UINavig
     
 }
 
-extension CreateCategoryViewController: UITextFieldDelegate {
-    
+extension CreateCategoryViewController: UITextFieldDelegate, UITextViewDelegate {
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
+        
+        return true
+        
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.text == "Add description" {
+            
+            textView.text = ""
+            
+        }
+        
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if(text == "\n") {
+            
+            textView.resignFirstResponder()
+            
+            return false
+            
+        }
         
         return true
         

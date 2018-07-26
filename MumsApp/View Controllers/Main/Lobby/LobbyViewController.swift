@@ -1,6 +1,12 @@
 import UIKit
 import SwipeCellKit
 
+protocol ReloadDelegate: class {
+    
+    func reloadData()
+    
+}
+
 class LobbyViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -79,7 +85,7 @@ class LobbyViewController: UIViewController {
     
     }
 
-    private func getLobbyRooms() {
+    fileprivate func getLobbyRooms() {
         
         guard let token = self.appContext.token() else { return }
         
@@ -94,6 +100,10 @@ class LobbyViewController: UIViewController {
                 if let dictionary = dataOptional as? Dictionary<String, Any> {
                     
                     if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+                        self.lobbyRooms = []
+                        
+                        self.filteredLobbyRooms = []
                         
                         for d in data {
                             
@@ -131,8 +141,10 @@ class LobbyViewController: UIViewController {
                     
                     if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
                         
-                        self.filteredLobbyRooms = []
+                        self.lobbyRooms = []
                         
+                        self.filteredLobbyRooms = []
+
                         for d in data {
                             
                             self.filteredLobbyRooms.append(LobbyRoom(dictionary: d))
@@ -388,10 +400,14 @@ extension LobbyViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+
         if searchText != "" {
             
             self.searchLobbyRooms(searchTerm: searchText)
+
+        } else {
+            
+            self.getLobbyRooms()
             
         }
         
@@ -411,7 +427,7 @@ extension LobbyViewController: AddCellDelegate {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.createCategoryViewController()
+        let controller = factory.createCategoryViewController(reloadDelegate: self)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -432,6 +448,16 @@ extension LobbyViewController: LobbyCellDelegate {
             self.removeFavouriteLobbyRoom(id: lobbyId)
             
         }
+        
+    }
+    
+}
+
+extension LobbyViewController: ReloadDelegate {
+    
+    func reloadData() {
+        
+        self.getLobbyRooms()
         
     }
     

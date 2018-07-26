@@ -30,11 +30,15 @@ class CreateTopicViewController: UIViewController {
     
     private var roomId: String!
     
-    func configureWith(roomId: String, lobbyTopicService: LobbyTopicService) {
+    private weak var reloadDelegate: ReloadDelegate?
+    
+    func configureWith(roomId: String, lobbyTopicService: LobbyTopicService, reloadDelegate: ReloadDelegate?) {
         
         self.roomId = roomId
         
         self.lobbyTopicService = lobbyTopicService
+        
+        self.reloadDelegate = reloadDelegate
         
     }
     
@@ -86,6 +90,8 @@ class CreateTopicViewController: UIViewController {
         self.imagePicker.delegate = self
      
         self.titleTextField.delegate = self
+        
+        self.descriptionTextView.delegate = self
         
     }
     
@@ -186,6 +192,8 @@ class CreateTopicViewController: UIViewController {
                 
             } else {
                 
+                self.reloadDelegate?.reloadData()
+                
                 self.navigationController?.popViewController(animated: true)
 
             }
@@ -220,13 +228,37 @@ extension CreateTopicViewController: UIImagePickerControllerDelegate, UINavigati
     
 }
 
-extension CreateTopicViewController: UITextFieldDelegate {
+extension CreateTopicViewController: UITextFieldDelegate, UITextViewDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     
         textField.resignFirstResponder()
         
         return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.text == "Add description" {
+            
+            textView.text = ""
+            
+        }
+        
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if(text == "\n") {
+            
+            textView.resignFirstResponder()
+            
+            return false
+            
+        }
+        
+        return true
+        
     }
     
 }

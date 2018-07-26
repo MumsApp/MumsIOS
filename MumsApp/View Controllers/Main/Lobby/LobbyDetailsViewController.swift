@@ -102,7 +102,7 @@ class LobbyDetailsViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.createTopicViewController(roomId: self.roomId)
+        let controller = factory.createTopicViewController(roomId: self.roomId, reloadDelegate: self)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -217,14 +217,14 @@ extension LobbyDetailsViewController: UITableViewDelegate, UITableViewDataSource
             if let img = thisObject.creator?.img {
                 
                 self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + img) { (image) in
-                    
-                    if let _ = tableView.cellForRow(at: indexPath) {
-                        
-                        cell.userImageView.image = image
-                        
-                    }
+                
+                    cell.userImageView.image = image
                     
                 }
+                
+            } else {
+                
+                cell.userImageView.image = #imageLiteral(resourceName: "placeholderImage")
                 
             }
             
@@ -329,6 +329,16 @@ extension LobbyDetailsViewController: LobbyConversationFooterDelegate {
             self.getLobbyTopicsWithPagination(page: self.pages)
             
         }
+        
+    }
+    
+}
+
+extension LobbyDetailsViewController: ReloadDelegate {
+    
+    func reloadData() {
+    
+        self.getLobbyTopicsWithPagination(page: self.currentPage)
         
     }
     
