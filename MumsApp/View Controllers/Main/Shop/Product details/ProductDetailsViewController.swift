@@ -142,11 +142,7 @@ extension ProductDetailsViewController: UICollectionViewDataSource, UICollection
             
             self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { image in
                 
-                if let _ = collectionView.cellForItem(at: indexPath) {
-                    
-                    cell.imageView.image = image
-                    
-                }
+                cell.imageView.image = image
                 
             }
             

@@ -61,9 +61,7 @@ class RemoveContactPopupViewController: UIViewController {
     }
 
     @IBAction func removeButtonPressed(_ sender: UIButton) {
-        
-        // TODO: - remove
-        
+                
         self.dismissViewController()
         
     }

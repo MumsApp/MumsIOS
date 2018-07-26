@@ -86,8 +86,10 @@ class AddProductViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
+       
+        let title = productOptional == nil ? "Add Product" : "Edit Product"
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Add Product")
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: title)
         
         self.navigationItem.titleView = titleLabel
         
@@ -125,7 +127,7 @@ class AddProductViewController: UIViewController {
                 
                 self.itemLocationView.configureLocationViewWith(lat: Double(lat)!, lon: Double(lon)!)
                 
-                self.itemLocationView.userLocationLabel.text = "TO DO"
+                self.itemLocationView.userLocationLabel.text = product.pointName
                 
                 self.selectedLat = lat
                 
@@ -394,7 +396,17 @@ extension AddProductViewController: AddImageCellDelegate, ImageCellDelegate {
         let indexPathTo = IndexPath(row: 1, section: 0)
         
         self.photosView.collectionView.moveItem(at: indexPathFrom, to: indexPathTo)
-                
+        
+        var indexPaths: [NSIndexPath] = []
+        
+        for i in 0..<self.photosView.collectionView!.numberOfItems(inSection: 0) {
+        
+            indexPaths.append(NSIndexPath(item: i, section: 0))
+        
+        }
+        
+       self.photosView.collectionView?.reloadItems(at: indexPaths as [IndexPath])
+        
     }
     
 }
