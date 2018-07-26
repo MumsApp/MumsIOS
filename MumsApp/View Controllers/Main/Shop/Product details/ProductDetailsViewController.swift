@@ -80,7 +80,7 @@ class ProductDetailsViewController: UIViewController {
          
             self.itemLocationView.configureLocationViewWith(lat: Double(lat)!, lon: Double(lon)!)
 
-            self.itemLocationView.userLocationLabel.text = "TO DO"
+            self.itemLocationView.userLocationLabel.text = product.pointName
 
         }
         
@@ -138,7 +138,7 @@ extension ProductDetailsViewController: UICollectionViewDataSource, UICollection
         
         let cell = collectionView.dequeueReusableClass(PictureCell.self, forIndexPath: indexPath, type: .cell)
         
-        if let src = self.product.photos?.first?.src {
+        if let src = self.product.photos?[indexPath.row].src {
             
             self.imageLoader.obtainImageWithPath(imagePath: BASE_PUBLIC_IMAGE_URL + src) { image in
                 

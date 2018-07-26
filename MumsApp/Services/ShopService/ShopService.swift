@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-let ADD_SHOP_PRODUCTS_URL = BASE_URL + "shop/product?name={name}&description={description}&price={price}&category={category}&lat={lat}&lon={lon}"
+let ADD_SHOP_PRODUCTS_URL = BASE_URL + "shop/product?name={name}&description={description}&price={price}&category={category}&lat={lat}&lon={lon}&pointName={pointName}"
 let USER_SHOP_PRODUCTS_URL = BASE_URL + "shop/product/my"
 let SHOP_PRODUCTS_URL = BASE_URL + "shop/product/paginated/{page}/" + PAGINATION
 let SHOP_FAVOURITE_PRODUCTS_URL = BASE_URL + "shop/product/favourite"
@@ -28,9 +28,9 @@ struct ShopService: ResourceService {
     
     // MARK: - Add shop product
     
-    func addShopProduct(name: String, description: String, price: String, category: String, token: String, lat: String, lon: String, images: [UIImage], completion: @escaping ErrorCompletion) {
+    func addShopProduct(name: String, description: String, price: String, category: String, token: String, lat: String, lon: String, pointName: String, images: [UIImage], completion: @escaping ErrorCompletion) {
         
-        let pathParameters = [k_name: name, k_description: description, k_price: price, k_category: category, k_lat: lat, k_lon: lon]
+        let pathParameters = [k_name: name, k_description: description, k_price: price, k_category: category, k_lat: lat, k_lon: lon, k_pointName: pointName]
         
         let url = ADD_SHOP_PRODUCTS_URL.URLReplacingPathParamaters(parameters: pathParameters)
         

@@ -213,7 +213,7 @@ class AddProductViewController: UIViewController {
         
         controller.modalTransitionStyle = .crossDissolve
         
-        controller.configureWith(delegate: self)
+        controller.configureWith(productImage: self.photosView.images.first!, delegate: self)
         
         self.presentViewController(controller)
         
@@ -294,6 +294,7 @@ class AddProductViewController: UIViewController {
                                         token: token,
                                         lat: self.selectedLat!,
                                         lon: self.selectedLon!,
+                                        pointName: self.itemLocationView.userLocationLabel.text!,
                                         images: self.photosView.images) { errorOptional in
             
             if let error = errorOptional {

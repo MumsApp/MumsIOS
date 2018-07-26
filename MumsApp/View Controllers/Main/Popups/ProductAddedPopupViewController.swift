@@ -23,7 +23,11 @@ class ProductAddedPopupViewController: UIViewController {
     
     private weak var delegate: ProductAddedPopupDelegate?
     
-    func configureWith(delegate: ProductAddedPopupDelegate) {
+    private var productImage: UIImage!
+    
+    func configureWith(productImage: UIImage, delegate: ProductAddedPopupDelegate) {
+        
+        self.productImage = productImage
         
         self.delegate = delegate
         
@@ -56,6 +60,8 @@ class ProductAddedPopupViewController: UIViewController {
         self.backToMyProductList.tintColor = .mainDarkGrey
         
         self.backToMyProductList.titleLabel?.font = .medium(size: 15)
+        
+        self.itemImageView.image = productImage
         
     }
     

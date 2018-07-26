@@ -47,7 +47,7 @@ class ImageCacheLoader {
         } else {
             /* You need placeholder image in your assets,
              if you want to display a placeholder to user */
-            let placeholder = #imageLiteral(resourceName: "placeholderImageCircle")
+            let placeholder = #imageLiteral(resourceName: "placeholderImage")
             DispatchQueue.main.async {
                 completionHandler(placeholder)
             }
