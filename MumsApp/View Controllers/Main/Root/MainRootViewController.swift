@@ -27,6 +27,10 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
     
     private var displayed: Bool = false
     
+    let factory = SecondaryViewControllerFactory.viewControllerFactory()
+    
+    var controller: UIViewController! = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -277,10 +281,6 @@ extension MainRootViewController: MenuDelegate {
     
     func showViewController(type: ControllerType) {
         
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
-
-        let controller: UIViewController!
-        
         switch type {
             
         case .chat:
@@ -324,6 +324,8 @@ extension MainRootViewController: MenuDelegate {
             controller = factory.addToMenuViewController()
             
         }
+        
+        self.navigationController?.popToRootViewController(animated: false)
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         

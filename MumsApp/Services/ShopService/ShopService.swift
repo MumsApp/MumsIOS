@@ -186,17 +186,9 @@ struct ShopService: ResourceService {
     
     // MARK: - Search shop products with pagination and filters
     
-    func searchShopProducts(page: Int, category: Int, priceFrom: CGFloat, priceTo: CGFloat, userLat: String, userLon: String, distanceFrom: CGFloat, distanceTo: CGFloat, token: String, completion: @escaping JSONResponseCompletion) {
+    func searchShopProducts(page: Int, bodyParameters: Dictionary<String, Any>, token: String, completion: @escaping JSONResponseCompletion) {
         
         let pathParameters = [k_page: String(page)]
-        
-        let bodyParameters = [k_category: category,
-                              k_priceFrom: priceFrom,
-                              k_priceTo: priceTo,
-                              k_userLat: userLat,
-                              k_userLon: userLon,
-                              k_distanceFrom: distanceFrom,
-                              k_distanceTo: distanceTo] as [String : Any]
         
         let url = SHOP_SEARCH_URL.URLReplacingPathParamaters(parameters: pathParameters)
         

@@ -5,6 +5,7 @@ let LOBBY_URL = BASE_URL + "lobby/room/page/{page}/" + PAGINATION
 let LOBBY_FAVOURITE_URL = BASE_URL + "lobby/room/{id}/favourite"
 let LOBBY_UPDATE_URL = BASE_URL + "lobby/room/{id}"
 let LOBBY_SEARCH_URL = BASE_URL + "lobby/room/search/{page}/" + PAGINATION
+let LOBBY_JOIN_URL = BASE_URL + "lobby/room/{id}/join"
 
 let k_page = "page"
 let k_public = "public"
@@ -117,6 +118,50 @@ struct LobbyService: ResourceService {
         let bodyParameters = [k_searchTerm: searchTerm]
         
         if var request = URLRequest.GETRequest(urlString: url, bodyParameters: bodyParameters) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .status, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+    
+    // MARK: - Join lobby room
+    
+    func joinLobbyRoom(lobbyId: String, token: String, completion: @escaping ErrorCompletion) {
+        
+        let pathParameters = [k_id: lobbyId]
+        
+        let url = LOBBY_JOIN_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        if var request = URLRequest.POSTRequestData(urlString: url) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .status, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+    
+    // MARK: - Exit lobby room
+    
+    func exitLobbyRoom(lobbyId: String, token: String, completion: @escaping ErrorCompletion) {
+        
+        let pathParameters = [k_id: lobbyId]
+        
+        let url = LOBBY_JOIN_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        if var request = URLRequest.DELETERequest(urlString: url) {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             

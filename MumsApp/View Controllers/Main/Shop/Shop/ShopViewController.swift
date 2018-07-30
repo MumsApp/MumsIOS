@@ -45,7 +45,7 @@ class ShopViewController: UIViewController {
         self.getShopProducts(page: 1, loadMore: false)
         
     }
-    
+
     private func configureView() {
         
         self.view.setBackground()
@@ -243,6 +243,26 @@ class ShopViewController: UIViewController {
         guard let token = self.appContext.token() else { return }
 
         self.shopService.searchShopProducts(searchTerm: searchTerm, page: page, token: token) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.parseShopResults(dataOptional: dataOptional, loadMore: false)
+                
+            }
+            
+        }
+        
+    }
+    
+    func searchShopProductsWithFilters(page: Int, parameters: Dictionary<String, Any>) {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.shopService.searchShopProducts(page: page, bodyParameters: parameters, token: token) { dataOptional, errorOptional in
             
             if let error = errorOptional {
                 
@@ -456,7 +476,7 @@ extension ShopViewController: ShopFilterCellDelegate {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.shopFilterViewController()
+        let controller = factory.shopFilterViewController(delegate: self)
         
         self.navigationController?.pushViewController(controller, animated: true)
 
@@ -502,3 +522,12 @@ extension ShopViewController: ShopCellDelegate {
     
 }
 
+extension ShopViewController: ShopFilterViewControllerDelegate {
+    
+    func searchWithFilters(parameters: Dictionary<String, Any>) {
+        
+        self.searchShopProductsWithFilters(page: 1, parameters: parameters)
+        
+    }
+    
+}

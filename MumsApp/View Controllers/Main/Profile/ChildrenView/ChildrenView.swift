@@ -26,7 +26,7 @@ class ChildrenView: UIView {
     
     @IBOutlet weak var separatorView: UIView!
     
-    fileprivate var delegate: ChildrenViewDelegate?
+    fileprivate weak var delegate: ChildrenViewDelegate?
     
     var childrenList: Array<Children> = []
     

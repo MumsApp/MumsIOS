@@ -1,5 +1,11 @@
 import UIKit
 
+protocol ShopFilterViewControllerDelegate: class {
+    
+    func searchWithFilters(parameters: Dictionary<String, Any>)
+    
+}
+
 class ShopFilterViewController: UIViewController {
 
     @IBOutlet weak var categoryContainer: UIView!
@@ -38,13 +44,17 @@ class ShopFilterViewController: UIViewController {
     
     @IBOutlet weak var setLocationButton: UIButton!
 
-    fileprivate var selectedCategoryId: Int = 0
+    fileprivate var selectedCategoryId: Int? = nil
 
     private var shopService: ShopService!
     
-    func configureWith(shopService: ShopService) {
+    private weak var delegate: ShopFilterViewControllerDelegate?
+    
+    func configureWith(shopService: ShopService, delegate: ShopFilterViewControllerDelegate?) {
         
         self.shopService = shopService
+        
+        self.delegate = delegate
         
     }
     
@@ -221,24 +231,23 @@ class ShopFilterViewController: UIViewController {
     
     private func searchShopProducts() {
 
-        guard let token = self.appContext.token() else { return }
+        var bodyParameters: Dictionary<String, Any> = [k_priceFrom: self.priceSlider.selectedMinValue,
+                                                       k_priceTo: self.priceSlider.selectedMaxValue,
+                                                       k_userLat: "12.4",
+                                                       k_userLon: "12.5",
+                                                       k_distanceFrom: self.distanceSlider.selectedMinValue,
+                                                       k_distanceTo: self.distanceSlider.selectedMaxValue]
         
-        self.shopService.searchShopProducts(page: 1, category: self.selectedCategoryId, priceFrom: self.priceSlider.selectedMinValue, priceTo: self.priceSlider.selectedMaxValue, userLat: "12.4", userLon: "12.5", distanceFrom: self.distanceSlider.selectedMinValue, distanceTo: self.distanceSlider.selectedMaxValue, token: token) { dataOptional, errorOptional in
-
-            if let error = errorOptional {
+        if let cat = self.selectedCategoryId {
             
-                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
-                
-            } else {
-                
-                print(dataOptional)
-
-                self.navigationController?.popViewController(animated: true)
-
-            }
+            bodyParameters[k_category] = cat
             
         }
-
+        
+        self.delegate?.searchWithFilters(parameters: bodyParameters)
+     
+        self.navigationController?.popViewController(animated: true)
+ 
     }
     
 }

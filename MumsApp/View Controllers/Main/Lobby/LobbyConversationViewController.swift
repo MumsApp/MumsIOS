@@ -174,6 +174,8 @@ class LobbyConversationViewController: UIViewController {
     
     private func showAddPostAlert() {
         
+        self.shouldReply = false
+        
         self.showInputDialog(title: "Create post", subtitle: "", actionTitle: "Post", cancelTitle: "Cancel", inputPlaceholder: "Type something", inputKeyboardType: .default, cancelHandler: { _ in
             
             self.dismissViewController()

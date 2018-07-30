@@ -211,7 +211,27 @@ class LobbyViewController: UIViewController {
                 
             } else {
                 
+                self.getLobbyRooms()
                 
+            }
+            
+        }
+        
+    }
+    
+    func exitLobbyRoom(id: String) {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.lobbyService.exitLobbyRoom(lobbyId: id, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                print(error.localizedDescription)
+                
+            } else {
+                
+                self.getLobbyRooms()
                 
             }
             
@@ -279,7 +299,7 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
             
             let thisObject: LobbyRoom!
                 
-            if self.isFiltering() {
+            if self.isFiltering() && self.filteredLobbyRooms.count != 0 {
                 
                 thisObject = self.filteredLobbyRooms[indexPath.row]
                 
@@ -321,18 +341,38 @@ extension LobbyViewController: UITableViewDelegate, UITableViewDataSource, Swipe
 
         }
         
+        let exitAction = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+            
+            if let id = self.lobbyRooms[indexPath.row].id {
+                
+                self.exitLobbyRoom(id: String(id))
+                
+            }
+            
+        }
+        
         deleteAction.backgroundColor = .clear
         
         deleteAction.image = #imageLiteral(resourceName: "deleteIcon")
         
-        if self.isFiltering() {
+        exitAction.backgroundColor = .clear
+        
+        exitAction.image = #imageLiteral(resourceName: "deleteIcon")
+        
+        let room = self.lobbyRooms[indexPath.row]
+        
+        if self.isFiltering() || room.admin == true {
 
-            return []
+            return nil
             
-        } else {
+        } else if room.isOwner == true {
             
             return [deleteAction]
 
+        } else {
+            
+            return [exitAction]
+            
         }
     
     }

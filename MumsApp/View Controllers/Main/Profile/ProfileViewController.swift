@@ -62,6 +62,7 @@ class ProfileViewController: UIViewController {
         
     }
     
+    
     func configureView() {
         
         self.view.setBackground()

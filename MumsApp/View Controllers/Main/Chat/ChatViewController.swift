@@ -21,7 +21,7 @@ class ChatViewController: UIViewController {
         self.registerCells()
         
     }
-    
+
     private func configureView() {
         
         self.view.setBackground()

@@ -5,12 +5,15 @@ let k_img = "img"
 let k_isFavourite = "isFavourite"
 let k_isOwner = "isOwner"
 let k_isJoined = "isJoined"
+let k_admin = "admin"
 
 struct LobbyRoom: Resource {
     
     static let typeName = "LobbyRoom"
     
     var id: Int?
+    
+    var admin: Bool?
     
     var title: String?
     
@@ -27,6 +30,8 @@ struct LobbyRoom: Resource {
     init(dictionary: StorableDictionary) {
         
         self.id = dictionary[k_id] as? Int
+        
+        self.admin = dictionary[k_admin] as? Bool
         
         self.title = dictionary[k_title] as? String
         
@@ -55,6 +60,8 @@ struct LobbyRoom: Resource {
         var dictionary = Dictionary<String, Any>()
         
         dictionary[k_id] = self.id
+        
+        dictionary[k_admin] = self.admin
         
         dictionary[k_title] = self.title
         

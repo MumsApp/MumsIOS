@@ -186,7 +186,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyDetailsViewController.rawValue, storyboard: storyboard) as! LobbyDetailsViewController
         
-        controller.configureWith(roomId: roomId, title: title, backButton: backButton, lobbyTopicService: self.serviceFactory.lobbyTopicService())
+        controller.configureWith(roomId: roomId, title: title, backButton: backButton, lobbyTopicService: self.serviceFactory.lobbyTopicService(), lobbyService: self.serviceFactory.lobbyService())
         
         return controller
         
@@ -202,11 +202,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func shopFilterViewController() -> ShopFilterViewController {
+    func shopFilterViewController(delegate: ShopFilterViewControllerDelegate?) -> ShopFilterViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopFilterViewController.rawValue, storyboard: storyboard) as! ShopFilterViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService())
+        controller.configureWith(shopService: self.serviceFactory.shopService(), delegate: delegate)
         
         return controller
         

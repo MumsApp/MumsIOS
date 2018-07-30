@@ -7,7 +7,9 @@ class LobbyDetailsViewController: UIViewController {
     private var isBackButtonVisible: Bool = false
     
     private var lobbyTopicService: LobbyTopicService!
-    
+
+    private var lobbyService: LobbyService!
+
     private var roomId: String!
     
     fileprivate var lobbyTopics: Array<LobbyTopic> = []
@@ -16,7 +18,7 @@ class LobbyDetailsViewController: UIViewController {
     
     fileprivate var currentPage: Int = 1
     
-    func configureWith(roomId: String, title: String, backButton: Bool, lobbyTopicService: LobbyTopicService) {
+    func configureWith(roomId: String, title: String, backButton: Bool, lobbyTopicService: LobbyTopicService, lobbyService: LobbyService) {
         
         self.title = title
         
@@ -25,6 +27,8 @@ class LobbyDetailsViewController: UIViewController {
         self.roomId = roomId
         
         self.lobbyTopicService = lobbyTopicService
+        
+        self.lobbyService = lobbyService
         
     }
     
@@ -36,6 +40,8 @@ class LobbyDetailsViewController: UIViewController {
         self.configureNavigationBar()
         
         self.getLobbyTopicsWithPagination(page: 1)
+        
+        self.joinLobbyRoom()
         
     }
     
@@ -155,6 +161,26 @@ class LobbyDetailsViewController: UIViewController {
                     }
                     
                 }
+                
+            }
+            
+        }
+        
+    }
+    
+    private func joinLobbyRoom() {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.lobbyService.joinLobbyRoom(lobbyId: self.roomId, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                print("Joined")
                 
             }
             
