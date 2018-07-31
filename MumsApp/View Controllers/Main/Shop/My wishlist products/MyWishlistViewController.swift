@@ -112,7 +112,11 @@ class MyWishlistViewController: UIViewController {
         
         guard let token = self.appContext.token() else { return }
         
+        self.progressHUD.showLoading()
+        
         self.shopService.getUserFavouriteShopProducts(token: token) { dataOptional, errorOptional in
+            
+            self.progressHUD.dismiss()
             
             if let error = errorOptional {
                 

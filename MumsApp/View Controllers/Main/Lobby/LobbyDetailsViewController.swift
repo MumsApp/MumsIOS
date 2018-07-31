@@ -124,7 +124,11 @@ class LobbyDetailsViewController: UIViewController {
         
         guard let token = self.appContext.token() else { return }
 
+        self.progressHUD.showLoading()
+        
         self.lobbyTopicService.getLobbyTopicsWithPagination(roomId: self.roomId, token: token, page: page) { dataOptional, errorOptional in
+            
+            self.progressHUD.dismiss()
             
             if let error = errorOptional {
                 

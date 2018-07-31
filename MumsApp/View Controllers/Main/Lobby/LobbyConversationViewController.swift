@@ -102,7 +102,11 @@ class LobbyConversationViewController: UIViewController {
         
         guard let token = self.appContext.token() else { return }
     
+        self.progressHUD.showLoading()
+        
         self.lobbyPostService.getLobbyPostsWithPagination(roomId: self.roomId, topicId: self.topicId, token: token, page: page) { dataOptional, errorOptional in
+            
+            self.progressHUD.dismiss()
             
             if let error = errorOptional {
                 

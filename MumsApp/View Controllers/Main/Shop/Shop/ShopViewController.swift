@@ -143,7 +143,11 @@ class ShopViewController: UIViewController {
         
         guard let token = self.appContext.token() else { return }
 
+        self.progressHUD.showLoading()
+        
         self.shopService.getShopProducts(token: token, page: page) { dataOptional, errorOptional in
+            
+            self.progressHUD.dismiss()
             
             if let error = errorOptional {
                 

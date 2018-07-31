@@ -48,6 +48,7 @@ PODS:
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - ReachabilitySwift (3)
   - Segmentio (3.0)
+  - SVProgressHUD (2.2.5)
   - SwipeCellKit (1.9.1)
   - XCGLogger (5.0.5):
     - XCGLogger/Core (= 5.0.5)
@@ -66,6 +67,7 @@ DEPENDENCIES:
   - MessageKit (~> 0.10.2)
   - ReachabilitySwift (~> 3)
   - Segmentio (~> 3.0)
+  - SVProgressHUD
   - SwipeCellKit (~> 1.9.1)
   - XCGLogger (~> 5.0.1)
 
@@ -98,9 +100,10 @@ SPEC CHECKSUMS:
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwipeCellKit: e9ff953c820394a4e641cfb0118b6c959506aec2
   XCGLogger: 49bceee6dc0c738eae5d6454fdbf800d62256b74
 
-PODFILE CHECKSUM: be0690ee9ba641297ecd00532d8e86984c29a984
+PODFILE CHECKSUM: 184bae4c23f9fcdbf428aa4b3ddcebbbf9f50913
 
 COCOAPODS: 1.3.1

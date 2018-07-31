@@ -85,8 +85,12 @@ class LobbyViewController: UIViewController {
         
         guard let token = self.appContext.token() else { return }
         
+        self.progressHUD.showLoading()
+        
         self.lobbyService.getLobbyRooms(token: token) { dataOptional, errorOptional in
         
+            self.progressHUD.dismiss()
+
             if let error = errorOptional {
                 
                 self.showOkAlertWith(title: "Error", message: error.localizedDescription)

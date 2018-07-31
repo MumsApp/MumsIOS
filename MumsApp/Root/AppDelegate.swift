@@ -5,6 +5,7 @@ import Crashlytics
 import GoogleMaps
 import GoogleSignIn
 import GooglePlaces
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -78,6 +79,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(GOOGLE_MAPS_KEY)
         
         GIDSignIn.sharedInstance().clientID = GOOGLE_SIGNIN_KEY
+        
+        SVProgressHUD.setDefaultStyle(.custom)
+        
+        SVProgressHUD.setDefaultMaskType(.gradient)
         
     }
     

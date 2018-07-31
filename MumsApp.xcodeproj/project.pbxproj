@@ -84,6 +84,7 @@
 		4D36E705201E4984000DC94F /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36E704201E4984000DC94F /* SchoolView.swift */; };
 		4D374DC2203CA9C600AB89F3 /* CreateTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D374DC1203CA9C600AB89F3 /* CreateTopicViewController.swift */; };
 		4D374DC4203CAA6F00AB89F3 /* LobbyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D374DC3203CAA6F00AB89F3 /* LobbyDetailsViewController.swift */; };
+		4D38280D21103BF7003E7F7C /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38280C21103BF7003E7F7C /* ProgressHUD.swift */; };
 		4D39D48420348275005123F8 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D48320348275005123F8 /* ProductDetailsViewController.swift */; };
 		4D39D4862034835E005123F8 /* ItemDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39D4852034835E005123F8 /* ItemDescriptionView.swift */; };
 		4D39D48820348365005123F8 /* ItemDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D39D48720348365005123F8 /* ItemDescriptionView.xib */; };
@@ -376,6 +377,7 @@
 		4D36E704201E4984000DC94F /* SchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
 		4D374DC1203CA9C600AB89F3 /* CreateTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTopicViewController.swift; sourceTree = "<group>"; };
 		4D374DC3203CAA6F00AB89F3 /* LobbyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailsViewController.swift; sourceTree = "<group>"; };
+		4D38280C21103BF7003E7F7C /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		4D39D48320348275005123F8 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		4D39D4852034835E005123F8 /* ItemDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescriptionView.swift; sourceTree = "<group>"; };
 		4D39D48720348365005123F8 /* ItemDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDescriptionView.xib; sourceTree = "<group>"; };
@@ -769,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				4D05A93A1FE144A800B19E6E /* UIViewController+Helpers.swift */,
+				4D38280C21103BF7003E7F7C /* ProgressHUD.swift */,
 				4D05A93B1FE144A800B19E6E /* UIStoryboard+Helpers.swift */,
 				4D05A93C1FE144A800B19E6E /* UITableView+Extensions.swift */,
 				4D05A93D1FE144A800B19E6E /* UIViewController+UIAlertView.swift */,
@@ -1752,6 +1755,7 @@
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
@@ -1770,6 +1774,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
@@ -2007,6 +2012,7 @@
 				4D36E6F9201E3565000DC94F /* ChildrenView.swift in Sources */,
 				4D403BD4204AE15500956939 /* UICollectionViewCell.swift in Sources */,
 				4DE175092028D032001C5DD1 /* ChatSettingsPopupViewController.swift in Sources */,
+				4D38280D21103BF7003E7F7C /* ProgressHUD.swift in Sources */,
 				4DA306BF204450C600250156 /* MyWishlistCell.swift in Sources */,
 				4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */,
 				4D39D49220349B66005123F8 /* AddProductViewController.swift in Sources */,

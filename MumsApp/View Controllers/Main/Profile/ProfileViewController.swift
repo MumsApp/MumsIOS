@@ -71,7 +71,9 @@ class ProfileViewController: UIViewController {
         
         self.view.setBackground()
 
-        self.profileView.userNameLabel.text = ""
+        self.profileView.userNameLabel.text = "Loading..."
+        
+        self.profileView.userDescriptionLabel.text = "Loading..."
         
         self.locationView.configureWith(delegate: self)
         
@@ -129,7 +131,11 @@ class ProfileViewController: UIViewController {
         
         guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
         
+        self.progressHUD.showLoading()
+        
         self.userDetailsService.getUserDetails(id: id, token: token) { dataOptional, errorOptional in
+            
+            self.progressHUD.dismiss()
             
             if let error = errorOptional {
                 
