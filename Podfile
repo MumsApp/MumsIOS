@@ -7,7 +7,6 @@ use_frameworks!
 
 pod 'Arcane', git: 'https://github.com/onmyway133/Arcane', :tag => '0.5.0'
 pod 'Alamofire', '~> 4.5.1'
-pod 'SDWebImage', '~> 4.1.0'
 pod 'XCGLogger', '~> 5.0.1'
 pod 'Crashlytics', '~> 3.9.3'
 pod 'ReachabilitySwift', '~> 3'
