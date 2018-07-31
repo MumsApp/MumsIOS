@@ -10,6 +10,8 @@ public protocol LocationCoordinatorDelegate {
     
 }
 
+let MILES = 0.000621371192
+
 @objc open class LocationCoordinator: NSObject, LocationManagerDelegate {
     
     open var delegate: LocationCoordinatorDelegate?

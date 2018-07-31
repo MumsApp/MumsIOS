@@ -47,7 +47,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIn-LR-RMb">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIn-LR-RMb">
                                     <rect key="frame" x="128" y="117" width="67" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -78,8 +78,8 @@
                                         <constraint firstAttribute="height" constant="1" id="lvw-WB-hBs"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glk-sZ-TtL">
-                                    <rect key="frame" x="255" y="113" width="46" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glk-sZ-TtL">
+                                    <rect key="frame" x="203" y="113" width="98" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="userNameButtonPressed:" destination="qe6-K3-Zf3" eventType="touchUpInside" id="fnn-ms-mvI"/>
@@ -105,6 +105,7 @@
                                 <constraint firstItem="cIn-LR-RMb" firstAttribute="top" secondItem="ZYb-hG-p44" secondAttribute="bottom" constant="12" id="VKg-IL-BqQ"/>
                                 <constraint firstItem="glk-sZ-TtL" firstAttribute="centerY" secondItem="sk1-8l-iE4" secondAttribute="centerY" id="XY7-uk-aQ6"/>
                                 <constraint firstItem="iuN-uf-3A9" firstAttribute="trailing" secondItem="TVr-e3-Nfp" secondAttribute="trailing" constant="16" id="ji2-Sx-04k"/>
+                                <constraint firstItem="glk-sZ-TtL" firstAttribute="leading" secondItem="cIn-LR-RMb" secondAttribute="trailing" constant="8" id="nMm-R8-rBy"/>
                                 <constraint firstItem="pzm-Ap-n0n" firstAttribute="leading" secondItem="iuN-uf-3A9" secondAttribute="leading" constant="16" id="pJH-qh-0xm"/>
                                 <constraint firstItem="AaC-WT-Fis" firstAttribute="leading" secondItem="pzm-Ap-n0n" secondAttribute="trailing" constant="-25" id="qQw-M8-e62"/>
                                 <constraint firstItem="cIn-LR-RMb" firstAttribute="bottom" secondItem="pzm-Ap-n0n" secondAttribute="bottom" constant="4" id="sNL-Vl-8M8"/>

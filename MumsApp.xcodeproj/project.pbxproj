@@ -162,6 +162,7 @@
 		4D74FF48205BFF6F0016D3E9 /* OtherPromotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74FF47205BFF6F0016D3E9 /* OtherPromotionsView.swift */; };
 		4D74FF4A205BFF7C0016D3E9 /* OtherPromotionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D74FF49205BFF7C0016D3E9 /* OtherPromotionsView.xib */; };
 		4D76895E20248946002FC25D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D76895D20248946002FC25D /* MenuViewController.swift */; };
+		4D79DEBF210F4E8D00193F66 /* CLLocation+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79DEBE210F4E8D00193F66 /* CLLocation+Distance.swift */; };
 		4D7C71A620CE7C4600A0A47C /* ChildService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71A520CE7C4600A0A47C /* ChildService.swift */; };
 		4D7C71AB20CE9A9100A0A47C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71AA20CE9A9100A0A47C /* UIImage+Extensions.swift */; };
 		4D7C71AD20CEA16000A0A47C /* UserImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C71AC20CEA16000A0A47C /* UserImageService.swift */; };
@@ -453,6 +454,7 @@
 		4D74FF47205BFF6F0016D3E9 /* OtherPromotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPromotionsView.swift; sourceTree = "<group>"; };
 		4D74FF49205BFF7C0016D3E9 /* OtherPromotionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPromotionsView.xib; sourceTree = "<group>"; };
 		4D76895D20248946002FC25D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4D79DEBE210F4E8D00193F66 /* CLLocation+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Distance.swift"; sourceTree = "<group>"; };
 		4D7C71A520CE7C4600A0A47C /* ChildService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildService.swift; sourceTree = "<group>"; };
 		4D7C71AA20CE9A9100A0A47C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		4D7C71AC20CEA16000A0A47C /* UserImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageService.swift; sourceTree = "<group>"; };
@@ -1176,6 +1178,7 @@
 				4DF057E720E388570080498A /* Date+Extension.swift */,
 				4D59F95A20E3930C00186DB4 /* Alert+Extension.swift */,
 				4D59F95E20E3B86D00186DB4 /* Children+Extension.swift */,
+				4D79DEBE210F4E8D00193F66 /* CLLocation+Distance.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2009,6 +2012,7 @@
 				4DA306BF204450C600250156 /* MyWishlistCell.swift in Sources */,
 				4DC27EB3201F90EF000EE9FA /* GoogleService.swift in Sources */,
 				4D39D49220349B66005123F8 /* AddProductViewController.swift in Sources */,
+				4D79DEBF210F4E8D00193F66 /* CLLocation+Distance.swift in Sources */,
 				4D69BA982051436D006AB41D /* AddProductImagesView.swift in Sources */,
 				4D69BAB420518C13006AB41D /* NewsCell.swift in Sources */,
 				4D681F85201DE09200D404CD /* FacebookService.swift in Sources */,

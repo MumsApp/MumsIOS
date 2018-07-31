@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 
+let LOBBY_ALL_ROOMS_URL = BASE_URL + "lobby/room"
 let LOBBY_URL = BASE_URL + "lobby/room/page/{page}/" + PAGINATION
 let LOBBY_FAVOURITE_URL = BASE_URL + "lobby/room/{id}/favourite"
 let LOBBY_UPDATE_URL = BASE_URL + "lobby/room/{id}"
@@ -19,6 +20,24 @@ struct LobbyService: ResourceService {
     
     let serviceParser: ServiceParser
 
+    // MARK: - Get lobby rooms data
+    
+    func getLobbyRooms(token: String, completion: @escaping JSONResponseCompletion) {
+        
+        if var request = URLRequest.GETRequest(urlString: LOBBY_ALL_ROOMS_URL) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .data, completion: completion)
+            
+            let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
+            
+            _ = self.networkService.enqueueNetworkRequest(request: task)
+            
+        }
+        
+    }
+    
     // MARK: - Get lobby rooms data with pagination
     
     func getLobbyRoomsWithPagination(token: String, page: Int, completion: @escaping JSONResponseCompletion) {

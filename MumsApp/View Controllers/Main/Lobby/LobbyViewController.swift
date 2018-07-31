@@ -85,7 +85,7 @@ class LobbyViewController: UIViewController {
         
         guard let token = self.appContext.token() else { return }
         
-        self.lobbyService.getLobbyRoomsWithPagination(token: token, page: 1) { dataOptional, errorOptional in
+        self.lobbyService.getLobbyRooms(token: token) { dataOptional, errorOptional in
         
             if let error = errorOptional {
                 

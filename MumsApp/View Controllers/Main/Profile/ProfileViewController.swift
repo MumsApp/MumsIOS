@@ -41,13 +41,17 @@ class ProfileViewController: UIViewController {
     
     fileprivate var userDetails: UserDetails?
     
-    func configureWith(userDetailsService: UserDetailsService, childService: ChildService, userImageService: UserImageService) {
+    fileprivate var userDefaults: MOUserDefaults!
+    
+    func configureWith(userDetailsService: UserDetailsService, childService: ChildService, userImageService: UserImageService, userDefaults: MOUserDefaults) {
         
         self.userDetailsService = userDetailsService
         
         self.childService = childService
         
         self.userImageService = userImageService
+        
+        self.userDefaults = userDefaults
         
     }
     
@@ -507,6 +511,10 @@ extension ProfileViewController: LocationPopupDelegate {
         
         self.showSwitchValueChanged(isVisible: true)
         
+        self.userDefaults.setString(String(coordinate.latitude), forKey: k_lat)
+        
+        self.userDefaults.setString(String(coordinate.longitude), forKey: k_lon)
+      
         self.getUserData()
         
     }

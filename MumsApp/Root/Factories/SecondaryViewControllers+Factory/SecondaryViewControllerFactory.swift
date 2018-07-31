@@ -47,7 +47,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService(),
                                  childService: self.serviceFactory.childService(),
-                                 userImageService: self.serviceFactory.userImageService())
+                                 userImageService: self.serviceFactory.userImageService(),
+                                 userDefaults: self.userDefaults)
         
         return controller
         

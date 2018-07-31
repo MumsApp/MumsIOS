@@ -61,9 +61,7 @@ class ProductDetailsViewController: UIViewController {
         self.itemDescriptionView.itemCategoryLabel.text = product.categoryName
         
         self.itemDescriptionView.itemPriceLabel.text = "£" + product.price!
-        
-        self.itemDescriptionView.itemDistanceLabel.text = product.lat
-        
+                
         self.itemDescriptionView.itemDescriptionTextView.text = product.description
         
         self.itemDescriptionView.userNameButton.setTitle(product.creatorName, for: .normal)
@@ -78,6 +76,16 @@ class ProductDetailsViewController: UIViewController {
 
             self.itemLocationView.userLocationLabel.text = product.pointName
 
+            if let userLocation = self.appContext.userLocation() {
+                
+                self.itemDescriptionView.itemDistanceLabel.text = distanceFrom(userLocation: userLocation, productLat: lat, productLon: lon)
+                
+            } else {
+                
+                self.itemDescriptionView.itemDistanceLabel.text = ""
+                
+            }
+            
         }
         
         if let src = self.product.creatorPhoto {
@@ -85,6 +93,8 @@ class ProductDetailsViewController: UIViewController {
             self.itemDescriptionView.userImageView.loadImage(urlStringOptional: src)
 
         }
+        
+      
         
     }
     

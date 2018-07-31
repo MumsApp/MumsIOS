@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import CoreLocation
 
 let k_token = "token"
 let k_is_app_initialized = "is_app_initialized"
@@ -19,6 +20,8 @@ protocol AppContext {
     func isAppInitialized() -> Bool
     
     func userId() -> String?
+    
+    func userLocation() -> CLLocation?
     
 }
 
@@ -139,6 +142,19 @@ struct DefaultAppContext: AppContext {
         defaultsDictionary.removeAllObjects()
         
         secureItemsDictionary.removeAllObjects()
+        
+    }
+    
+    func userLocation() -> CLLocation? {
+        
+        guard let lat = self.userDefaults.stringForKey(k_lat),
+            let lon = self.userDefaults.stringForKey(k_lon) else {
+            return nil
+        }
+
+        let location = CLLocation(latitude: Double(lat)!, longitude: Double(lon)!)
+        
+        return location
         
     }
     

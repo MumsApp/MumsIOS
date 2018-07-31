@@ -48,9 +48,7 @@ class ShopCell: UITableViewCell, Reusable {
         self.itemCategoryLabel.text = product.categoryName
         
         self.itemPriceLabel.text = "£" + product.price!
-        
-        self.itemDistanceLabel.text = product.lat
-        
+                
         self.userNameButton.setTitle(product.creatorName, for: .normal)
      
         self.productId = String(product.id!)

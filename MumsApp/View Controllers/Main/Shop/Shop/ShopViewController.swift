@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 enum ShopViewType {
     
@@ -332,10 +333,19 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
             let product = self.products[indexPath.row]
             
+            if let userLocation = self.appContext.userLocation() {
+                
+                cell.itemDistanceLabel.text = distanceFrom(userLocation: userLocation, productLat: product.lat!, productLon: product.lon!)
+
+            } else {
+                
+                cell.itemDistanceLabel.text = ""
+                
+            }
+            
             cell.configureWith(delegate: self, product: product, cellDelegate: self)
             
             return cell
-            
             
 //            if indexPath.row == 2 {
 //
@@ -394,9 +404,9 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
             self.isLoadingList = true
             
-            print(currentPage)
+            print("CURRENT PAGE \(currentPage)")
             
-            self.getShopProducts(page: 2, loadMore: true)
+            self.getShopProducts(page: self.currentPage, loadMore: true)
     
         }
     
