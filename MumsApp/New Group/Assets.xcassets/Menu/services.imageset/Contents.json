@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "whereIcon.png",
+      "filename" : "services.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "whereIcon2.png",
+      "filename" : "services@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "whereIcon3.png",
+      "filename" : "services@3x.png",
       "scale" : "3x"
     }
   ],

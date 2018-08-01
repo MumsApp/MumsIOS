@@ -12,6 +12,7 @@ protocol MenuDelegate: class {
     func healthButtonPressed()
     func holidayButtonPressed()
     func addButtonPressed()
+
 }
 
 struct Menu {
@@ -84,10 +85,11 @@ class MenuViewController: UIViewController {
         self.menuItems.append(Menu(image: #imageLiteral(resourceName: "lobby"), title: "LOBBY", tag: 1))
         self.menuItems.append(Menu(image: #imageLiteral(resourceName: "chat"), title: "LET'S TALK", tag: 2))
         self.menuItems.append(Menu(image: #imageLiteral(resourceName: "shop"), title: "SHOP", tag: 3))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "offers"), title: "MUMSAPP OFFERS AND SERVICES", tag: 4))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "holiday"), title: "HOLIDAY", tag: 5))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "health"), title: "MUMSAPP\nHEALTH", tag: 6))
-        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "add"), title: "ADD TO MENU", tag: 7))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "offers"), title: "MUMSAPP OFFERS", tag: 4))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "services"), title: "SERVICES", tag: 5))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "holiday"), title: "HOLIDAY", tag: 6))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "health"), title: "MUMSAPP\nHEALTH", tag: 7))
+        self.menuItems.append(Menu(image: #imageLiteral(resourceName: "add"), title: "ADD TO MENU", tag: 8))
 
     }
  
@@ -135,13 +137,17 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         case 5:
             
-            self.delegate?.holidayButtonPressed()
+            self.delegate?.servicesButtonPressed()
             
         case 6:
             
+            self.delegate?.holidayButtonPressed()
+            
+        case 7:
+            
             self.delegate?.healthButtonPressed()
 
-        case 7:
+        case 8:
             
             self.delegate?.addButtonPressed()
 
