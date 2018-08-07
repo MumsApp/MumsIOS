@@ -158,4 +158,13 @@ class ServiceFactory {
         return service
         
     }
+    
+    func friendsService() -> FriendsService {
+        
+        let service = FriendsService(networkService: self.networkService, serviceParser: self.parser)
+        
+        return service
+        
+    }
+    
 }

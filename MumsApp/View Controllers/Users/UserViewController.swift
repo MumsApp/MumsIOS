@@ -34,20 +34,24 @@ class UserViewController: UIViewController {
 
     @IBOutlet weak var locationView: ItemLocationView!
     
-    private var userId: String!
-    
     private var userDetailsService: UserDetailsService!
     
+    private var friendsService: FriendsService!
+    
+    fileprivate var userId: String!
+
     private var userDetails: UserDetails?
     
     fileprivate var childrenList: Array<Children> = []
     
-    func configureWith(userId: String, userDetailsService: UserDetailsService) {
+    func configureWith(userId: String, userDetailsService: UserDetailsService, friendsService: FriendsService) {
         
         self.userId = userId
         
         self.userDetailsService = userDetailsService
-                
+        
+        self.friendsService = friendsService
+        
     }
     
     override func viewDidLoad() {
@@ -120,7 +124,6 @@ class UserViewController: UIViewController {
     func backButtonPressed(sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
-        
         
     }
     
@@ -243,6 +246,26 @@ class UserViewController: UIViewController {
         
     }
     
+    fileprivate func addFriend(friendId: String) {
+        
+        guard let token = self.appContext.token() else { return }
+
+        self.friendsService.addFriend(friendId: friendId, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                
+                
+            }
+            
+        }
+        
+    }
+    
 }
 
 extension UserViewController: UITableViewDelegate, UITableViewDataSource {
@@ -323,8 +346,8 @@ extension UserViewController: AddCellDelegate, RemoveContactCellDelegate {
     
     func addButtonPressed() {
         
-        print("ADD")
-    
+        self.addFriend(friendId: self.userId)
+        
     }
     
     func removeButtonPressed() {

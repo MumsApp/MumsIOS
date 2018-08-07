@@ -14,6 +14,22 @@ class ChatCell: UITableViewCell, Reusable {
     
     @IBOutlet weak var dateLabel: UILabel!
     
+    func configureWith(friend: Friend) {
+        
+        if let name = friend.name, let surname = friend.surname {
+         
+            self.nameLabel.text = name + " " + surname
+
+        } else {
+            
+            self.nameLabel.text = "Unknown"
+            
+        }
+        
+        self.descriptionLabel.text = friend.description
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 

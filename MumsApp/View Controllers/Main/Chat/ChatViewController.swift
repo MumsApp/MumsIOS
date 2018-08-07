@@ -11,6 +11,16 @@ class ChatViewController: UIViewController {
     
     private var segmentedContent = [SegmentioItem]()
 
+    private var friendsService: FriendsService!
+    
+    fileprivate var friends: Array<Friend> = []
+    
+    func configureWith(friendsService: FriendsService) {
+        
+        self.friendsService = friendsService
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +29,8 @@ class ChatViewController: UIViewController {
         self.configureNavigationBar()
         
         self.registerCells()
+        
+        self.getUserFriends(page: 1)
         
     }
 
@@ -170,13 +182,56 @@ class ChatViewController: UIViewController {
     
     }
     
+    private func getUserFriends(page: Int) {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.progressHUD.showLoading()
+        
+        self.friendsService.getFriends(page: page, token: token) { dataOptional, errorOptional in
+            
+            self.progressHUD.dismiss()
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                guard let data = dataOptional as? StorableDictionary,
+                    let dictionary = data[k_data] as? StorableDictionary else {
+                        
+                        return
+                        
+                }
+
+                if let friendsArray = dictionary[k_friends] as? Array<Dictionary<String, Any>> {
+                    
+                    friendsArray.forEach({ dict in
+                        
+                        let friends = Friend(dictionary: dict)
+                        
+                        self.friends.append(friends)
+                        
+                    })
+                    
+                    self.tableView.reloadData()
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
 }
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-       return 10
+       return self.friends.count
         
     }
     
@@ -189,6 +244,10 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(ChatCell.self, indexPath: indexPath)
+        
+        let friend = self.friends[indexPath.row]
+        
+        cell.configureWith(friend: friend)
         
         return cell
         

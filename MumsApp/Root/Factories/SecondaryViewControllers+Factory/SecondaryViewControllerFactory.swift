@@ -101,6 +101,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ChatViewController.rawValue, storyboard: storyboard) as! ChatViewController
         
+        controller.configureWith(friendsService: self.serviceFactory.friendsService())
+        
         return controller
         
     }
@@ -226,7 +228,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.UserViewController.rawValue, storyboard: storyboard) as! UserViewController
         
         controller.configureWith(userId: userId,
-                                 userDetailsService: self.serviceFactory.userDetailsService())
+                                 userDetailsService: self.serviceFactory.userDetailsService(),
+                                 friendsService: self.serviceFactory.friendsService())
         
         return controller
         

@@ -108,6 +108,8 @@
 		4D403BD4204AE15500956939 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD3204AE15500956939 /* UICollectionViewCell.swift */; };
 		4D403BD6204AF4CA00956939 /* RemoveContactPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD5204AF4CA00956939 /* RemoveContactPopupViewController.swift */; };
 		4D403BD8204AFBE000956939 /* RemoveCompanyPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403BD7204AFBE000956939 /* RemoveCompanyPopupViewController.swift */; };
+		4D427B4F21198CEB00E8DCAF /* FriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D427B4E21198CEB00E8DCAF /* FriendsService.swift */; };
+		4D427B522119905400E8DCAF /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D427B512119905400E8DCAF /* Friend.swift */; };
 		4D42E4A520E237E1009E3428 /* LobbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42E4A420E237E1009E3428 /* LobbyService.swift */; };
 		4D42E4A920E238F1009E3428 /* LobbyRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42E4A820E238F1009E3428 /* LobbyRoom.swift */; };
 		4D42E4AB20E2506E009E3428 /* AddLobbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42E4AA20E2506E009E3428 /* AddLobbyService.swift */; };
@@ -401,6 +403,8 @@
 		4D403BD3204AE15500956939 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		4D403BD5204AF4CA00956939 /* RemoveContactPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveContactPopupViewController.swift; sourceTree = "<group>"; };
 		4D403BD7204AFBE000956939 /* RemoveCompanyPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCompanyPopupViewController.swift; sourceTree = "<group>"; };
+		4D427B4E21198CEB00E8DCAF /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsService.swift; sourceTree = "<group>"; };
+		4D427B512119905400E8DCAF /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		4D42E4A420E237E1009E3428 /* LobbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyService.swift; sourceTree = "<group>"; };
 		4D42E4A820E238F1009E3428 /* LobbyRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyRoom.swift; sourceTree = "<group>"; };
 		4D42E4AA20E2506E009E3428 /* AddLobbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLobbyService.swift; sourceTree = "<group>"; };
@@ -818,6 +822,7 @@
 				4DCEA1F6210700230083EBD4 /* ShopCategory.swift */,
 				4DCEA1F8210700980083EBD4 /* ShopSubCategory.swift */,
 				4D2D4FCE21083C93005810F5 /* Product.swift */,
+				4D427B512119905400E8DCAF /* Friend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -847,6 +852,7 @@
 				4D7C71A920CE7CCA00A0A47C /* ChildService */,
 				4D42E4AC20E250C2009E3428 /* LobbyService */,
 				4DCEA1FE21071E480083EBD4 /* ShopService */,
+				4D427B5021198CF500E8DCAF /* FriendsService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1015,6 +1021,14 @@
 				4D11118720E4F22800683851 /* Cells */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		4D427B5021198CF500E8DCAF /* FriendsService */ = {
+			isa = PBXGroup;
+			children = (
+				4D427B4E21198CEB00E8DCAF /* FriendsService.swift */,
+			);
+			path = FriendsService;
 			sourceTree = "<group>";
 		};
 		4D42E4AC20E250C2009E3428 /* LobbyService */ = {
@@ -1993,6 +2007,7 @@
 				4D7C71AF20CEA5F900A0A47C /* UIImageView+Extensions.swift in Sources */,
 				4D39D48C20348B53005123F8 /* PictureCell.swift in Sources */,
 				4DE175152028DCEA001C5DD1 /* ShopCell.swift in Sources */,
+				4D427B522119905400E8DCAF /* Friend.swift in Sources */,
 				4DC67752201781E000F34184 /* Timeout+UIView.swift in Sources */,
 				4D05A9541FE144A900B19E6E /* MOUserDefaults+SecureProtocol.swift in Sources */,
 				4D05A9461FE144A900B19E6E /* CommonClosures.swift in Sources */,
@@ -2070,6 +2085,7 @@
 				4D9BB303205C12FB0001D54C /* PromotionPopupViewController.swift in Sources */,
 				4D374DC4203CAA6F00AB89F3 /* LobbyDetailsViewController.swift in Sources */,
 				4DE174F6202886B9001C5DD1 /* UIDevice+Extensions.swift in Sources */,
+				4D427B4F21198CEB00E8DCAF /* FriendsService.swift in Sources */,
 				4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */,
 				4D36E6F1201E31E1000DC94F /* CustomMapView.swift in Sources */,
 				4D374DC2203CA9C600AB89F3 /* CreateTopicViewController.swift in Sources */,
