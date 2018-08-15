@@ -48,7 +48,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         controller.configureWith(userDetailsService: self.serviceFactory.userDetailsService(),
                                  childService: self.serviceFactory.childService(),
                                  userImageService: self.serviceFactory.userImageService(),
-                                 userDefaults: self.userDefaults)
+                                 userDefaults: self.userDefaults,
+                                 friendsService: self.serviceFactory.friendsService())
         
         return controller
         
@@ -235,9 +236,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func removeContactPopupViewController() -> RemoveContactPopupViewController {
+    func removeContactPopupViewController(delegate: RemoveContactPopupViewControllerDelegate?, userDetails: UserDetails?) -> RemoveContactPopupViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.RemoveContactPopupViewController.rawValue, storyboard: storyboard) as! RemoveContactPopupViewController
+        
+        controller.configureWith(delegate: delegate, userDetails: userDetails)
         
         return controller
         

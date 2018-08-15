@@ -7,13 +7,6 @@ let REMOVE_CONTACT_CELL = "RemoveContactCell"
 
 let k_data = "data"
 
-enum UserViewType {
-    
-    case add
-    case remove
-    
-}
-
 class UserViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
@@ -40,7 +33,7 @@ class UserViewController: UIViewController {
     
     fileprivate var userId: String!
 
-    private var userDetails: UserDetails?
+    fileprivate var userDetails: UserDetails?
     
     fileprivate var childrenList: Array<Children> = []
     
@@ -258,7 +251,27 @@ class UserViewController: UIViewController {
                 
             } else {
                 
+                self.getUserDetails()
                 
+            }
+            
+        }
+        
+    }
+    
+    fileprivate func removeFriend(friendId: String) {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.friendsService.removeFriend(friendId: friendId, token: token) { errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                self.getUserDetails()
                 
             }
             
@@ -318,11 +331,9 @@ extension UserViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        let type: UserViewType = .add
-        
-        if type == .add {
+        if let isFriend = self.userDetails?.isFriend, isFriend {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: ADD_CONTACT_CELL) as! AddContactCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: REMOVE_CONTACT_CELL) as! RemoveContactCell
             
             cell.configureWith(delegate: self)
             
@@ -330,7 +341,7 @@ extension UserViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: REMOVE_CONTACT_CELL) as! RemoveContactCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ADD_CONTACT_CELL) as! AddContactCell
             
             cell.configureWith(delegate: self)
             
@@ -342,12 +353,26 @@ extension UserViewController: UITableViewDelegate, UITableViewDataSource {
 
 }
 
-extension UserViewController: AddCellDelegate, RemoveContactCellDelegate {
+extension UserViewController: AddCellDelegate, RemoveContactCellDelegate, RemoveContactPopupViewControllerDelegate {
     
     func addButtonPressed() {
         
+        guard self.userId != self.appContext.userId() else {
+            
+            self.showOkAlertWith(title: "Info", message: "You can not add your account to friends.")
+            
+            return
+            
+        }
+        
         self.addFriend(friendId: self.userId)
         
+    }
+    
+    func removeConfirmed() {
+        
+        self.removeFriend(friendId: self.userId)
+
     }
     
     func removeButtonPressed() {
@@ -361,7 +386,7 @@ extension UserViewController: AddCellDelegate, RemoveContactCellDelegate {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.removeContactPopupViewController()
+        let controller = factory.removeContactPopupViewController(delegate: self, userDetails: self.userDetails)
         
         controller.modalPresentationStyle = .overCurrentContext
         

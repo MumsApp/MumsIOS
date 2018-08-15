@@ -4,7 +4,7 @@ class ChatCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var containerView: UIView!
     
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: LoadableImageView!
     
     @IBOutlet weak var onlineImageView: UIImageView!
     
@@ -27,6 +27,12 @@ class ChatCell: UITableViewCell, Reusable {
         }
         
         self.descriptionLabel.text = friend.description
+        
+        if let photoURL = friend.photo {
+            
+            self.userImageView.loadImage(urlStringOptional: photoURL)
+            
+        }
         
     }
     

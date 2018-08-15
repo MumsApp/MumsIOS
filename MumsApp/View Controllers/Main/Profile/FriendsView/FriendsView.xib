@@ -59,6 +59,9 @@
                             <state key="normal" title="Send a message" image="letterGreenIcon">
                                 <color key="titleColor" red="0.1215686275" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="sendMessageButtonPressed:" destination="-1" eventType="touchUpInside" id="kV4-1d-xF2"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

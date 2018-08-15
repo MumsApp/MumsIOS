@@ -1,5 +1,11 @@
 import UIKit
 
+protocol FriendsViewDelegate: class {
+    
+    func sendMessageButtonPressed()
+    
+}
+
 class FriendsView: UIView {
     
     @IBOutlet var contentView: UIView!
@@ -10,7 +16,15 @@ class FriendsView: UIView {
     
     @IBOutlet weak var sendMessageButton: UIButton!
     
-    var members: Array<UIImage> = []
+    private weak var delegate: FriendsViewDelegate?
+
+    var friends: Array<Friend> = []
+
+    func configureWith(delegate: FriendsViewDelegate? = nil) {
+        
+        self.delegate = delegate
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,7 +70,7 @@ class FriendsView: UIView {
     
     @IBAction func sendMessageButtonPressed(_ sender: UIButton) {
         
-        // OPEN CHAT
+        self.delegate?.sendMessageButtonPressed()
         
     }
     
@@ -66,14 +80,17 @@ extension FriendsView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        //        return self.members.count
-        return 8 // max 8
-        
+        return self.friends.count
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableClass(MembersCell.self, forIndexPath: indexPath, type: .cell)
+        
+        let friend = self.friends[indexPath.row]
+        
+        cell.configureWith(friend: friend)
         
         return cell
         

@@ -2,7 +2,13 @@ import UIKit
 
 class MembersCell: UICollectionViewCell, Reusable {
     
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: LoadableImageView!
+    
+    func configureWith(friend: Friend) {
+        
+        self.userImageView.loadImage(urlStringOptional: friend.photo)
+        
+    }
     
     override func awakeFromNib() {
         

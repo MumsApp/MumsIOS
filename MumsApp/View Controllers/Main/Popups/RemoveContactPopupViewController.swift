@@ -1,5 +1,11 @@
 import UIKit
 
+protocol RemoveContactPopupViewControllerDelegate: class {
+    
+    func removeConfirmed()
+    
+}
+
 class RemoveContactPopupViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
@@ -8,7 +14,7 @@ class RemoveContactPopupViewController: UIViewController {
     
     @IBOutlet weak var closeButton: UIButton!
     
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: LoadableImageView!
     
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -20,10 +26,24 @@ class RemoveContactPopupViewController: UIViewController {
     
     @IBOutlet weak var cancelButton: UIButton!
    
+    private weak var delegate: RemoveContactPopupViewControllerDelegate?
+    
+    private var userDetails: UserDetails?
+    
+    func configureWith(delegate: RemoveContactPopupViewControllerDelegate?, userDetails: UserDetails?) {
+        
+        self.delegate = delegate
+        
+        self.userDetails = userDetails
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.configureView()
+        
+        self.configureData()
         
     }
     
@@ -59,11 +79,31 @@ class RemoveContactPopupViewController: UIViewController {
         self.cancelButton.titleLabel?.font = .medium(size: 15)
         
     }
+    
+    private func configureData() {
+        
+        guard let userDetails = self.userDetails else { return }
+        
+        if let name = userDetails.name, let surname = userDetails.surname {
+            
+            self.userNameLabel.text = name + " " + surname
+            
+        }
+        
+        if let photoURL = userDetails.photo?.src {
+            
+            self.userImageView.loadImage(urlStringOptional: photoURL)
+            
+        }
+        
+    }
 
     @IBAction func removeButtonPressed(_ sender: UIButton) {
-                
-        self.dismissViewController()
         
+        self.delegate?.removeConfirmed()
+        
+        self.dismissViewController()
+
     }
    
     @IBAction func closeButtonPressed(_ sender: UIButton) {

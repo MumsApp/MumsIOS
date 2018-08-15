@@ -43,7 +43,9 @@ class ProfileViewController: UIViewController {
     
     fileprivate var userDefaults: MOUserDefaults!
     
-    func configureWith(userDetailsService: UserDetailsService, childService: ChildService, userImageService: UserImageService, userDefaults: MOUserDefaults) {
+    private var friendsService: FriendsService!
+    
+    func configureWith(userDetailsService: UserDetailsService, childService: ChildService, userImageService: UserImageService, userDefaults: MOUserDefaults, friendsService: FriendsService) {
         
         self.userDetailsService = userDetailsService
         
@@ -52,6 +54,8 @@ class ProfileViewController: UIViewController {
         self.userImageService = userImageService
         
         self.userDefaults = userDefaults
+        
+        self.friendsService = friendsService
         
     }
     
@@ -64,8 +68,9 @@ class ProfileViewController: UIViewController {
         
         self.getUserData()
         
+        self.getUserFriends(page: 1)
+        
     }
-    
     
     func configureView() {
         
@@ -86,6 +91,8 @@ class ProfileViewController: UIViewController {
         self.heightConstraint.constant = 1270
 
         self.childrenView.configureWith(delegate: self)
+        
+        self.friendsView.configureWith(delegate: self)
         
     }
 
@@ -286,6 +293,50 @@ class ProfileViewController: UIViewController {
             self.cardsViewHeight.constant +
             self.offersViewHeight.constant +
             self.friendsViewHeight.constant + 200
+        
+    }
+    
+    private func getUserFriends(page: Int) {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.progressHUD.showLoading()
+        
+        self.friendsService.getFriends(page: page, token: token) { dataOptional, errorOptional in
+            
+            self.progressHUD.dismiss()
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                guard let data = dataOptional as? StorableDictionary,
+                    let dictionary = data[k_data] as? StorableDictionary else {
+                        
+                        return
+                        
+                }
+                
+                
+                if let friendsArray = dictionary[k_friends] as? Array<Dictionary<String, Any>> {
+                    
+                    friendsArray.forEach({ dict in
+                        
+                        let friend = Friend(dictionary: dict)
+                        
+                        self.friendsView.friends.append(friend)
+                        
+                    })
+                    
+                    self.friendsView.collectionView.reloadData()
+                    
+                }
+                
+            }
+            
+        }
         
     }
     
@@ -580,6 +631,26 @@ extension ProfileViewController: AddChildrenPopupViewControllerDelegate {
     func saveChildrenButtonPressed() {
         
         self.getUserData()
+        
+    }
+    
+}
+
+extension ProfileViewController: FriendsViewDelegate {
+    
+    func sendMessageButtonPressed() {
+        
+        self.showChatViewController()
+        
+    }
+    
+    private func showChatViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.chatViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
         
     }
     

@@ -4,6 +4,7 @@ let k_description = "description"
 let k_location = "location"
 let k_children = "children"
 let k_photo = "photo"
+let k_isFriend = "isFriend"
 
 struct UserDetails: Resource, Storable {
     
@@ -16,6 +17,7 @@ struct UserDetails: Resource, Storable {
     var location: Location?
     var children: Array<Children>?
     var photo: Photo?
+    var isFriend: Bool?
     
     init(dictionary: StorableDictionary) {
         
@@ -23,6 +25,7 @@ struct UserDetails: Resource, Storable {
         self.name = dictionary[k_name] as? String
         self.surname = dictionary[k_surname] as? String
         self.description = dictionary[k_description] as? String
+        self.isFriend = dictionary[k_isFriend] as? Bool
         
         if let locationDictionary = dictionary[k_location] as? Dictionary<String, Any> {
             
@@ -67,7 +70,7 @@ struct UserDetails: Resource, Storable {
         dictionary[k_surname] = self.surname
         dictionary[k_description] = self.description
         dictionary[k_location] = self.location?.toDictionary()
-        
+        dictionary[k_isFriend] = self.isFriend
         dictionary[k_photo] = self.photo?.toDictionary()
         
         var childrenArray: Array<Dictionary<String, Any>> = []
