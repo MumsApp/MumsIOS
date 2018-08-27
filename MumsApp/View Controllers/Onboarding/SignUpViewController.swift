@@ -309,7 +309,7 @@ class SignUpViewController: UIViewController {
         
         self.registerService.register(email: email, password: password, name: name, surname: surname) { errorOptional in
             
-            if let error = errorOptional {
+            if let _ = errorOptional {
             
                 self.isScreenEnabled(enabled: true)
 
@@ -329,7 +329,7 @@ class SignUpViewController: UIViewController {
         
         self.loginService.login(email: email, password: password) { errorOptional in
             
-            if let error = errorOptional {
+            if let _ = errorOptional {
                 
                 self.isScreenEnabled(enabled: true)
 
@@ -602,6 +602,8 @@ extension SignUpViewController: GIDSignInDelegate, GIDSignInUIDelegate {
             self.showOkAlertWith(title: "Error", message: error.localizedDescription)
 
         } else {
+            
+            print(user)
             
             self.registerWithGoogle(googleProfile: user)
             

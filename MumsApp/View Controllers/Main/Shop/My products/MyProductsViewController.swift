@@ -41,7 +41,7 @@ class MyProductsViewController: UIViewController {
             0, right: 0)
 
         self.collectionView.register(MyProductCell.self, type: .cell)
-  
+          
     }
     
     private func configureLayout() {
@@ -95,6 +95,16 @@ class MyProductsViewController: UIViewController {
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
         let controller = factory.addProductViewController(productOptional: productOptional)
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    fileprivate func showProductDetailsViewController(product: Product) {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.productDetailsViewController(product: product)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -162,7 +172,7 @@ extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let product = self.products[indexPath.row]
         
-        cell.configureWith(product: product)
+        cell.configureWith(product: product, delegate: self)
         
         return cell
         
@@ -171,6 +181,16 @@ extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let product = self.products[indexPath.row]
+        
+        self.showProductDetailsViewController(product: product)
+
+    }
+    
+}
+
+extension MyProductsViewController: MyProductCellDelegate {
+    
+    func editButtonPressed(product: Product) {
         
         self.showAddProductViewController(productOptional: product)
         

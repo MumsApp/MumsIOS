@@ -175,12 +175,6 @@ class AddProductViewController: UIViewController {
         
         self.descriptionView.descriptionTextView.text = product.description
         
-        if let lat = product.lat, let lon = product.lon {
-            
-            self.itemLocationView.configureLocationViewWith(lat: Double(lat)!, lon: Double(lon)!)
-            
-        }
-        
     }
     
     private func addNotifationsForKeyboard() {

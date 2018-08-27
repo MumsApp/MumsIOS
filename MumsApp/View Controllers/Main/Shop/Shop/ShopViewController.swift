@@ -408,8 +408,6 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
             self.isLoadingList = true
             
-            print("CURRENT PAGE \(currentPage)")
-            
             self.getShopProducts(page: self.currentPage, loadMore: true)
     
         }

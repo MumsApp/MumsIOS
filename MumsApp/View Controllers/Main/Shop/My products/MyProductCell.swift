@@ -1,5 +1,11 @@
 import UIKit
 
+protocol MyProductCellDelegate: class {
+    
+    func editButtonPressed(product: Product)
+    
+}
+
 class MyProductCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var containerView: UIView!
@@ -14,7 +20,11 @@ class MyProductCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var itemPriceLabel: UILabel!
     
-    func configureWith(product: Product) {
+    private weak var delegate: MyProductCellDelegate?
+    
+    private var product: Product!
+    
+    func configureWith(product: Product, delegate: MyProductCellDelegate?) {
                 
         self.itemNameLabel.text = product.name
         
@@ -24,18 +34,22 @@ class MyProductCell: UICollectionViewCell, Reusable {
                 
         self.itemImageView.loadImage(urlStringOptional: product.photos?.first?.src)
 
+        self.delegate = delegate
+        
+        self.product = product
+        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.removeTopView()
         
         self.configureView()
              
     }
     
     private func configureView() {
-        
-//        self.selectionStyle = .none
         
         self.backgroundColor = .clear
         
@@ -56,7 +70,9 @@ class MyProductCell: UICollectionViewCell, Reusable {
     }
     
     @IBAction func editButtonPressed(_ sender: UIButton) {
-            
+        
+        self.delegate?.editButtonPressed(product: self.product)
+        
     }
     
 }

@@ -24,6 +24,7 @@ struct GoogleService: ResourceService {
                               k_name: googleProfile.profile.givenName!,
                               k_surname: googleProfile.profile.familyName!]
         
+        
         if let request = URLRequest.POSTRequestJSON(urlString: GOOGLE_REGISTER_URL, bodyParameters: bodyParameters) {
             
             let response = responseHandler(completion: completion)

@@ -11,6 +11,8 @@ class ServiceFactory {
     
     private var parser = Parser()
     
+    private var socket: MOSocket
+
     static func serviceFactory() -> ServiceFactory {
         
         let factoryProvider = FactoryProvider()
@@ -29,9 +31,17 @@ class ServiceFactory {
         
         self.userDefaults = factoryProvider.provide()
         
+        self.socket = factoryProvider.provide()
+
     }
     
     // MARK: - Service Implementation
+    
+    func socketService() -> MOSocket {
+                
+        return self.socket
+        
+    }
     
     func registerService() -> RegisterService {
         
@@ -55,7 +65,7 @@ class ServiceFactory {
         
         let loginManager = FBSDKLoginManager()
 
-        let loginParser = LoginServiceParser(userDefaults: self.userDefaults)
+        let loginParser = FacebookServiceParser(userDefaults: self.userDefaults)
         
         let service = FacebookService(loginManager: loginManager, networkService: self.networkService, serviceParser: self.parser, loginServiceParser: loginParser)
         

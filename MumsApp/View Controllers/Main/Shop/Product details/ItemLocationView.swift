@@ -9,7 +9,7 @@ class ItemLocationView: LocationView {
         self.showSwitch.isHidden = true
         
         self.editButton.isHidden = false
-        
+                
         self.configureLocationView()
         
     }
@@ -27,6 +27,8 @@ class ItemLocationView: LocationView {
     }
     
     func configureLocationViewWith(lat: Double, lon: Double) {
+        
+        self.mapView.clear()
         
         self.mapView.addMarker(lat: lat, lon: lon)
         

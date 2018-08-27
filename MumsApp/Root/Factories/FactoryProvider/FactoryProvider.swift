@@ -12,6 +12,8 @@ class FactoryProvider {
 
     private static weak var introDelegate: IntroDelegate?
     
+    private static var socket: MOSocket!
+
     class func setupFactory(networkService: NetworkService, introDelegate: IntroDelegate) {
         
         self.networkService = networkService
@@ -22,8 +24,11 @@ class FactoryProvider {
         
         self.introDelegate = introDelegate
         
+        self.socket = MOSocket()
+
         AppContextFactory.setupFactory(userDefaults: self.userDefaults, dataStore: self.dataStore)
         
+
     }
     
     func provide() -> MOUserDefaults {
@@ -50,16 +55,14 @@ class FactoryProvider {
 
     }
     
-//    func provideUser() -> DataSourceUser {
-//
-//        return FactoryProvider.dataSourceUser
-//
-//    }
+    func provide() -> MOSocket {
+        
+        return FactoryProvider.socket
+        
+    }
     
     class func tearDown() {
-        
-//        self.dataStore.synchronize()
-        
+                
         _ = self.userDefaults.synchronize()
         
     }

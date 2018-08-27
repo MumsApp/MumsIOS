@@ -128,7 +128,7 @@ struct FacebookService: ResourceService {
                 
         if let request = URLRequest.POSTRequestJSON(urlString: FACEBOOK_REGISTER_URL, bodyParameters: bodyParameters) {
             
-            let response = responseHandler(completion: completion)
+            let response = responseHandler(type: .status, completion: completion)
             
             let task = JSONRequestTask(urlRequest: request, taskCompletion: response)
             

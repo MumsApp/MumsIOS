@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5B0B5B8A1476F8AA333AA7B53F47E96B'
-               BlueprintName = 'ObjcExceptionBridging'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ObjcExceptionBridging.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B0B5B8A1476F8AA333AA7B53F47E96B"
+               BlueprintName = "ObjcExceptionBridging"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "ObjcExceptionBridging.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -37,7 +37,7 @@ class ProductDetailsViewController: UIViewController {
     }
 
     private func configureView() {
-        
+    
         self.view.setBackground()
 
         self.collectionView.backgroundColor = .clear

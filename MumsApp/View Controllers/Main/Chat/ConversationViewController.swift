@@ -107,20 +107,20 @@ class ConversationViewController: MessagesViewController {
     
     private func getData() {
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            
-            SampleData.shared.getMessages(count: 10) { messages in
-                
-                DispatchQueue.main.async {
-                
-                    self.messageList = messages
-            
-                }
-        
-            }
-        
-        }
-        
+//        DispatchQueue.global(qos: .userInitiated).async {
+//
+//            SampleData.shared.getMessages(count: 10) { messages in
+//
+//                DispatchQueue.main.async {
+//
+//                    self.messageList = messages
+//
+//                }
+//
+//            }
+//
+//        }
+
     }
 
     // MARK: - Keyboard Style
@@ -187,7 +187,7 @@ extension ConversationViewController: MessagesDataSource {
     
     func currentSender() -> Sender {
     
-        return SampleData.shared.currentSender
+        return Sender(id: self.appContext.userId()!, displayName: "Sender")
     
     }
     
@@ -205,7 +205,7 @@ extension ConversationViewController: MessagesDataSource {
     
     func avatar(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> Avatar {
     
-        return SampleData.shared.getAvatarFor(sender: message.sender)
+        return self.messageList[indexPath.section].avatar
     
     }
     
@@ -418,13 +418,13 @@ extension ConversationViewController: MessageInputBarDelegate {
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
        
-        self.messageList.append(Message(text: text, sender: currentSender(), messageId: UUID().uuidString, date: Date()))
-        
-        inputBar.inputTextView.text = String()
-        
-        self.messagesCollectionView.reloadData()
-        
-        self.messagesCollectionView.scrollToBottom()
+//        self.messageList.append(Message(text: text, sender: currentSender(), messageId: UUID().uuidString, date: Date()))
+//
+//        inputBar.inputTextView.text = String()
+//
+//        self.messagesCollectionView.reloadData()
+//
+//        self.messagesCollectionView.scrollToBottom()
     
     }
     

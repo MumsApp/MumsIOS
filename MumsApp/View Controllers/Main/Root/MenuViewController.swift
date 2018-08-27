@@ -28,7 +28,7 @@ class MenuViewController: UIViewController {
     fileprivate weak var delegate: MenuDelegate?
     
     fileprivate var menuItems: Array<Menu> = []
-
+    
     func configureWith(delegate: MenuDelegate?) {
         
         self.delegate = delegate

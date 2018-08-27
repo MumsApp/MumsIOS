@@ -127,6 +127,9 @@
 		4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F4202246860020FD51 /* OffersView.xib */; };
 		4D5ED8F9202246870020FD51 /* OffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F5202246860020FD51 /* OffersCell.xib */; };
 		4D5ED8FA202246870020FD51 /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ED8F6202246860020FD51 /* OffersCell.swift */; };
+		4D63D3A6212D98BA00D5418B /* MOSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63D3A5212D98BA00D5418B /* MOSocket.swift */; };
+		4D63D3AB212D9C0500D5418B /* MOSocketHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63D3AA212D9C0500D5418B /* MOSocketHandlers.swift */; };
+		4D63D3AD212DCD1600D5418B /* FacebookServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63D3AC212DCD1600D5418B /* FacebookServiceParser.swift */; };
 		4D649242203CAD1700CE35B0 /* LobbyDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D649241203CAD1700CE35B0 /* LobbyDetailsCell.xib */; };
 		4D649244203CAD2700CE35B0 /* LobbyDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D649243203CAD2700CE35B0 /* LobbyDetailsCell.swift */; };
 		4D66007B201B5BDC0085CC58 /* Onboarding+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */; };
@@ -422,6 +425,9 @@
 		4D5ED8F4202246860020FD51 /* OffersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersView.xib; sourceTree = "<group>"; };
 		4D5ED8F5202246860020FD51 /* OffersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersCell.xib; sourceTree = "<group>"; };
 		4D5ED8F6202246860020FD51 /* OffersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersCell.swift; sourceTree = "<group>"; };
+		4D63D3A5212D98BA00D5418B /* MOSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOSocket.swift; sourceTree = "<group>"; };
+		4D63D3AA212D9C0500D5418B /* MOSocketHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOSocketHandlers.swift; sourceTree = "<group>"; };
+		4D63D3AC212DCD1600D5418B /* FacebookServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookServiceParser.swift; sourceTree = "<group>"; };
 		4D649241203CAD1700CE35B0 /* LobbyDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyDetailsCell.xib; sourceTree = "<group>"; };
 		4D649243203CAD2700CE35B0 /* LobbyDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailsCell.swift; sourceTree = "<group>"; };
 		4D66007A201B5BDC0085CC58 /* Onboarding+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding+TextField.swift"; sourceTree = "<group>"; };
@@ -672,6 +678,7 @@
 				4D05A9321FE144A800B19E6E /* DataStorage */,
 				4D05A9391FE144A800B19E6E /* UIView+Extensions */,
 				4DC67750201781B300F34184 /* Reachability */,
+				4D63D3A7212D98FC00D5418B /* Socket */,
 			);
 			path = "MOLib Source";
 			sourceTree = "<group>";
@@ -1075,10 +1082,20 @@
 			path = OffersView;
 			sourceTree = "<group>";
 		};
+		4D63D3A7212D98FC00D5418B /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				4D63D3A5212D98BA00D5418B /* MOSocket.swift */,
+				4D63D3AA212D9C0500D5418B /* MOSocketHandlers.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
 		4D681F88201DE32F00D404CD /* FacebookService */ = {
 			isa = PBXGroup;
 			children = (
 				4D681F84201DE09200D404CD /* FacebookService.swift */,
+				4D63D3AC212DCD1600D5418B /* FacebookServiceParser.swift */,
 			);
 			path = FacebookService;
 			sourceTree = "<group>";
@@ -1590,8 +1607,6 @@
 				4D05A8E81FE143C500B19E6E /* Sources */,
 				4D05A8E91FE143C500B19E6E /* Frameworks */,
 				4D05A8EA1FE143C500B19E6E /* Resources */,
-				74A03DE123872E8BFB915FDF /* [CP] Embed Pods Frameworks */,
-				8CEA68ACC1495515E83450C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1611,8 +1626,6 @@
 				4D05A8F31FE143C500B19E6E /* Sources */,
 				4D05A8F41FE143C500B19E6E /* Frameworks */,
 				4D05A8F51FE143C500B19E6E /* Resources */,
-				979A94A8EC32AFA897FE373C /* [CP] Embed Pods Frameworks */,
-				4B414401BC92F2EFBC349461 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1771,6 +1784,8 @@
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/StarscreamSocketIO/StarscreamSocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 			);
@@ -1790,6 +1805,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StarscreamSocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 			);
@@ -1811,7 +1828,9 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1834,21 +1853,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4B414401BC92F2EFBC349461 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MumsAppUITests/Pods-MumsAppUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C4BA327201DED92BC4773A8 /* [CP] Check Pods Manifest.lock */ = {
@@ -1900,51 +1904,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		74A03DE123872E8BFB915FDF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MumsAppTests/Pods-MumsAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8CEA68ACC1495515E83450C5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MumsAppTests/Pods-MumsAppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		979A94A8EC32AFA897FE373C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MumsAppUITests/Pods-MumsAppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1989,6 +1948,7 @@
 				4D1933E920569E7F006D6D5B /* SignUpOrganisationViewController.swift in Sources */,
 				4D36E700201E3859000DC94F /* RangeSeekSlider.swift in Sources */,
 				4D05A9811FE14E5600B19E6E /* PrimaryViewControllerFactory.swift in Sources */,
+				4D63D3AD212DCD1600D5418B /* FacebookServiceParser.swift in Sources */,
 				4D74FF41205BF93F0016D3E9 /* PromotionViewController.swift in Sources */,
 				4D05A9411FE144A900B19E6E /* MOCollectionViewCoordinator.swift in Sources */,
 				4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */,
@@ -2074,6 +2034,7 @@
 				4D05A9601FE144A900B19E6E /* UIViewController+UIAlertView.swift in Sources */,
 				4D05A9451FE144A900B19E6E /* URLRequest+Task.swift in Sources */,
 				4DCB4EA3202229BF006962F9 /* LobbyCell.swift in Sources */,
+				4D63D3A6212D98BA00D5418B /* MOSocket.swift in Sources */,
 				4D8F2D40201B564E00756CCB /* UINavigationBar+Extensions.swift in Sources */,
 				4DCEA1F32106FF2E0083EBD4 /* ShopCategoryService.swift in Sources */,
 				4D42E4B020E2BF67009E3428 /* LobbyTopicService.swift in Sources */,
@@ -2094,6 +2055,7 @@
 				4D05A9571FE144A900B19E6E /* InAppPurchase+Products.swift in Sources */,
 				4D39D49420349CCD005123F8 /* AddProductDescriptionView.swift in Sources */,
 				4D59F95520E38C1300186DB4 /* LobbyPostService.swift in Sources */,
+				4D63D3AB212D9C0500D5418B /* MOSocketHandlers.swift in Sources */,
 				4DA306C620445BDF00250156 /* ShopFilterCell.swift in Sources */,
 				4D05A94D1FE144A900B19E6E /* AuthenticatedNetworkService+Request.swift in Sources */,
 				4DC6774C2017817B00F34184 /* Reachability+UIView.swift in Sources */,

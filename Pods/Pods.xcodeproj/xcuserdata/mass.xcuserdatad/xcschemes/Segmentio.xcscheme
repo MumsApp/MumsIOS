@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DF83161DF060732AD86633F69BAB3F3D'
-               BlueprintName = 'Segmentio'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Segmentio.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E1CB91DB71EFAF4CF1466E0E9E2F20E4"
+               BlueprintName = "Segmentio"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "Segmentio.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

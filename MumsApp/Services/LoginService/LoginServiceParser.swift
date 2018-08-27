@@ -30,6 +30,8 @@ struct LoginServiceParser: ServiceParser {
 
         }
         
+        print(success)
+        
         return success
         
     }

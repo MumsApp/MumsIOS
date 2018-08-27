@@ -19,6 +19,7 @@ pod 'MessageKit', '~> 0.10.2'
 pod 'Segmentio', '~> 3.0'
 pod 'Kingfisher', '~> 4.0'
 pod 'SVProgressHUD', '~> 2.2.5'
+pod 'Socket.IO-Client-Swift', '~> 11.1.3'
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|

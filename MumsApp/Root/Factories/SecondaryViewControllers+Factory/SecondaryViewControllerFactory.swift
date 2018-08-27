@@ -37,6 +37,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MainRootViewController.rawValue, storyboard: storyboard) as! MainRootViewController
         
+        controller.configureWith(socket: self.serviceFactory.socketService())
+        
         return controller
         
     }

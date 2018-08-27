@@ -30,7 +30,15 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
     let factory = SecondaryViewControllerFactory.viewControllerFactory()
     
     var controller: UIViewController! = nil
+    
+    private var socket: MOSocket!
 
+    func configureWith(socket: MOSocket) {
+        
+        self.socket = socket
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,7 +51,33 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         self.transition.duration = 0.3
         
         mainRootVC = self
-    
+        
+        self.socket.configure()
+        
+        self.socket.addHandlers()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            
+//            self.socket.emitJoinGroupRoom(roomId: "test")
+
+            self.socket.emitOnline(token: self.appContext.tokenBearer()!)
+
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+            
+//            self.socket.emitSendMessage(roomName: "test", token: self.appContext.tokenBearer()!, message: "pierwsza wiadomosc")
+//            self.socket.emitOnline(token: self.appContext.tokenBearer()!)
+
+            
+        }
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+//
+//
+//
+//        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,7 +92,7 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         }
         
     }
-    
+ 
     private func configureNavigationBar() {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
