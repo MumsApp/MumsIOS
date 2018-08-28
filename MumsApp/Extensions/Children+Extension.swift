@@ -31,7 +31,7 @@ extension Children {
             
         case 3:
             
-            title += "Baby on board " + String(age)
+            title += "Baby on board"
             
         default:
             
@@ -48,10 +48,6 @@ extension Children {
         case 2:
             
             title += age == 1 ? " month old" : " months old"
-            
-        case 3:
-            
-            title += age == 1 ? " year old" : " years old"
             
         default:
             

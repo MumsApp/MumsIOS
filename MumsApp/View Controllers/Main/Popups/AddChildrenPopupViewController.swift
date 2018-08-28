@@ -42,6 +42,14 @@ class AddChildrenPopupViewController: UIViewController {
     
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBOutlet weak var stackView: UIStackView!
+    
+    @IBOutlet weak var separatorViewFirst: UIView!
+    
+    @IBOutlet weak var separatorViewSecond: UIView!
+    
+    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
+    
     private weak var delegate: AddChildrenPopupViewControllerDelegate?
 
     private var childService: ChildService!
@@ -132,6 +140,26 @@ class AddChildrenPopupViewController: UIViewController {
             
             self.typeLabel.text = "Baby on board"
 
+            self.ageLabel.isHidden = true
+            
+            self.stackView.isHidden = true
+            
+            self.minusButton.isHidden = true
+            
+            self.plusButton.isHidden = true
+            
+            self.ageCountLabel.isHidden = true
+            
+            self.smallContainerView.isHidden = true
+        
+            self.separatorViewFirst.isHidden = true
+            
+            self.separatorViewSecond.isHidden = true
+            
+            self.containerViewHeight.constant = 370
+            
+            self.ageUnit = 3
+            
         }
         
         self.configureChildren()
@@ -231,6 +259,10 @@ class AddChildrenPopupViewController: UIViewController {
     }
     
     private func prepareToSaveChild() {
+        
+        print(self.ageCountLabel.text)
+        
+        print(self.ageUnit)
         
         guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
         

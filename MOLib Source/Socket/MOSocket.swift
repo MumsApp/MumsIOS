@@ -71,6 +71,7 @@ class MOSocket: NSObject {
         
         self.handleOnline { _ in
             
+            print("Here")
             
         }
         
@@ -101,10 +102,10 @@ class MOSocket: NSObject {
     
     func emitOnline(token: String) {
         
-//        let parameters = [k_jwt: token]
+        let parameters = [k_jwt: token]
         
         self.socket.emit(ONLINE, token)
-
+        
     }
     
 }

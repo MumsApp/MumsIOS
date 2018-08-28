@@ -58,25 +58,20 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             
-//            self.socket.emitJoinGroupRoom(roomId: "test")
+            self.socket.emitJoinGroupRoom(roomId: "test")
 
-            self.socket.emitOnline(token: self.appContext.tokenBearer()!)
+//            self.socket.emitOnline(token: self.appContext.tokenBearer()!)
 
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
             
+            self.socket.emitOnline(token: self.appContext.tokenBearer()!)
+
 //            self.socket.emitSendMessage(roomName: "test", token: self.appContext.tokenBearer()!, message: "pierwsza wiadomosc")
-//            self.socket.emitOnline(token: self.appContext.tokenBearer()!)
 
             
         }
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-//
-//
-//
-//        }
         
     }
     

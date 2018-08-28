@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 protocol ShopFilterViewControllerDelegate: class {
     
@@ -49,6 +50,8 @@ class ShopFilterViewController: UIViewController {
     private var shopService: ShopService!
     
     private weak var delegate: ShopFilterViewControllerDelegate?
+    
+    fileprivate var selectedLocation: CLLocationCoordinate2D?
     
     func configureWith(shopService: ShopService, delegate: ShopFilterViewControllerDelegate?) {
         
@@ -219,7 +222,7 @@ class ShopFilterViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.locationPopupViewController(delegate: nil, type: .other)
+        let controller = factory.locationPopupViewController(delegate: self, type: .other)
         
         controller.modalPresentationStyle = .overCurrentContext
         
@@ -231,12 +234,17 @@ class ShopFilterViewController: UIViewController {
     
     private func searchShopProducts() {
 
+        let lat = self.selectedLocation?.latitude ?? LONDON_LAT
+        let long = self.selectedLocation?.longitude ?? LONDON_LONG
+        
         var bodyParameters: Dictionary<String, Any> = [k_priceFrom: self.priceSlider.selectedMinValue,
                                                        k_priceTo: self.priceSlider.selectedMaxValue,
-                                                       k_userLat: "12.4",
-                                                       k_userLon: "12.5",
+                                                       k_userLat: lat,
+                                                       k_userLon: long,
                                                        k_distanceFrom: self.distanceSlider.selectedMinValue,
                                                        k_distanceTo: self.distanceSlider.selectedMaxValue]
+        
+        print(bodyParameters)
         
         if let cat = self.selectedCategoryId {
             
@@ -285,14 +293,28 @@ extension ShopFilterViewController: RangeSeekSliderDelegate {
             let textMin = minValue == 1 ? " mile" : " miles"
             
             let textMax = maxValue == 1 ? " mile" : " miles"
-
-            print(minValue)
             
             self.minDistanceLabel.text = String(describing: Int(minValue)) + textMin
             
             self.maxDistanceLabel.text = String(describing: Int(maxValue)) + textMax
             
         }
+        
+    }
+    
+}
+
+extension ShopFilterViewController: LocationPopupDelegate {
+    
+    func locationUpdated(coordinate: CLLocationCoordinate2D, locationName: String) {
+        
+        self.selectedLocation = coordinate
+        
+    }
+    
+    func locationNotSelected() {
+        
+        self.selectedLocation = nil
         
     }
     

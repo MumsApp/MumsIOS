@@ -4155,11 +4155,15 @@ you want to remove</string>
                         <outlet property="ageLabel" destination="tx7-Nb-WY8" id="RUW-yB-hXV"/>
                         <outlet property="closeButton" destination="0Jj-ND-4Tw" id="h0a-ns-sD5"/>
                         <outlet property="containerView" destination="5WP-Zk-cbB" id="gw1-bT-lTf"/>
+                        <outlet property="containerViewHeight" destination="8F8-H0-3DR" id="3ez-2G-wdx"/>
                         <outlet property="minusButton" destination="7yB-tw-o4a" id="wiL-hA-aGi"/>
                         <outlet property="monthsButton" destination="4Ia-sb-BnK" id="lVh-LK-AAf"/>
                         <outlet property="plusButton" destination="ksX-SH-2E9" id="PJ9-VA-kmU"/>
                         <outlet property="saveButton" destination="ufI-dh-SYI" id="Bha-Dt-51h"/>
+                        <outlet property="separatorViewFirst" destination="Oxt-nn-JgW" id="vGp-y5-Bgg"/>
+                        <outlet property="separatorViewSecond" destination="bhr-fa-xy6" id="s9e-gd-tmf"/>
                         <outlet property="smallContainerView" destination="bZd-iu-pcs" id="Eqn-pN-cXY"/>
+                        <outlet property="stackView" destination="rkU-Y6-DTL" id="Qs7-7i-DTs"/>
                         <outlet property="titleLabel" destination="Pqq-Yi-aBg" id="nL1-n2-Src"/>
                         <outlet property="typeImageView" destination="fHN-q5-ekh" id="Otp-1B-hwr"/>
                         <outlet property="typeLabel" destination="Mdk-Lq-ibF" id="ig0-20-FQA"/>
