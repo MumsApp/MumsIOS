@@ -104,7 +104,7 @@ class MOSocket: NSObject {
         
         let parameters = [k_jwt: token]
         
-        self.socket.emit(ONLINE, token)
+        self.socket.emit(ONLINE, parameters)
         
     }
     

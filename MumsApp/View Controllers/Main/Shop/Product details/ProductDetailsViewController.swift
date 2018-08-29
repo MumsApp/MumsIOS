@@ -12,10 +12,14 @@ class ProductDetailsViewController: UIViewController {
     
     fileprivate var product: Product!
     
-    func configureWith(product: Product) {
+    fileprivate var type: ShopViewType = .shop
+
+    func configureWith(product: Product, type: ShopViewType) {
         
         self.product = product
-                
+        
+        self.type = type
+        
     }
     
     override func viewDidLoad() {
@@ -100,7 +104,9 @@ class ProductDetailsViewController: UIViewController {
     
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "Product")
+        let title = self.type == .shop ? "Product" : "Service"
+        
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: title)
         
         self.navigationItem.titleView = titleLabel
         

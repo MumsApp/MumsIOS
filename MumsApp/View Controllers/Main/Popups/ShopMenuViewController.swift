@@ -22,9 +22,13 @@ class ShopMenuViewController: UIViewController {
     
     private weak var delegate: ShopMenuDelegate?
     
-    func configureWith(delegate: ShopMenuDelegate?) {
+    private var type: ShopViewType = .shop
+    
+    func configureWith(delegate: ShopMenuDelegate?, type: ShopViewType) {
         
         self.delegate = delegate
+        
+        self.type = type
         
     }
     
@@ -45,6 +49,12 @@ class ShopMenuViewController: UIViewController {
     }
     
     private func configureView() {
+        
+        if self.type == .services {
+            
+            self.myProductsButton.setTitle("My services", for: .normal)
+            
+        }
         
         self.titleLabel.font = .regular(size: 20)
         

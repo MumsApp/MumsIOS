@@ -4,13 +4,19 @@ class MyProductsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var addProductButton: UIButton!
+
     private var shopService: ShopService!
     
+    private var type: ShopViewType = .shop
+
     fileprivate var products: Array<Product> = []
-    
-    func configureWith(shopService: ShopService) {
+
+    func configureWith(shopService: ShopService, type: ShopViewType) {
         
         self.shopService = shopService
+        
+        self.type = type
         
     }
     
@@ -22,6 +28,11 @@ class MyProductsViewController: UIViewController {
         self.configureNavigationBar()
 
         self.configureLayout()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         self.getUserShopProducts()
         
@@ -41,7 +52,13 @@ class MyProductsViewController: UIViewController {
             0, right: 0)
 
         self.collectionView.register(MyProductCell.self, type: .cell)
-          
+        
+        if self.type == .services {
+            
+            self.addProductButton.setTitle("Upload another service", for: .normal)
+            
+        }
+        
     }
     
     private func configureLayout() {
@@ -64,8 +81,10 @@ class MyProductsViewController: UIViewController {
 
     private func configureNavigationBar() {
         
-        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: "My Products")
+        let title = self.type == .shop ? "My products" : "My Services"
         
+        let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: title)
+
         self.navigationItem.titleView = titleLabel
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -94,7 +113,7 @@ class MyProductsViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.addProductViewController(productOptional: productOptional)
+        let controller = factory.addProductViewController(productOptional: productOptional, type: self.type)
         
         self.navigationController?.pushViewController(controller, animated: true)
         

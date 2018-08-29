@@ -128,41 +128,41 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func productDetailsViewController(product: Product) -> ProductDetailsViewController {
+    func productDetailsViewController(product: Product, type: ShopViewType) -> ProductDetailsViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ProductDetailsViewController.rawValue, storyboard: storyboard) as! ProductDetailsViewController
         
-        controller.configureWith(product: product)
+        controller.configureWith(product: product, type: type)
         
         return controller
         
     }
     
-    func shopMenuViewController(delegate: ShopMenuDelegate?) -> ShopMenuViewController {
+    func shopMenuViewController(delegate: ShopMenuDelegate?, type: ShopViewType) -> ShopMenuViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopMenuViewController.rawValue, storyboard: storyboard) as! ShopMenuViewController
         
-        controller.configureWith(delegate: delegate)
+        controller.configureWith(delegate: delegate, type: type)
         
         return controller
         
     }
     
-    func myProductViewController() -> MyProductsViewController {
+    func myProductViewController(type: ShopViewType) -> MyProductsViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MyProductsViewController.rawValue, storyboard: storyboard) as! MyProductsViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService())
+        controller.configureWith(shopService: self.serviceFactory.shopService(), type: type)
         
         return controller
         
     }
     
-    func addProductViewController(productOptional: Product? = nil) -> AddProductViewController {
+    func addProductViewController(productOptional: Product? = nil, type: ShopViewType) -> AddProductViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddProductViewController.rawValue, storyboard: storyboard) as! AddProductViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService(), imageLoader: self.serviceFactory.imageCacheLoader(), productOptional: productOptional)
+        controller.configureWith(shopService: self.serviceFactory.shopService(), imageLoader: self.serviceFactory.imageCacheLoader(), productOptional: productOptional, type: type)
         
         return controller
         
@@ -208,11 +208,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func shopFilterViewController(delegate: ShopFilterViewControllerDelegate?) -> ShopFilterViewController {
+    func shopFilterViewController(delegate: ShopFilterViewControllerDelegate?, type: ShopViewType) -> ShopFilterViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopFilterViewController.rawValue, storyboard: storyboard) as! ShopFilterViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService(), delegate: delegate)
+        controller.configureWith(shopService: self.serviceFactory.shopService(), delegate: delegate, type: type)
         
         return controller
         

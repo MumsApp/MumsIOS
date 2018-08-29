@@ -181,6 +181,8 @@ class ProfileViewController: UIViewController {
             
         } else {
             
+            self.profileView.userDescriptionLabel.text = "This user has not added a description about himself."
+            
             self.showOkAlertWith(title: "Info", message: "Tell us something about yourself.") { _ in
                 
                 self.showUserNamePopupViewController()

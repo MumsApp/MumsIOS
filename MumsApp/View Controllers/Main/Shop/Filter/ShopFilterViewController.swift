@@ -53,7 +53,11 @@ class ShopFilterViewController: UIViewController {
     
     fileprivate var selectedLocation: CLLocationCoordinate2D?
     
-    func configureWith(shopService: ShopService, delegate: ShopFilterViewControllerDelegate?) {
+    private var type: ShopViewType = .shop
+
+    func configureWith(shopService: ShopService, delegate: ShopFilterViewControllerDelegate?, type: ShopViewType) {
+        
+        self.type = type
         
         self.shopService = shopService
         
@@ -74,6 +78,16 @@ class ShopFilterViewController: UIViewController {
         
         self.view.setBackground()
 
+        if self.type == .services {
+            
+            self.productTypeTitleLabel.text = "Service type"
+            
+            self.selectCategoryButton.setTitle("Select service category", for: .normal)
+            
+            self.freeLabel.text = "Free"
+            
+        }
+        
         self.productTypeTitleLabel.font = .semiBold(size: 15)
         
         self.priceRangeTitleLabel.font = .semiBold(size: 15)
@@ -243,8 +257,6 @@ class ShopFilterViewController: UIViewController {
                                                        k_userLon: long,
                                                        k_distanceFrom: self.distanceSlider.selectedMinValue,
                                                        k_distanceTo: self.distanceSlider.selectedMaxValue]
-        
-        print(bodyParameters)
         
         if let cat = self.selectedCategoryId {
             

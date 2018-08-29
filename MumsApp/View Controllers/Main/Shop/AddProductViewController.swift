@@ -9,6 +9,8 @@ class AddProductViewController: UIViewController {
 
     @IBOutlet weak var addPhotoButton: UIButton!
     
+    @IBOutlet weak var uploadProductButton: UIButton!
+    
     @IBOutlet weak var photosView: AddProductImagesView!
     
     @IBOutlet weak var itemLocationView: ItemLocationView!
@@ -34,7 +36,11 @@ class AddProductViewController: UIViewController {
     
     private var imageLoader: ImageCacheLoader!
     
-    func configureWith(shopService: ShopService, imageLoader: ImageCacheLoader, productOptional: Product?) {
+    private var type: ShopViewType = .shop
+
+    func configureWith(shopService: ShopService, imageLoader: ImageCacheLoader, productOptional: Product?, type: ShopViewType) {
+        
+        self.type = type
         
         self.shopService = shopService
         
@@ -74,7 +80,7 @@ class AddProductViewController: UIViewController {
     private func configureView() {
         
         self.view.setBackground()
-
+    
         self.imagePicker.delegate = self
         
         self.photosView.isHidden = true
@@ -93,10 +99,14 @@ class AddProductViewController: UIViewController {
     
     private func configureNavigationBar() {
        
-        let title = productOptional == nil ? "Add Product" : "Edit Product"
+        let typeText = self.type == .shop ? "Product" : "Service"
+        
+        let title = productOptional == nil ? "Add \(typeText)" : "Edit \(typeText)"
         
         let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: title)
         
+        self.uploadProductButton.setTitle("Upload \(typeText)", for: .normal)
+
         self.navigationItem.titleView = titleLabel
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -118,7 +128,11 @@ class AddProductViewController: UIViewController {
     private func configureData() {
         
         guard let product = self.productOptional else { return }
-            
+        
+        let typeText = self.type == .shop ? "product" : "service"
+        
+        self.uploadProductButton.setTitle("Update \(typeText)", for: .normal)
+        
         if let photos = product.photos {
             
             self.addPhotoButton.setTitle(nil, for: .normal)
@@ -263,7 +277,7 @@ class AddProductViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.myProductViewController()
+        let controller = factory.myProductViewController(type: self.type)
         
         self.navigationController?.pushViewController(controller, animated: true)
 
@@ -319,7 +333,15 @@ class AddProductViewController: UIViewController {
         
         }
         
-        self.addProduct()
+        if self.productOptional == nil {
+            
+            self.addProduct()
+
+        } else {
+            
+            self.updateProduct()
+            
+        }
 
     }
     
@@ -327,6 +349,8 @@ class AddProductViewController: UIViewController {
         
         guard let token = self.appContext.token() else { return }
 
+        self.progressHUD.showLoading()
+        
         self.shopService.addShopProduct(name: self.descriptionView.itemTitleTextField.text!,
                                         description: self.descriptionView.descriptionTextView.text!,
                                         price: self.descriptionView.itemPriceTextField.text!,
@@ -337,16 +361,51 @@ class AddProductViewController: UIViewController {
                                         pointName: self.itemLocationView.userLocationLabel.text!,
                                         images: self.photosView.images) { errorOptional in
             
-            if let error = errorOptional {
-                
-                print(error.localizedDescription)
-                
-            } else {
-                
-                self.showProductAddedPopupViewController()
-
-            }
+                                        self.progressHUD.dismiss()
+                                            
+                                        if let error = errorOptional {
+                                                
+                                            print(error.localizedDescription)
+                                                
+                                        } else {
+                                                
+                                            self.showProductAddedPopupViewController()
+                                                
+                                        }
             
+        }
+        
+    }
+    
+    private func updateProduct() {
+        
+        guard let token = self.appContext.token(), let id = self.productOptional?.id else { return }
+        
+        self.progressHUD.showLoading()
+        
+        self.shopService.updateShopProduct(id: String(id),
+                                           name: self.descriptionView.itemTitleTextField.text!,
+                                           description: self.descriptionView.descriptionTextView.text!,
+                                           price: self.descriptionView.itemPriceTextField.text!,
+                                           category: String(self.selectedCategoryId!),
+                                           token: token,
+                                           lat: self.selectedLat!,
+                                           lon: self.selectedLon!,
+                                           pointName: self.itemLocationView.userLocationLabel.text!,
+                                           images: self.photosView.images) { errorOptional in
+                                            
+                                            self.progressHUD.dismiss()
+                                            
+                                            if let error = errorOptional {
+                                                
+                                                print(error.localizedDescription)
+                                                
+                                            } else {
+                                                
+                                                self.showProductAddedPopupViewController()
+                                                
+                                            }
+                                            
         }
         
     }

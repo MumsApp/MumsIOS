@@ -1358,6 +1358,7 @@
                         <viewLayoutGuide key="safeArea" id="OzV-M5-13A"/>
                     </view>
                     <connections>
+                        <outlet property="addProductButton" destination="pe0-QC-qSx" id="yeD-xd-kNs"/>
                         <outlet property="collectionView" destination="uOs-CK-IHu" id="Uif-lX-NQl"/>
                     </connections>
                 </viewController>
@@ -1738,6 +1739,7 @@
                         <outlet property="itemLocationView" destination="B0C-wg-2es" id="N2G-S5-RkN"/>
                         <outlet property="photosView" destination="TGU-7R-fxf" id="Akz-eg-siN"/>
                         <outlet property="scrollView" destination="gb1-sj-N4h" id="cHN-eN-cvm"/>
+                        <outlet property="uploadProductButton" destination="oKH-9r-bSl" id="ChL-hT-dYt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXx-qf-8RI" userLabel="First Responder" sceneMemberID="firstResponder"/>

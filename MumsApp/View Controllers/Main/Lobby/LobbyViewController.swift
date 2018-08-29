@@ -39,7 +39,7 @@ class LobbyViewController: UIViewController {
         self.getLobbyRooms()
         
     }
-
+    
     private func configureView() {
         
         self.view.setBackground()

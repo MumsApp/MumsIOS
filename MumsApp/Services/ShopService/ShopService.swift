@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 let ADD_SHOP_PRODUCTS_URL = BASE_URL + "shop/product?name={name}&description={description}&price={price}&category={category}&lat={lat}&lon={lon}&pointName={pointName}"
+let UPDATE_SHOP_PRODUCT_URL = BASE_URL + "shop/product/{id}?name={name}&description={description}&price={price}&category={category}&lat={lat}&lon={lon}&pointName={pointName}"
 let USER_SHOP_PRODUCTS_URL = BASE_URL + "shop/product/my"
 let SHOP_PRODUCTS_URL = BASE_URL + "shop/product/paginated/{page}/" + PAGINATION
 let SHOP_FAVOURITE_PRODUCTS_URL = BASE_URL + "shop/product/favourite"
@@ -48,6 +49,38 @@ struct ShopService: ResourceService {
                 
                 let imageDataOptional = UIImageJPEGRepresentation(image, 0.1)
 
+                array.append(imageDataOptional!)
+                
+            }
+            
+            _ = self.networkService.enqueueNetworkMultipleUploadRequest(request: task, multipleData: array)
+            
+        }
+        
+    }
+    
+    // MARK: - Update shop product
+    
+    func updateShopProduct(id: String, name: String, description: String, price: String, category: String, token: String, lat: String, lon: String, pointName: String, images: [UIImage], completion: @escaping ErrorCompletion) {
+        
+        let pathParameters = [k_id: id, k_name: name, k_description: description, k_price: price, k_category: category, k_lat: lat, k_lon: lon, k_pointName: pointName]
+        
+        let url = UPDATE_SHOP_PRODUCT_URL.URLReplacingPathParamaters(parameters: pathParameters)
+        
+        if var request = URLRequest.PUTRequestData(urlString: url, bodyData: nil) {
+            
+            request.setValue(token, forHTTPHeaderField: kAuthorization)
+            
+            let response = responseHandler(type: .status, completion: completion)
+            
+            let task = DataUploadJsonResponseTask(urlRequest: request, name: "file", fileName: "file.jpg", mimeType: "image/jpg", taskCompletion: response)
+            
+            var array: Array<Data> = []
+            
+            for image in images {
+                
+                let imageDataOptional = UIImageJPEGRepresentation(image, 0.1)
+                
                 array.append(imageDataOptional!)
                 
             }

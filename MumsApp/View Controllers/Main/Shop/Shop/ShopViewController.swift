@@ -14,8 +14,6 @@ class ShopViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
 
-    private var type: ShopViewType = .shop
-
     private var shopService: ShopService!
     
     fileprivate var pages: Int = 1
@@ -25,7 +23,9 @@ class ShopViewController: UIViewController {
     fileprivate var isLoadingList: Bool = false
 
     fileprivate var products: Array<Product> = []
-    
+
+    fileprivate var type: ShopViewType = .shop
+
     func configureWith(type: ShopViewType, shopService: ShopService) {
         
         self.type = type
@@ -43,7 +43,15 @@ class ShopViewController: UIViewController {
         
         self.registerCells()
         
-        self.getShopProducts(page: 1, loadMore: false)
+        if self.type == .shop {
+            
+            self.getShopProducts(page: 1, loadMore: false)
+
+        } else {
+            
+            // Services endpoints
+            
+        }
         
     }
 
@@ -109,7 +117,7 @@ class ShopViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.shopMenuViewController(delegate: self)
+        let controller = factory.shopMenuViewController(delegate: self, type: self.type)
         
         controller.modalPresentationStyle = .overCurrentContext
         
@@ -133,7 +141,7 @@ class ShopViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.addProductViewController()
+        let controller = factory.addProductViewController(type: self.type)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -283,6 +291,16 @@ class ShopViewController: UIViewController {
         
     }
     
+    fileprivate func showFilterViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.shopFilterViewController(delegate: self, type: self.type)
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
 }
 
 extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
@@ -413,7 +431,7 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
         }
     
     }
-    
+
 }
 
 extension ShopViewController: UISearchBarDelegate {
@@ -456,7 +474,7 @@ extension ShopViewController: ShopMenuDelegate {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.myProductViewController()
+        let controller = factory.myProductViewController(type: self.type)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -473,7 +491,7 @@ extension ShopViewController: ShopMenuDelegate {
         self.navigationController?.pushViewController(controller, animated: true)
         
     }
-    
+   
 }
 
 extension ShopViewController: ShopFilterCellDelegate {
@@ -482,16 +500,6 @@ extension ShopViewController: ShopFilterCellDelegate {
         
         self.showFilterViewController()
         
-    }
-    
-    func showFilterViewController() {
-        
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
-        
-        let controller = factory.shopFilterViewController(delegate: self)
-        
-        self.navigationController?.pushViewController(controller, animated: true)
-
     }
     
 }
