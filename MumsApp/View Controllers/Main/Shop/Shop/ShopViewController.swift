@@ -127,11 +127,11 @@ class ShopViewController: UIViewController {
                 
     }
     
-    fileprivate func showProductDetailsViewController(product: Product) {
+    fileprivate func showProductDetailsViewController(product: Product, type: ShopViewType) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.productDetailsViewController(product: product)
+        let controller = factory.productDetailsViewController(product: product, type: type)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -406,7 +406,7 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
             let product = self.products[indexPath.row]
             
-            self.showProductDetailsViewController(product: product)
+            self.showProductDetailsViewController(product: product, type: self.type)
 
         }
         
@@ -486,7 +486,7 @@ extension ShopViewController: ShopMenuDelegate {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.myWishlistViewController()
+        let controller = factory.myWishlistViewController(type: self.type)
         
         self.navigationController?.pushViewController(controller, animated: true)
         

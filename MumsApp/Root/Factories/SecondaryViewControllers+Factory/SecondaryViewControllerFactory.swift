@@ -198,11 +198,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func myWishlistViewController() -> MyWishlistViewController {
+    func myWishlistViewController(type: ShopViewType) -> MyWishlistViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MyWishlistViewController.rawValue, storyboard: storyboard) as! MyWishlistViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService())
+        controller.configureWith(shopService: self.serviceFactory.shopService(), type: type)
         
         return controller
         
@@ -363,6 +363,16 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.LobbyConversationViewController.rawValue, storyboard: storyboard) as! LobbyConversationViewController
         
         controller.configureWith(shouldReply: shouldReply, roomId: roomId, topicId: topicId, title: title, lobbyPostService: self.serviceFactory.lobbyPostService())
+        
+        return controller
+        
+    }
+    
+    func friendsViewController() -> FriendsViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.FriendsViewController.rawValue, storyboard: storyboard) as! FriendsViewController
+        
+        controller.configureWith(friendsService: self.serviceFactory.friendsService())
         
         return controller
         

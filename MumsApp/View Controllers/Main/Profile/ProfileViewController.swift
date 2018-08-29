@@ -642,15 +642,15 @@ extension ProfileViewController: FriendsViewDelegate {
     
     func sendMessageButtonPressed() {
         
-        self.showChatViewController()
+        self.showFriendsViewController()
         
     }
     
-    private func showChatViewController() {
+    private func showFriendsViewController() {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.chatViewController()
+        let controller = factory.friendsViewController()
         
         self.navigationController?.pushViewController(controller, animated: true)
         

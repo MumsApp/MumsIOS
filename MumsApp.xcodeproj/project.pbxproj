@@ -263,6 +263,9 @@
 		4DE8840C207BB95200682236 /* LocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE88409207BB95200682236 /* LocationCoordinator.swift */; };
 		4DE8840D207BB95200682236 /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8840A207BB95200682236 /* GeoLocation.swift */; };
 		4DE8840E207BB95200682236 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8840B207BB95200682236 /* LocationManager.swift */; };
+		4DEC3C682137099000089837 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEC3C672137099000089837 /* FriendsViewController.swift */; };
+		4DEC3C6B21370A3700089837 /* FriendsDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEC3C6A21370A3700089837 /* FriendsDetailsCell.xib */; };
+		4DEC3C6D21370A6E00089837 /* FriendsDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEC3C6C21370A6E00089837 /* FriendsDetailsCell.swift */; };
 		4DEE83E6201E120A001B0AEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */; };
 		4DEE83E8201E13CC001B0AEB /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83E7201E13CC001B0AEB /* ProfileView.xib */; };
 		4DEE83EA201E15FB001B0AEB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83E9201E15FB001B0AEB /* ProfileView.swift */; };
@@ -561,6 +564,9 @@
 		4DE88409207BB95200682236 /* LocationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCoordinator.swift; sourceTree = "<group>"; };
 		4DE8840A207BB95200682236 /* GeoLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
 		4DE8840B207BB95200682236 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4DEC3C672137099000089837 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		4DEC3C6A21370A3700089837 /* FriendsDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsDetailsCell.xib; sourceTree = "<group>"; };
+		4DEC3C6C21370A6E00089837 /* FriendsDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDetailsCell.swift; sourceTree = "<group>"; };
 		4DEE83E5201E120A001B0AEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DEE83E7201E13CC001B0AEB /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		4DEE83E9201E15FB001B0AEB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -1321,6 +1327,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE1750F2028DC23001C5DD1 /* Root */,
+				4DEC3C6921370A0600089837 /* Friends */,
 				4DE175072028C999001C5DD1 /* Chat */,
 				4D70F9CF20CFBF990021F3D3 /* Add to Menu */,
 				4DCB4E9F202227A1006962F9 /* Lobby */,
@@ -1501,6 +1508,24 @@
 				4DE8840B207BB95200682236 /* LocationManager.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		4DEC3C6921370A0600089837 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				4DEC3C672137099000089837 /* FriendsViewController.swift */,
+				4DEC3C6E21370AB400089837 /* Cells */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		4DEC3C6E21370AB400089837 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4DEC3C6A21370A3700089837 /* FriendsDetailsCell.xib */,
+				4DEC3C6C21370A6E00089837 /* FriendsDetailsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		4DEE83EB201E17E1001B0AEB /* ProfileView */ = {
@@ -1715,6 +1740,7 @@
 				4D1DF44D20ADAD5000017BF8 /* ChildrenCell.xib in Resources */,
 				4D3F889D20D1178500FEE609 /* LobbyConversationCell.xib in Resources */,
 				4DE175132028DCDE001C5DD1 /* ShopCell.xib in Resources */,
+				4DEC3C6B21370A3700089837 /* FriendsDetailsCell.xib in Resources */,
 				4D5ED8F8202246870020FD51 /* OffersView.xib in Resources */,
 				4D649242203CAD1700CE35B0 /* LobbyDetailsCell.xib in Resources */,
 				4D8F2D34201B49BC00756CCB /* GardenGrownCaps-Regular.otf in Resources */,
@@ -1957,6 +1983,7 @@
 				4DAA14EA2020E458000B1CA0 /* LocationPopupViewController.swift in Sources */,
 				4D05A95D1FE144A900B19E6E /* UIViewController+Helpers.swift in Sources */,
 				4D7C71A620CE7C4600A0A47C /* ChildService.swift in Sources */,
+				4DEC3C682137099000089837 /* FriendsViewController.swift in Sources */,
 				4D05A95E1FE144A900B19E6E /* UIStoryboard+Helpers.swift in Sources */,
 				4D39D48A203489BE005123F8 /* ItemLocationView.swift in Sources */,
 				4DCEA1F9210700980083EBD4 /* ShopSubCategory.swift in Sources */,
@@ -2041,6 +2068,7 @@
 				4DAAAEC9205689E900A66981 /* MembersCell.swift in Sources */,
 				4D36E705201E4984000DC94F /* SchoolView.swift in Sources */,
 				4D05A9431FE144A900B19E6E /* Crashlytics.swift in Sources */,
+				4DEC3C6D21370A6E00089837 /* FriendsDetailsCell.swift in Sources */,
 				4DCEA1F7210700230083EBD4 /* ShopCategory.swift in Sources */,
 				4DE0D99A20503774002C0759 /* Message.swift in Sources */,
 				4D9BB303205C12FB0001D54C /* PromotionPopupViewController.swift in Sources */,

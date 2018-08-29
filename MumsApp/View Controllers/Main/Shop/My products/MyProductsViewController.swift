@@ -8,7 +8,7 @@ class MyProductsViewController: UIViewController {
 
     private var shopService: ShopService!
     
-    private var type: ShopViewType = .shop
+    fileprivate var type: ShopViewType = .shop
 
     fileprivate var products: Array<Product> = []
 
@@ -119,11 +119,11 @@ class MyProductsViewController: UIViewController {
         
     }
     
-    fileprivate func showProductDetailsViewController(product: Product) {
+    fileprivate func showProductDetailsViewController(product: Product, type: ShopViewType) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.productDetailsViewController(product: product)
+        let controller = factory.productDetailsViewController(product: product, type: type)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -201,7 +201,7 @@ extension MyProductsViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let product = self.products[indexPath.row]
         
-        self.showProductDetailsViewController(product: product)
+        self.showProductDetailsViewController(product: product, type: self.type)
 
     }
     

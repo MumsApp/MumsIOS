@@ -4275,6 +4275,73 @@ you want to remove</string>
             </objects>
             <point key="canvasLocation" x="2524" y="3708"/>
         </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="nqd-J2-DD1">
+            <objects>
+                <viewController storyboardIdentifier="FriendsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5kA-5R-CkA" customClass="FriendsViewController" customModule="MumsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XNy-4E-J68">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sBj-a8-jwQ">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTw-lf-ACz">
+                                <rect key="frame" x="0.0" y="76" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="q3n-Hd-7bq"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Lal-Wu-2N7">
+                                <rect key="frame" x="336" y="38.5" width="17" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="1oE-DT-K1F"/>
+                                    <constraint firstAttribute="height" constant="19" id="lVr-Ss-ePP"/>
+                                </constraints>
+                            </imageView>
+                            <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9d3-jk-zvv" customClass="CustomSearchBar" customModule="MumsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="PKL-Nr-rxE"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sBj-a8-jwQ" firstAttribute="top" secondItem="pTw-lf-ACz" secondAttribute="bottom" id="5wm-we-IVw"/>
+                            <constraint firstItem="9d3-jk-zvv" firstAttribute="top" secondItem="dqt-UA-xXh" secondAttribute="top" id="Jof-Sb-g63"/>
+                            <constraint firstItem="pTw-lf-ACz" firstAttribute="leading" secondItem="dqt-UA-xXh" secondAttribute="leading" id="Oyp-jb-PkJ"/>
+                            <constraint firstItem="pTw-lf-ACz" firstAttribute="trailing" secondItem="dqt-UA-xXh" secondAttribute="trailing" id="UAu-Y5-TIy"/>
+                            <constraint firstItem="9d3-jk-zvv" firstAttribute="trailing" secondItem="dqt-UA-xXh" secondAttribute="trailing" id="VbH-Ev-I9n"/>
+                            <constraint firstItem="sBj-a8-jwQ" firstAttribute="trailing" secondItem="dqt-UA-xXh" secondAttribute="trailing" id="Wbw-yd-Euc"/>
+                            <constraint firstItem="9d3-jk-zvv" firstAttribute="leading" secondItem="dqt-UA-xXh" secondAttribute="leading" id="boJ-ID-kI9"/>
+                            <constraint firstItem="sBj-a8-jwQ" firstAttribute="leading" secondItem="dqt-UA-xXh" secondAttribute="leading" id="gT7-0R-ZSd"/>
+                            <constraint firstItem="pTw-lf-ACz" firstAttribute="top" secondItem="9d3-jk-zvv" secondAttribute="bottom" id="gXV-BY-Y8K"/>
+                            <constraint firstItem="dqt-UA-xXh" firstAttribute="trailing" secondItem="Lal-Wu-2N7" secondAttribute="trailing" constant="22" id="irN-5k-6HU"/>
+                            <constraint firstItem="Lal-Wu-2N7" firstAttribute="centerY" secondItem="9d3-jk-zvv" secondAttribute="centerY" id="j7s-A5-td3"/>
+                            <constraint firstItem="sBj-a8-jwQ" firstAttribute="bottom" secondItem="dqt-UA-xXh" secondAttribute="bottom" id="tLL-ru-rgu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dqt-UA-xXh"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="9d3-jk-zvv" id="qkO-H6-p0W"/>
+                        <outlet property="tableView" destination="sBj-a8-jwQ" id="WTI-uf-dmQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWK-Bg-9zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11921" y="132"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addPhotoIcon" width="29" height="28"/>

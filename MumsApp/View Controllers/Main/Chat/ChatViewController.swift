@@ -29,9 +29,7 @@ class ChatViewController: UIViewController {
         self.configureNavigationBar()
         
         self.registerCells()
-        
-        self.getUserFriends(page: 1)
-        
+                
     }
 
     private func configureView() {
@@ -128,9 +126,9 @@ class ChatViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
         
-//        let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "settingsIcon"), style: .plain, target: self, action: #selector(self.settingsButtonPressed(sender:)))
+        let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "addIcon"), style: .plain, target: self, action: #selector(self.createChat(sender:)))
         
-//        self.navigationItem.rightBarButtonItem = rightButton
+        self.navigationItem.rightBarButtonItem = rightButton
         
 //        let leftButton = UIBarButtonItem(image: #imageLiteral(resourceName: "filterIcon"), style: .plain, target: self, action: #selector(self.filterButtonPressed(sender:)))
 //        
@@ -146,31 +144,41 @@ class ChatViewController: UIViewController {
         
     }
     
-    func settingsButtonPressed(sender: UIBarButtonItem) {
+    func createChat(sender: UIBarButtonItem) {
         
-        self.showChatSettingsPopupViewController()
+        self.showFriendsViewController()
         
     }
     
+    private func showFriendsViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.friendsViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+
     func filterButtonPressed(sender: UIBarButtonItem) {
         
         
         
     }
     
-    private func showChatSettingsPopupViewController() {
-        
-        let factory = SecondaryViewControllerFactory.viewControllerFactory()
-        
-        let controller = factory.chatSettingsPopupViewController()
-        
-        controller.modalPresentationStyle = .overCurrentContext
-        
-        controller.modalTransitionStyle = .crossDissolve
-        
-        self.presentViewController(controller)
-        
-    }
+//    private func showChatSettingsPopupViewController() {
+//
+//        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+//
+//        let controller = factory.chatSettingsPopupViewController()
+//
+//        controller.modalPresentationStyle = .overCurrentContext
+//
+//        controller.modalTransitionStyle = .crossDissolve
+//
+//        self.presentViewController(controller)
+//
+//    }
     
     fileprivate func showConversationViewController() {
         
@@ -182,49 +190,49 @@ class ChatViewController: UIViewController {
     
     }
     
-    private func getUserFriends(page: Int) {
-        
-        guard let token = self.appContext.token() else { return }
-        
-        self.progressHUD.showLoading()
-        
-        self.friendsService.getFriends(page: page, token: token) { dataOptional, errorOptional in
-            
-            self.progressHUD.dismiss()
-            
-            if let error = errorOptional {
-                
-                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
-                
-            } else {
-                
-                guard let data = dataOptional as? StorableDictionary,
-                    let dictionary = data[k_data] as? StorableDictionary else {
-                        
-                        return
-                        
-                }
-
-                if let friendsArray = dictionary[k_friends] as? Array<Dictionary<String, Any>> {
-                    
-                    friendsArray.forEach({ dict in
-                        
-                        let friends = Friend(dictionary: dict)
-                        
-                        self.friends.append(friends)
-                        
-                    })
-                    
-                    self.tableView.reloadData()
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
+//    private func getUserFriends(page: Int) {
+//
+//        guard let token = self.appContext.token() else { return }
+//
+//        self.progressHUD.showLoading()
+//
+//        self.friendsService.getFriends(page: page, token: token) { dataOptional, errorOptional in
+//
+//            self.progressHUD.dismiss()
+//
+//            if let error = errorOptional {
+//
+//                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+//
+//            } else {
+//
+//                guard let data = dataOptional as? StorableDictionary,
+//                    let dictionary = data[k_data] as? StorableDictionary else {
+//
+//                        return
+//
+//                }
+//
+//                if let friendsArray = dictionary[k_friends] as? Array<Dictionary<String, Any>> {
+//
+//                    friendsArray.forEach({ dict in
+//
+//                        let friends = Friend(dictionary: dict)
+//
+//                        self.friends.append(friends)
+//
+//                    })
+//
+//                    self.tableView.reloadData()
+//
+//                }
+//
+//            }
+//
+//        }
+//
+//    }
+//
 }
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {

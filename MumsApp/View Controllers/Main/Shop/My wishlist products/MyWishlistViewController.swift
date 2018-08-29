@@ -8,9 +8,13 @@ class MyWishlistViewController: UIViewController {
     
     fileprivate var products: Array<Product> = []
     
-    func configureWith(shopService: ShopService) {
+    fileprivate var type: ShopViewType = .shop
+    
+    func configureWith(shopService: ShopService, type: ShopViewType) {
         
         self.shopService = shopService
+        
+        self.type = type
         
     }
     
@@ -84,11 +88,11 @@ class MyWishlistViewController: UIViewController {
         
     }
     
-    fileprivate func showProductDetailsViewController(product: Product) {
+    fileprivate func showProductDetailsViewController(product: Product, type: ShopViewType) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.productDetailsViewController(product: product)
+        let controller = factory.productDetailsViewController(product: product, type: type)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
@@ -168,7 +172,7 @@ extension MyWishlistViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let product = self.products[indexPath.row]
         
-        self.showProductDetailsViewController(product: product)
+        self.showProductDetailsViewController(product: product, type: self.type)
         
     }
     

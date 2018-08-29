@@ -74,5 +74,7 @@ enum SecondaryViewController: String {
     
     case LobbyConversationViewController
     
+    case FriendsViewController
+    
 }
 
