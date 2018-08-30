@@ -378,4 +378,12 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
+    func servicePaymentPopupViewController() -> ServicePaymentPopupViewController {
+        
+        let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ServicePaymentPopupViewController.rawValue, storyboard: storyboard) as! ServicePaymentPopupViewController
+        
+        return controller
+        
+    }
+    
 }

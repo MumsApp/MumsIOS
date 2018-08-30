@@ -5,6 +5,8 @@ public typealias ProductIdentifier = String
 
 public typealias ProductsRequestCompletionHandler = (_ products: [SKProduct]?) -> ()
 
+let k_has_finished = "has_finished"
+
 open class InAppPurchaseHelper : NSObject  {
     
     static let PurchaseNotification = Notification.Name("PurchaseNotification")
@@ -21,15 +23,17 @@ open class InAppPurchaseHelper : NSObject  {
     
     fileprivate var userDefaults: MOUserDefaults!
     
-    fileprivate var paymentsService: PaymentsService!
+//    fileprivate var paymentsService: PaymentsService!
     
-    init(userDefaults: MOUserDefaults, paymentsService: PaymentsService) {
+    init(userDefaults: MOUserDefaults) {
+        
+//        paymentsService: PaymentsService
         
         self.productIdentifiers = Products.productIdentifiers
         
         self.userDefaults = userDefaults
         
-        self.paymentsService = paymentsService
+//        self.paymentsService = paymentsService
         
         self.skPaymentQueue = SKPaymentQueue.default()
         
@@ -284,19 +288,19 @@ extension InAppPurchaseHelper: SKPaymentTransactionObserver {
     
     public func validateReceipt(id: String, parameters: String, completion: @escaping ErrorCompletion) {
         
-        guard let receiptURL = Bundle.main.appStoreReceiptURL else { return }
-        
-        do {
-            
-            let receipt = try Data(contentsOf: receiptURL).base64
-            
-            self.paymentsService.validateReceipt(id: id, parameters: parameters, receipt: receipt, completion: completion)
-            
-        } catch let error {
-            
-            completion(error)
-            
-        }
+//        guard let receiptURL = Bundle.main.appStoreReceiptURL else { return }
+//
+//        do {
+//
+//            let receipt = try Data(contentsOf: receiptURL).base64
+//
+//            self.paymentsService.validateReceipt(id: id, parameters: parameters, receipt: receipt, completion: completion)
+//
+//        } catch let error {
+//
+//            completion(error)
+//
+//        }
         
     }
     

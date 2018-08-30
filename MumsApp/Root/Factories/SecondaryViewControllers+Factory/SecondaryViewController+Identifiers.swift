@@ -76,5 +76,7 @@ enum SecondaryViewController: String {
     
     case FriendsViewController
     
+    case ServicePaymentPopupViewController
+    
 }
 

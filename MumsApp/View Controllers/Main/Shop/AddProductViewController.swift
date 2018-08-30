@@ -273,6 +273,20 @@ class AddProductViewController: UIViewController {
         
     }
     
+    fileprivate func showServicePaymentPopupViewController() {
+        
+        let factory = SecondaryViewControllerFactory.viewControllerFactory()
+        
+        let controller = factory.servicePaymentPopupViewController()
+        
+        controller.modalPresentationStyle = .overCurrentContext
+        
+        controller.modalTransitionStyle = .crossDissolve
+                
+        self.presentViewController(controller)
+        
+    }
+    
     fileprivate func showMyProductsViewController() {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
@@ -285,9 +299,11 @@ class AddProductViewController: UIViewController {
     
     private func validate() {
 
+        let text = self.type == .shop ? "product" : "service"
+        
         if self.descriptionView.itemTitleTextField.text == "" {
             
-            self.showOkAlertWith(title: "Info", message: "Please enter the product name.")
+            self.showOkAlertWith(title: "Info", message: "Please enter the \(text) name.")
 
             return
             
@@ -303,7 +319,7 @@ class AddProductViewController: UIViewController {
         
         if self.descriptionView.itemPriceTextField.text == "" {
             
-            self.showOkAlertWith(title: "Info", message: "Please enter the product price.")
+            self.showOkAlertWith(title: "Info", message: "Please enter the \(text) price.")
             
             return
             
@@ -311,7 +327,7 @@ class AddProductViewController: UIViewController {
         
         if self.descriptionView.descriptionTextView.text == "Add description" {
             
-            self.showOkAlertWith(title: "Info", message: "Please enter the product description.")
+            self.showOkAlertWith(title: "Info", message: "Please enter the \(text) description.")
             
             return
             
@@ -319,7 +335,7 @@ class AddProductViewController: UIViewController {
         
         if self.photosView.images.count == 0 {
             
-            self.showOkAlertWith(title: "Info", message: "Please add a product photo.")
+            self.showOkAlertWith(title: "Info", message: "Please add a \(text) photo.")
             
             return
             
@@ -333,16 +349,24 @@ class AddProductViewController: UIViewController {
         
         }
         
-        if self.productOptional == nil {
+        if self.type == .shop {
             
-            self.addProduct()
-
+            if self.productOptional == nil {
+                
+                self.addProduct()
+                
+            } else {
+                
+                self.updateProduct()
+                
+            }
+            
         } else {
             
-            self.updateProduct()
+            self.showServicePaymentPopupViewController()
             
         }
-
+        
     }
     
     private func addProduct() {
