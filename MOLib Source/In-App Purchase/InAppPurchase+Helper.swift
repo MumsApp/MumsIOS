@@ -38,9 +38,7 @@ open class InAppPurchaseHelper : NSObject  {
         self.skPaymentQueue = SKPaymentQueue.default()
         
         super.init()
-        
-        self.checkPurchasedProducts()
-        
+                
         self.skPaymentQueue.add(self)
         
     }

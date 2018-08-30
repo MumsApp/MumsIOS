@@ -26,12 +26,16 @@ class ShopViewController: UIViewController {
 
     fileprivate var type: ShopViewType = .shop
 
-    func configureWith(type: ShopViewType, shopService: ShopService) {
+    private var inAppPurchaseHelper: InAppPurchaseHelper!
+    
+    func configureWith(type: ShopViewType, shopService: ShopService, inAppPurchaseHelper: InAppPurchaseHelper) {
         
         self.type = type
         
         self.shopService = shopService
-                
+     
+        self.inAppPurchaseHelper = inAppPurchaseHelper
+
     }
     
     override func viewDidLoad() {
@@ -51,6 +55,10 @@ class ShopViewController: UIViewController {
             
             // Services endpoints
             
+        }
+        
+        self.inAppPurchaseHelper.requestProducts { product in
+            print(product)
         }
         
     }

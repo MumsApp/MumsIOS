@@ -122,7 +122,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopViewController.rawValue, storyboard: storyboard) as! ShopViewController
         
-        controller.configureWith(type: type, shopService: self.serviceFactory.shopService())
+        controller.configureWith(type: type, shopService: self.serviceFactory.shopService(), inAppPurchaseHelper: self.serviceFactory.inAppPurchaseHelper())
         
         return controller
         
@@ -381,6 +381,8 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
     func servicePaymentPopupViewController() -> ServicePaymentPopupViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ServicePaymentPopupViewController.rawValue, storyboard: storyboard) as! ServicePaymentPopupViewController
+        
+        controller.configureWith(inAppPurchaseHelper: self.serviceFactory.inAppPurchaseHelper())
         
         return controller
         
