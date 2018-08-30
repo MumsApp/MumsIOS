@@ -208,6 +208,8 @@
 		4DAA14EA2020E458000B1CA0 /* LocationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */; };
 		4DAAAEC7205689D900A66981 /* MembersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAAEC6205689D900A66981 /* MembersCell.xib */; };
 		4DAAAEC9205689E900A66981 /* MembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAAEC8205689E900A66981 /* MembersCell.swift */; };
+		4DABFA862137D991005CCF08 /* InAppPurchase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DABFA852137D991005CCF08 /* InAppPurchase+Helper.swift */; };
+		4DABFA882137D99A005CCF08 /* InAppPurchase+Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DABFA872137D99A005CCF08 /* InAppPurchase+Products.swift */; };
 		4DBC6FD3201B408600951637 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */; };
 		4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */; };
 		4DBC6FD7201B46D400951637 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */; };
@@ -509,6 +511,8 @@
 		4DAA14E92020E458000B1CA0 /* LocationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPopupViewController.swift; sourceTree = "<group>"; };
 		4DAAAEC6205689D900A66981 /* MembersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembersCell.xib; sourceTree = "<group>"; };
 		4DAAAEC8205689E900A66981 /* MembersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCell.swift; sourceTree = "<group>"; };
+		4DABFA852137D991005CCF08 /* InAppPurchase+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InAppPurchase+Helper.swift"; sourceTree = "<group>"; };
+		4DABFA872137D99A005CCF08 /* InAppPurchase+Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InAppPurchase+Products.swift"; sourceTree = "<group>"; };
 		4DBC6FD2201B408600951637 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		4DBC6FD4201B41CA00951637 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		4DBC6FD6201B46D400951637 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
@@ -685,6 +689,7 @@
 				4D05A9391FE144A800B19E6E /* UIView+Extensions */,
 				4DC67750201781B300F34184 /* Reachability */,
 				4D63D3A7212D98FC00D5418B /* Socket */,
+				4DABFA892137D99E005CCF08 /* In-App Purchase */,
 			);
 			path = "MOLib Source";
 			sourceTree = "<group>";
@@ -1291,6 +1296,15 @@
 				4DE1750E2028D4D3001C5DD1 /* Cells */,
 			);
 			path = Popups;
+			sourceTree = "<group>";
+		};
+		4DABFA892137D99E005CCF08 /* In-App Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				4DABFA852137D991005CCF08 /* InAppPurchase+Helper.swift */,
+				4DABFA872137D99A005CCF08 /* InAppPurchase+Products.swift */,
+			);
+			path = "In-App Purchase";
 			sourceTree = "<group>";
 		};
 		4DC27EB6201F980C000EE9FA /* GoogleService */ = {
@@ -2100,8 +2114,10 @@
 				4D42E4B420E2C0FD009E3428 /* LobbyTopic.swift in Sources */,
 				4D1933EB2056CC4D006D6D5B /* UserNamePopupViewController.swift in Sources */,
 				4D05A95F1FE144A900B19E6E /* UITableView+Extensions.swift in Sources */,
+				4DABFA862137D991005CCF08 /* InAppPurchase+Helper.swift in Sources */,
 				4D59F95D20E3B5D500186DB4 /* KidsCell.swift in Sources */,
 				4D66007D201B5C640085CC58 /* OnboardingSocial+UIButton.swift in Sources */,
+				4DABFA882137D99A005CCF08 /* InAppPurchase+Products.swift in Sources */,
 				4D05A9831FE14E8F00B19E6E /* PrimaryViewController+Identifiers.swift in Sources */,
 				4D05A94F1FE144A900B19E6E /* NetworkService+Init.swift in Sources */,
 				4D05A94E1FE144A900B19E6E /* NetworkService+Factory.swift in Sources */,

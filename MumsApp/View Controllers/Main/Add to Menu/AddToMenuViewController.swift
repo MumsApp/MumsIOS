@@ -6,8 +6,12 @@ class AddToMenuViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var lobbyRoomsArray: Array<LobbyRoom> = []
-    
+    fileprivate var filteredLobbyRooms: Array<LobbyRoom> = []
+
+    fileprivate var lobbyRooms: Array<LobbyRoom> = []
+
+    private var lobbyService: LobbyService!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +21,8 @@ class AddToMenuViewController: UIViewController {
         
         self.configureNavigationBar()
         
+        self.getLobbyRooms()
+
     }
     
     private func configureView() {
@@ -57,6 +63,96 @@ class AddToMenuViewController: UIViewController {
         
     }
     
+    fileprivate func getLobbyRooms() {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.progressHUD.showLoading()
+        
+        self.lobbyService.getLobbyRooms(token: token) { dataOptional, errorOptional in
+            
+            self.progressHUD.dismiss()
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                if let dictionary = dataOptional as? Dictionary<String, Any> {
+                    
+                    if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+                        self.lobbyRooms = []
+                        
+                        self.filteredLobbyRooms = []
+                        
+                        for d in data {
+                            
+                            self.lobbyRooms.append(LobbyRoom(dictionary: d))
+                            
+                        }
+                        
+                        self.lobbyRooms.sort (by: { $0.isFavourite! && !$1.isFavourite! })
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    func searchLobbyRooms(searchTerm: String) {
+        
+        guard let token = self.appContext.token() else { return }
+        
+        self.lobbyService.searchLobbyRoomsWithPagination(token: token, searchTerm: searchTerm, page: 1) { dataOptional, errorOptional in
+            
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                if let dictionary = dataOptional as? Dictionary<String, Any> {
+                    
+                    if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
+                        
+                        self.lobbyRooms = []
+                        
+                        self.filteredLobbyRooms = []
+                        
+                        for d in data {
+                            
+                            self.filteredLobbyRooms.append(LobbyRoom(dictionary: d))
+                            
+                        }
+                        
+                        self.filteredLobbyRooms.sort (by: { $0.isFavourite! && !$1.isFavourite! })
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    func isFiltering() -> Bool {
+        
+        return self.searchBar.text == "" ? false : true
+        
+    }
+    
 }
 
 extension AddToMenuViewController: UITableViewDelegate, UITableViewDataSource {
@@ -69,7 +165,15 @@ extension AddToMenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.lobbyRoomsArray.count
+        if self.isFiltering() {
+            
+            return self.filteredLobbyRooms.count
+            
+        } else {
+            
+            return self.lobbyRooms.count
+            
+        }
         
     }
     
@@ -83,10 +187,20 @@ extension AddToMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(AddToMenuCell.self, indexPath: indexPath)
         
-        let thisObject = self.lobbyRoomsArray[indexPath.row]
+        let thisObject: LobbyRoom!
+        
+        if self.isFiltering() && self.filteredLobbyRooms.count != 0 {
+            
+            thisObject = self.filteredLobbyRooms[indexPath.row]
+            
+        } else {
+            
+            thisObject = self.lobbyRooms[indexPath.row]
+            
+        }
         
         cell.configureWith(lobby: thisObject, delegate: self)
-                
+        
         return cell
         
     }
@@ -98,6 +212,20 @@ extension AddToMenuViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         searchBar.resignFirstResponder()
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText != "" {
+            
+            self.searchLobbyRooms(searchTerm: searchText)
+            
+        } else {
+            
+            self.getLobbyRooms()
+            
+        }
         
     }
     
