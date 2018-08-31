@@ -277,7 +277,7 @@ class AddProductViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.servicePaymentPopupViewController()
+        let controller = factory.servicePaymentPopupViewController(delegate: self)
         
         controller.modalPresentationStyle = .overCurrentContext
         
@@ -669,6 +669,16 @@ extension AddProductViewController: UITextFieldDelegate {
         
         return false
     
+    }
+    
+}
+
+extension AddProductViewController: ServicePaymentPopupViewControllerDelegate {
+    
+    func paid() {
+        
+        self.showMyProductsViewController()
+        
     }
     
 }

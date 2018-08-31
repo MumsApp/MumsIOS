@@ -378,11 +378,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func servicePaymentPopupViewController() -> ServicePaymentPopupViewController {
+    func servicePaymentPopupViewController(delegate: ServicePaymentPopupViewControllerDelegate?) -> ServicePaymentPopupViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ServicePaymentPopupViewController.rawValue, storyboard: storyboard) as! ServicePaymentPopupViewController
         
-        controller.configureWith(inAppPurchaseHelper: self.serviceFactory.inAppPurchaseHelper())
+        controller.configureWith(inAppPurchaseHelper: self.serviceFactory.inAppPurchaseHelper(), delegate: delegate)
         
         return controller
         

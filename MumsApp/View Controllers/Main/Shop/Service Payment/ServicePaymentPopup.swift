@@ -1,5 +1,11 @@
 import UIKit
 
+protocol ServicePaymentPopupViewControllerDelegate: class {
+    
+    func paid()
+    
+}
+
 class ServicePaymentPopupViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
@@ -14,9 +20,13 @@ class ServicePaymentPopupViewController: UIViewController {
 
     private var inAppPurchaseHelper: InAppPurchaseHelper!
 
-    func configureWith(inAppPurchaseHelper: InAppPurchaseHelper) {
+    private weak var delegate: ServicePaymentPopupViewControllerDelegate?
+    
+    func configureWith(inAppPurchaseHelper: InAppPurchaseHelper, delegate: ServicePaymentPopupViewControllerDelegate?) {
         
         self.inAppPurchaseHelper = inAppPurchaseHelper
+        
+        self.delegate = delegate
         
     }
     
@@ -52,7 +62,9 @@ class ServicePaymentPopupViewController: UIViewController {
         
         if finished {
             
-            self.showOkAlertWith(title: "Info", message: "The ad has been added.")
+            self.delegate?.paid()
+
+            self.dismissViewController()
             
         } else {
             
