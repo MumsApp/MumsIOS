@@ -25,17 +25,13 @@ class ShopViewController: UIViewController {
     fileprivate var products: Array<Product> = []
 
     fileprivate var type: ShopViewType = .shop
-
-    private var inAppPurchaseHelper: InAppPurchaseHelper!
     
-    func configureWith(type: ShopViewType, shopService: ShopService, inAppPurchaseHelper: InAppPurchaseHelper) {
+    func configureWith(type: ShopViewType, shopService: ShopService) {
         
         self.type = type
         
         self.shopService = shopService
      
-        self.inAppPurchaseHelper = inAppPurchaseHelper
-
     }
     
     override func viewDidLoad() {
@@ -57,12 +53,8 @@ class ShopViewController: UIViewController {
             
         }
         
-        self.inAppPurchaseHelper.requestProducts { product in
-            print(product)
-        }
-        
     }
-
+    
     private func configureView() {
         
         self.view.setBackground()

@@ -179,7 +179,7 @@ class ServiceFactory {
     
     func inAppPurchaseHelper() -> InAppPurchaseHelper {
         
-        return InAppPurchaseHelper(userDefaults: self.userDefaults)
+        return InAppPurchaseHelper()
         
     }
     

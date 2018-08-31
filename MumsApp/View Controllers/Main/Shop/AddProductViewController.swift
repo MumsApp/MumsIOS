@@ -301,53 +301,53 @@ class AddProductViewController: UIViewController {
 
         let text = self.type == .shop ? "product" : "service"
         
-        if self.descriptionView.itemTitleTextField.text == "" {
-            
-            self.showOkAlertWith(title: "Info", message: "Please enter the \(text) name.")
-
-            return
-            
-        }
-        
-        if self.descriptionView.selectCategoryButton.titleLabel?.text == "Add category" {
-            
-            self.showOkAlertWith(title: "Info", message: "Please select a category.")
-            
-            return
-            
-        }
-        
-        if self.descriptionView.itemPriceTextField.text == "" {
-            
-            self.showOkAlertWith(title: "Info", message: "Please enter the \(text) price.")
-            
-            return
-            
-        }
-        
-        if self.descriptionView.descriptionTextView.text == "Add description" {
-            
-            self.showOkAlertWith(title: "Info", message: "Please enter the \(text) description.")
-            
-            return
-            
-        }
-        
-        if self.photosView.images.count == 0 {
-            
-            self.showOkAlertWith(title: "Info", message: "Please add a \(text) photo.")
-            
-            return
-            
-        }
-        
-        if self.selectedLat == nil || self.selectedLon == nil {
-            
-            self.showOkAlertWith(title: "Info", message: "Please add your location.")
-
-            return
-        
-        }
+//        if self.descriptionView.itemTitleTextField.text == "" {
+//
+//            self.showOkAlertWith(title: "Info", message: "Please enter the \(text) name.")
+//
+//            return
+//
+//        }
+//
+//        if self.descriptionView.selectCategoryButton.titleLabel?.text == "Add category" {
+//
+//            self.showOkAlertWith(title: "Info", message: "Please select a category.")
+//
+//            return
+//
+//        }
+//
+//        if self.descriptionView.itemPriceTextField.text == "" {
+//
+//            self.showOkAlertWith(title: "Info", message: "Please enter the \(text) price.")
+//
+//            return
+//
+//        }
+//
+//        if self.descriptionView.descriptionTextView.text == "Add description" {
+//
+//            self.showOkAlertWith(title: "Info", message: "Please enter the \(text) description.")
+//
+//            return
+//
+//        }
+//
+//        if self.photosView.images.count == 0 {
+//
+//            self.showOkAlertWith(title: "Info", message: "Please add a \(text) photo.")
+//
+//            return
+//
+//        }
+//
+//        if self.selectedLat == nil || self.selectedLon == nil {
+//
+//            self.showOkAlertWith(title: "Info", message: "Please add your location.")
+//
+//            return
+//
+//        }
         
         if self.type == .shop {
             

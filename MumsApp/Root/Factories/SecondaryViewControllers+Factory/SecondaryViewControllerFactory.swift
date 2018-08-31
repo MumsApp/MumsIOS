@@ -122,7 +122,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopViewController.rawValue, storyboard: storyboard) as! ShopViewController
         
-        controller.configureWith(type: type, shopService: self.serviceFactory.shopService(), inAppPurchaseHelper: self.serviceFactory.inAppPurchaseHelper())
+        controller.configureWith(type: type, shopService: self.serviceFactory.shopService())
         
         return controller
         
