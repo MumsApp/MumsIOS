@@ -153,17 +153,17 @@ class ServiceFactory {
 
     }
     
-    func shopCategoryService() -> ShopCategoryService {
+    func shopCategoryService(type: ShopViewType) -> ShopCategoryService {
         
-        let service = ShopCategoryService(networkService: self.networkService, serviceParser: self.parser)
+        let service = ShopCategoryService(networkService: self.networkService, serviceParser: self.parser, type: type)
         
         return service
         
     }
     
-    func shopService() -> ShopService {
+    func shopService(type: ShopViewType) -> ShopService {
         
-        let service = ShopService(networkService: self.networkService, serviceParser: self.parser)
+        let service = ShopService(networkService: self.networkService, serviceParser: self.parser, type: type)
         
         return service
         

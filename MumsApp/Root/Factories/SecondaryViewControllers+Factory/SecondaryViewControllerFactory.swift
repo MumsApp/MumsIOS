@@ -122,7 +122,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopViewController.rawValue, storyboard: storyboard) as! ShopViewController
         
-        controller.configureWith(type: type, shopService: self.serviceFactory.shopService())
+        controller.configureWith(type: type, shopService: self.serviceFactory.shopService(type: type))
         
         return controller
         
@@ -152,7 +152,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MyProductsViewController.rawValue, storyboard: storyboard) as! MyProductsViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService(), type: type)
+        controller.configureWith(shopService: self.serviceFactory.shopService(type: type), type: type)
         
         return controller
         
@@ -162,7 +162,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.AddProductViewController.rawValue, storyboard: storyboard) as! AddProductViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService(), imageLoader: self.serviceFactory.imageCacheLoader(), productOptional: productOptional, type: type)
+        controller.configureWith(shopService: self.serviceFactory.shopService(type: type), imageLoader: self.serviceFactory.imageCacheLoader(), productOptional: productOptional, type: type)
         
         return controller
         
@@ -202,7 +202,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.MyWishlistViewController.rawValue, storyboard: storyboard) as! MyWishlistViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService(), type: type)
+        controller.configureWith(shopService: self.serviceFactory.shopService(type: type), type: type)
         
         return controller
         
@@ -212,7 +212,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopFilterViewController.rawValue, storyboard: storyboard) as! ShopFilterViewController
         
-        controller.configureWith(shopService: self.serviceFactory.shopService(), delegate: delegate, type: type)
+        controller.configureWith(shopService: self.serviceFactory.shopService(type: type), delegate: delegate, type: type)
         
         return controller
         
@@ -256,11 +256,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
 
-    func removeProductPopupViewController(product: Product, productImage: UIImage, delegate: RemoveProductPopupViewControllerDelegate?) -> RemoveProductPopupViewController {
+    func removeProductPopupViewController(product: Product, productImage: UIImage, delegate: RemoveProductPopupViewControllerDelegate?, type: ShopViewType) -> RemoveProductPopupViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.RemoveProductPopupViewController.rawValue, storyboard: storyboard) as! RemoveProductPopupViewController
         
-        controller.configureWith(product: product, productImage: productImage, shopService: self.serviceFactory.shopService(), delegate: delegate)
+        controller.configureWith(product: product, productImage: productImage, shopService: self.serviceFactory.shopService(type: type), delegate: delegate)
         
         return controller
         
@@ -298,11 +298,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func shopCategoriesViewController(delegate: ShopCategoriesViewControllerDelegate?) -> ShopCategoriesViewController {
+    func shopCategoriesViewController(delegate: ShopCategoriesViewControllerDelegate?, type: ShopViewType) -> ShopCategoriesViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ShopCategoriesViewController.rawValue, storyboard: storyboard) as! ShopCategoriesViewController
         
-        controller.configureWith(delegate: delegate, shopCategoryService: self.serviceFactory.shopCategoryService())
+        controller.configureWith(delegate: delegate, shopCategoryService: self.serviceFactory.shopCategoryService(type: type))
         
         return controller
         

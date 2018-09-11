@@ -10,7 +10,7 @@ struct ShopCategory: Resource {
     
     var name: String?
     
-    var subCategories: Array<ShopSubCategory>?
+    var subCategories: Array<ShopSubCategory> = []
     
     init(dictionary: StorableDictionary) {
         
@@ -24,7 +24,7 @@ struct ShopCategory: Resource {
             
             for shopSubCategory in shopSubCategories {
                 
-                self.subCategories?.append(ShopSubCategory.fromDictionary(dictionary: shopSubCategory))
+                self.subCategories.append(ShopSubCategory.fromDictionary(dictionary: shopSubCategory))
                 
             }
             
@@ -49,7 +49,7 @@ struct ShopCategory: Resource {
         
         var subCategories: Array<Dictionary<String, Any>> = []
         
-        for subCategory in self.subCategories! {
+        for subCategory in self.subCategories {
             
             subCategories.append(subCategory.toDictionary())
             

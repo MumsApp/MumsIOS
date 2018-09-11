@@ -855,6 +855,21 @@ password reset instructions</string>
             </objects>
             <point key="canvasLocation" x="3253.5999999999999" y="402.54872563718146"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Z8g-b4-SQS">
+            <objects>
+                <viewController id="5nz-bL-LIw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ulr-IZ-Vnl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="cap-iU-zTl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMe-KO-qWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5568" y="-1587"/>
+        </scene>
         <!--Sign Up Organisation View Controller-->
         <scene sceneID="iLr-nN-s6h">
             <objects>
@@ -1099,7 +1114,7 @@ password reset instructions</string>
         <image name="advertiseIcon" width="71" height="71"/>
         <image name="facebookIcon" width="10" height="18"/>
         <image name="googleIcon" width="20" height="17"/>
-        <image name="logo" width="223" height="206"/>
+        <image name="logo" width="214" height="206"/>
         <image name="logoDescription" width="208" height="46"/>
         <image name="logoText" width="333" height="80"/>
         <image name="offIcon" width="24" height="24"/>

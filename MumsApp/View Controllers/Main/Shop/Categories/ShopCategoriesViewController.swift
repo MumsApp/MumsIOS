@@ -16,11 +16,15 @@ class ShopCategoriesViewController: UIViewController {
     
     private var shopCategoryService: ShopCategoryService!
     
+    fileprivate var type: ShopViewType = .shop
+    
     func configureWith(delegate: ShopCategoriesViewControllerDelegate?, shopCategoryService: ShopCategoryService) {
         
         self.delegate = delegate
         
         self.shopCategoryService = shopCategoryService
+        
+        self.type = self.shopCategoryService.type
         
     }
     
@@ -86,16 +90,46 @@ class ShopCategoriesViewController: UIViewController {
                 if let dictionary = dataOptional as? Dictionary<String, Any> {
                     
                     if let data = dictionary[k_data] as? Array<Dictionary<String, Any>> {
-                        
+                                                
                         self.shopCategories = []
                         
-                        for d in data {
+                        if self.type == .shop {
                             
-                            self.shopCategories.append(ShopCategory(dictionary: d))
+                            for d in data {
+                                
+                                self.shopCategories.append(ShopCategory(dictionary: d))
+                                
+                            }
                             
+                            self.tableView.reloadData()
+                            
+                        } else {
+                           
+                            for section in categories {
+
+                                self.shopCategories.append(ShopCategory(dictionary: section))
+                                
+                            }
+                            
+                            for d in data {
+                                
+                                let object = ShopSubCategory(dictionary: d)
+
+                                for c in self.shopCategories {
+                                    
+                                    if object.name?.first == c.name?.first {
+                                        
+                                        self.shopCategories[c.id!].subCategories.append(object)
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }
+                            
+                            self.tableView.reloadData()
+
                         }
-                        
-                        self.tableView.reloadData()
                         
                     }
                     
@@ -109,6 +143,31 @@ class ShopCategoriesViewController: UIViewController {
     
 }
 
+let categories = [[k_id: 0, k_name: "A"],
+                  [k_id: 1, k_name: "B"],
+                  [k_id: 2, k_name: "C"],
+                  [k_id: 3, k_name: "D"],
+                [k_id: 4, k_name: "E"],
+                [k_id: 5, k_name: "F"],
+                [k_id: 6, k_name: "G"],
+                [k_id: 7, k_name: "H"],
+                [k_id: 8, k_name: "I"],
+                [k_id: 9, k_name: "J"],
+                [k_id: 10, k_name: "K"],
+                [k_id: 11, k_name: "L"],
+                [k_id: 12, k_name: "M"],
+                [k_id: 13, k_name: "N"],
+                [k_id: 14, k_name: "O"],
+                [k_id: 15, k_name: "P"],
+                [k_id: 16, k_name: "R"],
+                [k_id: 17, k_name: "S"],
+                [k_id: 18, k_name: "T"],
+                [k_id: 19, k_name: "U"],
+                [k_id: 20, k_name: "W"],
+                [k_id: 21, k_name: "X"],
+                [k_id: 22, k_name: "Y"],
+                [k_id: 23, k_name: "Z"]]
+
 extension ShopCategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -118,9 +177,9 @@ extension ShopCategoriesViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-        return self.shopCategories[section].subCategories!.count
-
+      
+        return self.shopCategories[section].subCategories.count
+        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -151,7 +210,7 @@ extension ShopCategoriesViewController: UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(CategoriesCell.self, indexPath: indexPath)
         
-        let thisObject = self.shopCategories[indexPath.section].subCategories![indexPath.row]
+        let thisObject = self.shopCategories[indexPath.section].subCategories[indexPath.row]
         
         cell.categoryLabel.text = thisObject.name
         
@@ -163,7 +222,7 @@ extension ShopCategoriesViewController: UITableViewDelegate, UITableViewDataSour
         
         self.navigationController?.popViewController(animated: true)
         
-        let thisObject = self.shopCategories[indexPath.section].subCategories![indexPath.row]
+        let thisObject = self.shopCategories[indexPath.section].subCategories[indexPath.row]
         
         self.delegate?.categorySelected(category: thisObject)
         

@@ -31,7 +31,7 @@ class ShopViewController: UIViewController {
         self.type = type
         
         self.shopService = shopService
-     
+        
     }
     
     override func viewDidLoad() {
@@ -43,15 +43,7 @@ class ShopViewController: UIViewController {
         
         self.registerCells()
         
-        if self.type == .shop {
-            
-            self.getShopProducts(page: 1, loadMore: false)
-
-        } else {
-            
-            // Services endpoints
-            
-        }
+        self.getShopProducts(page: 1, loadMore: false)
         
     }
     
@@ -163,7 +155,7 @@ class ShopViewController: UIViewController {
                 
             } else {
                 
-                self.parseShopResults(dataOptional: dataOptional, loadMore: loadMore)
+                self.parseResults(dataOptional: dataOptional, loadMore: loadMore)
 
             }
             
@@ -171,7 +163,7 @@ class ShopViewController: UIViewController {
         
     }
     
-    private func parseShopResults(dataOptional: Any?, loadMore: Bool) {
+    private func parseResults(dataOptional: Any?, loadMore: Bool) {
         
         if let dictionary = dataOptional as? Dictionary<String, Any> {
             
@@ -188,7 +180,7 @@ class ShopViewController: UIViewController {
                     if !loadMore {
                         
                         self.products = []
-
+                        
                     }
                     
                     for product in productsArray {
@@ -198,9 +190,9 @@ class ShopViewController: UIViewController {
                     }
                     
                     print(productsArray.count)
-
+                    
                     self.isLoadingList = false
-
+                    
                     self.tableView.reloadData()
                     
                 }
@@ -250,7 +242,7 @@ class ShopViewController: UIViewController {
         }
         
     }
-    
+
     func searchShopProducts(searchTerm: String, page: Int) {
         
         guard let token = self.appContext.token() else { return }
@@ -263,14 +255,14 @@ class ShopViewController: UIViewController {
                 
             } else {
                 
-                self.parseShopResults(dataOptional: dataOptional, loadMore: false)
+                self.parseResults(dataOptional: dataOptional, loadMore: false)
                 
             }
             
         }
         
     }
-    
+
     func searchShopProductsWithFilters(page: Int, parameters: Dictionary<String, Any>) {
         
         guard let token = self.appContext.token() else { return }
@@ -283,7 +275,7 @@ class ShopViewController: UIViewController {
                 
             } else {
                 
-                self.parseShopResults(dataOptional: dataOptional, loadMore: false)
+                self.parseResults(dataOptional: dataOptional, loadMore: false)
                 
             }
             
@@ -404,9 +396,9 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             
-            let product = self.products[indexPath.row]
+            let object = self.products[indexPath.row]
             
-            self.showProductDetailsViewController(product: product, type: self.type)
+            self.showProductDetailsViewController(product: object, type: self.type)
 
         }
         
@@ -427,7 +419,7 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
             self.isLoadingList = true
             
             self.getShopProducts(page: self.currentPage, loadMore: true)
-    
+            
         }
     
     }

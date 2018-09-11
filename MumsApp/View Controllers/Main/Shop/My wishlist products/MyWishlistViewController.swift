@@ -102,7 +102,7 @@ class MyWishlistViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.removeProductPopupViewController(product: product, productImage: productImage, delegate: self)
+        let controller = factory.removeProductPopupViewController(product: product, productImage: productImage, delegate: self, type: self.type)
         
         controller.modalPresentationStyle = .overCurrentContext
         

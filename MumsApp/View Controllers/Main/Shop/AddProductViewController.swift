@@ -36,7 +36,7 @@ class AddProductViewController: UIViewController {
     
     private var imageLoader: ImageCacheLoader!
     
-    private var type: ShopViewType = .shop
+    fileprivate var type: ShopViewType = .shop
 
     func configureWith(shopService: ShopService, imageLoader: ImageCacheLoader, productOptional: Product?, type: ShopViewType) {
         
@@ -546,7 +546,7 @@ extension AddProductViewController: AddProductDescriptionViewDelegate {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.shopCategoriesViewController(delegate: self)
+        let controller = factory.shopCategoriesViewController(delegate: self, type: self.type)
         
         self.navigationController?.pushViewController(controller, animated: true)
         

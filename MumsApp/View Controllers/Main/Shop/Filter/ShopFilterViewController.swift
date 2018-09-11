@@ -226,7 +226,7 @@ class ShopFilterViewController: UIViewController {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.shopCategoriesViewController(delegate: self)
+        let controller = factory.shopCategoriesViewController(delegate: self, type: self.type)
         
         self.navigationController?.pushViewController(controller, animated: true)
         

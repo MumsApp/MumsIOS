@@ -10,11 +10,25 @@ struct ShopCategoryService: ResourceService {
     
     let serviceParser: ServiceParser
     
+    let type: ShopViewType
+    
+    private func configureURL(url: String) -> String {
+        
+        let text = type == .shop ? "shop" : "service"
+        
+        let configuredURL = url.replacingOccurrences(of: "shop", with: text)
+        
+        return configuredURL
+        
+    }
+    
     // MARK: - Get Shop categories
     
     func getShopCategories(token: String, completion: @escaping JSONResponseCompletion) {
         
-        if var request = URLRequest.GETRequest(urlString: SHOP_CATEGORY_URL) {
+        let urlToConfigure = self.configureURL(url: SHOP_CATEGORY_URL)
+
+        if var request = URLRequest.GETRequest(urlString: urlToConfigure) {
             
             request.setValue(token, forHTTPHeaderField: kAuthorization)
             
