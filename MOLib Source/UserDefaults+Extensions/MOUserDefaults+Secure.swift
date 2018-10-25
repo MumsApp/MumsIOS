@@ -174,10 +174,7 @@ public struct UserDefaultsImpl: MOUserDefaults {
                 if let data = decryptedDate {
                     
                     let value = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-                    
-                    print(value)
-                    print(key)
-                    
+        
                     decryptedDictionary.setValue(value, forKey: key)
                 
                 }

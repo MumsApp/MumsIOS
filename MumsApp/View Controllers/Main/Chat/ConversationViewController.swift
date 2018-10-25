@@ -12,6 +12,20 @@ class ConversationViewController: MessagesViewController {
         }
     }
     
+    fileprivate var socket: MOSocket!
+    
+    fileprivate var userIdB: String!
+    
+    fileprivate var roomName: String!
+    
+    func configureWith(socket: MOSocket, userIdB: String) {
+        
+        self.socket = socket
+        
+        self.userIdB = userIdB
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +33,9 @@ class ConversationViewController: MessagesViewController {
 
         self.configureNavigationBar()
 
-        self.getData()
+        self.joinRoom()
+        
+        self.addHandlers()
         
     }
     
@@ -91,36 +107,38 @@ class ConversationViewController: MessagesViewController {
     
     func detailsButtonPressed(sender: UIBarButtonItem) {
         
-        self.showOrganisationViewController()
+        self.showUserDetailsViewController()
         
     }
     
-    private func showOrganisationViewController() {
+    private func showUserDetailsViewController() {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.organisationViewController()
+        let controller = factory.userViewController(userId: self.userIdB)
         
         self.navigationController?.pushViewController(controller, animated: true)
         
     }
     
-    private func getData() {
+    private func addHandlers() {
         
-//        DispatchQueue.global(qos: .userInitiated).async {
-//
-//            SampleData.shared.getMessages(count: 10) { messages in
-//
-//                DispatchQueue.main.async {
-//
-//                    self.messageList = messages
-//
-//                }
-//
-//            }
-//
-//        }
+        self.socket.handleLastRoomMessages { messages in
+            
+            self.messageList = messages
+         
+        }
+        
+    }
+    
+    private func joinRoom() {
+     
+        guard let token = self.appContext.tokenWithoutBearer(), let id = self.appContext.userId() else { return }
 
+        self.socket.emitJoinPrivateChat(token: token, userIdA: id, userIdB: self.userIdB)
+                
+        self.roomName = "private#\(id)-\(self.userIdB!)"
+    
     }
 
     // MARK: - Keyboard Style
@@ -419,11 +437,15 @@ extension ConversationViewController: MessageInputBarDelegate {
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
        
 //        self.messageList.append(Message(text: text, sender: currentSender(), messageId: UUID().uuidString, date: Date()))
-//
-//        inputBar.inputTextView.text = String()
-//
+
+        guard let token = self.appContext.tokenWithoutBearer() else { return }
+        
+        self.socket.emitSendMessage(token: token, roomName: self.roomName, message: text)
+        
+        inputBar.inputTextView.text = String()
+
 //        self.messagesCollectionView.reloadData()
-//
+
 //        self.messagesCollectionView.scrollToBottom()
     
     }

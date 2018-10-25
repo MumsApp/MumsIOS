@@ -274,6 +274,10 @@
 		4DEE83F0201E1EA2001B0AEB /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE83EF201E1EA2001B0AEB /* LocationView.xib */; };
 		4DEE83F2201E1EAD001B0AEB /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83F1201E1EAD001B0AEB /* LocationView.swift */; };
 		4DF057E820E388570080498A /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF057E720E388570080498A /* Date+Extension.swift */; };
+		4DF97FBF2181B4D40038799B /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF97FBE2181B4D40038799B /* Date+Formatter.swift */; };
+		4DF97FC12181B95C0038799B /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF97FC02181B95C0038799B /* ChatService.swift */; };
+		4DF97FC42181BBDF0038799B /* LastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF97FC32181BBDF0038799B /* LastMessage.swift */; };
+		4DF97FC62181C2F70038799B /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF97FC52181C2F70038799B /* Status.swift */; };
 		4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC270C1FE92C32006020FF /* RegisterService.swift */; };
 		4DFC27121FE92CA9006020FF /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC27111FE92CA9006020FF /* LoginService.swift */; };
 		4DFC27141FE92CB2006020FF /* LoginServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC27131FE92CB2006020FF /* LoginServiceParser.swift */; };
@@ -563,6 +567,7 @@
 		4DE175102028DC35001C5DD1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		4DE175122028DCDE001C5DD1 /* ShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCell.xib; sourceTree = "<group>"; };
 		4DE175142028DCEA001C5DD1 /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
+		4DE466B0218072F30079D06D /* MumsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MumsApp.entitlements; sourceTree = "<group>"; };
 		4DE88409207BB95200682236 /* LocationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCoordinator.swift; sourceTree = "<group>"; };
 		4DE8840A207BB95200682236 /* GeoLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
 		4DE8840B207BB95200682236 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -576,6 +581,10 @@
 		4DEE83EF201E1EA2001B0AEB /* LocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
 		4DEE83F1201E1EAD001B0AEB /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		4DF057E720E388570080498A /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		4DF97FBE2181B4D40038799B /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
+		4DF97FC02181B95C0038799B /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		4DF97FC32181BBDF0038799B /* LastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMessage.swift; sourceTree = "<group>"; };
+		4DF97FC52181C2F70038799B /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		4DFC270C1FE92C32006020FF /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		4DFC27111FE92CA9006020FF /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4DFC27131FE92CB2006020FF /* LoginServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceParser.swift; sourceTree = "<group>"; };
@@ -642,6 +651,7 @@
 		4D05A8D71FE143C500B19E6E /* MumsApp */ = {
 			isa = PBXGroup;
 			children = (
+				4DE466B0218072F30079D06D /* MumsApp.entitlements */,
 				4D05A96E1FE1478400B19E6E /* Config.swift */,
 				4D05A9771FE14A0C00B19E6E /* Root */,
 				4D05A9781FE14A1A00B19E6E /* Services */,
@@ -688,6 +698,7 @@
 				4DC67750201781B300F34184 /* Reachability */,
 				4D63D3A7212D98FC00D5418B /* Socket */,
 				4DABFA892137D99E005CCF08 /* In-App Purchase */,
+				4DF97FBE2181B4D40038799B /* Date+Formatter.swift */,
 			);
 			path = "MOLib Source";
 			sourceTree = "<group>";
@@ -821,7 +832,9 @@
 				4D9DE8A9203E0355005BDB37 /* Children.swift */,
 				4D9DE8AB203E04A3005BDB37 /* Photo.swift */,
 				4DC2F8BA202C4E6A00E331BD /* Terms.swift */,
+				4DF97FC52181C2F70038799B /* Status.swift */,
 				4DE0D99920503774002C0759 /* Message.swift */,
+				4DF97FC32181BBDF0038799B /* LastMessage.swift */,
 				4D42E4A820E238F1009E3428 /* LobbyRoom.swift */,
 				4D42E4B320E2C0FD009E3428 /* LobbyTopic.swift */,
 				4D59F95820E38D1300186DB4 /* LobbyPost.swift */,
@@ -850,6 +863,7 @@
 				4D05A9681FE1468100B19E6E /* Resource.swift */,
 				4DCEA1FC210719C70083EBD4 /* Parser.swift */,
 				4DBEE64120206524006E2C06 /* Exceptions.swift */,
+				4DF97FC22181BA6C0038799B /* ChatService */,
 				4DFC27101FE92C63006020FF /* RegisterService */,
 				4DFC27151FE92E2E006020FF /* LoginService */,
 				4D681F88201DE32F00D404CD /* FacebookService */,
@@ -1571,6 +1585,14 @@
 			path = LocationView;
 			sourceTree = "<group>";
 		};
+		4DF97FC22181BA6C0038799B /* ChatService */ = {
+			isa = PBXGroup;
+			children = (
+				4DF97FC02181B95C0038799B /* ChatService.swift */,
+			);
+			path = ChatService;
+			sourceTree = "<group>";
+		};
 		4DFC27101FE92C63006020FF /* RegisterService */ = {
 			isa = PBXGroup;
 			children = (
@@ -1689,6 +1711,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -1992,8 +2017,10 @@
 				4D36E700201E3859000DC94F /* RangeSeekSlider.swift in Sources */,
 				4D05A9811FE14E5600B19E6E /* PrimaryViewControllerFactory.swift in Sources */,
 				4D63D3AD212DCD1600D5418B /* FacebookServiceParser.swift in Sources */,
+				4DF97FC12181B95C0038799B /* ChatService.swift in Sources */,
 				4D74FF41205BF93F0016D3E9 /* PromotionViewController.swift in Sources */,
 				4D3D2A172137E38C00600616 /* ServicePaymentPopup.swift in Sources */,
+				4DF97FBF2181B4D40038799B /* Date+Formatter.swift in Sources */,
 				4D05A9411FE144A900B19E6E /* MOCollectionViewCoordinator.swift in Sources */,
 				4DBC6FD5201B41CA00951637 /* UIColor+Extensions.swift in Sources */,
 				4D05A9731FE1487000B19E6E /* RootViewController.swift in Sources */,
@@ -2003,6 +2030,7 @@
 				4D7C71A620CE7C4600A0A47C /* ChildService.swift in Sources */,
 				4DEC3C682137099000089837 /* FriendsViewController.swift in Sources */,
 				4D05A95E1FE144A900B19E6E /* UIStoryboard+Helpers.swift in Sources */,
+				4DF97FC62181C2F70038799B /* Status.swift in Sources */,
 				4D39D48A203489BE005123F8 /* ItemLocationView.swift in Sources */,
 				4DCEA1F9210700980083EBD4 /* ShopSubCategory.swift in Sources */,
 				4D76895E20248946002FC25D /* MenuViewController.swift in Sources */,
@@ -2029,6 +2057,7 @@
 				4D85DE8F207CB3C900972B9F /* AddSchoolViewController.swift in Sources */,
 				4DFC270D1FE92C32006020FF /* RegisterService.swift in Sources */,
 				4D36E6F9201E3565000DC94F /* ChildrenView.swift in Sources */,
+				4DF97FC42181BBDF0038799B /* LastMessage.swift in Sources */,
 				4D403BD4204AE15500956939 /* UICollectionViewCell.swift in Sources */,
 				4DE175092028D032001C5DD1 /* ChatSettingsPopupViewController.swift in Sources */,
 				4D38280D21103BF7003E7F7C /* ProgressHUD.swift in Sources */,
@@ -2331,11 +2360,13 @@
 			baseConfigurationReference = DC6C0744BAB8E9BACC6A5963 /* Pods-MumsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MumsApp/MumsApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59V23AMF4S;
 				INFOPLIST_FILE = "$(SRCROOT)/MumsApp/New Group/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-expression-type-checking=100 -Xfrontend -warn-long-function-bodies=100";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caviarsoft.MumsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -2348,11 +2379,13 @@
 			baseConfigurationReference = 4B6971E37F9E74D8BD714B2A /* Pods-MumsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MumsApp/MumsApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59V23AMF4S;
 				INFOPLIST_FILE = "$(SRCROOT)/MumsApp/New Group/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-expression-type-checking=100 -Xfrontend -warn-long-function-bodies=100";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caviarsoft.MumsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

@@ -33,6 +33,8 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
     
     private var socket: MOSocket!
 
+    var notificationCoordinator: NotificationCoordinator!
+    
     func configureWith(socket: MOSocket) {
         
         self.socket = socket
@@ -48,30 +50,15 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         
         self.configureNavigationBar()
         
+        self.configureSocket()
+        
         self.transition.duration = 0.3
         
         mainRootVC = self
-        
-        self.socket.configure()
-        
-        self.socket.addHandlers()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            
-            self.socket.emitJoinGroupRoom(roomId: "test")
+       
+        self.notificationCoordinator = ServiceFactory.serviceFactory().notificationCoordinatorService(socket: self.socket)
 
-//            self.socket.emitOnline(token: self.appContext.tokenBearer()!)
-
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
-            
-            self.socket.emitOnline(token: self.appContext.tokenBearer()!)
-
-//            self.socket.emitSendMessage(roomName: "test", token: self.appContext.tokenBearer()!, message: "pierwsza wiadomosc")
-
-            
-        }
+        self.notificationCoordinator.performDeviceRegistrationIfRequired()
         
     }
     
@@ -88,6 +75,24 @@ class MainRootViewController: UIViewController, UIViewControllerTransitioningDel
         
     }
  
+    private func configureSocket() {
+        
+        self.socket.configure()
+        
+        self.socket.addHandlers()
+        
+        self.socket.handleConnection { _ in
+            
+            self.socket.emitOnline(token: self.appContext.tokenWithoutBearer()!)
+            
+            self.notificationCoordinator.registerDeviceWithDeviceToken(token: self.appContext.tokenWithoutBearer()!, deviceToken: DEVICETOKEN)
+        
+        }
+        
+        self.socket.establishConnection()
+        
+    }
+    
     private func configureNavigationBar() {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)

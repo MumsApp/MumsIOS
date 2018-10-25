@@ -1,82 +1,102 @@
 import Foundation
 
+let k_messages = "messages"
+
 extension MOSocket {
     
     // MARK: - Handlers
     
-    // Handle messages
-    func handleMessages(completion: @escaping (Array<Message>) -> Void) {
+    // Checking connection
+    func handleConnection(completion: @escaping (Bool) -> Void) {
+        
+        self.socket.on(CONNECT) {data, _ in
+
+            completion(true)
+
+        }
+        
+    }
+    
+    // Checking online status
+    func handleOnline(completion: @escaping (Any) -> Void) {
+        
+        self.socket.on(ONLINE) { data, _ in
+            
+            completion(data)
+            
+        }
+        
+    }
+    
+    // Checking online status
+    func handleOffline(completion: @escaping (Any) -> Void) {
+        
+        self.socket.on(OFFLINE) { data, _ in
+            
+            completion(data)
+            
+        }
+        
+    }
+    
+    // Checking errors
+    func handleErrors(completion: @escaping (Any) -> Void) {
+        
+        self.socket.on(SOCKET_ERROR) { data, _ in
+            
+            completion(data)
+        
+        }
+        
+    }
+    
+    // Handle last messages
+    func handleLastRoomMessages(completion: @escaping (Array<Message>) -> Void) {
         
         self.socket?.on(LAST_ROOM_MESSAGES) { dataOptional, _ in
             
             print(dataOptional)
 
-            var messages: Array<Message> = []
+            var messagesList: Array<Message> = []
             
-            if let array = dataOptional[0] as? [[String: AnyObject]] {
+            if let data = dataOptional[0] as? Dictionary<String, Any> {
                 
-                for dictionary in array {
+                if let messages = data[k_messages] as? Array<Dictionary<String, Any>> {
                     
-                    let message = Message(dictionary: dictionary)
-                    
-                    messages.append(message)
+                    for dictionary in messages {
+                        
+                        let message = Message(dictionary: dictionary)
+                        
+                        messagesList.append(message)
+                        
+                    }
                     
                 }
                 
             }
         
-            completion(messages)
+            completion(messagesList)
             
         }
         
     }
     
-    func handleRoomMessages(completion: @escaping (Array<Message>) -> Void) {
-        
-        self.socket?.on(MSG) { dataOptional, _ in
+    func handleMessage(completion: @escaping (Message?) -> Void) {
+
+        self.socket?.on(MESSAGE, callback: { dataOptional, _ in
             
             print(dataOptional)
             
-            var messages: Array<Message> = []
+            var messageOptional: Message?
             
-            if let array = dataOptional[0] as? [[String: AnyObject]] {
+            if let dictionary = dataOptional[0] as? Dictionary<String, Any> {
                 
-                for dictionary in array {
-                    
-                    let message = Message(dictionary: dictionary)
-                    
-                    messages.append(message)
-                    
-                }
-                
+                messageOptional = Message(dictionary: dictionary)
+
             }
             
-            completion(messages)
+            completion(messageOptional)
             
-        }
-
-    }
-    
-    func handleOnline(completion: @escaping (String) -> Void) {
-        
-        self.socket?.on(ONLINE, callback: { dataOptional, _ in
-            
-            print(dataOptional)
-            
-            completion("ONLINE")
-            
-        })
-        
-    }
-    
-    func handleOffline(completion: @escaping (String) -> Void) {
-        
-        self.socket?.on(OFFLINE, callback: { dataOptional, _ in
-            
-            print(dataOptional)
-            
-            completion("OFFLINE")
-
         })
         
     }

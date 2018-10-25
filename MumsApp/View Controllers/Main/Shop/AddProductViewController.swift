@@ -99,13 +99,23 @@ class AddProductViewController: UIViewController {
     
     private func configureNavigationBar() {
        
-        let typeText = self.type == .shop ? "Product" : "Service"
+        var typeText: String!
         
-        let title = productOptional == nil ? "Add \(typeText)" : "Edit \(typeText)"
+        if self.type == .shop {
+            
+            typeText = "Product"
+            
+        } else {
+            
+            typeText = "Service"
+            
+        }
+                
+        let title = productOptional == nil ? "Add \(String(describing: typeText))" : "Edit \(String(describing: typeText))"
         
         let titleLabel = self.navigationController?.configureNavigationBarWithTitle(title: title)
         
-        self.uploadProductButton.setTitle("Upload \(typeText)", for: .normal)
+        self.uploadProductButton.setTitle("Upload \(String(describing: typeText))", for: .normal)
 
         self.navigationItem.titleView = titleLabel
         
@@ -299,7 +309,7 @@ class AddProductViewController: UIViewController {
     
     private func validate() {
 
-        let text = self.type == .shop ? "product" : "service"
+//        let text = self.type == .shop ? "product" : "service"
         
 //        if self.descriptionView.itemTitleTextField.text == "" {
 //

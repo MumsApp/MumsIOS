@@ -38,6 +38,8 @@ class RootViewController: UIViewController {
     
     weak var delegate: RootViewControllerDelegate?
     
+    var notificationCoordinator: NotificationCoordinator!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -51,6 +53,8 @@ class RootViewController: UIViewController {
         
         FactoryProvider.setupFactory(networkService: self.authenticatedNetworkService, introDelegate: self)
         
+        self.notificationCoordinator = ServiceFactory.serviceFactory().notificationCoordinatorService()
+
     }
 
     override func viewDidLoad() {
@@ -58,12 +62,8 @@ class RootViewController: UIViewController {
         
         self.configureView()
         
-        let a = self.userDefaults.boolForKey(k_is_app_initialized)
-        let b = self.appContext.token()
-        
-//        let isUserLoggedIn = self.appContext.isUserLoggedIn(),
-//          isUserLoggedIn
-        
+        self.notificationCoordinator.performDeviceRegistrationIfRequired()
+
         guard let isInitialized = self.userDefaults.boolForKey(k_is_app_initialized),
                 let _ = self.appContext.token(),
                 isInitialized else {
@@ -269,6 +269,31 @@ extension RootViewController: IntroDelegate, LogoutDelegate {
 
         }
 
+    }
+    
+}
+
+extension RootViewController: NotificationDelegate {
+    
+    /// Used to register push notifications on beckend
+    func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: String) {
+        
+
+        
+    }
+    
+    /// Used if notificationCoordinator receive error
+    func didFailToRegisterForRemoteNotificationsWithError(error: Error) {
+        
+        print("Show alert informing them to update at any time in settings")
+        
+    }
+    
+    /// Used to handle push notifications
+    func didReceiveRemoteNotification(userInfo: [AnyHashable: Any]) {
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
     }
     
 }

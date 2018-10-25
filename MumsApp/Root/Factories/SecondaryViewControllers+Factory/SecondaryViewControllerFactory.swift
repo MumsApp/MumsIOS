@@ -104,7 +104,7 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ChatViewController.rawValue, storyboard: storyboard) as! ChatViewController
         
-        controller.configureWith(friendsService: self.serviceFactory.friendsService())
+        controller.configureWith(chatService: self.serviceFactory.chatService())
         
         return controller
         
@@ -274,9 +274,11 @@ class SecondaryViewControllerFactory: ViewControllerFactory {
         
     }
     
-    func conversationViewController() -> ConversationViewController {
+    func conversationViewController(userIdB: String) -> ConversationViewController {
         
         let controller = UIStoryboard.controllerWithIdentifier(identifier: SecondaryViewController.ConversationViewController.rawValue, storyboard: storyboard) as! ConversationViewController
+        
+        controller.configureWith(socket: self.serviceFactory.socketService(), userIdB: userIdB)
         
         return controller
         

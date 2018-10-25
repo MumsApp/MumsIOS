@@ -61,7 +61,9 @@ extension AlamofireNetworkService {
     
     func enqueueNetworkDownloadRequest(request: NetworkDownloadRequest) -> DownloadOperation? {
         
-        let method = HTTPMethod(rawValue: request.urlRequest.httpMethod!.uppercased())
+        let methodUppercased = request.urlRequest.httpMethod!.uppercased()
+       
+        let method = HTTPMethod(rawValue: methodUppercased)
         
         let downloadProgress = completionForDownloadProgress(request: request)
         

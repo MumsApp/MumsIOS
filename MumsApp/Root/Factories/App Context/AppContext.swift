@@ -23,7 +23,7 @@ protocol AppContext {
     
     func userLocation() -> CLLocation?
     
-    func tokenBearer() -> String?
+    func tokenWithoutBearer() -> String?
     
 }
 
@@ -131,7 +131,7 @@ struct DefaultAppContext: AppContext {
         
     }
     
-    func tokenBearer() -> String? {
+    func tokenWithoutBearer() -> String? {
         
         return self.userDefaults.secureStringForKey(k_token)?.replacingOccurrences(of: "Bearer ", with: "")
         

@@ -14,24 +14,49 @@ class ChatCell: UITableViewCell, Reusable {
     
     @IBOutlet weak var dateLabel: UILabel!
     
-    func configureWith(friend: Friend) {
+    @IBOutlet weak var sendImageView: UIImageView!
+    @IBOutlet weak var readImageView: UIImageView!
+    
+    func configureWith(message: LastMessage) {
         
-        if let name = friend.name, let surname = friend.surname {
-         
-            self.nameLabel.text = name + " " + surname
+        self.sendImageView.isHidden = true
+        
+        self.readImageView.isHidden = true
 
+        if let member = message.roomMembers?.first {
+            
+            self.nameLabel.text = member.displayName
+            
         } else {
             
             self.nameLabel.text = "Unknown"
             
         }
+
+        if let lastMessage = message.lastMessage {
+            
+            self.descriptionLabel.text = lastMessage.msg
+            
+            self.dateLabel.text = lastMessage.sentDate.niceFormat
+            
+        }
         
-        self.descriptionLabel.text = friend.description
-        
-        if let photoURL = friend.photo {
+        if let photoURL = message.avatar {
             
             self.userImageView.loadImage(urlStringOptional: photoURL)
             
+        }
+        
+        if let isSent = message.lastMessage?.isSend {
+            
+            self.sendImageView.isHidden = false
+            
+        }
+        
+        if let isRead = message.lastMessage?.isRead {
+            
+            self.readImageView.isHidden = false
+
         }
         
     }
@@ -40,7 +65,7 @@ class ChatCell: UITableViewCell, Reusable {
         super.awakeFromNib()
 
         self.configureView()
-        
+     
     }
 
     private func configureView() {

@@ -43,6 +43,14 @@ class ServiceFactory {
         
     }
     
+    func notificationCoordinatorService(socket: MOSocket? = nil) -> NotificationCoordinator {
+
+        let coordinator = NotificationCoordinator(socket: socket, userDefaults: self.userDefaults)
+        
+        return coordinator
+        
+    }
+    
     func registerService() -> RegisterService {
         
         let service = RegisterService(networkService: self.networkService, serviceParser: self.parser)
@@ -180,6 +188,14 @@ class ServiceFactory {
     func inAppPurchaseHelper() -> InAppPurchaseHelper {
         
         return InAppPurchaseHelper()
+        
+    }
+    
+    func chatService() -> ChatService {
+        
+        let service = ChatService(networkService: self.networkService, serviceParser: self.parser)
+
+        return service
         
     }
     

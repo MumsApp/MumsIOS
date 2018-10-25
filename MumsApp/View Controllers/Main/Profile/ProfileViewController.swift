@@ -289,12 +289,11 @@ class ProfileViewController: UIViewController {
     
     fileprivate func updateViewHeight() {
         
-        self.heightConstraint.constant = self.profileViewHeight.constant +
-            self.locationViewHeight.constant +
-            self.childrenViewHeight.constant +
-            self.cardsViewHeight.constant +
-            self.offersViewHeight.constant +
-            self.friendsViewHeight.constant + 200
+        let topConstant = self.locationViewHeight.constant + self.childrenViewHeight.constant
+        let middleConstant = self.cardsViewHeight.constant + self.offersViewHeight.constant
+        let bottomConstant = self.friendsViewHeight.constant + 350
+        
+        self.heightConstraint.constant = topConstant + middleConstant + bottomConstant
         
     }
     

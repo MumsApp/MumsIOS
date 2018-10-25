@@ -60,7 +60,7 @@ class AddChildrenPopupViewController: UIViewController {
     
     private var ageUnit: Int?
     
-    private var children: Children?
+    var childrenModel: Children?
     
     func configureWith(type: ChildrenType, delegate: AddChildrenPopupViewControllerDelegate?, childService: ChildService, children: Children?) {
         
@@ -70,7 +70,7 @@ class AddChildrenPopupViewController: UIViewController {
         
         self.childService = childService
         
-        self.children = children
+        self.childrenModel = children
              
     }
     
@@ -168,7 +168,7 @@ class AddChildrenPopupViewController: UIViewController {
     
     private func configureChildren() {
         
-        guard let children = self.children else { return }
+        guard let children = self.childrenModel else { return }
         
         self.ageCountLabel.text = String(children.age!)
         
@@ -260,10 +260,6 @@ class AddChildrenPopupViewController: UIViewController {
     
     private func prepareToSaveChild() {
         
-        print(self.ageCountLabel.text)
-        
-        print(self.ageUnit)
-        
         guard let id = self.appContext.userId(), let token = self.appContext.token() else { return }
         
         guard let age = Int(self.ageCountLabel.text!) else { return }
@@ -294,13 +290,13 @@ class AddChildrenPopupViewController: UIViewController {
             
         }
         
-        if self.children == nil {
+        if self.childrenModel == nil {
             
             self.addChild(id: id, token: token, age: age, ageUnit: ageUnit, sex: sex)
             
         } else {
             
-            guard let children_id = self.children?.id else { return }
+            guard let children_id = self.childrenModel?.id else { return }
             
             self.updateChild(id: id, child_id: children_id, token: token, age: age, ageUnit: ageUnit, sex: sex)
             

@@ -6,9 +6,12 @@ import GoogleMaps
 import GoogleSignIn
 import GooglePlaces
 import SVProgressHUD
+import UserNotifications
+
+var DEVICETOKEN = ""
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     fileprivate var rootNavigationController: UINavigationController!
     
@@ -18,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var rootViewController: RootViewController!
     
+    var notificationDelegate: NotificationDelegate!
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.configureRootViewController()
@@ -26,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.backgroundColor = .white
         
+        UNUserNotificationCenter.current().delegate = self
+
         return true
         
     }
@@ -50,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
         
         return handled
         
@@ -62,10 +69,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.rootNavigationController = navController
         
-        self.rootViewController = navController.topViewController as! RootViewController
+        self.rootViewController = navController.topViewController as? RootViewController
         
         self.rootViewController.delegate = self
-         
+        
+        self.notificationDelegate = self.rootViewController
+
     }
     
     private func configureAdditionalLibraries(application: UIApplication, launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
@@ -134,6 +143,48 @@ extension AppDelegate: RootViewControllerDelegate {
     func rootViewControllerDidLogout(controller: RootViewController) {
         
         self.window!.rootViewController = self.rootNavigationController
+        
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([UNNotificationPresentationOptions.alert,
+                           UNNotificationPresentationOptions.sound,
+                           UNNotificationPresentationOptions.badge])
+        
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        
+        DEVICETOKEN = deviceTokenString
+        
+        self.notificationDelegate.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: deviceTokenString)
+        
+        print("APNs device token: \(deviceTokenString)")
+        
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        
+        print("APNs registration failed: \(error)")
+        
+        self.notificationDelegate.didFailToRegisterForRemoteNotificationsWithError(error: error)
+        
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
+        
+        print("Push notification received: \(data)")
+        
+        self.notificationDelegate.didReceiveRemoteNotification(userInfo: data)
+        
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        self.notificationDelegate.didReceiveRemoteNotification(userInfo: userInfo)
         
     }
 

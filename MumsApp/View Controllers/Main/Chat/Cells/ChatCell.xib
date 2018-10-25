@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,13 +36,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yb2-B2-8Lm">
-                                    <rect key="frame" x="102" y="58" width="237" height="20.5"/>
+                                    <rect key="frame" x="102" y="58.5" width="237" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MG3-fH-Ssa">
-                                    <rect key="frame" x="303" y="30" width="36" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MG3-fH-Ssa">
+                                    <rect key="frame" x="303" y="30" width="36" height="20.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="36" id="1ob-So-Eof"/>
                                     </constraints>
@@ -118,14 +118,16 @@
                 <outlet property="descriptionLabel" destination="Yb2-B2-8Lm" id="2Z3-HL-VNV"/>
                 <outlet property="nameLabel" destination="cyU-v0-0UN" id="aae-Gq-qmf"/>
                 <outlet property="onlineImageView" destination="0Y1-Rt-puJ" id="KIY-iy-foz"/>
+                <outlet property="readImageView" destination="S7K-92-1ef" id="jfQ-c2-EIT"/>
+                <outlet property="sendImageView" destination="zj3-sk-O33" id="T7t-md-O50"/>
                 <outlet property="userImageView" destination="q9m-tZ-6Ne" id="s70-qw-RxN"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="54"/>
         </view>
     </objects>
     <resources>
-        <image name="markIcon" width="13" height="11"/>
-        <image name="onlineIcon" width="15" height="15"/>
-        <image name="placeholderIcon" width="163" height="152"/>
+        <image name="markIcon" width="26" height="22"/>
+        <image name="onlineIcon" width="30" height="30"/>
+        <image name="placeholderIcon" width="326" height="304"/>
     </resources>
 </document>

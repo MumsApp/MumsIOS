@@ -96,11 +96,11 @@ class FriendsViewController: UIViewController {
 //
 //    }
     
-    fileprivate func showConversationViewController() {
+    fileprivate func showConversationViewController(userIdB: String) {
 
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
 
-        let controller = factory.conversationViewController()
+        let controller = factory.conversationViewController(userIdB: userIdB)
 
         self.navigationController?.pushViewController(controller, animated: true)
 
@@ -179,7 +179,13 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.showConversationViewController()
+        let friend = self.friends[indexPath.row]
+
+        if let id = friend.id {
+          
+            self.showConversationViewController(userIdB: String(id))
+        
+        }
         
     }
     

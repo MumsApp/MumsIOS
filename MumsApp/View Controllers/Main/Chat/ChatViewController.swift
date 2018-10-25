@@ -11,13 +11,15 @@ class ChatViewController: UIViewController {
     
     private var segmentedContent = [SegmentioItem]()
 
-    private var friendsService: FriendsService!
+//    private var friendsService: FriendsService!
     
-    fileprivate var friends: Array<Friend> = []
+    fileprivate var lastMessages: Array<LastMessage> = []
     
-    func configureWith(friendsService: FriendsService) {
+    private var chatService: ChatService!
+    
+    func configureWith(chatService: ChatService) {
         
-        self.friendsService = friendsService
+        self.chatService = chatService
         
     }
     
@@ -29,7 +31,9 @@ class ChatViewController: UIViewController {
         self.configureNavigationBar()
         
         self.registerCells()
-                
+        
+        self.getLastMessages()
+        
     }
 
     private func configureView() {
@@ -180,66 +184,62 @@ class ChatViewController: UIViewController {
 //
 //    }
     
-    fileprivate func showConversationViewController() {
+    fileprivate func showConversationViewController(useridB: String) {
         
         let factory = SecondaryViewControllerFactory.viewControllerFactory()
         
-        let controller = factory.conversationViewController()
+        let controller = factory.conversationViewController(userIdB: useridB)
     
         self.navigationController?.pushViewController(controller, animated: true)
     
     }
     
-//    private func getUserFriends(page: Int) {
-//
-//        guard let token = self.appContext.token() else { return }
-//
-//        self.progressHUD.showLoading()
-//
-//        self.friendsService.getFriends(page: page, token: token) { dataOptional, errorOptional in
-//
-//            self.progressHUD.dismiss()
-//
-//            if let error = errorOptional {
-//
-//                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
-//
-//            } else {
-//
-//                guard let data = dataOptional as? StorableDictionary,
-//                    let dictionary = data[k_data] as? StorableDictionary else {
-//
-//                        return
-//
-//                }
-//
-//                if let friendsArray = dictionary[k_friends] as? Array<Dictionary<String, Any>> {
-//
-//                    friendsArray.forEach({ dict in
-//
-//                        let friends = Friend(dictionary: dict)
-//
-//                        self.friends.append(friends)
-//
-//                    })
-//
-//                    self.tableView.reloadData()
-//
-//                }
-//
-//            }
-//
-//        }
-//
-//    }
-//
+    private func getLastMessages() {
+     
+        guard let token = self.appContext.token() else { return }
+
+        self.progressHUD.showLoading()
+
+        self.chatService.getLastMessages(token: token) { dataOptional, errorOptional in
+
+            self.progressHUD.dismiss()
+
+            if let error = errorOptional {
+                
+                self.showOkAlertWith(title: "Error", message: error.localizedDescription)
+                
+            } else {
+                
+                guard let data = dataOptional as? StorableDictionary,
+                    let array = data[k_data] as? Array<Dictionary<String, Any>> else {
+                        
+                        return
+                        
+                }
+                
+                for dict in array {
+                    
+                    let message = LastMessage(dictionary: dict)
+                    
+                    self.lastMessages.append(message)
+
+                }
+         
+                self.tableView.reloadData()
+                
+            }
+
+        }
+        
+    }
+        
 }
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-       return self.friends.count
+       return self.lastMessages.count
         
     }
     
@@ -253,9 +253,9 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(ChatCell.self, indexPath: indexPath)
         
-        let friend = self.friends[indexPath.row]
+        let message = self.lastMessages[indexPath.row]
         
-        cell.configureWith(friend: friend)
+        cell.configureWith(message: message)
         
         return cell
         
@@ -263,8 +263,26 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.showConversationViewController()
+        let message = self.lastMessages[indexPath.row]
+
+        let stringArray = message.roomName!.components(separatedBy: CharacterSet.decimalDigits.inverted)
         
+        for item in stringArray {
+        
+            if let number = Int(item) {
+            
+                let n = String(number)
+                
+                if n != self.appContext.userId() {
+                    
+                    self.showConversationViewController(useridB: n)
+                    
+                }
+
+            }
+        
+        }
+ 
     }
    
 }

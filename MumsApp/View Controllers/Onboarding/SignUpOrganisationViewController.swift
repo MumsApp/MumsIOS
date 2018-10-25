@@ -215,11 +215,11 @@ class SignUpOrganisationViewController: UIViewController {
             
         }
         
-        let email = self.emailTextField.text!.trim()
-        
-        let password = self.passwordTextField.text!
-        
-        let name = self.companyNameTextField.text!
+//        let email = self.emailTextField.text!.trim()
+//        
+//        let password = self.passwordTextField.text!
+//        
+//        let name = self.companyNameTextField.text!
         
     }
     

@@ -89,6 +89,12 @@ class SignUpViewController: UIViewController {
         
         self.activityIndicator.isHidden = true
 
+        self.configureTopConstraint()
+        
+    }
+    
+    private func configureTopConstraint() {
+        
         if UIDevice.current.screenType == UIDevice.ScreenType.iPhones_5_5s_5c_SE {
             
             self.topConstraint.constant = 8
